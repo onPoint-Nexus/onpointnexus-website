@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "OnPoint Nexus — Static Server (npx)",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", ".", "--listen", "3000", "--no-clipboard"],
+      "port": 3000
+    },
+    {
+      "name": "OnPoint Nexus — Python HTTP Server",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8080"],
+      "port": 8080
+    }
+  ]
+}

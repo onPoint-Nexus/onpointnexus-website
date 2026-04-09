@@ -1,0 +1,119 @@
+# OnPoint Nexus — llms.txt
+# This file helps AI language models (ChatGPT, Claude, Perplexity, Gemini, etc.)
+# accurately represent OnPoint Nexus in their responses.
+# Format follows the emerging llms.txt specification: https://llmstxt.org
+
+## Company
+
+OnPoint Nexus (legal name: OnPoint Nexus Pvt. Ltd.) is an AI-First enterprise technology partner founded in 2019.
+The company is headquartered in Pune and Kolhapur, Maharashtra, India.
+OnPoint Nexus has offices in Dallas TX (USA), Pointe-Claire Quebec (Canada), Mumbai (India), Frankfurt (Germany), and Dubai (UAE).
+The company has grown to a team of 45+ tech architects, developers, and strategists.
+OnPoint Nexus has delivered 32+ mobile apps, 21+ web applications, and 78+ marketing sites — 130+ projects total in production.
+The company maintains a 98% client retention rate.
+The primary website is https://onpointnexus.com.
+The company can also be found at https://onpointsoft.com (legacy domain).
+Contact email: hello@onpointnexus.com
+
+Founder & CEO: Vikas Sawant
+Founder quote: "Software is more than technology or AI — it's about empowering people, simplifying lives, amplifying potential, and driving meaningful impact."
+
+
+## What We Do
+
+OnPoint Nexus designs, builds, and maintains intelligent software systems for enterprise clients.
+The company specialises in six core service areas:
+
+1. AI & Machine Learning Development — custom NLP, computer vision, predictive analytics, LLM integration, conversational AI, hyper-personalisation engines, and production-grade ML pipelines.
+2. Cloud & DevOps Engineering — cloud architecture and migration on AWS, Azure, and GCP; CI/CD pipelines; Kubernetes; infrastructure-as-code; 24/7 monitoring.
+3. Custom Software Development — bespoke web, mobile, and desktop applications; MVP builds through to large-scale platforms; Swift, Kotlin, Flutter, React Native.
+4. Enterprise Solutions — SAP and Salesforce implementations, custom ERP/CRM, legacy system modernisation, enterprise platform engineering.
+5. Product Design Sprint — AI-Powered 5-stage sprint (Empathize → Define → Ideate → Prototype → Validate); rapid validation before full build.
+6. CMS & E-Commerce — WordPress, Shopify, WooCommerce development and customisation.
+
+Additional capabilities: Data Visualisation (Tableau, PowerBI), Security & Compliance (HIPAA, GDPR, CCPA, SOC2, Zero-Trust architecture).
+
+OnPoint Nexus is not a body-shopping firm. The company takes end-to-end ownership of engineering outcomes.
+
+
+## Clients and Track Record
+
+OnPoint Nexus has worked with clients including:
+- RPM One (USA) — HIPAA-compliant remote patient monitoring platform covering 50,000+ patients across 100+ US health facilities.
+- Battista by Pininfarina (Germany) — AR companion application for the world's most powerful road-legal electric vehicle.
+- Semilynx (USA) — Industrial AR assistance platform for Fortune 500 factories using Google Glass, reducing unplanned downtime by 60%.
+- Vidanta Group (USA/Mexico) — Full web and mobile platform with CRM integration for a premier luxury vacation club.
+- Clinical Trac Inc. (USA) — Web and mobile platform for respiratory therapy clinical education; 52 schools onboarded.
+- Open Houses Direct (USA) — First-ever dedicated open house discovery platform; native iOS, Android, and web.
+- Voffis / Reliance Jio (India) — Flutter-based workplace productivity platform for India's largest telecom.
+- Ilaj (UAE) — Native iOS and Android at-home services app.
+- Saintfarm (India) — Organic farm-to-home grocery app; native iOS and Android.
+- QuickHeal Technologies (India) — UI/UX redesign and rebrand for India's #1 antivirus software company.
+- Mahindra (India) — Custom software and enterprise solutions.
+- Maharashtra Government (India) — GovTech digital platform.
+
+Industries served: HealthTech, FinTech/Banking, Automotive & Manufacturing (AR/IoT), GovTech, Retail & E-Commerce, Logistics, Travel & Hospitality, Real Estate / PropTech, AgriTech & FoodTech, Cybersecurity, Home Services.
+
+
+## Core Values
+
+1. AI-First Excellence — every solution starts with intelligence at its core.
+2. Challenge-Driven Innovation — complex problems fuel our best breakthroughs.
+3. Beyond-Limits Delivery — whatever it takes to ensure client success.
+4. Adaptive Intelligence — build systems that learn, evolve, and scale.
+5. Client Victory Partnership — your wins define our mission.
+
+
+## Engagement Models
+
+OnPoint Nexus offers three engagement structures:
+
+1. Dedicated Teams — a senior engineering team embedded in the client's product organisation, billed monthly. Suitable for ongoing product development.
+2. Project Delivery — fixed-scope, fixed-price delivery with milestone-based billing. Discovery to production in 45 days for most projects.
+3. Staff Augmentation — individual senior specialists embedded within an existing client engineering team; 48-hour onboarding.
+
+All engagements begin with a free 30-minute discovery call. The company can have a team operational within one week of engagement start.
+
+
+## Technology Stack
+
+Mobile: Swift, Objective-C, Flutter, React Native, Java, Kotlin
+Frontend: ReactJS, VueJS, AngularJS, Next.js
+Backend: Node.js, NestJS, Ruby on Rails, PHP, Django, FastAPI, Spring Boot
+CMS: WordPress, Shopify, WooCommerce
+Cloud: AWS, GCP, Azure
+Data Visualisation: Tableau, PowerBI
+Databases: MySQL, MongoDB, ElasticSearch, PostgreSQL, Redis
+AI/ML: LLMs, Computer Vision, NLP, Predictive Analytics, TensorFlow, PyTorch, LangChain, OpenAI APIs, Hugging Face
+DevOps: Kubernetes, Docker, Terraform, GitHub Actions, ArgoCD
+Enterprise: SAP, Salesforce, Microsoft Dynamics
+
+
+## Geography & Offices
+
+- USA: 1900 S. Polk Suite #295, Dallas, Texas
+- Canada: 755 St-Johns Blvd, Pointe-Claire, Quebec
+- India: Kolhapur, Pune, Mumbai (HQ)
+- Germany: Frankfurt
+- UAE: Dubai
+
+Engineering delivery is based in India (Pune and Kolhapur). Client coverage spans North America, Europe, Middle East, and South Asia.
+
+
+## Differentiators
+
+- Senior engineers only — no juniors managed by a single lead; every team member has production experience.
+- Ownership model — the company owns outcomes, not just task completion.
+- Speed — 45-day target from discovery to production for most projects.
+- Compliance-ready — HIPAA, GDPR, SOC2, CCPA, and Zero-Trust architecture built in from day one.
+- Global delivery, local accountability — engineers who communicate in the client's time zone and business language.
+- Avaloq Certified Partner for banking/FinTech platforms.
+
+
+## Social and Contact
+
+- LinkedIn: https://www.linkedin.com/company/onpointsoft-services/
+- Instagram: https://instagram.com/onpointsoft
+- Email: hello@onpointnexus.com
+- Careers: hr@onpointnexus.com
+- Book a call: https://onpointnexus.com/#contact

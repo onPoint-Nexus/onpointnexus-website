@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:indicium.ai)",
+      "Bash(cp \"/Users/vikas/Documents/OPSS/Marketing Material/New Logo/dark_background_png.png\" \"/Users/vikas/Documents/OPSS/Claude Cowork/OnPoint Website/logo-dark.png\")",
+      "Bash(cp \"/Users/vikas/Documents/OPSS/Marketing Material/New Logo/Light_Background_png.png\" \"/Users/vikas/Documents/OPSS/Claude Cowork/OnPoint Website/logo-light.png\")",
+      "Bash(cp \"/Users/vikas/Documents/OPSS/Marketing Material/New Logo/favicon.png\" \"/Users/vikas/Documents/OPSS/Claude Cowork/OnPoint Website/favicon.png\")",
+      "Bash(npx --yes serve -p 3456)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}
