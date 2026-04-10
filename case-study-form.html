@@ -988,7 +988,7 @@ async function submitForm() {
   const data = collectData();
 
   // If URL not configured, show demo complete state
-  if (!SCRIPT_URL || SCRIPT_URL === "YOUR_APPS_SCRIPT_WEB_APP_URL") {
+  if (!SCRIPT_URL || SCRIPT_URL === "https://script.google.com/macros/s/AKfycbyviid919Oa-Pu0YpwIlJC_DVs62a_fdoNO4VMJqCUR5YpY6n9ZtrBOX9IH24aNdv7TJA/exec") {
     setTimeout(() => showComplete(data), 1200);
     return;
   }
