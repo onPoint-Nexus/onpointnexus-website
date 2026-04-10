@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semilynx — Case Study | OnPoint Nexus</title>
+  <meta name="description" content="How OnPoint Nexus built a Google Glass AR platform that reduced factory downtime by 60% for Fortune 500 manufacturers.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://onpointnexus.com/semilynx">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="OnPoint Nexus">
+  <meta property="og:url" content="https://onpointnexus.com/semilynx">
+  <meta property="og:title" content="Semilynx — Case Study | OnPoint Nexus">
+  <meta property="og:description" content="Google Glass AR eliminated cross-country engineer travel. Factory downtime down 60%. Built by OnPoint in 38 days.">
+  <meta property="og:image" content="https://onpointnexus.com/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#1ABADC', 'primary-dim': '#0e8aaa', surface: '#0c1324', 'surface-card': '#141c2e', 'surface-high': '#1a2440', 'surface-low': '#0a1020', 'on-surface': '#E8EDF5', 'on-surface-dim': '#9AAFC8', 'on-surface-muted': '#5A7494' }, fontFamily: { headline: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"Roboto Mono"', 'monospace'] } } }
+    }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N2WCZPCE46');</script>
+  <style>
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:#0c1324;color:#E8EDF5;}
+    .neural-grid{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(circle,rgba(26,186,220,0.07) 1px,transparent 1px);background-size:32px 32px;}
+    .glow-blob{position:absolute;border-radius:50%;filter:blur(120px);opacity:0.07;pointer-events:none;}
+    .grad-text{background:linear-gradient(135deg,#1ABADC 0%,#a78bfa 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal.in-view{opacity:1;transform:translateY(0);}
+    .stat-card{position:relative;overflow:hidden;}
+    .stat-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(26,186,220,0.04) 50%,transparent 60%);transform:translateX(-100%);transition:transform 0.8s ease;}
+    .stat-card:hover::after{transform:translateX(100%);}
+  </style>
+</head>
+<body>
+
+<nav class="sticky top-0 z-50 border-b border-white/[0.06]" style="background:rgba(12,19,36,0.95);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/"><img src="logo-wordmark.png" alt="OnPoint Nexus" class="h-8 w-auto"></a>
+    <div class="flex items-center gap-6">
+      <a href="/#work" class="text-sm text-on-surface-dim hover:text-primary transition-colors flex items-center gap-1.5">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to Work
+      </a>
+      <a href="/#contact" class="px-4 py-2 rounded-lg bg-primary text-surface font-semibold text-sm hover:bg-primary-dim transition-colors">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<section class="relative min-h-[70vh] flex items-center overflow-hidden" style="background:linear-gradient(180deg,#0e1628 0%,#0c1324 100%);">
+  <div class="neural-grid"></div>
+  <div class="glow-blob w-[700px] h-[700px] bg-primary" style="top:-200px;right:-200px;"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 py-24">
+    <div class="max-w-4xl">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest">Case Study</span>
+        <span class="text-on-surface-muted/40">·</span>
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest">Industrial AR · Fortune 500</span>
+      </div>
+      <h1 class="font-headline font-bold text-on-surface leading-[1.1] mb-6" style="font-size:clamp(2.5rem,6vw,4.5rem);letter-spacing:-0.03em;">
+        <span class="grad-text">Semilynx</span>
+      </h1>
+      <p class="text-on-surface-dim text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
+        Fortune 500 factories were flying engineers across the country for every breakdown. We gave their technicians Google Glass — and eliminated it entirely.
+      </p>
+      <div class="flex flex-wrap gap-4 mb-12">
+        <div class="stat-card px-6 py-4 rounded-2xl bg-surface-card border border-primary/10">
+          <div class="text-3xl font-headline font-black text-primary mb-0.5">60%</div>
+          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">Downtime Reduction</div>
+        </div>
+        <div class="stat-card px-6 py-4 rounded-2xl bg-surface-card border border-white/[0.06]">
+          <div class="text-3xl font-headline font-black text-on-surface mb-0.5">38</div>
+          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">Days to MVP</div>
+        </div>
+        <div class="stat-card px-6 py-4 rounded-2xl bg-surface-card border border-white/[0.06]">
+          <div class="text-3xl font-headline font-black text-on-surface mb-0.5">0</div>
+          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">Cross-Country Flights Since Deploy</div>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <span class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest mr-2 self-center">Stack:</span>
+        <span class="px-3 py-1 rounded-lg bg-surface-high border border-white/[0.06] text-on-surface-muted text-xs font-mono">WebRTC</span>
+        <span class="px-3 py-1 rounded-lg bg-surface-high border border-white/[0.06] text-on-surface-muted text-xs font-mono">Google Glass</span>
+        <span class="px-3 py-1 rounded-lg bg-surface-high border border-white/[0.06] text-on-surface-muted text-xs font-mono">Azure IoT</span>
+        <span class="px-3 py-1 rounded-lg bg-surface-high border border-white/[0.06] text-on-surface-muted text-xs font-mono">Python</span>
+        <span class="px-3 py-1 rounded-lg bg-surface-high border border-white/[0.06] text-on-surface-muted text-xs font-mono">React</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="relative -mt-1">
+  <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1400&q=85" alt="Semilynx Google Glass AR platform" class="w-full h-[420px] md:h-[540px] object-cover" loading="eager">
+  <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
+</div>
+
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div class="reveal">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest block mb-4">The Challenge</span>
+        <h2 class="font-headline text-2xl md:text-3xl font-bold text-on-surface mb-5 leading-tight">$180K/month in avoidable engineer travel — and rising.</h2>
+        <p class="text-on-surface-dim leading-relaxed mb-5">When a critical machine fails on a Fortune 500 factory floor, a specialist flies in. The round-trip alone costs $8,000–$15,000 before a single bolt is turned. For Semilynx's enterprise clients, this was happening multiple times per month across dozens of facilities.</p>
+        <p class="text-on-surface-dim leading-relaxed">Every hour of downtime cost significantly more than the travel itself. The real stakes: competitive manufacturing lines that couldn't afford to wait 24 hours for a specialist to land.</p>
+      </div>
+      <div class="reveal" style="transition-delay:0.15s">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest block mb-4">Why OnPoint Nexus</span>
+        <h2 class="font-headline text-2xl md:text-3xl font-bold text-on-surface mb-5 leading-tight">The only team that had shipped on Glass before.</h2>
+        <p class="text-on-surface-dim leading-relaxed mb-5">Google Glass Enterprise development requires deep specialisation — most agencies had never touched the platform. OnPoint's AR engineering team had existing production experience and proposed a working prototype architecture on day one.</p>
+        <div class="p-5 rounded-xl bg-surface-card border border-primary/[0.08]">
+          <p class="text-on-surface-dim text-sm leading-relaxed italic">"Every other vendor quoted 6 months. OnPoint committed to MVP in 38 days — and delivered it in 36."</p>
+          <p class="text-on-surface-muted text-xs font-mono mt-3">— Engineering director, Semilynx</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 bg-surface-card border-t border-white/[0.05]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+      <span class="text-[10px] font-mono text-primary uppercase tracking-widest block mb-4">What We Built</span>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight">Remote expert eyes, live on the factory floor.</h2>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+      <div class="reveal p-7 rounded-2xl bg-surface border border-white/[0.06] hover:border-primary/[0.12] transition-colors">
+        <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1ABADC" stroke-width="1.5" stroke-linecap="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.9L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        </div>
+        <h3 class="font-headline font-bold text-on-surface mb-2">Live Video + Annotation</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed">Sub-200ms WebRTC streaming from Google Glass to a remote expert console. Experts draw annotations directly onto the technician's field of view in real time.</p>
+      </div>
+      <div class="reveal p-7 rounded-2xl bg-surface border border-white/[0.06] hover:border-primary/[0.12] transition-colors" style="transition-delay:.1s">
+        <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1ABADC" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3 class="font-headline font-bold text-on-surface mb-2">Expert Remote Console</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed">Web-based dashboard for remote specialists — live video feed, two-way audio, annotation tools, session recording, and machine diagnostic data overlay.</p>
+      </div>
+      <div class="reveal p-7 rounded-2xl bg-surface border border-white/[0.06] hover:border-primary/[0.12] transition-colors" style="transition-delay:.2s">
+        <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1ABADC" stroke-width="1.5" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        </div>
+        <h3 class="font-headline font-bold text-on-surface mb-2">IoT Diagnostics Bridge</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed">Azure IoT integration pulls live machine sensor data into the session — temperature, pressure, error codes — displayed as an AR overlay on the Glass screen.</p>
+      </div>
+    </div>
+    <div class="reveal max-w-3xl mx-auto">
+      <div class="p-8 rounded-2xl bg-surface border border-white/[0.06]">
+        <h3 class="font-headline font-bold text-on-surface mb-4">The Hard Part</h3>
+        <p class="text-on-surface-dim leading-relaxed">Achieving sub-200ms WebRTC latency from Google Glass — operating on patchy industrial WiFi — to a remote expert console. Factory environments are RF-hostile: metal structures, competing machinery, and variable signal strength. We built a custom adaptive bitrate algorithm and connection resilience layer that maintains session continuity even through 2-second signal drops.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest block mb-4">The Results</span>
+        <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-8 leading-tight">Downtime cut by 60%. Zero flights since deployment.</h2>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3"><span class="text-primary font-mono text-sm mt-0.5 shrink-0">·</span><span class="text-on-surface-dim leading-relaxed">60% reduction in factory downtime across all client facilities</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary font-mono text-sm mt-0.5 shrink-0">·</span><span class="text-on-surface-dim leading-relaxed">Zero cross-country specialist flights since platform deployment</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary font-mono text-sm mt-0.5 shrink-0">·</span><span class="text-on-surface-dim leading-relaxed">Average resolution time reduced from 26 hours to under 4 hours</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary font-mono text-sm mt-0.5 shrink-0">·</span><span class="text-on-surface-dim leading-relaxed">99.97% platform uptime across 18 months of production operation</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary font-mono text-sm mt-0.5 shrink-0">·</span><span class="text-on-surface-dim leading-relaxed">Expanded to 8 additional enterprise client facilities in year two</span></li>
+        </ul>
+      </div>
+      <div class="reveal grid grid-cols-2 gap-4" style="transition-delay:.15s">
+        <div class="stat-card p-7 rounded-2xl bg-surface-card border border-primary/10 text-center">
+          <div class="text-5xl font-headline font-black text-primary mb-2">60%</div>
+          <div class="text-xs text-on-surface-muted font-mono uppercase tracking-wider">Less Downtime</div>
+        </div>
+        <div class="stat-card p-7 rounded-2xl bg-surface-card border border-white/[0.06] text-center">
+          <div class="text-5xl font-headline font-black text-on-surface mb-2">38</div>
+          <div class="text-xs text-on-surface-muted font-mono uppercase tracking-wider">Days to MVP</div>
+        </div>
+        <div class="stat-card col-span-2 p-7 rounded-2xl bg-surface-card border border-white/[0.06] text-center">
+          <div class="text-4xl font-headline font-black text-on-surface mb-2">99.97%</div>
+          <div class="text-xs text-on-surface-muted font-mono uppercase tracking-wider">Platform Uptime</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-surface-card border-t border-white/[0.05]">
+  <div class="max-w-4xl mx-auto px-6 reveal">
+    <div class="relative p-10 md:p-14 rounded-2xl border border-primary/[0.08]" style="background:rgba(20,28,46,0.8)">
+      <div class="absolute top-6 right-8 text-[8rem] font-serif leading-none text-primary/[0.06] select-none pointer-events-none">"</div>
+      <div class="relative z-10">
+        <blockquote class="text-xl md:text-2xl font-headline font-medium text-on-surface leading-[1.6] mb-8">"Our engineers were flying across the country for every factory breakdown. OnPoint's Google Glass solution eliminated that entirely — and cut downtime by 60%. Remarkable execution."</blockquote>
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-full bg-primary/15 border border-primary/20 flex items-center justify-center shrink-0">
+            <span class="text-primary font-bold font-headline text-sm">DM</span>
+          </div>
+          <div>
+            <p class="font-semibold text-on-surface text-sm">David M.</p>
+            <p class="text-on-surface-muted text-xs font-mono">VP Operations · Semilynx, USA</p>
+          </div>
+          <span class="ml-auto px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[9px] font-mono uppercase tracking-wider hidden sm:block">Industrial AR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-28 bg-surface relative overflow-hidden">
+  <div class="glow-blob w-[600px] h-[600px] bg-primary" style="top:-200px;left:50%;transform:translateX(-50%);position:absolute;"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-6 text-center reveal">
+    <span class="text-[10px] font-mono text-primary uppercase tracking-widest block mb-4">Start a Project</span>
+    <h2 class="font-headline font-bold text-on-surface leading-[1.1] mb-6" style="font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-0.03em;">Ready to build something like this?</h2>
+    <p class="text-on-surface-dim text-lg mb-10 max-w-xl mx-auto leading-relaxed">If the problem is hard and the stakes are high, we're the right team. Discovery call is 30 minutes — no pitch deck, just engineers.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/#contact" class="px-8 py-4 rounded-xl font-bold text-surface text-sm transition-all hover:opacity-90 hover:-translate-y-0.5" style="background:#1ABADC;">Book a Discovery Call →</a>
+      <a href="/#work" class="px-8 py-4 rounded-xl font-semibold text-on-surface-dim text-sm border border-white/[0.07] bg-surface-card hover:border-primary/[0.2] hover:text-on-surface transition-all">← Back to All Work</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-surface-card border-t border-white/[0.06] py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+      <div class="col-span-2 md:col-span-1">
+        <img src="logo-icon.png" alt="OnPoint Nexus" class="h-14 w-auto mb-4" style="mix-blend-mode:screen;">
+        <p class="text-on-surface-muted text-xs leading-relaxed mb-4">AI-First Enterprise Technology Partner. Discovery to production in 45 days.</p>
+        <p class="text-on-surface-muted text-xs font-mono">Pune · Kolhapur · Dallas<br>Toronto · Frankfurt · Dubai</p>
+      </div>
+      <div>
+        <p class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest mb-4">Solutions</p>
+        <ul class="space-y-2">
+          <li><a href="/#services" class="text-on-surface-muted text-xs hover:text-primary transition-colors">AI & Machine Learning</a></li>
+          <li><a href="/#services" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Cloud & DevOps</a></li>
+          <li><a href="/#services" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Custom Software</a></li>
+          <li><a href="/#services" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Enterprise Solutions</a></li>
+          <li><a href="/#services" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Staff Augmentation</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest mb-4">Company</p>
+        <ul class="space-y-2">
+          <li><a href="/#about" class="text-on-surface-muted text-xs hover:text-primary transition-colors">About Us</a></li>
+          <li><a href="/#work" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Case Studies</a></li>
+          <li><a href="/#verticals" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Industries</a></li>
+          <li><a href="/#testimonials" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Testimonials</a></li>
+          <li><a href="/#contact" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest mb-4">Connect</p>
+        <ul class="space-y-2">
+          <li><a href="mailto:hello@onpointnexus.com" class="text-on-surface-muted text-xs hover:text-primary transition-colors">hello@onpointnexus.com</a></li>
+          <li><a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-on-surface-muted text-xs hover:text-primary transition-colors">LinkedIn</a></li>
+          <li><a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Instagram</a></li>
+          <li><a href="/privacy-policy" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/[0.05] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-on-surface-muted text-xs font-mono">© 2026 OnPoint Nexus Pvt. Ltd. All rights reserved.</p>
+      <a href="/#work" class="text-on-surface-muted text-xs font-mono hover:text-primary transition-colors">← All Case Studies</a>
+    </div>
+  </div>
+</footer>
+<script>
+  if(window.IntersectionObserver){const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');o.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(e=>o.observe(e))}else{document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in-view'))}
+</script>
+</body>
+</html>

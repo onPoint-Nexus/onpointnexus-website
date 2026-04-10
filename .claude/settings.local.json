@@ -6,7 +6,12 @@
       "Bash(cp \"/Users/vikas/Documents/OPSS/Marketing Material/New Logo/Light_Background_png.png\" \"/Users/vikas/Documents/OPSS/Claude Cowork/OnPoint Website/logo-light.png\")",
       "Bash(cp \"/Users/vikas/Documents/OPSS/Marketing Material/New Logo/favicon.png\" \"/Users/vikas/Documents/OPSS/Claude Cowork/OnPoint Website/favicon.png\")",
       "Bash(npx --yes serve -p 3456)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(vercel whoami:*)",
+      "Bash(sips -g pixelWidth -g pixelHeight logo-dark.png logo-light.png favicon.png)",
+      "Bash(convert --version)",
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=\"og-image.png\" --window-size=1200,630 --hide-scrollbars \"og-image-template.html\")"
     ]
   }
 }

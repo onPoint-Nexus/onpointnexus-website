@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battista by Pininfarina — Case Study | OnPoint Nexus</title>
+  <meta name="description" content="How OnPoint Nexus built the AR companion app for the world's most powerful road-legal electric vehicle — the Pininfarina Battista. Delivered in 45 days.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://onpointnexus.com/pininfarina">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="OnPoint Nexus">
+  <meta property="og:url"         content="https://onpointnexus.com/pininfarina">
+  <meta property="og:title"       content="Battista by Pininfarina — Case Study | OnPoint Nexus">
+  <meta property="og:description" content="AR companion app for the world's most powerful road-legal EV. Delivered in 45 days.">
+  <meta property="og:image"       content="https://onpointnexus.com/og-image.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1ABADC',
+            'primary-dim': '#0e8aaa',
+            surface: '#0c1324',
+            'surface-card': '#141c2e',
+            'surface-high': '#1a2440',
+            'surface-low': '#0a1020',
+            'on-surface': '#E8EDF5',
+            'on-surface-dim': '#9AAFC8',
+            'on-surface-muted': '#5A7494',
+          },
+          fontFamily: {
+            headline: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Roboto Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N2WCZPCE46');
+  </script>
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0c1324; color: #E8EDF5; }
+
+    /* Neural dot grid */
+    .neural-grid {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(26,186,220,0.07) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Glow blob */
+    .glow-blob {
+      position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.07; pointer-events: none;
+    }
+
+    /* Grad text */
+    .grad-text {
+      background: linear-gradient(135deg, #1ABADC 0%, #a78bfa 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    /* Stat card shimmer */
+    .stat-card { position: relative; overflow: hidden; }
+    .stat-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, transparent 40%, rgba(26,186,220,0.04) 50%, transparent 60%);
+      transform: translateX(-100%); transition: transform 0.8s ease;
+    }
+    .stat-card:hover::after { transform: translateX(100%); }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════════════════════ -->
+<nav class="sticky top-0 z-50 border-b border-white/[0.06]" style="background:rgba(12,19,36,0.95);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center">
+      <img src="logo-wordmark.png" alt="OnPoint Nexus" class="h-8 w-auto">
+    </a>
+    <div class="flex items-center gap-6">
+      <a href="/#work" class="text-sm text-on-surface-dim hover:text-primary transition-colors flex items-center gap-1.5">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to Work
+      </a>
+      <a href="/#contact" class="px-4 py-2 rounded-lg bg-primary text-surface font-semibold text-sm hover:bg-primary-dim transition-colors">
+        Book a Call
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ══════════════════════════════════════════════════════ -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden" style="background: linear-gradient(180deg, #0e1628 0%, #0c1324 100%);">
+  <div class="neural-grid"></div>
+  <div class="glow-blob w-[700px] h-[700px] bg-primary" style="top:-200px;right:-200px;"></div>
+  <div class="glow-blob w-[400px] h-[400px]" style="background:#7c3aed;bottom:-100px;left:-100px;opacity:0.05;"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 py-24">
+    <div class="max-w-4xl">
+      <!-- Breadcrumb eyebrow -->
+      <div class="flex items-center gap-2 mb-6">
+        <span class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest">Case Study</span>
+        <span class="text-on-surface-muted/40">·</span>
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest">Automotive AR · Germany</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="font-headline font-bold text-on-surface leading-[1.1] mb-6" style="font-size:clamp(2.5rem,6vw,4.5rem);letter-spacing:-0.03em;">
+        Battista by<br><span class="grad-text">Pininfarina</span>
+      </h1>
+
+      <!-- Sub -->
+      <p class="text-on-surface-dim text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
+        The AR companion app for the world's most powerful road-legal electric vehicle — 1,900hp, zero-to-100 in under 2 seconds, built by OnPoint in 45 days.
+      </p>
+
+      <!-- Stat pills row -->
+      <div class="flex flex-wrap gap-4 mb-12">
+        <div class="stat-card px-6 py-4 rounded-2xl bg-surface-card border border-primary/10">
+          <div class="text-3xl font-headline font-black text-primary mb-0.5">#1</div>
+          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">AR Experience</div>
+        </div>
+        <div class="stat-card px-6 py-4 rounded-2xl bg-surface-card border border-white/[0.06]">
+          <div class="text-3xl font-headline font-black text-on-surface mb-0.5">45</div>
+          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">Days to Launch</div>
+        </div>
+        <div class="stat-card px-6 py-4 rounded-2xl bg-surface-card border border-white/[0.06]">
+          <div class="text-3xl font-headline font-black text-on-surface mb-0.5">1,900hp</div>
+          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">World's Most Powerful EV</div>
+        </div>
+      </div>
+
+      <!-- Stack badges -->
+      <div class="flex flex-wrap gap-2">
+        <span class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest mr-2 self-center">Stack:</span>
+        <span class="px-3 py-1 rounded-lg bg-surface-high border border-white/[0.06] text-on-surface-muted text-xs font-mono">Flutter</span>
+        <span class="px-3 py-1 rounded-lg bg-surface-high border border-white/[0.06] text-on-surface-muted text-xs font-mono">ARKit</span>
+        <span class="px-3 py-1 rounded-lg bg-surface-high border border-white/[0.06] text-on-surface-muted text-xs font-mono">Firebase</span>
+        <span class="px-3 py-1 rounded-lg bg-surface-high border border-white/[0.06] text-on-surface-muted text-xs font-mono">IoT</span>
+        <span class="px-3 py-1 rounded-lg bg-surface-high border border-white/[0.06] text-on-surface-muted text-xs font-mono">iOS · Android</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HERO IMAGE ══════════════════════════════════════════════ -->
+<div class="relative -mt-1">
+  <img
+    src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=1400&q=85"
+    alt="Battista by Pininfarina AR experience"
+    class="w-full h-[420px] md:h-[540px] object-cover"
+    loading="eager"
+  >
+  <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
+</div>
+
+<!-- ═══ OVERVIEW ═══════════════════════════════════════════════════ -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+      <!-- Challenge -->
+      <div class="reveal">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest block mb-4">The Challenge</span>
+        <h2 class="font-headline text-2xl md:text-3xl font-bold text-on-surface mb-5 leading-tight">
+          A 1,900hp hypercar needed a digital experience to match.
+        </h2>
+        <p class="text-on-surface-dim leading-relaxed mb-5">
+          Pininfarina evaluated agencies across Europe before selecting OnPoint Nexus. The Battista — the world's most powerful road-legal electric vehicle — was their most prestigious launch in decades. The AR companion app had to live up to that legacy at every auto show worldwide.
+        </p>
+        <p class="text-on-surface-dim leading-relaxed">
+          The stakes were high: the app would be the first digital touchpoint for potential buyers spending over $2M on a car. A generic app experience would undermine the entire brand. Pininfarina needed something they genuinely didn't think was buildable in the timeline they had.
+        </p>
+      </div>
+
+      <!-- Why OnPoint -->
+      <div class="reveal" style="transition-delay:0.15s">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest block mb-4">Why OnPoint Nexus</span>
+        <h2 class="font-headline text-2xl md:text-3xl font-bold text-on-surface mb-5 leading-tight">
+          Chosen over agencies in Munich, Milan, and London.
+        </h2>
+        <p class="text-on-surface-dim leading-relaxed mb-5">
+          OnPoint's Flutter and AR engineering team demonstrated a working prototype concept in the first discovery call — before the contract was signed. That engineering-first approach, combined with a clear 45-day delivery commitment, differentiated us from every other agency in the room.
+        </p>
+        <div class="p-5 rounded-xl bg-surface-card border border-primary/[0.08]">
+          <p class="text-on-surface-dim text-sm leading-relaxed italic">
+            "They were the only team that came prepared with a technical proposal rather than a capabilities deck. That told us everything we needed to know."
+          </p>
+          <p class="text-on-surface-muted text-xs font-mono mt-3">— Procurement decision, Pininfarina Digital</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOLUTION ════════════════════════════════════════════════════ -->
+<section class="py-24 bg-surface-card border-t border-white/[0.05]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+      <span class="text-[10px] font-mono text-primary uppercase tracking-widest block mb-4">What We Built</span>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight">
+        An AR ownership experience<br>as extraordinary as the car itself.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+      <div class="reveal p-7 rounded-2xl bg-surface border border-white/[0.06] hover:border-primary/[0.12] transition-colors">
+        <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1ABADC" stroke-width="1.5" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 class="font-headline font-bold text-on-surface mb-2">3D AR Model Viewer</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed">Photo-realistic AR rendering of the Battista — place the car in any physical space, rotate, zoom, and explore every angle with millimeter-accurate scale.</p>
+      </div>
+      <div class="reveal p-7 rounded-2xl bg-surface border border-white/[0.06] hover:border-primary/[0.12] transition-colors" style="transition-delay:.1s">
+        <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1ABADC" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3 class="font-headline font-bold text-on-surface mb-2">Spec Explorer</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed">Interactive deep-dive into every performance metric, powertrain detail, and customisation option — designed to hold a buyer's attention for an entire auto show visit.</p>
+      </div>
+      <div class="reveal p-7 rounded-2xl bg-surface border border-white/[0.06] hover:border-primary/[0.12] transition-colors" style="transition-delay:.2s">
+        <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1ABADC" stroke-width="1.5" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3 class="font-headline font-bold text-on-surface mb-2">Ownership Experience Layer</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed">Exclusive content, delivery tracking, and owner community features — designed to maintain brand engagement from purchase deposit through delivery day.</p>
+      </div>
+    </div>
+
+    <div class="reveal max-w-3xl mx-auto">
+      <div class="p-8 rounded-2xl bg-surface border border-white/[0.06]">
+        <h3 class="font-headline font-bold text-on-surface mb-4">The Hard Part</h3>
+        <p class="text-on-surface-dim leading-relaxed">
+          Achieving photorealistic AR rendering of a 1,900hp hypercar on a mobile device — in real-time — without specialist AR hardware. The Battista's bodywork has complex curved surfaces and deep reflective carbon fibre panels that had never been captured in AR at this fidelity. Our engineers solved it through custom shader work and an optimised 3D asset pipeline built specifically for the Flutter/ARKit bridge.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESULTS ══════════════════════════════════════════════════════ -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Results list -->
+      <div class="reveal">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest block mb-4">The Results</span>
+        <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-8 leading-tight">
+          The most-discussed digital touchpoint at every auto show.
+        </h2>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="text-primary font-mono text-sm mt-0.5 shrink-0">·</span>
+            <span class="text-on-surface-dim leading-relaxed">Featured at Paris, Geneva, and Pebble Beach auto shows worldwide</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary font-mono text-sm mt-0.5 shrink-0">·</span>
+            <span class="text-on-surface-dim leading-relaxed">Named most-discussed digital touchpoint by Pininfarina's digital team</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary font-mono text-sm mt-0.5 shrink-0">·</span>
+            <span class="text-on-surface-dim leading-relaxed">Delivered in the committed 45-day timeline — no scope reduction</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary font-mono text-sm mt-0.5 shrink-0">·</span>
+            <span class="text-on-surface-dim leading-relaxed">Live on App Store and Google Play across 12 markets</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary font-mono text-sm mt-0.5 shrink-0">·</span>
+            <span class="text-on-surface-dim leading-relaxed">Used by Pininfarina sales team in every one-on-one buyer consultation</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="reveal grid grid-cols-2 gap-4" style="transition-delay:.15s">
+        <div class="stat-card p-7 rounded-2xl bg-surface-card border border-primary/10 text-center">
+          <div class="text-5xl font-headline font-black text-primary mb-2">#1</div>
+          <div class="text-xs text-on-surface-muted font-mono uppercase tracking-wider">Luxury AR App</div>
+        </div>
+        <div class="stat-card p-7 rounded-2xl bg-surface-card border border-white/[0.06] text-center">
+          <div class="text-5xl font-headline font-black text-on-surface mb-2">45</div>
+          <div class="text-xs text-on-surface-muted font-mono uppercase tracking-wider">Days Delivered</div>
+        </div>
+        <div class="stat-card col-span-2 p-7 rounded-2xl bg-surface-card border border-white/[0.06] text-center">
+          <div class="text-4xl font-headline font-black text-on-surface mb-2">1,900hp</div>
+          <div class="text-xs text-on-surface-muted font-mono uppercase tracking-wider">World's Most Powerful Road-Legal EV</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUOTE ════════════════════════════════════════════════════════ -->
+<section class="py-20 bg-surface-card border-t border-white/[0.05]">
+  <div class="max-w-4xl mx-auto px-6 reveal">
+    <div class="relative p-10 md:p-14 rounded-2xl border border-primary/[0.08]" style="background:rgba(20,28,46,0.8)">
+      <!-- Large decorative quote -->
+      <div class="absolute top-6 right-8 text-[8rem] font-serif leading-none text-primary/[0.06] select-none pointer-events-none">"</div>
+      <div class="relative z-10">
+        <blockquote class="text-xl md:text-2xl font-headline font-medium text-on-surface leading-[1.6] mb-8">
+          "The Battista AR experience became our most-discussed digital touchpoint at every auto show. OnPoint delivered something we genuinely didn't think was possible in the timeline they committed to."
+        </blockquote>
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-full bg-primary/15 border border-primary/20 flex items-center justify-center shrink-0">
+            <span class="text-primary font-bold font-headline text-sm">AC</span>
+          </div>
+          <div>
+            <p class="font-semibold text-on-surface text-sm">Andrea C.</p>
+            <p class="text-on-surface-muted text-xs font-mono">Head of Digital · Pininfarina, Germany</p>
+          </div>
+          <span class="ml-auto px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[9px] font-mono uppercase tracking-wider hidden sm:block">Automotive · AR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEXT CTA ══════════════════════════════════════════════════════ -->
+<section class="py-28 bg-surface relative overflow-hidden">
+  <div class="glow-blob w-[600px] h-[600px] bg-primary" style="top:-200px;left:50%;transform:translateX(-50%);position:absolute;"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-6 text-center reveal">
+    <span class="text-[10px] font-mono text-primary uppercase tracking-widest block mb-4">Start a Project</span>
+    <h2 class="font-headline font-bold text-on-surface leading-[1.1] mb-6" style="font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-0.03em;">
+      Ready to build something<br>like this?
+    </h2>
+    <p class="text-on-surface-dim text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+      If the problem is hard and the stakes are high, we're the right team. Discovery call is 30 minutes — no pitch deck, just engineers.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/#contact" class="px-8 py-4 rounded-xl font-bold text-surface text-sm transition-all hover:opacity-90 hover:-translate-y-0.5" style="background:#1ABADC;">
+        Book a Discovery Call →
+      </a>
+      <a href="/#work" class="px-8 py-4 rounded-xl font-semibold text-on-surface-dim text-sm border border-white/[0.07] bg-surface-card hover:border-primary/[0.2] hover:text-on-surface transition-all">
+        ← Back to All Work
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ══════════════════════════════════════════════════════ -->
+<footer class="bg-surface-card border-t border-white/[0.06] py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+      <!-- Brand -->
+      <div class="col-span-2 md:col-span-1">
+        <img src="logo-icon.png" alt="OnPoint Nexus" class="h-14 w-auto mb-4" style="mix-blend-mode:screen;">
+        <p class="text-on-surface-muted text-xs leading-relaxed mb-4">AI-First Enterprise Technology Partner. Discovery to production in 45 days.</p>
+        <p class="text-on-surface-muted text-xs font-mono">Pune · Kolhapur · Dallas<br>Toronto · Frankfurt · Dubai</p>
+      </div>
+      <!-- Solutions -->
+      <div>
+        <p class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest mb-4">Solutions</p>
+        <ul class="space-y-2">
+          <li><a href="/#services" class="text-on-surface-muted text-xs hover:text-primary transition-colors">AI & Machine Learning</a></li>
+          <li><a href="/#services" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Cloud & DevOps</a></li>
+          <li><a href="/#services" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Custom Software</a></li>
+          <li><a href="/#services" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Enterprise Solutions</a></li>
+          <li><a href="/#services" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Staff Augmentation</a></li>
+        </ul>
+      </div>
+      <!-- Company -->
+      <div>
+        <p class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest mb-4">Company</p>
+        <ul class="space-y-2">
+          <li><a href="/#about" class="text-on-surface-muted text-xs hover:text-primary transition-colors">About Us</a></li>
+          <li><a href="/#work" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Case Studies</a></li>
+          <li><a href="/#verticals" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Industries</a></li>
+          <li><a href="/#testimonials" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Testimonials</a></li>
+          <li><a href="/#contact" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Connect -->
+      <div>
+        <p class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest mb-4">Connect</p>
+        <ul class="space-y-2">
+          <li><a href="mailto:hello@onpointnexus.com" class="text-on-surface-muted text-xs hover:text-primary transition-colors">hello@onpointnexus.com</a></li>
+          <li><a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-on-surface-muted text-xs hover:text-primary transition-colors">LinkedIn</a></li>
+          <li><a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Instagram</a></li>
+          <li><a href="/privacy-policy" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms" class="text-on-surface-muted text-xs hover:text-primary transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/[0.05] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-on-surface-muted text-xs font-mono">© 2026 OnPoint Nexus Pvt. Ltd. All rights reserved.</p>
+      <a href="/#work" class="text-on-surface-muted text-xs font-mono hover:text-primary transition-colors">← All Case Studies</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  if (window.IntersectionObserver) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+  }
+</script>
+</body>
+</html>
