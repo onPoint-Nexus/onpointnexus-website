@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background: #0c1324;
+    color: #E8EDF5;
+    position: relative;
+  }
+
+  /* Neural dot grid */
+  .grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(26,186,220,0.12) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  /* Glow blobs */
+  .blob1 {
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(26,186,220,0.15) 0%, transparent 70%);
+    top: -100px; left: -100px;
+    border-radius: 50%;
+  }
+  .blob2 {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(26,186,220,0.08) 0%, transparent 70%);
+    bottom: -80px; right: -80px;
+    border-radius: 50%;
+  }
+
+  /* Content */
+  .content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 52px 64px;
+  }
+
+  /* Top row */
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .logo-text span { color: #1ABADC; }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border: 1px solid rgba(26,186,220,0.25);
+    border-radius: 999px;
+    background: rgba(26,186,220,0.08);
+    font-size: 11px;
+    font-weight: 600;
+    color: #1ABADC;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .dot {
+    width: 6px; height: 6px;
+    background: #1ABADC;
+    border-radius: 50%;
+  }
+
+  /* Headline */
+  .headline {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  h1 {
+    font-size: 68px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #E8EDF5;
+    margin-bottom: 20px;
+  }
+  h1 .cyan {
+    background: linear-gradient(135deg, #1ABADC 0%, #6DCFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .sub {
+    font-size: 20px;
+    color: #8A9BB5;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 640px;
+  }
+
+  /* Bottom row */
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .stats {
+    display: flex;
+    gap: 40px;
+  }
+  .stat {}
+  .stat-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1ABADC;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: #4A5A72;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .divider-v {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,0.08);
+  }
+  .cta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: #1ABADC;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0c1324;
+    letter-spacing: 0.01em;
+  }
+  .cta-arrow {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  /* Divider line top of bottom section */
+  .bottom-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin-bottom: 24px;
+  }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="blob1"></div>
+  <div class="blob2"></div>
+
+  <div class="content">
+    <!-- Top -->
+    <div class="top">
+      <div class="logo-text"><span>on</span>Point Nexus</div>
+      <div class="badge"><div class="dot"></div>AI · Cloud · Enterprise Software</div>
+    </div>
+
+    <!-- Headline -->
+    <div class="headline">
+      <h1>While Others Pitch Decks,<br>We Ship Code.<br><span class="cyan">In 45 Days.</span></h1>
+      <p class="sub">AI, cloud &amp; enterprise software — built to run in production, not just demos.</p>
+    </div>
+
+    <!-- Bottom -->
+    <div>
+      <div class="bottom-divider"></div>
+      <div class="bottom">
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">130+</div>
+            <div class="stat-label">Projects Shipped</div>
+          </div>
+          <div class="divider-v"></div>
+          <div class="stat">
+            <div class="stat-num">98%</div>
+            <div class="stat-label">Client Retention</div>
+          </div>
+          <div class="divider-v"></div>
+          <div class="stat">
+            <div class="stat-num">45+</div>
+            <div class="stat-label">Tech Specialists</div>
+          </div>
+          <div class="divider-v"></div>
+          <div class="stat">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Global Regions</div>
+          </div>
+        </div>
+        <div class="cta">Book a Discovery Call <span class="cta-arrow">→</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
