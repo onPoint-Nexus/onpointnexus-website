@@ -311,6 +311,44 @@
     @media (prefers-reduced-motion: reduce) {
       .ticker-track { animation: none; }
     }
+    /* ── Hero animated background ─────────────────────────────── */
+    @keyframes heroBlob1 {
+      0%,100% { transform:translate(-50%,-60%) scale(1);   opacity:.055; }
+      33%     { transform:translate(-47%,-63%) scale(1.07); opacity:.075; }
+      66%     { transform:translate(-53%,-57%) scale(.96);  opacity:.042; }
+    }
+    @keyframes heroBlob2 {
+      0%,100% { transform:translate(0,0) scale(1);    opacity:.04;  }
+      50%     { transform:translate(-50px,70px) scale(1.14); opacity:.06; }
+    }
+    @keyframes heroBlob3 {
+      0%,100% { transform:translate(0,0) scale(1);   opacity:.025; }
+      50%     { transform:translate(40px,-60px) scale(1.1); opacity:.04; }
+    }
+    @keyframes gridPulse {
+      0%,100% { opacity:.18; }
+      50%     { opacity:.28; }
+    }
+    /* ── Hero chip ─────────────────────────────────────────────── */
+    .hero-chip {
+      display:inline-flex; align-items:center; gap:6px;
+      padding:6px 14px; border-radius:8px;
+      background:rgba(20,28,46,0.7);
+      border:1px solid rgba(255,255,255,0.09);
+      color:#9AAFC8; font-size:0.72rem; font-weight:600;
+      cursor:default; user-select:none;
+      transition:border-color .2s, color .2s, background .2s, box-shadow .2s;
+    }
+    .hero-chip:hover {
+      border-color:rgba(26,186,220,0.42);
+      color:#E8EDF5;
+      background:rgba(26,186,220,0.06);
+      box-shadow:0 0 18px rgba(26,186,220,0.14);
+    }
+    .hero-chip-dot {
+      width:5px; height:5px; border-radius:50%;
+      background:#1ABADC; opacity:.7; flex-shrink:0;
+    }
   </style>
 </head>
 
@@ -334,7 +372,7 @@
 <nav id="topNav" class="fixed top-10 left-0 right-0 z-50 px-4 mx-auto max-w-7xl" style="left:50%;transform:translateX(-50%);width:calc(100% - 2rem);">
   <div class="flex items-center justify-between px-5 py-2.5 rounded-full backdrop-blur-xl border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.5)]" style="background:rgba(17,24,39,0.82);">
     <a href="#hero" class="shrink-0">
-      <img src="logo-wordmark.png" alt="OnPoint Nexus" class="h-8 w-auto">
+      <img src="logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto">
     </a>
     <div class="hidden md:flex items-center gap-7 font-body text-sm">
       <a href="#services"  class="text-on-surface-dim hover:text-primary transition-colors duration-200">Services</a>
@@ -367,10 +405,14 @@
      01 — HERO
 ════════════════════════════════════════════════════════════ -->
 <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-36 pb-24">
-  <!-- Background -->
-  <div class="absolute inset-0 neural-grid opacity-20 pointer-events-none"></div>
-  <!-- Central ambient glow -->
-  <div class="glow-blob w-[800px] h-[800px] bg-primary/[0.055]" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);border-radius:9999px;filter:blur(120px);pointer-events:none;"></div>
+  <!-- Animated neural grid -->
+  <div class="absolute inset-0 neural-grid pointer-events-none" style="animation:gridPulse 9s ease-in-out infinite;opacity:.2;"></div>
+  <!-- Primary glow — drifts slowly -->
+  <div class="glow-blob" style="position:absolute;width:900px;height:900px;background:radial-gradient(circle,rgba(26,186,220,0.13) 0%,transparent 68%);top:50%;left:50%;animation:heroBlob1 15s ease-in-out infinite;pointer-events:none;"></div>
+  <!-- Secondary violet accent — drifts opposite -->
+  <div class="glow-blob" style="position:absolute;width:640px;height:640px;background:radial-gradient(circle,rgba(139,92,246,0.09) 0%,transparent 68%);bottom:-120px;right:-80px;animation:heroBlob2 20s ease-in-out infinite;pointer-events:none;"></div>
+  <!-- Tertiary top-left warmth -->
+  <div class="glow-blob" style="position:absolute;width:420px;height:420px;background:radial-gradient(circle,rgba(26,186,220,0.07) 0%,transparent 68%);top:-60px;left:-60px;animation:heroBlob3 25s ease-in-out infinite;pointer-events:none;"></div>
 
   <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
 
@@ -417,12 +459,14 @@
 
     <!-- Client trust strip -->
     <div>
-      <p class="text-[9px] text-on-surface-muted font-mono uppercase tracking-[0.18em] mb-3.5">Chosen over agencies in New York, London &amp; Dubai</p>
-      <div class="flex flex-wrap gap-2 justify-center">
-        <span class="px-3 py-1 rounded-lg bg-surface-card border border-white/[0.05] text-on-surface-muted text-[11px] font-medium hover:border-primary/[0.18] hover:text-on-surface-dim transition-colors">Mahindra</span>
-        <span class="px-3 py-1 rounded-lg bg-surface-card border border-white/[0.05] text-on-surface-muted text-[11px] font-medium hover:border-primary/[0.18] hover:text-on-surface-dim transition-colors">QuickHeal</span>
-        <span class="px-3 py-1 rounded-lg bg-surface-card border border-white/[0.05] text-on-surface-muted text-[11px] font-medium hover:border-primary/[0.18] hover:text-on-surface-dim transition-colors">Pininfarina</span>
-        <span class="px-3 py-1 rounded-lg bg-surface-card border border-white/[0.05] text-on-surface-muted text-[11px] font-medium hover:border-primary/[0.18] hover:text-on-surface-dim transition-colors">Maharashtra Gov.</span>
+      <p class="text-[10px] text-on-surface-muted font-mono uppercase tracking-[0.18em] mb-4">Chosen over agencies in New York, London &amp; Dubai</p>
+      <div class="flex flex-wrap gap-2.5 justify-center">
+        <span class="hero-chip"><span class="hero-chip-dot"></span>Mahindra</span>
+        <span class="hero-chip"><span class="hero-chip-dot"></span>QuickHeal</span>
+        <span class="hero-chip"><span class="hero-chip-dot"></span>Pininfarina</span>
+        <span class="hero-chip"><span class="hero-chip-dot"></span>Maharashtra Gov.</span>
+        <span class="hero-chip"><span class="hero-chip-dot"></span>Semilynx</span>
+        <span class="hero-chip"><span class="hero-chip-dot"></span>Vidanta</span>
       </div>
     </div>
   </div>
@@ -452,7 +496,7 @@
       <div class="text-[10px] uppercase tracking-widest text-on-surface-muted font-mono">Tech Specialists</div>
     </div>
     <div class="reveal space-y-2" style="transition-delay:.3s">
-      <div class="text-4xl md:text-5xl font-headline font-bold text-primary">4</div>
+      <div class="text-4xl md:text-5xl font-headline font-bold text-primary">6</div>
       <div class="text-[10px] uppercase tracking-widest text-on-surface-muted font-mono">Global Regions Served</div>
     </div>
   </div>
@@ -1166,7 +1210,7 @@
           We grew up solving<br>hard problems for<br>demanding clients.
         </h2>
         <p class="text-on-surface-dim leading-relaxed mb-8 text-lg">
-          In 2019 we started with a simple conviction: the best engineers in the world aren't concentrated in one city. Today, our Pune and Kolhapur teams build systems that run in hospitals, government offices, and luxury car showrooms from New York to Dubai. We don't outsource your project and manage it over email. We own it.
+          In 2019, we started with a simple conviction: the best engineers in the world aren't concentrated in one city. Today, our Pune and Kolhapur teams build systems that run in hospitals, government offices, and luxury car showrooms from New York to Dubai. We don't outsource your project and manage it over email. We own it.
         </p>
         <div class="grid grid-cols-3 gap-4 mb-10">
           <div class="text-center p-5 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.12] transition-colors">
@@ -1178,7 +1222,7 @@
             <div class="text-[10px] text-on-surface-muted font-mono uppercase tracking-wider">Tech Specialists</div>
           </div>
           <div class="text-center p-5 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.12] transition-colors">
-            <div class="text-3xl font-headline font-bold text-primary mb-1">5</div>
+            <div class="text-3xl font-headline font-bold text-primary mb-1">6</div>
             <div class="text-[10px] text-on-surface-muted font-mono uppercase tracking-wider">Global Regions</div>
           </div>
         </div>
@@ -1435,8 +1479,8 @@
       <div class="flex flex-wrap gap-5 justify-center">
         <a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">LinkedIn</a>
         <a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Instagram</a>
-        <a href="#" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Privacy Policy</a>
-        <a href="#" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Terms</a>
+        <a href="/privacy-policy" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Privacy Policy</a>
+        <a href="/terms" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Terms</a>
       </div>
     </div>
   </div>
