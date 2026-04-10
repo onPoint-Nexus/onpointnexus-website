@@ -285,7 +285,7 @@
       height: 1.35em;
       font-size: 0.7rem;
       font-family: 'Roboto Mono', monospace;
-      color: #4A5A72;
+      color: #7A94B0;
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
@@ -328,6 +328,38 @@
     @keyframes gridPulse {
       0%,100% { opacity:.18; }
       50%     { opacity:.28; }
+    }
+    /* ── Client marquee ───────────────────────────────────────── */
+    .marquee-track {
+      display: flex; gap: 14px; width: max-content;
+      animation: marqueeScroll 36s linear infinite;
+    }
+    .marquee-wrap { overflow: hidden; mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); }
+    .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .client-card {
+      display: inline-flex; flex-direction: column; align-items: flex-start;
+      padding: 13px 20px; border-radius: 12px; flex-shrink: 0;
+      background: rgba(20,28,46,0.75); border: 1px solid rgba(255,255,255,0.07);
+      cursor: default; white-space: nowrap;
+      transition: border-color .25s ease, background .25s ease, transform .25s ease;
+    }
+    .client-card:hover {
+      border-color: rgba(26,186,220,0.35);
+      background: rgba(26,186,220,0.05);
+      transform: translateY(-2px);
+    }
+    .client-card-name {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
+      font-size: 0.875rem; color: #C8D4E8; letter-spacing: -0.01em; line-height: 1;
+    }
+    .client-card-tag {
+      font-family: 'Roboto Mono', monospace; font-size: 0.6rem;
+      color: #1ABADC; text-transform: uppercase; letter-spacing: 0.1em;
+      margin-top: 5px; opacity: 0.75;
     }
     /* ── Hero chip ─────────────────────────────────────────────── */
     .hero-chip {
@@ -680,18 +712,28 @@
 <!-- ════════════════════════════════════════════════════════════
      05 — CLIENTS STRIP
 ════════════════════════════════════════════════════════════ -->
-<section id="clients" class="py-16 bg-surface border-t border-b border-white/5">
-  <div class="max-w-7xl mx-auto px-6">
-    <p class="text-center text-[10px] font-mono uppercase tracking-[0.2em] text-on-surface-muted mb-10">Trusted by teams at</p>
-    <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-5">
-      <span class="font-headline font-bold text-lg text-on-surface-muted opacity-40 hover:opacity-90 transition-opacity duration-300 cursor-default">Mahindra</span>
-      <span class="font-headline font-bold text-lg text-on-surface-muted opacity-40 hover:opacity-90 transition-opacity duration-300 cursor-default">QuickHeal</span>
-      <span class="font-headline font-bold text-lg text-on-surface-muted opacity-40 hover:opacity-90 transition-opacity duration-300 cursor-default">Pininfarina</span>
-      <span class="font-headline font-bold text-lg text-on-surface-muted opacity-40 hover:opacity-90 transition-opacity duration-300 cursor-default">Maharashtra Gov.</span>
-      <span class="font-headline font-bold text-lg text-on-surface-muted opacity-40 hover:opacity-90 transition-opacity duration-300 cursor-default">Semilynx</span>
-      <span class="font-headline font-bold text-lg text-on-surface-muted opacity-40 hover:opacity-90 transition-opacity duration-300 cursor-default">Vidanta</span>
-      <span class="font-headline font-bold text-lg text-on-surface-muted opacity-40 hover:opacity-90 transition-opacity duration-300 cursor-default">Clinical Trac</span>
-      <span class="font-headline font-bold text-lg text-on-surface-muted opacity-40 hover:opacity-90 transition-opacity duration-300 cursor-default">Open Houses Direct</span>
+<section id="clients" class="py-16 bg-surface border-t border-b border-white/[0.05]">
+  <p class="text-center text-[10px] font-mono uppercase tracking-[0.2em] text-on-surface-muted mb-10">Trusted by teams at</p>
+  <div class="marquee-wrap">
+    <div class="marquee-track px-2">
+      <!-- Set 1 -->
+      <div class="client-card"><span class="client-card-name">Mahindra</span><span class="client-card-tag">Automotive</span></div>
+      <div class="client-card"><span class="client-card-name">Pininfarina</span><span class="client-card-tag">Automotive · Germany</span></div>
+      <div class="client-card"><span class="client-card-name">QuickHeal</span><span class="client-card-tag">Cybersecurity · India</span></div>
+      <div class="client-card"><span class="client-card-name">Maharashtra Gov.</span><span class="client-card-tag">Government</span></div>
+      <div class="client-card"><span class="client-card-name">Semilynx</span><span class="client-card-tag">Industrial AR · USA</span></div>
+      <div class="client-card"><span class="client-card-name">Vidanta</span><span class="client-card-tag">Hospitality · Mexico</span></div>
+      <div class="client-card"><span class="client-card-name">Clinical Trac</span><span class="client-card-tag">HealthTech · USA</span></div>
+      <div class="client-card"><span class="client-card-name">Open Houses Direct</span><span class="client-card-tag">PropTech · USA</span></div>
+      <!-- Set 2 — duplicate for seamless loop -->
+      <div class="client-card"><span class="client-card-name">Mahindra</span><span class="client-card-tag">Automotive</span></div>
+      <div class="client-card"><span class="client-card-name">Pininfarina</span><span class="client-card-tag">Automotive · Germany</span></div>
+      <div class="client-card"><span class="client-card-name">QuickHeal</span><span class="client-card-tag">Cybersecurity · India</span></div>
+      <div class="client-card"><span class="client-card-name">Maharashtra Gov.</span><span class="client-card-tag">Government</span></div>
+      <div class="client-card"><span class="client-card-name">Semilynx</span><span class="client-card-tag">Industrial AR · USA</span></div>
+      <div class="client-card"><span class="client-card-name">Vidanta</span><span class="client-card-tag">Hospitality · Mexico</span></div>
+      <div class="client-card"><span class="client-card-name">Clinical Trac</span><span class="client-card-tag">HealthTech · USA</span></div>
+      <div class="client-card"><span class="client-card-name">Open Houses Direct</span><span class="client-card-tag">PropTech · USA</span></div>
     </div>
   </div>
 </section>
@@ -1456,7 +1498,7 @@
           <li><a href="#work"         class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Case Studies</a></li>
           <li><a href="#testimonials" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Client Stories</a></li>
           <li><a href="#verticals"    class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Industries</a></li>
-          <li><a href="mailto:hr@onpointnexus.com" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Careers</a></li>
+          <li><a href="mailto:hr@onpointsoft.com" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Careers</a></li>
         </ul>
       </div>
 
@@ -1465,7 +1507,7 @@
         <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Connect</h4>
         <ul class="space-y-3">
           <li><a href="mailto:hello@onpointnexus.com" class="text-on-surface-muted text-sm hover:text-primary transition-colors">hello@onpointnexus.com</a></li>
-          <li><a href="mailto:hr@onpointnexus.com" class="text-on-surface-muted text-sm hover:text-primary transition-colors">hr@onpointnexus.com</a></li>
+          <li><a href="mailto:hr@onpointsoft.com" class="text-on-surface-muted text-sm hover:text-primary transition-colors">hr@onpointsoft.com</a></li>
           <li><a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">LinkedIn</a></li>
           <li><a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Instagram</a></li>
           <li><a href="#engage" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Engagement Models</a></li>
