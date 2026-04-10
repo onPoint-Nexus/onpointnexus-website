@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study Submission — OnPoint Nexus</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N2WCZPCE46');
+</script>
+
+<style>
+/* ─── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── Tokens ──────────────────────────────────────────────── */
+:root {
+  --primary:      #1ABADC;
+  --primary-dim:  rgba(26,186,220,0.12);
+  --primary-glow: rgba(26,186,220,0.06);
+  --surface:      #0c1324;
+  --surface-card: #141c2e;
+  --surface-high: #1a2440;
+  --surface-mid:  #0c1324;
+  --on-surface:       #E8EDF5;
+  --on-surface-dim:   #9AAFC8;
+  --on-surface-muted: #5A7494;
+  --border:       rgba(255,255,255,0.07);
+  --border-focus: rgba(26,186,220,0.4);
+  --red:          #f87171;
+  --red-dim:      rgba(248,113,113,0.08);
+  --amber:        #fbbf24;
+  --amber-dim:    rgba(251,191,36,0.08);
+  --radius:       10px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--surface);
+  color: var(--on-surface);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ─── Neural dot grid ────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(26,186,220,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ─── Nav / Header ───────────────────────────────────────── */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  height: 64px;
+  padding: 0 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(12,19,36,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.site-header img { height: 32px; width: auto; }
+.header-badge {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--primary);
+  font-family: 'Roboto Mono', monospace;
+  padding: 4px 10px; border-radius: 20px;
+  border: 1px solid rgba(26,186,220,0.2);
+  background: rgba(26,186,220,0.05);
+}
+
+/* ─── Hero ───────────────────────────────────────────────── */
+.hero {
+  position: relative; z-index: 1;
+  padding: 52px 1.5rem 44px;
+  text-align: center;
+  background: linear-gradient(180deg, #141c2e 0%, var(--surface) 100%);
+  border-bottom: 1px solid var(--border);
+}
+.hero-eyebrow {
+  display: inline-block; font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--primary); font-family: 'Roboto Mono', monospace;
+  background: var(--primary-dim); padding: 5px 14px;
+  border-radius: 20px; margin-bottom: 18px;
+  border: 1px solid rgba(26,186,220,0.15);
+}
+.hero h1 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  color: var(--on-surface); line-height: 1.2;
+  margin-bottom: 14px; letter-spacing: -0.02em; font-weight: 700;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--primary), #a78bfa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero p {
+  color: var(--on-surface-dim); font-size: 14px;
+  max-width: 480px; margin: 0 auto 28px; line-height: 1.7;
+}
+
+/* ─── Progress ───────────────────────────────────────────── */
+.progress-wrap { max-width: 640px; margin: 0 auto; }
+.progress-meta {
+  display: flex; justify-content: space-between;
+  font-size: 11px; color: var(--on-surface-muted);
+  font-family: 'Roboto Mono', monospace; margin-bottom: 8px;
+}
+.progress-track {
+  height: 3px; background: rgba(255,255,255,0.06);
+  border-radius: 2px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; background: var(--primary);
+  border-radius: 2px; width: 0%;
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 0 10px rgba(26,186,220,0.4);
+}
+.step-dots { display: flex; justify-content: center; gap: 6px; padding: 18px 0 0; }
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255,255,255,0.1); transition: all 0.3s ease; cursor: pointer;
+}
+.dot.done { background: var(--primary); opacity: 0.5; }
+.dot.active { background: var(--primary); width: 20px; border-radius: 4px; box-shadow: 0 0 8px rgba(26,186,220,0.5); }
+
+/* ─── Layout ─────────────────────────────────────────────── */
+.page-body { max-width: 700px; margin: 0 auto; padding: 2rem 1.25rem 6rem; position: relative; z-index: 1; }
+
+/* ─── Section card ───────────────────────────────────────── */
+.section-card {
+  display: none;
+  background: var(--surface-card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  animation: slideIn 0.3s ease;
+}
+.section-card.active { display: block; }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Section head ───────────────────────────────────────── */
+.section-head {
+  background: #0e1628;
+  padding: 22px 28px;
+  display: flex; align-items: flex-start; gap: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.section-num {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--primary); color: var(--surface-mid);
+  font-size: 12px; font-weight: 700; font-family: 'Roboto Mono', monospace;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+  box-shadow: 0 0 16px rgba(26,186,220,0.3);
+}
+.section-head-text h2 {
+  font-size: 18px; font-weight: 700; color: var(--on-surface);
+  margin-bottom: 3px; letter-spacing: -0.01em;
+}
+.section-head-text p { color: var(--on-surface-muted); font-size: 12.5px; }
+
+/* ─── Section body ───────────────────────────────────────── */
+.section-body { padding: 24px 28px; }
+
+/* ─── Tip / Warn boxes ───────────────────────────────────── */
+.tip {
+  background: rgba(26,186,220,0.06);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  padding: 11px 14px; margin-bottom: 22px;
+  font-size: 12.5px; color: var(--on-surface-dim); line-height: 1.6;
+}
+.tip strong { color: var(--primary); font-weight: 600; }
+
+.warn {
+  background: var(--amber-dim);
+  border-left: 3px solid var(--amber);
+  border-radius: 0 8px 8px 0;
+  padding: 11px 14px; margin-bottom: 22px;
+  font-size: 12.5px; color: #d4a017; line-height: 1.6;
+}
+.warn strong { font-weight: 600; }
+
+/* ─── Fields ─────────────────────────────────────────────── */
+.field { margin-bottom: 20px; }
+.field:last-child { margin-bottom: 0; }
+
+.field-label {
+  display: block; font-size: 12.5px; font-weight: 600;
+  color: var(--on-surface); margin-bottom: 4px;
+}
+.req { color: var(--primary); margin-left: 2px; }
+
+.field-hint {
+  font-size: 11.5px; color: var(--on-surface-muted);
+  margin-bottom: 5px; line-height: 1.5; display: block;
+}
+.field-example {
+  font-size: 11.5px; color: var(--primary);
+  background: var(--primary-glow);
+  border: 1px solid rgba(26,186,220,0.1);
+  border-radius: 6px; padding: 6px 10px;
+  margin-bottom: 7px; display: block;
+  font-style: italic; line-height: 1.5;
+  font-family: 'Roboto Mono', monospace;
+}
+
+input[type="text"],
+input[type="url"],
+textarea,
+select {
+  width: 100%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.5px;
+  color: var(--on-surface);
+  background: var(--surface-high);
+  border: 1.5px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 10px 13px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  resize: vertical;
+}
+input::placeholder, textarea::placeholder { color: var(--on-surface-muted); }
+input:focus, textarea:focus, select:focus {
+  border-color: var(--border-focus);
+  background: #1e2d48;
+  box-shadow: 0 0 0 3px rgba(26,186,220,0.08);
+}
+textarea { min-height: 88px; line-height: 1.6; }
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235A7494' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 13px center;
+  padding-right: 36px; cursor: pointer;
+}
+select option { background: var(--surface-card); color: var(--on-surface); }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+/* ─── Char counter ───────────────────────────────────────── */
+.char-wrap { position: relative; }
+.char-count {
+  position: absolute; bottom: 8px; right: 10px;
+  font-size: 10px; color: var(--on-surface-muted);
+  pointer-events: none; font-family: 'Roboto Mono', monospace;
+}
+.char-count.warn-chars { color: var(--amber); }
+
+/* ─── Form nav ───────────────────────────────────────────── */
+.form-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 28px;
+  border-top: 1px solid var(--border);
+  background: rgba(14,22,40,0.6);
+}
+.nav-info { font-size: 11px; color: var(--on-surface-muted); font-family: 'Roboto Mono', monospace; }
+
+/* ─── Buttons ────────────────────────────────────────────── */
+.btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px; font-weight: 500;
+  padding: 9px 20px; border-radius: 8px;
+  cursor: pointer; transition: all 0.15s;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  background: transparent; color: var(--on-surface-dim);
+}
+.btn:hover:not(:disabled) { background: var(--surface-high); color: var(--on-surface); border-color: rgba(255,255,255,0.15); }
+.btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.btn-primary {
+  background: var(--primary); color: var(--surface);
+  border-color: var(--primary); font-weight: 700;
+  box-shadow: 0 0 20px rgba(26,186,220,0.2);
+}
+.btn-primary:hover:not(:disabled) { background: #15a8c8; border-color: #15a8c8; box-shadow: 0 0 28px rgba(26,186,220,0.35); }
+
+.btn-submit {
+  background: linear-gradient(135deg, var(--primary), #0e8aaa);
+  color: var(--surface); border-color: transparent;
+  font-weight: 700; padding: 9px 24px;
+  box-shadow: 0 0 24px rgba(26,186,220,0.25);
+}
+.btn-submit:hover:not(:disabled) { box-shadow: 0 0 36px rgba(26,186,220,0.4); transform: translateY(-1px); }
+.btn-submit:disabled { background: var(--surface-high); color: var(--on-surface-muted); border-color: transparent; box-shadow: none; opacity: 1; }
+
+/* ─── Validation ─────────────────────────────────────────── */
+.field-error {
+  display: none; font-size: 11.5px; color: var(--red);
+  margin-top: 5px; font-weight: 500;
+}
+.field.has-error input,
+.field.has-error textarea,
+.field.has-error select {
+  border-color: rgba(248,113,113,0.5);
+  background: var(--red-dim);
+}
+.field.has-error .field-error { display: block; }
+
+/* ─── Complete state ─────────────────────────────────────── */
+.complete-card {
+  display: none; background: var(--surface-card);
+  border-radius: 16px; border: 1px solid var(--border);
+  padding: 56px 32px; text-align: center;
+}
+.complete-card.active { display: block; animation: slideIn 0.4s ease; }
+.check-circle {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--primary-dim); border: 1px solid rgba(26,186,220,0.2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+  box-shadow: 0 0 40px rgba(26,186,220,0.15);
+}
+.check-circle svg { width: 32px; height: 32px; }
+.complete-card h2 {
+  font-size: 1.8rem; font-weight: 700; color: var(--on-surface);
+  margin-bottom: 12px; letter-spacing: -0.02em;
+}
+.complete-card p { color: var(--on-surface-dim); font-size: 14px; max-width: 420px; margin: 0 auto 28px; line-height: 1.7; }
+
+.summary-box {
+  background: var(--surface-high); border-radius: 10px;
+  padding: 18px 22px; text-align: left; margin-bottom: 22px;
+  border: 1px solid var(--border);
+}
+.summary-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 12.5px; padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04); gap: 14px;
+}
+.summary-row:last-child { border-bottom: none; }
+.summary-row .key { color: var(--on-surface-muted); flex-shrink: 0; font-family: 'Roboto Mono', monospace; font-size: 11px; }
+.summary-row .val { color: var(--on-surface); font-weight: 500; text-align: right; }
+
+/* ─── Spinner ────────────────────────────────────────────── */
+.spinner {
+  display: inline-block; width: 14px; height: 14px;
+  border: 2px solid rgba(12,19,36,0.3); border-top-color: var(--surface);
+  border-radius: 50%; animation: spin 0.7s linear infinite;
+  margin-right: 7px; vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .section-head { padding: 18px 18px; }
+  .section-body { padding: 18px 18px; }
+  .form-nav { padding: 14px 18px; }
+  .grid2 { grid-template-columns: 1fr; }
+  .hero { padding: 36px 1rem 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── Header ────────────────────────────────────────────── -->
+<header class="site-header">
+  <a href="/">
+    <img src="logo-wordmark.png" alt="OnPoint Nexus">
+  </a>
+  <div class="header-badge">Internal · Team Only</div>
+</header>
+
+<!-- ─── Hero ──────────────────────────────────────────────── -->
+<div class="hero">
+  <div class="hero-eyebrow">Team Submission Form</div>
+  <h1>Turn your project into<br><em>a case study that sells</em></h1>
+  <p>Fill in the 7 sections below. Your answers go directly into the central tracker — Vikas gets notified instantly.</p>
+  <div class="progress-wrap">
+    <div class="progress-meta">
+      <span id="prog-label">Section 1 of 7</span>
+      <span id="prog-pct">14%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="prog-fill"></div>
+    </div>
+    <div class="step-dots" id="step-dots"></div>
+  </div>
+</div>
+
+<!-- ─── Form body ─────────────────────────────────────────── -->
+<div class="page-body">
+
+  <!-- ── SECTION 1: Overview ──────────────────────────────── -->
+  <div class="section-card active" id="sec-0">
+    <div class="section-head">
+      <div class="section-num">1</div>
+      <div class="section-head-text">
+        <h2>Project overview</h2>
+        <p>Basic facts that become the headline card on the website. This is what prospects read first.</p>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="tip"><strong>The one-line result</strong> is the most important field in the entire form. It becomes the large stat on the website card. Push yourself — if you can't write a specific number, come back after completing the rest.</div>
+
+      <div class="field" data-required>
+        <label class="field-label">Project / product name <span class="req">*</span></label>
+        <span class="field-hint">The name of the app, platform, or system you built.</span>
+        <span class="field-example">e.g. Battista AR · Semilynx · Clinical Trac · Open Houses Direct</span>
+        <input type="text" id="f-projectName" placeholder="Enter project name">
+        <span class="field-error">Please enter the project name.</span>
+      </div>
+
+      <div class="grid2">
+        <div class="field" data-required>
+          <label class="field-label">Client name <span class="req">*</span></label>
+          <span class="field-hint">Real name if permitted, otherwise "US HealthTech Startup"</span>
+          <input type="text" id="f-clientName" placeholder="Client or company name">
+          <span class="field-error">Required.</span>
+        </div>
+        <div class="field" data-required>
+          <label class="field-label">Client location <span class="req">*</span></label>
+          <span class="field-hint">City and country.</span>
+          <input type="text" id="f-clientLocation" placeholder="e.g. Dallas, USA">
+          <span class="field-error">Required.</span>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="field" data-required>
+          <label class="field-label">Industry <span class="req">*</span></label>
+          <select id="f-industry">
+            <option value="">Select industry</option>
+            <option>HealthTech / MedTech</option>
+            <option>FinTech / Banking</option>
+            <option>Automotive / Manufacturing</option>
+            <option>Government / Public Sector</option>
+            <option>Retail / E-Commerce</option>
+            <option>Logistics / Supply Chain</option>
+            <option>Travel / Hospitality</option>
+            <option>Real Estate / PropTech</option>
+            <option>AgriTech / FoodTech</option>
+            <option>EdTech</option>
+            <option>Cybersecurity</option>
+            <option>Enterprise SaaS</option>
+            <option>Other</option>
+          </select>
+          <span class="field-error">Please select an industry.</span>
+        </div>
+        <div class="field" data-required>
+          <label class="field-label">Primary service <span class="req">*</span></label>
+          <select id="f-primaryService">
+            <option value="">Select service</option>
+            <option>AI & Machine Learning</option>
+            <option>Cloud & DevOps</option>
+            <option>Custom Software Development</option>
+            <option>Mobile App (iOS / Android)</option>
+            <option>Enterprise Solutions (ERP/CRM)</option>
+            <option>AR / IoT</option>
+            <option>UI/UX Design</option>
+            <option>Staff Augmentation</option>
+            <option>Product Design Sprint</option>
+          </select>
+          <span class="field-error">Please select a service.</span>
+        </div>
+      </div>
+
+      <div class="field" data-required>
+        <label class="field-label">One-line result <span class="req">*</span></label>
+        <span class="field-hint">The single most impressive outcome. Specific number. This is the headline stat on the website card.</span>
+        <span class="field-example">e.g. "60% reduction in factory downtime" · "52 schools onboarded in 6 months" · "$1.2M ops cost saved annually"</span>
+        <input type="text" id="f-oneLineResult" placeholder="Write the one number or outcome that says it all">
+        <span class="field-error">Required — must include a specific number or outcome.</span>
+      </div>
+    </div>
+    <div class="form-nav">
+      <button class="btn" disabled>← Back</button>
+      <span class="nav-info">Section 1 of 7</span>
+      <button class="btn btn-primary" onclick="next()">Next →</button>
+    </div>
+  </div>
+
+  <!-- ── SECTION 2: Problem ────────────────────────────────── -->
+  <div class="section-card" id="sec-1">
+    <div class="section-head">
+      <div class="section-num">2</div>
+      <div class="section-head-text">
+        <h2>The client's problem</h2>
+        <p>Prospects read this looking for their own situation. Describe the world before OnPoint arrived.</p>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="warn"><strong>Common mistake:</strong> Describing the tech problem, not the business problem. Ask yourself: what was this costing them in money, time, or risk?</div>
+
+      <div class="field" data-required>
+        <label class="field-label">Core business problem <span class="req">*</span></label>
+        <span class="field-hint">What was broken, slow, risky, or missing before we arrived?</span>
+        <span class="field-example">e.g. "Engineers flying cross-country for every factory breakdown. $180K/month in avoidable travel and downtime."</span>
+        <div class="char-wrap">
+          <textarea id="f-coreProb" placeholder="Describe the problem in plain business language..." oninput="countChars(this, 'cc1', 400)"></textarea>
+          <span class="char-count" id="cc1">0 / 400</span>
+        </div>
+        <span class="field-error">Please describe the core problem.</span>
+      </div>
+
+      <div class="field">
+        <label class="field-label">What had they tried before?</label>
+        <span class="field-hint">Previous vendors, in-house attempts, off-the-shelf tools that didn't work.</span>
+        <textarea id="f-triedBefore" placeholder="What failed before we got involved?"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Stakes — what happened if it stayed unsolved?</label>
+        <span class="field-hint">Revenue loss, compliance risk, competitive pressure. Even directional estimates help.</span>
+        <span class="field-example">e.g. "~$180K/month in manual ops cost. HIPAA audit in 6 months."</span>
+        <input type="text" id="f-stakes" placeholder="e.g. $X/month loss · compliance risk · losing market share">
+      </div>
+
+      <div class="field" data-required>
+        <label class="field-label">Why did they choose OnPoint Nexus? <span class="req">*</span></label>
+        <span class="field-hint">Referral? Website? What tipped the decision our way over other agencies?</span>
+        <textarea id="f-whyOnPoint" placeholder="What made us the choice?" style="min-height:72px"></textarea>
+        <span class="field-error">Please fill in why they chose us.</span>
+      </div>
+    </div>
+    <div class="form-nav">
+      <button class="btn" onclick="prev()">← Back</button>
+      <span class="nav-info">Section 2 of 7</span>
+      <button class="btn btn-primary" onclick="next()">Next →</button>
+    </div>
+  </div>
+
+  <!-- ── SECTION 3: Solution ───────────────────────────────── -->
+  <div class="section-card" id="sec-2">
+    <div class="section-head">
+      <div class="section-num">3</div>
+      <div class="section-head-text">
+        <h2>Our solution</h2>
+        <p>Technical buyers read this section. Show the thinking behind the build, not just the output.</p>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="tip"><strong>Avoid:</strong> "We built a scalable, robust solution…" — say nothing. Instead: specific architecture decisions, specific constraints overcome, specific things that were non-trivial to build.</div>
+
+      <div class="field" data-required>
+        <label class="field-label">What did we build? <span class="req">*</span></label>
+        <span class="field-hint">One paragraph. What is the product, what does it do, and who uses it every day?</span>
+        <span class="field-example">e.g. "A Google Glass AR platform for Fortune 500 factory technicians — live video, remote expert overlay, real-time diagnostics via WebRTC."</span>
+        <div class="char-wrap">
+          <textarea id="f-whatWeBuilt" placeholder="Describe the product in plain, confident terms..." oninput="countChars(this, 'cc3', 500)"></textarea>
+          <span class="char-count" id="cc3">0 / 500</span>
+        </div>
+        <span class="field-error">Required.</span>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Most technically complex part</label>
+        <span class="field-hint">What required the most invention? What kept engineers up at night?</span>
+        <span class="field-example">e.g. "Real-time WebRTC streaming with sub-200ms latency to Google Glass on patchy factory WiFi."</span>
+        <textarea id="f-complexPart" placeholder="The hardest engineering challenge on this project..." style="min-height:72px"></textarea>
+      </div>
+
+      <div class="field" data-required>
+        <label class="field-label">Tech stack <span class="req">*</span></label>
+        <span class="field-hint">Main technologies. These become clickable badges on the website card.</span>
+        <span class="field-example">e.g. Flutter, Firebase, AWS IoT, Python, TensorFlow, HIPAA infra</span>
+        <input type="text" id="f-techStack" placeholder="List technologies separated by commas">
+        <span class="field-error">Please list the tech stack.</span>
+      </div>
+
+      <div class="grid2">
+        <div class="field">
+          <label class="field-label">Compliance / regulatory</label>
+          <span class="field-hint">HIPAA, GDPR, SOC2, PCI-DSS, Gov standards?</span>
+          <input type="text" id="f-compliance" placeholder="e.g. HIPAA, GDPR, SOC2">
+        </div>
+        <div class="field" data-required>
+          <label class="field-label">Timeline — kickoff to production <span class="req">*</span></label>
+          <span class="field-hint">Be specific about MVP and full rollout.</span>
+          <input type="text" id="f-timeline" placeholder="e.g. MVP in 38 days · full rollout month 4">
+          <span class="field-error">Required.</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Engagement model</label>
+        <select id="f-engagementModel">
+          <option value="">Select model</option>
+          <option>Project Delivery (fixed scope + price)</option>
+          <option>Dedicated Team</option>
+          <option>Staff Augmentation</option>
+          <option>Design Sprint + Build</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-nav">
+      <button class="btn" onclick="prev()">← Back</button>
+      <span class="nav-info">Section 3 of 7</span>
+      <button class="btn btn-primary" onclick="next()">Next →</button>
+    </div>
+  </div>
+
+  <!-- ── SECTION 4: Results ────────────────────────────────── -->
+  <div class="section-card" id="sec-3">
+    <div class="section-head">
+      <div class="section-num">4</div>
+      <div class="section-head-text">
+        <h2>The results</h2>
+        <p>The most important section after the headline. Numbers close deals. Push for specifics.</p>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="tip"><strong>If the client won't share exact numbers:</strong> use ranges or percentages. "Reduced processing time by over 50%" beats "significant improvement" every time.</div>
+
+      <div class="field" data-required>
+        <label class="field-label">Primary metric — the headline stat <span class="req">*</span></label>
+        <span class="field-hint">The single number that goes on the website card. Specific, impressive, business-value tied.</span>
+        <span class="field-example">e.g. "60% downtime reduction" · "52 schools onboarded in 6 months" · "$1.2M ops cost saved"</span>
+        <input type="text" id="f-primaryMetric" placeholder="The headline stat">
+        <span class="field-error">Required — include a specific number.</span>
+      </div>
+
+      <div class="field" data-required>
+        <label class="field-label">Secondary results <span class="req">*</span></label>
+        <span class="field-hint">Up to 4 supporting metrics. One per line. Mix business outcomes, performance, and adoption.</span>
+        <span class="field-example">e.g. "Zero cross-country flights since deployment · 99.97% uptime · Expanded to 8 more facilities"</span>
+        <div class="char-wrap">
+          <textarea id="f-secondaryResults" placeholder="List each result on a new line..." oninput="countChars(this, 'cc4', 400)"></textarea>
+          <span class="char-count" id="cc4">0 / 400</span>
+        </div>
+        <span class="field-error">Please add at least one secondary result.</span>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Client quote</label>
+        <span class="field-hint">Direct quote from the CTO, CEO, or Product Lead. Include name, title, company. Most powerful element in any case study.</span>
+        <span class="field-example">e.g. "OnPoint delivered what we didn't think was possible in the timeline." — Andrea C., Head of Digital, Pininfarina</span>
+        <textarea id="f-clientQuote" placeholder="Quote text — Name, Title, Company" style="min-height:72px"></textarea>
+      </div>
+
+      <div class="grid2">
+        <div class="field" data-required>
+          <label class="field-label">Platform still live? <span class="req">*</span></label>
+          <select id="f-platformLive">
+            <option value="">Select status</option>
+            <option>Yes — actively used in production</option>
+            <option>Yes — with significant scale</option>
+            <option>Delivered and handed over — client runs it</option>
+            <option>No longer active</option>
+          </select>
+          <span class="field-error">Please select.</span>
+        </div>
+        <div class="field">
+          <label class="field-label">Did the client return for more work?</label>
+          <select id="f-clientReturned">
+            <option value="">Select</option>
+            <option>Yes — ongoing retainer</option>
+            <option>Yes — follow-on project</option>
+            <option>Yes — referred us to others</option>
+            <option>Not yet but relationship is warm</option>
+            <option>No</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-nav">
+      <button class="btn" onclick="prev()">← Back</button>
+      <span class="nav-info">Section 4 of 7</span>
+      <button class="btn btn-primary" onclick="next()">Next →</button>
+    </div>
+  </div>
+
+  <!-- ── SECTION 5: Visuals ────────────────────────────────── -->
+  <div class="section-card" id="sec-4">
+    <div class="section-head">
+      <div class="section-num">5</div>
+      <div class="section-head-text">
+        <h2>Proof &amp; visuals</h2>
+        <p>One real product screenshot converts 10× better than any stock photo. List everything that exists.</p>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="field" data-required>
+        <label class="field-label">Visuals available <span class="req">*</span></label>
+        <span class="field-hint">List everything — screenshots, logos, diagrams, videos, App Store links. If unsure, check with the project lead.</span>
+        <textarea id="f-visuals" placeholder="e.g. App screenshots (5), admin dashboard UI, architecture diagram, client logo, App Store listing, demo video link..."></textarea>
+        <span class="field-error">Please list available visuals, or write "none yet".</span>
+      </div>
+
+      <div class="grid2">
+        <div class="field">
+          <label class="field-label">Client logo cleared for use?</label>
+          <select id="f-logoCleared">
+            <option value="">Select</option>
+            <option>Yes — client gave explicit permission</option>
+            <option>No — do not use logo</option>
+            <option>Not confirmed yet — will check</option>
+            <option>Use company type only</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label">Live URL (if any)</label>
+          <input type="url" id="f-liveUrl" placeholder="https://...">
+        </div>
+      </div>
+
+      <div class="field" data-required>
+        <label class="field-label">Do NOT include or mention <span class="req">*</span></label>
+        <span class="field-hint">Confidential metrics, NDA details, IP, internal team names. Critical — document this clearly.</span>
+        <textarea id="f-doNotInclude" placeholder="List anything that must be kept confidential or excluded from the case study..." style="min-height:72px"></textarea>
+        <span class="field-error">Required — write "nothing" if there are no restrictions.</span>
+      </div>
+    </div>
+    <div class="form-nav">
+      <button class="btn" onclick="prev()">← Back</button>
+      <span class="nav-info">Section 5 of 7</span>
+      <button class="btn btn-primary" onclick="next()">Next →</button>
+    </div>
+  </div>
+
+  <!-- ── SECTION 6: Positioning ────────────────────────────── -->
+  <div class="section-card" id="sec-5">
+    <div class="section-head">
+      <div class="section-num">6</div>
+      <div class="section-head-text">
+        <h2>Context &amp; positioning</h2>
+        <p>Helps the content team aim the case study at exactly the right buyer. Doesn't appear on the website directly.</p>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="field" data-required>
+        <label class="field-label">Ideal reader <span class="req">*</span></label>
+        <span class="field-hint">Describe the specific decision-maker this story should convince. Role, industry, company size, their main fear.</span>
+        <span class="field-example">e.g. "VP of Operations at a US manufacturing firm, 500+ employees, worried about downtime costs and engineer travel budgets."</span>
+        <textarea id="f-idealReader" placeholder="Describe the ideal reader — role, industry, and main concern..." style="min-height:72px"></textarea>
+        <span class="field-error">Please describe the ideal reader.</span>
+      </div>
+
+      <div class="field">
+        <label class="field-label">What should this case study most strongly sell?</label>
+        <select id="f-caseStudySells">
+          <option value="">Select</option>
+          <option>Speed of delivery (45-day guarantee)</option>
+          <option>AI / ML capability</option>
+          <option>Mobile expertise (Flutter / React Native)</option>
+          <option>Cloud / DevOps / scalability</option>
+          <option>Compliance handling (HIPAA/GDPR)</option>
+          <option>Enterprise integration (SAP/Salesforce)</option>
+          <option>AR / IoT innovation</option>
+          <option>Full-stack ownership</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="field-label">The "wow moment"</label>
+        <span class="field-hint">The single detail that makes someone say "wait, they actually built THAT?" The content team will make this lead.</span>
+        <span class="field-example">e.g. "We built the AR experience for the world's most powerful road-legal EV. Pininfarina chose us over European agencies."</span>
+        <textarea id="f-wowMoment" placeholder="The one thing that makes this project unforgettable..." style="min-height:72px"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Most similar to existing case study</label>
+        <select id="f-mostSimilarTo">
+          <option value="">Select closest match</option>
+          <option>Battista by Pininfarina (AR experience)</option>
+          <option>Semilynx (Industrial AR + Google Glass)</option>
+          <option>Vidanta (Travel & hospitality)</option>
+          <option>Clinical Trac (EdTech / HealthTech)</option>
+          <option>Open Houses Direct (PropTech)</option>
+          <option>QuickHeal (UI/UX redesign)</option>
+          <option>None — this is a new category</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-nav">
+      <button class="btn" onclick="prev()">← Back</button>
+      <span class="nav-info">Section 6 of 7</span>
+      <button class="btn btn-primary" onclick="next()">Next →</button>
+    </div>
+  </div>
+
+  <!-- ── SECTION 7: Final ──────────────────────────────────── -->
+  <div class="section-card" id="sec-6">
+    <div class="section-head">
+      <div class="section-num">7</div>
+      <div class="section-head-text">
+        <h2>Final details</h2>
+        <p>Last few fields so the content team knows who submitted and how to reach you.</p>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="grid2">
+        <div class="field" data-required>
+          <label class="field-label">Your name <span class="req">*</span></label>
+          <input type="text" id="f-submittedBy" placeholder="Your full name">
+          <span class="field-error">Required.</span>
+        </div>
+        <div class="field" data-required>
+          <label class="field-label">Your role on this project <span class="req">*</span></label>
+          <input type="text" id="f-submitterRole" placeholder="e.g. Project Lead, Backend Dev, Design Lead">
+          <span class="field-error">Required.</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Best way to reach you for follow-up questions</label>
+        <select id="f-contactPref">
+          <option value="">Select</option>
+          <option>Yes — reach me on Slack</option>
+          <option>Yes — reach me on WhatsApp</option>
+          <option>Yes — email is fine</option>
+          <option>Limited — please keep questions minimal</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Anything else the content team should know?</label>
+        <span class="field-hint">Awards won, PR coverage, unusual client context, or interesting background details.</span>
+        <textarea id="f-additionalNotes" placeholder="Any extra context, caveats, or details..." style="min-height:80px"></textarea>
+      </div>
+
+      <div class="tip" style="margin-top:8px">
+        <strong>Quick check before submitting:</strong> Does every required field have at least one specific number or named detail? Generic answers produce generic case studies. The content team will follow up if anything is too vague.
+      </div>
+    </div>
+    <div class="form-nav">
+      <button class="btn" onclick="prev()">← Back</button>
+      <span class="nav-info">Section 7 of 7</span>
+      <button class="btn btn-submit" id="submit-btn" onclick="submitForm()">Submit case study →</button>
+    </div>
+  </div>
+
+  <!-- ── COMPLETE ──────────────────────────────────────────── -->
+  <div class="complete-card" id="complete">
+    <div class="check-circle">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="15" stroke="#1ABADC" stroke-width="1.5"/>
+        <path d="M9 16.5L13.5 21L23 12" stroke="#1ABADC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2>Submission received</h2>
+    <p>Your case study has been saved to the OnPoint Nexus tracker. Vikas has been notified. The content team will review within 3 working days and share a first draft with you.</p>
+    <div class="summary-box" id="summary-content"></div>
+    <button class="btn" onclick="resetForm()" style="margin-top:8px">Submit another case study</button>
+  </div>
+
+</div><!-- /page-body -->
+
+<script>
+// ─────────────────────────────────────────────────────────────────
+// PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE after deploying:
+// Apps Script → Deploy → New deployment → Web App → Anyone → Deploy
+// ─────────────────────────────────────────────────────────────────
+const SCRIPT_URL = "YOUR_APPS_SCRIPT_WEB_APP_URL";
+
+let current = 0;
+const TOTAL = 7;
+
+// Init dots
+const dotsEl = document.getElementById("step-dots");
+for (let i = 0; i < TOTAL; i++) {
+  const d = document.createElement("div");
+  d.className = "dot" + (i === 0 ? " active" : "");
+  d.id = "dot-" + i;
+  d.title = "Section " + (i + 1);
+  dotsEl.appendChild(d);
+}
+
+function updateProgress() {
+  const pct = Math.round(((current + 1) / (TOTAL + 1)) * 100);
+  document.getElementById("prog-fill").style.width = pct + "%";
+  document.getElementById("prog-label").textContent = "Section " + (current + 1) + " of " + TOTAL;
+  document.getElementById("prog-pct").textContent = pct + "%";
+  for (let i = 0; i < TOTAL; i++) {
+    const d = document.getElementById("dot-" + i);
+    d.className = i < current ? "dot done" : i === current ? "dot active" : "dot";
+  }
+}
+
+const required = {
+  0: ["f-projectName", "f-clientName", "f-clientLocation", "f-industry", "f-primaryService", "f-oneLineResult"],
+  1: ["f-coreProb", "f-whyOnPoint"],
+  2: ["f-whatWeBuilt", "f-techStack", "f-timeline"],
+  3: ["f-primaryMetric", "f-secondaryResults", "f-platformLive"],
+  4: ["f-visuals", "f-doNotInclude"],
+  5: ["f-idealReader"],
+  6: ["f-submittedBy", "f-submitterRole"],
+};
+
+function validate(sec) {
+  const fields = required[sec] || [];
+  let ok = true;
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    const wrap = el.closest(".field");
+    if (!el.value.trim()) {
+      wrap.classList.add("has-error");
+      ok = false;
+    } else {
+      wrap.classList.remove("has-error");
+    }
+  });
+  if (!ok) {
+    const first = document.querySelector(".section-card.active .field.has-error");
+    if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  return ok;
+}
+
+function next() {
+  if (!validate(current)) return;
+  document.getElementById("sec-" + current).classList.remove("active");
+  current++;
+  document.getElementById("sec-" + current).classList.add("active");
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function prev() {
+  document.getElementById("sec-" + current).classList.remove("active");
+  current--;
+  document.getElementById("sec-" + current).classList.add("active");
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function countChars(el, counterId, max) {
+  const len = el.value.length;
+  const counter = document.getElementById(counterId);
+  counter.textContent = len + " / " + max;
+  counter.classList.toggle("warn-chars", len > max * 0.85);
+}
+
+function collectData() {
+  const g = id => (document.getElementById(id) || {}).value || "";
+  return {
+    projectName:      g("f-projectName"),
+    clientName:       g("f-clientName"),
+    clientLocation:   g("f-clientLocation"),
+    industry:         g("f-industry"),
+    primaryService:   g("f-primaryService"),
+    oneLineResult:    g("f-oneLineResult"),
+    coreProb:         g("f-coreProb"),
+    triedBefore:      g("f-triedBefore"),
+    stakes:           g("f-stakes"),
+    whyOnPoint:       g("f-whyOnPoint"),
+    whatWeBuilt:      g("f-whatWeBuilt"),
+    complexPart:      g("f-complexPart"),
+    techStack:        g("f-techStack"),
+    compliance:       g("f-compliance"),
+    timeline:         g("f-timeline"),
+    engagementModel:  g("f-engagementModel"),
+    primaryMetric:    g("f-primaryMetric"),
+    secondaryResults: g("f-secondaryResults"),
+    clientQuote:      g("f-clientQuote"),
+    platformLive:     g("f-platformLive"),
+    clientReturned:   g("f-clientReturned"),
+    visuals:          g("f-visuals"),
+    logoCleared:      g("f-logoCleared"),
+    liveUrl:          g("f-liveUrl"),
+    doNotInclude:     g("f-doNotInclude"),
+    idealReader:      g("f-idealReader"),
+    caseStudySells:   g("f-caseStudySells"),
+    wowMoment:        g("f-wowMoment"),
+    mostSimilarTo:    g("f-mostSimilarTo"),
+    submittedBy:      g("f-submittedBy"),
+    submitterRole:    g("f-submitterRole"),
+    contactPref:      g("f-contactPref"),
+    additionalNotes:  g("f-additionalNotes"),
+    submittedAt:      new Date().toISOString(),
+  };
+}
+
+async function submitForm() {
+  if (!validate(6)) return;
+
+  const btn = document.getElementById("submit-btn");
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Submitting…';
+
+  const data = collectData();
+
+  // If URL not configured, show demo complete state
+  if (!SCRIPT_URL || SCRIPT_URL === "YOUR_APPS_SCRIPT_WEB_APP_URL") {
+    setTimeout(() => showComplete(data), 1200);
+    return;
+  }
+
+  try {
+    const res = await fetch(SCRIPT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify(data)
+    });
+    const json = await res.json();
+    if (json.success) {
+      showComplete(data);
+    } else {
+      alert("Submission error: " + (json.error || "Unknown error. Please try again."));
+      btn.disabled = false;
+      btn.innerHTML = "Submit case study →";
+    }
+  } catch (err) {
+    alert("Network error. Please check your connection and try again.\n\n" + err.message);
+    btn.disabled = false;
+    btn.innerHTML = "Submit case study →";
+  }
+}
+
+function showComplete(data) {
+  document.getElementById("sec-6").classList.remove("active");
+  document.getElementById("prog-fill").style.width = "100%";
+  document.getElementById("prog-label").textContent = "Complete";
+  document.getElementById("prog-pct").textContent = "100%";
+  for (let i = 0; i < TOTAL; i++) document.getElementById("dot-" + i).className = "dot done";
+
+  const summaryEl = document.getElementById("summary-content");
+  const rows = [
+    ["Project",         data.projectName],
+    ["Client",          data.clientName + (data.clientLocation ? " · " + data.clientLocation : "")],
+    ["Industry",        data.industry],
+    ["Service",         data.primaryService],
+    ["Headline result", data.oneLineResult],
+    ["Submitted by",    data.submittedBy + (data.submitterRole ? " · " + data.submitterRole : "")],
+  ];
+  summaryEl.innerHTML = rows.map(([k, v]) =>
+    `<div class="summary-row"><span class="key">${k}</span><span class="val">${v || "—"}</span></div>`
+  ).join("");
+
+  document.getElementById("complete").classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function resetForm() {
+  document.querySelectorAll("input, textarea, select").forEach(el => el.value = "");
+  document.querySelectorAll(".field.has-error").forEach(el => el.classList.remove("has-error"));
+  document.getElementById("complete").classList.remove("active");
+  current = 0;
+  document.querySelectorAll(".section-card").forEach(c => c.classList.remove("active"));
+  document.getElementById("sec-0").classList.add("active");
+  const btn = document.getElementById("submit-btn");
+  btn.disabled = false;
+  btn.innerHTML = "Submit case study →";
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+updateProgress();
+</script>
+</body>
+</html>
