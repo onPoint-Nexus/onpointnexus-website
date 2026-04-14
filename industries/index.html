@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ PRIMARY SEO ═══════════════════════════════════════════ -->
+  <title>Industries — OnPoint Nexus | HealthTech, FinTech, Automotive, GovTech & More</title>
+  <meta name="description" content="Deep domain knowledge across 9 verticals — HealthTech, FinTech, Automotive, GovTech, Retail, EdTech, Travel, PropTech, and Media. Compliance, regulation, and edge cases included.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://onpointnexus.com/industries">
+
+  <!-- ═══ OPEN GRAPH ════════════════════════════════════════════ -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="OnPoint Nexus">
+  <meta property="og:url"         content="https://onpointnexus.com/industries">
+  <meta property="og:title"       content="Industries — OnPoint Nexus">
+  <meta property="og:description" content="We know your industry's failure modes before you brief us. Deep domain knowledge across 9 verticals.">
+  <meta property="og:image"       content="https://onpointnexus.com/og-image.png">
+
+  <!-- ═══ FAVICON ═══════════════════════════════════════════════ -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- ═══ TAILWIND ══════════════════════════════════════════════ -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <!-- ═══ MATERIAL SYMBOLS ══════════════════════════════════════ -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- ═══ BRAND FONTS ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ═══ TAILWIND CONFIG ═══════════════════════════════════════ -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary:            '#1ABADC',
+            'primary-dim':      '#0E8FA8',
+            surface:            '#0c1324',
+            'surface-low':      '#080e1c',
+            'surface-mid':      '#111827',
+            'surface-high':     '#1a2235',
+            'surface-card':     '#141c2e',
+            'on-surface':       '#E8EDF5',
+            'on-surface-dim':   '#8A9BB5',
+            'on-surface-muted': '#4A5A72',
+            outline:            '#2A3550',
+          },
+          fontFamily: {
+            headline: ["'Plus Jakarta Sans'", 'sans-serif'],
+            body:     ["'Plus Jakarta Sans'", 'sans-serif'],
+            mono:     ["'Roboto Mono'", 'monospace'],
+          },
+          borderRadius: {
+            DEFAULT: '0.5rem',
+            lg:      '0.75rem',
+            xl:      '1rem',
+            '2xl':   '1.25rem',
+            full:    '9999px',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .neural-grid {
+      background-image: radial-gradient(rgba(26,186,220,0.09) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    .glass-panel {
+      background: rgba(17,24,39,0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .reveal       { opacity:0; transform:translateY(28px);  transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+    .reveal-left  { opacity:0; transform:translateX(-28px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .reveal-right { opacity:0; transform:translateX(28px);  transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .in-view { opacity:1; transform:none; }
+    .grad-text {
+      background: linear-gradient(135deg, #1ABADC 0%, #6DCFFF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glow-blob {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(120px);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary/20 overflow-x-hidden">
+
+<!-- ════════════════════════════════════════════════════════════
+     NAV — Floating Pill
+════════════════════════════════════════════════════════════ -->
+<nav id="topNav" class="fixed top-4 left-0 right-0 z-50 px-4 mx-auto max-w-7xl" style="left:50%;transform:translateX(-50%);width:calc(100% - 2rem);">
+  <div class="flex items-center justify-between px-5 py-2.5 rounded-full backdrop-blur-xl border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.5)]" style="background:rgba(17,24,39,0.82);">
+    <a href="/" class="shrink-0">
+      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto">
+    </a>
+    <div class="hidden md:flex items-center gap-7 font-body text-sm">
+      <a href="/services"   class="text-on-surface-dim hover:text-primary transition-colors duration-200">Services</a>
+      <a href="/#work"      class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
+      <a href="/industries" class="text-primary transition-colors duration-200">Industries</a>
+      <a href="/#about"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
+      <a href="/#engage"    class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work With Us</a>
+    </div>
+    <a href="/#contact" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface-mid px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
+      Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+    <button id="navToggle" class="md:hidden p-2 text-on-surface-dim hover:text-primary transition-colors" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="material-symbols-outlined" id="menuIcon">menu</span>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl" style="background:rgba(17,24,39,0.96);">
+    <div class="flex flex-col gap-1 text-sm font-body">
+      <a href="/services"   class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Services</a>
+      <a href="/#work"      class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work</a>
+      <a href="/industries" class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">Industries</a>
+      <a href="/#about"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
+      <a href="/#engage"    class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work With Us</a>
+      <a href="/#contact"   class="mt-3 bg-primary text-surface-mid px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="relative pt-40 pb-20 overflow-hidden">
+  <div class="absolute inset-0 neural-grid opacity-20 pointer-events-none"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-surface to-surface pointer-events-none"></div>
+
+  <div class="relative max-w-4xl mx-auto px-6 text-center">
+    <span class="text-xs font-mono text-primary uppercase tracking-widest reveal">Industries</span>
+    <h1 class="font-headline text-5xl md:text-6xl font-bold mt-4 mb-6 text-on-surface leading-[1.08] reveal">
+      We know your industry's<br><span class="grad-text">failure modes</span> before you brief us.
+    </h1>
+    <p class="text-xl text-on-surface-dim max-w-2xl mx-auto leading-relaxed reveal">
+      Deep domain knowledge across 9 verticals — compliance, regulation, and edge cases included.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     INDUSTRY GRID — 9 cards + CTA
+════════════════════════════════════════════════════════════ -->
+<section class="py-16 pb-28">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+      <!-- 01 HealthTech & MedTech -->
+      <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-72 reveal">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80" alt="HealthTech & MedTech" loading="lazy" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/50 to-surface/10 transition-all duration-300"></div>
+        <span class="absolute top-5 left-5 text-[10px] font-mono text-primary/60 tracking-widest">01</span>
+        <div class="absolute top-5 right-5 flex flex-wrap gap-1.5 justify-end">
+          <span class="px-2.5 py-1 rounded-full bg-surface/70 border border-primary/20 text-primary text-[9px] font-mono uppercase tracking-wider backdrop-blur-sm">HIPAA</span>
+          <span class="px-2.5 py-1 rounded-full bg-surface/70 border border-primary/20 text-primary text-[9px] font-mono uppercase tracking-wider backdrop-blur-sm">HL7</span>
+          <span class="px-2.5 py-1 rounded-full bg-surface/70 border border-primary/20 text-primary text-[9px] font-mono uppercase tracking-wider backdrop-blur-sm">FDA-Aware</span>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <h3 class="text-xl font-bold font-headline text-on-surface mb-2">HealthTech &amp; MedTech</h3>
+          <p class="text-on-surface-dim text-sm leading-relaxed overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500 ease-out mb-3">Patient monitoring, clinical platforms, and FDA-aware mobile apps — HIPAA compliance baked in from day one, not added before go-live.</p>
+          <a href="/#contact" class="inline-flex items-center gap-1.5 text-primary text-xs font-bold font-mono uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            Start a project <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 02 FinTech & Banking -->
+      <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-72 reveal" style="transition-delay:.05s">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80" alt="FinTech & Banking" loading="lazy" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/50 to-surface/10"></div>
+        <span class="absolute top-5 left-5 text-[10px] font-mono text-primary/60 tracking-widest">02</span>
+        <div class="absolute top-5 right-5 flex flex-wrap gap-1.5 justify-end">
+          <span class="px-2.5 py-1 rounded-full bg-surface/70 border border-primary/20 text-primary text-[9px] font-mono uppercase tracking-wider backdrop-blur-sm">PCI-DSS</span>
+          <span class="px-2.5 py-1 rounded-full bg-surface/70 border border-primary/20 text-primary text-[9px] font-mono uppercase tracking-wider backdrop-blur-sm">SOC2</span>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <h3 class="text-xl font-bold font-headline text-on-surface mb-2">FinTech &amp; Banking</h3>
+          <p class="text-on-surface-dim text-sm leading-relaxed overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500 ease-out mb-3">Trading platforms, risk engines, and Avaloq-certified banking integrations built to PCI-DSS and SOC2 standards.</p>
+          <a href="/#contact" class="inline-flex items-center gap-1.5 text-primary text-xs font-bold font-mono uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            Start a project <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 03 Automotive & Manufacturing -->
+      <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-72 reveal" style="transition-delay:.1s">
+        <img src="https://images.unsplash.com/photo-1549399542-7d3b0e02f4c3?w=800&q=80" alt="Automotive & Manufacturing" loading="lazy" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/50 to-surface/10"></div>
+        <span class="absolute top-5 left-5 text-[10px] font-mono text-primary/60 tracking-widest">03</span>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <span class="text-[9px] font-mono text-primary/70 uppercase tracking-widest mb-1 block">AR · IoT · Industry 4.0</span>
+          <h3 class="text-xl font-bold font-headline text-on-surface mb-2">Automotive &amp; Manufacturing</h3>
+          <p class="text-on-surface-dim text-sm leading-relaxed overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500 ease-out mb-3">AR maintenance tools, OTA update systems, and IoT dashboards. We built the Pininfarina Battista AR experience.</p>
+          <a href="/#contact" class="inline-flex items-center gap-1.5 text-primary text-xs font-bold font-mono uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            Start a project <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 04 Government & Public Sector -->
+      <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-72 reveal" style="transition-delay:.15s">
+        <img src="https://images.unsplash.com/photo-1568992688065-536aad8a12f6?w=800&q=80" alt="Government & Public Sector" loading="lazy" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/50 to-surface/10"></div>
+        <span class="absolute top-5 left-5 text-[10px] font-mono text-primary/60 tracking-widest">04</span>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <span class="text-[9px] font-mono text-primary/70 uppercase tracking-widest mb-1 block">GovTech · Scale · Compliance</span>
+          <h3 class="text-xl font-bold font-headline text-on-surface mb-2">Government &amp; Public Sector</h3>
+          <p class="text-on-surface-dim text-sm leading-relaxed overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500 ease-out mb-3">Citizen-facing digital platforms and back-office systems built to government security and accessibility standards.</p>
+          <a href="/#contact" class="inline-flex items-center gap-1.5 text-primary text-xs font-bold font-mono uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            Start a project <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 05 Retail & E-Commerce -->
+      <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-72 reveal" style="transition-delay:.2s">
+        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80" alt="Retail & E-Commerce" loading="lazy" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/50 to-surface/10"></div>
+        <span class="absolute top-5 left-5 text-[10px] font-mono text-primary/60 tracking-widest">05</span>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <span class="text-[9px] font-mono text-primary/70 uppercase tracking-widest mb-1 block">Shopify · AI · Personalization</span>
+          <h3 class="text-xl font-bold font-headline text-on-surface mb-2">Retail &amp; E-Commerce</h3>
+          <p class="text-on-surface-dim text-sm leading-relaxed overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500 ease-out mb-3">Custom Shopify builds, ML-powered recommendation engines, and supply chain visibility tools that drive conversion.</p>
+          <a href="/#contact" class="inline-flex items-center gap-1.5 text-primary text-xs font-bold font-mono uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            Start a project <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 06 EdTech & Online Learning -->
+      <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-72 reveal" style="transition-delay:.25s">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="EdTech & Online Learning" loading="lazy" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/50 to-surface/10"></div>
+        <span class="absolute top-5 left-5 text-[10px] font-mono text-primary/60 tracking-widest">06</span>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <span class="text-[9px] font-mono text-primary/70 uppercase tracking-widest mb-1 block">LMS · Mobile · Compliance</span>
+          <h3 class="text-xl font-bold font-headline text-on-surface mb-2">EdTech &amp; Online Learning</h3>
+          <p class="text-on-surface-dim text-sm leading-relaxed overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500 ease-out mb-3">Learning management systems, clinical education platforms, and mobile-first training apps. Built Clinical Trac — used by 52+ US respiratory therapy schools.</p>
+          <a href="/#contact" class="inline-flex items-center gap-1.5 text-primary text-xs font-bold font-mono uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            Start a project <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 07 Travel & Hospitality -->
+      <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-72 reveal" style="transition-delay:.3s">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80" alt="Travel & Hospitality" loading="lazy" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/50 to-surface/10"></div>
+        <span class="absolute top-5 left-5 text-[10px] font-mono text-primary/60 tracking-widest">07</span>
+        <div class="absolute top-5 right-5 flex gap-1.5">
+          <span class="px-2.5 py-1 rounded-full bg-surface/70 border border-primary/20 text-primary text-[9px] font-mono uppercase tracking-wider backdrop-blur-sm">Booking Platforms</span>
+          <span class="px-2.5 py-1 rounded-full bg-surface/70 border border-primary/20 text-primary text-[9px] font-mono uppercase tracking-wider backdrop-blur-sm">CRM</span>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <h3 class="text-xl font-bold font-headline text-on-surface mb-2">Travel &amp; Hospitality</h3>
+          <p class="text-on-surface-dim text-sm leading-relaxed overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500 ease-out mb-3">Booking platforms, loyalty apps, and CRM integrations. We built Vidanta's luxury vacation club platform for the US and Mexico market.</p>
+          <a href="/#contact" class="inline-flex items-center gap-1.5 text-primary text-xs font-bold font-mono uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            Start a project <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 08 Real Estate & PropTech -->
+      <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-72 reveal" style="transition-delay:.35s">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Real Estate & PropTech" loading="lazy" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/50 to-surface/10"></div>
+        <span class="absolute top-5 left-5 text-[10px] font-mono text-primary/60 tracking-widest">08</span>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <span class="text-[9px] font-mono text-primary/70 uppercase tracking-widest mb-1 block">iOS · Android · Maps API</span>
+          <h3 class="text-xl font-bold font-headline text-on-surface mb-2">Real Estate &amp; PropTech</h3>
+          <p class="text-on-surface-dim text-sm leading-relaxed overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500 ease-out mb-3">Listing marketplaces, agent tools, and property discovery apps. Creators of Open Houses Direct — the first open house discovery platform.</p>
+          <a href="/#contact" class="inline-flex items-center gap-1.5 text-primary text-xs font-bold font-mono uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            Start a project <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 09 Media & Entertainment -->
+      <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-72 reveal" style="transition-delay:.4s">
+        <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=800&q=80" alt="Media & Entertainment" loading="lazy" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/50 to-surface/10"></div>
+        <span class="absolute top-5 left-5 text-[10px] font-mono text-primary/60 tracking-widest">09</span>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <span class="text-[9px] font-mono text-primary/70 uppercase tracking-widest mb-1 block">Streaming · OTT · Mobile</span>
+          <h3 class="text-xl font-bold font-headline text-on-surface mb-2">Media &amp; Entertainment</h3>
+          <p class="text-on-surface-dim text-sm leading-relaxed overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500 ease-out mb-3">OTT apps, streaming platforms, content delivery systems, and digital publishing tools built for scale.</p>
+          <a href="/#contact" class="inline-flex items-center gap-1.5 text-primary text-xs font-bold font-mono uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+            Start a project <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Don't see your industry? -->
+      <div class="relative overflow-hidden rounded-2xl h-72 reveal flex flex-col items-center justify-center text-center p-8 bg-surface-card border border-primary/[0.1] hover:border-primary/[0.25] hover:bg-surface-high transition-all duration-300 group cursor-pointer" style="transition-delay:.45s">
+        <span class="material-symbols-outlined text-primary mb-4" style="font-size:2.5rem">add_circle</span>
+        <h3 class="text-lg font-bold font-headline text-on-surface mb-2">Don't see your industry?</h3>
+        <p class="text-on-surface-dim text-xs leading-relaxed mb-5">We adapt fast. If the problem is hard and the stakes are high, we're likely the right team.</p>
+        <a href="/#contact" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-primary text-surface-mid text-xs font-bold hover:bg-primary-dim transition-colors">
+          Let's Talk <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     BOTTOM CTA
+════════════════════════════════════════════════════════════ -->
+<section class="py-24 bg-surface-low border-t border-white/[0.05] relative overflow-hidden">
+  <div class="absolute inset-0 neural-grid opacity-15 pointer-events-none"></div>
+  <div class="glow-blob w-[500px] h-[400px] bg-primary/6 top-0 left-1/2 -translate-x-1/2"></div>
+  <div class="max-w-2xl mx-auto px-6 text-center relative z-10 reveal">
+    <span class="text-xs font-mono text-primary uppercase tracking-widest">Let's Build</span>
+    <h2 class="font-headline text-4xl md:text-5xl font-bold mt-4 mb-5 text-on-surface leading-tight">
+      Every industry has unique constraints.<br><span class="grad-text">Ours is knowing them.</span>
+    </h2>
+    <p class="text-on-surface-dim leading-relaxed mb-8">
+      30 minutes. We'll map your project to the right team, flag the domain-specific risks, and tell you exactly what compliance means for your build.
+    </p>
+    <a href="/#contact" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-surface-mid font-bold hover:bg-primary-dim hover:shadow-lg hover:shadow-primary/25 transition-all duration-200">
+      Let's Talk <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="bg-surface-low border-t border-white/5 pt-16 pb-10">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-14">
+
+      <!-- Brand -->
+      <div class="space-y-5">
+        <img src="/logo-icon.png" alt="OnPoint Nexus" class="h-14 w-auto" style="mix-blend-mode:screen;">
+        <p class="text-on-surface-dim text-sm leading-relaxed">We ship. You grow.<br>130+ projects in production worldwide.</p>
+        <address class="text-sm text-on-surface-muted not-italic leading-relaxed">
+          OnPoint Nexus Pvt. Ltd.<br>
+          Pune &amp; Kolhapur, India<br>
+          <span class="text-xs opacity-70 mt-1 block">1900 S. Polk #295, Dallas, TX, USA</span>
+          <span class="text-xs opacity-70 mt-0.5 block">755 St-Johns Blvd, Pointe-Claire, Quebec</span>
+          <span class="text-xs opacity-70 mt-0.5 block">Mumbai · Frankfurt · Dubai</span>
+        </address>
+      </div>
+
+      <!-- Solutions -->
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Solutions</h4>
+        <ul class="space-y-3">
+          <li><a href="/services#ai"         class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">AI &amp; Machine Learning</a></li>
+          <li><a href="/services#cloud"      class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Cloud &amp; DevOps</a></li>
+          <li><a href="/services#custom"     class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Custom Software</a></li>
+          <li><a href="/services#enterprise" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Enterprise Platforms</a></li>
+          <li><a href="/services#sprint"     class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Design Sprint</a></li>
+          <li><a href="/#engage"             class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Staff Augmentation</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Company</h4>
+        <ul class="space-y-3">
+          <li><a href="/#about"        class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">About Us</a></li>
+          <li><a href="/#approach"     class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">How We Work</a></li>
+          <li><a href="/work"          class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Case Studies</a></li>
+          <li><a href="/#testimonials" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Client Stories</a></li>
+          <li><a href="/industries"    class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Industries</a></li>
+          <li><a href="mailto:hr@onpointsoft.com" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Connect</h4>
+        <ul class="space-y-3">
+          <li><a href="mailto:hello@onpointnexus.com" class="text-on-surface-muted text-sm hover:text-primary transition-colors">hello@onpointnexus.com</a></li>
+          <li><a href="mailto:hr@onpointsoft.com"     class="text-on-surface-muted text-sm hover:text-primary transition-colors">hr@onpointsoft.com</a></li>
+          <li><a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">LinkedIn</a></li>
+          <li><a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Instagram</a></li>
+          <li><a href="/#engage"  class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Engagement Models</a></li>
+          <li><a href="/#contact" class="text-primary text-sm font-semibold hover:text-white transition-colors">Book a Discovery Call →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-on-surface-muted font-mono">© 2026 OnPoint Nexus Pvt. Ltd. All rights reserved.</p>
+      <div class="flex flex-wrap gap-5 justify-center">
+        <a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">LinkedIn</a>
+        <a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Instagram</a>
+        <a href="/privacy-policy" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Privacy Policy</a>
+        <a href="/terms"          class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════════════════ -->
+<script>
+  // ── Mobile nav toggle ─────────────────────────────────────
+  const navToggle  = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon   = document.getElementById('menuIcon');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    menuIcon.textContent = isOpen ? 'menu' : 'close';
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuIcon.textContent = 'menu';
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ── Scroll reveal ──────────────────────────────────────────
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
+  } else {
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+      el.style.transition = 'none';
+      el.classList.add('in-view');
+    });
+  }
+
+  // ── Smooth anchor scroll ───────────────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+<!-- ═══ GOOGLE ANALYTICS 4 ════════════════════════════════════ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N2WCZPCE46');
+</script>
+
+</body>
+</html>
