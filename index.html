@@ -387,21 +387,9 @@
 <body class="bg-surface text-on-surface font-body selection:bg-primary/20 overflow-x-hidden">
 
 <!-- ════════════════════════════════════════════════════════════
-     ANNOUNCEMENT BANNER — brand teal, old-design style
-════════════════════════════════════════════════════════════ -->
-<div id="siteBanner" style="background:#09384A;border-bottom:1px solid rgba(26,186,220,0.22);position:relative;z-index:60;" class="text-center py-2 px-4">
-  <p style="margin:0;font-size:0.7rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;letter-spacing:0.06em;color:#9DB4C0;">
-    <span style="color:#1ABADC;font-weight:700;">NEW →</span>&nbsp;&nbsp;45-Day delivery guarantee on all project engagements.&nbsp;&nbsp;
-    <a href="#contact" style="color:#1ABADC;text-decoration:underline;text-underline-offset:3px;opacity:0.9;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.9">Book your free Discovery Call</a>
-    &nbsp;&nbsp;
-    <button onclick="document.getElementById('siteBanner').style.display='none'" style="background:none;border:none;color:#5A8090;cursor:pointer;font-size:0.75rem;padding:0 0 0 8px;vertical-align:middle;line-height:1;" aria-label="Dismiss">✕</button>
-  </p>
-</div>
-
-<!-- ════════════════════════════════════════════════════════════
      NAV — Floating Pill
 ════════════════════════════════════════════════════════════ -->
-<nav id="topNav" class="fixed top-10 left-0 right-0 z-50 px-4 mx-auto max-w-7xl" style="left:50%;transform:translateX(-50%);width:calc(100% - 2rem);">
+<nav id="topNav" class="fixed top-4 left-0 right-0 z-50 px-4 mx-auto max-w-7xl" style="left:50%;transform:translateX(-50%);width:calc(100% - 2rem);">
   <div class="flex items-center justify-between px-5 py-2.5 rounded-full backdrop-blur-xl border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.5)]" style="background:rgba(17,24,39,0.82);">
     <a href="#hero" class="shrink-0">
       <img src="logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto">
@@ -451,7 +439,7 @@
     <!-- Eyebrow badge -->
     <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-primary/[0.15] bg-primary/[0.06] text-primary text-[10px] font-mono tracking-[0.18em] uppercase mb-8">
       <span class="w-1 h-1 rounded-full bg-primary animate-pulse"></span>
-      AI · Cloud · Enterprise Software · Dallas & Pune · Est. 2021
+      Dallas · Pune · Est. 2021
     </div>
 
     <!-- Headline -->
@@ -470,13 +458,11 @@
     </p>
 
     <!-- CTAs -->
-    <div class="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-      <a href="#contact" class="px-7 py-3.5 rounded-xl bg-primary text-surface-mid font-bold shadow-lg shadow-primary/20 hover:bg-primary-dim hover:shadow-primary/40 transition-all duration-200 flex items-center justify-center gap-2 text-sm">
+    <div class="flex flex-col items-center gap-4 mb-10">
+      <a href="#contact" class="px-8 py-3.5 rounded-xl bg-primary text-surface-mid font-bold shadow-lg shadow-primary/20 hover:bg-primary-dim hover:shadow-primary/40 transition-all duration-200 inline-flex items-center justify-center gap-2 text-sm">
         Book a Free Discovery Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
       </a>
-      <a href="#work" class="px-7 py-3.5 rounded-xl border border-white/[0.07] bg-surface-card text-on-surface font-semibold hover:bg-surface-high hover:border-primary/[0.18] transition-all duration-200 flex items-center justify-center gap-2 text-sm">
-        See Our Work
-      </a>
+      <a href="#work" class="text-sm text-on-surface-muted hover:text-primary transition-colors duration-200">or see our work ↓</a>
     </div>
 
     <!-- Animated proof ticker -->
@@ -490,16 +476,12 @@
     </div>
 
     <!-- Client trust strip -->
-    <div>
-      <p class="text-[10px] text-on-surface-muted font-mono uppercase tracking-[0.18em] mb-4">Chosen over agencies in New York, London &amp; Dubai</p>
-      <div class="flex flex-wrap gap-2.5 justify-center">
-        <span class="hero-chip"><span class="hero-chip-dot"></span>Mahindra</span>
-        <span class="hero-chip"><span class="hero-chip-dot"></span>QuickHeal</span>
-        <span class="hero-chip"><span class="hero-chip-dot"></span>Pininfarina</span>
-        <span class="hero-chip"><span class="hero-chip-dot"></span>Maharashtra Gov.</span>
-        <span class="hero-chip"><span class="hero-chip-dot"></span>Semilynx</span>
-        <span class="hero-chip"><span class="hero-chip-dot"></span>Vidanta</span>
-      </div>
+    <div class="flex flex-wrap gap-2.5 justify-center">
+      <span class="hero-chip"><span class="hero-chip-dot"></span>Mahindra</span>
+      <span class="hero-chip"><span class="hero-chip-dot"></span>QuickHeal</span>
+      <span class="hero-chip"><span class="hero-chip-dot"></span>Pininfarina</span>
+      <span class="hero-chip"><span class="hero-chip-dot"></span>Maharashtra Gov.</span>
+      <span class="hero-chip"><span class="hero-chip-dot"></span>Semilynx</span>
     </div>
   </div>
 
@@ -514,7 +496,7 @@
      02 — STATS BAND
 ════════════════════════════════════════════════════════════ -->
 <section class="py-20 bg-surface-low border-t border-b border-white/5 relative">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+  <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
     <div class="reveal space-y-2">
       <div class="text-4xl md:text-5xl font-headline font-bold text-primary">130+</div>
       <div class="text-[10px] uppercase tracking-widest text-on-surface-muted font-mono">Projects in Production</div>
@@ -524,12 +506,8 @@
       <div class="text-[10px] uppercase tracking-widest text-on-surface-muted font-mono">Client Retention Rate</div>
     </div>
     <div class="reveal space-y-2" style="transition-delay:.2s">
-      <div class="text-4xl md:text-5xl font-headline font-bold text-primary">45+</div>
-      <div class="text-[10px] uppercase tracking-widest text-on-surface-muted font-mono">Tech Specialists</div>
-    </div>
-    <div class="reveal space-y-2" style="transition-delay:.3s">
-      <div class="text-4xl md:text-5xl font-headline font-bold text-primary">6</div>
-      <div class="text-[10px] uppercase tracking-widest text-on-surface-muted font-mono">Global Regions Served</div>
+      <div class="text-4xl md:text-5xl font-headline font-bold text-primary">45</div>
+      <div class="text-[10px] uppercase tracking-widest text-on-surface-muted font-mono">Day Delivery Guarantee</div>
     </div>
   </div>
 </section>
@@ -712,31 +690,6 @@
 <!-- ════════════════════════════════════════════════════════════
      05 — CLIENTS STRIP
 ════════════════════════════════════════════════════════════ -->
-<section id="clients" class="py-16 bg-surface border-t border-b border-white/[0.05]">
-  <p class="text-center text-[10px] font-mono uppercase tracking-[0.2em] text-on-surface-muted mb-10">Trusted by teams at</p>
-  <div class="marquee-wrap">
-    <div class="marquee-track px-2">
-      <!-- Set 1 -->
-      <div class="client-card"><span class="client-card-name">Mahindra</span><span class="client-card-tag">Automotive</span></div>
-      <div class="client-card"><span class="client-card-name">Pininfarina</span><span class="client-card-tag">Automotive · Germany</span></div>
-      <div class="client-card"><span class="client-card-name">QuickHeal</span><span class="client-card-tag">Cybersecurity · India</span></div>
-      <div class="client-card"><span class="client-card-name">Maharashtra Gov.</span><span class="client-card-tag">Government</span></div>
-      <div class="client-card"><span class="client-card-name">Semilynx</span><span class="client-card-tag">Industrial AR · USA</span></div>
-      <div class="client-card"><span class="client-card-name">Vidanta</span><span class="client-card-tag">Hospitality · Mexico</span></div>
-      <div class="client-card"><span class="client-card-name">Clinical Trac</span><span class="client-card-tag">HealthTech · USA</span></div>
-      <div class="client-card"><span class="client-card-name">Open Houses Direct</span><span class="client-card-tag">PropTech · USA</span></div>
-      <!-- Set 2 — duplicate for seamless loop -->
-      <div class="client-card"><span class="client-card-name">Mahindra</span><span class="client-card-tag">Automotive</span></div>
-      <div class="client-card"><span class="client-card-name">Pininfarina</span><span class="client-card-tag">Automotive · Germany</span></div>
-      <div class="client-card"><span class="client-card-name">QuickHeal</span><span class="client-card-tag">Cybersecurity · India</span></div>
-      <div class="client-card"><span class="client-card-name">Maharashtra Gov.</span><span class="client-card-tag">Government</span></div>
-      <div class="client-card"><span class="client-card-name">Semilynx</span><span class="client-card-tag">Industrial AR · USA</span></div>
-      <div class="client-card"><span class="client-card-name">Vidanta</span><span class="client-card-tag">Hospitality · Mexico</span></div>
-      <div class="client-card"><span class="client-card-name">Clinical Trac</span><span class="client-card-tag">HealthTech · USA</span></div>
-      <div class="client-card"><span class="client-card-name">Open Houses Direct</span><span class="client-card-tag">PropTech · USA</span></div>
-    </div>
-  </div>
-</section>
 
 <!-- ════════════════════════════════════════════════════════════
      06 — CASE STUDIES — Horizontal Scroll
