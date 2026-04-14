@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ PRIMARY SEO ═══════════════════════════════════════════ -->
+  <title>Services — OnPoint Nexus | AI, Cloud, Custom Software & Enterprise</title>
+  <meta name="description" content="AI & Machine Learning, Cloud & DevOps, Custom Software, Enterprise Solutions, and Product Design Sprints. One accountable team from strategy to production.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://onpointnexus.com/services">
+
+  <!-- ═══ OPEN GRAPH ════════════════════════════════════════════ -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="OnPoint Nexus">
+  <meta property="og:url"         content="https://onpointnexus.com/services">
+  <meta property="og:title"       content="Services — OnPoint Nexus">
+  <meta property="og:description" content="Every capability. One accountable team. AI/ML, Cloud, Custom Software, Enterprise, and Design Sprints.">
+  <meta property="og:image"       content="https://onpointnexus.com/og-image.png">
+
+  <!-- ═══ FAVICON ═══════════════════════════════════════════════ -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- ═══ TAILWIND ══════════════════════════════════════════════ -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <!-- ═══ MATERIAL SYMBOLS ══════════════════════════════════════ -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- ═══ BRAND FONTS ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ═══ TAILWIND CONFIG ═══════════════════════════════════════ -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary:            '#1ABADC',
+            'primary-dim':      '#0E8FA8',
+            surface:            '#0c1324',
+            'surface-low':      '#080e1c',
+            'surface-mid':      '#111827',
+            'surface-high':     '#1a2235',
+            'surface-card':     '#141c2e',
+            'on-surface':       '#E8EDF5',
+            'on-surface-dim':   '#8A9BB5',
+            'on-surface-muted': '#4A5A72',
+            outline:            '#2A3550',
+          },
+          fontFamily: {
+            headline: ["'Plus Jakarta Sans'", 'sans-serif'],
+            body:     ["'Plus Jakarta Sans'", 'sans-serif'],
+            mono:     ["'Roboto Mono'", 'monospace'],
+          },
+          borderRadius: {
+            DEFAULT: '0.5rem',
+            lg:      '0.75rem',
+            xl:      '1rem',
+            '2xl':   '1.25rem',
+            full:    '9999px',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .neural-grid {
+      background-image: radial-gradient(rgba(26,186,220,0.09) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    .glass-panel {
+      background: rgba(17,24,39,0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .reveal       { opacity:0; transform:translateY(28px);  transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+    .reveal-left  { opacity:0; transform:translateX(-28px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .reveal-right { opacity:0; transform:translateX(28px);  transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .in-view { opacity:1; transform:none; }
+    .grad-text {
+      background: linear-gradient(135deg, #1ABADC 0%, #6DCFFF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glow-blob {
+      position:absolute;
+      border-radius:9999px;
+      filter:blur(120px);
+      pointer-events:none;
+    }
+    input, select, textarea { font-family: 'Plus Jakarta Sans', sans-serif; color: #E8EDF5; }
+    input::placeholder, textarea::placeholder { color: #4A5A72; }
+
+    /* Sprint flow */
+    .sprint-step {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+      flex: 1; text-align: center; position: relative;
+    }
+    .sprint-step::after {
+      content: '';
+      position: absolute; right: -1px; top: 20px;
+      width: calc(100% - 40px); height: 1px;
+      background: linear-gradient(90deg, rgba(26,186,220,0.4), rgba(26,186,220,0.1));
+      left: calc(50% + 20px);
+    }
+    .sprint-step:last-child::after { display: none; }
+    .sprint-node {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(26,186,220,0.12); border: 1px solid rgba(26,186,220,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: #1ABADC; font-weight: 700; font-size: 0.75rem;
+      font-family: 'Roboto Mono', monospace; flex-shrink: 0;
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary/20 overflow-x-hidden">
+
+<!-- ════════════════════════════════════════════════════════════
+     NAV — Floating Pill
+════════════════════════════════════════════════════════════ -->
+<nav id="topNav" class="fixed top-4 left-0 right-0 z-50 px-4 mx-auto max-w-7xl" style="left:50%;transform:translateX(-50%);width:calc(100% - 2rem);">
+  <div class="flex items-center justify-between px-5 py-2.5 rounded-full backdrop-blur-xl border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.5)]" style="background:rgba(17,24,39,0.82);">
+    <a href="/" class="shrink-0">
+      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto">
+    </a>
+    <div class="hidden md:flex items-center gap-7 font-body text-sm">
+      <a href="/services"   class="text-primary transition-colors duration-200">Services</a>
+      <a href="/#work"      class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
+      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Industries</a>
+      <a href="/#about"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
+      <a href="/#engage"    class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work With Us</a>
+    </div>
+    <a href="/#contact" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface-mid px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
+      Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+    <button id="navToggle" class="md:hidden p-2 text-on-surface-dim hover:text-primary transition-colors" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="material-symbols-outlined" id="menuIcon">menu</span>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl" style="background:rgba(17,24,39,0.96);">
+    <div class="flex flex-col gap-1 text-sm font-body">
+      <a href="/services"   class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">Services</a>
+      <a href="/#work"      class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work</a>
+      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Industries</a>
+      <a href="/#about"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
+      <a href="/#engage"    class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work With Us</a>
+      <a href="/#contact"   class="mt-3 bg-primary text-surface-mid px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="relative pt-40 pb-24 overflow-hidden">
+  <div class="absolute inset-0 neural-grid opacity-20 pointer-events-none"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-surface to-surface pointer-events-none"></div>
+
+  <div class="relative max-w-4xl mx-auto px-6 text-center">
+    <span class="text-xs font-mono text-primary uppercase tracking-widest reveal">What We Build</span>
+    <h1 class="font-headline text-5xl md:text-6xl font-bold mt-4 mb-6 text-on-surface leading-[1.08] reveal">
+      Every capability.<br><span class="grad-text">One accountable team.</span>
+    </h1>
+    <p class="text-xl text-on-surface-dim max-w-2xl mx-auto leading-relaxed reveal">
+      From AI strategy to production deployment — we own the full stack so you don't manage five agencies.
+    </p>
+
+    <!-- Service nav anchors -->
+    <div class="flex flex-wrap gap-3 justify-center mt-10 reveal">
+      <a href="#ai"         class="px-4 py-2 rounded-full border border-white/[0.07] text-xs font-mono text-on-surface-dim hover:border-primary/40 hover:text-primary transition-all duration-200">AI & ML</a>
+      <a href="#cloud"      class="px-4 py-2 rounded-full border border-white/[0.07] text-xs font-mono text-on-surface-dim hover:border-primary/40 hover:text-primary transition-all duration-200">Cloud & DevOps</a>
+      <a href="#custom"     class="px-4 py-2 rounded-full border border-white/[0.07] text-xs font-mono text-on-surface-dim hover:border-primary/40 hover:text-primary transition-all duration-200">Custom Software</a>
+      <a href="#enterprise" class="px-4 py-2 rounded-full border border-white/[0.07] text-xs font-mono text-on-surface-dim hover:border-primary/40 hover:text-primary transition-all duration-200">Enterprise</a>
+      <a href="#sprint"     class="px-4 py-2 rounded-full border border-white/[0.07] text-xs font-mono text-on-surface-dim hover:border-primary/40 hover:text-primary transition-all duration-200">Design Sprint</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     01 — AI & MACHINE LEARNING
+════════════════════════════════════════════════════════════ -->
+<section id="ai" class="py-24 border-t border-white/[0.05]">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row gap-16 items-start">
+
+      <div class="lg:w-2/5 reveal-left lg:sticky lg:top-32">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest">01</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-bold mt-3 mb-5 text-on-surface leading-tight">
+          AI &amp; Machine Learning
+        </h2>
+        <p class="text-on-surface-dim leading-relaxed mb-6">
+          Custom AI that ships to production — not just demos. We build end-to-end ML systems that integrate into your product, automate real processes, and improve over time with live data.
+        </p>
+        <p class="text-on-surface-dim leading-relaxed mb-8">
+          Every model we deploy is production-hardened: versioned, monitored, and built to handle the edge cases your business actually encounters.
+        </p>
+        <a href="/#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-surface-mid font-bold text-sm hover:bg-primary-dim transition-colors duration-200">
+          Start an AI project <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="lg:w-3/5 reveal-right">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">psychology</span>
+            <h4 class="font-bold text-on-surface mb-2">LLM Integration & RAG</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">ChatGPT, Claude, Gemini API integration. Retrieval-Augmented Generation pipelines for domain-specific knowledge.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">image_search</span>
+            <h4 class="font-bold text-on-surface mb-2">Computer Vision</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Object detection, image classification, OCR, and video analytics for industrial, medical, and retail use cases.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">query_stats</span>
+            <h4 class="font-bold text-on-surface mb-2">Predictive Analytics</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Forecasting models, churn prediction, demand planning, and risk scoring — trained on your data, not generic benchmarks.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">smart_toy</span>
+            <h4 class="font-bold text-on-surface mb-2">Intelligent Automation</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">NLP-powered document processing, workflow automation, and AI agents that replace repetitive human tasks at scale.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">account_tree</span>
+            <h4 class="font-bold text-on-surface mb-2">MLOps Pipelines</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Model versioning, continuous training, A/B testing infra, and drift monitoring so your models stay accurate post-launch.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">recommend</span>
+            <h4 class="font-bold text-on-surface mb-2">Recommendation Engines</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Collaborative filtering and content-based systems for e-commerce, content platforms, and personalised user experiences.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     02 — CLOUD & DEVOPS
+════════════════════════════════════════════════════════════ -->
+<section id="cloud" class="py-24 bg-surface-low border-t border-white/[0.05]">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row gap-16 items-start">
+
+      <div class="lg:w-2/5 reveal-left lg:sticky lg:top-32">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest">02</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-bold mt-3 mb-5 text-on-surface leading-tight">
+          Cloud &amp; DevOps
+        </h2>
+        <p class="text-on-surface-dim leading-relaxed mb-6">
+          Auto-scaling infrastructure built for enterprise workloads — deployed fast, monitored constantly, and engineered to keep your costs predictable as you grow.
+        </p>
+        <p class="text-on-surface-dim leading-relaxed mb-8">
+          We architect, migrate, and manage cloud environments across AWS, Azure, and GCP, with zero-downtime deployments as the baseline expectation.
+        </p>
+        <a href="/#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-surface-mid font-bold text-sm hover:bg-primary-dim transition-colors duration-200">
+          Start a Cloud project <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="lg:w-3/5 reveal-right">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">cloud</span>
+            <h4 class="font-bold text-on-surface mb-2">Cloud Architecture & Migration</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">AWS, Azure, and GCP. Lift-and-shift migrations, re-architecture for cloud-native, and multi-cloud strategy.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">deployed_code</span>
+            <h4 class="font-bold text-on-surface mb-2">Kubernetes & Containers</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">EKS, AKS, GKE cluster design. Container orchestration, auto-scaling, and Helm chart management.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">device_hub</span>
+            <h4 class="font-bold text-on-surface mb-2">CI/CD Pipeline Design</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">GitHub Actions, GitLab CI, and Jenkins pipelines with automated testing, staging gates, and zero-downtime deploys.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">code_blocks</span>
+            <h4 class="font-bold text-on-surface mb-2">Infrastructure as Code</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Terraform, Ansible, and Pulumi for repeatable, auditable infrastructure. Every environment version-controlled.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">monitor_heart</span>
+            <h4 class="font-bold text-on-surface mb-2">24/7 Monitoring & Alerting</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Datadog, Grafana, and PagerDuty setup. SLO/SLA tracking, anomaly detection, and on-call runbooks.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">savings</span>
+            <h4 class="font-bold text-on-surface mb-2">Cost Optimisation (FinOps)</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Reserved instance planning, right-sizing, and spend governance. Most clients cut cloud costs 20–40% within 90 days.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     03 — CUSTOM SOFTWARE
+════════════════════════════════════════════════════════════ -->
+<section id="custom" class="py-24 border-t border-white/[0.05]">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row gap-16 items-start">
+
+      <div class="lg:w-2/5 reveal-left lg:sticky lg:top-32">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest">03</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-bold mt-3 mb-5 text-on-surface leading-tight">
+          Custom Software
+        </h2>
+        <p class="text-on-surface-dim leading-relaxed mb-6">
+          Web, mobile, and enterprise platforms built from MVP to production scale. We work in sprints with live demos every two weeks — so you're never waiting on a black box.
+        </p>
+        <p class="text-on-surface-dim leading-relaxed mb-8">
+          Compliance (HIPAA, GDPR, SOC2) is baked into the architecture from day one — not retrofitted before launch when it costs ten times more.
+        </p>
+        <a href="/#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-surface-mid font-bold text-sm hover:bg-primary-dim transition-colors duration-200">
+          Start a Custom Software project <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="lg:w-3/5 reveal-right">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">web</span>
+            <h4 class="font-bold text-on-surface mb-2">Web Applications</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">React, Next.js, Vue, and Node.js. SSR/SSG for performance, micro-frontend architecture for scale.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">smartphone</span>
+            <h4 class="font-bold text-on-surface mb-2">Mobile Apps</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Flutter (cross-platform), React Native, Swift (iOS), and Kotlin (Android). App Store + Play Store launch included.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">api</span>
+            <h4 class="font-bold text-on-surface mb-2">API & Microservices</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">RESTful and GraphQL API design, event-driven microservices, and third-party integration architecture.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">bolt</span>
+            <h4 class="font-bold text-on-surface mb-2">Real-Time Systems</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">WebSockets, WebRTC, and event streaming (Kafka, Redis) for live dashboards, collaboration tools, and monitoring platforms.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">verified_user</span>
+            <h4 class="font-bold text-on-surface mb-2">Compliance by Default</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">HIPAA, GDPR, and SOC2 architectures. Audit trails, data residency, encryption-at-rest, and access control built in.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">rocket_launch</span>
+            <h4 class="font-bold text-on-surface mb-2">MVP to Scale</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Lean first release in 45 days. Architecture designed to grow — so your MVP code doesn't become technical debt at Series A.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     04 — ENTERPRISE SOLUTIONS
+════════════════════════════════════════════════════════════ -->
+<section id="enterprise" class="py-24 bg-surface-low border-t border-white/[0.05]">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row gap-16 items-start">
+
+      <div class="lg:w-2/5 reveal-left lg:sticky lg:top-32">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest">04</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-bold mt-3 mb-5 text-on-surface leading-tight">
+          Enterprise Solutions
+        </h2>
+        <p class="text-on-surface-dim leading-relaxed mb-6">
+          SAP, Salesforce, and legacy modernisation without disruption. We integrate with your existing systems and upgrade your architecture — without taking your operations offline.
+        </p>
+        <p class="text-on-surface-dim leading-relaxed mb-8">
+          Our engineers have worked inside Fortune 500 IT environments. We understand the political and technical constraints that derail most enterprise projects before they ship.
+        </p>
+        <a href="/#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-surface-mid font-bold text-sm hover:bg-primary-dim transition-colors duration-200">
+          Start an Enterprise project <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="lg:w-3/5 reveal-right">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">corporate_fare</span>
+            <h4 class="font-bold text-on-surface mb-2">SAP Implementation</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">SAP S/4HANA, SAP BTP, and custom ABAP development. Integration with existing ERP workflows and data migration.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">cloud_sync</span>
+            <h4 class="font-bold text-on-surface mb-2">Salesforce Development</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Custom Salesforce objects, Apex, Lightning Web Components, and CRM process automation for sales and service teams.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">sync_alt</span>
+            <h4 class="font-bold text-on-surface mb-2">ERP & CRM Integration</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Connecting disparate business systems via middleware (MuleSoft, Azure Integration Services) with real-time data sync.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">build</span>
+            <h4 class="font-bold text-on-surface mb-2">Legacy Modernisation</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Strangler-fig migration from monoliths to microservices. Incremental rewrites that keep production running throughout.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">account_balance</span>
+            <h4 class="font-bold text-on-surface mb-2">Avaloq Banking Platform</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Avaloq-certified integration for wealth management, private banking, and trading platform backends.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">bar_chart</span>
+            <h4 class="font-bold text-on-surface mb-2">BI & Data Warehouse</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Snowflake, BigQuery, and Redshift pipelines. Power BI and Tableau dashboards your leadership team will actually use.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     05 — PRODUCT DESIGN SPRINT
+════════════════════════════════════════════════════════════ -->
+<section id="sprint" class="py-24 border-t border-white/[0.05]">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="flex flex-col lg:flex-row gap-16 items-start">
+
+      <div class="lg:w-2/5 reveal-left lg:sticky lg:top-32">
+        <span class="text-[10px] font-mono text-primary uppercase tracking-widest">05</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-bold mt-3 mb-5 text-on-surface leading-tight">
+          Product Design Sprint
+        </h2>
+        <p class="text-on-surface-dim leading-relaxed mb-6">
+          Validate your product idea before a single line of code is written. In 45 days we take you from a rough brief to a tested, Figma-ready prototype with real user feedback.
+        </p>
+        <p class="text-on-surface-dim leading-relaxed mb-8">
+          Every sprint produces a complete handover package: user research, interaction flows, high-fidelity prototype, and a design system ready for your engineering team to build from.
+        </p>
+        <a href="/#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-surface-mid font-bold text-sm hover:bg-primary-dim transition-colors duration-200">
+          Start a Design Sprint <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="lg:w-3/5 reveal-right space-y-8">
+
+        <!-- 5-stage horizontal flow -->
+        <div class="p-7 rounded-2xl bg-surface-card border border-white/[0.05]">
+          <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-6">The 5-Stage Process</p>
+          <div class="flex items-start gap-0 overflow-x-auto pb-2">
+
+            <div class="sprint-step min-w-[100px]">
+              <div class="sprint-node">01</div>
+              <p class="text-xs font-bold text-on-surface">Empathize</p>
+              <p class="text-[10px] text-on-surface-muted font-mono leading-tight">User research &amp; interviews</p>
+            </div>
+
+            <div class="sprint-step min-w-[100px]">
+              <div class="sprint-node">02</div>
+              <p class="text-xs font-bold text-on-surface">Define</p>
+              <p class="text-[10px] text-on-surface-muted font-mono leading-tight">Problem framing &amp; personas</p>
+            </div>
+
+            <div class="sprint-step min-w-[100px]">
+              <div class="sprint-node">03</div>
+              <p class="text-xs font-bold text-on-surface">Ideate</p>
+              <p class="text-[10px] text-on-surface-muted font-mono leading-tight">Concept generation &amp; flows</p>
+            </div>
+
+            <div class="sprint-step min-w-[100px]">
+              <div class="sprint-node">04</div>
+              <p class="text-xs font-bold text-on-surface">Prototype</p>
+              <p class="text-[10px] text-on-surface-muted font-mono leading-tight">Hi-fi Figma prototype</p>
+            </div>
+
+            <div class="sprint-step min-w-[100px]">
+              <div class="sprint-node">05</div>
+              <p class="text-xs font-bold text-on-surface">Validate</p>
+              <p class="text-[10px] text-on-surface-muted font-mono leading-tight">Usability testing &amp; iteration</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Capabilities grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">person_search</span>
+            <h4 class="font-bold text-on-surface mb-2">User Research</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Interviews, surveys, and competitive analysis. We talk to your actual users — not just stakeholders — to find what truly matters.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">design_services</span>
+            <h4 class="font-bold text-on-surface mb-2">Rapid Figma Prototyping</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">High-fidelity, interactive prototypes built in Figma. Realistic enough to test with users, fast enough to iterate daily.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">fact_check</span>
+            <h4 class="font-bold text-on-surface mb-2">Usability Testing</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Moderated and unmoderated testing sessions. Written findings report with prioritised improvement recommendations.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
+            <span class="material-symbols-outlined text-primary mb-3" style="font-size:1.5rem">style</span>
+            <h4 class="font-bold text-on-surface mb-2">Design System Handover</h4>
+            <p class="text-xs text-on-surface-dim leading-relaxed">Tokens, components, and documentation packaged for your engineering team. No design-to-dev translation gap.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     BOTTOM CTA
+════════════════════════════════════════════════════════════ -->
+<section class="py-24 bg-surface-low border-t border-white/[0.05] relative overflow-hidden">
+  <div class="absolute inset-0 neural-grid opacity-15 pointer-events-none"></div>
+  <div class="glow-blob w-[500px] h-[400px] bg-primary/6 top-0 left-1/2 -translate-x-1/2"></div>
+  <div class="max-w-2xl mx-auto px-6 text-center relative z-10">
+    <div class="reveal">
+      <span class="text-xs font-mono text-primary uppercase tracking-widest">Let's Build</span>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold mt-4 mb-5 text-on-surface leading-tight">
+        Not sure which service fits your project?
+      </h2>
+      <p class="text-on-surface-dim leading-relaxed mb-8">
+        Book a free 30-minute discovery call. We'll map your project to the right capabilities, flag the risks, and give you an honest build plan — no pitch, no obligation.
+      </p>
+      <a href="/#contact" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-surface-mid font-bold hover:bg-primary-dim hover:shadow-lg hover:shadow-primary/25 transition-all duration-200">
+        Book a Discovery Call <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="bg-surface-low border-t border-white/5 pt-16 pb-10">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-14">
+
+      <!-- Brand -->
+      <div class="space-y-5">
+        <img src="/logo-icon.png" alt="OnPoint Nexus" class="h-14 w-auto" style="mix-blend-mode:screen;">
+        <p class="text-on-surface-dim text-sm leading-relaxed">We ship. You grow.<br>130+ projects in production worldwide.</p>
+        <address class="text-sm text-on-surface-muted not-italic leading-relaxed">
+          OnPoint Nexus Pvt. Ltd.<br>
+          Pune &amp; Kolhapur, India<br>
+          <span class="text-xs opacity-70 mt-1 block">1900 S. Polk #295, Dallas, TX, USA</span>
+          <span class="text-xs opacity-70 mt-0.5 block">755 St-Johns Blvd, Pointe-Claire, Quebec</span>
+          <span class="text-xs opacity-70 mt-0.5 block">Mumbai · Frankfurt · Dubai</span>
+        </address>
+      </div>
+
+      <!-- Solutions -->
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Solutions</h4>
+        <ul class="space-y-3">
+          <li><a href="/services#ai"         class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">AI &amp; Machine Learning</a></li>
+          <li><a href="/services#cloud"      class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Cloud &amp; DevOps</a></li>
+          <li><a href="/services#custom"     class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Custom Software</a></li>
+          <li><a href="/services#enterprise" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Enterprise Platforms</a></li>
+          <li><a href="/services#sprint"     class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Design Sprint</a></li>
+          <li><a href="/#engage"             class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Staff Augmentation</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Company</h4>
+        <ul class="space-y-3">
+          <li><a href="/#about"        class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">About Us</a></li>
+          <li><a href="/#approach"     class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">How We Work</a></li>
+          <li><a href="/work"          class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Case Studies</a></li>
+          <li><a href="/#testimonials" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Client Stories</a></li>
+          <li><a href="/industries"    class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Industries</a></li>
+          <li><a href="mailto:hr@onpointsoft.com" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Connect</h4>
+        <ul class="space-y-3">
+          <li><a href="mailto:hello@onpointnexus.com" class="text-on-surface-muted text-sm hover:text-primary transition-colors">hello@onpointnexus.com</a></li>
+          <li><a href="mailto:hr@onpointsoft.com"     class="text-on-surface-muted text-sm hover:text-primary transition-colors">hr@onpointsoft.com</a></li>
+          <li><a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">LinkedIn</a></li>
+          <li><a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Instagram</a></li>
+          <li><a href="/#engage"   class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Engagement Models</a></li>
+          <li><a href="/#contact"  class="text-primary text-sm font-semibold hover:text-white transition-colors">Book a Discovery Call →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-on-surface-muted font-mono">© 2026 OnPoint Nexus Pvt. Ltd. All rights reserved.</p>
+      <div class="flex flex-wrap gap-5 justify-center">
+        <a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">LinkedIn</a>
+        <a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Instagram</a>
+        <a href="/privacy-policy" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Privacy Policy</a>
+        <a href="/terms"          class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════════════════ -->
+<script>
+  // ── Mobile nav toggle ─────────────────────────────────────
+  const navToggle  = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon   = document.getElementById('menuIcon');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    menuIcon.textContent = isOpen ? 'menu' : 'close';
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuIcon.textContent = 'menu';
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ── Scroll reveal ──────────────────────────────────────────
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
+  } else {
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+      el.style.transition = 'none';
+      el.classList.add('in-view');
+    });
+  }
+
+  // ── Smooth anchor scroll ───────────────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+<!-- ═══ GOOGLE ANALYTICS 4 ════════════════════════════════════ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N2WCZPCE46');
+</script>
+
+</body>
+</html>
