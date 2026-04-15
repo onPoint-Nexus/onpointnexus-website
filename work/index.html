@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ PRIMARY SEO ═══════════════════════════════════════════ -->
+  <title>Case Studies — 130+ Production Projects | OnPoint Nexus</title>
+  <meta name="description" content="Real projects, real results. From monitoring 50K patients to building Pininfarina's AR experience. See all case studies.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://onpointnexus.com/work/">
+
+  <!-- ═══ OPEN GRAPH ════════════════════════════════════════════ -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="OnPoint Nexus">
+  <meta property="og:url"         content="https://onpointnexus.com/work/">
+  <meta property="og:title"       content="Case Studies — 130+ Production Projects | OnPoint Nexus">
+  <meta property="og:description" content="Real projects, real results. From monitoring 50K patients to building Pininfarina's AR experience. See all case studies.">
+  <meta property="og:image"       content="https://onpointnexus.com/og-image.png">
+
+  <!-- ═══ FAVICON ═══════════════════════════════════════════════ -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- ═══ TAILWIND ══════════════════════════════════════════════ -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <!-- ═══ MATERIAL SYMBOLS ══════════════════════════════════════ -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- ═══ BRAND FONTS ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ═══ TAILWIND CONFIG ═══════════════════════════════════════ -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary:         '#1ABADC',
+            'primary-dim':   '#148FAA',
+            surface:         '#0c1324',
+            'surface-mid':   '#0c1324',
+            'surface-card':  '#141c2e',
+            'surface-high':  '#1a2235',
+            'surface-low':   '#080e1c',
+            'on-surface':    '#E8EDF5',
+            'on-surface-dim':'#8A9BB5',
+            'on-surface-muted':'#4A5A72',
+          },
+          fontFamily: {
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Roboto Mono', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- ═══ GOOGLE ANALYTICS ══════════════════════════════════════ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-N2WCZPCE46');</script>
+
+  <style>
+    body { background-color: #0c1324; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .dot-grid {
+      background-image: radial-gradient(rgba(26,186,220,0.09) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    .grad-text { background: linear-gradient(135deg, #1ABADC 0%, #6DCFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+
+<!-- ════════════════════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════════════════════ -->
+<nav class="sticky top-0 z-50 border-b border-white/[0.05]" style="background:rgba(12,19,36,0.92);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto">
+    </a>
+    <div class="hidden md:flex items-center gap-7 font-body text-sm">
+      <a href="/services"   class="text-on-surface-dim hover:text-primary transition-colors duration-200">Services</a>
+      <a href="/work"       class="text-primary transition-colors duration-200">Work</a>
+      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Industries</a>
+      <a href="/about"      class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
+      <a href="/#contact"   class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work With Us</a>
+    </div>
+    <a href="/#contact" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
+      Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+    <button id="navToggle" class="md:hidden p-2 text-on-surface-dim hover:text-primary transition-colors" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="material-symbols-outlined" id="menuIcon">menu</span>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl mx-6 mb-3" style="background:rgba(17,24,39,0.96);">
+    <div class="flex flex-col gap-1 text-sm font-body">
+      <a href="/services"   class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Services</a>
+      <a href="/work"       class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">Work</a>
+      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Industries</a>
+      <a href="/about"      class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
+      <a href="/#contact"   class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work With Us</a>
+      <a href="/#contact"   class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="dot-grid pt-28 pb-20 px-6 text-center" style="background:#0e1628;">
+  <div class="max-w-3xl mx-auto">
+    <p class="text-xs font-mono text-primary uppercase tracking-widest mb-6">Our Work</p>
+    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+      130+ projects.<br><span class="grad-text">Zero half-measures.</span>
+    </h1>
+    <p class="text-on-surface-dim text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+      Real projects, real results. From monitoring 50,000 patients to building Pininfarina's AR experience — every build ships to production.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     CASE STUDIES GRID
+════════════════════════════════════════════════════════════ -->
+<section class="py-20 px-6 max-w-7xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Pininfarina -->
+    <a href="/pininfarina" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
+      <div class="h-48 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80" alt="Battista by Pininfarina" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">Automotive AR · Germany</p>
+        <h3 class="text-lg font-bold text-on-surface mb-2">Battista by Pininfarina</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">AR companion for the world's most powerful road-legal EV. Featured at every major auto show.</p>
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-primary font-mono">#1 AR Experience</span>
+          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Semilynx -->
+    <a href="/semilynx" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
+      <div class="h-48 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" alt="Semilynx AR Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">Industrial AR · Fortune 500</p>
+        <h3 class="text-lg font-bold text-on-surface mb-2">Semilynx</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">Google Glass AR platform eliminated cross-country engineer travel for Fortune 500 factories.</p>
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-primary font-mono">60% Less Downtime</span>
+          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- RPM One -->
+    <a href="/#contact" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
+      <div class="h-48 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80" alt="RPM One HealthTech" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">HealthTech · USA</p>
+        <h3 class="text-lg font-bold text-on-surface mb-2">RPM One</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">Remote patient monitoring platform. HIPAA-compliant infrastructure serving 10,000+ patients across clinical networks.</p>
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-primary font-mono">10K+ Patients</span>
+          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Case study coming soon</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Vidanta -->
+    <a href="/vidanta" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
+      <div class="h-48 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80" alt="Vidanta Resort Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">Travel & Hospitality · USA/Mexico</p>
+        <h3 class="text-lg font-bold text-on-surface mb-2">Vidanta</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">Unified membership and booking platform for North America's premier luxury resort group.</p>
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-primary font-mono">1M+ Members</span>
+          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Clinical Trac -->
+    <a href="/clinical-trac" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
+      <div class="h-48 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Clinical Trac Education Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">EdTech / HealthTech · USA</p>
+        <h3 class="text-lg font-bold text-on-surface mb-2">Clinical Trac</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">Clinical education platform now central to US respiratory therapy training. HIPAA compliant.</p>
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-primary font-mono">52 Schools</span>
+          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Open Houses Direct -->
+    <a href="/open-houses-direct" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
+      <div class="h-48 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80" alt="Open Houses Direct App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">PropTech · USA</p>
+        <h3 class="text-lg font-bold text-on-surface mb-2">Open Houses Direct</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">First dedicated open house discovery platform. Native iOS + Android + web, live on both stores.</p>
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-primary font-mono">#1 Open House App</span>
+          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- QuickHeal -->
+    <a href="/quickheal" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
+      <div class="h-48 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80" alt="QuickHeal Cybersecurity Redesign" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">Cybersecurity · India</p>
+        <h3 class="text-lg font-bold text-on-surface mb-2">QuickHeal</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">Complete UI/UX rebrand for India's most trusted antivirus brand. New design system across all digital properties.</p>
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-primary font-mono">#1 Antivirus Brand</span>
+          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- CTA card -->
+    <div class="bg-surface-card border border-primary/20 rounded-2xl p-8 flex flex-col justify-center items-start reveal" style="background:linear-gradient(135deg,rgba(26,186,220,0.06) 0%,rgba(20,28,46,1) 100%);">
+      <p class="text-xs font-mono text-primary uppercase tracking-widest mb-4">Start your project</p>
+      <h3 class="text-2xl font-bold text-on-surface mb-3">Ready to be next?</h3>
+      <p class="text-on-surface-dim text-sm leading-relaxed mb-6">Every project starts with a free 45-minute discovery call. No slides, no fluff — just an honest conversation about what you're building.</p>
+      <a href="/#contact" class="inline-flex items-center gap-2 bg-primary text-surface px-6 py-3 rounded-xl font-bold text-sm hover:bg-primary-dim transition-colors shadow-lg shadow-primary/20">
+        Book a Discovery Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="border-t border-white/[0.05] py-16 px-6" style="background:#080e1c;">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="inline-block mb-4">
+          <img src="/logo-icon.png" alt="OnPoint Nexus" class="h-14 w-auto" style="mix-blend-mode:screen;">
+        </a>
+        <p class="text-on-surface-muted text-sm leading-relaxed mb-4">AI-First Enterprise Technology Partner.<br>Discovery to production in 45 days.</p>
+        <p class="text-on-surface-muted text-xs font-mono">Pune · Kolhapur · Dallas<br>Toronto · Frankfurt · Dubai</p>
+      </div>
+
+      <!-- Solutions -->
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Solutions</h4>
+        <ul class="space-y-3">
+          <li><a href="/services#ai"         class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">AI &amp; Machine Learning</a></li>
+          <li><a href="/services#cloud"      class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Cloud &amp; DevOps</a></li>
+          <li><a href="/services#custom"     class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Custom Software</a></li>
+          <li><a href="/services#enterprise" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Enterprise Platforms</a></li>
+          <li><a href="/#contact"            class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Staff Augmentation</a></li>
+          <li><a href="/services#sprint"     class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Design Sprint</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Company</h4>
+        <ul class="space-y-3">
+          <li><a href="/about"              class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">About Us</a></li>
+          <li><a href="/work"               class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Case Studies</a></li>
+          <li><a href="/about#testimonials" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Client Stories</a></li>
+          <li><a href="/industries"         class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Industries</a></li>
+          <li><a href="/blog"               class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Blog</a></li>
+          <li><a href="mailto:hr@onpointsoft.com" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Connect</h4>
+        <ul class="space-y-3">
+          <li><a href="mailto:hello@onpointnexus.com" class="text-on-surface-muted text-sm hover:text-primary transition-colors">hello@onpointnexus.com</a></li>
+          <li><a href="mailto:hr@onpointsoft.com"     class="text-on-surface-muted text-sm hover:text-primary transition-colors">hr@onpointsoft.com</a></li>
+          <li><a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">LinkedIn</a></li>
+          <li><a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Instagram</a></li>
+          <li><a href="/#contact" class="text-primary text-sm font-semibold hover:text-white transition-colors">Book a Discovery Call →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-on-surface-muted font-mono">© 2026 OnPoint Nexus Pvt. Ltd. All rights reserved.</p>
+      <div class="flex flex-wrap gap-5 justify-center">
+        <a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">LinkedIn</a>
+        <a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Instagram</a>
+        <a href="/privacy-policy" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Privacy</a>
+        <a href="/terms" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const menu   = document.getElementById('mobileMenu');
+  const icon   = document.getElementById('menuIcon');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('hidden') === false;
+    icon.textContent = open ? 'close' : 'menu';
+    toggle.setAttribute('aria-expanded', open);
+  });
+
+  // Scroll reveal
+  if (window.IntersectionObserver) {
+    const o = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); o.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => o.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+  }
+</script>
+</body>
+</html>
