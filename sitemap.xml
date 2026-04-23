@@ -6,35 +6,35 @@
 
   <!-- ═══ MAIN PAGES ═══════════════════════════════════════════ -->
   <url>
-    <loc>https://onpointnexus.com/</loc>
+    <loc>https://www.onpointnexus.com/</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://onpointnexus.com/services</loc>
+    <loc>https://www.onpointnexus.com/services</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://onpointnexus.com/work</loc>
+    <loc>https://www.onpointnexus.com/work</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://onpointnexus.com/industries</loc>
+    <loc>https://www.onpointnexus.com/industries</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://onpointnexus.com/about</loc>
+    <loc>https://www.onpointnexus.com/about</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -42,42 +42,42 @@
 
   <!-- ═══ CASE STUDIES ═════════════════════════════════════════ -->
   <url>
-    <loc>https://onpointnexus.com/pininfarina</loc>
+    <loc>https://www.onpointnexus.com/pininfarina</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://onpointnexus.com/semilynx</loc>
+    <loc>https://www.onpointnexus.com/semilynx</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://onpointnexus.com/vidanta</loc>
+    <loc>https://www.onpointnexus.com/vidanta</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://onpointnexus.com/clinical-trac</loc>
+    <loc>https://www.onpointnexus.com/clinical-trac</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://onpointnexus.com/open-houses-direct</loc>
+    <loc>https://www.onpointnexus.com/open-houses-direct</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://onpointnexus.com/quickheal</loc>
+    <loc>https://www.onpointnexus.com/quickheal</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -85,14 +85,14 @@
 
   <!-- ═══ LEGAL ═════════════════════════════════════════════════ -->
   <url>
-    <loc>https://onpointnexus.com/privacy-policy</loc>
+    <loc>https://www.onpointnexus.com/privacy-policy</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://onpointnexus.com/terms</loc>
+    <loc>https://www.onpointnexus.com/terms</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>

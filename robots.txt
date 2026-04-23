@@ -1,4 +1,4 @@
-# robots.txt — OnPoint Nexus (https://onpointnexus.com)
+# robots.txt — OnPoint Nexus (https://www.onpointnexus.com)
 # Last updated: 2026-04-23
 
 # ── Standard search engines ──────────────────────────────────
@@ -33,4 +33,4 @@ User-agent: DuckDuckBot
 Allow: /
 
 # ── Sitemap ───────────────────────────────────────────────────
-Sitemap: https://onpointnexus.com/sitemap.xml
+Sitemap: https://www.onpointnexus.com/sitemap.xml
