@@ -1,5 +1,5 @@
 # robots.txt — OnPoint Nexus (https://onpointnexus.com)
-# Last updated: 2025-04-09
+# Last updated: 2026-04-23
 
 # ── Standard search engines ──────────────────────────────────
 User-agent: *
