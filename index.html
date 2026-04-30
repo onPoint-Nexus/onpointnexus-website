@@ -990,27 +990,24 @@
     </p>
 
     <div class="glass-panel rounded-2xl border border-white/[0.06] p-8 md:p-10 text-left">
-      <!-- Replace YOUR_FORM_ID with your Formspree form ID after signing up at formspree.io -->
-      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div class="space-y-2">
           <label class="text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Your Name</label>
-          <input type="text" name="name" required placeholder="Alex Johnson" class="w-full bg-surface-low border border-white/[0.06] rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-colors text-sm">
+          <input type="text" id="hs_name" required placeholder="Alex Johnson" class="w-full bg-surface-low border border-white/[0.06] rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-colors text-sm">
         </div>
         <div class="space-y-2">
           <label class="text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Business Email</label>
-          <input type="email" name="email" required placeholder="name@company.com" class="w-full bg-surface-low border border-white/[0.06] rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-colors text-sm">
+          <input type="email" id="hs_email" required placeholder="name@company.com" class="w-full bg-surface-low border border-white/[0.06] rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-colors text-sm">
         </div>
         <div class="md:col-span-2 space-y-2">
           <label class="text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Tell us about your project</label>
-          <textarea rows="4" name="message" placeholder="What are you building? What's the timeline? What's the biggest challenge right now?" class="w-full bg-surface-low border border-white/[0.06] rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-colors text-sm resize-none"></textarea>
+          <textarea rows="4" id="hs_message" placeholder="What are you building? What's the timeline? What's the biggest challenge right now?" class="w-full bg-surface-low border border-white/[0.06] rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-colors text-sm resize-none"></textarea>
         </div>
-        <!-- Honeypot spam field -->
-        <input type="text" name="_gotcha" style="display:none">
-        <input type="hidden" name="_subject" value="New Discovery Call Request — OnPoint Nexus">
         <div class="md:col-span-2" id="formStatus">
           <button type="submit" id="formBtn" class="w-full py-4 rounded-xl bg-primary text-surface-mid font-black uppercase tracking-[0.15em] text-sm hover:bg-primary-dim hover:shadow-lg hover:shadow-primary/25 transition-all duration-200">
             Book My Free Discovery Call →
           </button>
+          <p id="formError" class="hidden text-center text-xs text-red-400 mt-3"></p>
           <p class="text-center text-xs text-on-surface-muted mt-4">
             Or email us: <a href="mailto:hr@onpointsoft.com" class="text-primary hover:text-white transition-colors">hr@onpointsoft.com</a>
           </p>
@@ -1148,29 +1145,76 @@
     });
   });
 
-  // ── Contact form — Formspree AJAX ─────────────────────────
+  // ── Contact form — HubSpot Forms API ──────────────────────
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const btn = document.getElementById('formBtn');
-      const originalText = btn.textContent;
+      const btn      = document.getElementById('formBtn');
+      const errEl    = document.getElementById('formError');
+      const origText = btn.textContent;
+
+      // Gather values
+      const name    = document.getElementById('hs_name').value.trim();
+      const email   = document.getElementById('hs_email').value.trim();
+      const message = document.getElementById('hs_message').value.trim();
+
+      // Split name into first / last for HubSpot contact record
+      const nameParts = name.split(' ');
+      const firstname = nameParts[0] || name;
+      const lastname  = nameParts.slice(1).join(' ') || '';
+
+      // Read HubSpot tracking cookie (hutk) for better attribution
+      const hutk = document.cookie.split(';')
+        .map(c => c.trim())
+        .find(c => c.startsWith('hubspotutk='))
+        ?.split('=')[1] || undefined;
+
       btn.textContent = 'Sending…';
-      btn.disabled = true;
+      btn.disabled    = true;
+      errEl.classList.add('hidden');
 
-      const data = new FormData(contactForm);
-      const resp = await fetch(contactForm.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
+      const payload = {
+        fields: [
+          { objectTypeId: '0-1', name: 'firstname', value: firstname },
+          { objectTypeId: '0-1', name: 'lastname',  value: lastname  },
+          { objectTypeId: '0-1', name: 'email',     value: email     },
+          { objectTypeId: '0-1', name: 'message',   value: message   }
+        ],
+        context: {
+          hutk:     hutk,
+          pageUri:  'https://www.onpointnexus.com/',
+          pageName: 'OnPoint Nexus — Free 45-Day Build Plan'
+        }
+      };
 
-      if (resp.ok) {
-        contactForm.innerHTML = '<div class="md:col-span-2 text-center py-10"><span class="material-symbols-outlined text-primary text-5xl block mb-4">check_circle</span><p class="text-xl font-bold text-on-surface mb-2">Message sent!</p><p class="text-on-surface-dim text-sm">We\'ll be in touch within one business day.</p></div>';
-      } else {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        alert('Something went wrong. Please email us directly at hello@onpointnexus.com');
+      try {
+        const resp = await fetch(
+          'https://api.hsforms.com/submissions/v3/integration/submit/245765410/a0ee8aab-9c6a-454e-a87d-b0284d2a958d',
+          {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify(payload)
+          }
+        );
+
+        if (resp.ok) {
+          contactForm.innerHTML =
+            '<div class="md:col-span-2 text-center py-10">' +
+            '<span class="material-symbols-outlined text-primary text-5xl block mb-4">check_circle</span>' +
+            '<p class="text-xl font-bold text-on-surface mb-2">You\'re booked in!</p>' +
+            '<p class="text-on-surface-dim text-sm">We\'ll reach out within one business day to confirm your discovery call.</p>' +
+            '</div>';
+        } else {
+          const body = await resp.json().catch(() => ({}));
+          throw new Error(body.message || `HTTP ${resp.status}`);
+        }
+      } catch (err) {
+        btn.textContent = origText;
+        btn.disabled    = false;
+        errEl.textContent = 'Something went wrong — please email us at hr@onpointsoft.com';
+        errEl.classList.remove('hidden');
+        console.error('[HubSpot form]', err);
       }
     });
   }
