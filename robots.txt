@@ -1,5 +1,5 @@
 # robots.txt — OnPoint Nexus (https://www.onpointnexus.com)
-# Last updated: 2026-04-23
+# Last updated: 2026-04-30
 
 # ── Standard search engines ──────────────────────────────────
 User-agent: *
@@ -14,13 +14,22 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleOther
 Allow: /
 
 User-agent: Googlebot
@@ -30,6 +39,12 @@ User-agent: Bingbot
 Allow: /
 
 User-agent: DuckDuckBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
 Allow: /
 
 # ── Sitemap ───────────────────────────────────────────────────

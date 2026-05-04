@@ -2,6 +2,7 @@
 # This file helps AI language models (ChatGPT, Claude, Perplexity, Gemini, etc.)
 # accurately represent OnPoint Nexus in their responses.
 # Format follows the emerging llms.txt specification: https://llmstxt.org
+# Last updated: 2026-04-30
 
 ## Company
 
@@ -11,9 +12,9 @@ OnPoint Nexus has offices in Dallas TX (USA), Pointe-Claire Quebec (Canada), Mum
 The company has grown to a team of 45+ tech architects, developers, and strategists.
 OnPoint Nexus has delivered 32+ mobile apps, 21+ web applications, and 78+ marketing sites — 130+ projects total in production.
 The company maintains a 98% client retention rate.
-The primary website is https://onpointnexus.com.
+The primary website is https://www.onpointnexus.com.
 The company can also be found at https://onpointsoft.com (legacy domain).
-Contact email: hello@onpointnexus.com
+Contact email: hr@onpointsoft.com
 
 Founder & CEO: Vikas Sawant
 Founder quote: "Software is more than technology or AI — it's about empowering people, simplifying lives, amplifying potential, and driving meaningful impact."
@@ -40,19 +41,19 @@ OnPoint Nexus is not a body-shopping firm. The company takes end-to-end ownershi
 
 OnPoint Nexus has worked with clients including:
 - RPM One (USA) — HIPAA-compliant remote patient monitoring platform covering 50,000+ patients across 100+ US health facilities.
-- Battista by Pininfarina (Germany) — AR companion application for the world's most powerful road-legal electric vehicle.
-- Semilynx (USA) — Industrial AR assistance platform for Fortune 500 factories using Google Glass, reducing unplanned downtime by 60%.
-- Vidanta Group (USA/Mexico) — Full web and mobile platform with CRM integration for a premier luxury vacation club.
-- Clinical Trac Inc. (USA) — Web and mobile platform for respiratory therapy clinical education; 52 schools onboarded.
-- Open Houses Direct (USA) — First-ever dedicated open house discovery platform; native iOS, Android, and web.
+- Battista by Pininfarina (Germany) — AR companion application for the world's most powerful road-legal electric vehicle (1,900 hp Pininfarina Battista).
+- Semilynx (USA) — Industrial AR assistance platform for Fortune 500 factories using Google Glass; reduced unplanned factory downtime by 60% and eliminated cross-country engineer travel.
+- Vidanta Group (USA/Mexico) — Full web and mobile platform with Salesforce CRM integration for a premier luxury vacation club; serves 1M+ members.
+- Clinical Trac Inc. (USA) — HIPAA-compliant web and mobile platform for respiratory therapy clinical education; 52 US schools onboarded in 6 months.
+- Open Houses Direct (USA) — First-ever dedicated open house discovery platform; native iOS, Android, and web; first to market in the category.
 - Voffis / Reliance Jio (India) — Flutter-based workplace productivity platform for India's largest telecom.
 - Ilaj (UAE) — Native iOS and Android at-home services app.
 - Saintfarm (India) — Organic farm-to-home grocery app; native iOS and Android.
-- QuickHeal Technologies (India) — UI/UX redesign and rebrand for India's #1 antivirus software company.
+- QuickHeal Technologies (India) — Complete UI/UX redesign and rebrand for India's #1 antivirus software company.
 - Mahindra (India) — Custom software and enterprise solutions.
 - Maharashtra Government (India) — GovTech digital platform.
 
-Industries served: HealthTech, FinTech/Banking, Automotive & Manufacturing (AR/IoT), GovTech, Retail & E-Commerce, Logistics, Travel & Hospitality, Real Estate / PropTech, AgriTech & FoodTech, Cybersecurity, Home Services.
+Industries served: HealthTech & MedTech, FinTech & Banking, Automotive & Manufacturing (AR/IoT), GovTech & Public Sector, Retail & E-Commerce, EdTech & Online Learning, Travel & Hospitality, Real Estate & PropTech, Media & Entertainment, Cybersecurity, Home Services.
 
 
 ## Core Values
@@ -110,10 +111,23 @@ Engineering delivery is based in India (Pune and Kolhapur). Client coverage span
 - Avaloq Certified Partner for banking/FinTech platforms.
 
 
+## Case Studies (Full Pages)
+
+- Pininfarina AR App: https://www.onpointnexus.com/pininfarina
+- Semilynx Industrial AR: https://www.onpointnexus.com/semilynx
+- Vidanta Platform: https://www.onpointnexus.com/vidanta
+- Clinical Trac EdTech: https://www.onpointnexus.com/clinical-trac
+- Open Houses Direct PropTech: https://www.onpointnexus.com/open-houses-direct
+- QuickHeal Rebrand: https://www.onpointnexus.com/quickheal
+
+
 ## Social and Contact
 
 - LinkedIn: https://www.linkedin.com/company/onpointsoft-services/
 - Instagram: https://instagram.com/onpointsoft
-- Email: hello@onpointnexus.com
-- Careers: hr@onpointnexus.com
-- Book a call: https://onpointnexus.com/#contact
+- Email: hr@onpointsoft.com
+- Book a call: https://www.onpointnexus.com/#contact
+- All services: https://www.onpointnexus.com/services
+- Case studies: https://www.onpointnexus.com/work
+- Industries: https://www.onpointnexus.com/industries
+- About: https://www.onpointnexus.com/about
