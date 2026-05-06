@@ -11,7 +11,13 @@
       "Bash(sips -g pixelWidth -g pixelHeight logo-dark.png logo-light.png favicon.png)",
       "Bash(convert --version)",
       "Bash(python3 -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
-      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=\"og-image.png\" --window-size=1200,630 --hide-scrollbars \"og-image-template.html\")"
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=\"og-image.png\" --window-size=1200,630 --hide-scrollbars \"og-image-template.html\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(sed -i '' 's|href=\"#contact\" class=\"px-8|href=\"https://calendar.app.google/C4xHVMebCZ6hgbgV9\" target=\"_blank\" rel=\"noopener\" class=\"px-8|g' index.html about/index.html services/index.html industries/index.html work/index.html pininfarina.html semilynx.html vidanta.html clinical-trac.html open-houses-direct.html quickheal.html)",
+      "Bash(sed -i '' 's|href=\"#contact\" class=\"hidden md:inline-flex|href=\"https://calendar.app.google/C4xHVMebCZ6hgbgV9\" target=\"_blank\" rel=\"noopener\" class=\"hidden md:inline-flex|g' index.html)",
+      "Bash(sed -i '' 's|href=\"#contact\"   class=\"mt-3 bg-primary|href=\"https://calendar.app.google/C4xHVMebCZ6hgbgV9\" target=\"_blank\" rel=\"noopener\" class=\"mt-3 bg-primary|g' index.html)"
     ]
   }
 }
