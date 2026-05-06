@@ -101,20 +101,6 @@
       filter: blur(120px);
       pointer-events: none;
     }
-    /* Founder photo placeholder */
-    .founder-photo-placeholder {
-      width: 100%;
-      aspect-ratio: 4/5;
-      border-radius: 1.25rem;
-      background: #141c2e;
-      border: 1px dashed rgba(26,186,220,0.2);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: #4A5A72;
-    }
   </style>
 </head>
 
@@ -182,9 +168,12 @@
 
       <!-- Photo -->
       <div class="lg:w-2/5 reveal-left">
-        <div class="founder-photo-placeholder">
-          <span class="material-symbols-outlined" style="font-size:3rem;color:#2A3550">person</span>
-          <span class="text-xs font-mono uppercase tracking-widest">Founder photo</span>
+        <div class="rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl shadow-primary/5">
+          <img src="/vikas-sawant.jpg"
+               alt="Vikas Sawant — Founder & CEO, OnPoint Nexus"
+               class="w-full h-full object-cover object-top"
+               width="600" height="750"
+               loading="eager">
         </div>
       </div>
 
