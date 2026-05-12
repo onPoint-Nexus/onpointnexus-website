@@ -186,6 +186,9 @@
   <!-- ═══ BRAND FONTS ═══════════════════════════════════════════ -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- ═══ TRUSTPILOT ════════════════════════════════════════════ -->
+  <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+
   <!-- ═══ TAILWIND CONFIG ═══════════════════════════════════════ -->
   <script>
     tailwind.config = {
@@ -743,13 +746,13 @@
      embed code / <img> from Clutch, G2, and Goodfirms.
 ──────────────────────────────────────────────────────────────── -->
 <div class="py-10 bg-surface-low border-b border-white/[0.05]">
-  <div class="max-w-7xl mx-auto px-6 flex flex-col items-center gap-5">
-    <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-on-surface-muted">Independently Verified on</p>
-    <div class="flex items-center justify-center gap-6 flex-wrap">
-      <div class="trust-badge-placeholder" style="width:120px;height:40px;border:1px solid rgba(255,255,255,0.12);border-radius:8px;" title="Clutch badge — replace with embed"></div>
-      <div class="trust-badge-placeholder" style="width:120px;height:40px;border:1px solid rgba(255,255,255,0.12);border-radius:8px;" title="G2 badge — replace with embed"></div>
-      <div class="trust-badge-placeholder" style="width:120px;height:40px;border:1px solid rgba(255,255,255,0.12);border-radius:8px;" title="Goodfirms badge — replace with embed"></div>
+  <div class="max-w-3xl mx-auto px-6 flex flex-col items-center gap-4">
+    <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-on-surface-muted">Independently Verified on Trustpilot</p>
+    <!-- TrustBox widget - Review Collector -->
+    <div class="trustpilot-widget w-full" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6a02d0aa68849dd4825b4b98" data-style-height="52px" data-style-width="100%" data-token="7ebbbfce-bd31-4157-ad9a-5e480b1060fc">
+      <a href="https://www.trustpilot.com/review/onpointsoft.com" target="_blank" rel="noopener">Trustpilot</a>
     </div>
+    <!-- End TrustBox widget -->
   </div>
 </div>
 
@@ -994,9 +997,15 @@
     <h2 class="font-headline text-5xl md:text-6xl font-bold mt-4 mb-6 text-on-surface leading-[1.08]">
       Tell us what you're building.
     </h2>
-    <p class="text-xl text-on-surface-dim mb-12 max-w-2xl mx-auto leading-relaxed">
+    <p class="text-xl text-on-surface-dim mb-8 max-w-2xl mx-auto leading-relaxed">
       We'll review the scope, flag the risks, and tell you what it will take to get it live. 30 minutes. No pitch.
     </p>
+
+    <!-- TrustBox widget - Review Collector -->
+    <div class="trustpilot-widget max-w-sm mx-auto mb-10" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6a02d0aa68849dd4825b4b98" data-style-height="52px" data-style-width="100%" data-token="7ebbbfce-bd31-4157-ad9a-5e480b1060fc">
+      <a href="https://www.trustpilot.com/review/onpointsoft.com" target="_blank" rel="noopener">Trustpilot</a>
+    </div>
+    <!-- End TrustBox widget -->
 
     <div class="glass-panel rounded-2xl border border-white/[0.06] p-8 md:p-10 text-left">
       <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-5">
