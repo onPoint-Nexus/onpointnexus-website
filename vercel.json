@@ -2,6 +2,12 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+
+    { "source": "/about-us",          "destination": "https://www.onpointnexus.com/about",    "permanent": true },
+    { "source": "/staff-augmentation","destination": "https://www.onpointnexus.com/services",  "permanent": true },
+    { "source": "/blogs",             "destination": "https://www.onpointnexus.com/work",      "permanent": true },
+    { "source": "/blogs/:path*",      "destination": "https://www.onpointnexus.com/work",      "permanent": true },
+
     {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "onpointnexus.com" }],
