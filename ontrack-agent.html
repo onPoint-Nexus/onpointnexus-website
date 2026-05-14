@@ -89,71 +89,50 @@
 <body>
 
 <!-- NAV -->
-<nav id="topNav" class="fixed top-4 left-0 right-0 z-50 px-4 mx-auto max-w-7xl" style="left:50%;transform:translateX(-50%);width:calc(100% - 2rem);">
-  <div class="flex items-center justify-between px-5 py-2.5 rounded-full backdrop-blur-xl border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.5)]" style="background:rgba(17,24,39,0.82);">
-    <a href="/" class="shrink-0">
-      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
-    </a>
-    <div class="hidden md:flex items-center gap-7 font-body text-sm">
-      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Services</a>
-      <a href="/work" class="text-primary transition-colors duration-200">Work</a>
-      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Industries</a>
-      <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
-    </div>
-    <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface-mid px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
-      Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-    </a>
-    <button id="navToggle" class="md:hidden p-2 text-on-surface-dim hover:text-primary transition-colors" aria-label="Toggle navigation" aria-expanded="false">
-      <span class="material-symbols-outlined" id="menuIcon">menu</span>
-    </button>
-  </div>
-  <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl" style="background:rgba(17,24,39,0.96);">
-    <div class="flex flex-col gap-1 text-sm font-body">
-      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Services</a>
-      <a href="/work" class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">Work</a>
-      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Industries</a>
-      <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
-      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="mt-2 text-center bg-primary text-surface-mid py-3 px-3 rounded-xl font-semibold">Book a Call →</a>
+<nav class="sticky top-0 z-50 border-b border-white/[0.06]" style="background:rgba(12,19,36,0.95);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/"><img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20"></a>
+    <div class="flex items-center gap-6">
+      <a href="/work" class="text-sm text-on-surface-dim hover:text-primary transition-colors flex items-center gap-1.5">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to Work
+      </a>
+      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-primary text-surface font-semibold text-sm hover:bg-primary-dim transition-colors">Book a Call</a>
     </div>
   </div>
 </nav>
 
-<!-- SECTION 1: HERO -->
-<section class="relative overflow-hidden pt-36 pb-0" style="background:linear-gradient(180deg,#0e1628 0%,#0c1324 100%);">
+<!-- HERO -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden" style="background:linear-gradient(180deg,#0e1628 0%,#0c1324 100%);">
   <div class="neural-grid"></div>
   <div class="glow-blob w-[700px] h-[700px] bg-primary" style="top:-200px;right:-200px;"></div>
-  <div class="relative z-10 max-w-7xl mx-auto px-6 pb-16">
+  <div class="relative z-10 max-w-7xl mx-auto px-6 py-24">
     <div class="max-w-4xl">
-      <!-- Eyebrow chip -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-card border border-primary/20 mb-8">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest">Case Study</span>
+        <span class="text-on-surface-muted/40">·</span>
         <span class="text-[10px] font-mono text-primary uppercase tracking-widest">Real Estate · E-Learning · SaaS · USA</span>
       </div>
-      <h1 class="font-headline font-bold text-on-surface leading-[1.1] mb-6" style="font-size:clamp(2.2rem,5.5vw,4rem);letter-spacing:-0.03em;">
-        WordPress Was Capping Their Revenue. We Removed the Ceiling.
+      <h1 class="font-headline font-bold text-on-surface leading-[1.1] mb-6" style="font-size:clamp(2.5rem,6vw,4.5rem);letter-spacing:-0.03em;">
+        WordPress Was Capping Their Revenue.<br>We Removed the <span class="grad-text">Ceiling.</span>
       </h1>
       <p class="text-on-surface-dim text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
         OnTrack Agent — a video-based coaching platform for real estate professionals — was growing faster than its infrastructure could handle. We migrated it to a modern SaaS in 48 days.
       </p>
-      <!-- Stat cards -->
-      <div class="flex flex-wrap gap-4 mb-10">
+      <div class="flex flex-wrap gap-4 mb-12">
         <div class="stat-card px-6 py-4 rounded-2xl bg-surface-card border border-primary/10">
-          <div class="text-2xl font-headline font-black text-primary mb-0.5">58% → 86%</div>
-          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">User Retention</div>
+          <div class="text-3xl font-headline font-black text-primary mb-0.5">$42K</div>
+          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">Monthly Revenue (was $20K)</div>
         </div>
         <div class="stat-card px-6 py-4 rounded-2xl bg-surface-card border border-white/[0.06]">
-          <div class="text-2xl font-headline font-black text-on-surface mb-0.5">~9s → 2.5s</div>
-          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">Page Load Time</div>
+          <div class="text-3xl font-headline font-black text-on-surface mb-0.5">72%</div>
+          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">Load Time Reduction</div>
         </div>
         <div class="stat-card px-6 py-4 rounded-2xl bg-surface-card border border-white/[0.06]">
-          <div class="text-2xl font-headline font-black text-on-surface mb-0.5">99.7%</div>
-          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">Streaming Uptime</div>
-        </div>
-        <div class="stat-card px-6 py-4 rounded-2xl bg-surface-card border border-primary/10">
-          <div class="text-2xl font-headline font-black text-primary mb-0.5">$20K → $42K</div>
-          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">Monthly Revenue</div>
+          <div class="text-3xl font-headline font-black text-on-surface mb-0.5">48</div>
+          <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-wider">Days to Launch</div>
         </div>
       </div>
-      <!-- Tech stack pills -->
       <div class="flex flex-wrap gap-2">
         <span class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest mr-2 self-center">Stack:</span>
         <span class="px-3 py-1 rounded-lg bg-surface-high border border-white/[0.06] text-on-surface-muted text-xs font-mono">React.js</span>
@@ -167,20 +146,15 @@
       </div>
     </div>
   </div>
-  <!-- Hero image -->
-  <div class="relative z-10 max-w-7xl mx-auto px-6">
-    <div class="rounded-t-2xl overflow-hidden border-t border-l border-r border-white/[0.08]">
-      <img
-        src="https://onpointnexus-casestudy.vercel.app/assets/landing-hero-DC23-lKL.jpg"
-        alt="OnTrack Agent SaaS platform"
-        loading="eager"
-        width="1400"
-        height="480"
-        class="w-full h-[280px] md:h-[480px] object-cover object-top"
-      >
-    </div>
-  </div>
 </section>
+
+<div class="relative -mt-1">
+  <img src="https://onpointnexus-casestudy.vercel.app/assets/landing-hero-DC23-lKL.jpg"
+       alt="OnTrack Agent SaaS platform — real estate video coaching"
+       loading="eager" width="1400" height="540"
+       class="w-full h-[420px] md:h-[540px] object-cover object-top">
+  <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
+</div>
 
 <!-- SECTION 2: THE CHALLENGE -->
 <section class="py-24 bg-surface-card">
