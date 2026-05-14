@@ -3,10 +3,18 @@
   "trailingSlash": false,
   "redirects": [
 
-    { "source": "/about-us",          "destination": "https://www.onpointnexus.com/about",    "permanent": true },
-    { "source": "/staff-augmentation","destination": "https://www.onpointnexus.com/services",  "permanent": true },
-    { "source": "/blogs",             "destination": "https://www.onpointnexus.com/work",      "permanent": true },
-    { "source": "/blogs/:path*",      "destination": "https://www.onpointnexus.com/work",      "permanent": true },
+    { "source": "/about-us",           "destination": "https://www.onpointnexus.com/about",              "permanent": true },
+    { "source": "/staff-augmentation", "destination": "https://www.onpointnexus.com/services",            "permanent": true },
+    { "source": "/blogs",              "destination": "https://www.onpointnexus.com/work",                "permanent": true },
+    { "source": "/blogs/:path*",       "destination": "https://www.onpointnexus.com/work",                "permanent": true },
+
+    { "source": "/pininfarina",        "destination": "https://www.onpointnexus.com/work/pininfarina",    "permanent": true },
+    { "source": "/semilynx",           "destination": "https://www.onpointnexus.com/work/semilynx",       "permanent": true },
+    { "source": "/vidanta",            "destination": "https://www.onpointnexus.com/work/vidanta",        "permanent": true },
+    { "source": "/clinical-trac",      "destination": "https://www.onpointnexus.com/work/clinical-trac",  "permanent": true },
+    { "source": "/open-houses-direct", "destination": "https://www.onpointnexus.com/work/open-houses-direct", "permanent": true },
+    { "source": "/quickheal",          "destination": "https://www.onpointnexus.com/work/quickheal",      "permanent": true },
+    { "source": "/ontrack-agent",      "destination": "https://www.onpointnexus.com/work/ontrack-agent",  "permanent": true },
 
     {
       "source": "/(.*)",
