@@ -15,6 +15,7 @@
     { "source": "/open-houses-direct", "destination": "https://www.onpointnexus.com/work/open-houses-direct", "permanent": true },
     { "source": "/quickheal",          "destination": "https://www.onpointnexus.com/work/quickheal",      "permanent": true },
     { "source": "/ontrack-agent",      "destination": "https://www.onpointnexus.com/work/ontrack-agent",  "permanent": true },
+    { "source": "/work/rpm-one",        "destination": "https://www.onpointnexus.com/work/ai-nurse",         "permanent": true },
 
     {
       "source": "/(.*)",
