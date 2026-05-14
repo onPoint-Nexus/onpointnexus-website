@@ -40,7 +40,7 @@ OnPoint Nexus is not a body-shopping firm. The company takes end-to-end ownershi
 ## Clients and Track Record
 
 OnPoint Nexus has worked with clients including:
-- AI Nurse (USA) — AI-powered patient monitoring platform with real-time vitals streaming via smartwatch integration, predictive risk detection with sub-30-second alerts, automated ICU bed allocation, and HIPAA-compliant Health Gorilla EHR integration; serving 10,000+ patients.
+- VitalWatch AI (USA) — Predictive remote patient monitoring platform that forecasts clinical deterioration 24–48 hours before an event. Integrates Health Gorilla FHIR R4 EHR data, smartwatch biometrics (Apple Watch, Wear OS, Fitbit) via Apache Kafka, a Python ML risk engine, and ARIA — a clinical-grade conversational AI nurse. Includes automated alert cascade and ICU/ER bed pre-booking. HIPAA, HL7 FHIR R4, and CMS RPM (CPT 99453–99458) compliant.
 - Battista by Pininfarina (Germany) — AR companion application for the world's most powerful road-legal electric vehicle (1,900 hp Pininfarina Battista).
 - Semilynx (USA) — Industrial AR assistance platform for Fortune 500 factories using Google Glass; reduced unplanned factory downtime by 60% and eliminated cross-country engineer travel.
 - Vidanta Group (USA/Mexico) — Full web and mobile platform with Salesforce CRM integration for a premier luxury vacation club; serves 1M+ members.
@@ -121,7 +121,7 @@ Engineering delivery is based in India (Pune and Kolhapur). Client coverage span
 - Open Houses Direct PropTech: https://www.onpointnexus.com/work/open-houses-direct
 - QuickHeal Rebrand: https://www.onpointnexus.com/work/quickheal
 - OnTrack Agent SaaS Migration: https://www.onpointnexus.com/work/ontrack-agent
-- AI Nurse HealthTech Platform: https://www.onpointnexus.com/work/ai-nurse
+- VitalWatch AI Predictive RPM: https://www.onpointnexus.com/work/vitalwatch-ai
 
 
 ## Social and Contact
