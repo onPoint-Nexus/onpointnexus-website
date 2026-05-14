@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0c1324">
+
+  <title>Building Pulse — How a CEO Solved His Own HRMS Problem by Building With AI | OnPoint Nexus</title>
+  <meta name="description" content="A case study on building Pulse — a work intelligence platform — from scratch using Lovable and Claude Code in parallel. From frustration to live product in 10 hours, no engineers hired." />
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.onpointnexus.com/work/building-pulse">
+
+  <!-- OG / TWITTER -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="OnPoint Nexus" />
+  <meta property="og:title" content="Building Pulse — How a CEO Built His Own HRMS With AI | OnPoint Nexus" />
+  <meta property="og:description" content="Lovable shipped the MVP in 10 hours. Claude Code is building the SaaS. A CEO's parallel-platform experiment to build a work intelligence platform without hiring a single engineer." />
+  <meta property="og:url" content="https://www.onpointnexus.com/work/building-pulse" />
+  <meta property="og:image" content="https://www.onpointnexus.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Building Pulse — How a CEO Solved His Own HRMS Problem by Building With AI","description":"A case study on building Pulse, a work intelligence platform, from scratch using Lovable and Claude Code in parallel — without hiring a single engineer.","author":{"@type":"Person","name":"Vikas Sawant","email":"vikas@onpointsoft.com"},"publisher":{"@type":"Organization","name":"OnPoint Nexus","url":"https://www.onpointnexus.com"},"datePublished":"2026-05-14","keywords":"building in public, AI coding, Claude Code, Lovable, HRMS, SaaS, work intelligence, agency tools"}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- TRUSTPILOT -->
+  <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+
+  <style>
+    :root {
+      --surface:#0c1324; --surface-card:#141c2e; --surface-high:#1a2540; --surface-hover:#1e2d4a;
+      --on-surface:#e8edf5; --on-surface-dim:#8a9bb5; --on-surface-muted:#5c6f8a;
+      --primary:#1abadc; --primary-dim:#148fa8; --primary-glow:rgba(26,186,220,0.12);
+      --green:#4ade80; --amber:#fbbf24; --red:#f87171; --purple:#a78bfa;
+      --border:rgba(255,255,255,0.06); --border-primary:rgba(26,186,220,0.18);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--surface);color:var(--on-surface);font-family:'Inter',ui-sans-serif,system-ui,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    code,.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:50;background:rgba(12,19,36,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo img{height:20px;width:auto}
+    .nav-right{display:flex;align-items:center;gap:24px}
+    .nav-back{font-size:14px;color:var(--on-surface-dim);display:flex;align-items:center;gap:6px;transition:color .2s}
+    .nav-back:before{content:'←'}
+    .nav-back:hover{color:var(--on-surface)}
+    .btn-cta{background:var(--primary);color:var(--surface);padding:8px 20px;border-radius:8px;font-size:14px;font-weight:600;transition:background .2s,transform .1s}
+    .btn-cta:hover{background:var(--primary-dim);transform:translateY(-1px)}
+
+    /* HERO */
+    .hero{position:relative;padding:80px 0 0;overflow:hidden}
+    .hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(26,186,220,0.09) 0%,transparent 70%);pointer-events:none}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:16px}
+    .hero-badge:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--primary);display:block}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+    .tag{font-size:13px;color:var(--on-surface-dim);background:var(--surface-high);border:1px solid var(--border);padding:4px 12px;border-radius:6px;font-weight:500}
+    .hero h1{font-size:clamp(34px,5vw,62px);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px;max-width:880px}
+    .hero h1 em{font-style:normal;color:var(--primary)}
+    .hero-sub{font-size:18px;color:var(--on-surface-dim);max-width:680px;line-height:1.7;margin-bottom:40px}
+    .hero-stats{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px}
+    .stat-card{background:var(--surface-card);border:1px solid var(--border);border-radius:16px;padding:18px 26px;min-width:155px}
+    .stat-card.accent{border-color:var(--border-primary)}
+    .stat-val{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1;margin-bottom:4px}
+    .stat-val span{color:var(--primary)}
+    .stat-lbl{font-size:11px;color:var(--on-surface-muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+    .hero-stack{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:52px}
+    .stack-lbl{font-size:13px;color:var(--on-surface-muted);font-weight:500;margin-right:4px}
+    .pill{font-size:12px;font-weight:600;color:var(--primary);background:rgba(26,186,220,0.08);border:1px solid rgba(26,186,220,0.2);padding:4px 12px;border-radius:999px}
+    .hero-visual{width:100%;border-radius:16px 16px 0 0;overflow:hidden;border:1px solid var(--border);border-bottom:none;background:var(--surface-card)}
+    .hero-visual-inner{padding:40px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+    .mini-card{background:var(--surface-high);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center}
+    .mini-card.safe-card{border-color:rgba(74,222,128,0.3);background:rgba(74,222,128,0.05)}
+    .mini-icon{font-size:28px;margin-bottom:10px}
+    .mini-title{font-size:13px;font-weight:700;color:var(--on-surface);margin-bottom:4px}
+    .mini-val{font-size:22px;font-weight:800;letter-spacing:-.01em}
+    .mini-val.green{color:var(--green)}
+    .mini-val.primary{color:var(--primary)}
+    .mini-val.purple{color:var(--purple)}
+    .mini-sub{font-size:11px;color:var(--on-surface-muted);margin-top:4px}
+
+    /* SECTION BASE */
+    section{padding:96px 0}
+    .alt-bg{background:var(--surface-card)}
+    .sec-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .sec-label:before{content:'';width:20px;height:1px;background:var(--primary);display:block}
+    .sec-title{font-size:clamp(26px,4vw,42px);font-weight:800;line-height:1.15;letter-spacing:-.02em;color:var(--on-surface);margin-bottom:20px}
+    .sec-title em{font-style:normal;color:var(--primary)}
+    .prose{font-size:17px;color:var(--on-surface-dim);line-height:1.78;max-width:740px}
+    .prose+.prose{margin-top:18px}
+
+    /* PROBLEM TABLE */
+    .compare-table{width:100%;border-collapse:collapse;margin-top:32px;border:1px solid var(--border);border-radius:16px;overflow:hidden}
+    .compare-table th{background:var(--surface-high);padding:14px 20px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--on-surface-muted);border-bottom:1px solid var(--border)}
+    .compare-table td{padding:16px 20px;font-size:14px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--on-surface-dim);line-height:1.6}
+    .compare-table tr:last-child td{border-bottom:none}
+    .compare-table td:first-child{font-weight:600;color:var(--on-surface);width:48%}
+    .compare-table tr:hover td{background:rgba(26,186,220,0.03)}
+
+    /* DECISION CALLOUT */
+    .callout{margin-top:48px;background:var(--surface-card);border:1px solid var(--border-primary);border-left:3px solid var(--primary);border-radius:12px;padding:32px}
+    .callout p{font-size:20px;font-weight:600;color:var(--on-surface);line-height:1.5;font-style:italic}
+
+    /* PARALLEL TRACKS */
+    .tracks{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+    .track{background:var(--surface-high);border:1px solid var(--border);border-radius:18px;padding:32px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+    .track:hover{border-color:var(--border-primary);transform:translateY(-2px)}
+    .track-badge{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:6px;margin-bottom:14px}
+    .track-badge.lovable{background:rgba(167,139,250,0.12);color:var(--purple);border:1px solid rgba(167,139,250,0.25)}
+    .track-badge.claude{background:rgba(26,186,220,0.1);color:var(--primary);border:1px solid rgba(26,186,220,0.25)}
+    .track-title{font-size:22px;font-weight:800;color:var(--on-surface);margin-bottom:6px;letter-spacing:-.01em}
+    .track-sub{font-size:13px;color:var(--on-surface-muted);font-weight:500;margin-bottom:22px}
+    .track-metrics{display:flex;gap:24px;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:22px}
+    .track-metric{flex:1}
+    .tm-val{font-size:20px;font-weight:800;color:var(--primary);letter-spacing:-.01em}
+    .tm-val.purple{color:var(--purple)}
+    .tm-lbl{font-size:11px;color:var(--on-surface-muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-top:3px}
+    .track-list{display:flex;flex-direction:column;gap:10px}
+    .track-list-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--on-surface-dim);line-height:1.55}
+    .track-list-item:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--primary);margin-top:7px;flex-shrink:0}
+    .track-list-item.purple:before{background:var(--purple)}
+    .track-tradeoff{margin-top:22px;padding-top:18px;border-top:1px dashed var(--border);font-size:13px;color:var(--on-surface-muted);line-height:1.65}
+    .track-tradeoff strong{color:var(--on-surface)}
+
+    /* PHASES */
+    .journey{display:flex;flex-direction:column;gap:0;margin-top:56px;position:relative}
+    .journey:before{content:'';position:absolute;left:27px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--primary),rgba(26,186,220,0.1));border-radius:2px}
+    .step{display:flex;gap:28px;padding:32px 0;position:relative}
+    .step:not(:last-child){border-bottom:1px solid var(--border)}
+    .step-num{width:56px;height:56px;border-radius:50%;background:rgba(26,186,220,0.12);border:2px solid rgba(26,186,220,0.3);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:var(--primary);flex-shrink:0;position:relative;z-index:1}
+    .step-body{flex:1;padding-top:8px}
+    .step-title-row{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+    .step-title{font-size:18px;font-weight:700;color:var(--on-surface)}
+    .step-status{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:6px}
+    .step-status.shipped{background:rgba(74,222,128,0.1);color:var(--green);border:1px solid rgba(74,222,128,0.25)}
+    .step-status.dev{background:rgba(26,186,220,0.1);color:var(--primary);border:1px solid rgba(26,186,220,0.25)}
+    .step-status.planned{background:var(--surface-high);color:var(--on-surface-muted);border:1px solid var(--border)}
+    .step-desc{font-size:15px;color:var(--on-surface-dim);line-height:1.7;margin-bottom:14px}
+    .step-details{display:flex;flex-wrap:wrap;gap:8px}
+    .detail-chip{font-size:12px;font-weight:600;background:var(--surface-high);border:1px solid var(--border);color:var(--on-surface-dim);padding:4px 12px;border-radius:6px}
+
+    /* CLAUDE.MD MOCK */
+    .claudemd-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .claudemd-mock{background:var(--surface-card);border:1px solid var(--border-primary);border-radius:14px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.4)}
+    .claudemd-header{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--surface-high);border-bottom:1px solid var(--border);font-size:13px;color:var(--on-surface-dim);font-weight:600}
+    .claudemd-header:before{content:'';width:10px;height:10px;border-radius:50%;background:#fbbf24;box-shadow:-16px 0 0 #f87171,16px 0 0 #4ade80;flex-shrink:0;margin-right:14px}
+    .claudemd-body{padding:24px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.8;color:var(--on-surface-dim);max-height:420px;overflow:auto}
+    .cm-h{color:var(--primary);font-weight:700}
+    .cm-comment{color:var(--on-surface-muted);font-style:italic}
+    .cm-key{color:var(--purple);font-weight:600}
+
+    /* RESULTS */
+    .results-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
+    .result-card{background:var(--surface-card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;position:relative;overflow:hidden}
+    .result-card:before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--primary),transparent)}
+    .r-before{font-size:12px;color:var(--on-surface-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+    .r-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+    .r-val{font-size:24px;font-weight:800;color:var(--primary);letter-spacing:-.02em;line-height:1.1}
+    .r-prev{font-size:13px;color:var(--on-surface-muted);text-decoration:line-through}
+    .r-label{font-size:13px;color:var(--on-surface-dim);margin-top:10px;line-height:1.55}
+
+    /* INSIGHTS */
+    .insights-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}
+    .insight-card{background:var(--surface-card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:border-color .2s}
+    .insight-card:hover{border-color:var(--border-primary)}
+    .insight-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:rgba(26,186,220,0.12);border:1px solid rgba(26,186,220,0.25);color:var(--primary);font-weight:800;font-size:14px;margin-bottom:14px;font-family:'JetBrains Mono',monospace}
+    .insight-title{font-size:16px;font-weight:700;color:var(--on-surface);margin-bottom:10px}
+    .insight-body{font-size:14px;color:var(--on-surface-dim);line-height:1.7}
+
+    /* VERDICT */
+    .verdict{text-align:center;background:var(--surface-card)}
+    .verdict-quote{font-size:clamp(20px,2.6vw,28px);font-weight:600;color:var(--on-surface);line-height:1.5;max-width:880px;margin:0 auto 28px;font-style:italic;position:relative}
+    .verdict-quote:before{content:'"';font-size:72px;line-height:.8;color:var(--primary);opacity:.3;font-family:Georgia,serif;display:block;margin-bottom:12px}
+    .verdict-attr{font-size:14px;color:var(--on-surface-muted)}
+
+    /* CTA */
+    .cta-section{text-align:center}
+    .cta-section .sec-label{justify-content:center}
+    .cta-section .sec-title{margin:0 auto 14px;max-width:620px;text-align:center}
+    .cta-sub{font-size:17px;color:var(--on-surface-dim);max-width:540px;margin:0 auto 36px;line-height:1.65}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn-lg{padding:14px 30px;border-radius:10px;font-size:15px;font-weight:600;transition:all .2s}
+    .btn-lg.p{background:var(--primary);color:var(--surface)}
+    .btn-lg.p:hover{background:var(--primary-dim);transform:translateY(-2px)}
+    .btn-lg.s{border:1px solid var(--border);color:var(--on-surface-dim)}
+    .btn-lg.s:hover{border-color:var(--border-primary);color:var(--primary);transform:translateY(-2px)}
+
+    /* FOOTER */
+    footer{background:var(--surface-card);border-top:1px solid var(--border);padding:60px 0 28px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+    .footer-brand img{height:20px;margin-bottom:14px}
+    .footer-tag{font-size:13px;color:var(--on-surface-muted);line-height:1.6;max-width:250px;margin-bottom:10px}
+    .footer-geo{font-size:12px;color:var(--on-surface-muted)}
+    .footer-col-h{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--on-surface-muted);margin-bottom:14px}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+    .footer-links a{font-size:13px;color:var(--on-surface-dim);transition:color .2s}
+    .footer-links a:hover{color:var(--primary)}
+    .footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+    .footer-copy{font-size:12px;color:var(--on-surface-muted)}
+    .disclaimer{font-size:11px;color:var(--on-surface-muted);font-style:italic}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){
+      .tracks,.claudemd-layout{grid-template-columns:1fr;gap:32px}
+      .results-row{grid-template-columns:repeat(2,1fr)}
+      .insights-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:768px){
+      section{padding:64px 0}
+      .hero h1{font-size:30px}
+      .results-row{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr;gap:28px}
+      .hero-visual-inner{grid-template-columns:1fr;padding:20px}
+      .compare-table td:nth-child(2){display:none}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/logo-wordmark.png" alt="OnPoint Nexus" width="160" height="20" /></a>
+    <div class="nav-right">
+      <a href="/work" class="nav-back">Back to Work</a>
+      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="btn-cta">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="hero-badge">Case Study · Building in Public</div>
+    <div class="hero-tags">
+      <span class="tag">Work Intelligence</span>
+      <span class="tag">HRMS · SaaS</span>
+      <span class="tag">AI-Assisted Build</span>
+      <span class="tag">Internal Product</span>
+      <span class="tag">Pune, India</span>
+    </div>
+    <h1>How a CEO Built His Own HRMS<br/>by <em>Skipping the Engineering Team.</em></h1>
+    <p class="hero-sub">After five years of stitching together time trackers, KPI sheets, and appraisal docs that never spoke to each other, I built Pulse — a work intelligence platform — on two AI development platforms in parallel. Live product in 10 hours. SaaS foundation in weeks. Zero engineers hired.</p>
+    <div class="hero-stats">
+      <div class="stat-card accent">
+        <div class="stat-val"><span>10 hrs</span></div>
+        <div class="stat-lbl">Idea → Live Product</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val"><span>0</span></div>
+        <div class="stat-lbl">Engineers Hired</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val"><span>$400+</span></div>
+        <div class="stat-lbl">/mo SaaS Costs Replaced</div>
+      </div>
+      <div class="stat-card accent">
+        <div class="stat-val"><span>87%</span></div>
+        <div class="stat-lbl">Less Appraisal Prep Time</div>
+      </div>
+    </div>
+    <div class="hero-stack">
+      <span class="stack-lbl">Stack:</span>
+      <span class="pill">Lovable</span><span class="pill">Claude Code</span><span class="pill">Next.js</span>
+      <span class="pill">NestJS</span><span class="pill">Prisma</span><span class="pill">Supabase</span>
+      <span class="pill">PostgreSQL</span><span class="pill">Voice AI</span><span class="pill">Stripe</span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="hero-visual">
+      <div class="hero-visual-inner">
+        <div class="mini-card safe-card">
+          <div class="mini-icon">🎙️</div>
+          <div class="mini-title">Daily Voice Log</div>
+          <div class="mini-val green">Active</div>
+          <div class="mini-sub">AI parses speech → structured entries</div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">📊</div>
+          <div class="mini-title">KPI Engine</div>
+          <div class="mini-val primary">Auto-Generated</div>
+          <div class="mini-sub">Tied to activity types · Real-time</div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🚀</div>
+          <div class="mini-title">SaaS Foundation</div>
+          <div class="mini-val purple">Multi-Tenant</div>
+          <div class="mini-sub">Next.js + NestJS + Prisma · Phase 2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHALLENGE -->
+<section>
+  <div class="container">
+    <div class="sec-label">The Problem</div>
+    <h2 class="sec-title">Every CEO question I needed answered<br/>was the hardest one to <em>answer.</em></h2>
+    <p class="prose">For years, running OnPoint meant operating with a fundamental gap in visibility. Who is working on what right now? Are my team members being utilized efficiently? How do I evaluate someone fairly at appraisal time? Are project allocations matching actual capacity? Is my team productive — or just busy?</p>
+    <p class="prose">The market response to these questions is supposed to be HRMS software. So that's where I looked. I evaluated multiple platforms. I subscribed to a few. None of them connected the four things I needed: <strong style="color:var(--on-surface)">daily work → KPIs → reports → appraisals.</strong> Each tool owned one slice. None owned the whole picture.</p>
+    <p class="prose">So the data stayed scattered. And every appraisal cycle, I made decisions about people's careers using a fraction of the information I needed.</p>
+
+    <table class="compare-table">
+      <thead><tr><th>What I Needed</th><th>What the Market Offered</th></tr></thead>
+      <tbody>
+        <tr><td>Daily work logging that captures <em>what</em> was done</td><td>Time trackers that captured <em>how long</em></td></tr>
+        <tr><td>AI-generated performance reports</td><td>Static dashboards</td></tr>
+        <tr><td>KPIs tied to actual work output</td><td>KPIs as standalone spreadsheets</td></tr>
+        <tr><td>Appraisal workflows informed by daily data</td><td>Appraisal tools disconnected from operations</td></tr>
+        <tr><td>Built for agencies, lightweight and fast</td><td>Built for enterprises — bloated, expensive, slow</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- DECISION -->
+<section class="alt-bg">
+  <div class="container">
+    <div class="sec-label">The Decision</div>
+    <h2 class="sec-title">Stop looking.<br/>Start <em>building.</em></h2>
+    <p class="prose">I'm not a developer. I can read code, I understand architecture, but I don't write software for a living. So the idea of <em>building</em> a platform should have been off the table. Then AI changed the equation.</p>
+    <div class="callout">
+      <p>If AI can write code from natural language descriptions, then the bottleneck is no longer engineering hours. The bottleneck is clarity of thought. That, I had.</p>
+    </div>
+    <p class="prose">I knew exactly what I needed. I'd been frustrated for years. I had a full mental model of the product. What I needed was an execution partner that wouldn't get tired, wouldn't quit, and wouldn't need a six-figure salary.</p>
+    <p class="prose">I decided to run a <strong style="color:var(--on-surface)">parallel experiment</strong> — build the same product on two different AI development platforms, learn the strengths of each, and let the better approach win.</p>
+  </div>
+</section>
+
+<!-- PARALLEL TRACKS -->
+<section>
+  <div class="container">
+    <div class="sec-label">The Parallel Build</div>
+    <h2 class="sec-title">Lovable vs Claude Code.<br/>Two tracks, one <em>product.</em></h2>
+    <p class="prose">Each platform optimized for something different. By running them in parallel, I didn't have to bet on one. I learned which tool fit which stage of the journey — and let the better approach win each round.</p>
+
+    <div class="tracks">
+      <!-- Track 1: Lovable -->
+      <div class="track">
+        <div class="track-badge lovable">Track 1 · Speed to Launch</div>
+        <div class="track-title">Lovable</div>
+        <div class="track-sub">From idea to live product, in a single weekend.</div>
+        <div class="track-metrics">
+          <div class="track-metric">
+            <div class="tm-val purple">10 hrs</div>
+            <div class="tm-lbl">Time Invested</div>
+          </div>
+          <div class="track-metric">
+            <div class="tm-val purple">Live</div>
+            <div class="tm-lbl">Status</div>
+          </div>
+          <div class="track-metric">
+            <div class="tm-val purple">Days</div>
+            <div class="tm-lbl">To Team Adoption</div>
+          </div>
+        </div>
+        <div class="track-list">
+          <div class="track-list-item purple">Clean, functional UI for daily work logging</div>
+          <div class="track-list-item purple">AI-powered conversational interface — team members talk to the AI, describe their day, AI structures it into proper logs</div>
+          <div class="track-list-item purple">Supabase database fully configured</div>
+          <div class="track-list-item purple">Live deployment with custom domain mapping</div>
+          <div class="track-list-item purple">Onboarding flow for team members</div>
+          <div class="track-list-item purple">Voice-to-log AI parsing working from day one</div>
+        </div>
+        <div class="track-tradeoff">
+          <strong>The trade-off:</strong> Lovable optimizes for shipping. As scope grew — full HRMS modules, multi-tenant SaaS, deeper architectural control — I needed more than its framework offers.
+        </div>
+      </div>
+
+      <!-- Track 2: Claude Code -->
+      <div class="track">
+        <div class="track-badge claude">Track 2 · Depth & Architecture</div>
+        <div class="track-title">Claude Code</div>
+        <div class="track-sub">Plan-driven, phase-based, built for the long version.</div>
+        <div class="track-metrics">
+          <div class="track-metric">
+            <div class="tm-val">Weeks</div>
+            <div class="tm-lbl">Build Window</div>
+          </div>
+          <div class="track-metric">
+            <div class="tm-val">5</div>
+            <div class="tm-lbl">Phased Roadmap</div>
+          </div>
+          <div class="track-metric">
+            <div class="tm-val">∞</div>
+            <div class="tm-lbl">Scale Ceiling</div>
+          </div>
+        </div>
+        <div class="track-list">
+          <div class="track-list-item">Master <code>CLAUDE.md</code> briefing document — read at every session start</div>
+          <div class="track-list-item">Module-level agent instructions — different directories with their own rules</div>
+          <div class="track-list-item">Phase-based planning broken into 5 shippable milestones</div>
+          <div class="track-list-item">Parallel agent work — specialized agents work modules without colliding</div>
+          <div class="track-list-item">Standard, maintainable stack: Next.js + NestJS + Prisma</div>
+          <div class="track-list-item">Multi-tenant SaaS infrastructure planned from day one</div>
+        </div>
+        <div class="track-tradeoff">
+          <strong>The trade-off:</strong> Higher upfront investment in documentation and planning. But every hour spent on <code>CLAUDE.md</code> saved ten hours of confused output later.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLAUDE.MD DEEP DIVE -->
+<section class="alt-bg">
+  <div class="container">
+    <div class="claudemd-layout">
+      <div>
+        <div class="sec-label">The CLAUDE.md Method</div>
+        <h2 class="sec-title">Treat your AI like a<br/>senior engineer joining<br/>the <em>team.</em></h2>
+        <p class="prose">The Claude Code track centered on one strategic file: <code>CLAUDE.md</code>. A master briefing document — read by the AI at the start of every session — containing the product vision, the complete stack with exact versions, file structure conventions, architectural rules, role definitions, and the current phase priorities.</p>
+        <p class="prose">With this in place, every coding session began with a fully briefed engineer. No drift. No re-explaining. No context loss. Sub-directories of the codebase had their own scoped <code>CLAUDE.md</code> for module-specific rules — so the auth module didn't have to know about the work-logs schema, and vice versa.</p>
+        <p class="prose"><strong style="color:var(--on-surface)">The investment pays back exponentially.</strong> Every hour writing the briefing document saved ten hours of confused output downstream.</p>
+      </div>
+      <div>
+        <div class="claudemd-mock">
+          <div class="claudemd-header">CLAUDE.md</div>
+          <div class="claudemd-body"><span class="cm-h"># Pulse — Work Intelligence Platform</span><br/><br/><span class="cm-comment"># Read this at the start of every session.</span><br/><br/><span class="cm-h">## Product Vision</span><br/>Pulse is a work intelligence platform for<br/>service agencies: daily work logs → KPIs<br/>→ AI reports → appraisals, in one loop.<br/><br/><span class="cm-h">## Stack (locked versions)</span><br/><span class="cm-key">- Frontend:</span>  Next.js 15.x · TypeScript<br/><span class="cm-key">- Backend:</span>   NestJS 11 · Prisma 6<br/><span class="cm-key">- DB:</span>        PostgreSQL 16<br/><span class="cm-key">- Auth:</span>      Clerk · multi-tenant<br/><span class="cm-key">- Billing:</span>   Stripe · seat-based<br/><br/><span class="cm-h">## Architectural Rules</span><br/><span class="cm-key">1.</span> No raw SQL. All queries in service files.<br/><span class="cm-key">2.</span> Every route guarded by tenant middleware.<br/><span class="cm-key">3.</span> All AI prompts versioned in /prompts.<br/><span class="cm-key">4.</span> Tests required for any service file.<br/><br/><span class="cm-h">## Current Phase</span><br/>Phase 2 — AI Intelligence Layer<br/><span class="cm-key">- [ ]</span> Weekly report generator<br/><span class="cm-key">- [ ]</span> KPI engine bound to activity types<br/><span class="cm-key">- [ ]</span> Appraisal AI suggestions<br/><span class="cm-key">- [ ]</span> Burnout / under-util anomaly detector<br/><br/><span class="cm-comment"># See /docs/personas.md for user contexts.</span><br/><span class="cm-comment"># See /apps/api/CLAUDE.md for backend rules.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT PULSE BECAME / ROADMAP -->
+<section>
+  <div class="container">
+    <div class="sec-label">What Pulse Became</div>
+    <h2 class="sec-title">Five phases from work logger<br/>to full <em>SaaS platform.</em></h2>
+    <p class="prose">What started as a work-logging tool evolved into a full work intelligence platform. Each phase shippable on its own, each building toward the next.</p>
+    <div class="journey">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title-row">
+            <div class="step-title">Core Platform</div>
+            <span class="step-status shipped">Shipped · Lovable</span>
+          </div>
+          <div class="step-desc">Voice + form daily work logging with AI-powered log structuring. Project tracking. Team onboarding. Daily visibility for management. Live and in active use across the OnPoint team within days of launch — and proved the concept before any deeper investment.</div>
+          <div class="step-details">
+            <span class="detail-chip">Voice Logging</span><span class="detail-chip">AI Log Structuring</span><span class="detail-chip">Supabase</span><span class="detail-chip">Custom Domain</span>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title-row">
+            <div class="step-title">AI Intelligence Layer</div>
+            <span class="step-status dev">In Active Dev · Claude Code</span>
+          </div>
+          <div class="step-desc">AI-generated weekly and monthly performance reports. KPI engine tied to activity types — not standalone spreadsheets. Appraisal cycle management with AI-suggested ratings drawn from a full year of daily logs. Anomaly detection for burnout signals and under-utilization patterns.</div>
+          <div class="step-details">
+            <span class="detail-chip">AI Reports</span><span class="detail-chip">KPI Engine</span><span class="detail-chip">Appraisal Suggestions</span><span class="detail-chip">Anomaly Detection</span>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title-row">
+            <div class="step-title">HRMS Core</div>
+            <span class="step-status planned">Planned</span>
+          </div>
+          <div class="step-desc">Attendance management derived from work logs plus clock-in/out. Leave management with types, balances, and approval workflows. Department and designation structure. Employee directory and org chart. Onboarding and offboarding checklists. The full HRMS stack — minus the bloat.</div>
+          <div class="step-details">
+            <span class="detail-chip">Attendance</span><span class="detail-chip">Leave Mgmt</span><span class="detail-chip">Org Chart</span><span class="detail-chip">Onboarding</span>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title-row">
+            <div class="step-title">Multi-Tenant SaaS</div>
+            <span class="step-status planned">Planned</span>
+          </div>
+          <div class="step-desc">Organization model with custom branding. Subdomain routing per agency. Stripe billing with seat-based plans. Super-admin portal for tenant management. Trial period and lifecycle automation. The transition from internal tool to public SaaS product.</div>
+          <div class="step-details">
+            <span class="detail-chip">Multi-Tenant</span><span class="detail-chip">Subdomain Routing</span><span class="detail-chip">Stripe Billing</span><span class="detail-chip">Super-Admin</span>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title-row">
+            <div class="step-title">Growth Features</div>
+            <span class="step-status planned">Planned</span>
+          </div>
+          <div class="step-desc">Payroll basics. Custom report builder. Integrations with Slack, Google Calendar, and Jira. Mobile PWA polish for on-the-go logging. A public API for the integrations we don't build ourselves. The platform layer that lets Pulse fit into existing agency workflows.</div>
+          <div class="step-details">
+            <span class="detail-chip">Payroll</span><span class="detail-chip">Custom Reports</span><span class="detail-chip">Slack · GCal · Jira</span><span class="detail-chip">Mobile PWA</span><span class="detail-chip">Public API</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="alt-bg">
+  <div class="container">
+    <div class="sec-label">Results So Far</div>
+    <h2 class="sec-title">Visibility I'd never had,<br/>at a cost that wasn't <em>SaaS subscription price.</em></h2>
+    <p class="prose" style="margin-bottom:40px">Measured against OnPoint's own pre-Pulse baseline — using gut-feel project allocation, manual monthly report compilation, and 2-hour-per-person appraisal prep.</p>
+    <div class="results-row">
+      <div class="result-card">
+        <div class="r-before">Daily team activity visibility</div>
+        <div class="r-row"><span class="r-val">Real-time</span><span class="r-prev">None — had to ask</span></div>
+        <div class="r-label">A live dashboard of who's working on what, right now. No more pinging Slack for status.</div>
+      </div>
+      <div class="result-card">
+        <div class="r-before">Time to compile monthly report</div>
+        <div class="r-row"><span class="r-val">Auto-generated</span><span class="r-prev">4–6 hours</span></div>
+        <div class="r-label">AI assembles weekly and monthly reports from structured log data — every cycle, on schedule.</div>
+      </div>
+      <div class="result-card">
+        <div class="r-before">Appraisal prep per person</div>
+        <div class="r-row"><span class="r-val">15 min</span><span class="r-prev">2 hours</span></div>
+        <div class="r-label">A year of structured daily data surfaces in one view. Decisions based on evidence, not memory.</div>
+      </div>
+      <div class="result-card">
+        <div class="r-before">Project allocation accuracy</div>
+        <div class="r-row"><span class="r-val">Data-informed</span><span class="r-prev">Gut-based</span></div>
+        <div class="r-label">Capacity decisions backed by actual recent output — not "Vikas's best guess this week."</div>
+      </div>
+      <div class="result-card">
+        <div class="r-before">Team engagement with logging</div>
+        <div class="r-row"><span class="r-val">High</span><span class="r-prev">Low</span></div>
+        <div class="r-label">Voice-driven entry replaces the dreaded daily form. People actually use it.</div>
+      </div>
+      <div class="result-card">
+        <div class="r-before">Replaced SaaS subscriptions</div>
+        <div class="r-row"><span class="r-val">$400+/mo</span><span class="r-prev">Multi-tool stack</span></div>
+        <div class="r-label">One-time build cost plus low ongoing infrastructure — vs. perpetually renewing fragmented tools.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY INSIGHTS -->
+<section>
+  <div class="container">
+    <div class="sec-label">Key Insights</div>
+    <h2 class="sec-title">Five things the journey<br/>taught me about <em>building with AI.</em></h2>
+    <div class="insights-grid">
+      <div class="insight-card">
+        <div class="insight-num">01</div>
+        <div class="insight-title">The bottleneck is no longer code. It's clarity.</div>
+        <div class="insight-body">The hardest part of building Pulse wasn't writing software. It was knowing exactly what I wanted. AI amplifies clear thinking. It can't fix unclear thinking.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-num">02</div>
+        <div class="insight-title">Run platforms in parallel when stakes are high.</div>
+        <div class="insight-body">If I'd committed to one platform upfront, I would have either over-engineered the MVP (Claude Code only) or hit a scaling wall (Lovable only). The parallel approach taught me which tool fit which stage.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-num">03</div>
+        <div class="insight-title"><code>CLAUDE.md</code> is the new system prompt.</div>
+        <div class="insight-body">Treat your AI like a senior engineer joining the team. Write down everything they need to know — vision, stack, conventions, current phase. The investment pays back exponentially.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-num">04</div>
+        <div class="insight-title">Ship something usable in week one.</div>
+        <div class="insight-body">Lovable getting Pulse live in 10 hours wasn't just a milestone — it was validation. The team's actual usage in the first few days proved the product was solving a real problem before I invested in a deeper build.</div>
+      </div>
+      <div class="insight-card" style="grid-column:1/-1">
+        <div class="insight-num">05</div>
+        <div class="insight-title">Build for yourself first. SaaS comes second.</div>
+        <div class="insight-body">I didn't build Pulse to sell it. I built it because I needed it. That's why it's good. Every feature has been pressure-tested by real use. If it becomes a SaaS product — and it likely will — it'll be because other CEOs are facing the same problem I was facing.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERDICT -->
+<section class="verdict">
+  <div class="container">
+    <p class="verdict-quote">Lovable is a slingshot — fast, precise, and gets you to the target. Claude Code is a workshop — slower to set up, but capable of building anything you can describe. For Pulse, both played essential roles. Lovable proved the concept and got it into the team's hands. Claude Code is building the scalable SaaS product.</p>
+    <div class="verdict-attr">Vikas Sawant · Founder & CEO, OnPoint Nexus</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="sec-label">For Founders & CEOs</div>
+    <h2 class="sec-title">You don't need to be a developer.<br/>You need to be <em>clear.</em></h2>
+    <p class="cta-sub">Evaluated 5+ HRMS tools that none fit? Appraisals feel like guesswork? Daily output invisible until something breaks? Happy to share the strategy openly — the <code>CLAUDE.md</code> template, the phase planning approach, the parallel-platform method. All of it.</p>
+    <div class="cta-btns">
+      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="btn-lg p">Book a 30-min Conversation →</a>
+      <a href="mailto:vikas@onpointsoft.com" class="btn-lg s">Email Vikas directly</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/logo-wordmark.png" alt="OnPoint Nexus" />
+        <p class="footer-tag">AI-First Enterprise Technology Partner. Discovery to production in 45 days.</p>
+        <p class="footer-geo">Pune · Kolhapur · Dallas · Pointe-Claire · Frankfurt · Dubai</p>
+      </div>
+      <div>
+        <div class="footer-col-h">Solutions</div>
+        <ul class="footer-links">
+          <li><a href="/services#ai">AI & Machine Learning</a></li>
+          <li><a href="/services#cloud">Cloud & DevOps</a></li>
+          <li><a href="/services#custom">Custom Software</a></li>
+          <li><a href="/services#enterprise">Enterprise Solutions</a></li>
+          <li><a href="/#contact">Staff Augmentation</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-h">Company</div>
+        <ul class="footer-links">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/work">Case Studies</a></li>
+          <li><a href="/industries">Industries</a></li>
+          <li><a href="/about#testimonials">Client Stories</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-h">Connect</div>
+        <ul class="footer-links">
+          <li><a href="mailto:hr@onpointsoft.com">hr@onpointsoft.com</a></li>
+          <li><a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 OnPoint Nexus Pvt. Ltd. All rights reserved.</span>
+      <span class="disclaimer">Pulse is an internal product of OnPoint Nexus, currently being prepared for transition into a multi-tenant SaaS platform.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
