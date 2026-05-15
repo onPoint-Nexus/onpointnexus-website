@@ -234,10 +234,14 @@
     .reveal[data-delay="2"]{transition-delay:.16s}
     .reveal[data-delay="3"]{transition-delay:.24s}
 
-    /* ───────── COMPARE BANNER ───────── */
-    .compare-banner{position:fixed;bottom:20px;right:20px;z-index:99;background:rgba(29,29,31,0.92);backdrop-filter:blur(20px);color:var(--on-dark);padding:9px 16px;border-radius:980px;font-size:12px;font-weight:500;display:flex;align-items:center;gap:12px;box-shadow:0 12px 28px -8px rgba(0,0,0,0.25);letter-spacing:-.003em}
-    .compare-banner a{color:var(--primary);font-weight:500}
-    .compare-banner a:hover{color:#5edff5}
+    /* ───────── VERSION PICKER ───────── */
+    .version-picker{position:fixed;bottom:20px;right:20px;z-index:9999;background:rgba(29,29,31,0.94);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);padding:6px;border-radius:999px;display:flex;align-items:center;gap:4px;box-shadow:0 16px 40px -10px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.06) inset}
+    .version-picker .vp-label{font-size:10px;font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,0.5);letter-spacing:.08em;text-transform:uppercase;padding:0 8px 0 12px;font-weight:600}
+    .version-picker a{font-size:12px;font-family:'JetBrains Mono',monospace;font-weight:500;color:rgba(255,255,255,0.55);padding:7px 14px;border-radius:999px;letter-spacing:-.005em;transition:color .2s,background .2s;white-space:nowrap}
+    .version-picker a:hover{color:#fff;background:rgba(255,255,255,0.05)}
+    .version-picker a.active{background:var(--primary);color:var(--ink);font-weight:600}
+    .version-picker a.active:hover{background:var(--primary)}
+    @media(max-width:560px){.version-picker .vp-label{display:none}.version-picker a{font-size:11px;padding:6px 10px}.version-picker{bottom:14px;right:14px}}
 
     /* ───────── RESPONSIVE ───────── */
     @media(max-width:1024px){
@@ -264,10 +268,12 @@
 </head>
 <body>
 
-<!-- COMPARE BANNER -->
-<div class="compare-banner">
-  <span>Homepage v2 preview</span>
-  <a href="/">← Open v1</a>
+<!-- VERSION PICKER -->
+<div class="version-picker">
+  <span class="vp-label">Compare</span>
+  <a href="/">v1 · Current</a>
+  <a href="/home-v2-motion">v2 · Motion</a>
+  <a href="/home-v2" class="active">v3 · Refined</a>
 </div>
 
 <!-- NAV -->
