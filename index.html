@@ -386,6 +386,85 @@
       width:5px; height:5px; border-radius:50%;
       background:#1ABADC; opacity:.7; flex-shrink:0;
     }
+
+    /* ── Design DNA: glass card primitives (lifted from staging) ─ */
+    .glass-card {
+      background: rgba(20,28,46,0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 1rem;
+      transition: border-color .25s ease, background .25s ease, transform .25s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(26,186,220,0.28);
+      background: rgba(26,186,220,0.04);
+    }
+    /* Stronger gradient — replaces flat .grad-text for hero accent words */
+    .grad-text-strong {
+      background: linear-gradient(135deg, #1ABADC 0%, #8de4f0 55%, #cef4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    /* Hero stats row */
+    .hero-stat-card { padding: 18px 22px; min-width: 0; }
+    .hero-stat-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; letter-spacing: -0.025em; line-height: 1;
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      background: linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-stat-lbl {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em;
+      color: #5C6F8A; font-weight: 600; margin-top: 6px;
+    }
+    /* Numbered section eyebrow (staging-style) */
+    .sec-eyebrow-num {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #5C6F8A;
+    }
+    .sec-eyebrow-num .num { color: #1ABADC; }
+    .sec-eyebrow-num .bar {
+      flex: 0 0 24px; height: 1px;
+      background: linear-gradient(90deg, #1ABADC, transparent);
+    }
+    /* Improved scroll indicator (staging-style mouse-wheel) */
+    .scroll-cue-v2 {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #5C6F8A; opacity: .7;
+      animation: scrollFadeIn 1s ease 1.2s both;
+    }
+    @keyframes scrollFadeIn { from { opacity:0; transform: translate(-50%, 8px); } to { opacity:.7; transform: translate(-50%, 0); } }
+    .scroll-cue-v2 .chev { animation: scrollBounce 1.8s ease-in-out infinite; }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); opacity: .4; }
+      50%      { transform: translateY(6px); opacity: 1; }
+    }
+    /* Smooth reveal easing curve upgrade */
+    .reveal-soft { opacity: 0; transform: translateY(20px); transition: opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); }
+    .reveal-soft.in-view { opacity: 1; transform: none; }
+    /* Improved headline rise animation (line by line) */
+    .h1-line { display: block; overflow: hidden; }
+    .h1-line > span {
+      display: inline-block;
+      transform: translateY(105%);
+      opacity: 0;
+      animation: h1Rise 1s cubic-bezier(.18,1,.32,1) forwards;
+    }
+    .h1-line:nth-child(1) > span { animation-delay: .08s; }
+    .h1-line:nth-child(2) > span { animation-delay: .18s; }
+    .h1-line:nth-child(3) > span { animation-delay: .28s; }
+    @keyframes h1Rise { to { transform: translateY(0); opacity: 1; } }
   </style>
 </head>
 
@@ -429,51 +508,69 @@
 <!-- ════════════════════════════════════════════════════════════
      01 — HERO
 ════════════════════════════════════════════════════════════ -->
-<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-36 pb-24">
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-32">
   <!-- Animated neural grid -->
-  <div class="absolute inset-0 neural-grid pointer-events-none" style="animation:gridPulse 9s ease-in-out infinite;opacity:.2;"></div>
+  <div class="absolute inset-0 neural-grid pointer-events-none" style="animation:gridPulse 9s ease-in-out infinite;opacity:.18;"></div>
   <!-- Primary glow — drifts slowly -->
-  <div class="glow-blob" style="position:absolute;width:900px;height:900px;background:radial-gradient(circle,rgba(26,186,220,0.13) 0%,transparent 68%);top:50%;left:50%;animation:heroBlob1 15s ease-in-out infinite;pointer-events:none;"></div>
+  <div class="glow-blob" style="position:absolute;width:1000px;height:1000px;background:radial-gradient(circle,rgba(26,186,220,0.16) 0%,transparent 68%);top:50%;left:50%;animation:heroBlob1 15s ease-in-out infinite;pointer-events:none;"></div>
   <!-- Secondary violet accent — drifts opposite -->
-  <div class="glow-blob" style="position:absolute;width:640px;height:640px;background:radial-gradient(circle,rgba(139,92,246,0.09) 0%,transparent 68%);bottom:-120px;right:-80px;animation:heroBlob2 20s ease-in-out infinite;pointer-events:none;"></div>
+  <div class="glow-blob" style="position:absolute;width:720px;height:720px;background:radial-gradient(circle,rgba(139,92,246,0.11) 0%,transparent 68%);bottom:-160px;right:-100px;animation:heroBlob2 20s ease-in-out infinite;pointer-events:none;"></div>
   <!-- Tertiary top-left warmth -->
-  <div class="glow-blob" style="position:absolute;width:420px;height:420px;background:radial-gradient(circle,rgba(26,186,220,0.07) 0%,transparent 68%);top:-60px;left:-60px;animation:heroBlob3 25s ease-in-out infinite;pointer-events:none;"></div>
+  <div class="glow-blob" style="position:absolute;width:460px;height:460px;background:radial-gradient(circle,rgba(26,186,220,0.09) 0%,transparent 68%);top:-80px;left:-80px;animation:heroBlob3 25s ease-in-out infinite;pointer-events:none;"></div>
 
-  <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
 
-    <!-- Eyebrow badge -->
-    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-primary/[0.15] bg-primary/[0.06] text-primary text-[10px] font-mono tracking-[0.18em] uppercase mb-8">
-      <span class="w-1 h-1 rounded-full bg-primary animate-pulse"></span>
-      Dallas · Pune · Est. 2021
+    <!-- Numbered eyebrow (staging-style) -->
+    <div class="sec-eyebrow-num justify-center mb-10" style="opacity:0;animation:scrollFadeIn .9s cubic-bezier(.18,1,.32,1) .05s forwards;">
+      <span class="num">01</span>
+      <span class="bar"></span>
+      <span>AI-First Engineering · Pune · Dallas · Est. 2021</span>
     </div>
 
-    <!-- Headline -->
-    <h1 class="hero-h1 font-headline font-semibold leading-[1.1] tracking-[-0.01em] mb-6 text-on-surface" style="font-size:clamp(2rem,4.5vw,3.75rem);">
-      We ship software<br>
-      that goes live<br>
-      <span class="grad-text">in 45&nbsp;days.</span>
+    <!-- Headline (line-by-line rise) -->
+    <h1 class="font-headline font-bold tracking-[-0.035em] mb-8 text-on-surface mx-auto" style="font-size:clamp(2.4rem,6.5vw,5.5rem);line-height:0.98;max-width:18ch;">
+      <span class="h1-line"><span>We ship software</span></span>
+      <span class="h1-line"><span>that goes live</span></span>
+      <span class="h1-line"><span class="grad-text-strong">in 45&nbsp;days.</span></span>
     </h1>
 
-    <!-- Divider -->
-    <div class="hero-divider mx-auto mb-6"></div>
-
     <!-- Sub -->
-    <p class="hero-sub text-base md:text-lg text-on-surface-dim max-w-xl mx-auto mb-8 leading-relaxed">
-      AI, cloud, and enterprise builds handled by senior engineers who take ownership from day one. 130+ projects in production. 98% client retention.
+    <p class="text-base md:text-xl text-on-surface-dim max-w-2xl mx-auto mb-10 leading-relaxed reveal-soft" style="letter-spacing:-0.008em;">
+      A senior team. Discovery to production in six weeks. No body-shopping, no theatrics — just engineers who take ownership from day one.
     </p>
 
     <!-- CTAs -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="px-8 py-3.5 rounded-xl bg-primary text-surface-mid font-bold shadow-lg shadow-primary/20 hover:bg-primary-dim hover:shadow-primary/40 transition-all duration-200 inline-flex items-center justify-center gap-2 text-sm">
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14 reveal-soft" style="transition-delay:.15s;">
+      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="px-8 py-4 rounded-full bg-primary text-surface-mid font-bold shadow-lg shadow-primary/25 hover:bg-primary-dim hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-200 inline-flex items-center justify-center gap-2 text-sm">
         Book a Free Discovery Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
       </a>
-      <a href="/work" class="px-8 py-3.5 rounded-xl border border-white/[0.10] text-on-surface-dim hover:text-on-surface hover:border-white/20 transition-all duration-200 inline-flex items-center justify-center gap-2 text-sm font-semibold">
+      <a href="/work" class="px-8 py-4 rounded-full border border-white/[0.10] text-on-surface-dim hover:text-on-surface hover:border-white/25 hover:bg-white/[0.03] transition-all duration-200 inline-flex items-center justify-center gap-2 text-sm font-semibold">
         See Our Work
       </a>
     </div>
 
+    <!-- Stats row — glass cards (replaces the chip strip) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto mb-10 reveal-soft" style="transition-delay:.25s;">
+      <div class="glass-card hero-stat-card text-left">
+        <div class="hero-stat-val">130<span>+</span></div>
+        <div class="hero-stat-lbl">Production Ships</div>
+      </div>
+      <div class="glass-card hero-stat-card text-left">
+        <div class="hero-stat-val">98<span>%</span></div>
+        <div class="hero-stat-lbl">Client Retention</div>
+      </div>
+      <div class="glass-card hero-stat-card text-left">
+        <div class="hero-stat-val">45</div>
+        <div class="hero-stat-lbl">Days to Production</div>
+      </div>
+      <div class="glass-card hero-stat-card text-left">
+        <div class="hero-stat-val">50K<span>+</span></div>
+        <div class="hero-stat-lbl">Patients Monitored</div>
+      </div>
+    </div>
+
     <!-- Animated proof ticker -->
-    <div class="hero-ticker mb-8" aria-hidden="true">
+    <div class="hero-ticker reveal-soft" aria-hidden="true" style="transition-delay:.35s;">
       <div class="ticker-track">
         <span>130+ projects shipped and running in production worldwide</span>
         <span>98% client retention — they keep coming back</span>
@@ -481,21 +578,12 @@
         <span>45-day delivery guarantee — no exceptions</span>
       </div>
     </div>
-
-    <!-- Client trust strip -->
-    <div class="flex flex-wrap gap-2.5 justify-center">
-      <span class="hero-chip"><span class="hero-chip-dot"></span>Mahindra</span>
-      <span class="hero-chip"><span class="hero-chip-dot"></span>QuickHeal</span>
-      <span class="hero-chip"><span class="hero-chip-dot"></span>Pininfarina</span>
-      <span class="hero-chip"><span class="hero-chip-dot"></span>Maharashtra Gov.</span>
-      <span class="hero-chip"><span class="hero-chip-dot"></span>Semilynx</span>
-    </div>
   </div>
 
-  <!-- Scroll cue -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30" aria-hidden="true">
-    <span class="text-[10px] font-mono text-on-surface-dim tracking-[0.2em]">SCROLL</span>
-    <div class="w-px h-8 bg-gradient-to-b from-primary/70 to-transparent"></div>
+  <!-- Scroll cue v2 (staging-style) -->
+  <div class="scroll-cue-v2" aria-hidden="true">
+    <span>Scroll to explore</span>
+    <svg class="chev" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
 </section>
 
@@ -1140,9 +1228,13 @@
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-soft').forEach(el => obs.observe(el));
+    // Above-the-fold (hero) reveal-soft elements: trigger immediately so they animate in on load
+    document.querySelectorAll('#hero .reveal-soft').forEach(el => {
+      requestAnimationFrame(() => el.classList.add('in-view'));
+    });
   } else {
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-soft').forEach(el => {
       el.style.transition = 'none';
       el.classList.add('in-view');
     });

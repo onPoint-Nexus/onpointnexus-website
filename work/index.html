@@ -117,24 +117,289 @@
 </nav>
 
 <!-- ════════════════════════════════════════════════════════════
-     HERO
+     INLINE STYLES — magazine layout primitives
 ════════════════════════════════════════════════════════════ -->
-<section class="dot-grid pt-28 pb-20 px-6 text-center" style="background:#0e1628;">
-  <div class="max-w-3xl mx-auto">
-    <p class="text-xs font-mono text-primary uppercase tracking-widest mb-6">Our Work</p>
-    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
-      130+ projects.<br><span class="grad-text">Zero half-measures.</span>
+<style>
+  /* Design DNA — shared with homepage */
+  .glass-card { background:rgba(20,28,46,0.55);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:1rem;transition:border-color .25s ease,background .25s ease }
+  .glass-card:hover { border-color:rgba(26,186,220,0.28);background:rgba(26,186,220,0.04) }
+  .hero-stat-card { padding:18px 22px;min-width:0 }
+  .hero-stat-val { font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;letter-spacing:-0.025em;line-height:1;font-size:clamp(1.5rem,2.4vw,2rem);background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent }
+  .hero-stat-lbl { font-family:'Roboto Mono',monospace;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;color:#5C6F8A;font-weight:600;margin-top:6px }
+  .grad-text-strong { background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 55%,#cef4fc 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent }
+  .sec-eyebrow-num { display:inline-flex;align-items:center;gap:14px;font-family:'Roboto Mono',monospace;font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#5C6F8A }
+  .sec-eyebrow-num .num { color:#1ABADC }
+  .sec-eyebrow-num .bar { flex:0 0 28px;height:1px;background:linear-gradient(90deg,#1ABADC,transparent) }
+  /* Editorial work-list rows */
+  .work-row { display:grid;grid-template-columns:80px 1fr 1.3fr;gap:48px;padding:56px 0;border-top:1px solid rgba(255,255,255,0.06);align-items:start;transition:padding .35s ease, background .35s ease }
+  .work-row:last-child { border-bottom:1px solid rgba(255,255,255,0.06) }
+  .work-row:hover { padding:72px 0 64px }
+  .work-row:hover .wr-image { transform:scale(1.02);box-shadow:0 30px 60px -20px rgba(0,0,0,0.5) }
+  .work-row:hover .wr-image img { transform:scale(1.06) }
+  .work-row:hover .wr-title { color:#1ABADC }
+  .wr-num { font-family:'Roboto Mono',monospace;font-size:0.85rem;color:#5C6F8A;font-weight:500;padding-top:8px;letter-spacing:0.04em }
+  .wr-tags { font-family:'Roboto Mono',monospace;font-size:0.65rem;color:#1ABADC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;font-weight:600 }
+  .wr-title { font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:700;line-height:1.06;letter-spacing:-.022em;color:#E8EDF5;margin-bottom:16px;transition:color .25s ease }
+  .wr-desc { font-size:0.95rem;color:#8A9BB5;line-height:1.55;max-width:42ch;margin-bottom:20px }
+  .wr-stat { display:inline-flex;align-items:baseline;gap:10px;margin-bottom:20px }
+  .wr-stat .v { font-family:'Plus Jakarta Sans';font-size:1.5rem;font-weight:800;letter-spacing:-.02em;line-height:1;background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent }
+  .wr-stat .k { font-family:'Roboto Mono',monospace;font-size:0.65rem;color:#5C6F8A;text-transform:uppercase;letter-spacing:0.08em;font-weight:600 }
+  .wr-link { display:inline-flex;align-items:center;gap:8px;font-family:'Roboto Mono',monospace;font-size:0.7rem;color:#E8EDF5;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid rgba(232,237,245,0.4);padding-bottom:3px;transition:color .25s,border-color .25s,letter-spacing .25s }
+  .wr-link:hover { color:#1ABADC;border-color:#1ABADC;letter-spacing:0.12em }
+  .wr-image { position:relative;overflow:hidden;aspect-ratio:4/3;background:#141c2e;border-radius:14px;border:1px solid rgba(255,255,255,0.06);transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s }
+  .wr-image img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .8s cubic-bezier(.16,1,.3,1) }
+  .wr-image .img-tag { position:absolute;top:14px;left:14px;font-family:'Roboto Mono',monospace;font-size:0.6rem;background:rgba(12,19,36,0.85);backdrop-filter:blur(8px);color:#E8EDF5;padding:5px 10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-radius:6px;border:1px solid rgba(255,255,255,0.08);z-index:2 }
+  @media(max-width:880px){
+    .work-row { grid-template-columns:1fr;gap:18px;padding:36px 0 }
+    .work-row:hover { padding:36px 0 }
+    .wr-num { padding-top:0 }
+  }
+  /* Featured spread */
+  .featured-spread { display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center }
+  .featured-image { position:relative;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,0.07);aspect-ratio:4/3;background:#141c2e;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5) }
+  .featured-image img { width:100%;height:100%;object-fit:cover;object-position:top }
+  .featured-image .fs-badge { position:absolute;top:18px;left:18px;font-family:'Roboto Mono',monospace;font-size:0.62rem;background:rgba(26,186,220,0.92);color:#0c1324;padding:7px 12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;border-radius:8px;z-index:2 }
+  @media(max-width:880px){ .featured-spread { grid-template-columns:1fr;gap:32px } }
+</style>
+
+<!-- ════════════════════════════════════════════════════════════
+     HERO — editorial framing
+════════════════════════════════════════════════════════════ -->
+<section class="relative pt-32 pb-24 px-6 overflow-hidden" style="background:#0e1628;">
+  <div class="absolute inset-0 dot-grid pointer-events-none" style="opacity:.18;"></div>
+  <div class="glow-blob" style="position:absolute;width:800px;height:800px;background:radial-gradient(circle,rgba(26,186,220,0.14) 0%,transparent 68%);top:-200px;left:50%;transform:translateX(-50%);filter:blur(120px);border-radius:9999px;pointer-events:none;"></div>
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <div class="sec-eyebrow-num mb-8 reveal">
+      <span class="num">01</span>
+      <span class="bar"></span>
+      <span>Selected Work · 2021 → 2026</span>
+    </div>
+    <h1 class="font-headline font-bold leading-[1.02] tracking-[-0.035em] text-on-surface mb-8 reveal" style="font-size:clamp(2.5rem,7vw,5.5rem);max-width:18ch;">
+      130+ projects.<br><span class="grad-text-strong">Zero half-measures.</span>
     </h1>
-    <p class="text-on-surface-dim text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-      Real projects, real results. From monitoring 50,000 patients to building Pininfarina's AR experience — every build ships to production.
+    <p class="text-on-surface-dim text-lg md:text-xl leading-relaxed max-w-2xl mb-12 reveal" style="transition-delay:.08s;">
+      Real projects. Real results. From monitoring 50,000 patients to building Pininfarina's AR experience — every build ships to production, every line of code is an opinion.
     </p>
+    <!-- Stat strip -->
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 reveal" style="transition-delay:.16s;">
+      <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">130<span>+</span></div><div class="hero-stat-lbl">Production Ships</div></div>
+      <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">50K<span>+</span></div><div class="hero-stat-lbl">Patients Monitored</div></div>
+      <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">400<span>+</span></div><div class="hero-stat-lbl">Sites Unified</div></div>
+      <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">98<span>%</span></div><div class="hero-stat-lbl">Client Retention</div></div>
+      <div class="glass-card hero-stat-card text-left col-span-2 md:col-span-1"><div class="hero-stat-val">5</div><div class="hero-stat-lbl">Continents · 6 Industries</div></div>
+    </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════
-     CASE STUDIES GRID
+     FEATURED SPREAD — iFound Agent
 ════════════════════════════════════════════════════════════ -->
-<section class="py-20 px-6 max-w-7xl mx-auto">
+<section class="py-24 px-6 max-w-7xl mx-auto">
+  <div class="sec-eyebrow-num mb-12 reveal">
+    <span class="num">02</span>
+    <span class="bar"></span>
+    <span>Featured Story · May 2026</span>
+  </div>
+  <div class="featured-spread">
+    <a href="/work/ifound-agent" class="featured-image reveal-left group">
+      <span class="fs-badge">Featured · 2026</span>
+      <img src="/images/ifound/new-search.png" alt="iFound Agent — 400+ multi-sites unified" loading="lazy">
+    </a>
+    <div class="reveal-right">
+      <div class="wr-tags">PropTech · WordPress at scale · USA</div>
+      <h2 class="font-headline font-bold leading-[1.04] tracking-[-0.028em] text-on-surface mb-6" style="font-size:clamp(2rem,4vw,3.4rem);">
+        400+ multi-sites,<br><span class="grad-text-strong">one unified platform.</span>
+      </h2>
+      <p class="text-on-surface-dim text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+        A WordPress ecosystem at impossible scale — phased into a single design system, AI-driven search, and 90% lower running cost. Three months of audit, modernization, and parallel deployment.
+      </p>
+      <div class="flex flex-wrap gap-6 mb-10">
+        <div class="wr-stat"><span class="v">90%</span><span class="k">Cost ↓</span></div>
+        <div class="wr-stat"><span class="v">60</span><span class="k">Days Saved</span></div>
+        <div class="wr-stat"><span class="v">3X</span><span class="k">Faster Delivery</span></div>
+      </div>
+      <a href="/work/ifound-agent" class="wr-link">Read the case study <span>↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     EDITORIAL INDEX — all work as a numbered list
+════════════════════════════════════════════════════════════ -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+  <div class="sec-eyebrow-num mb-8 reveal">
+    <span class="num">03</span>
+    <span class="bar"></span>
+    <span>The Index · All Case Studies</span>
+  </div>
+  <h2 class="font-headline font-bold leading-[1.04] tracking-[-0.03em] text-on-surface mb-16 reveal" style="font-size:clamp(2rem,5vw,4rem);">
+    Recent <span class="grad-text-strong">ships.</span>
+  </h2>
+
+  <a href="/work/vitalwatch-ai" class="work-row reveal">
+    <div class="wr-num">01</div>
+    <div>
+      <div class="wr-tags">HealthTech · AI · USA · 2026</div>
+      <h3 class="wr-title">VitalWatch AI — predictive remote patient monitoring.</h3>
+      <p class="wr-desc">Health Gorilla FHIR, smartwatch biometrics, Python AI risk engine. HIPAA from day one. Predicts deterioration 24–48 hours before a clinical event.</p>
+      <div class="wr-stat"><span class="v">48hr</span><span class="k">Predictive Window</span></div>
+      <span class="wr-link">Read the study <span>↗</span></span>
+    </div>
+    <div class="wr-image">
+      <span class="img-tag">Predictive RPM</span>
+      <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=85" alt="VitalWatch AI" loading="lazy">
+    </div>
+  </a>
+
+  <a href="/work/pininfarina" class="work-row reveal">
+    <div class="wr-num">02</div>
+    <div>
+      <div class="wr-tags">Automotive · AR · Germany · 2025</div>
+      <h3 class="wr-title">A digital companion for the world's most powerful electric car.</h3>
+      <p class="wr-desc">1,900 horsepower of Pininfarina Battista, served by an AR companion app featured at every major auto show globally.</p>
+      <div class="wr-stat"><span class="v">#1</span><span class="k">AR Experience</span></div>
+      <span class="wr-link">Read the study <span>↗</span></span>
+    </div>
+    <div class="wr-image">
+      <span class="img-tag">AR Companion</span>
+      <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=1200&q=85" alt="Pininfarina Battista" loading="lazy">
+    </div>
+  </a>
+
+  <a href="/work/ontrack-agent" class="work-row reveal">
+    <div class="wr-num">03</div>
+    <div>
+      <div class="wr-tags">SaaS · Real Estate · USA · 2026</div>
+      <h3 class="wr-title">WordPress was capping their revenue. We removed the ceiling.</h3>
+      <p class="wr-desc">A 48-day migration from a creaking WordPress stack to a modern AI-powered SaaS. Monthly revenue doubled, page load cut 72%.</p>
+      <div class="wr-stat"><span class="v">$20K&nbsp;→&nbsp;$42K</span><span class="k">MRR</span></div>
+      <span class="wr-link">Read the study <span>↗</span></span>
+    </div>
+    <div class="wr-image">
+      <span class="img-tag">SaaS Migration</span>
+      <img src="https://onpointnexus-casestudy.vercel.app/assets/landing-hero-DC23-lKL.jpg" alt="OnTrack Agent" loading="lazy">
+    </div>
+  </a>
+
+  <a href="/work/building-pulse" class="work-row reveal">
+    <div class="wr-num">04</div>
+    <div>
+      <div class="wr-tags">Building in Public · Work OS · India · 2026</div>
+      <h3 class="wr-title">Our own work intelligence platform — built without an engineering hire.</h3>
+      <p class="wr-desc">Lovable shipped the 10-hour MVP. Claude Code is building the SaaS. PulseWork OS is live and free for teams up to 50.</p>
+      <div class="wr-stat"><span class="v">10 hrs</span><span class="k">Idea → Live</span></div>
+      <span class="wr-link">Read the story <span>↗</span></span>
+    </div>
+    <div class="wr-image">
+      <span class="img-tag">Internal Product</span>
+      <img src="https://images.unsplash.com/photo-1552581234-26160f608093?w=1200&q=85" alt="PulseWork OS" loading="lazy">
+    </div>
+  </a>
+
+  <a href="/work/semilynx" class="work-row reveal">
+    <div class="wr-num">05</div>
+    <div>
+      <div class="wr-tags">Industrial AR · Fortune 500 · USA · 2024</div>
+      <h3 class="wr-title">An AR co-worker for the factory floor.</h3>
+      <p class="wr-desc">Google Glass plus a centralized engineering portal. 60% drop in unplanned factory downtime, zero cross-country flights for senior engineers.</p>
+      <div class="wr-stat"><span class="v">60%</span><span class="k">Less Downtime</span></div>
+      <span class="wr-link">Read the study <span>↗</span></span>
+    </div>
+    <div class="wr-image">
+      <span class="img-tag">Industrial AR</span>
+      <img src="https://onpointnexus-casestudy.vercel.app/assets/Semilynx%20Worker%20Image-B1TGWBwC.png" alt="Semilynx" loading="lazy">
+    </div>
+  </a>
+
+  <a href="/work/quickheal" class="work-row reveal">
+    <div class="wr-num">06</div>
+    <div>
+      <div class="wr-tags">Cybersecurity · Brand · India · 2024</div>
+      <h3 class="wr-title">Reimagining India's most trusted antivirus brand.</h3>
+      <p class="wr-desc">Complete UI/UX rebrand and new design system across all digital properties for a company with 7 million annual subscribers.</p>
+      <div class="wr-stat"><span class="v">#1</span><span class="k">Antivirus Brand</span></div>
+      <span class="wr-link">Read the study <span>↗</span></span>
+    </div>
+    <div class="wr-image">
+      <span class="img-tag">Brand · UX</span>
+      <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=85" alt="QuickHeal" loading="lazy">
+    </div>
+  </a>
+
+  <a href="/work/vidanta" class="work-row reveal">
+    <div class="wr-num">07</div>
+    <div>
+      <div class="wr-tags">Travel · Luxury Resort · USA/Mexico · 2024</div>
+      <h3 class="wr-title">A unified booking platform for the Americas' premier luxury group.</h3>
+      <p class="wr-desc">One million members, dozens of properties, a single membership experience. Web and mobile, deeply integrated with Salesforce.</p>
+      <div class="wr-stat"><span class="v">1M+</span><span class="k">Members</span></div>
+      <span class="wr-link">Read the study <span>↗</span></span>
+    </div>
+    <div class="wr-image">
+      <span class="img-tag">Luxury Travel</span>
+      <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=85" alt="Vidanta" loading="lazy">
+    </div>
+  </a>
+
+  <a href="/work/clinical-trac" class="work-row reveal">
+    <div class="wr-num">08</div>
+    <div>
+      <div class="wr-tags">EdTech · HealthTech · USA · 2023</div>
+      <h3 class="wr-title">The clinical education platform now central to US respiratory therapy training.</h3>
+      <p class="wr-desc">A HIPAA-compliant platform onboarded across 52 US respiratory therapy schools in six months. Live, in classrooms today.</p>
+      <div class="wr-stat"><span class="v">52</span><span class="k">Schools</span></div>
+      <span class="wr-link">Read the study <span>↗</span></span>
+    </div>
+    <div class="wr-image">
+      <span class="img-tag">Clinical EdTech</span>
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=85" alt="Clinical Trac" loading="lazy">
+    </div>
+  </a>
+
+  <a href="/work/open-houses-direct" class="work-row reveal">
+    <div class="wr-num">09</div>
+    <div>
+      <div class="wr-tags">PropTech · Mobile · USA · 2023</div>
+      <h3 class="wr-title">The first dedicated open house discovery platform.</h3>
+      <p class="wr-desc">Native iOS, native Android, web — first to market in a category that didn't exist. Live on both stores.</p>
+      <div class="wr-stat"><span class="v">#1</span><span class="k">Open House App</span></div>
+      <span class="wr-link">Read the study <span>↗</span></span>
+    </div>
+    <div class="wr-image">
+      <span class="img-tag">Mobile · Maps</span>
+      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=85" alt="Open Houses Direct" loading="lazy">
+    </div>
+  </a>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     CTA CARD
+════════════════════════════════════════════════════════════ -->
+<section class="pb-24 px-6 max-w-7xl mx-auto">
+  <div class="rounded-3xl p-12 md:p-16 border border-primary/20 reveal" style="background:linear-gradient(135deg,rgba(26,186,220,0.08) 0%,rgba(20,28,46,1) 100%);">
+    <div class="max-w-2xl">
+      <div class="sec-eyebrow-num mb-6">
+        <span class="num">04</span>
+        <span class="bar"></span>
+        <span>Start a Project</span>
+      </div>
+      <h3 class="font-headline font-bold leading-[1.04] tracking-[-0.028em] text-on-surface mb-6" style="font-size:clamp(2rem,4.5vw,3.4rem);">
+        Ready to be <span class="grad-text-strong">next?</span>
+      </h3>
+      <p class="text-on-surface-dim text-base md:text-lg leading-relaxed mb-10">
+        Every project starts with a free 45-minute discovery call. No slides, no fluff — just an honest conversation about what you're building.
+      </p>
+      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-surface px-8 py-4 rounded-full font-bold text-sm hover:bg-primary-dim transition-colors shadow-lg shadow-primary/30">
+        Book a Discovery Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     [LEGACY GRID — kept below as fallback, hidden]
+════════════════════════════════════════════════════════════ -->
+<section class="hidden">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
     <!-- Pininfarina -->
