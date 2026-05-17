@@ -1,0 +1,347 @@
+/* ───────────────────────────────────────────────────────────
+   Case Study Enhancements — shared component CSS
+   Adds: zoom lightbox, phase accordion, before/after slider,
+   numbered eyebrow, glass cards.
+   Drop in via:  <link rel="stylesheet" href="/css/case-study-enhance.css">
+   Activate elements via data attributes — no markup changes
+   required for `[data-zoom]` images.
+─────────────────────────────────────────────────────────── */
+
+/* Make any image or figure marked [data-zoom] clickable */
+[data-zoom] {
+  cursor: zoom-in;
+  transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s;
+}
+[data-zoom]:hover {
+  transform: translateY(-2px);
+}
+
+/* Subtle hover ring on zoomable images */
+.cs-zoom-frame {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.cs-zoom-frame::after {
+  content: "⤢";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgba(12,19,36,0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #E8EDF5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.cs-zoom-frame:hover::after,
+[data-zoom]:hover + .cs-zoom-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Lightbox ─────────────────────────────────────────── */
+.cs-lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(8,12,22,0.96);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  display: none;
+  flex-direction: column;
+  animation: csFadeIn .25s ease;
+}
+.cs-lightbox.open { display: flex; }
+@keyframes csFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.cs-lightbox-bar {
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.cs-lightbox-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #E8EDF5;
+  letter-spacing: -0.01em;
+}
+.cs-lightbox-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cs-lightbox-btn {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: rgba(20,28,46,0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #E8EDF5;
+  font-size: 18px; font-weight: 700;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+}
+.cs-lightbox-btn:hover {
+  border-color: #1ABADC;
+  color: #1ABADC;
+}
+.cs-lightbox-btn:disabled {
+  opacity: 0.35; cursor: not-allowed;
+}
+.cs-lightbox-zoomlbl {
+  width: 60px; text-align: center;
+  font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+  font-size: 13px; color: #E8EDF5;
+}
+
+.cs-lightbox-stage {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #06091a;
+  cursor: grab;
+  user-select: none;
+}
+.cs-lightbox-stage.dragging { cursor: grabbing; }
+.cs-lightbox-stage img {
+  max-width: 95vw;
+  max-height: calc(100vh - 80px);
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  transition: transform .15s ease-out;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ─── Phase Accordion (drop-in) ───────────────────────── */
+.cs-phases {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.cs-phase {
+  background: rgba(20,28,46,0.55);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color .25s;
+}
+.cs-phase.open {
+  border-color: rgba(26,186,220,0.4);
+}
+.cs-phase-head {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  color: inherit;
+  padding: 26px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .2s;
+}
+.cs-phase-head:hover {
+  background: rgba(26,186,220,0.04);
+}
+.cs-phase-num {
+  font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+  color: #1ABADC;
+  font-size: 13px;
+  width: 32px;
+  flex-shrink: 0;
+}
+.cs-phase-titles {
+  flex: 1;
+}
+.cs-phase-tag {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+  color: #5C6F8A;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.cs-phase-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: #E8EDF5;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.cs-phase-caret {
+  width: 20px; height: 20px;
+  color: #5C6F8A;
+  transition: transform .3s, color .25s;
+  flex-shrink: 0;
+}
+.cs-phase.open .cs-phase-caret {
+  transform: rotate(180deg);
+  color: #1ABADC;
+}
+.cs-phase-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s cubic-bezier(.16,1,.3,1), opacity .3s;
+  opacity: 0;
+}
+.cs-phase.open .cs-phase-body {
+  max-height: 700px;
+  opacity: 1;
+}
+.cs-phase-body-inner {
+  padding: 0 32px 28px 88px;
+}
+.cs-phase-desc {
+  font-size: 15px;
+  color: #8A9BB5;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  max-width: 760px;
+}
+.cs-phase-bullets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.cs-phase-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #8A9BB5;
+}
+.cs-phase-bullet::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #1ABADC;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .cs-phase-head { padding: 22px 22px; gap: 16px; }
+  .cs-phase-num { width: auto; }
+  .cs-phase-body-inner { padding: 0 22px 22px 22px; }
+  .cs-phase-bullets { grid-template-columns: 1fr; }
+}
+
+/* ─── Before / After Slider (drop-in) ─────────────────── */
+.cs-ba {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: #000;
+  cursor: ew-resize;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.cs-ba-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: left top;
+  pointer-events: none;
+}
+.cs-ba-clip {
+  position: absolute; inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  clip-path: inset(0 50% 0 0);
+}
+.cs-ba-label {
+  position: absolute; top: 18px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
+.cs-ba-label.before {
+  left: 18px;
+  background: rgba(12,19,36,0.8);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #8A9BB5;
+}
+.cs-ba-label.after {
+  right: 18px;
+  background: rgba(26,186,220,0.9);
+  border: 1px solid #1ABADC;
+  color: #0c1324;
+}
+.cs-ba-line {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: #1ABADC;
+  box-shadow: 0 0 28px 4px #1ABADC;
+  left: 50%;
+  z-index: 20;
+  pointer-events: none;
+}
+.cs-ba-handle {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: #1ABADC;
+  color: #0c1324;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 36px rgba(26,186,220,0.7);
+  border: 3px solid #0c1324;
+  z-index: 30;
+  font-size: 20px;
+  font-weight: 700;
+  transition: transform .15s;
+}
+.cs-ba:hover .cs-ba-handle {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.cs-ba-hint {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: rgba(12,19,36,0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.06);
+  font-size: 11px;
+  font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #8A9BB5;
+  z-index: 10;
+}
