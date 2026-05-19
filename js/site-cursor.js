@@ -40,12 +40,12 @@
       transition: opacity .2s ease, background .2s ease;
     }
     .site-cursor-ring {
-      width: 32px; height: 32px;
+      width: 22px; height: 22px;
       border-radius: 50%;
       border: 1.5px solid rgba(26,186,220,0.55);
       background: transparent;
-      margin-left: -16px;
-      margin-top: -16px;
+      margin-left: -11px;
+      margin-top: -11px;
       transition: width .25s cubic-bezier(.16,1,.3,1),
                   height .25s cubic-bezier(.16,1,.3,1),
                   margin .25s cubic-bezier(.16,1,.3,1),
@@ -54,14 +54,14 @@
                   opacity .2s ease;
     }
     .site-cursor-ring.is-hover {
-      width: 56px; height: 56px;
-      margin-left: -28px; margin-top: -28px;
+      width: 38px; height: 38px;
+      margin-left: -19px; margin-top: -19px;
       border-color: rgba(26,186,220,0.85);
       background: rgba(26,186,220,0.07);
     }
     .site-cursor-ring.is-click {
-      width: 24px; height: 24px;
-      margin-left: -12px; margin-top: -12px;
+      width: 16px; height: 16px;
+      margin-left: -8px; margin-top: -8px;
       background: rgba(26,186,220,0.18);
       border-color: rgba(26,186,220,1);
     }
