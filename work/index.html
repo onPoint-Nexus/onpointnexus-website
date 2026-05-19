@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#0a0a0a">
 
   <!-- ═══ PRIMARY SEO ═══════════════════════════════════════════ -->
-  <title>Case Studies — 130+ Production Projects | OnPoint Nexus</title>
-  <meta name="description" content="Real projects, real results. From monitoring 50K patients to building Pininfarina's AR experience. See all case studies.">
+  <title>Work — Case Studies & AI Solutions | OnPoint Nexus</title>
+  <meta name="description" content="Selected work from OnPoint Nexus — modern product design, scalable platforms, and AI solutions delivered for ambitious teams.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.onpointnexus.com/work">
 
@@ -15,8 +15,8 @@
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="OnPoint Nexus">
   <meta property="og:url"         content="https://www.onpointnexus.com/work">
-  <meta property="og:title"       content="Case Studies — 130+ Production Projects | OnPoint Nexus">
-  <meta property="og:description" content="Real projects, real results. From monitoring 50K patients to building Pininfarina's AR experience. See all case studies.">
+  <meta property="og:title"       content="Work — Case Studies & AI Solutions | OnPoint Nexus">
+  <meta property="og:description" content="A portfolio of platforms we've designed, engineered and shipped — plus the AI solutions that power them.">
   <meta property="og:image"       content="https://www.onpointnexus.com/og-image.png">
 
   <!-- ═══ FAVICON ═══════════════════════════════════════════════ -->
@@ -71,13 +71,123 @@
 
   <style>
     body { background-color: #0c1324; font-family: 'Plus Jakarta Sans', sans-serif; }
-    .dot-grid {
-      background-image: radial-gradient(rgba(26,186,220,0.09) 1px, transparent 1px);
-      background-size: 36px 36px;
+    .grid-bg {
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%);
     }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
     .reveal.in-view { opacity: 1; transform: none; }
-    .grad-text { background: linear-gradient(135deg, #1ABADC 0%, #6DCFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* Design DNA — shared primitives */
+    .glass-card { background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1rem; transition: border-color .25s ease, background .25s ease, transform .35s ease; }
+    .glass-card:hover { border-color: rgba(26,186,220,0.32); background: rgba(26,186,220,0.04); }
+    .grad-text { background: linear-gradient(135deg, #1ABADC 0%, #8de4f0 55%, #cef4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* Hero stat cards */
+    .hero-stat-card { padding: 22px 26px; }
+    .hero-stat-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; letter-spacing: -.02em; line-height: 1;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      background: linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-stat-lbl { font-family: 'Roboto Mono', monospace; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: #5C6F8A; font-weight: 600; margin-top: 8px; }
+
+    /* Numbered section eyebrow */
+    .sec-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px; border-radius: 999px; border: 1px solid rgba(26,186,220,0.28); background: rgba(26,186,220,0.08); color: #1ABADC; font-family: 'Roboto Mono', monospace; font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; }
+    .sec-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #1ABADC; }
+
+    /* Work card */
+    .work-card {
+      background: rgba(20,28,46,0.55);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: border-color .3s ease, transform .35s ease, box-shadow .35s ease;
+    }
+    .work-card:hover {
+      border-color: rgba(26,186,220,0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px -20px rgba(0,0,0,0.5);
+    }
+    .work-card .cover { position: relative; aspect-ratio: 16/10; overflow: hidden; background: #1a2235; }
+    .work-card .cover img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .7s cubic-bezier(.16,1,.3,1); }
+    .work-card:hover .cover img { transform: scale(1.04); }
+    .work-card .cover::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(12,19,36,0.45) 100%);
+      pointer-events: none;
+    }
+    .work-card .body { padding: 24px 26px 26px; display: flex; flex-direction: column; flex: 1; gap: 14px; }
+    .work-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .work-card .chip { font-family: 'Roboto Mono', monospace; font-size: .62rem; padding: 4px 10px; border-radius: 999px; background: rgba(26,186,220,0.08); border: 1px solid rgba(26,186,220,0.2); color: #1ABADC; letter-spacing: .04em; }
+    .work-card .industry { font-family: 'Roboto Mono', monospace; font-size: .65rem; color: #8A9BB5; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; }
+    .work-card h3 { font-size: 1.35rem; font-weight: 700; line-height: 1.18; letter-spacing: -.018em; color: #E8EDF5; }
+    .work-card .summary { font-size: .92rem; color: #8A9BB5; line-height: 1.55; flex: 1; }
+    .work-card .foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .work-card .metric { display: flex; flex-direction: column; gap: 2px; }
+    .work-card .metric .v { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.4rem; font-weight: 800; letter-spacing: -.02em; line-height: 1; background: linear-gradient(135deg,#1ABADC,#8de4f0); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .work-card .metric .l { font-family: 'Roboto Mono', monospace; font-size: .58rem; color: #5C6F8A; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+    .work-card .read { font-family: 'Roboto Mono', monospace; font-size: .68rem; color: #8A9BB5; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; transition: color .25s, gap .25s; }
+    .work-card:hover .read { color: #1ABADC; gap: 10px; }
+
+    /* AI Solution card */
+    .ai-card {
+      background: rgba(20,28,46,0.55);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      position: relative;
+      transition: border-color .3s ease, transform .35s ease, box-shadow .35s ease;
+    }
+    .ai-card:hover {
+      border-color: rgba(26,186,220,0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px -20px rgba(26,186,220,0.18);
+    }
+    .ai-card .cover { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #1a2235; }
+    .ai-card .cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.16,1,.3,1); }
+    .ai-card:hover .cover img { transform: scale(1.06); }
+    .ai-card .cover::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(12,19,36,0.1) 0%, rgba(12,19,36,0.7) 100%);
+    }
+    .ai-card .icon-badge {
+      position: absolute; top: 14px; left: 14px;
+      width: 44px; height: 44px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(12,19,36,0.85); backdrop-filter: blur(12px);
+      border: 1px solid rgba(26,186,220,0.4);
+      color: #1ABADC; font-size: 20px;
+      z-index: 2;
+    }
+    .ai-card .badge-live {
+      position: absolute; top: 14px; right: 14px;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 11px; border-radius: 999px;
+      background: rgba(74,222,128,0.12); border: 1px solid rgba(74,222,128,0.4);
+      color: #4ade80; font-family: 'Roboto Mono', monospace; font-size: .58rem;
+      text-transform: uppercase; letter-spacing: .1em; font-weight: 700;
+      z-index: 2;
+    }
+    .ai-card .badge-live .pulse { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; animation: pulse 1.6s ease infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+    .ai-card .body { padding: 24px 26px 26px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .ai-card h3 { font-size: 1.3rem; font-weight: 700; line-height: 1.2; letter-spacing: -.015em; color: #E8EDF5; }
+    .ai-card .tagline { font-size: .92rem; color: #8A9BB5; line-height: 1.55; flex: 1; }
+    .ai-card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+    .ai-card .tag { font-family: 'Roboto Mono', monospace; font-size: .6rem; padding: 4px 9px; border-radius: 6px; background: rgba(26,186,220,0.08); border: 1px solid rgba(26,186,220,0.2); color: #1ABADC; letter-spacing: .04em; }
+    .ai-card .launch { margin-top: 10px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); display: inline-flex; align-items: center; justify-content: space-between; font-family: 'Roboto Mono', monospace; font-size: .68rem; color: #8A9BB5; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+    .ai-card .launch .arr { transition: transform .25s; color: #1ABADC; }
+    .ai-card:hover .launch .arr { transform: translate(3px, -3px); }
   </style>
 </head>
 <body class="bg-surface text-on-surface antialiased">
@@ -117,461 +227,419 @@
 </nav>
 
 <!-- ════════════════════════════════════════════════════════════
-     INLINE STYLES — magazine layout primitives
+     HERO — staging-mirror layout
 ════════════════════════════════════════════════════════════ -->
-<style>
-  /* Design DNA — shared with homepage */
-  .glass-card { background:rgba(20,28,46,0.55);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:1rem;transition:border-color .25s ease,background .25s ease }
-  .glass-card:hover { border-color:rgba(26,186,220,0.28);background:rgba(26,186,220,0.04) }
-  .hero-stat-card { padding:18px 22px;min-width:0 }
-  .hero-stat-val { font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;letter-spacing:-0.025em;line-height:1;font-size:clamp(1.5rem,2.4vw,2rem);background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent }
-  .hero-stat-lbl { font-family:'Roboto Mono',monospace;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;color:#5C6F8A;font-weight:600;margin-top:6px }
-  .grad-text-strong { background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 55%,#cef4fc 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent }
-  .sec-eyebrow-num { display:inline-flex;align-items:center;gap:14px;font-family:'Roboto Mono',monospace;font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#5C6F8A }
-  .sec-eyebrow-num .num { color:#1ABADC }
-  .sec-eyebrow-num .bar { flex:0 0 28px;height:1px;background:linear-gradient(90deg,#1ABADC,transparent) }
-  /* Editorial work-list rows */
-  .work-row { display:grid;grid-template-columns:80px 1fr 1.3fr;gap:48px;padding:56px 0;border-top:1px solid rgba(255,255,255,0.06);align-items:start;transition:padding .35s ease, background .35s ease }
-  .work-row:last-child { border-bottom:1px solid rgba(255,255,255,0.06) }
-  .work-row:hover { padding:72px 0 64px }
-  .work-row:hover .wr-image { transform:scale(1.02);box-shadow:0 30px 60px -20px rgba(0,0,0,0.5) }
-  .work-row:hover .wr-image img { transform:scale(1.06) }
-  .work-row:hover .wr-title { color:#1ABADC }
-  .wr-num { font-family:'Roboto Mono',monospace;font-size:0.85rem;color:#5C6F8A;font-weight:500;padding-top:8px;letter-spacing:0.04em }
-  .wr-tags { font-family:'Roboto Mono',monospace;font-size:0.65rem;color:#1ABADC;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;font-weight:600 }
-  .wr-title { font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:700;line-height:1.06;letter-spacing:-.022em;color:#E8EDF5;margin-bottom:16px;transition:color .25s ease }
-  .wr-desc { font-size:0.95rem;color:#8A9BB5;line-height:1.55;max-width:42ch;margin-bottom:20px }
-  .wr-stat { display:inline-flex;align-items:baseline;gap:10px;margin-bottom:20px }
-  .wr-stat .v { font-family:'Plus Jakarta Sans';font-size:1.5rem;font-weight:800;letter-spacing:-.02em;line-height:1;background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent }
-  .wr-stat .k { font-family:'Roboto Mono',monospace;font-size:0.65rem;color:#5C6F8A;text-transform:uppercase;letter-spacing:0.08em;font-weight:600 }
-  .wr-link { display:inline-flex;align-items:center;gap:8px;font-family:'Roboto Mono',monospace;font-size:0.7rem;color:#E8EDF5;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid rgba(232,237,245,0.4);padding-bottom:3px;transition:color .25s,border-color .25s,letter-spacing .25s }
-  .wr-link:hover { color:#1ABADC;border-color:#1ABADC;letter-spacing:0.12em }
-  .wr-image { position:relative;overflow:hidden;aspect-ratio:4/3;background:#141c2e;border-radius:14px;border:1px solid rgba(255,255,255,0.06);transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s }
-  .wr-image img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .8s cubic-bezier(.16,1,.3,1) }
-  .wr-image .img-tag { position:absolute;top:14px;left:14px;font-family:'Roboto Mono',monospace;font-size:0.6rem;background:rgba(12,19,36,0.85);backdrop-filter:blur(8px);color:#E8EDF5;padding:5px 10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-radius:6px;border:1px solid rgba(255,255,255,0.08);z-index:2 }
-  @media(max-width:880px){
-    .work-row { grid-template-columns:1fr;gap:18px;padding:36px 0 }
-    .work-row:hover { padding:36px 0 }
-    .wr-num { padding-top:0 }
-  }
-  /* Featured spread */
-  .featured-spread { display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center }
-  .featured-image { position:relative;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,0.07);aspect-ratio:4/3;background:#141c2e;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5) }
-  .featured-image img { width:100%;height:100%;object-fit:cover;object-position:top }
-  .featured-image .fs-badge { position:absolute;top:18px;left:18px;font-family:'Roboto Mono',monospace;font-size:0.62rem;background:rgba(26,186,220,0.92);color:#0c1324;padding:7px 12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;border-radius:8px;z-index:2 }
-  @media(max-width:880px){ .featured-spread { grid-template-columns:1fr;gap:32px } }
-</style>
+<section class="relative pt-32 pb-20 overflow-hidden">
+  <img src="https://onpointnexus-casestudy.vercel.app/assets/landing-hero-DC23-lKL.jpg" alt="" aria-hidden="true" width="1920" height="1024" class="absolute inset-0 w-full h-full object-cover opacity-50" loading="eager">
+  <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(12,19,36,0.70) 0%, rgba(12,19,36,0.88) 50%, #0c1324 100%);"></div>
+  <div class="absolute inset-0 grid-bg opacity-25"></div>
+  <div class="absolute -top-32 right-0 w-[640px] h-[640px] rounded-full pointer-events-none" style="background:rgba(26,186,220,0.20);filter:blur(140px);"></div>
 
-<!-- ════════════════════════════════════════════════════════════
-     HERO — editorial framing
-════════════════════════════════════════════════════════════ -->
-<section class="relative pt-32 pb-24 px-6 overflow-hidden" style="background:#0e1628;">
-  <div class="absolute inset-0 dot-grid pointer-events-none" style="opacity:.18;"></div>
-  <div class="glow-blob" style="position:absolute;width:800px;height:800px;background:radial-gradient(circle,rgba(26,186,220,0.14) 0%,transparent 68%);top:-200px;left:50%;transform:translateX(-50%);filter:blur(120px);border-radius:9999px;pointer-events:none;"></div>
-  <div class="relative z-10 max-w-6xl mx-auto">
-    <div class="sec-eyebrow-num mb-8 reveal">
-      <span class="num">01</span>
-      <span class="bar"></span>
-      <span>Selected Work · 2021 → 2026</span>
+  <div class="relative max-w-7xl mx-auto px-6 text-center">
+    <div class="reveal inline-flex">
+      <span class="sec-eyebrow"><span class="dot"></span>Selected work · 2021 → 2026</span>
     </div>
-    <h1 class="font-headline font-bold leading-[1.02] tracking-[-0.035em] text-on-surface mb-8 reveal" style="font-size:clamp(2.5rem,7vw,5.5rem);max-width:18ch;">
-      130+ projects.<br><span class="grad-text-strong">Zero half-measures.</span>
+    <h1 class="mt-8 text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[0.95] max-w-5xl mx-auto reveal" style="transition-delay:.05s;">
+      Platforms we shipped.<br><span class="grad-text">AI we deployed.</span>
     </h1>
-    <p class="text-on-surface-dim text-lg md:text-xl leading-relaxed max-w-2xl mb-12 reveal" style="transition-delay:.08s;">
-      Real projects. Real results. From monitoring 50,000 patients to building Pininfarina's AR experience — every build ships to production, every line of code is an opinion.
+    <p class="mt-7 max-w-2xl mx-auto text-lg text-on-surface-dim leading-relaxed reveal" style="transition-delay:.15s;">
+      A short, honest look at the products we've designed and engineered — from PropTech and FinTech platforms to production-grade AI solutions, every build ships to production.
     </p>
-    <!-- Stat strip -->
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 reveal" style="transition-delay:.16s;">
-      <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">130<span>+</span></div><div class="hero-stat-lbl">Production Ships</div></div>
-      <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">50K<span>+</span></div><div class="hero-stat-lbl">Patients Monitored</div></div>
-      <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">400<span>+</span></div><div class="hero-stat-lbl">Sites Unified</div></div>
-      <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">98<span>%</span></div><div class="hero-stat-lbl">Client Retention</div></div>
-      <div class="glass-card hero-stat-card text-left col-span-2 md:col-span-1"><div class="hero-stat-val">5</div><div class="hero-stat-lbl">Continents · 6 Industries</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════
-     FEATURED SPREAD — iFound Agent
-════════════════════════════════════════════════════════════ -->
-<section class="py-24 px-6 max-w-7xl mx-auto">
-  <div class="sec-eyebrow-num mb-12 reveal">
-    <span class="num">02</span>
-    <span class="bar"></span>
-    <span>Featured Story · May 2026</span>
-  </div>
-  <div class="featured-spread">
-    <a href="/work/ifound-agent" class="featured-image reveal-left group">
-      <span class="fs-badge">Featured · 2026</span>
-      <img src="/images/ifound/new-search.png" alt="iFound Agent — 400+ multi-sites unified" loading="lazy">
-    </a>
-    <div class="reveal-right">
-      <div class="wr-tags">PropTech · WordPress at scale · USA</div>
-      <h2 class="font-headline font-bold leading-[1.04] tracking-[-0.028em] text-on-surface mb-6" style="font-size:clamp(2rem,4vw,3.4rem);">
-        400+ multi-sites,<br><span class="grad-text-strong">one unified platform.</span>
-      </h2>
-      <p class="text-on-surface-dim text-base md:text-lg leading-relaxed mb-8 max-w-xl">
-        A WordPress ecosystem at impossible scale — phased into a single design system, AI-driven search, and 90% lower running cost. Three months of audit, modernization, and parallel deployment.
-      </p>
-      <div class="flex flex-wrap gap-6 mb-10">
-        <div class="wr-stat"><span class="v">90%</span><span class="k">Cost ↓</span></div>
-        <div class="wr-stat"><span class="v">60</span><span class="k">Days Saved</span></div>
-        <div class="wr-stat"><span class="v">3X</span><span class="k">Faster Delivery</span></div>
-      </div>
-      <a href="/work/ifound-agent" class="wr-link">Read the case study <span>↗</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════
-     EDITORIAL INDEX — all work as a numbered list
-════════════════════════════════════════════════════════════ -->
-<section class="py-24 px-6 max-w-7xl mx-auto">
-  <div class="sec-eyebrow-num mb-8 reveal">
-    <span class="num">03</span>
-    <span class="bar"></span>
-    <span>The Index · All Case Studies</span>
-  </div>
-  <h2 class="font-headline font-bold leading-[1.04] tracking-[-0.03em] text-on-surface mb-16 reveal" style="font-size:clamp(2rem,5vw,4rem);">
-    Recent <span class="grad-text-strong">ships.</span>
-  </h2>
-
-  <a href="/work/vitalwatch-ai" class="work-row reveal">
-    <div class="wr-num">01</div>
-    <div>
-      <div class="wr-tags">HealthTech · AI · USA · 2026</div>
-      <h3 class="wr-title">VitalWatch AI — predictive remote patient monitoring.</h3>
-      <p class="wr-desc">Health Gorilla FHIR, smartwatch biometrics, Python AI risk engine. HIPAA from day one. Predicts deterioration 24–48 hours before a clinical event.</p>
-      <div class="wr-stat"><span class="v">48hr</span><span class="k">Predictive Window</span></div>
-      <span class="wr-link">Read the study <span>↗</span></span>
-    </div>
-    <div class="wr-image">
-      <span class="img-tag">Predictive RPM</span>
-      <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=85" alt="VitalWatch AI" loading="lazy">
-    </div>
-  </a>
-
-  <a href="/work/pininfarina" class="work-row reveal">
-    <div class="wr-num">02</div>
-    <div>
-      <div class="wr-tags">Automotive · AR · Germany · 2025</div>
-      <h3 class="wr-title">A digital companion for the world's most powerful electric car.</h3>
-      <p class="wr-desc">1,900 horsepower of Pininfarina Battista, served by an AR companion app featured at every major auto show globally.</p>
-      <div class="wr-stat"><span class="v">#1</span><span class="k">AR Experience</span></div>
-      <span class="wr-link">Read the study <span>↗</span></span>
-    </div>
-    <div class="wr-image">
-      <span class="img-tag">AR Companion</span>
-      <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=1200&q=85" alt="Pininfarina Battista" loading="lazy">
-    </div>
-  </a>
-
-  <a href="/work/ontrack-agent" class="work-row reveal">
-    <div class="wr-num">03</div>
-    <div>
-      <div class="wr-tags">SaaS · Real Estate · USA · 2026</div>
-      <h3 class="wr-title">WordPress was capping their revenue. We removed the ceiling.</h3>
-      <p class="wr-desc">A 48-day migration from a creaking WordPress stack to a modern AI-powered SaaS. Monthly revenue doubled, page load cut 72%.</p>
-      <div class="wr-stat"><span class="v">$20K&nbsp;→&nbsp;$42K</span><span class="k">MRR</span></div>
-      <span class="wr-link">Read the study <span>↗</span></span>
-    </div>
-    <div class="wr-image">
-      <span class="img-tag">SaaS Migration</span>
-      <img src="https://onpointnexus-casestudy.vercel.app/assets/landing-hero-DC23-lKL.jpg" alt="OnTrack Agent" loading="lazy">
-    </div>
-  </a>
-
-  <a href="/work/building-pulse" class="work-row reveal">
-    <div class="wr-num">04</div>
-    <div>
-      <div class="wr-tags">Building in Public · Work OS · India · 2026</div>
-      <h3 class="wr-title">Our own work intelligence platform — built without an engineering hire.</h3>
-      <p class="wr-desc">Lovable shipped the 10-hour MVP. Claude Code is building the SaaS. PulseWork OS is live and free for teams up to 50.</p>
-      <div class="wr-stat"><span class="v">10 hrs</span><span class="k">Idea → Live</span></div>
-      <span class="wr-link">Read the story <span>↗</span></span>
-    </div>
-    <div class="wr-image">
-      <span class="img-tag">Internal Product</span>
-      <img src="https://images.unsplash.com/photo-1552581234-26160f608093?w=1200&q=85" alt="PulseWork OS" loading="lazy">
-    </div>
-  </a>
-
-  <a href="/work/semilynx" class="work-row reveal">
-    <div class="wr-num">05</div>
-    <div>
-      <div class="wr-tags">Industrial AR · Fortune 500 · USA · 2024</div>
-      <h3 class="wr-title">An AR co-worker for the factory floor.</h3>
-      <p class="wr-desc">Google Glass plus a centralized engineering portal. 60% drop in unplanned factory downtime, zero cross-country flights for senior engineers.</p>
-      <div class="wr-stat"><span class="v">60%</span><span class="k">Less Downtime</span></div>
-      <span class="wr-link">Read the study <span>↗</span></span>
-    </div>
-    <div class="wr-image">
-      <span class="img-tag">Industrial AR</span>
-      <img src="https://onpointnexus-casestudy.vercel.app/assets/Semilynx%20Worker%20Image-B1TGWBwC.png" alt="Semilynx" loading="lazy">
-    </div>
-  </a>
-
-  <a href="/work/quickheal" class="work-row reveal">
-    <div class="wr-num">06</div>
-    <div>
-      <div class="wr-tags">Cybersecurity · Brand · India · 2024</div>
-      <h3 class="wr-title">Reimagining India's most trusted antivirus brand.</h3>
-      <p class="wr-desc">Complete UI/UX rebrand and new design system across all digital properties for a company with 7 million annual subscribers.</p>
-      <div class="wr-stat"><span class="v">#1</span><span class="k">Antivirus Brand</span></div>
-      <span class="wr-link">Read the study <span>↗</span></span>
-    </div>
-    <div class="wr-image">
-      <span class="img-tag">Brand · UX</span>
-      <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=85" alt="QuickHeal" loading="lazy">
-    </div>
-  </a>
-
-  <a href="/work/vidanta" class="work-row reveal">
-    <div class="wr-num">07</div>
-    <div>
-      <div class="wr-tags">Travel · Luxury Resort · USA/Mexico · 2024</div>
-      <h3 class="wr-title">A unified booking platform for the Americas' premier luxury group.</h3>
-      <p class="wr-desc">One million members, dozens of properties, a single membership experience. Web and mobile, deeply integrated with Salesforce.</p>
-      <div class="wr-stat"><span class="v">1M+</span><span class="k">Members</span></div>
-      <span class="wr-link">Read the study <span>↗</span></span>
-    </div>
-    <div class="wr-image">
-      <span class="img-tag">Luxury Travel</span>
-      <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=85" alt="Vidanta" loading="lazy">
-    </div>
-  </a>
-
-  <a href="/work/clinical-trac" class="work-row reveal">
-    <div class="wr-num">08</div>
-    <div>
-      <div class="wr-tags">EdTech · HealthTech · USA · 2023</div>
-      <h3 class="wr-title">The clinical education platform now central to US respiratory therapy training.</h3>
-      <p class="wr-desc">A HIPAA-compliant platform onboarded across 52 US respiratory therapy schools in six months. Live, in classrooms today.</p>
-      <div class="wr-stat"><span class="v">52</span><span class="k">Schools</span></div>
-      <span class="wr-link">Read the study <span>↗</span></span>
-    </div>
-    <div class="wr-image">
-      <span class="img-tag">Clinical EdTech</span>
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=85" alt="Clinical Trac" loading="lazy">
-    </div>
-  </a>
-
-  <a href="/work/open-houses-direct" class="work-row reveal">
-    <div class="wr-num">09</div>
-    <div>
-      <div class="wr-tags">PropTech · Mobile · USA · 2023</div>
-      <h3 class="wr-title">The first dedicated open house discovery platform.</h3>
-      <p class="wr-desc">Native iOS, native Android, web — first to market in a category that didn't exist. Live on both stores.</p>
-      <div class="wr-stat"><span class="v">#1</span><span class="k">Open House App</span></div>
-      <span class="wr-link">Read the study <span>↗</span></span>
-    </div>
-    <div class="wr-image">
-      <span class="img-tag">Mobile · Maps</span>
-      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=85" alt="Open Houses Direct" loading="lazy">
-    </div>
-  </a>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════
-     CTA CARD
-════════════════════════════════════════════════════════════ -->
-<section class="pb-24 px-6 max-w-7xl mx-auto">
-  <div class="rounded-3xl p-12 md:p-16 border border-primary/20 reveal" style="background:linear-gradient(135deg,rgba(26,186,220,0.08) 0%,rgba(20,28,46,1) 100%);">
-    <div class="max-w-2xl">
-      <div class="sec-eyebrow-num mb-6">
-        <span class="num">04</span>
-        <span class="bar"></span>
-        <span>Start a Project</span>
-      </div>
-      <h3 class="font-headline font-bold leading-[1.04] tracking-[-0.028em] text-on-surface mb-6" style="font-size:clamp(2rem,4.5vw,3.4rem);">
-        Ready to be <span class="grad-text-strong">next?</span>
-      </h3>
-      <p class="text-on-surface-dim text-base md:text-lg leading-relaxed mb-10">
-        Every project starts with a free 45-minute discovery call. No slides, no fluff — just an honest conversation about what you're building.
-      </p>
-      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-surface px-8 py-4 rounded-full font-bold text-sm hover:bg-primary-dim transition-colors shadow-lg shadow-primary/30">
-        Book a Discovery Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center reveal" style="transition-delay:.25s;">
+      <a href="#case-studies" class="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-surface px-7 py-3.5 font-semibold hover:bg-primary-dim hover:shadow-[0_0_32px_-4px_rgba(26,186,220,0.5)] transition-all">
+        Explore Case Studies <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3.5 font-semibold hover:border-primary hover:text-primary transition-colors">
+        Book a Call <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
       </a>
     </div>
+
+    <!-- 3-stat strip — mirrors staging -->
+    <div class="mt-16 grid grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto reveal" style="transition-delay:.35s;">
+      <div class="glass-card hero-stat-card text-left">
+        <div class="hero-stat-val">30<span class="text-on-surface-muted">+</span></div>
+        <div class="hero-stat-lbl">Products Shipped</div>
+      </div>
+      <div class="glass-card hero-stat-card text-left">
+        <div class="hero-stat-val">12<span class="text-on-surface-muted">+</span></div>
+        <div class="hero-stat-lbl">Industries Served</div>
+      </div>
+      <div class="glass-card hero-stat-card text-left">
+        <div class="hero-stat-val">100<span class="text-on-surface-muted">%</span></div>
+        <div class="hero-stat-lbl">Production Grade</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════
-     [LEGACY GRID — kept below as fallback, hidden]
+     SELECTED WORK — case studies grid
 ════════════════════════════════════════════════════════════ -->
-<section class="hidden">
+<section id="case-studies" class="py-24 px-6 max-w-7xl mx-auto">
+  <div class="flex items-end justify-between gap-8 mb-14 flex-wrap reveal">
+    <div>
+      <span class="sec-eyebrow mb-5"><span class="dot"></span>01 · Case Studies</span>
+      <h2 class="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-tight max-w-2xl">
+        Selected <span class="grad-text">work.</span>
+      </h2>
+      <p class="mt-4 text-on-surface-dim text-base md:text-lg max-w-2xl leading-relaxed">
+        Real projects. Real results. Tap any card to read the full case study.
+      </p>
+    </div>
+    <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary text-sm font-semibold border-b border-primary/40 pb-1 hover:border-primary transition-colors whitespace-nowrap">
+      Start your own <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+    </a>
+  </div>
+
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    <!-- Pininfarina -->
-    <a href="/work/pininfarina" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
-      <div class="h-48 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80" alt="Battista by Pininfarina" loading="lazy" width="800" height="192" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="p-6">
-        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">Automotive AR · Germany</p>
-        <h3 class="text-lg font-bold text-on-surface mb-2">Battista by Pininfarina</h3>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">AR companion for the world's most powerful road-legal EV. Featured at every major auto show.</p>
-        <div class="flex items-center justify-between">
-          <span class="text-2xl font-bold text-primary font-mono">#1 AR Experience</span>
-          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- Semilynx -->
-    <a href="/work/semilynx" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
-      <div class="h-48 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" alt="Semilynx AR Platform" loading="lazy" width="800" height="192" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="p-6">
-        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">Industrial AR · Fortune 500</p>
-        <h3 class="text-lg font-bold text-on-surface mb-2">Semilynx</h3>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">Google Glass AR platform eliminated cross-country engineer travel for Fortune 500 factories.</p>
-        <div class="flex items-center justify-between">
-          <span class="text-2xl font-bold text-primary font-mono">60% Less Downtime</span>
-          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- VitalWatch AI -->
-    <a href="/work/vitalwatch-ai" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
-      <div class="h-48 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80" alt="VitalWatch AI — Predictive Remote Patient Monitoring" loading="lazy" width="800" height="192" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="p-6">
-        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">Digital Health · AI · USA</p>
-        <h3 class="text-lg font-bold text-on-surface mb-2">VitalWatch AI</h3>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">AI-powered RPM that predicts deterioration 24–48 hours before a clinical event. Health Gorilla EHR + smartwatch biometrics + Python AI.</p>
-        <div class="flex items-center justify-between">
-          <span class="text-2xl font-bold text-primary font-mono">48hr Window</span>
-          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- Vidanta -->
-    <a href="/work/vidanta" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
-      <div class="h-48 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80" alt="Vidanta Resort Platform" loading="lazy" width="800" height="192" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="p-6">
-        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">Travel & Hospitality · USA/Mexico</p>
-        <h3 class="text-lg font-bold text-on-surface mb-2">Vidanta</h3>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">Unified membership and booking platform for North America's premier luxury resort group.</p>
-        <div class="flex items-center justify-between">
-          <span class="text-2xl font-bold text-primary font-mono">1M+ Members</span>
-          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- Clinical Trac -->
-    <a href="/work/clinical-trac" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
-      <div class="h-48 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Clinical Trac Education Platform" loading="lazy" width="800" height="192" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="p-6">
-        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">EdTech / HealthTech · USA</p>
-        <h3 class="text-lg font-bold text-on-surface mb-2">Clinical Trac</h3>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">Clinical education platform now central to US respiratory therapy training. HIPAA compliant.</p>
-        <div class="flex items-center justify-between">
-          <span class="text-2xl font-bold text-primary font-mono">52 Schools</span>
-          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- Open Houses Direct -->
-    <a href="/work/open-houses-direct" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
-      <div class="h-48 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80" alt="Open Houses Direct App" loading="lazy" width="800" height="192" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="p-6">
-        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">PropTech · USA</p>
-        <h3 class="text-lg font-bold text-on-surface mb-2">Open Houses Direct</h3>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">First dedicated open house discovery platform. Native iOS + Android + web, live on both stores.</p>
-        <div class="flex items-center justify-between">
-          <span class="text-2xl font-bold text-primary font-mono">#1 Open House App</span>
-          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- QuickHeal -->
-    <a href="/work/quickheal" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
-      <div class="h-48 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80" alt="QuickHeal Cybersecurity Redesign" loading="lazy" width="800" height="192" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="p-6">
-        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">Cybersecurity · India</p>
-        <h3 class="text-lg font-bold text-on-surface mb-2">QuickHeal</h3>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">Complete UI/UX rebrand for India's most trusted antivirus brand. New design system across all digital properties.</p>
-        <div class="flex items-center justify-between">
-          <span class="text-2xl font-bold text-primary font-mono">#1 Antivirus Brand</span>
-          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
-        </div>
-      </div>
-    </a>
-
     <!-- iFound Agent -->
-    <a href="/work/ifound-agent" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
-      <div class="h-48 overflow-hidden">
-        <img src="/images/ifound/new-search.png" alt="iFound Agent — Real Estate Platform Modernization" loading="lazy" width="800" height="192" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+    <a href="/work/ifound-agent" class="work-card reveal">
+      <div class="cover">
+        <img src="/images/ifound/new-search.png" alt="iFound Agent — UX modernization, listing search rebuild" loading="lazy" width="800" height="500">
       </div>
-      <div class="p-6">
-        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">Real Estate · PropTech · USA</p>
-        <h3 class="text-lg font-bold text-on-surface mb-2">iFound Agent</h3>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">400+ WordPress multi-sites unified into one smart platform. 90% cost reduction, 3X faster delivery, AI-driven search and a scalable design system.</p>
-        <div class="flex items-center justify-between">
-          <span class="text-2xl font-bold text-primary font-mono">400+ Sites · 90% ↓ Cost</span>
-          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
+      <div class="body">
+        <div class="chips">
+          <span class="chip">UX Audit</span>
+          <span class="chip">Design System</span>
+          <span class="chip">WordPress</span>
+        </div>
+        <p class="industry">Real Estate Technology</p>
+        <h3>From WordPress template to market-ready PropTech.</h3>
+        <p class="summary">UX modernization, listing search rebuild, and a scalable design system that powered 6+ additional pages.</p>
+        <div class="foot">
+          <div class="metric"><span class="v">3×</span><span class="l">Scope expanded post-pilot</span></div>
+          <span class="read">Read case study <span>→</span></span>
         </div>
       </div>
     </a>
 
     <!-- OnTrack Agent -->
-    <a href="/work/ontrack-agent" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
-      <div class="h-48 overflow-hidden">
-        <img src="https://onpointnexus-casestudy.vercel.app/assets/landing-hero-DC23-lKL.jpg" alt="OnTrack Agent SaaS platform" loading="lazy" width="800" height="192" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+    <a href="/work/ontrack-agent" class="work-card reveal" style="transition-delay:.05s;">
+      <div class="cover">
+        <img src="https://onpointnexus-casestudy.vercel.app/assets/landing-hero-DC23-lKL.jpg" alt="OnTrack Agent — WordPress to SaaS migration" loading="lazy" width="800" height="500">
       </div>
-      <div class="p-6">
-        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">Real Estate · E-Learning · SaaS · USA</p>
-        <h3 class="text-lg font-bold text-on-surface mb-2">OnTrack Agent</h3>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">WordPress was capping their revenue. We migrated to a modern AI-powered SaaS in 48 days — monthly revenue doubled from $20K to $42K.</p>
-        <div class="flex items-center justify-between">
-          <span class="text-2xl font-bold text-primary font-mono">$20K → $42K MRR</span>
-          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
+      <div class="body">
+        <div class="chips">
+          <span class="chip">SaaS Migration</span>
+          <span class="chip">React</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">MUX</span>
+          <span class="chip">Stripe</span>
+        </div>
+        <p class="industry">Real Estate · E-Learning</p>
+        <h3>WordPress to SaaS migration in 1.5 months.</h3>
+        <p class="summary">Rapid migration to modern SaaS architecture with DRM-secured video streaming, subscription monetization, and 110% revenue growth.</p>
+        <div class="foot">
+          <div class="metric"><span class="v">110%</span><span class="l">Revenue growth</span></div>
+          <span class="read">Read case study <span>→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- VitalWatch AI -->
+    <a href="/work/vitalwatch-ai" class="work-card reveal" style="transition-delay:.1s;">
+      <div class="cover">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=85" alt="VitalWatch AI — Predictive remote patient monitoring" loading="lazy" width="800" height="500">
+      </div>
+      <div class="body">
+        <div class="chips">
+          <span class="chip">HealthTech</span>
+          <span class="chip">Python AI</span>
+          <span class="chip">FHIR</span>
+          <span class="chip">HIPAA</span>
+        </div>
+        <p class="industry">Digital Health · AI · USA</p>
+        <h3>Predicting deterioration 48 hours before a clinical event.</h3>
+        <p class="summary">Health Gorilla FHIR, smartwatch biometrics, Python AI risk engine. ARIA conversational nurse and automated ICU pre-booking.</p>
+        <div class="foot">
+          <div class="metric"><span class="v">48&nbsp;hr</span><span class="l">Predictive window</span></div>
+          <span class="read">Read case study <span>→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Semilynx -->
+    <a href="/work/semilynx" class="work-card reveal" style="transition-delay:.15s;">
+      <div class="cover">
+        <img src="https://onpointnexus-casestudy.vercel.app/assets/Semilynx%20Worker%20Image-B1TGWBwC.png" alt="Semilynx — From ticketing to AR-powered remote assistance" loading="lazy" width="800" height="500">
+      </div>
+      <div class="body">
+        <div class="chips">
+          <span class="chip">AR Glass</span>
+          <span class="chip">Remote Assistance</span>
+          <span class="chip">Industrial</span>
+        </div>
+        <p class="industry">Industrial · AR · Remote Collaboration</p>
+        <h3>From ticketing to AR-powered remote assistance.</h3>
+        <p class="summary">Evolution from a basic ticketing system to an industrial-grade AR Glass solution enabling real-time field collaboration.</p>
+        <div class="foot">
+          <div class="metric"><span class="v">60%</span><span class="l">Less factory downtime</span></div>
+          <span class="read">Read case study <span>→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Pininfarina -->
+    <a href="/work/pininfarina" class="work-card reveal" style="transition-delay:.2s;">
+      <div class="cover">
+        <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=1200&q=85" alt="Pininfarina Battista — AR companion experience" loading="lazy" width="800" height="500">
+      </div>
+      <div class="body">
+        <div class="chips">
+          <span class="chip">Automotive AR</span>
+          <span class="chip">iOS · ARKit</span>
+          <span class="chip">Luxury</span>
+        </div>
+        <p class="industry">Automotive · Germany</p>
+        <h3>A digital companion for the world's most powerful electric car.</h3>
+        <p class="summary">1,900 horsepower of Pininfarina Battista, served by an AR companion experience featured at every major auto show.</p>
+        <div class="foot">
+          <div class="metric"><span class="v">#1</span><span class="l">AR auto experience</span></div>
+          <span class="read">Read case study <span>→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Quick Heal -->
+    <a href="/work/quickheal" class="work-card reveal" style="transition-delay:.25s;">
+      <div class="cover">
+        <img src="https://onpointnexus-casestudy.vercel.app/assets/QH-DsGjP14x.png" alt="Quick Heal — UI/UX rebrand and product pages" loading="lazy" width="800" height="500">
+      </div>
+      <div class="body">
+        <div class="chips">
+          <span class="chip">UI/UX Design</span>
+          <span class="chip">Enterprise</span>
+          <span class="chip">Trust-Based</span>
+        </div>
+        <p class="industry">Cybersecurity · Antivirus · Enterprise</p>
+        <h3>India's leading cybersecurity brand chose an external partner.</h3>
+        <p class="summary">How Quick Heal — with a fully equipped in-house team — trusted OnPoint Nexus to reimagine product pages, landing experiences, and high-conversion web journeys.</p>
+        <div class="foot">
+          <div class="metric"><span class="v">Trust</span><span class="l">Built partnership</span></div>
+          <span class="read">Read case study <span>→</span></span>
         </div>
       </div>
     </a>
 
     <!-- Building Pulse -->
-    <a href="/work/building-pulse" class="group block bg-surface-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/20 transition-all duration-300 reveal">
-      <div class="h-48 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1552581234-26160f608093?w=800&q=80" alt="PulseWork OS — AI Work OS for mid-size teams" loading="lazy" width="800" height="192" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+    <a href="/work/building-pulse" class="work-card reveal" style="transition-delay:.3s;">
+      <div class="cover">
+        <img src="https://images.unsplash.com/photo-1552581234-26160f608093?w=1200&q=85" alt="Building PulseWork OS — AI Work OS for mid-size teams" loading="lazy" width="800" height="500">
       </div>
-      <div class="p-6">
-        <p class="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">Building in Public · Work OS · SaaS · India</p>
-        <h3 class="text-lg font-bold text-on-surface mb-2">Building PulseWork OS</h3>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-4">How OnPoint's CEO built the AI Work OS for mid-size teams on Lovable + Claude Code in parallel. Live product, free pilot tier — no engineers hired.</p>
-        <div class="flex items-center justify-between">
-          <span class="text-2xl font-bold text-primary font-mono">Live · Free Pilot</span>
-          <span class="text-xs font-mono text-on-surface-muted group-hover:text-primary transition-colors">Read the full story →</span>
+      <div class="body">
+        <div class="chips">
+          <span class="chip">Building in Public</span>
+          <span class="chip">Lovable</span>
+          <span class="chip">Claude Code</span>
+        </div>
+        <p class="industry">Internal Product · Work OS · SaaS</p>
+        <h3>Building our own AI Work OS — without an engineering hire.</h3>
+        <p class="summary">Lovable shipped the 10-hour MVP. Claude Code is building the SaaS. PulseWork OS is live and free for teams up to 50.</p>
+        <div class="foot">
+          <div class="metric"><span class="v">10&nbsp;hrs</span><span class="l">Idea → live product</span></div>
+          <span class="read">Read story <span>→</span></span>
         </div>
       </div>
     </a>
 
-    <!-- CTA card -->
-    <div class="bg-surface-card border border-primary/20 rounded-2xl p-8 flex flex-col justify-center items-start reveal" style="background:linear-gradient(135deg,rgba(26,186,220,0.06) 0%,rgba(20,28,46,1) 100%);">
-      <p class="text-xs font-mono text-primary uppercase tracking-widest mb-4">Start your project</p>
-      <h3 class="text-2xl font-bold text-on-surface mb-3">Ready to be next?</h3>
-      <p class="text-on-surface-dim text-sm leading-relaxed mb-6">Every project starts with a free 45-minute discovery call. No slides, no fluff — just an honest conversation about what you're building.</p>
-      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-surface px-6 py-3 rounded-xl font-bold text-sm hover:bg-primary-dim transition-colors shadow-lg shadow-primary/20">
-        Book a Discovery Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    <!-- Vidanta -->
+    <a href="/work/vidanta" class="work-card reveal" style="transition-delay:.35s;">
+      <div class="cover">
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=85" alt="Vidanta — Luxury resort booking platform" loading="lazy" width="800" height="500">
+      </div>
+      <div class="body">
+        <div class="chips">
+          <span class="chip">Salesforce</span>
+          <span class="chip">Web · Mobile</span>
+          <span class="chip">CRM</span>
+        </div>
+        <p class="industry">Travel · Luxury Resort · USA/Mexico</p>
+        <h3>A unified booking platform for the Americas' premier luxury group.</h3>
+        <p class="summary">One million members, dozens of properties, a single membership experience — deeply integrated with Salesforce.</p>
+        <div class="foot">
+          <div class="metric"><span class="v">1M+</span><span class="l">Members served</span></div>
+          <span class="read">Read case study <span>→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Clinical Trac -->
+    <a href="/work/clinical-trac" class="work-card reveal" style="transition-delay:.4s;">
+      <div class="cover">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=85" alt="Clinical Trac — Respiratory therapy education platform" loading="lazy" width="800" height="500">
+      </div>
+      <div class="body">
+        <div class="chips">
+          <span class="chip">EdTech</span>
+          <span class="chip">HIPAA</span>
+          <span class="chip">Clinical</span>
+        </div>
+        <p class="industry">EdTech · HealthTech · USA</p>
+        <h3>The clinical education platform central to US respiratory therapy training.</h3>
+        <p class="summary">A HIPAA-compliant platform onboarded across 52 US respiratory therapy schools in six months.</p>
+        <div class="foot">
+          <div class="metric"><span class="v">52</span><span class="l">Schools onboarded</span></div>
+          <span class="read">Read case study <span>→</span></span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     AI SOLUTIONS — production AI products
+════════════════════════════════════════════════════════════ -->
+<section id="ai-solutions" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/[0.06]">
+  <div class="flex items-end justify-between gap-8 mb-14 flex-wrap reveal">
+    <div>
+      <span class="sec-eyebrow mb-5"><span class="dot"></span>02 · AI Solutions · Live</span>
+      <h2 class="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-tight max-w-2xl">
+        AI we <span class="grad-text">deployed.</span>
+      </h2>
+      <p class="mt-4 text-on-surface-dim text-base md:text-lg max-w-2xl leading-relaxed">
+        Production-grade AI products you can try right now. Each link opens the live demo — no sign-up required.
+      </p>
+    </div>
+    <a href="/services#ai" class="inline-flex items-center gap-2 text-primary text-sm font-semibold border-b border-primary/40 pb-1 hover:border-primary transition-colors whitespace-nowrap">
+      Our AI capabilities <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+    </a>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- ClinicalTrac AI Assistant -->
+    <a href="https://ai.clinicaltrac.net/" target="_blank" rel="noopener" class="ai-card reveal">
+      <div class="cover">
+        <div class="icon-badge"><span class="material-symbols-outlined">stethoscope</span></div>
+        <div class="badge-live"><span class="pulse"></span>Live demo</div>
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=85" alt="ClinicalTrac AI Assistant — RAG healthcare knowledge system" loading="lazy" width="1200" height="675">
+      </div>
+      <div class="body">
+        <h3>ClinicalTrac AI Assistant</h3>
+        <p class="tagline">RAG-powered healthcare knowledge system with automated email summaries and contextual responses, grounded in clinical documentation.</p>
+        <div class="tags">
+          <span class="tag">RAG</span>
+          <span class="tag">Healthcare</span>
+          <span class="tag">OpenAI</span>
+        </div>
+        <div class="launch">
+          <span>ai.clinicaltrac.net</span>
+          <span class="arr material-symbols-outlined text-[18px]">arrow_outward</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Sugar Smart Farm Bot -->
+    <a href="https://sugar-smart-farm-bot-xi.vercel.app/" target="_blank" rel="noopener" class="ai-card reveal" style="transition-delay:.05s;">
+      <div class="cover">
+        <div class="icon-badge"><span class="material-symbols-outlined">agriculture</span></div>
+        <div class="badge-live"><span class="pulse"></span>Live demo</div>
+        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&q=85" alt="Sugar Smart Farm Bot — Multilingual AI for sugarcane farmers" loading="lazy" width="1200" height="675">
+      </div>
+      <div class="body">
+        <h3>Sugar Smart Farm Bot</h3>
+        <p class="tagline">Multilingual AI farming assistant for crop disease detection, irrigation guidance, and harvest optimization — built for sugarcane growers.</p>
+        <div class="tags">
+          <span class="tag">Agriculture</span>
+          <span class="tag">Vision AI</span>
+          <span class="tag">Multilingual</span>
+        </div>
+        <div class="launch">
+          <span>sugar-smart-farm-bot</span>
+          <span class="arr material-symbols-outlined text-[18px]">arrow_outward</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- OnPointAgent Voice Assistant -->
+    <a href="https://onpointagent.vercel.app/" target="_blank" rel="noopener" class="ai-card reveal" style="transition-delay:.1s;">
+      <div class="cover">
+        <div class="icon-badge"><span class="material-symbols-outlined">graphic_eq</span></div>
+        <div class="badge-live"><span class="pulse"></span>Live demo</div>
+        <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?w=1200&q=85" alt="OnPointAgent Voice Assistant — Realtime voice AI" loading="lazy" width="1200" height="675">
+      </div>
+      <div class="body">
+        <h3>OnPointAgent Voice Assistant</h3>
+        <p class="tagline">Real-time voice-to-voice AI assistant for customer engagement and service explanations — sub-second latency, natural conversational flow.</p>
+        <div class="tags">
+          <span class="tag">Voice AI</span>
+          <span class="tag">Realtime</span>
+          <span class="tag">OpenAI</span>
+        </div>
+        <div class="launch">
+          <span>onpointagent.vercel.app</span>
+          <span class="arr material-symbols-outlined text-[18px]">arrow_outward</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- NutriAI -->
+    <a href="https://nutriai.onpointsoft.com/" target="_blank" rel="noopener" class="ai-card reveal" style="transition-delay:.15s;">
+      <div class="cover">
+        <div class="icon-badge"><span class="material-symbols-outlined">restaurant</span></div>
+        <div class="badge-live"><span class="pulse"></span>Live demo</div>
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=85" alt="NutriAI — AI-powered nutrition analyzer" loading="lazy" width="1200" height="675">
+      </div>
+      <div class="body">
+        <h3>NutriAI — Smart Nutrition Analyzer</h3>
+        <p class="tagline">AI-powered food recognition that identifies meals from images and calculates calories, proteins, and nutritional values instantly.</p>
+        <div class="tags">
+          <span class="tag">Vision AI</span>
+          <span class="tag">HealthTech</span>
+          <span class="tag">Computer Vision</span>
+        </div>
+        <div class="launch">
+          <span>nutriai.onpointsoft.com</span>
+          <span class="arr material-symbols-outlined text-[18px]">arrow_outward</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Capability strip below AI cards -->
+  <div class="mt-14 p-7 rounded-2xl border border-white/[0.06]" style="background:linear-gradient(135deg,rgba(26,186,220,0.05) 0%,rgba(20,28,46,0.5) 100%);">
+    <div class="flex flex-wrap items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:rgba(26,186,220,0.12);border:1px solid rgba(26,186,220,0.25);">
+          <span class="material-symbols-outlined text-primary">auto_awesome</span>
+        </div>
+        <div>
+          <p class="font-bold text-on-surface text-base mb-1">Building on these capabilities</p>
+          <p class="text-on-surface-dim text-sm">RAG · Vision AI · Voice AI · Conversational · Predictive ML · Computer Vision</p>
+        </div>
+      </div>
+      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-surface px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary-dim transition-colors shrink-0">
+        Talk to an AI engineer <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
       </a>
     </div>
+  </div>
+</section>
 
+<!-- ════════════════════════════════════════════════════════════
+     FINAL CTA
+════════════════════════════════════════════════════════════ -->
+<section class="pb-24 px-6 max-w-7xl mx-auto">
+  <div class="rounded-3xl p-12 md:p-16 border border-primary/20 reveal" style="background:linear-gradient(135deg,rgba(26,186,220,0.08) 0%,rgba(20,28,46,1) 100%);">
+    <div class="max-w-2xl">
+      <span class="sec-eyebrow mb-6"><span class="dot"></span>03 · Start a Project</span>
+      <h3 class="mt-6 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] mb-6">
+        Ready to be <span class="grad-text">next?</span>
+      </h3>
+      <p class="text-on-surface-dim text-base md:text-lg leading-relaxed mb-10">
+        Every project starts with a free 45-minute discovery call. No slides, no fluff — just an honest conversation about what you're building.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-surface px-7 py-3.5 rounded-full font-bold text-sm hover:bg-primary-dim transition-colors shadow-lg shadow-primary/30">
+          Book a Discovery Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+        <a href="mailto:hr@onpointsoft.com" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-white/15 bg-white/[0.03] hover:border-primary hover:text-primary transition-colors">
+          hr@onpointsoft.com
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -610,10 +678,10 @@
         <ul class="space-y-3">
           <li><a href="/about"              class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">About Us</a></li>
           <li><a href="/work"               class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Case Studies</a></li>
+          <li><a href="/work#ai-solutions"  class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">AI Solutions</a></li>
           <li><a href="/about#testimonials" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Client Stories</a></li>
           <li><a href="/industries"         class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Industries</a></li>
           <li><a href="/blog"               class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Blog</a></li>
-          <li><a href="mailto:hr@onpointsoft.com" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Careers</a></li>
         </ul>
       </div>
 

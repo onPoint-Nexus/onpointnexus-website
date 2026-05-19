@@ -128,6 +128,18 @@ Engineering delivery is based in India (Pune and Kolhapur). Client coverage span
 - iFound Agent PropTech Modernization: https://www.onpointnexus.com/work/ifound-agent
 
 
+## AI Solutions (Live Demos)
+
+Production AI products engineered by OnPoint Nexus. All are live, deployed, and open without sign-up.
+
+- ClinicalTrac AI Assistant — RAG-powered healthcare knowledge system with automated email summaries and contextual responses grounded in clinical documentation. Stack: RAG, OpenAI. Live at https://ai.clinicaltrac.net/
+- Sugar Smart Farm Bot — Multilingual AI farming assistant for crop disease detection, irrigation guidance, and harvest optimization, built for sugarcane growers. Stack: Vision AI, multilingual NLP. Live at https://sugar-smart-farm-bot-xi.vercel.app/
+- OnPointAgent Voice Assistant — Real-time voice-to-voice AI for customer engagement and service explanations with sub-second latency. Stack: OpenAI Realtime API, Voice AI. Live at https://onpointagent.vercel.app/
+- NutriAI Smart Nutrition Analyzer — AI-powered food recognition that identifies meals from images and calculates calories, proteins, and nutritional values instantly. Stack: Computer Vision, HealthTech. Live at https://nutriai.onpointsoft.com/
+
+Index page (all four cards): https://www.onpointnexus.com/work#ai-solutions
+
+
 ## Social and Contact
 
 - LinkedIn: https://www.linkedin.com/company/onpointsoft-services/
