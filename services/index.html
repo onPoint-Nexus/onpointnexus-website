@@ -128,6 +128,7 @@
       font-family: 'Roboto Mono', monospace; flex-shrink: 0;
     }
   </style>
+  <script src="/js/site-cursor.js" defer></script>
 </head>
 
 <body class="bg-surface text-on-surface font-body selection:bg-primary/20 overflow-x-hidden">
@@ -168,28 +169,71 @@
 </nav>
 
 <!-- ════════════════════════════════════════════════════════════
-     HERO
+     SHARED HERO + DESIGN-DNA PRIMITIVES
 ════════════════════════════════════════════════════════════ -->
-<section class="relative pt-40 pb-24 overflow-hidden">
-  <div class="absolute inset-0 neural-grid opacity-20 pointer-events-none"></div>
-  <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-surface to-surface pointer-events-none"></div>
+<style>
+  .grid-bg { background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%); }
+  .glass-card { background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1rem; transition: border-color .25s ease, background .25s ease; }
+  .glass-card:hover { border-color: rgba(26,186,220,0.32); background: rgba(26,186,220,0.04); }
+  .grad-text-3 { background: linear-gradient(135deg,#1ABADC 0%,#8de4f0 55%,#cef4fc 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-stat-card { padding: 22px 26px; }
+  .hero-stat-val { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; letter-spacing: -.02em; line-height: 1; font-size: clamp(1.75rem, 3vw, 2.5rem); background: linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-stat-lbl { font-family: 'Roboto Mono', monospace; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: #5C6F8A; font-weight: 600; margin-top: 8px; }
+  .sec-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px; border-radius: 999px; border: 1px solid rgba(26,186,220,0.28); background: rgba(26,186,220,0.08); color: #1ABADC; font-family: 'Roboto Mono', monospace; font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; }
+  .sec-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #1ABADC; }
+</style>
 
-  <div class="relative max-w-4xl mx-auto px-6 text-center">
-    <span class="text-xs font-mono text-primary uppercase tracking-widest reveal">What We Build</span>
-    <h1 class="font-headline text-5xl md:text-6xl font-bold mt-4 mb-6 text-on-surface leading-[1.08] reveal">
-      Every capability.<br><span class="grad-text">One accountable team.</span>
+<!-- ════════════════════════════════════════════════════════════
+     HERO — staging-style with thematic image
+════════════════════════════════════════════════════════════ -->
+<section class="relative pt-32 pb-20 overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=85" alt="" aria-hidden="true" width="1920" height="1024" class="absolute inset-0 w-full h-full object-cover opacity-40" loading="eager">
+  <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(12,19,36,0.72) 0%, rgba(12,19,36,0.88) 50%, #0c1324 100%);"></div>
+  <div class="absolute inset-0 grid-bg opacity-25"></div>
+  <div class="absolute -top-32 left-1/4 w-[640px] h-[640px] rounded-full pointer-events-none" style="background:rgba(26,186,220,0.18);filter:blur(140px);"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 text-center">
+    <div class="reveal inline-flex">
+      <span class="sec-eyebrow"><span class="dot"></span>Capabilities · 5 service lines</span>
+    </div>
+    <h1 class="mt-8 text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[0.95] max-w-5xl mx-auto reveal" style="transition-delay:.05s;">
+      Every capability.<br><span class="grad-text-3">One accountable team.</span>
     </h1>
-    <p class="text-xl text-on-surface-dim max-w-2xl mx-auto leading-relaxed reveal">
-      From AI strategy to production deployment — we own the full stack so you don't manage five agencies.
+    <p class="mt-7 max-w-2xl mx-auto text-lg text-on-surface-dim leading-relaxed reveal" style="transition-delay:.15s;">
+      From AI strategy to production deployment — we own the full stack so you don't manage five agencies. Senior engineers only, no body-shopping.
     </p>
+    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center reveal" style="transition-delay:.25s;">
+      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-surface px-7 py-3.5 font-semibold hover:bg-primary-dim hover:shadow-[0_0_32px_-4px_rgba(26,186,220,0.5)] transition-all">
+        Book a Project Discovery <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+      <a href="/work" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3.5 font-semibold hover:border-primary hover:text-primary transition-colors">
+        See Our Work <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+      </a>
+    </div>
 
-    <!-- Service nav anchors -->
-    <div class="flex flex-wrap gap-3 justify-center mt-10 reveal">
-      <a href="#ai"         class="px-4 py-2 rounded-full border border-white/[0.07] text-xs font-mono text-on-surface-dim hover:border-primary/40 hover:text-primary transition-all duration-200">AI & ML</a>
-      <a href="#cloud"      class="px-4 py-2 rounded-full border border-white/[0.07] text-xs font-mono text-on-surface-dim hover:border-primary/40 hover:text-primary transition-all duration-200">Cloud & DevOps</a>
+    <!-- Service anchors -->
+    <div class="flex flex-wrap gap-3 justify-center mt-12 reveal" style="transition-delay:.3s;">
+      <a href="#ai"         class="px-4 py-2 rounded-full border border-white/[0.07] text-xs font-mono text-on-surface-dim hover:border-primary/40 hover:text-primary transition-all duration-200">AI &amp; ML</a>
+      <a href="#cloud"      class="px-4 py-2 rounded-full border border-white/[0.07] text-xs font-mono text-on-surface-dim hover:border-primary/40 hover:text-primary transition-all duration-200">Cloud &amp; DevOps</a>
       <a href="#custom"     class="px-4 py-2 rounded-full border border-white/[0.07] text-xs font-mono text-on-surface-dim hover:border-primary/40 hover:text-primary transition-all duration-200">Custom Software</a>
       <a href="#enterprise" class="px-4 py-2 rounded-full border border-white/[0.07] text-xs font-mono text-on-surface-dim hover:border-primary/40 hover:text-primary transition-all duration-200">Enterprise</a>
       <a href="#sprint"     class="px-4 py-2 rounded-full border border-white/[0.07] text-xs font-mono text-on-surface-dim hover:border-primary/40 hover:text-primary transition-all duration-200">Design Sprint</a>
+    </div>
+
+    <!-- 3-stat strip -->
+    <div class="mt-12 grid grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto reveal" style="transition-delay:.4s;">
+      <div class="glass-card hero-stat-card text-left">
+        <div class="hero-stat-val">5</div>
+        <div class="hero-stat-lbl">Service Lines</div>
+      </div>
+      <div class="glass-card hero-stat-card text-left">
+        <div class="hero-stat-val">45</div>
+        <div class="hero-stat-lbl">Days · Discovery → Prod</div>
+      </div>
+      <div class="glass-card hero-stat-card text-left">
+        <div class="hero-stat-val">130<span class="text-on-surface-muted">+</span></div>
+        <div class="hero-stat-lbl">Production Ships</div>
+      </div>
     </div>
   </div>
 </section>

@@ -466,6 +466,7 @@
     .h1-line:nth-child(3) > span { animation-delay: .28s; }
     @keyframes h1Rise { to { transform: translateY(0); opacity: 1; } }
   </style>
+  <script src="/js/site-cursor.js" defer></script>
 </head>
 
 <body class="bg-surface text-on-surface font-body selection:bg-primary/20 overflow-x-hidden">
@@ -509,6 +510,9 @@
      01 — HERO
 ════════════════════════════════════════════════════════════ -->
 <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-32">
+  <!-- Thematic image background -->
+  <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=85" alt="" aria-hidden="true" width="1920" height="1024" class="absolute inset-0 w-full h-full object-cover opacity-35" loading="eager">
+  <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg, rgba(12,19,36,0.75) 0%, rgba(12,19,36,0.88) 55%, #0c1324 100%);"></div>
   <!-- Animated neural grid -->
   <div class="absolute inset-0 neural-grid pointer-events-none" style="animation:gridPulse 9s ease-in-out infinite;opacity:.18;"></div>
   <!-- Primary glow — drifts slowly -->

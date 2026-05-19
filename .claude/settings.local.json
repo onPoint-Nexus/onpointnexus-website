@@ -17,7 +17,17 @@
       "Bash(git push *)",
       "Bash(sed -i '' 's|href=\"#contact\" class=\"px-8|href=\"https://calendar.app.google/C4xHVMebCZ6hgbgV9\" target=\"_blank\" rel=\"noopener\" class=\"px-8|g' index.html about/index.html services/index.html industries/index.html work/index.html pininfarina.html semilynx.html vidanta.html clinical-trac.html open-houses-direct.html quickheal.html)",
       "Bash(sed -i '' 's|href=\"#contact\" class=\"hidden md:inline-flex|href=\"https://calendar.app.google/C4xHVMebCZ6hgbgV9\" target=\"_blank\" rel=\"noopener\" class=\"hidden md:inline-flex|g' index.html)",
-      "Bash(sed -i '' 's|href=\"#contact\"   class=\"mt-3 bg-primary|href=\"https://calendar.app.google/C4xHVMebCZ6hgbgV9\" target=\"_blank\" rel=\"noopener\" class=\"mt-3 bg-primary|g' index.html)"
+      "Bash(sed -i '' 's|href=\"#contact\"   class=\"mt-3 bg-primary|href=\"https://calendar.app.google/C4xHVMebCZ6hgbgV9\" target=\"_blank\" rel=\"noopener\" class=\"mt-3 bg-primary|g' index.html)",
+      "Bash(grep -iE \"\\\\.\\(jpg|jpeg|png|webp|avif\\)$\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://www.onpointnexus.com/ontrack-agent\")",
+      "Bash(cp pininfarina.html work/pininfarina.html)",
+      "Bash(cp semilynx.html work/semilynx.html)",
+      "Bash(cp vidanta.html work/vidanta.html)",
+      "Bash(cp clinical-trac.html work/clinical-trac.html)",
+      "Bash(cp open-houses-direct.html work/open-houses-direct.html)",
+      "Bash(python3 -c \"import json; json.load\\(open\\('vercel.json'\\)\\); print\\('JSON valid'\\)\")",
+      "Bash(grep -oE '[a-zA-Z0-9_%-]+-[A-Za-z0-9_-]{6,8}\\\\.\\(png|jpg|jpeg|svg|webp\\)' /tmp/ifound-bundle.js | sort -u | head -60)",
+      "Bash(node -e ' *)"
     ]
   }
 }
