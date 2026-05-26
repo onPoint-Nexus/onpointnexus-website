@@ -111,19 +111,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- ═══ LEGAL ═════════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.onpointnexus.com/privacy-policy</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://www.onpointnexus.com/terms</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+  <!-- Legal pages intentionally excluded: they are noindex (low search value,
+       boilerplate content). Reachable via footer links — no SEO benefit to indexing. -->
 
 </urlset>
