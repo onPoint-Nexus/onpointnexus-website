@@ -27,7 +27,8 @@
       "Bash(cp open-houses-direct.html work/open-houses-direct.html)",
       "Bash(python3 -c \"import json; json.load\\(open\\('vercel.json'\\)\\); print\\('JSON valid'\\)\")",
       "Bash(grep -oE '[a-zA-Z0-9_%-]+-[A-Za-z0-9_-]{6,8}\\\\.\\(png|jpg|jpeg|svg|webp\\)' /tmp/ifound-bundle.js | sort -u | head -60)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(python3 -c ' *)"
     ]
   }
 }

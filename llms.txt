@@ -128,16 +128,31 @@ Engineering delivery is based in India (Pune and Kolhapur). Client coverage span
 - iFound Agent PropTech Modernization: https://www.onpointnexus.com/work/ifound-agent
 
 
-## AI Solutions (Live Demos)
+## AI Solutions
 
-Production AI products engineered by OnPoint Nexus. All are live, deployed, and open without sign-up.
+OnPoint Nexus delivers AI as ten distinct production-grade capabilities (categories of work we ship for clients), plus four live demos you can try without sign-up.
 
-- ClinicalTrac AI Assistant — RAG-powered healthcare knowledge system with automated email summaries and contextual responses grounded in clinical documentation. Stack: RAG, OpenAI. Live at https://ai.clinicaltrac.net/
-- Sugar Smart Farm Bot — Multilingual AI farming assistant for crop disease detection, irrigation guidance, and harvest optimization, built for sugarcane growers. Stack: Vision AI, multilingual NLP. Live at https://sugar-smart-farm-bot-xi.vercel.app/
-- OnPointAgent Voice Assistant — Real-time voice-to-voice AI for customer engagement and service explanations with sub-second latency. Stack: OpenAI Realtime API, Voice AI. Live at https://onpointagent.vercel.app/
-- NutriAI Smart Nutrition Analyzer — AI-powered food recognition that identifies meals from images and calculates calories, proteins, and nutritional values instantly. Stack: Computer Vision, HealthTech. Live at https://nutriai.onpointsoft.com/
+Hub page (all capabilities + all demos): https://www.onpointnexus.com/ai-solutions
 
-Index page (all four cards): https://www.onpointnexus.com/work#ai-solutions
+### AI Capabilities (10 categories)
+
+1. RAG-Powered AI Chatbot — Custom RAG chatbot trained on your business content (websites, PDFs, DOCX, PPT, Markdown). Self-hosted vector database, admin panel for live content management, automated daily email recaps of customer queries. Stack: LangChain/LlamaIndex, Pinecone/Weaviate/Qdrant, OpenAI/Claude/Llama. URL: https://www.onpointnexus.com/ai-solutions/rag-chatbot
+2. Realtime Voice Agent with Cloned Voice — Voice-to-voice AI agent using the client's cloned voice. Handles unlimited concurrent calls, captures lead data into Google Sheets or CRM. Embeddable on website, dedicated page, or phone number. URL: https://www.onpointnexus.com/ai-solutions/voice-agent
+3. AI Content Moderation — Vision model flags unsafe images before upload, NLP model classifies comments for toxicity. Realtime enforcement scales to millions of submissions. URL: https://www.onpointnexus.com/ai-solutions/content-moderation
+4. Smart Interactive Business Dashboards — Realtime self-hosted dashboards connected directly to client databases. Interactive drill-down. Alternative to Tableau/PowerBI with full data ownership. URL: https://www.onpointnexus.com/ai-solutions/business-dashboards
+5. Customer Churn Prediction Model — Custom ML model trained on client's customer data. Per-customer churn probability scores plus the specific risk signals. Integrates with CRM. URL: https://www.onpointnexus.com/ai-solutions/churn-prediction
+6. AI-Powered Appointment Call Reminders — Outbound AI agent calls customers to confirm appointments. Triggered by scheduling system. Conversational (not robotic IVR). URL: https://www.onpointnexus.com/ai-solutions/appointment-reminders
+7. On-Premise AI Model Serving — Deploy models (sentiment, churn, moderation, embeddings) on client's own VM. Zero data sent to external APIs. Lower long-term cost than cloud inference at scale. URL: https://www.onpointnexus.com/ai-solutions/on-premise-ai
+8. AI Assistants on WhatsApp & Telegram — AI assistants deployed inside WhatsApp and Telegram. Connected to client knowledge base. Reply time under 3 seconds. Escalates to human when needed. URL: https://www.onpointnexus.com/ai-solutions/whatsapp-telegram-bot
+9. Custom AI Business Automations — End-to-end workflow automation with AI layered where decisions or extraction are needed. Integrates with CRM, sheets, email, existing stack. URL: https://www.onpointnexus.com/ai-solutions/business-automation
+10. Vision AI & Multilingual AI — Image recognition, object/food identification, multilingual conversational AI. Build assistants that see what users see and speak the languages they speak. URL: https://www.onpointnexus.com/ai-solutions/vision-ai
+
+### Live AI Product Demos (4, no sign-up)
+
+- ClinicalTrac AI Assistant — RAG-powered healthcare knowledge system with automated email summaries grounded in clinical documentation. Live at https://ai.clinicaltrac.net/
+- Sugar Smart Farm Bot — Multilingual AI farming assistant for crop disease detection, irrigation guidance, and harvest optimization, built for sugarcane growers. Live at https://sugar-smart-farm-bot-xi.vercel.app/
+- OnPointAgent Voice Assistant — Real-time voice-to-voice AI for customer engagement and service explanations with sub-second latency. Live at https://onpointagent.vercel.app/
+- NutriAI Smart Nutrition Analyzer — AI-powered food recognition that identifies meals from images and calculates calories, proteins, and nutritional values instantly. Live at https://nutriai.onpointsoft.com/
 
 
 ## Social and Contact

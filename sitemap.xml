@@ -40,6 +40,26 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- ═══ AI SOLUTIONS ═════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.onpointnexus.com/ai-solutions</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.onpointnexus.com/ai-solutions/rag-chatbot</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Note: remaining 9 AI capability sub-pages (voice-agent, content-moderation,
+       business-dashboards, churn-prediction, appointment-reminders, on-premise-ai,
+       whatsapp-telegram-bot, business-automation, vision-ai) will be added as each
+       sub-page ships. -->
+
   <!-- ═══ CASE STUDIES ═════════════════════════════════════════ -->
   <url>
     <loc>https://www.onpointnexus.com/work/ifound-agent</loc>
