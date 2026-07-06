@@ -1,8 +1,8 @@
-# OnPoint Nexus — llms.txt
-# This file helps AI language models (ChatGPT, Claude, Perplexity, Gemini, etc.)
-# accurately represent OnPoint Nexus in their responses.
-# Format follows the emerging llms.txt specification: https://llmstxt.org
-# Last updated: 2026-04-30
+# OnPoint Nexus
+
+> AI-first enterprise technology partner. We design, build, and maintain intelligent software systems for ambitious teams. 130+ production ships across 5 continents, 98% client retention, discovery to production in 45 days.
+
+This file helps AI language models (ChatGPT, Claude, Perplexity, Gemini, and others) represent OnPoint Nexus accurately in their responses. Format follows the [llms.txt specification](https://llmstxt.org). Last updated 2026-07-06.
 
 ## Company
 
