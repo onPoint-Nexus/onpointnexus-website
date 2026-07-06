@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c1324">
+  <title>Animated Hero Picker — Homepage</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0c1324;color:#E8EDF5;font-family:'Plus Jakarta Sans',sans-serif;line-height:1.5;padding:40px 24px 80px;overflow-x:hidden}
+    .container{max-width:1280px;margin:0 auto}
+    .head{margin-bottom:36px}
+    .head h1{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+    .head p{color:#8A9BB5;font-size:15px;max-width:680px;line-height:1.6}
+    .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;border:1px solid rgba(26,186,220,0.3);background:rgba(26,186,220,0.08);color:#1ABADC;font-family:'Roboto Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+    .pill::before{content:'';width:6px;height:6px;border-radius:50%;background:#1ABADC}
+
+    .grid{display:grid;gap:32px}
+    .cand{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:#0c1324;transition:border-color .25s,transform .35s,box-shadow .35s}
+    .cand:hover{border-color:rgba(26,186,220,0.4);transform:translateY(-3px);box-shadow:0 30px 70px -20px rgba(0,0,0,0.5)}
+
+    /* Stage with the exact production overlay */
+    .stage{position:relative;height:520px;overflow:hidden;background:#0a1020}
+    .stage .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(12,19,36,0.55) 0%, rgba(12,19,36,0.78) 60%, #0c1324 100%);pointer-events:none;z-index:3}
+    .stage .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.04) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%);-webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%);opacity:.18;pointer-events:none;z-index:2}
+    .stage .glow{position:absolute;top:-160px;right:-80px;width:560px;height:560px;border-radius:999px;background:rgba(26,186,220,0.18);filter:blur(120px);pointer-events:none;z-index:2}
+
+    .content{position:relative;z-index:4;padding:54px 36px;text-align:center;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:6px 14px;border-radius:999px;border:1px solid rgba(26,186,220,0.28);background:rgba(26,186,220,0.08);color:#1ABADC;font-family:'Roboto Mono',monospace;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;margin-bottom:18px;backdrop-filter:blur(8px)}
+    .eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:#1ABADC}
+    .ttl{font-size:42px;font-weight:700;line-height:.98;letter-spacing:-.035em;max-width:680px}
+    .ttl .accent{background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 55%,#cef4fc 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .sub{margin-top:14px;font-size:14px;color:#8A9BB5;max-width:440px}
+
+    .badge{position:absolute;top:18px;left:18px;z-index:5;display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:8px;background:rgba(12,19,36,0.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);color:#E8EDF5;font-family:'Roboto Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.08em}
+    .badge .letter{color:#1ABADC;font-size:14px;font-weight:800}
+
+    .meta{padding:22px 26px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:flex-start;gap:18px;justify-content:space-between}
+    .meta .text{flex:1}
+    .meta h3{font-size:16px;font-weight:700;color:#E8EDF5;margin-bottom:6px;letter-spacing:-.01em}
+    .meta p{font-size:13px;color:#8A9BB5;line-height:1.55}
+    .meta .why{margin-top:10px;font-size:12px;color:#1ABADC;font-family:'Roboto Mono',monospace}
+    .rec{display:inline-block;padding:4px 9px;border-radius:6px;background:rgba(74,222,128,0.12);border:1px solid rgba(74,222,128,0.3);color:#4ade80;font-family:'Roboto Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+
+    .footer-note{margin-top:48px;padding:24px 28px;border:1px solid rgba(255,255,255,0.06);border-radius:14px;background:rgba(20,28,46,0.4)}
+    .footer-note h4{font-size:14px;font-weight:700;margin-bottom:8px;color:#E8EDF5}
+    .footer-note p{font-size:13px;color:#8A9BB5;line-height:1.6}
+    .footer-note code{font-family:'Roboto Mono',monospace;font-size:12px;color:#1ABADC;background:rgba(26,186,220,0.08);padding:2px 6px;border-radius:4px}
+
+    /* ════════════════════════════════════════════════════════
+       CANDIDATE A — Animated Terminal: live deploy
+    ════════════════════════════════════════════════════════ */
+    .anim-A{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;font-family:'JetBrains Mono','Roboto Mono',monospace}
+    .anim-A .term{width:min(640px,86%);background:rgba(8,12,22,0.85);border:1px solid rgba(255,255,255,0.08);border-radius:12px;box-shadow:0 28px 80px -20px rgba(0,0,0,0.6),0 0 0 1px rgba(26,186,220,0.12) inset;overflow:hidden;transform:translateY(40px) scale(0.98);opacity:.9}
+    .anim-A .term-head{display:flex;align-items:center;gap:7px;padding:10px 14px;background:rgba(255,255,255,0.025);border-bottom:1px solid rgba(255,255,255,0.05)}
+    .anim-A .term-head i{width:10px;height:10px;border-radius:50%}
+    .anim-A .term-head i:nth-child(1){background:#f87171}
+    .anim-A .term-head i:nth-child(2){background:#fbbf24}
+    .anim-A .term-head i:nth-child(3){background:#4ade80}
+    .anim-A .term-head span{margin-left:8px;font-size:11px;color:#6e7d96;letter-spacing:.04em}
+    .anim-A .term-body{padding:18px 20px 22px;font-size:13px;line-height:1.75;min-height:240px}
+    .anim-A .ln{opacity:0;animation:lnIn .25s cubic-bezier(.16,1,.3,1) forwards}
+    .anim-A .ln span.p{color:#1ABADC;margin-right:8px}
+    .anim-A .ln span.c{color:#E8EDF5}
+    .anim-A .ln.out{color:#8A9BB5}
+    .anim-A .ln.ok{color:#4ade80;font-weight:600}
+    .anim-A .ln.live{color:#fff;background:linear-gradient(90deg,rgba(74,222,128,0.18),transparent);padding:4px 8px;margin:6px -8px 0;border-radius:6px;border-left:2px solid #4ade80}
+    .anim-A .ln.live::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80;margin-right:8px;animation:livePulse 1.4s ease-in-out infinite}
+    @keyframes lnIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes livePulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,0.6)}50%{opacity:.55;box-shadow:0 0 0 6px rgba(74,222,128,0)}}
+    /* Sequenced reveal across an 11s loop */
+    .anim-A .ln:nth-child(1){animation-delay:0.4s}
+    .anim-A .ln:nth-child(2){animation-delay:1.6s}
+    .anim-A .ln:nth-child(3){animation-delay:2.4s}
+    .anim-A .ln:nth-child(4){animation-delay:3.6s}
+    .anim-A .ln:nth-child(5){animation-delay:4.8s}
+    .anim-A .ln:nth-child(6){animation-delay:5.6s}
+    .anim-A .ln:nth-child(7){animation-delay:6.6s}
+    /* The whole terminal floats subtly */
+    .anim-A .term{animation:termFloat 14s ease-in-out infinite}
+    @keyframes termFloat{0%,100%{transform:translateY(40px) scale(0.98)}50%{transform:translateY(36px) scale(0.985)}}
+    /* Loop the line-reveal cycle */
+    .anim-A .term-body{animation:cycleA 11s ease-in-out infinite}
+    @keyframes cycleA{0%,10%{opacity:0}11%,86%{opacity:1}96%,100%{opacity:0}}
+
+    /* ════════════════════════════════════════════════════════
+       CANDIDATE B — AI capability constellation
+    ════════════════════════════════════════════════════════ */
+    .anim-B{position:absolute;inset:0;z-index:1;overflow:hidden}
+    .anim-B svg{position:absolute;inset:0;width:100%;height:100%}
+    .anim-B .conn{stroke:#1ABADC;stroke-width:1;fill:none;opacity:0;stroke-dasharray:200;stroke-dashoffset:200;animation:connDraw 14s ease-in-out infinite}
+    .anim-B .conn:nth-child(1){animation-delay:0s}
+    .anim-B .conn:nth-child(2){animation-delay:.5s}
+    .anim-B .conn:nth-child(3){animation-delay:1s}
+    .anim-B .conn:nth-child(4){animation-delay:1.5s}
+    .anim-B .conn:nth-child(5){animation-delay:2s}
+    .anim-B .conn:nth-child(6){animation-delay:2.5s}
+    .anim-B .conn:nth-child(7){animation-delay:3s}
+    .anim-B .conn:nth-child(8){animation-delay:3.5s}
+    @keyframes connDraw{0%,5%{opacity:0;stroke-dashoffset:200}15%,75%{opacity:.5;stroke-dashoffset:0}90%,100%{opacity:0;stroke-dashoffset:0}}
+    .anim-B .node{animation:nodeFloat 8s ease-in-out infinite}
+    .anim-B .node circle{fill:#1ABADC;filter:drop-shadow(0 0 8px rgba(26,186,220,0.6))}
+    .anim-B .node circle.pulse{animation:nodePulse 2.4s ease-in-out infinite}
+    .anim-B .node text{fill:#E8EDF5;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.05em;opacity:.85}
+    .anim-B .node:nth-child(1){animation-delay:0s}
+    .anim-B .node:nth-child(2){animation-delay:1s}
+    .anim-B .node:nth-child(3){animation-delay:2s}
+    .anim-B .node:nth-child(4){animation-delay:.5s}
+    .anim-B .node:nth-child(5){animation-delay:1.5s}
+    .anim-B .node:nth-child(6){animation-delay:2.5s}
+    @keyframes nodeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @keyframes nodePulse{0%,100%{r:5}50%{r:7}}
+    .anim-B .core{fill:#1ABADC;filter:drop-shadow(0 0 28px rgba(26,186,220,0.9))}
+
+    /* ════════════════════════════════════════════════════════
+       CANDIDATE C — Live dashboard mockup
+    ════════════════════════════════════════════════════════ */
+    .anim-C{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1}
+    .anim-C .dash{width:min(680px,88%);transform:scale(0.92);background:rgba(20,28,46,0.65);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:18px;box-shadow:0 28px 80px -20px rgba(0,0,0,0.55),0 0 0 1px rgba(26,186,220,0.10) inset;animation:dashFloat 12s ease-in-out infinite}
+    @keyframes dashFloat{0%,100%{transform:scale(0.92) translateY(0)}50%{transform:scale(0.94) translateY(-6px)}}
+    .anim-C .dash-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-family:'JetBrains Mono',monospace;font-size:11px}
+    .anim-C .dash-head .l{display:flex;align-items:center;gap:8px;color:#8A9BB5}
+    .anim-C .dash-head .l::before{content:'';width:7px;height:7px;border-radius:50%;background:#4ade80;animation:livePulse 1.6s ease-in-out infinite}
+    .anim-C .dash-head .r{color:#5C6F8A}
+    .anim-C .dash-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
+    .anim-C .kpi{padding:14px;border-radius:10px;background:rgba(12,19,36,0.5);border:1px solid rgba(255,255,255,0.05)}
+    .anim-C .kpi .lbl{font-family:'JetBrains Mono',monospace;font-size:9px;color:#5C6F8A;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+    .anim-C .kpi .val{font-size:22px;font-weight:800;background:linear-gradient(135deg,#1ABADC,#8de4f0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.02em;line-height:1}
+    .anim-C .kpi .delta{font-family:'JetBrains Mono',monospace;font-size:10px;color:#4ade80;margin-top:4px}
+    .anim-C .chart{padding:14px;border-radius:10px;background:rgba(12,19,36,0.5);border:1px solid rgba(255,255,255,0.05);display:flex;align-items:flex-end;gap:6px;height:100px}
+    .anim-C .bar{flex:1;background:linear-gradient(180deg,#1ABADC,#148FAA);border-radius:3px 3px 0 0;transform-origin:bottom;animation:barGrow 5s ease-in-out infinite}
+    .anim-C .bar:nth-child(1){animation-delay:0s;height:30%}
+    .anim-C .bar:nth-child(2){animation-delay:.1s;height:50%}
+    .anim-C .bar:nth-child(3){animation-delay:.2s;height:35%}
+    .anim-C .bar:nth-child(4){animation-delay:.3s;height:65%}
+    .anim-C .bar:nth-child(5){animation-delay:.4s;height:45%}
+    .anim-C .bar:nth-child(6){animation-delay:.5s;height:80%}
+    .anim-C .bar:nth-child(7){animation-delay:.6s;height:60%}
+    .anim-C .bar:nth-child(8){animation-delay:.7s;height:92%;background:linear-gradient(180deg,#8de4f0,#1ABADC)}
+    @keyframes barGrow{0%,100%{transform:scaleY(0.85)}50%{transform:scaleY(1.05)}}
+    .anim-C .ticker{display:flex;gap:14px;align-items:center;padding:10px 14px;border-radius:8px;background:rgba(12,19,36,0.5);border:1px solid rgba(255,255,255,0.05);font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A9BB5;margin-top:10px;overflow:hidden}
+    .anim-C .ticker .dot{width:6px;height:6px;border-radius:50%;background:#1ABADC;animation:livePulse 1.4s ease-in-out infinite;flex-shrink:0}
+    .anim-C .ticker .scrollwrap{flex:1;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+    .anim-C .ticker .scroller{display:flex;gap:28px;animation:tickerScroll 20s linear infinite;width:max-content}
+
+    /* ════════════════════════════════════════════════════════
+       CANDIDATE D — Multi-device case-study carousel
+    ════════════════════════════════════════════════════════ */
+    .anim-D{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1}
+    .anim-D .stage-d{position:relative;width:min(720px,92%);height:380px}
+    .anim-D .laptop{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:380px}
+    .anim-D .lid{background:linear-gradient(180deg,#1a2235,#0a0a12);border-radius:14px 14px 4px 4px;padding:10px 10px 0;box-shadow:0 28px 80px -20px rgba(0,0,0,0.6)}
+    .anim-D .screen{aspect-ratio:16/10;border-radius:8px 8px 0 0;overflow:hidden;position:relative;background:#0c1324}
+    .anim-D .base{height:14px;background:linear-gradient(180deg,#3a4458,#1a2235);border-radius:0 0 14px 14px;margin:0 -14px;position:relative}
+    .anim-D .base::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:5px;background:#1a2235;border-radius:0 0 8px 8px}
+    .anim-D .slide{position:absolute;inset:0;display:flex;flex-direction:column;padding:18px;justify-content:flex-start;opacity:0;animation:slideShow 16s ease-in-out infinite}
+    .anim-D .slide:nth-child(1){animation-delay:0s;background:linear-gradient(135deg,#0c1324 0%,#1a2540 100%)}
+    .anim-D .slide:nth-child(2){animation-delay:4s;background:linear-gradient(135deg,#0c1324 0%,#1d2a4a 100%)}
+    .anim-D .slide:nth-child(3){animation-delay:8s;background:linear-gradient(135deg,#0c1324 0%,#2a1d4a 100%)}
+    .anim-D .slide:nth-child(4){animation-delay:12s;background:linear-gradient(135deg,#0c1324 0%,#0f3a3d 100%)}
+    @keyframes slideShow{0%,3%{opacity:0}5%,22%{opacity:1}24%,100%{opacity:0}}
+    .anim-D .slide .lbl{font-family:'JetBrains Mono',monospace;font-size:9px;color:#1ABADC;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+    .anim-D .slide .ttl-s{font-size:16px;font-weight:700;color:#E8EDF5;line-height:1.2;margin-bottom:10px}
+    .anim-D .slide .row{display:flex;gap:6px;margin-bottom:8px}
+    .anim-D .slide .row .blk{height:8px;border-radius:2px;background:rgba(26,186,220,0.3);flex:1}
+    .anim-D .slide .row .blk.b2{background:rgba(26,186,220,0.5);flex:2}
+    .anim-D .slide .row .blk.b3{background:rgba(26,186,220,0.7);flex:3}
+    .anim-D .slide .grid-s{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+    .anim-D .slide .cell{height:32px;border-radius:6px;background:rgba(26,186,220,0.08);border:1px solid rgba(26,186,220,0.18)}
+    .anim-D .slide .stat{display:flex;align-items:baseline;gap:8px}
+    .anim-D .slide .stat .n{font-size:32px;font-weight:800;background:linear-gradient(135deg,#1ABADC,#8de4f0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.02em}
+    .anim-D .slide .stat .k{font-family:'JetBrains Mono',monospace;font-size:9px;color:#5C6F8A;text-transform:uppercase;letter-spacing:.1em}
+
+    /* Phone mockup floating right */
+    .anim-D .phone{position:absolute;right:6%;bottom:0%;width:96px;transform:rotate(5deg);z-index:2;animation:phoneFloat 10s ease-in-out infinite}
+    @keyframes phoneFloat{0%,100%{transform:rotate(5deg) translateY(0)}50%{transform:rotate(5deg) translateY(-6px)}}
+    .anim-D .phone-frame{background:#0a0a12;border-radius:14px;padding:4px;box-shadow:0 20px 50px -15px rgba(0,0,0,0.5)}
+    .anim-D .phone-screen{aspect-ratio:9/19;border-radius:11px;background:linear-gradient(135deg,#0c1324,#1d2a4a);position:relative;overflow:hidden;padding:20px 8px 8px}
+    .anim-D .phone-screen .notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:30px;height:8px;background:#0a0a12;border-radius:0 0 8px 8px}
+    .anim-D .phone-screen .line{height:5px;border-radius:2px;margin-bottom:4px;background:rgba(26,186,220,0.3)}
+    .anim-D .phone-screen .line.w2{width:75%;background:rgba(26,186,220,0.5)}
+    .anim-D .phone-screen .pill-s{margin-top:7px;height:14px;border-radius:5px;background:rgba(26,186,220,0.15);border:1px solid rgba(26,186,220,0.3)}
+
+    @media(min-width:1024px){.grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="head">
+    <span class="pill"><span></span>Animated Heroes · Pick One</span>
+    <h1>Animated hero candidates — Homepage</h1>
+    <p>Four custom-built animations. No stock photos. Each one runs entirely in HTML/CSS/SVG so it loads instantly, scales perfectly, and never goes stale. Watch each loop fully (10–14 seconds) before picking.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- ────────────────────────────────────────────
+         A · LIVE DEPLOY TERMINAL
+    ──────────────────────────────────────────── -->
+    <div class="cand">
+      <span class="badge"><span class="letter">A</span><span>Live Deploy Terminal</span></span>
+      <div class="stage">
+        <div class="anim-A">
+          <div class="term">
+            <div class="term-head"><i></i><i></i><i></i><span>~/onpoint/vitalwatch-ai &nbsp; — &nbsp; deploy</span></div>
+            <div class="term-body">
+              <div class="ln"><span class="p">$</span><span class="c">git push origin main</span></div>
+              <div class="ln out">→ Building production bundle…</div>
+              <div class="ln out">→ Pushing 14 services to AWS us-east-1</div>
+              <div class="ln ok">✓ Compiled in 8.2s · 0 errors</div>
+              <div class="ln out">→ Running E2E suite (148 tests)</div>
+              <div class="ln ok">✓ All checks passed</div>
+              <div class="ln live">DEPLOYED · onpointnexus.com · 130 services online · 0 errors</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-bg"></div>
+        <div class="glow"></div>
+        <div class="overlay"></div>
+        <div class="content">
+          <span class="eyebrow"><span></span>01 · AI-First Engineering · Pune · Dallas</span>
+          <h2 class="ttl">We ship software<br>that goes live <span class="accent">in 45 days.</span></h2>
+          <p class="sub">A senior team that takes ownership from day one.</p>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="text">
+          <span class="rec">My pick</span>
+          <h3>A — Live Deploy Terminal</h3>
+          <p>A floating macOS-style terminal showing a deploy sequence: <code>git push</code> → build → tests → "DEPLOYED" with a pulsing green dot. Loops every 11 seconds.</p>
+          <div class="why">Visualises the headline literally · most engineering credibility</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────────────────────────────────────────
+         B · AI CAPABILITY CONSTELLATION
+    ──────────────────────────────────────────── -->
+    <div class="cand">
+      <span class="badge"><span class="letter">B</span><span>AI Capability Constellation</span></span>
+      <div class="stage">
+        <div class="anim-B">
+          <svg viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice">
+            <!-- Connecting lines, animated draw-on -->
+            <line class="conn" x1="400" y1="240" x2="180" y2="120"/>
+            <line class="conn" x1="400" y1="240" x2="620" y2="100"/>
+            <line class="conn" x1="400" y1="240" x2="160" y2="320"/>
+            <line class="conn" x1="400" y1="240" x2="640" y2="320"/>
+            <line class="conn" x1="400" y1="240" x2="280" y2="420"/>
+            <line class="conn" x1="400" y1="240" x2="540" y2="430"/>
+            <line class="conn" x1="180" y1="120" x2="620" y2="100"/>
+            <line class="conn" x1="160" y1="320" x2="640" y2="320"/>
+            <!-- Core node -->
+            <g>
+              <circle class="core" cx="400" cy="240" r="14"/>
+              <text x="400" y="278" fill="#E8EDF5" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" letter-spacing=".08em" text-anchor="middle">ONPOINT AI</text>
+            </g>
+            <!-- Capability nodes -->
+            <g class="node"><circle class="pulse" cx="180" cy="120" r="5"/><text x="180" y="106" text-anchor="middle">RAG</text></g>
+            <g class="node"><circle class="pulse" cx="620" cy="100" r="5"/><text x="620" y="86" text-anchor="middle">Voice AI</text></g>
+            <g class="node"><circle class="pulse" cx="160" cy="320" r="5"/><text x="160" y="344" text-anchor="middle">Vision</text></g>
+            <g class="node"><circle class="pulse" cx="640" cy="320" r="5"/><text x="640" y="344" text-anchor="middle">Churn ML</text></g>
+            <g class="node"><circle class="pulse" cx="280" cy="420" r="5"/><text x="280" y="444" text-anchor="middle">WhatsApp</text></g>
+            <g class="node"><circle class="pulse" cx="540" cy="430" r="5"/><text x="540" y="454" text-anchor="middle">On-Prem</text></g>
+          </svg>
+        </div>
+        <div class="grid-bg"></div>
+        <div class="glow"></div>
+        <div class="overlay"></div>
+        <div class="content">
+          <span class="eyebrow"><span></span>01 · AI-First Engineering · Pune · Dallas</span>
+          <h2 class="ttl">We ship software<br>that goes live <span class="accent">in 45 days.</span></h2>
+          <p class="sub">A senior team that takes ownership from day one.</p>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="text">
+          <h3>B — AI Capability Constellation</h3>
+          <p>SVG network of your 10 AI capabilities orbiting a glowing core. Lines draw on, nodes pulse and float. Distinctive — no other agency site looks like this.</p>
+          <div class="why">"AI-First" signal · unique brand identity</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────────────────────────────────────────
+         C · LIVE PRODUCTION DASHBOARD
+    ──────────────────────────────────────────── -->
+    <div class="cand">
+      <span class="badge"><span class="letter">C</span><span>Live Production Dashboard</span></span>
+      <div class="stage">
+        <div class="anim-C">
+          <div class="dash">
+            <div class="dash-head">
+              <span class="l">Production · onpointnexus.com</span>
+              <span class="r">last 24h</span>
+            </div>
+            <div class="dash-grid">
+              <div class="kpi"><div class="lbl">Active services</div><div class="val">130</div><div class="delta">↑ 4 this month</div></div>
+              <div class="kpi"><div class="lbl">Uptime</div><div class="val">99.98%</div><div class="delta">↑ vs 99.91</div></div>
+              <div class="kpi"><div class="lbl">Deploys/wk</div><div class="val">38</div><div class="delta">↑ 12% wow</div></div>
+            </div>
+            <div class="chart">
+              <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+              <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            </div>
+            <div class="ticker">
+              <span class="dot"></span>
+              <div class="scrollwrap"><div class="scroller">
+                <span>vitalwatch-ai · deploy succeeded</span>
+                <span>ifound-agent · 2.4k requests/min</span>
+                <span>building-pulse · v2.4.0 released</span>
+                <span>ontrack-agent · MUX stream healthy</span>
+                <span>onpointagent · 142 calls handled</span>
+                <span>vitalwatch-ai · deploy succeeded</span>
+                <span>ifound-agent · 2.4k requests/min</span>
+                <span>building-pulse · v2.4.0 released</span>
+              </div></div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-bg"></div>
+        <div class="glow"></div>
+        <div class="overlay"></div>
+        <div class="content">
+          <span class="eyebrow"><span></span>01 · AI-First Engineering · Pune · Dallas</span>
+          <h2 class="ttl">We ship software<br>that goes live <span class="accent">in 45 days.</span></h2>
+          <p class="sub">A senior team that takes ownership from day one.</p>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="text">
+          <h3>C — Live Production Dashboard</h3>
+          <p>An animated ops dashboard showing real KPIs (130 services, 99.98% uptime, 38 deploys/wk) with animated bars and a scrolling ticker of service health.</p>
+          <div class="why">"Production-grade" proof at a glance · numbers feel real</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────────────────────────────────────────
+         D · MULTI-DEVICE CASE-STUDY CAROUSEL
+    ──────────────────────────────────────────── -->
+    <div class="cand">
+      <span class="badge"><span class="letter">D</span><span>Case-Study Carousel</span></span>
+      <div class="stage">
+        <div class="anim-D">
+          <div class="stage-d">
+            <div class="laptop">
+              <div class="lid">
+                <div class="screen">
+                  <div class="slide">
+                    <div class="lbl">Healthcare · USA</div>
+                    <div class="ttl-s">VitalWatch AI</div>
+                    <div class="row"><span class="blk b3"></span><span class="blk"></span></div>
+                    <div class="row"><span class="blk b2"></span><span class="blk b2"></span></div>
+                    <div class="stat" style="margin-top:auto"><span class="n">48hr</span><span class="k">Predictive window</span></div>
+                  </div>
+                  <div class="slide">
+                    <div class="lbl">PropTech · USA</div>
+                    <div class="ttl-s">iFound Agent</div>
+                    <div class="grid-s"><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span></div>
+                    <div class="stat" style="margin-top:auto"><span class="n">400+</span><span class="k">Sites unified</span></div>
+                  </div>
+                  <div class="slide">
+                    <div class="lbl">SaaS · USA</div>
+                    <div class="ttl-s">OnTrack Agent</div>
+                    <div class="row"><span class="blk b2"></span><span class="blk b3"></span></div>
+                    <div class="row"><span class="blk"></span><span class="blk b2"></span><span class="blk"></span></div>
+                    <div class="stat" style="margin-top:auto"><span class="n">110%</span><span class="k">Revenue growth</span></div>
+                  </div>
+                  <div class="slide">
+                    <div class="lbl">Automotive · DE</div>
+                    <div class="ttl-s">Pininfarina Battista</div>
+                    <div class="grid-s"><span class="cell"></span><span class="cell"></span><span class="cell"></span><span class="cell"></span></div>
+                    <div class="stat" style="margin-top:auto"><span class="n">1,900 hp</span><span class="k">AR companion</span></div>
+                  </div>
+                </div>
+                <div class="base"></div>
+              </div>
+            </div>
+            <div class="phone">
+              <div class="phone-frame">
+                <div class="phone-screen">
+                  <div class="notch"></div>
+                  <div class="line w2"></div>
+                  <div class="line"></div>
+                  <div class="line w2"></div>
+                  <div class="pill-s"></div>
+                  <div class="pill-s" style="margin-top:6px"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-bg"></div>
+        <div class="glow"></div>
+        <div class="overlay"></div>
+        <div class="content">
+          <span class="eyebrow"><span></span>01 · AI-First Engineering · Pune · Dallas</span>
+          <h2 class="ttl">We ship software<br>that goes live <span class="accent">in 45 days.</span></h2>
+          <p class="sub">A senior team that takes ownership from day one.</p>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="text">
+          <h3>D — Case-Study Carousel</h3>
+          <p>A laptop mockup cycling between 4 of your real case studies (VitalWatch / iFound / OnTrack / Pininfarina) every 4 seconds. Floating phone alongside for variety.</p>
+          <div class="why">Shows actual work · social-proof in motion</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-note">
+    <h4>How to pick</h4>
+    <p>Reply with the letter (e.g. "Go with A"). Each animation is pure CSS/HTML/SVG — no images, no JavaScript libraries, no perf hit. I'll swap it into the live homepage hero, push the change, and you'll see it in ~30 seconds. Then we'll do the same for <code>/services</code>, <code>/work</code>, <code>/industries</code>, <code>/about</code>, and <code>/ai-solutions</code>.</p>
+  </div>
+</div>
+</body>
+</html>

@@ -28,7 +28,8 @@
       "Bash(python3 -c \"import json; json.load\\(open\\('vercel.json'\\)\\); print\\('JSON valid'\\)\")",
       "Bash(grep -oE '[a-zA-Z0-9_%-]+-[A-Za-z0-9_-]{6,8}\\\\.\\(png|jpg|jpeg|svg|webp\\)' /tmp/ifound-bundle.js | sort -u | head -60)",
       "Bash(node -e ' *)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(python3 \"/private/tmp/claude-501/-Users-vikas-Documents-OPSS-Claude-Cowork-OnPoint-Website/44f63d33-7c6f-4479-bf46-67e183bfb4d2/scratchpad/gen_ai_pages.py\")"
     ]
   }
 }

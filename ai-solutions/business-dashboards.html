@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Smart Business Dashboards — Self-Hosted Alternative to Tableau | OnPoint Nexus</title>
+  <meta name="description" content="Realtime interactive dashboards connected directly to your database. Fully custom to your metrics. Self-hosted, no third-party licensing, full data ownership.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.onpointnexus.com/ai-solutions/business-dashboards">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="OnPoint Nexus">
+  <meta property="og:url" content="https://www.onpointnexus.com/ai-solutions/business-dashboards">
+  <meta property="og:title" content="Smart Business Dashboards — Self-Hosted Alternative to Tableau | OnPoint Nexus">
+  <meta property="og:description" content="Realtime interactive dashboards connected directly to your database. Fully custom to your metrics. Self-hosted, no third-party licensing, full data ownership.">
+  <meta property="og:image" content="https://www.onpointnexus.com/og-image.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { darkMode:'class', theme:{extend:{colors:{primary:'#1ABADC','primary-dim':'#148FAA',surface:'#0c1324','surface-card':'#141c2e','surface-high':'#1a2235','surface-low':'#080e1c','on-surface':'#E8EDF5','on-surface-dim':'#8A9BB5','on-surface-muted':'#4A5A72'},fontFamily:{body:['Plus Jakarta Sans','sans-serif'],mono:['Roboto Mono','monospace']}}}}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-N2WCZPCE46');</script>
+
+  <!-- JSON-LD: Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Smart Business Dashboards",
+    "url": "https://www.onpointnexus.com/ai-solutions/business-dashboards",
+    "serviceType": "AI Application Development",
+    "provider": { "@type": "Organization", "name": "OnPoint Nexus", "url": "https://www.onpointnexus.com" },
+    "areaServed": "Worldwide",
+    "description": "Realtime interactive dashboards connected directly to your database. Fully custom to your metrics. Self-hosted, no third-party licensing, full data ownership.",
+    "offers": { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "On Request", "priceCurrency": "USD" } }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ -->
+  <script type="application/ld+json">
+  { "@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What databases do you connect to?","acceptedAnswer":{"@type":"Answer","text":"Any SQL database (PostgreSQL, MySQL, SQL Server, BigQuery, Snowflake, ClickHouse), plus NoSQL (MongoDB, DynamoDB) and warehouses. We also support connecting multiple sources into a single unified view."}},{"@type":"Question","name":"Can we get custom charts, or is it templated?","acceptedAnswer":{"@type":"Answer","text":"Fully custom. We start from your KPI list, not from a template. If you can describe the chart, we can build it. Common patterns (revenue over time, cohort retention, funnel analysis) are already in our component library and reused."}},{"@type":"Question","name":"How does this compare to Tableau or PowerBI cost?","acceptedAnswer":{"@type":"Answer","text":"You pay a one-time build cost plus ongoing hosting (typically $50-200/month on your cloud). BI tools bill per seat or per capacity unit — the math flips in your favor after ~15 users or moderate data volume."}},{"@type":"Question","name":"Can we control who sees what?","acceptedAnswer":{"@type":"Answer","text":"Yes. Role-based access control on views, filters, and even individual metrics. Common patterns: exec dashboard, ops dashboard, per-team dashboards, per-customer dashboards for external sharing."}},{"@type":"Question","name":"Do you offer natural-language querying?","acceptedAnswer":{"@type":"Answer","text":"Optional. We can add an LLM layer where users type 'show me revenue by region for Q3' and the system generates the SQL and renders the chart. Requires a bit more discovery and validation during scoping."}}] }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.onpointnexus.com/"},
+      {"@type":"ListItem","position":2,"name":"AI Solutions","item":"https://www.onpointnexus.com/ai-solutions"},
+      {"@type":"ListItem","position":3,"name":"Smart Business Dashboards","item":"https://www.onpointnexus.com/ai-solutions/business-dashboards"}
+    ]
+  }
+  </script>
+
+  <style>
+    body{background-color:#0c1324;font-family:'Plus Jakarta Sans',sans-serif}
+    .grid-bg{background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 60% 60% at 50% 40%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 40%,#000 30%,transparent 80%)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+    .reveal.in-view{opacity:1;transform:none}
+    .glass-card{background:rgba(20,28,46,0.55);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:1rem}
+    .grad-text{background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 55%,#cef4fc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .sec-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border-radius:999px;border:1px solid rgba(26,186,220,0.28);background:rgba(26,186,220,0.08);color:#1ABADC;font-family:'Roboto Mono',monospace;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em}
+    .sec-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:#1ABADC}
+    .pill{display:inline-flex;align-items:center;gap:6px;font-family:'Roboto Mono',monospace;font-size:.62rem;padding:5px 12px;border-radius:999px;background:rgba(26,186,220,0.08);border:1px solid rgba(26,186,220,0.22);color:#1ABADC;letter-spacing:.06em}
+    .point-card{background:rgba(20,28,46,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:1.25rem;padding:32px 28px;transition:border-color .25s;height:100%}
+    .point-card:hover{border-color:rgba(26,186,220,0.3)}
+    .point-card .icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:16px}
+    .point-card.challenge .icon{background:rgba(248,113,113,0.10);border:1px solid rgba(248,113,113,0.25);color:#f87171}
+    .point-card.solution .icon{background:rgba(26,186,220,0.10);border:1px solid rgba(26,186,220,0.25);color:#1ABADC}
+    .point-card.value .icon{background:rgba(74,222,128,0.10);border:1px solid rgba(74,222,128,0.25);color:#4ade80}
+    .point-card ul{display:flex;flex-direction:column;gap:10px}
+    .point-card li{display:flex;align-items:flex-start;gap:10px;font-size:.92rem;color:#8A9BB5;line-height:1.5}
+    .point-card li::before{content:'';width:6px;height:6px;border-radius:50%;margin-top:8px;flex-shrink:0}
+    .point-card.challenge li::before{background:#f87171}
+    .point-card.solution li::before{background:#1ABADC}
+    .point-card.value li::before{background:#4ade80}
+    .faq{background:rgba(20,28,46,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:24px 28px}
+    .faq summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;font-size:1.05rem;font-weight:600;color:#E8EDF5;gap:16px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:'+';font-family:'Roboto Mono',monospace;font-size:1.4rem;color:#1ABADC;flex-shrink:0;transition:transform .25s}
+    .faq[open] summary::after{transform:rotate(45deg)}
+    .faq[open] p{margin-top:14px;font-size:.95rem;color:#8A9BB5;line-height:1.65}
+    .related-card{background:rgba(20,28,46,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:24px 26px;display:flex;flex-direction:column;gap:10px;transition:border-color .25s,transform .35s}
+    .related-card:hover{border-color:rgba(26,186,220,0.35);transform:translateY(-2px)}
+    .related-card .icon{width:36px;height:36px;border-radius:10px;background:rgba(26,186,220,0.10);border:1px solid rgba(26,186,220,0.22);color:#1ABADC;display:flex;align-items:center;justify-content:center}
+  </style>
+  <script src="/js/site-cursor.js" defer></script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+
+<!-- NAV -->
+<nav class="sticky top-0 z-50 border-b border-white/[0.05]" style="background:rgba(12,19,36,0.92);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
+    </a>
+    <div class="hidden md:flex items-center gap-7 font-body text-sm">
+      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Services</a>
+      <a href="/work" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
+      <a href="/ai-solutions" class="text-primary transition-colors duration-200">AI Solutions</a>
+      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Industries</a>
+      <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
+    </div>
+    <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
+      Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+    <button id="navToggle" class="md:hidden p-2 text-on-surface-dim hover:text-primary transition-colors" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="material-symbols-outlined" id="menuIcon">menu</span>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl mx-6 mb-3" style="background:rgba(17,24,39,0.96);">
+    <div class="flex flex-col gap-1 text-sm font-body">
+      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Services</a>
+      <a href="/work" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work</a>
+      <a href="/ai-solutions" class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">AI Solutions</a>
+      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Industries</a>
+      <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
+      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="max-w-7xl mx-auto px-6 pt-6 text-xs font-mono text-on-surface-muted">
+  <a href="/ai-solutions" class="hover:text-primary transition-colors">AI Solutions</a>
+  <span class="px-2 text-on-surface-muted/40">/</span>
+  <span class="text-on-surface-dim">Smart Business Dashboards</span>
+</div>
+
+<!-- HERO -->
+<section class="relative pt-12 pb-20 overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=85" alt="" aria-hidden="true" width="1920" height="1024" class="absolute inset-0 w-full h-full object-cover opacity-30" loading="eager">
+  <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(12,19,36,0.78) 0%,rgba(12,19,36,0.92) 50%,#0c1324 100%);"></div>
+  <div class="absolute inset-0 grid-bg opacity-20"></div>
+  <div class="absolute -top-32 left-1/3 w-[560px] h-[560px] rounded-full pointer-events-none" style="background:rgba(26,186,220,0.18);filter:blur(140px);"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="max-w-4xl">
+      <div class="reveal inline-flex">
+        <span class="sec-eyebrow"><span class="dot"></span>04 · Analytics</span>
+      </div>
+      <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.04] reveal" style="transition-delay:.05s;">
+        Deep business insights. <span class="grad-text">No BI subscription.</span>
+      </h1>
+      <p class="mt-7 text-on-surface-dim text-lg leading-relaxed max-w-2xl reveal" style="transition-delay:.15s;">
+        Realtime dashboards connected directly to your database. Interactive drill-down. Fully custom to your KPIs. Self-hosted, no Tableau or PowerBI licensing fees, no third-party data sharing.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3 reveal" style="transition-delay:.22s;">
+        <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-surface px-7 py-3.5 font-semibold hover:bg-primary-dim hover:shadow-[0_0_32px_-4px_rgba(26,186,220,0.5)] transition-all">
+          Book a Discovery Call <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGE / SOLUTION / VALUE -->
+<section class="py-16 px-6 max-w-7xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <div class="point-card challenge reveal">
+      <div class="icon"><span class="material-symbols-outlined">flag</span></div>
+      <h3 class="text-xl font-bold text-on-surface mb-3">The Challenge</h3>
+      <ul><li>Enterprise BI tools carry per-seat fees that scale badly.</li>
+        <li>Data locked in databases, inaccessible to decision-makers without an analyst.</li>
+        <li>Static reports can't answer the follow-up question the CEO always asks.</li></ul>
+    </div>
+    <div class="point-card solution reveal" style="transition-delay:.06s;">
+      <div class="icon"><span class="material-symbols-outlined">construction</span></div>
+      <h3 class="text-xl font-bold text-on-surface mb-3">Our Solution</h3>
+      <ul><li>Realtime dashboards connected directly to your existing database.</li>
+        <li>Interactive drill-down — filter, pivot, and explore on the fly.</li>
+        <li>Fully custom to your business metrics and KPIs, not a template.</li>
+        <li>Self-hosted on your infrastructure — no third-party data sharing.</li>
+        <li>Optional AI layer for natural-language questions against your data.</li></ul>
+    </div>
+    <div class="point-card value reveal" style="transition-delay:.12s;">
+      <div class="icon"><span class="material-symbols-outlined">trending_up</span></div>
+      <h3 class="text-xl font-bold text-on-surface mb-3">Value Delivered</h3>
+      <ul><li>Business insights on demand, no analyst required.</li>
+        <li>Meaningful cost savings versus BI tool subscriptions at scale.</li>
+        <li>Full ownership and privacy of your business data.</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="pb-16 px-6 max-w-7xl mx-auto">
+  <div class="glass-card p-8 md:p-10 reveal">
+    <div class="flex flex-col md:flex-row gap-8 md:items-center md:justify-between">
+      <div class="flex-1">
+        <span class="sec-eyebrow"><span class="dot"></span>Stack</span>
+        <h3 class="mt-5 text-2xl md:text-3xl font-bold text-on-surface">Production-grade infrastructure.</h3>
+        <p class="mt-3 text-on-surface-dim leading-relaxed max-w-2xl">We pick the best-fit components based on your data volume, latency needs, and privacy requirements.</p>
+      </div>
+      <div class="flex flex-wrap gap-2 md:max-w-md md:justify-end">
+        <span class="pill">React · Next.js</span>
+        <span class="pill">D3.js · Recharts</span>
+        <span class="pill">Node.js · FastAPI</span>
+        <span class="pill">PostgreSQL · BigQuery</span>
+        <span class="pill">ClickHouse · DuckDB</span>
+        <span class="pill">Docker · Self-hosted</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FAQ -->
+<section class="pb-20 px-6 max-w-4xl mx-auto">
+  <div class="text-center mb-10 reveal">
+    <span class="sec-eyebrow"><span class="dot"></span>Frequently Asked</span>
+    <h3 class="mt-5 text-3xl md:text-4xl font-bold text-on-surface">Questions buyers ask <span class="grad-text">before they sign.</span></h3>
+  </div>
+  <div class="flex flex-col gap-3">
+        <details class="faq reveal">
+      <summary>What databases do you connect to?</summary>
+      <p>Any SQL database (PostgreSQL, MySQL, SQL Server, BigQuery, Snowflake, ClickHouse), plus NoSQL (MongoDB, DynamoDB) and warehouses. We also support connecting multiple sources into a single unified view.</p>
+    </details>
+    <details class="faq reveal" style="transition-delay:.04s;">
+      <summary>Can we get custom charts, or is it templated?</summary>
+      <p>Fully custom. We start from your KPI list, not from a template. If you can describe the chart, we can build it. Common patterns (revenue over time, cohort retention, funnel analysis) are already in our component library and reused.</p>
+    </details>
+    <details class="faq reveal" style="transition-delay:.08s;">
+      <summary>How does this compare to Tableau or PowerBI cost?</summary>
+      <p>You pay a one-time build cost plus ongoing hosting (typically $50-200/month on your cloud). BI tools bill per seat or per capacity unit — the math flips in your favor after ~15 users or moderate data volume.</p>
+    </details>
+    <details class="faq reveal" style="transition-delay:.12s;">
+      <summary>Can we control who sees what?</summary>
+      <p>Yes. Role-based access control on views, filters, and even individual metrics. Common patterns: exec dashboard, ops dashboard, per-team dashboards, per-customer dashboards for external sharing.</p>
+    </details>
+    <details class="faq reveal" style="transition-delay:.16s;">
+      <summary>Do you offer natural-language querying?</summary>
+      <p>Optional. We can add an LLM layer where users type 'show me revenue by region for Q3' and the system generates the SQL and renders the chart. Requires a bit more discovery and validation during scoping.</p>
+    </details>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="pb-24 px-6 max-w-7xl mx-auto border-t border-white/[0.06] pt-16">
+  <div class="mb-10 reveal">
+    <span class="sec-eyebrow"><span class="dot"></span>Related Capabilities</span>
+    <h3 class="mt-5 text-3xl md:text-4xl font-bold text-on-surface">More AI we ship.</h3>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <a href="/ai-solutions/churn-prediction" class="related-card reveal">
+      <div class="icon"><span class="material-symbols-outlined text-[20px]">show_chart</span></div>
+      <h4 class="text-base font-bold text-on-surface">Customer Churn Prediction</h4>
+      <p class="text-sm text-on-surface-dim leading-relaxed">Predictive layer on top of the same underlying data.</p>
+      <span class="text-xs font-mono text-primary mt-1">Explore →</span>
+    </a>
+    <a href="/ai-solutions/business-automation" class="related-card reveal" style="transition-delay:.05s;">
+      <div class="icon"><span class="material-symbols-outlined text-[20px]">settings_suggest</span></div>
+      <h4 class="text-base font-bold text-on-surface">Business Automation</h4>
+      <p class="text-sm text-on-surface-dim leading-relaxed">Trigger workflows off dashboard alerts.</p>
+      <span class="text-xs font-mono text-primary mt-1">Explore →</span>
+    </a>
+    <a href="/ai-solutions/on-premise-ai" class="related-card reveal" style="transition-delay:.10s;">
+      <div class="icon"><span class="material-symbols-outlined text-[20px]">dns</span></div>
+      <h4 class="text-base font-bold text-on-surface">On-Premise AI Serving</h4>
+      <p class="text-sm text-on-surface-dim leading-relaxed">Add natural-language query without sending data to external APIs.</p>
+      <span class="text-xs font-mono text-primary mt-1">Explore →</span>
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pb-24 px-6 max-w-7xl mx-auto">
+  <div class="rounded-3xl p-12 md:p-16 border border-primary/20 reveal" style="background:linear-gradient(135deg,rgba(26,186,220,0.08) 0%,rgba(20,28,46,1) 100%);">
+    <div class="max-w-2xl">
+      <span class="sec-eyebrow mb-6"><span class="dot"></span>Start a Project</span>
+      <h3 class="mt-6 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] mb-6">
+        Which question do you keep <span class="grad-text">asking your data team?</span>
+      </h3>
+      <p class="text-on-surface-dim text-base md:text-lg leading-relaxed mb-10">Tell us the KPI you can never get a straight answer on, and we'll show you what a live dashboard for it looks like — before you sign anything.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-surface px-7 py-3.5 rounded-full font-bold text-sm hover:bg-primary-dim transition-colors shadow-lg shadow-primary/30">
+          Book a Discovery Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+        <a href="/ai-solutions" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-white/15 bg-white/[0.03] hover:border-primary hover:text-primary transition-colors">All AI Capabilities</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/[0.05] py-16 px-6" style="background:#080e1c;">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="inline-block mb-4"><img src="/logo-icon.png" alt="OnPoint Nexus" class="h-14 w-auto" width="56" height="56" style="mix-blend-mode:screen;"></a>
+        <p class="text-on-surface-muted text-sm leading-relaxed mb-4">AI-First Enterprise Technology Partner.<br>Discovery to production in 45 days.</p>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">AI Capabilities</h4>
+        <ul class="space-y-3">
+          <li><a href="/ai-solutions/rag-chatbot" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">RAG Chatbot</a></li>
+          <li><a href="/ai-solutions/voice-agent" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Voice Agent</a></li>
+          <li><a href="/ai-solutions/whatsapp-telegram-bot" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">WhatsApp &amp; Telegram</a></li>
+          <li><a href="/ai-solutions" class="text-primary text-sm font-semibold hover:text-white transition-colors">All capabilities →</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Company</h4>
+        <ul class="space-y-3">
+          <li><a href="/about" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">About Us</a></li>
+          <li><a href="/work" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Case Studies</a></li>
+          <li><a href="/services" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Services</a></li>
+          <li><a href="/industries" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Industries</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Connect</h4>
+        <ul class="space-y-3">
+          <li><a href="mailto:hr@onpointsoft.com" class="text-on-surface-muted text-sm hover:text-primary transition-colors">hr@onpointsoft.com</a></li>
+          <li><a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">LinkedIn</a></li>
+          <li><a href="/#contact" class="text-primary text-sm font-semibold hover:text-white transition-colors">Book a Discovery Call →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-on-surface-muted font-mono">© 2026 OnPoint Nexus Pvt. Ltd. All rights reserved.</p>
+      <div class="flex flex-wrap gap-5 justify-center">
+        <a href="/privacy-policy" rel="nofollow" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Privacy</a>
+        <a href="/terms" rel="nofollow" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle=document.getElementById('navToggle');const menu=document.getElementById('mobileMenu');const icon=document.getElementById('menuIcon');
+  toggle.addEventListener('click',()=>{const open=menu.classList.toggle('hidden')===false;icon.textContent=open?'close':'menu';toggle.setAttribute('aria-expanded',open)});
+  if(window.IntersectionObserver){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in-view');o.unobserve(x.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>o.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'))}
+</script>
+</body>
+</html>
