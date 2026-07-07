@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <!-- ═══ PRIMARY SEO ═══════════════════════════════════════════ -->
+  <title>DinePoint — India's AI Menu Platform for Restaurants | OnPoint Nexus</title>
+  <meta name="description" content="DinePoint is India's AI menu platform. QR code menus with AI food concierge, live table alerts on kitchen TV, and follow-for-reward marketing. No app, no hardware. An OnPoint Nexus product.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.onpointnexus.com/products/dinepoint">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OnPoint Nexus">
+  <meta property="og:url" content="https://www.onpointnexus.com/products/dinepoint">
+  <meta property="og:title" content="DinePoint — Scan. Know. Dine. India's AI Menu Platform">
+  <meta property="og:description" content="Turn every table into a growth channel. AI menu, live service alerts, and follow-for-reward marketing on one QR code.">
+  <meta property="og:image" content="https://www.onpointnexus.com/og-image.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = { darkMode:'class', theme:{extend:{colors:{primary:'#1ABADC','primary-dim':'#148FAA',surface:'#0c1324','surface-card':'#141c2e','surface-high':'#1a2235','surface-low':'#080e1c','on-surface':'#E8EDF5','on-surface-dim':'#8A9BB5','on-surface-muted':'#4A5A72'},fontFamily:{body:['Plus Jakarta Sans','sans-serif'],mono:['Roboto Mono','monospace']}}}}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-N2WCZPCE46');</script>
+
+  <!-- JSON-LD: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DinePoint",
+    "url": "https://www.onpointnexus.com/products/dinepoint",
+    "operatingSystem": "Web · PWA",
+    "applicationCategory": "BusinessApplication",
+    "description": "India's AI menu platform for restaurants. QR code menus with AI food concierge, real-time kitchen alerts, and follow-for-reward marketing.",
+    "publisher": { "@type": "Organization", "name": "OnPoint Nexus", "url": "https://www.onpointnexus.com" },
+    "offers": { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "price": "On Request", "priceCurrency": "INR" } },
+    "featureList": "AI Food Concierge · Multilingual Menu · Nutrition AI · One-Tap Waiter Call · Kitchen Display · Follow-for-Reward · Loyalty Program · Real-time Analytics"
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Do diners need to install an app?","acceptedAnswer":{"@type":"Answer","text":"No. DinePoint runs entirely in the mobile browser. Guests scan the table QR code and the menu opens instantly. No app store, no login."}},
+    {"@type":"Question","name":"What hardware does the restaurant need?","acceptedAnswer":{"@type":"Answer","text":"None specifically. The kitchen display runs on any tablet or TV browser, the waiter view runs on any smartphone, and the printable QR codes work on any paper. If you have Wi-Fi and a browser, you have DinePoint."}},
+    {"@type":"Question","name":"Does it work in Indian languages?","acceptedAnswer":{"@type":"Answer","text":"Yes. Menu and AI concierge both support English, Hindi, and other Indian languages, with voice input on the concierge."}},
+    {"@type":"Question","name":"Can we use our own domain for the menu?","acceptedAnswer":{"@type":"Answer","text":"Yes. Restaurants can serve their DinePoint menu on their own domain instead of the default dinepoint.in subdomain."}},
+    {"@type":"Question","name":"How does the follow-for-reward marketing work?","acceptedAnswer":{"@type":"Answer","text":"After the meal, diners see a one-tap prompt like 'Follow us on Instagram to unlock a free dessert.' The reward is unlocked via phone OTP with a per-phone daily cap to prevent abuse. Staff verify the code at the table using a PIN-gated screen."}},
+    {"@type":"Question","name":"Will it integrate with our POS?","acceptedAnswer":{"@type":"Answer","text":"POS and KOT printer integrations are on the near-term roadmap. Today, DinePoint runs alongside your existing POS as a customer-facing and service-alert layer."}}
+  ]}
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.onpointnexus.com/"},
+    {"@type":"ListItem","position":2,"name":"Products","item":"https://www.onpointnexus.com/products"},
+    {"@type":"ListItem","position":3,"name":"DinePoint","item":"https://www.onpointnexus.com/products/dinepoint"}
+  ]}
+  </script>
+
+  <style>
+    body { background-color: #0c1324; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .grid-bg { background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+    .reveal.in-view { opacity: 1; transform: none; }
+    .glass-card { background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1rem; }
+    .grad-text { background: linear-gradient(135deg, #1ABADC 0%, #8de4f0 55%, #cef4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .grad-warm { background: linear-gradient(135deg, #fbbf24 0%, #f97316 55%, #ef4444 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .sec-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px; border-radius: 999px; border: 1px solid rgba(26,186,220,0.28); background: rgba(26,186,220,0.08); color: #1ABADC; font-family: 'Roboto Mono', monospace; font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; }
+    .sec-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #1ABADC; }
+    .pill { display:inline-flex; align-items:center; gap:6px; font-family:'Roboto Mono', monospace; font-size:.62rem; padding:5px 12px; border-radius:999px; background:rgba(26,186,220,0.08); border:1px solid rgba(26,186,220,0.22); color:#1ABADC; letter-spacing:.06em; }
+    .live-badge { display:inline-flex; align-items:center; gap:7px; padding:5px 12px; border-radius:999px; background:rgba(74,222,128,0.12); border:1px solid rgba(74,222,128,0.35); color:#4ade80; font-family:'Roboto Mono',monospace; font-size:.62rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; }
+    .live-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:#4ade80; animation: livePulse 1.5s ease infinite; }
+    @keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    /* Problem cards */
+    .point-card { background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1.25rem; padding: 32px 28px; transition: border-color .25s; }
+    .point-card:hover { border-color: rgba(26,186,220,0.3); }
+    .point-card .icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 18px; background: rgba(248,113,113,0.10); border: 1px solid rgba(248,113,113,0.25); color: #f87171; }
+    .point-card h3 { font-size: 1.15rem; font-weight: 700; color: #E8EDF5; margin-bottom: 10px; line-height: 1.25; letter-spacing: -.01em; }
+    .point-card p { font-size: .92rem; color: #8A9BB5; line-height: 1.6; }
+
+    /* Step list for how-it-works */
+    .step-list { display: flex; flex-direction: column; gap: 14px; }
+    .step-item { display: flex; align-items: flex-start; gap: 16px; padding: 16px 18px; background: rgba(20,28,46,0.45); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; }
+    .step-num { width: 28px; height: 28px; border-radius: 8px; background: rgba(26,186,220,0.10); border: 1px solid rgba(26,186,220,0.25); color: #1ABADC; font-family: 'Roboto Mono', monospace; font-size: .72rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .step-text { font-size: .95rem; color: #E8EDF5; line-height: 1.55; }
+    .step-text span.dim { color: #8A9BB5; }
+
+    /* Feature grid */
+    .feat-group { background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1.25rem; padding: 30px 28px 26px; }
+    .feat-group h4 { display: flex; align-items: center; gap: 10px; font-size: 1.05rem; font-weight: 700; color: #E8EDF5; margin-bottom: 18px; letter-spacing: -.005em; }
+    .feat-group h4 .badge { font-family: 'Roboto Mono', monospace; font-size: .58rem; font-weight: 700; padding: 3px 8px; border-radius: 999px; background: rgba(26,186,220,0.10); border: 1px solid rgba(26,186,220,0.22); color: #1ABADC; text-transform: uppercase; letter-spacing: .08em; }
+    .feat-list { display: flex; flex-direction: column; gap: 12px; }
+    .feat-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: #8A9BB5; line-height: 1.55; }
+    .feat-list li strong { color: #E8EDF5; font-weight: 600; }
+    .feat-list li .dot { width: 6px; height: 6px; border-radius: 50%; background: #1ABADC; margin-top: 8px; flex-shrink: 0; }
+
+    /* Phone mockup */
+    .phone-frame { position: relative; width: 280px; height: 570px; background: #0a0a12; border-radius: 42px; padding: 8px; box-shadow: 0 40px 100px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(26,186,220,0.15) inset, 0 0 60px -10px rgba(26,186,220,0.25); margin: 0 auto; }
+    .phone-screen { width: 100%; height: 100%; background: linear-gradient(180deg, #fff6ec 0%, #fef2e0 100%); border-radius: 34px; position: relative; overflow: hidden; }
+    .phone-notch { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 90px; height: 22px; background: #0a0a12; border-radius: 0 0 14px 14px; z-index: 5; }
+    .phone-content { position: absolute; inset: 0; padding: 42px 16px 16px; overflow: hidden; }
+    .rest-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; padding: 0 4px; }
+    .rest-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 15px; color: #2d1b0e; letter-spacing: -.01em; }
+    .rest-cart { font-size: 18px; }
+    .rest-tabs { display: flex; gap: 6px; margin-bottom: 14px; }
+    .rest-tab { font-size: 10px; font-weight: 700; padding: 5px 12px; border-radius: 999px; background: #fff; color: #78350f; text-transform: uppercase; letter-spacing: .04em; }
+    .rest-tab.active { background: #ea580c; color: #fff; }
+    .dish-card { background: #fff; border-radius: 14px; padding: 10px 12px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .dish-img { width: 50px; height: 50px; border-radius: 10px; flex-shrink: 0; }
+    .dish-img.d1 { background: linear-gradient(135deg, #f97316, #dc2626); }
+    .dish-img.d2 { background: linear-gradient(135deg, #eab308, #ca8a04); }
+    .dish-img.d3 { background: linear-gradient(135deg, #16a34a, #15803d); }
+    .dish-body { flex: 1; min-width: 0; }
+    .dish-name { font-size: 12px; font-weight: 700; color: #2d1b0e; letter-spacing: -.005em; }
+    .dish-tags { font-size: 9px; color: #92603b; margin-top: 2px; }
+    .dish-price { font-size: 12px; font-weight: 800; color: #ea580c; }
+    .ai-chip { position: absolute; bottom: 16px; left: 16px; right: 16px; background: linear-gradient(90deg, #ea580c, #dc2626); border-radius: 14px; padding: 10px 12px; display: flex; align-items: center; gap: 8px; color: #fff; box-shadow: 0 8px 24px -6px rgba(220,38,38,0.4); }
+    .ai-chip .icon { width: 26px; height: 26px; border-radius: 8px; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+    .ai-chip .text { font-size: 11px; font-weight: 600; line-height: 1.2; }
+    .ai-chip .text small { display: block; opacity: .8; font-weight: 500; font-size: 9px; margin-top: 1px; }
+    .waiter-toast { position: absolute; top: 60px; right: 12px; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 10px; padding: 6px 10px 6px 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 6px; z-index: 4; animation: toastFloat 3s ease-in-out infinite; }
+    @keyframes toastFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+    .waiter-toast .icon { color: #ea580c; font-size: 12px; }
+    .waiter-toast .text { font-size: 9px; font-weight: 700; color: #2d1b0e; }
+
+    /* Feature category header colors */
+    .cat-diner { background: rgba(74,222,128,0.10); border-color: rgba(74,222,128,0.25); color: #4ade80; }
+    .cat-marketing { background: rgba(251,191,36,0.10); border-color: rgba(251,191,36,0.25); color: #fbbf24; }
+    .cat-ops { background: rgba(139,92,246,0.10); border-color: rgba(139,92,246,0.25); color: #a78bfa; }
+    .cat-owner { background: rgba(26,186,220,0.10); border-color: rgba(26,186,220,0.25); color: #1ABADC; }
+
+    /* Roadmap card */
+    .road-card { padding: 20px 22px; background: rgba(20,28,46,0.45); border: 1px dashed rgba(255,255,255,0.12); border-radius: 14px; }
+    .road-card h5 { font-size: .95rem; font-weight: 700; color: #E8EDF5; margin-bottom: 6px; letter-spacing: -.005em; }
+    .road-card p { font-size: .82rem; color: #8A9BB5; line-height: 1.5; }
+    .road-card .tag { display: inline-block; font-family: 'Roboto Mono', monospace; font-size: .55rem; padding: 3px 8px; border-radius: 999px; background: rgba(139,92,246,0.10); border: 1px solid rgba(139,92,246,0.25); color: #a78bfa; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
+
+    /* FAQ */
+    .faq { background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1rem; padding: 22px 26px; }
+    .faq summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; font-size: 1rem; font-weight: 600; color: #E8EDF5; gap: 16px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: '+'; font-family: 'Roboto Mono', monospace; font-size: 1.3rem; color: #1ABADC; flex-shrink: 0; transition: transform .25s; }
+    .faq[open] summary::after { transform: rotate(45deg); }
+    .faq[open] p { margin-top: 12px; font-size: .92rem; color: #8A9BB5; line-height: 1.65; }
+  </style>
+  <script src="/js/site-cursor.js" defer></script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+
+<!-- NAV -->
+<nav class="sticky top-0 z-50 border-b border-white/[0.05]" style="background:rgba(12,19,36,0.92);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
+    </a>
+    <div class="hidden md:flex items-center gap-6 font-body text-sm">
+      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Services</a>
+      <a href="/work" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
+      <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors duration-200">AI Solutions</a>
+      <a href="/products" class="text-primary transition-colors duration-200">Products</a>
+      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Industries</a>
+      <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
+    </div>
+    <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
+      Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+    <button id="navToggle" class="md:hidden p-2 text-on-surface-dim hover:text-primary transition-colors" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="material-symbols-outlined" id="menuIcon">menu</span>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl mx-6 mb-3" style="background:rgba(17,24,39,0.96);">
+    <div class="flex flex-col gap-1 text-sm font-body">
+      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Services</a>
+      <a href="/work" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work</a>
+      <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">AI Solutions</a>
+      <a href="/products" class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">Products</a>
+      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Industries</a>
+      <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
+      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="max-w-7xl mx-auto px-6 pt-6 text-xs font-mono text-on-surface-muted">
+  <a href="/products" class="hover:text-primary transition-colors">Products</a>
+  <span class="px-2 text-on-surface-muted/40">/</span>
+  <span class="text-on-surface-dim">DinePoint</span>
+</div>
+
+<!-- HERO -->
+<section class="relative pt-8 pb-24 overflow-hidden">
+  <div class="absolute inset-0" style="background:radial-gradient(ellipse 90% 55% at 50% 0%, rgba(234,88,12,0.18) 0%, transparent 55%), linear-gradient(180deg, rgba(12,19,36,0) 0%, rgba(12,19,36,0.4) 60%, #0c1324 100%);"></div>
+  <div class="absolute inset-0 grid-bg opacity-25"></div>
+  <div class="absolute -top-40 -left-32 w-[560px] h-[560px] rounded-full pointer-events-none" style="background:rgba(234,88,12,0.15);filter:blur(140px);"></div>
+  <div class="absolute -top-32 right-0 w-[560px] h-[560px] rounded-full pointer-events-none" style="background:rgba(26,186,220,0.16);filter:blur(140px);"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap reveal">
+          <span class="sec-eyebrow"><span class="dot"></span>An OnPoint Nexus Product</span>
+          <span class="live-badge">Live in India</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1] reveal" style="transition-delay:.05s;">
+          Scan. Know. <span class="grad-warm">Dine.</span>
+        </h1>
+        <p class="mt-7 text-on-surface-dim text-lg md:text-xl leading-relaxed max-w-xl reveal" style="transition-delay:.15s;">
+          India's AI menu platform for restaurants. Turn every table into a growth channel with an AI food concierge, real-time service alerts, and follow-for-reward marketing. All from one QR code. No app, no hardware, no friction.
+        </p>
+        <div class="mt-9 flex flex-wrap gap-3 reveal" style="transition-delay:.22s;">
+          <a href="https://dinepoint.onpointnexus.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-surface px-7 py-3.5 font-semibold hover:bg-primary-dim hover:shadow-[0_0_32px_-4px_rgba(26,186,220,0.5)] transition-all">
+            Visit DinePoint <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+          </a>
+          <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3.5 font-semibold hover:border-primary hover:text-primary transition-colors">
+            Book a 10-min Demo <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </div>
+        <div class="mt-12 grid grid-cols-3 gap-3 max-w-lg reveal" style="transition-delay:.3s;">
+          <div class="glass-card px-4 py-3">
+            <div class="text-lg font-bold text-on-surface leading-none">1 QR</div>
+            <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest mt-1.5">Zero installs</div>
+          </div>
+          <div class="glass-card px-4 py-3">
+            <div class="text-lg font-bold text-on-surface leading-none">&lt;1s</div>
+            <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest mt-1.5">Menu load</div>
+          </div>
+          <div class="glass-card px-4 py-3">
+            <div class="text-lg font-bold text-on-surface leading-none">Live</div>
+            <div class="text-[10px] font-mono text-on-surface-muted uppercase tracking-widest mt-1.5">Kitchen alerts</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone mockup -->
+      <div class="reveal flex justify-center" style="transition-delay:.2s;">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-content">
+              <div class="rest-header">
+                <div class="rest-name">The Spice Route</div>
+                <div class="rest-cart">🛒</div>
+              </div>
+              <div class="rest-tabs">
+                <span class="rest-tab active">Veg</span>
+                <span class="rest-tab">Non-Veg</span>
+                <span class="rest-tab">Jain</span>
+              </div>
+              <div class="dish-card">
+                <div class="dish-img d1"></div>
+                <div class="dish-body">
+                  <div class="dish-name">Butter Paneer Masala</div>
+                  <div class="dish-tags">🌶️ Medium · 480 kcal</div>
+                </div>
+                <div class="dish-price">₹340</div>
+              </div>
+              <div class="dish-card">
+                <div class="dish-img d2"></div>
+                <div class="dish-body">
+                  <div class="dish-name">Malai Kofta</div>
+                  <div class="dish-tags">🌱 Mild · 520 kcal</div>
+                </div>
+                <div class="dish-price">₹320</div>
+              </div>
+              <div class="dish-card">
+                <div class="dish-img d3"></div>
+                <div class="dish-body">
+                  <div class="dish-name">Palak Paneer</div>
+                  <div class="dish-tags">🌱 Mild · 390 kcal</div>
+                </div>
+                <div class="dish-price">₹300</div>
+              </div>
+              <div class="ai-chip">
+                <div class="icon">✨</div>
+                <div class="text">Ask AI: "spicy but light?"<small>English · Hindi · Voice</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="waiter-toast">
+            <span class="icon material-symbols-outlined">local_bar</span>
+            <span class="text">Water on the way</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROBLEM -->
+<section class="py-20 px-6 max-w-7xl mx-auto">
+  <div class="max-w-3xl mb-14 reveal">
+    <span class="sec-eyebrow"><span class="dot"></span>01 · Why DinePoint Exists</span>
+    <h2 class="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05]">
+      Restaurants in India face <span class="grad-warm">three quiet, expensive problems.</span>
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <div class="point-card reveal">
+      <div class="icon"><span class="material-symbols-outlined">description</span></div>
+      <h3>Menus are static.</h3>
+      <p>Paper menus can't answer questions, can't upsell, can't show what a dish actually looks like, and can't be updated when a price or ingredient changes.</p>
+    </div>
+    <div class="point-card reveal" style="transition-delay:.05s;">
+      <div class="icon"><span class="material-symbols-outlined">back_hand</span></div>
+      <h3>Service is invisible.</h3>
+      <p>Guests wave at waiters. Waiters miss tables. Owners don't know how long guests wait until the review lands on Google days later.</p>
+    </div>
+    <div class="point-card reveal" style="transition-delay:.1s;">
+      <div class="icon"><span class="material-symbols-outlined">campaign</span></div>
+      <h3>Marketing is manual.</h3>
+      <p>Restaurants beg guests for reviews and Instagram follows. Most guests forget the moment they leave the table.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-20 px-6 max-w-7xl mx-auto border-t border-white/[0.06]">
+  <div class="max-w-3xl mb-12 reveal">
+    <span class="sec-eyebrow"><span class="dot"></span>02 · How It Works</span>
+    <h2 class="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05]">
+      From table QR to Instagram follow. <span class="grad-text">In 60 seconds.</span>
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="reveal">
+      <h3 class="text-xl font-bold text-on-surface mb-6 flex items-center gap-2.5">
+        <span class="material-symbols-outlined text-primary">restaurant</span> For the diner
+      </h3>
+      <div class="step-list">
+        <div class="step-item"><div class="step-num">01</div><div class="step-text">Scans the QR code on the table. <span class="dim">The restaurant's branded menu opens in the browser.</span></div></div>
+        <div class="step-item"><div class="step-num">02</div><div class="step-text">Browses dishes with photos, nutrition, and tags. <span class="dim">Spicy, veg, jain, gluten-free filters.</span></div></div>
+        <div class="step-item"><div class="step-num">03</div><div class="step-text">Asks the AI Food Concierge. <span class="dim">In English, Hindi, or their language. By text or voice.</span></div></div>
+        <div class="step-item"><div class="step-num">04</div><div class="step-text">Taps "Call Waiter" for water, bill, or help. <span class="dim">A ping lands on the kitchen TV and the waiter's phone in real time.</span></div></div>
+        <div class="step-item"><div class="step-num">05</div><div class="step-text">Rates dishes and shares photos. <span class="dim">Per-dish reviews land on the restaurant dashboard.</span></div></div>
+        <div class="step-item"><div class="step-num">06</div><div class="step-text">Taps "Follow us on Instagram" and unlocks a reward. <span class="dim">Phone OTP verified. Redemption code at the table.</span></div></div>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:.05s;">
+      <h3 class="text-xl font-bold text-on-surface mb-6 flex items-center gap-2.5">
+        <span class="material-symbols-outlined text-primary">store</span> For the restaurant
+      </h3>
+      <div class="step-list">
+        <div class="step-item"><div class="step-num">01</div><div class="step-text">Owner signs up and adds dishes. <span class="dim">Bulk import supported. Prints QR codes from the dashboard.</span></div></div>
+        <div class="step-item"><div class="step-num">02</div><div class="step-text">Kitchen tablet or TV opens the Kitchen Display. <span class="dim">Every table request appears with color-coded urgency and an audible ding.</span></div></div>
+        <div class="step-item"><div class="step-num">03</div><div class="step-text">Waiters open the Waiter view on their phone. <span class="dim">Vibration, sound alerts, and "On my way" / "Done" buttons.</span></div></div>
+        <div class="step-item"><div class="step-num">04</div><div class="step-text">Owner sees the whole picture on the dashboard. <span class="dim">Live reviews, loyalty redemptions, social claims, weekly analytics.</span></div></div>
+        <div style="margin-top:14px;padding:20px;background:linear-gradient(135deg,rgba(26,186,220,0.08),rgba(20,28,46,0.5));border:1px solid rgba(26,186,220,0.2);border-radius:14px;">
+          <p style="font-family:'Roboto Mono',monospace;font-size:.6rem;color:#1ABADC;letter-spacing:.1em;text-transform:uppercase;font-weight:600;">Setup time</p>
+          <p style="font-size:1.5rem;font-weight:800;color:#E8EDF5;margin-top:6px;letter-spacing:-.02em;">Under 10 minutes</p>
+          <p style="font-size:.85rem;color:#8A9BB5;margin-top:4px;">Onboarding wizard walks through profile, first dishes, and first QR.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-20 px-6 max-w-7xl mx-auto border-t border-white/[0.06]">
+  <div class="max-w-3xl mb-12 reveal">
+    <span class="sec-eyebrow"><span class="dot"></span>03 · What's Inside</span>
+    <h2 class="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05]">
+      Four modules. <span class="grad-text">One QR code.</span>
+    </h2>
+    <p class="mt-4 text-on-surface-dim text-lg max-w-2xl leading-relaxed">
+      Every module works standalone. All four together turn a restaurant into a connected, measurable operation with a marketing loop that runs on its own.
+    </p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+    <div class="feat-group reveal">
+      <h4><span class="badge cat-diner">Diner Experience</span></h4>
+      <ul class="feat-list">
+        <li><span class="dot" style="background:#4ade80"></span><div><strong>AI Food Concierge.</strong> Natural language chat that recommends dishes by mood, diet, or occasion. Voice input.</div></li>
+        <li><span class="dot" style="background:#4ade80"></span><div><strong>Multilingual menu.</strong> Menu and concierge in English, Hindi, and other Indian languages.</div></li>
+        <li><span class="dot" style="background:#4ade80"></span><div><strong>Nutrition AI.</strong> Auto-generated calories, macros, allergens, and ingredient breakdown per dish.</div></li>
+        <li><span class="dot" style="background:#4ade80"></span><div><strong>One-tap Call Waiter.</strong> Water, bill, cutlery, help. No WhatsApp, no phone numbers.</div></li>
+        <li><span class="dot" style="background:#4ade80"></span><div><strong>Filters and search.</strong> Veg, non-veg, vegan, jain, spice level, price range.</div></li>
+      </ul>
+    </div>
+
+    <div class="feat-group reveal" style="transition-delay:.05s;">
+      <h4><span class="badge cat-marketing">Follow-for-Reward Marketing</span></h4>
+      <ul class="feat-list">
+        <li><span class="dot" style="background:#fbbf24"></span><div><strong>One-tap follow flow.</strong> "🎁 Follow @restaurant → Free dessert today" completed in about ten seconds.</div></li>
+        <li><span class="dot" style="background:#fbbf24"></span><div><strong>Google Review flow.</strong> Deep link to the restaurant's review page. Reward unlocked on return.</div></li>
+        <li><span class="dot" style="background:#fbbf24"></span><div><strong>Share a dish.</strong> AI caption and branded share card posted directly to Instagram Story.</div></li>
+        <li><span class="dot" style="background:#fbbf24"></span><div><strong>OTP-verified rewards.</strong> Phone-number OTP with per-phone daily cap prevents abuse.</div></li>
+        <li><span class="dot" style="background:#fbbf24"></span><div><strong>Configurable offers.</strong> Owner sets reward, value, daily cap, and validity from the dashboard.</div></li>
+      </ul>
+    </div>
+
+    <div class="feat-group reveal" style="transition-delay:.1s;">
+      <h4><span class="badge cat-ops">Waiter & Kitchen Operations</span></h4>
+      <ul class="feat-list">
+        <li><span class="dot" style="background:#a78bfa"></span><div><strong>Kitchen Display (KDS).</strong> Fullscreen TV/tablet view. Green → amber → red as time passes. Audible ding on new alert.</div></li>
+        <li><span class="dot" style="background:#a78bfa"></span><div><strong>Waiter phone app.</strong> Web app secured by PIN + name picker. Push, sound, vibration.</div></li>
+        <li><span class="dot" style="background:#a78bfa"></span><div><strong>Live Table Alerts widget.</strong> Same feed on the owner's dashboard for oversight and history.</div></li>
+        <li><span class="dot" style="background:#a78bfa"></span><div><strong>Response-time analytics.</strong> Diner sees "Avg response 1m 20s today." Proof of good service.</div></li>
+        <li><span class="dot" style="background:#a78bfa"></span><div><strong>No WhatsApp dependency.</strong> Works even if the owner is offline. Everything runs inside DinePoint.</div></li>
+      </ul>
+    </div>
+
+    <div class="feat-group reveal" style="transition-delay:.15s;">
+      <h4><span class="badge cat-owner">Restaurant Dashboard</span></h4>
+      <ul class="feat-list">
+        <li><span class="dot" style="background:#1ABADC"></span><div><strong>Dish management.</strong> Add, edit, reorder, upload photos, mark availability, set tags.</div></li>
+        <li><span class="dot" style="background:#1ABADC"></span><div><strong>QR generator.</strong> Download printable QR codes per table or per outlet.</div></li>
+        <li><span class="dot" style="background:#1ABADC"></span><div><strong>Loyalty program.</strong> Configure points-per-visit and reward tiers.</div></li>
+        <li><span class="dot" style="background:#1ABADC"></span><div><strong>Weekly reports.</strong> Automated summary of visits, top dishes, review score, social growth.</div></li>
+        <li><span class="dot" style="background:#1ABADC"></span><div><strong>Onboarding wizard.</strong> Guided setup, restaurant profile, first dishes, first QR in under ten minutes.</div></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIVE PRODUCT SHOWCASE -->
+<section class="py-20 px-6 max-w-7xl mx-auto border-t border-white/[0.06]">
+  <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+    <span class="sec-eyebrow"><span class="dot"></span>04 · Try It Live</span>
+    <h2 class="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05]">
+      DinePoint is <span class="grad-text">live in production.</span>
+    </h2>
+    <p class="mt-4 text-on-surface-dim text-lg leading-relaxed">
+      Open the demo restaurant on your phone. Order, ask the AI, call a waiter, share a dish. No sign-up.
+    </p>
+  </div>
+
+  <a href="https://dinepoint.onpointnexus.com" target="_blank" rel="noopener" class="block max-w-4xl mx-auto reveal">
+    <div class="glass-card overflow-hidden" style="border-color:rgba(234,88,12,0.2);">
+      <div class="grid md:grid-cols-2 gap-0">
+        <div class="relative aspect-[16/10] md:aspect-auto overflow-hidden" style="background:linear-gradient(135deg,#7c2d12 0%,#dc2626 100%);">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div style="width:120px;height:120px;border-radius:20px;background:rgba(255,255,255,0.12);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:60px;">🍽️</div>
+          </div>
+          <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,0.4) 100%);"></div>
+          <span class="absolute top-4 left-4 live-badge">Live · No Sign-up</span>
+          <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white/90 text-xs font-mono">
+            <span>dinepoint.onpointnexus.com</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+          </div>
+        </div>
+        <div class="p-8 md:p-10 flex flex-col justify-center">
+          <p class="text-xs font-mono text-primary uppercase tracking-widest mb-3">Sample restaurant · Full flow</p>
+          <h4 class="text-2xl md:text-3xl font-bold text-on-surface mb-4 tracking-tight">Open on your phone.</h4>
+          <p class="text-on-surface-dim leading-relaxed mb-6">Scan a QR code from the marketing site, browse dishes with real photos and nutrition, ask the AI concierge a question, tap Call Waiter, and try the follow-for-reward flow. Everything runs live.</p>
+          <div class="flex flex-wrap gap-3">
+            <span class="inline-flex items-center gap-2 text-sm font-semibold text-primary">Open dinepoint.onpointnexus.com <span class="material-symbols-outlined text-[18px]">arrow_outward</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</section>
+
+<!-- WHAT MAKES IT DIFFERENT -->
+<section class="py-20 px-6 max-w-7xl mx-auto border-t border-white/[0.06]">
+  <div class="max-w-3xl mb-12 reveal">
+    <span class="sec-eyebrow"><span class="dot"></span>05 · Why This Product</span>
+    <h2 class="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05]">
+      What makes DinePoint <span class="grad-text">different.</span>
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="glass-card p-7 reveal">
+      <div class="text-2xl mb-3">🧠</div>
+      <h4 class="text-lg font-bold text-on-surface mb-2">AI-native, not AI-bolted-on</h4>
+      <p class="text-sm text-on-surface-dim leading-relaxed">The concierge, nutrition, and captions are core to the product. Not add-ons behind a paywall.</p>
+    </div>
+    <div class="glass-card p-7 reveal" style="transition-delay:.05s;">
+      <div class="text-2xl mb-3">🇮🇳</div>
+      <h4 class="text-lg font-bold text-on-surface mb-2">Designed for India</h4>
+      <p class="text-sm text-on-surface-dim leading-relaxed">Multilingual, veg / jain / spice-first filters, and WhatsApp-free by design.</p>
+    </div>
+    <div class="glass-card p-7 reveal" style="transition-delay:.1s;">
+      <div class="text-2xl mb-3">📱</div>
+      <h4 class="text-lg font-bold text-on-surface mb-2">No hardware, no app</h4>
+      <p class="text-sm text-on-surface-dim leading-relaxed">A QR sticker and a browser is the entire deployment. Diners install nothing. Staff install nothing.</p>
+    </div>
+    <div class="glass-card p-7 reveal" style="transition-delay:.15s;">
+      <div class="text-2xl mb-3">📈</div>
+      <h4 class="text-lg font-bold text-on-surface mb-2">Growth is built-in</h4>
+      <p class="text-sm text-on-surface-dim leading-relaxed">The follow-for-reward loop is the marketing engine, not an afterthought or upsell.</p>
+    </div>
+    <div class="glass-card p-7 reveal" style="transition-delay:.2s;">
+      <div class="text-2xl mb-3">⚙️</div>
+      <h4 class="text-lg font-bold text-on-surface mb-2">Operations included</h4>
+      <p class="text-sm text-on-surface-dim leading-relaxed">Kitchen Display and waiter app come free with the platform. Not a separate SKU.</p>
+    </div>
+    <div class="glass-card p-7 reveal" style="transition-delay:.25s;">
+      <div class="text-2xl mb-3">🔒</div>
+      <h4 class="text-lg font-bold text-on-surface mb-2">Secure by default</h4>
+      <p class="text-sm text-on-surface-dim leading-relaxed">Row-level security on every table, OTP-verified diner actions, PIN-gated staff screens.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="py-16 px-6 max-w-7xl mx-auto border-t border-white/[0.06]">
+  <div class="glass-card p-8 md:p-10 reveal">
+    <div class="flex flex-col md:flex-row gap-8 md:items-center md:justify-between">
+      <div class="flex-1">
+        <span class="sec-eyebrow"><span class="dot"></span>Stack</span>
+        <h3 class="mt-5 text-2xl md:text-3xl font-bold text-on-surface tracking-tight">Built on modern edge.</h3>
+        <p class="mt-3 text-on-surface-dim leading-relaxed max-w-2xl">Sub-second loads on 4G. Realtime alerts across the diner, waiter, and kitchen screens simultaneously.</p>
+      </div>
+      <div class="flex flex-wrap gap-2 md:max-w-md md:justify-end">
+        <span class="pill">React 19</span>
+        <span class="pill">TanStack Start</span>
+        <span class="pill">Vite 7</span>
+        <span class="pill">Cloudflare Edge</span>
+        <span class="pill">Postgres · RLS</span>
+        <span class="pill">Realtime Channels</span>
+        <span class="pill">Lovable AI Gateway</span>
+        <span class="pill">PWA</span>
+        <span class="pill">OTP Auth</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="py-20 px-6 max-w-7xl mx-auto border-t border-white/[0.06]">
+  <div class="max-w-3xl mb-12 reveal">
+    <span class="sec-eyebrow"><span class="dot"></span>06 · What's Next</span>
+    <h2 class="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05]">
+      Near-term <span class="grad-text">roadmap.</span>
+    </h2>
+    <p class="mt-4 text-on-surface-dim leading-relaxed">The next five things shipping. Order and timing may shift based on what restaurants ask for most.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="road-card reveal">
+      <span class="tag">In Development</span>
+      <h5>KOT printer & POS integrations</h5>
+      <p>Kitchen order tickets printed automatically. Two-way sync with common Indian POS systems.</p>
+    </div>
+    <div class="road-card reveal" style="transition-delay:.05s;">
+      <span class="tag">Planned</span>
+      <h5>Waiter leaderboard & tips</h5>
+      <p>Rank waiters by response time and guest ratings. Optional tip collection through the diner interface.</p>
+    </div>
+    <div class="road-card reveal" style="transition-delay:.1s;">
+      <span class="tag">Planned</span>
+      <h5>Instagram Graph verification</h5>
+      <p>Higher-value rewards unlocked only when the follow is verified via Instagram Graph API.</p>
+    </div>
+    <div class="road-card reveal" style="transition-delay:.15s;">
+      <span class="tag">Planned</span>
+      <h5>Native iOS & Android wrappers</h5>
+      <p>Locked-down device mode for kitchens that want DinePoint on dedicated hardware.</p>
+    </div>
+    <div class="road-card reveal" style="transition-delay:.2s;">
+      <span class="tag">Planned</span>
+      <h5>Multi-outlet brand dashboard</h5>
+      <p>Chain-level rollout with consistent branding, per-outlet analytics, and centralised menu updates.</p>
+    </div>
+    <div class="road-card reveal" style="transition-delay:.25s;background:linear-gradient(135deg,rgba(26,186,220,0.08),rgba(20,28,46,0.5));border-style:solid;border-color:rgba(26,186,220,0.25);">
+      <span class="tag" style="background:rgba(26,186,220,0.1);border-color:rgba(26,186,220,0.25);color:#1ABADC;">Suggest a Feature</span>
+      <h5>Something you need?</h5>
+      <p>DinePoint is built alongside restaurateurs. Message us on the demo site or book a call and tell us what would earn your daily use.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-20 px-6 max-w-4xl mx-auto border-t border-white/[0.06]">
+  <div class="text-center mb-12 reveal">
+    <span class="sec-eyebrow"><span class="dot"></span>07 · Frequently Asked</span>
+    <h3 class="mt-5 text-3xl md:text-4xl font-bold text-on-surface tracking-tight">Questions restaurateurs ask <span class="grad-text">first.</span></h3>
+  </div>
+  <div class="flex flex-col gap-3">
+    <details class="faq reveal">
+      <summary>Do diners need to install an app?</summary>
+      <p>No. DinePoint runs entirely in the mobile browser. Guests scan the table QR code and the menu opens instantly. No app store, no login.</p>
+    </details>
+    <details class="faq reveal" style="transition-delay:.04s;">
+      <summary>What hardware does the restaurant need?</summary>
+      <p>None specifically. The kitchen display runs on any tablet or TV browser, the waiter view runs on any smartphone, and the printable QR codes work on any paper. If you have Wi-Fi and a browser, you have DinePoint.</p>
+    </details>
+    <details class="faq reveal" style="transition-delay:.08s;">
+      <summary>Does it work in Indian languages?</summary>
+      <p>Yes. Menu and AI concierge both support English, Hindi, and other Indian languages, with voice input on the concierge.</p>
+    </details>
+    <details class="faq reveal" style="transition-delay:.12s;">
+      <summary>Can we use our own domain for the menu?</summary>
+      <p>Yes. Restaurants can serve their DinePoint menu on their own domain instead of the default dinepoint.in subdomain. Setup is a DNS record and a couple of dashboard clicks.</p>
+    </details>
+    <details class="faq reveal" style="transition-delay:.16s;">
+      <summary>How does the follow-for-reward marketing work?</summary>
+      <p>After the meal, diners see a one-tap prompt like "Follow us on Instagram to unlock a free dessert." The reward is unlocked via phone OTP with a per-phone daily cap to prevent abuse. Staff verify the code at the table using a PIN-gated screen. Owners configure offers, reward values, and daily caps from the dashboard.</p>
+    </details>
+    <details class="faq reveal" style="transition-delay:.2s;">
+      <summary>Will it integrate with our POS?</summary>
+      <p>POS and KOT printer integrations are on the near-term roadmap. Today, DinePoint runs alongside your existing POS as a customer-facing and service-alert layer.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+  <div class="rounded-3xl p-12 md:p-16 border reveal" style="background:linear-gradient(135deg,rgba(234,88,12,0.10) 0%,rgba(20,28,46,1) 100%);border-color:rgba(234,88,12,0.25);">
+    <div class="max-w-2xl">
+      <span class="sec-eyebrow mb-6" style="border-color:rgba(234,88,12,0.35);background:rgba(234,88,12,0.10);color:#fb923c;"><span class="dot" style="background:#fb923c;"></span>For Restaurants</span>
+      <h3 class="mt-6 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] mb-6">
+        Own a restaurant? <br><span class="grad-warm">Get your free QR menu.</span>
+      </h3>
+      <p class="text-on-surface-dim text-base md:text-lg leading-relaxed mb-10">
+        Ten-minute setup. Free tier for new outlets. Custom branding, printable QR codes, and the full kitchen display from day one.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://dinepoint.onpointnexus.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-surface px-7 py-3.5 rounded-full font-bold text-sm hover:bg-primary-dim transition-colors shadow-lg shadow-primary/30">
+          Visit DinePoint <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+        </a>
+        <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-white/15 bg-white/[0.03] hover:border-primary hover:text-primary transition-colors">
+          Book a 10-min Demo
+        </a>
+        <a href="/products" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm text-on-surface-dim hover:text-primary transition-colors">
+          See Other Products
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/[0.05] py-16 px-6" style="background:#080e1c;">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="inline-block mb-4">
+          <img src="/logo-icon.png" alt="OnPoint Nexus" class="h-14 w-auto" width="56" height="56" style="mix-blend-mode:screen;">
+        </a>
+        <p class="text-on-surface-muted text-sm leading-relaxed mb-4">AI-First Enterprise Technology Partner.<br>Discovery to production in 45 days.</p>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Products</h4>
+        <ul class="space-y-3">
+          <li><a href="/products/dinepoint" class="text-on-surface text-sm font-semibold">DinePoint</a></li>
+          <li><a href="/work/building-pulse" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">PulseWork OS</a></li>
+          <li><a href="/products" class="text-primary text-sm font-semibold hover:text-white transition-colors">All products →</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Company</h4>
+        <ul class="space-y-3">
+          <li><a href="/about" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">About Us</a></li>
+          <li><a href="/work" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Case Studies</a></li>
+          <li><a href="/ai-solutions" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">AI Solutions</a></li>
+          <li><a href="/services" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Connect</h4>
+        <ul class="space-y-3">
+          <li><a href="mailto:hr@onpointsoft.com" class="text-on-surface-muted text-sm hover:text-primary transition-colors">hr@onpointsoft.com</a></li>
+          <li><a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">LinkedIn</a></li>
+          <li><a href="/#contact" class="text-primary text-sm font-semibold hover:text-white transition-colors">Book a Discovery Call →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-on-surface-muted font-mono">© 2026 OnPoint Nexus Pvt. Ltd. All rights reserved.</p>
+      <div class="flex flex-wrap gap-5 justify-center">
+        <a href="/privacy-policy" rel="nofollow" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Privacy</a>
+        <a href="/terms" rel="nofollow" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle=document.getElementById('navToggle');const menu=document.getElementById('mobileMenu');const icon=document.getElementById('menuIcon');
+  toggle.addEventListener('click',()=>{const open=menu.classList.toggle('hidden')===false;icon.textContent=open?'close':'menu';toggle.setAttribute('aria-expanded',open)});
+  if(window.IntersectionObserver){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in-view');o.unobserve(x.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>o.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'))}
+</script>
+</body>
+</html>

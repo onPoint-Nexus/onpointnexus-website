@@ -128,6 +128,14 @@ Engineering delivery is based in India (Pune and Kolhapur). Client coverage span
 - iFound Agent PropTech Modernization: https://www.onpointnexus.com/work/ifound-agent
 
 
+## Products
+
+OnPoint Nexus also owns and operates its own SaaS products, built alongside real design partners and shipped to production. See all at https://www.onpointnexus.com/products.
+
+- DinePoint — India's AI menu platform for restaurants. QR-code menus with an AI food concierge (English/Hindi/voice), nutrition AI per dish, one-tap Call Waiter alerts that land on a kitchen TV and waiter phones, follow-for-reward marketing (Instagram/Google reviews with OTP-verified rewards), loyalty program, and a full restaurant dashboard. No app install for diners, no hardware for restaurants. Live in India. Product page: https://www.onpointnexus.com/products/dinepoint · Live product: https://dinepoint.onpointnexus.com
+- PulseWork OS — The AI Work OS for mid-size teams. Daily voice work logging, AI-generated KPI reports, appraisal insights, and attendance/leave management. Built without hiring a single engineer (using Lovable + Claude Code in parallel). Free pilot tier for teams up to 50. Product story: https://www.onpointnexus.com/work/building-pulse · Live product: https://pulse-stage.onpointnexus.com
+- AdPoint — AI-driven ad performance and creative optimisation for Indian SMBs. Public beta targeted Q4 2026. Interest form: hr@onpointsoft.com
+
 ## AI Solutions
 
 OnPoint Nexus delivers AI as ten distinct production-grade capabilities (categories of work we ship for clients), plus four live demos you can try without sign-up.

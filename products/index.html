@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <title>Products from OnPoint Nexus | DinePoint, PulseWork OS, AdPoint</title>
+  <meta name="description" content="SaaS products built and owned by OnPoint Nexus. DinePoint (India's AI menu platform), PulseWork OS (AI Work OS for mid-size teams), and AdPoint (coming soon).">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.onpointnexus.com/products">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OnPoint Nexus">
+  <meta property="og:url" content="https://www.onpointnexus.com/products">
+  <meta property="og:title" content="Products from OnPoint Nexus | AI-First SaaS">
+  <meta property="og:description" content="SaaS products built and owned by OnPoint Nexus. Live products for restaurants, mid-size teams, and (soon) growth marketing.">
+  <meta property="og:image" content="https://www.onpointnexus.com/og-image.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = { darkMode:'class', theme:{extend:{colors:{primary:'#1ABADC','primary-dim':'#148FAA',surface:'#0c1324','surface-card':'#141c2e','surface-high':'#1a2235','surface-low':'#080e1c','on-surface':'#E8EDF5','on-surface-dim':'#8A9BB5','on-surface-muted':'#4A5A72'},fontFamily:{body:['Plus Jakarta Sans','sans-serif'],mono:['Roboto Mono','monospace']}}}}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-N2WCZPCE46');</script>
+
+  <!-- JSON-LD: ItemList of products -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "OnPoint Nexus Products",
+    "description": "SaaS products built and owned by OnPoint Nexus.",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "SoftwareApplication", "name": "DinePoint", "url": "https://www.onpointnexus.com/products/dinepoint", "applicationCategory": "BusinessApplication", "operatingSystem": "Web · PWA" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "SoftwareApplication", "name": "PulseWork OS", "url": "https://www.onpointnexus.com/work/building-pulse", "applicationCategory": "BusinessApplication", "operatingSystem": "Web · PWA" } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "SoftwareApplication", "name": "AdPoint", "url": "https://www.onpointnexus.com/products", "applicationCategory": "BusinessApplication" } }
+    ]
+  }
+  </script>
+
+  <style>
+    body { background-color: #0c1324; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .grid-bg { background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+    .reveal.in-view { opacity: 1; transform: none; }
+    .glass-card { background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1rem; }
+    .grad-text { background: linear-gradient(135deg, #1ABADC 0%, #8de4f0 55%, #cef4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .sec-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px; border-radius: 999px; border: 1px solid rgba(26,186,220,0.28); background: rgba(26,186,220,0.08); color: #1ABADC; font-family: 'Roboto Mono', monospace; font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; }
+    .sec-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #1ABADC; }
+    .hero-stat-card { padding: 22px 26px; }
+    .hero-stat-val { font-family: 'Plus Jakarta Sans'; font-weight: 800; letter-spacing: -.02em; line-height: 1; font-size: clamp(1.75rem, 3vw, 2.5rem); background: linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-stat-lbl { font-family: 'Roboto Mono', monospace; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: #5C6F8A; font-weight: 600; margin-top: 8px; }
+
+    /* Product card */
+    .product-card { position: relative; background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1.5rem; overflow: hidden; display: flex; flex-direction: column; transition: border-color .3s ease, transform .35s ease, box-shadow .35s ease; }
+    .product-card:hover { border-color: rgba(26,186,220,0.4); transform: translateY(-4px); box-shadow: 0 30px 70px -25px rgba(0,0,0,0.6); }
+    .product-card.soon { border-style: dashed; opacity: .82; }
+    .product-card.soon:hover { transform: none; box-shadow: none; }
+    .product-card .cover { position: relative; height: 220px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 88px; }
+    .product-card.dp .cover { background: linear-gradient(135deg, #7c2d12 0%, #dc2626 40%, #ea580c 100%); }
+    .product-card.pw .cover { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 40%, #3b82f6 100%); }
+    .product-card.ad .cover { background: linear-gradient(135deg, #4a044e 0%, #86198f 40%, #d946ef 100%); }
+    .product-card .cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(12,19,36,0.55) 100%); pointer-events: none; }
+    .product-card .cover .visual { position: relative; z-index: 2; opacity: .9; filter: drop-shadow(0 4px 20px rgba(0,0,0,0.4)); }
+    .product-card .badges { position: absolute; top: 16px; left: 16px; right: 16px; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; z-index: 3; }
+    .badge-tag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px; font-family: 'Roboto Mono', monospace; font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; backdrop-filter: blur(10px); }
+    .badge-tag.live { background: rgba(74,222,128,0.18); border: 1px solid rgba(74,222,128,0.45); color: #4ade80; }
+    .badge-tag.live::before { content:''; width:6px; height:6px; border-radius:50%; background:#4ade80; animation: livePulse 1.5s ease infinite; }
+    @keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+    .badge-tag.soon { background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.4); color: #c4b5fd; }
+    .badge-tag.category { background: rgba(12,19,36,0.7); border: 1px solid rgba(255,255,255,0.1); color: #E8EDF5; }
+    .product-card .body { padding: 26px 28px 28px; display: flex; flex-direction: column; flex: 1; gap: 12px; }
+    .product-card .name { font-size: 1.6rem; font-weight: 800; color: #E8EDF5; line-height: 1.1; letter-spacing: -.02em; }
+    .product-card .tagline { font-size: .95rem; color: #8A9BB5; line-height: 1.55; flex: 1; min-height: 3em; }
+    .product-card .stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .product-card .stack span { font-family: 'Roboto Mono', monospace; font-size: .58rem; padding: 4px 10px; border-radius: 999px; background: rgba(26,186,220,0.06); border: 1px solid rgba(26,186,220,0.15); color: #8bc9d9; letter-spacing: .04em; }
+    .product-card .foot { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.06); }
+    .product-card .cta-link { display: inline-flex; align-items: center; gap: 8px; font-family: 'Roboto Mono', monospace; font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; color: #E8EDF5; transition: color .25s, gap .25s; }
+    .product-card:hover .cta-link { color: #1ABADC; gap: 12px; }
+    .product-card .metric { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.35rem; background: linear-gradient(135deg,#1ABADC,#8de4f0); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -.02em; line-height: 1; }
+    .product-card .metric-lbl { font-family: 'Roboto Mono', monospace; font-size: .55rem; color: #5C6F8A; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; margin-top: 3px; }
+
+    /* Why our products differ */
+    .diff-card { padding: 28px; background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1.25rem; transition: border-color .25s; }
+    .diff-card:hover { border-color: rgba(26,186,220,0.3); }
+    .diff-card .icon-box { width: 44px; height: 44px; border-radius: 12px; background: rgba(26,186,220,0.10); border: 1px solid rgba(26,186,220,0.25); color: #1ABADC; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .diff-card h4 { font-size: 1.05rem; font-weight: 700; color: #E8EDF5; margin-bottom: 8px; letter-spacing: -.01em; }
+    .diff-card p { font-size: .88rem; color: #8A9BB5; line-height: 1.6; }
+  </style>
+  <script src="/js/site-cursor.js" defer></script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+
+<!-- NAV -->
+<nav class="sticky top-0 z-50 border-b border-white/[0.05]" style="background:rgba(12,19,36,0.92);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
+    </a>
+    <div class="hidden md:flex items-center gap-6 font-body text-sm">
+      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Services</a>
+      <a href="/work" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
+      <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors duration-200">AI Solutions</a>
+      <a href="/products" class="text-primary transition-colors duration-200">Products</a>
+      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Industries</a>
+      <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
+    </div>
+    <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
+      Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+    <button id="navToggle" class="md:hidden p-2 text-on-surface-dim hover:text-primary transition-colors" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="material-symbols-outlined" id="menuIcon">menu</span>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl mx-6 mb-3" style="background:rgba(17,24,39,0.96);">
+    <div class="flex flex-col gap-1 text-sm font-body">
+      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Services</a>
+      <a href="/work" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work</a>
+      <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">AI Solutions</a>
+      <a href="/products" class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">Products</a>
+      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Industries</a>
+      <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
+      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="relative pt-24 pb-16 overflow-hidden">
+  <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(12,19,36,0) 0%, rgba(12,19,36,0.4) 60%, #0c1324 100%);"></div>
+  <div class="absolute inset-0 grid-bg opacity-25"></div>
+  <div class="absolute -top-40 -right-32 w-[600px] h-[600px] rounded-full pointer-events-none" style="background:rgba(26,186,220,0.14);filter:blur(140px);"></div>
+  <div class="absolute -top-32 -left-40 w-[560px] h-[560px] rounded-full pointer-events-none" style="background:rgba(139,92,246,0.12);filter:blur(140px);"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="max-w-4xl">
+      <div class="reveal inline-flex mb-6">
+        <span class="sec-eyebrow"><span class="dot"></span>Products by OnPoint Nexus</span>
+      </div>
+      <h1 class="text-5xl md:text-6xl lg:text-[5.5rem] font-bold tracking-tight leading-[1] reveal" style="transition-delay:.05s;">
+        Products we own. <br><span class="grad-text">Not just projects we shipped.</span>
+      </h1>
+      <p class="mt-7 text-on-surface-dim text-lg md:text-xl leading-relaxed max-w-2xl reveal" style="transition-delay:.15s;">
+        Every year we take one workflow our team keeps building for clients, and we turn it into a product. Two are live in production. One is on its way.
+      </p>
+      <div class="mt-10 grid grid-cols-3 gap-3 md:gap-4 max-w-2xl reveal" style="transition-delay:.25s;">
+        <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">2</div><div class="hero-stat-lbl">Live Products</div></div>
+        <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">1</div><div class="hero-stat-lbl">Coming Soon</div></div>
+        <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">100<span class="text-on-surface-muted">%</span></div><div class="hero-stat-lbl">Owned by Us</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT GRID -->
+<section id="grid" class="py-16 px-6 max-w-7xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- DINEPOINT -->
+    <a href="/products/dinepoint" class="product-card dp reveal">
+      <div class="cover">
+        <div class="badges">
+          <span class="badge-tag category">HospitalityTech · India</span>
+          <span class="badge-tag live">Live</span>
+        </div>
+        <div class="visual">🍽️</div>
+      </div>
+      <div class="body">
+        <div class="name">DinePoint</div>
+        <div class="tagline">India's AI menu platform for restaurants. QR menus with AI food concierge, live kitchen alerts, and follow-for-reward marketing. All from one QR code.</div>
+        <div class="stack">
+          <span>AI Concierge</span>
+          <span>Kitchen Display</span>
+          <span>Loyalty</span>
+          <span>PWA</span>
+        </div>
+        <div class="foot">
+          <div><div class="metric">1 QR</div><div class="metric-lbl">Zero installs</div></div>
+          <span class="cta-link">Explore <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- PULSEWORK OS -->
+    <a href="/work/building-pulse" class="product-card pw reveal" style="transition-delay:.05s;">
+      <div class="cover">
+        <div class="badges">
+          <span class="badge-tag category">Work OS · Global</span>
+          <span class="badge-tag live">Live</span>
+        </div>
+        <div class="visual">⚡</div>
+      </div>
+      <div class="body">
+        <div class="name">PulseWork OS</div>
+        <div class="tagline">The AI Work OS for mid-size teams. Daily work logging, KPI intelligence, appraisal insights. Built without hiring a single engineer.</div>
+        <div class="stack">
+          <span>Lovable</span>
+          <span>Claude Code</span>
+          <span>Voice Logging</span>
+          <span>AI Reports</span>
+        </div>
+        <div class="foot">
+          <div><div class="metric">10 hrs</div><div class="metric-lbl">Idea → live product</div></div>
+          <span class="cta-link">Read story <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ADPOINT (coming soon) -->
+    <div class="product-card ad soon reveal" style="transition-delay:.1s;">
+      <div class="cover">
+        <div class="badges">
+          <span class="badge-tag category">MarTech · Q4 2026</span>
+          <span class="badge-tag soon">Coming soon</span>
+        </div>
+        <div class="visual">📊</div>
+      </div>
+      <div class="body">
+        <div class="name">AdPoint</div>
+        <div class="tagline">AI-driven ad performance and creative optimisation for Indian SMBs. Currently in private development. Public beta later this year.</div>
+        <div class="stack">
+          <span>Ad AI</span>
+          <span>Creative Gen</span>
+          <span>Attribution</span>
+        </div>
+        <div class="foot">
+          <div><div class="metric">Q4</div><div class="metric-lbl">Public beta</div></div>
+          <a href="mailto:hr@onpointsoft.com?subject=AdPoint%20beta%20interest" class="cta-link" style="color:#c4b5fd;">Get notified <span class="material-symbols-outlined text-[16px]">arrow_outward</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY THESE PRODUCTS -->
+<section class="py-20 px-6 max-w-7xl mx-auto border-t border-white/[0.06]">
+  <div class="max-w-3xl mb-12 reveal">
+    <span class="sec-eyebrow"><span class="dot"></span>The Approach</span>
+    <h2 class="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05]">
+      Every product started as <span class="grad-text">a workflow we kept rebuilding.</span>
+    </h2>
+    <p class="mt-4 text-on-surface-dim text-lg leading-relaxed">
+      When the same solution shows up in three client engagements, we productise it. It becomes cheaper for the fourth client, and it becomes something we own outright.
+    </p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <div class="diff-card reveal">
+      <div class="icon-box"><span class="material-symbols-outlined">handshake</span></div>
+      <h4>Built with real users</h4>
+      <p>Every product ships alongside a design partner who uses it daily. Their feedback drives the roadmap, not our assumptions.</p>
+    </div>
+    <div class="diff-card reveal" style="transition-delay:.05s;">
+      <div class="icon-box"><span class="material-symbols-outlined">rocket_launch</span></div>
+      <h4>Ship, then polish</h4>
+      <p>We reach production within weeks, not quarters. Every iteration is deployed live before the next one starts.</p>
+    </div>
+    <div class="diff-card reveal" style="transition-delay:.1s;">
+      <div class="icon-box"><span class="material-symbols-outlined">auto_awesome</span></div>
+      <h4>AI-native from day one</h4>
+      <p>Not "we added AI to an existing product." Every product is designed around what LLMs and vision models actually do well.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+  <div class="rounded-3xl p-12 md:p-16 border border-primary/20 reveal" style="background:linear-gradient(135deg,rgba(26,186,220,0.08) 0%,rgba(20,28,46,1) 100%);">
+    <div class="max-w-2xl">
+      <span class="sec-eyebrow mb-6"><span class="dot"></span>Have an idea?</span>
+      <h3 class="mt-6 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] mb-6">
+        Building something you'd like <span class="grad-text">to co-launch with us?</span>
+      </h3>
+      <p class="text-on-surface-dim text-base md:text-lg leading-relaxed mb-10">
+        We selectively partner with domain experts to co-build the next generation of AI-native SaaS products for India and beyond. If you have distribution and a workflow to productise, we bring the engineering.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-surface px-7 py-3.5 rounded-full font-bold text-sm hover:bg-primary-dim transition-colors shadow-lg shadow-primary/30">
+          Book a Discovery Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+        <a href="mailto:hr@onpointsoft.com" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-white/15 bg-white/[0.03] hover:border-primary hover:text-primary transition-colors">
+          hr@onpointsoft.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/[0.05] py-16 px-6" style="background:#080e1c;">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="inline-block mb-4">
+          <img src="/logo-icon.png" alt="OnPoint Nexus" class="h-14 w-auto" width="56" height="56" style="mix-blend-mode:screen;">
+        </a>
+        <p class="text-on-surface-muted text-sm leading-relaxed mb-4">AI-First Enterprise Technology Partner.<br>Discovery to production in 45 days.</p>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Products</h4>
+        <ul class="space-y-3">
+          <li><a href="/products/dinepoint" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">DinePoint</a></li>
+          <li><a href="/work/building-pulse" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">PulseWork OS</a></li>
+          <li><a href="/products" class="text-on-surface text-sm font-semibold">AdPoint (soon)</a></li>
+          <li><a href="/products" class="text-primary text-sm font-semibold hover:text-white transition-colors">All products →</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Company</h4>
+        <ul class="space-y-3">
+          <li><a href="/about" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">About Us</a></li>
+          <li><a href="/work" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Case Studies</a></li>
+          <li><a href="/ai-solutions" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">AI Solutions</a></li>
+          <li><a href="/services" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Connect</h4>
+        <ul class="space-y-3">
+          <li><a href="mailto:hr@onpointsoft.com" class="text-on-surface-muted text-sm hover:text-primary transition-colors">hr@onpointsoft.com</a></li>
+          <li><a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">LinkedIn</a></li>
+          <li><a href="/#contact" class="text-primary text-sm font-semibold hover:text-white transition-colors">Book a Discovery Call →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-on-surface-muted font-mono">© 2026 OnPoint Nexus Pvt. Ltd. All rights reserved.</p>
+      <div class="flex flex-wrap gap-5 justify-center">
+        <a href="/privacy-policy" rel="nofollow" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Privacy</a>
+        <a href="/terms" rel="nofollow" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle=document.getElementById('navToggle');const menu=document.getElementById('mobileMenu');const icon=document.getElementById('menuIcon');
+  toggle.addEventListener('click',()=>{const open=menu.classList.toggle('hidden')===false;icon.textContent=open?'close':'menu';toggle.setAttribute('aria-expanded',open)});
+  if(window.IntersectionObserver){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in-view');o.unobserve(x.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>o.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'))}
+</script>
+</body>
+</html>
