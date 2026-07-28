@@ -107,11 +107,10 @@
       <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
     </a>
     <div class="hidden md:flex items-center gap-6 font-body text-sm">
-      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Services</a>
       <a href="/work" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
+      <a href="/method"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">ScaleOS</a>
       <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors duration-200">AI Solutions</a>
       <a href="/products" class="text-primary transition-colors duration-200">Products</a>
-      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Industries</a>
       <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
     </div>
     <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
@@ -123,11 +122,10 @@
   </div>
   <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl mx-6 mb-3" style="background:rgba(17,24,39,0.96);">
     <div class="flex flex-col gap-1 text-sm font-body">
-      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Services</a>
       <a href="/work" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work</a>
+      <a href="/method"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">ScaleOS</a>
       <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">AI Solutions</a>
       <a href="/products" class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">Products</a>
-      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Industries</a>
       <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
       <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
     </div>
@@ -135,11 +133,56 @@
 </nav>
 
 <!-- HERO -->
-<section class="relative pt-24 pb-16 overflow-hidden">
-  <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(12,19,36,0) 0%, rgba(12,19,36,0.4) 60%, #0c1324 100%);"></div>
-  <div class="absolute inset-0 grid-bg opacity-25"></div>
-  <div class="absolute -top-40 -right-32 w-[600px] h-[600px] rounded-full pointer-events-none" style="background:rgba(26,186,220,0.14);filter:blur(140px);"></div>
-  <div class="absolute -top-32 -left-40 w-[560px] h-[560px] rounded-full pointer-events-none" style="background:rgba(139,92,246,0.12);filter:blur(140px);"></div>
+<section class="relative pt-24 pb-16 overflow-hidden" style="background:#0c1324;">
+  <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(26,186,220,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(26,186,220,0.055) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);-webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 55% 45% at 30% 40%,rgba(26,186,220,0.13) 0%,transparent 70%);"></div>
+
+  <!-- Two orbits — DinePoint and PulseWork, each with a dot circling -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:0.7;">
+    <defs>
+      <radialGradient id="prodGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <!-- Orbit A (right side) -->
+    <g transform="translate(1180 450)">
+      <circle r="220" fill="none" stroke="#1ABADC" stroke-width="1" stroke-opacity="0.18" stroke-dasharray="4 6"/>
+      <circle r="140" fill="none" stroke="#1ABADC" stroke-width="1" stroke-opacity="0.28"/>
+      <circle r="30" fill="url(#prodGlow)"/>
+      <circle r="7" fill="#8de4f0"/>
+      <!-- orbiting dot -->
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="14s" repeatCount="indefinite"/>
+        <circle cx="140" cy="0" r="5" fill="#1ABADC"/>
+        <circle cx="140" cy="0" r="14" fill="url(#prodGlow)"/>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="24s" repeatCount="indefinite"/>
+        <circle cx="220" cy="0" r="3.5" fill="#1ABADC" fill-opacity="0.7"/>
+      </g>
+    </g>
+    <!-- Orbit B (left side, offset) -->
+    <g transform="translate(360 620)">
+      <circle r="180" fill="none" stroke="#1ABADC" stroke-width="1" stroke-opacity="0.18" stroke-dasharray="4 6"/>
+      <circle r="110" fill="none" stroke="#1ABADC" stroke-width="1" stroke-opacity="0.28"/>
+      <circle r="26" fill="url(#prodGlow)"/>
+      <circle r="6" fill="#8de4f0"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="11s" repeatCount="indefinite"/>
+        <circle cx="110" cy="0" r="4.5" fill="#1ABADC"/>
+        <circle cx="110" cy="0" r="12" fill="url(#prodGlow)"/>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="20s" repeatCount="indefinite"/>
+        <circle cx="180" cy="0" r="3" fill="#1ABADC" fill-opacity="0.7"/>
+      </g>
+    </g>
+    <!-- Connecting line between orbits (product family) -->
+    <line x1="360" y1="620" x2="1180" y2="450" stroke="#1ABADC" stroke-width="1" stroke-opacity="0.12" stroke-dasharray="2 8"/>
+  </svg>
+
+  <div class="absolute left-0 right-0 bottom-0 pointer-events-none" style="height:120px;background:linear-gradient(180deg,transparent 0%,#0c1324 100%);"></div>
 
   <div class="relative max-w-7xl mx-auto px-6">
     <div class="max-w-4xl">
@@ -320,7 +363,6 @@
           <li><a href="/about" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">About Us</a></li>
           <li><a href="/work" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Case Studies</a></li>
           <li><a href="/ai-solutions" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">AI Solutions</a></li>
-          <li><a href="/services" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Services</a></li>
         </ul>
       </div>
       <div>

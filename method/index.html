@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c1324">
+
+  <title>Method | The 90-Day AI Operating System | OnPoint Nexus</title>
+  <meta name="description" content="Six phases. Ninety days. Executive-clear plan for turning a business into an AI operating system. First working system in 45 days. Full transformation in 90.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.onpointnexus.com/method">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="OnPoint Nexus">
+  <meta property="og:url"         content="https://www.onpointnexus.com/method">
+  <meta property="og:title"       content="Method | The 90-Day AI Operating System | OnPoint Nexus">
+  <meta property="og:description" content="Six phases. Ninety days. First working system in 45 days.">
+  <meta property="og:image"       content="https://www.onpointnexus.com/og-image.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = { darkMode:'class', theme:{ extend:{
+      colors:{ primary:'#1ABADC','primary-dim':'#0E8FA8', surface:'#0c1324','surface-card':'#141c2e','surface-high':'#1a2440','surface-low':'#080e1c',
+        'on-surface':'#E8EDF5','on-surface-dim':'#8A9BB5','on-surface-muted':'#5A7494' },
+      fontFamily:{ headline:['"Plus Jakarta Sans"','sans-serif'], body:['"Plus Jakarta Sans"','sans-serif'], mono:['"Roboto Mono"','monospace'] }
+    }}}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-N2WCZPCE46');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"Service",
+    "serviceType":"AI Business Operating System",
+    "name":"ScaleOS — 90-Day AI Business Operating System",
+    "provider":{ "@type":"Organization","name":"OnPoint Nexus","url":"https://www.onpointnexus.com" },
+    "description":"A six-phase method that turns a business into an AI-native operating system in 90 days. First working system live in 45 days."
+  }
+  </script>
+
+  <style>
+    body { background:#0c1324; color:#E8EDF5; font-family:'Plus Jakarta Sans',sans-serif; overflow-x:hidden; }
+    .grad-text { background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent; }
+
+    /* ─── Reveal animations ─────────────────────────────── */
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+    .reveal.in-view { opacity:1; transform:none; }
+    .slide-left  { opacity:0; transform:translateX(-60px); transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); }
+    .slide-right { opacity:0; transform:translateX(60px);  transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); }
+    .slide-left.in-view, .slide-right.in-view { opacity:1; transform:none; }
+
+    /* ─── Hero animated background ──────────────────────── */
+    .hero { position:relative; overflow:hidden; }
+    .hero-bg {
+      position:absolute; inset:0; z-index:0; pointer-events:none;
+    }
+    .hero-bg::before {
+      content:""; position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(26,186,220,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,186,220,0.06) 1px, transparent 1px);
+      background-size:48px 48px;
+      mask-image: radial-gradient(ellipse 70% 65% at 25% 50%, #000 25%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 65% at 25% 50%, #000 25%, transparent 80%);
+    }
+    .hero-blob {
+      position:absolute; border-radius:50%;
+      filter:blur(120px); pointer-events:none;
+      opacity:0.6;
+    }
+    .hero-blob-a {
+      width:720px; height:720px;
+      background:radial-gradient(circle, rgba(26,186,220,0.22) 0%, transparent 60%);
+      top:-160px; right:-140px;
+      animation:heroBlobA 18s ease-in-out infinite;
+    }
+    .hero-blob-b {
+      width:520px; height:520px;
+      background:radial-gradient(circle, rgba(141,228,240,0.14) 0%, transparent 60%);
+      bottom:-180px; left:-100px;
+      animation:heroBlobB 22s ease-in-out infinite;
+    }
+    @keyframes heroBlobA {
+      0%,100% { transform:translate(0,0) scale(1); }
+      50%     { transform:translate(-60px,40px) scale(1.15); }
+    }
+    @keyframes heroBlobB {
+      0%,100% { transform:translate(0,0) scale(1); }
+      50%     { transform:translate(80px,-30px) scale(1.08); }
+    }
+    .hero > .max-w-5xl { position:relative; z-index:1; }
+
+    /* Line-by-line hero H1 reveal on load */
+    .hero h1 .h-line {
+      display:block;
+      opacity:0;
+      transform:translateY(40px);
+      filter:blur(8px);
+      animation: heroLine .9s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    .hero h1 .h-line:nth-child(1) { animation-delay:.15s; }
+    .hero h1 .h-line:nth-child(2) { animation-delay:.35s; }
+    .hero h1 .h-line:nth-child(3) { animation-delay:.55s; }
+    @keyframes heroLine {
+      to { opacity:1; transform:none; filter:blur(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration:.01ms !important;
+        transition-duration:.01ms !important;
+      }
+    }
+
+    /* ─── Sticky timeline ────────────────────────────────── */
+    .timeline-bar {
+      position:sticky; top:64px; z-index:40;
+      background:rgba(12,19,36,0.94);
+      backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+    .timeline-track {
+      display:flex; height:64px;
+      max-width:1200px; margin:0 auto;
+      padding:12px 24px; gap:2px;
+    }
+    .timeline-seg {
+      display:flex; flex-direction:column; justify-content:center;
+      padding:4px 10px; border-radius:6px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.05);
+      transition:background .3s ease, border-color .3s ease;
+      cursor:pointer; text-decoration:none; overflow:hidden;
+    }
+    .timeline-seg:hover { background:rgba(26,186,220,0.08); border-color:rgba(26,186,220,0.25); }
+    .timeline-seg.active { background:rgba(26,186,220,0.12); border-color:rgba(26,186,220,0.4); }
+    .timeline-seg .seg-num { font-family:'Roboto Mono',monospace; font-size:10px; color:#5A7494; letter-spacing:.1em; }
+    .timeline-seg .seg-name { font-size:13px; font-weight:600; color:#E8EDF5; letter-spacing:-.01em; margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .timeline-seg .seg-days { font-family:'Roboto Mono',monospace; font-size:9px; color:#8A9BB5; margin-top:2px; }
+    @media (max-width:780px){
+      .timeline-track{ padding:10px 16px; gap:1px; height:52px; }
+      .timeline-seg{ padding:4px 6px; }
+      .timeline-seg .seg-name{ font-size:10px; }
+      .timeline-seg .seg-days, .timeline-seg .seg-num{ display:none; }
+    }
+
+    /* ─── Phase card ─────────────────────────────────────── */
+    .phase-wrap {
+      max-width:1200px; margin:0 auto;
+      padding:80px 40px 0;
+    }
+    .phase-card {
+      background:#0f1729;
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:24px;
+      overflow:hidden;
+    }
+    .phase-cover {
+      position:relative;
+      aspect-ratio: 21/9;
+      background:#0a1122;
+      overflow:hidden;
+    }
+    .phase-cover svg {
+      position:absolute; inset:0;
+      width:100%; height:100%;
+    }
+    .phase-cover-overlay {
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, transparent 40%, rgba(15,23,41,0.85) 90%);
+      pointer-events:none;
+    }
+    .phase-cover-meta {
+      position:absolute; left:32px; right:32px; bottom:28px;
+      display:flex; align-items:flex-end; justify-content:space-between; gap:20px;
+      flex-wrap:wrap;
+    }
+    .phase-cover-meta .m-left { display:flex; flex-direction:column; }
+    .phase-cover-meta .m-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      font-family:'Roboto Mono',monospace;
+      font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+      color:#1ABADC;
+      padding:5px 10px; border-radius:999px;
+      background:rgba(26,186,220,0.1);
+      border:1px solid rgba(26,186,220,0.28);
+      margin-bottom:12px;
+      align-self:flex-start;
+    }
+    .phase-cover-meta h2 {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-weight:700;
+      font-size:clamp(2rem, 4.5vw, 3rem);
+      line-height:1;
+      letter-spacing:-.03em;
+      color:#E8EDF5;
+    }
+    .phase-cover-meta h2 sup { font-size:0.35em; color:#5A7494; font-weight:400; vertical-align:super; }
+    .phase-cover-meta .m-tag {
+      font-size:16px;
+      color:#8A9BB5;
+      margin-top:6px;
+    }
+    .phase-cover-meta .m-days {
+      display:inline-flex; align-items:center; gap:8px;
+      font-family:'Roboto Mono',monospace;
+      font-size:13px;
+      color:#E8EDF5;
+      padding:10px 14px;
+      background:rgba(0,0,0,0.35);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:10px;
+      white-space:nowrap;
+    }
+    .phase-cover-meta .m-days .dot { width:8px; height:8px; border-radius:50%; background:#1ABADC; }
+
+    .phase-body {
+      display:grid;
+      grid-template-columns: 1.05fr 1fr 1fr;
+      gap:0;
+      padding:0;
+    }
+    .phase-body > div {
+      padding:36px 32px;
+      border-left:1px solid rgba(255,255,255,0.05);
+    }
+    .phase-body > div:first-child { border-left:0; }
+    .phase-body .block-label {
+      font-family:'Roboto Mono',monospace;
+      font-size:10px; letter-spacing:.25em;
+      text-transform:uppercase; color:#5A7494;
+      margin-bottom:14px;
+    }
+    .phase-body .problem {
+      font-size:17px; color:#E8EDF5; line-height:1.5; font-weight:500; letter-spacing:-.01em;
+    }
+    .phase-body ul {
+      list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;
+    }
+    .phase-body ul li {
+      display:flex; align-items:flex-start; gap:10px;
+      font-size:14px; color:#8A9BB5; line-height:1.4;
+    }
+    .phase-body ul li::before {
+      content:""; width:5px; height:5px; border-radius:50%;
+      background:#1ABADC; margin-top:8px; flex-shrink:0;
+    }
+    .phase-body .outcome {
+      font-size:16px; color:#E8EDF5; line-height:1.5; font-style:italic;
+      padding-left:16px;
+      border-left:2px solid #1ABADC;
+    }
+    @media (max-width:900px) {
+      .phase-wrap { padding:50px 20px 0; }
+      .phase-body { grid-template-columns:1fr; }
+      .phase-body > div { border-left:0; border-top:1px solid rgba(255,255,255,0.05); }
+      .phase-body > div:first-child { border-top:0; }
+      .phase-cover-meta { left:20px; right:20px; bottom:20px; }
+    }
+
+    /* ─── Transformation split screen ────────────────────── */
+    .trans-wrap { max-width:1200px; margin:0 auto; padding:0 40px; }
+    .trans-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:36px; flex-wrap:wrap; gap:20px; }
+    .trans-split {
+      display:grid;
+      grid-template-columns: 1fr 100px 1fr;
+      gap:0;
+      background:#0f1729;
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:24px;
+      overflow:hidden;
+      position:relative;
+    }
+    .trans-col { padding:48px 40px; }
+    .trans-col-today {
+      background:#0b1121;
+      color:#5A7494;
+    }
+    .trans-col-after {
+      background:linear-gradient(135deg, rgba(26,186,220,0.06) 0%, transparent 100%);
+      color:#E8EDF5;
+    }
+    .trans-col h3 {
+      font-family:'Roboto Mono',monospace;
+      font-size:12px; letter-spacing:.28em; text-transform:uppercase;
+      margin-bottom:32px;
+    }
+    .trans-col-today h3 { color:#5A7494; }
+    .trans-col-after h3 { color:#1ABADC; }
+    .trans-col ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2px; }
+    .trans-col ul li {
+      display:flex; align-items:center; gap:14px;
+      padding:14px 0;
+      border-top:1px solid rgba(255,255,255,0.04);
+      font-size:16px;
+      line-height:1.4;
+    }
+    .trans-col ul li:first-child { border-top:0; }
+    .trans-col ul li .icon {
+      display:inline-flex; align-items:center; justify-content:center;
+      width:22px; height:22px; border-radius:50%;
+      font-size:14px; font-weight:700;
+      flex-shrink:0;
+    }
+    .trans-col-today .icon { background:rgba(255,255,255,0.04); color:#5A7494; }
+    .trans-col-after .icon { background:rgba(26,186,220,0.14); color:#1ABADC; }
+    .trans-col-after li { font-weight:500; letter-spacing:-.005em; }
+
+    .trans-divider {
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      background:#0f1729;
+      border-left:1px solid rgba(255,255,255,0.06);
+      border-right:1px solid rgba(255,255,255,0.06);
+      position:relative;
+    }
+    .trans-divider .d-label {
+      font-family:'Roboto Mono',monospace;
+      writing-mode:vertical-rl;
+      transform:rotate(180deg);
+      font-size:11px; letter-spacing:.4em; text-transform:uppercase;
+      color:#1ABADC;
+    }
+    .trans-divider .d-arrow {
+      color:#1ABADC;
+      margin-bottom:20px;
+      font-size:24px;
+    }
+    @media (max-width:900px) {
+      .trans-wrap { padding:0 20px; }
+      .trans-split { grid-template-columns:1fr; }
+      .trans-col { padding:36px 24px; }
+      .trans-divider {
+        border-left:0; border-right:0;
+        border-top:1px solid rgba(255,255,255,0.06);
+        border-bottom:1px solid rgba(255,255,255,0.06);
+        padding:20px;
+        flex-direction:row; gap:16px;
+      }
+      .trans-divider .d-label { writing-mode:unset; transform:none; }
+      .trans-divider .d-arrow { margin-bottom:0; transform:rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ══════════════════════════════════════════════════ -->
+<nav class="sticky top-0 z-50 border-b border-white/[0.05]" style="background:rgba(12,19,36,0.92);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
+    </a>
+    <div class="hidden md:flex items-center gap-7 font-body text-sm">
+      <a href="/work"        class="text-on-surface-dim hover:text-primary transition-colors">Work</a>
+      <a href="/method"      class="text-primary transition-colors">ScaleOS</a>
+      <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors">AI Solutions</a>
+      <a href="/products"    class="text-on-surface-dim hover:text-primary transition-colors">Products</a>
+      <a href="/about"       class="text-on-surface-dim hover:text-primary transition-colors">About</a>
+    </div>
+    <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors">
+      Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═════════════════════════════════════════════════ -->
+<section class="hero pt-32 pb-24">
+  <div class="hero-bg">
+    <div class="hero-blob hero-blob-a"></div>
+    <div class="hero-blob hero-blob-b"></div>
+  </div>
+  <div class="max-w-5xl mx-auto px-6">
+    <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-6" style="opacity:0;animation:heroLine .8s cubic-bezier(.16,1,.3,1) forwards">The ScaleOS<sup class="text-[8px]">™</sup> Method</p>
+    <h1 class="font-headline font-bold tracking-[-0.035em] leading-[0.98] text-on-surface" style="font-size:clamp(2.75rem, 7vw, 5rem)">
+      <span class="h-line">90 Days.</span>
+      <span class="h-line">6 Phases.</span>
+      <span class="h-line grad-text">1 Outcome.</span>
+    </h1>
+    <p class="mt-10 text-lg md:text-xl text-on-surface-dim max-w-2xl leading-relaxed" style="opacity:0;animation:heroLine .9s cubic-bezier(.16,1,.3,1) .75s forwards">
+      A plan you can hold in your head. Each phase has a fixed duration, a defined deliverable, and a measurable outcome. You always know what you're paying for, what week we're in, and what changes next.
+    </p>
+    <div class="mt-10 flex flex-wrap gap-8" style="opacity:0;animation:heroLine .9s cubic-bezier(.16,1,.3,1) .95s forwards">
+      <div>
+        <p class="text-[10px] font-mono uppercase tracking-widest text-on-surface-muted mb-2">First working system</p>
+        <p class="text-3xl font-headline font-bold text-primary">45 Days</p>
+      </div>
+      <div class="border-l border-white/10 pl-8">
+        <p class="text-[10px] font-mono uppercase tracking-widest text-on-surface-muted mb-2">Full transformation</p>
+        <p class="text-3xl font-headline font-bold text-primary">90 Days</p>
+      </div>
+      <div class="border-l border-white/10 pl-8">
+        <p class="text-[10px] font-mono uppercase tracking-widest text-on-surface-muted mb-2">Then</p>
+        <p class="text-3xl font-headline font-bold text-on-surface">Ongoing</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STICKY TIMELINE ══════════════════════════════════════ -->
+<div class="timeline-bar">
+  <div class="timeline-track">
+    <a href="#p01" class="timeline-seg" data-phase="p01" style="flex:15">
+      <span class="seg-num">01</span><span class="seg-name">ScaleScan</span><span class="seg-days">Days 1–15</span>
+    </a>
+    <a href="#p02" class="timeline-seg" data-phase="p02" style="flex:15">
+      <span class="seg-num">02</span><span class="seg-name">ScaleSync</span><span class="seg-days">Days 16–30</span>
+    </a>
+    <a href="#p03" class="timeline-seg" data-phase="p03" style="flex:20">
+      <span class="seg-num">03</span><span class="seg-name">ScaleFlow</span><span class="seg-days">Days 31–50</span>
+    </a>
+    <a href="#p04" class="timeline-seg" data-phase="p04" style="flex:15">
+      <span class="seg-num">04</span><span class="seg-name">ScaleVision</span><span class="seg-days">Days 51–65</span>
+    </a>
+    <a href="#p05" class="timeline-seg" data-phase="p05" style="flex:15">
+      <span class="seg-num">05</span><span class="seg-name">ScaleAI</span><span class="seg-days">Days 66–80</span>
+    </a>
+    <a href="#p06" class="timeline-seg" data-phase="p06" style="flex:10">
+      <span class="seg-num">06</span><span class="seg-name">ScaleMax</span><span class="seg-days">Ongoing</span>
+    </a>
+  </div>
+</div>
+
+<!-- ═══ PHASE 01 — SCALESCAN (radar/scan visual) ═══════════════ -->
+<section id="p01" class="phase-wrap">
+  <div class="phase-card slide-left">
+    <div class="phase-cover">
+      <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="g1" cx="20%" cy="60%" r="70%">
+            <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#0a1122" stop-opacity="0"/>
+          </radialGradient>
+          <pattern id="grid1" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="800" height="340" fill="#0a1122"/>
+        <rect width="800" height="340" fill="url(#grid1)"/>
+        <rect width="800" height="340" fill="url(#g1)"/>
+        <g stroke="#1ABADC" fill="none" stroke-width="1">
+          <circle cx="160" cy="200" r="60"  stroke-opacity="0.65"/>
+          <circle cx="160" cy="200" r="110" stroke-opacity="0.42"/>
+          <circle cx="160" cy="200" r="165" stroke-opacity="0.26"/>
+          <circle cx="160" cy="200" r="220" stroke-opacity="0.14"/>
+        </g>
+        <!-- Expanding radar pulses -->
+        <g fill="none" stroke="#1ABADC">
+          <circle cx="160" cy="200" r="20" stroke-width="1.5">
+            <animate attributeName="r" values="20;280" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="stroke-opacity" values="0.7;0" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="160" cy="200" r="20" stroke-width="1.5">
+            <animate attributeName="r" values="20;280" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+            <animate attributeName="stroke-opacity" values="0.7;0" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+          </circle>
+        </g>
+        <!-- Rotating sweep dot on middle ring -->
+        <g transform-origin="160 200">
+          <circle cx="270" cy="200" r="6" fill="#8de4f0"/>
+          <circle cx="270" cy="200" r="14" fill="#1ABADC" fill-opacity="0.25"/>
+          <animateTransform attributeName="transform" type="rotate" from="0 160 200" to="360 160 200" dur="8s" repeatCount="indefinite"/>
+        </g>
+        <!-- Detected targets -->
+        <g>
+          <circle cx="360" cy="180" r="4" fill="#8de4f0"/>
+          <circle cx="410" cy="260" r="3" fill="#1ABADC" fill-opacity="0.7"/>
+          <circle cx="500" cy="120" r="3" fill="#1ABADC" fill-opacity="0.5"/>
+          <circle cx="220" cy="140" r="4" fill="#1ABADC"/>
+          <circle cx="290" cy="240" r="3" fill="#1ABADC" fill-opacity="0.6"/>
+        </g>
+        <line x1="160" y1="200" x2="360" y2="180" stroke="#1ABADC" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="4 4"/>
+      </svg>
+      <div class="phase-cover-overlay"></div>
+      <div class="phase-cover-meta">
+        <div class="m-left">
+          <span class="m-badge"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Phase 01</span>
+          <h2>ScaleScan<sup>™</sup></h2>
+          <p class="m-tag">Business &amp; AI audit</p>
+        </div>
+        <div class="m-days"><span class="dot"></span>Days 1–15 &nbsp;·&nbsp; 2 weeks</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div>
+        <p class="block-label">The problem</p>
+        <p class="problem">You know the business has bottlenecks. You don't know exactly which ones, how big, or where AI will pay back fastest.</p>
+      </div>
+      <div>
+        <p class="block-label">What we deliver</p>
+        <ul>
+          <li>Executive strategy workshop</li>
+          <li>End-to-end process mapping</li>
+          <li>AI opportunity assessment</li>
+          <li>Software stack audit</li>
+          <li>ROI roadmap</li>
+        </ul>
+      </div>
+      <div>
+        <p class="block-label">The outcome</p>
+        <p class="outcome">Leadership knows exactly what's slowing growth and where automation creates the biggest impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHASE 02 — SCALESYNC (network nodes visual) ═══════════ -->
+<section id="p02" class="phase-wrap">
+  <div class="phase-card slide-right">
+    <div class="phase-cover">
+      <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="g2" cx="80%" cy="40%" r="70%">
+            <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#0a1122" stop-opacity="0"/>
+          </radialGradient>
+          <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="800" height="340" fill="#0a1122"/>
+        <rect width="800" height="340" fill="url(#grid2)"/>
+        <rect width="800" height="340" fill="url(#g2)"/>
+        <defs>
+          <path id="p2Route1" d="M 180 90 L 400 170 L 640 90"/>
+          <path id="p2Route2" d="M 120 240 L 400 170 L 600 260 L 300 290"/>
+          <path id="p2Route3" d="M 300 290 L 400 170 L 180 90"/>
+        </defs>
+        <g stroke="#1ABADC" stroke-width="1" stroke-opacity="0.35">
+          <line x1="180" y1="90"  x2="400" y2="170"/>
+          <line x1="180" y1="90"  x2="120" y2="240"/>
+          <line x1="400" y1="170" x2="640" y2="90"/>
+          <line x1="400" y1="170" x2="120" y2="240"/>
+          <line x1="400" y1="170" x2="600" y2="260"/>
+          <line x1="400" y1="170" x2="300" y2="290"/>
+          <line x1="640" y1="90"  x2="600" y2="260"/>
+          <line x1="120" y1="240" x2="300" y2="290"/>
+          <line x1="600" y1="260" x2="300" y2="290"/>
+        </g>
+        <!-- Traveling packets syncing between systems -->
+        <circle r="5" fill="#8de4f0">
+          <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#p2Route1"/></animateMotion>
+        </circle>
+        <circle r="4" fill="#8de4f0">
+          <animateMotion dur="5.5s" repeatCount="indefinite" begin="1s"><mpath href="#p2Route2"/></animateMotion>
+        </circle>
+        <circle r="4" fill="#1ABADC">
+          <animateMotion dur="4.5s" repeatCount="indefinite" begin="2s"><mpath href="#p2Route3"/></animateMotion>
+        </circle>
+        <g>
+          <circle cx="180" cy="90"  r="8"  fill="#1ABADC"/>
+          <circle cx="400" cy="170" r="14" fill="#1ABADC"/>
+          <circle cx="640" cy="90"  r="8"  fill="#8de4f0"/>
+          <circle cx="120" cy="240" r="8"  fill="#1ABADC" fill-opacity="0.85"/>
+          <circle cx="600" cy="260" r="8"  fill="#1ABADC" fill-opacity="0.85"/>
+          <circle cx="300" cy="290" r="6"  fill="#1ABADC" fill-opacity="0.75"/>
+        </g>
+      </svg>
+      <div class="phase-cover-overlay"></div>
+      <div class="phase-cover-meta">
+        <div class="m-left">
+          <span class="m-badge"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Phase 02</span>
+          <h2>ScaleSync<sup>™</sup></h2>
+          <p class="m-tag">System integration</p>
+        </div>
+        <div class="m-days"><span class="dot"></span>Days 16–30 &nbsp;·&nbsp; 2 weeks</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div>
+        <p class="block-label">The problem</p>
+        <p class="problem">Fifteen tools that don't talk to each other. Data lives in silos. Reporting is manual. Nothing scales.</p>
+      </div>
+      <div>
+        <p class="block-label">What we deliver</p>
+        <ul>
+          <li>CRM integration</li>
+          <li>LMS integration</li>
+          <li>Finance integration</li>
+          <li>Communication platform</li>
+          <li>Data consolidation</li>
+        </ul>
+      </div>
+      <div>
+        <p class="block-label">The outcome</p>
+        <p class="outcome">The business operates from one unified data ecosystem. Every team sees the same numbers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHASE 03 — SCALEFLOW (flow lines visual) ══════════════ -->
+<section id="p03" class="phase-wrap">
+  <div class="phase-card slide-left">
+    <div class="phase-cover">
+      <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g3" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stop-color="#1ABADC" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#1ABADC" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
+          </linearGradient>
+          <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="800" height="340" fill="#0a1122"/>
+        <rect width="800" height="340" fill="url(#grid3)"/>
+        <defs>
+          <path id="p3f1" d="M -30 80 Q 200 60 400 100 T 830 90"/>
+          <path id="p3f2" d="M -30 140 Q 200 180 400 150 T 830 170"/>
+          <path id="p3f3" d="M -30 200 Q 200 220 400 190 T 830 210"/>
+          <path id="p3f4" d="M -30 260 Q 200 240 400 270 T 830 250"/>
+        </defs>
+        <g fill="none" stroke="url(#g3)" stroke-width="2">
+          <use href="#p3f1" stroke-opacity="0.85"/>
+          <use href="#p3f2" stroke-opacity="0.7"/>
+          <use href="#p3f3" stroke-opacity="0.55"/>
+          <use href="#p3f4" stroke-opacity="0.4"/>
+        </g>
+        <!-- Traveling dots on each flow line -->
+        <circle r="5" fill="#8de4f0">
+          <animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#p3f1"/></animateMotion>
+        </circle>
+        <circle r="4" fill="#8de4f0">
+          <animateMotion dur="4s" repeatCount="indefinite" begin="0.6s"><mpath href="#p3f2"/></animateMotion>
+        </circle>
+        <circle r="4" fill="#1ABADC">
+          <animateMotion dur="3.6s" repeatCount="indefinite" begin="0.2s"><mpath href="#p3f3"/></animateMotion>
+        </circle>
+        <circle r="3.5" fill="#1ABADC" fill-opacity="0.75">
+          <animateMotion dur="4.4s" repeatCount="indefinite" begin="1s"><mpath href="#p3f4"/></animateMotion>
+        </circle>
+      </svg>
+      <div class="phase-cover-overlay"></div>
+      <div class="phase-cover-meta">
+        <div class="m-left">
+          <span class="m-badge"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Phase 03</span>
+          <h2>ScaleFlow<sup>™</sup></h2>
+          <p class="m-tag">AI automation</p>
+        </div>
+        <div class="m-days"><span class="dot"></span>Days 31–50 &nbsp;·&nbsp; 3 weeks</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div>
+        <p class="block-label">The problem</p>
+        <p class="problem">Your team spends 40% of their week on repetitive tasks a machine could do faster, more accurately, and around the clock.</p>
+      </div>
+      <div>
+        <p class="block-label">What we deliver</p>
+        <ul>
+          <li>Client onboarding</li>
+          <li>Lead routing</li>
+          <li>Appointment scheduling</li>
+          <li>Document generation</li>
+          <li>Reporting &amp; client support</li>
+          <li>Team workflows</li>
+        </ul>
+      </div>
+      <div>
+        <p class="block-label">The outcome</p>
+        <p class="outcome">Hundreds of manual tasks happen automatically. Your people focus on the work only humans can do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHASE 04 — SCALEVISION (dashboard visual) ═════════════ -->
+<section id="p04" class="phase-wrap">
+  <div class="phase-card slide-right">
+    <div class="phase-cover">
+      <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g4bar" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#1ABADC" stop-opacity="0.15"/>
+          </linearGradient>
+          <pattern id="grid4" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="800" height="340" fill="#0a1122"/>
+        <rect width="800" height="340" fill="url(#grid4)"/>
+        <g fill="url(#g4bar)">
+          <rect x="120" y="230" width="42" height="70"  rx="2"/>
+          <rect x="180" y="200" width="42" height="100" rx="2"/>
+          <rect x="240" y="170" width="42" height="130" rx="2"/>
+          <rect x="300" y="210" width="42" height="90"  rx="2"/>
+          <rect x="360" y="150" width="42" height="150" rx="2"/>
+          <rect x="420" y="120" width="42" height="180" rx="2"/>
+          <rect x="480" y="90"  width="42" height="210" rx="2"/>
+          <rect x="540" y="80"  width="42" height="220" rx="2"/>
+          <rect x="600" y="60"  width="42" height="240" rx="2"/>
+        </g>
+        <defs>
+          <path id="p4trend" d="M 140 245 L 200 215 L 260 185 L 320 225 L 380 165 L 440 135 L 500 105 L 560 95 L 620 75"/>
+        </defs>
+        <use href="#p4trend" fill="none" stroke="#8de4f0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <g fill="#8de4f0">
+          <circle cx="140" cy="245" r="4"/><circle cx="200" cy="215" r="4"/><circle cx="260" cy="185" r="4"/>
+          <circle cx="320" cy="225" r="4"/><circle cx="380" cy="165" r="4"/><circle cx="440" cy="135" r="4"/>
+          <circle cx="500" cy="105" r="4"/><circle cx="560" cy="95" r="4"/><circle cx="620" cy="75" r="4"/>
+        </g>
+        <!-- Live data cursor traveling the trend line -->
+        <circle r="6" fill="#8de4f0">
+          <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#p4trend"/></animateMotion>
+        </circle>
+        <circle r="14" fill="#1ABADC" fill-opacity="0.3">
+          <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#p4trend"/></animateMotion>
+        </circle>
+      </svg>
+      <div class="phase-cover-overlay"></div>
+      <div class="phase-cover-meta">
+        <div class="m-left">
+          <span class="m-badge"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Phase 04</span>
+          <h2>ScaleVision<sup>™</sup></h2>
+          <p class="m-tag">Executive intelligence</p>
+        </div>
+        <div class="m-days"><span class="dot"></span>Days 51–65 &nbsp;·&nbsp; 2 weeks</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div>
+        <p class="block-label">The problem</p>
+        <p class="problem">You wait for Monday's report to know what happened last week. By the time you see a problem, it has already cost you.</p>
+      </div>
+      <div>
+        <p class="block-label">What we deliver</p>
+        <ul>
+          <li>CEO dashboard</li>
+          <li>Team performance dashboard</li>
+          <li>Sales &amp; operations dashboards</li>
+          <li>AI insights</li>
+          <li>KPI tracking</li>
+        </ul>
+      </div>
+      <div>
+        <p class="block-label">The outcome</p>
+        <p class="outcome">Leadership sees the business in real time. No one says "can someone send me that report?" again.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHASE 05 — SCALEAI (AI cluster visual) ════════════════ -->
+<section id="p05" class="phase-wrap">
+  <div class="phase-card slide-left">
+    <div class="phase-cover">
+      <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="g5" cx="50%" cy="50%" r="55%">
+            <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#0a1122" stop-opacity="0"/>
+          </radialGradient>
+          <pattern id="grid5" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="800" height="340" fill="#0a1122"/>
+        <rect width="800" height="340" fill="url(#grid5)"/>
+        <rect width="800" height="340" fill="url(#g5)"/>
+        <defs>
+          <path id="p5s1" d="M 400 170 L 280 90"/>
+          <path id="p5s2" d="M 400 170 L 520 90"/>
+          <path id="p5s3" d="M 400 170 L 200 200"/>
+          <path id="p5s4" d="M 400 170 L 600 200"/>
+          <path id="p5s5" d="M 400 170 L 330 280"/>
+          <path id="p5s6" d="M 400 170 L 470 280"/>
+        </defs>
+        <g stroke="#1ABADC" stroke-width="1" stroke-opacity="0.25">
+          <line x1="400" y1="170" x2="280" y2="90"/>
+          <line x1="400" y1="170" x2="520" y2="90"/>
+          <line x1="400" y1="170" x2="200" y2="200"/>
+          <line x1="400" y1="170" x2="600" y2="200"/>
+          <line x1="400" y1="170" x2="330" y2="280"/>
+          <line x1="400" y1="170" x2="470" y2="280"/>
+          <line x1="280" y1="90" x2="520" y2="90"/>
+          <line x1="200" y1="200" x2="330" y2="280"/>
+          <line x1="600" y1="200" x2="470" y2="280"/>
+        </g>
+        <!-- Central hub with pulsing ring -->
+        <g>
+          <circle cx="400" cy="170" r="22" fill="#1ABADC"/>
+          <circle cx="400" cy="170" r="34" fill="none" stroke="#1ABADC" stroke-opacity="0.4"/>
+          <circle cx="400" cy="170" r="48" fill="none" stroke="#1ABADC" stroke-opacity="0.2"/>
+          <!-- Expanding signal ring -->
+          <circle cx="400" cy="170" r="22" fill="none" stroke="#8de4f0" stroke-width="1.5">
+            <animate attributeName="r" values="22;80" dur="2.4s" repeatCount="indefinite"/>
+            <animate attributeName="stroke-opacity" values="0.7;0" dur="2.4s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+        <!-- Signal packets dispatched from hub to each AI assistant -->
+        <g fill="#8de4f0">
+          <circle r="4"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"><mpath href="#p5s1"/></animateMotion></circle>
+          <circle r="4"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.3s"><mpath href="#p5s2"/></animateMotion></circle>
+          <circle r="4"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.6s"><mpath href="#p5s3"/></animateMotion></circle>
+          <circle r="4"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.9s"><mpath href="#p5s4"/></animateMotion></circle>
+          <circle r="4"><animateMotion dur="1.8s" repeatCount="indefinite" begin="1.2s"><mpath href="#p5s5"/></animateMotion></circle>
+          <circle r="4"><animateMotion dur="1.8s" repeatCount="indefinite" begin="1.5s"><mpath href="#p5s6"/></animateMotion></circle>
+        </g>
+        <!-- Assistant satellites -->
+        <g fill="#8de4f0">
+          <circle cx="280" cy="90"  r="10"/>
+          <circle cx="520" cy="90"  r="10"/>
+          <circle cx="200" cy="200" r="10"/>
+          <circle cx="600" cy="200" r="10"/>
+          <circle cx="330" cy="280" r="10"/>
+          <circle cx="470" cy="280" r="10"/>
+        </g>
+      </svg>
+      <div class="phase-cover-overlay"></div>
+      <div class="phase-cover-meta">
+        <div class="m-left">
+          <span class="m-badge"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Phase 05</span>
+          <h2>ScaleAI<sup>™</sup></h2>
+          <p class="m-tag">AI workforce</p>
+        </div>
+        <div class="m-days"><span class="dot"></span>Days 66–80 &nbsp;·&nbsp; 2 weeks</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div>
+        <p class="block-label">The problem</p>
+        <p class="problem">Every function is stretched. Hiring is slow and expensive. You need help that scales instantly without payroll.</p>
+      </div>
+      <div>
+        <p class="block-label">What we deliver</p>
+        <ul>
+          <li>AI operations assistant</li>
+          <li>AI sales assistant</li>
+          <li>AI customer support assistant</li>
+          <li>AI knowledge assistant</li>
+          <li>AI reporting assistant</li>
+        </ul>
+      </div>
+      <div>
+        <p class="block-label">The outcome</p>
+        <p class="outcome">A digital workforce that supports your employees instead of replacing them. Every team gets a force multiplier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHASE 06 — SCALEMAX (compounding growth visual) ══════ -->
+<section id="p06" class="phase-wrap" style="padding-bottom:80px">
+  <div class="phase-card slide-right">
+    <div class="phase-cover">
+      <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g6" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
+          </linearGradient>
+          <pattern id="grid6" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="800" height="340" fill="#0a1122"/>
+        <rect width="800" height="340" fill="url(#grid6)"/>
+        <defs>
+          <path id="p6curve" d="M 60 290 Q 200 285 300 260 T 500 180 T 720 40"/>
+        </defs>
+        <path d="M 60 290 Q 200 285 300 260 T 500 180 T 720 40 L 720 300 L 60 300 Z" fill="url(#g6)"/>
+        <use href="#p6curve" fill="none" stroke="#8de4f0" stroke-width="3" stroke-linecap="round"/>
+        <g fill="#1ABADC">
+          <circle cx="60" cy="290" r="4"/>
+          <circle cx="180" cy="278" r="4"/>
+          <circle cx="300" cy="260" r="4"/>
+          <circle cx="420" cy="215" r="5"/>
+          <circle cx="540" cy="145" r="5"/>
+          <circle cx="660" cy="80" r="6"/>
+          <circle cx="720" cy="40" r="7" fill="#8de4f0"/>
+        </g>
+        <!-- Growing dot climbing the curve -->
+        <circle r="8" fill="#8de4f0">
+          <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#p6curve"/></animateMotion>
+        </circle>
+        <circle r="20" fill="#1ABADC" fill-opacity="0.28">
+          <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#p6curve"/></animateMotion>
+        </circle>
+        <g stroke="#1ABADC" stroke-opacity="0.15" stroke-dasharray="3 3">
+          <line x1="60" y1="290" x2="720" y2="290"/>
+          <line x1="60" y1="200" x2="720" y2="200"/>
+          <line x1="60" y1="110" x2="720" y2="110"/>
+        </g>
+      </svg>
+      <div class="phase-cover-overlay"></div>
+      <div class="phase-cover-meta">
+        <div class="m-left">
+          <span class="m-badge"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Phase 06</span>
+          <h2>ScaleMax<sup>™</sup></h2>
+          <p class="m-tag">Continuous optimization</p>
+        </div>
+        <div class="m-days"><span class="dot"></span>Ongoing &nbsp;·&nbsp; Monthly cadence</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div>
+        <p class="block-label">The problem</p>
+        <p class="problem">A one-time transformation becomes stale the moment your business shifts. What worked in Q1 breaks by Q3.</p>
+      </div>
+      <div>
+        <p class="block-label">What we deliver</p>
+        <ul>
+          <li>Monthly optimization reviews</li>
+          <li>New AI opportunities</li>
+          <li>Workflow improvements</li>
+          <li>Performance monitoring</li>
+          <li>Quarterly strategy sessions</li>
+        </ul>
+      </div>
+      <div>
+        <p class="block-label">The outcome</p>
+        <p class="outcome">The system improves as the company grows instead of becoming outdated. It compounds with you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRANSFORMATION — split screen ════════════════════════ -->
+<section class="py-24 bg-surface-low border-t border-b border-white/[0.05]">
+  <div class="trans-wrap">
+    <div class="trans-header reveal">
+      <div>
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-4">The transformation</p>
+        <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight max-w-xl">
+          Two versions of the same business.
+        </h2>
+      </div>
+      <p class="text-on-surface-dim text-sm max-w-sm">90 days apart. Same team, same product, same market. Different operating model.</p>
+    </div>
+
+    <div class="trans-split reveal">
+      <div class="trans-col trans-col-today">
+        <h3>Today</h3>
+        <ul>
+          <li><span class="icon">✕</span>Founder bottleneck</li>
+          <li><span class="icon">✕</span>Manual onboarding</li>
+          <li><span class="icon">✕</span>Fifteen disconnected tools</li>
+          <li><span class="icon">✕</span>Rising payroll</li>
+          <li><span class="icon">✕</span>Operational chaos</li>
+          <li><span class="icon">✕</span>Limited visibility</li>
+          <li><span class="icon">✕</span>Human errors</li>
+        </ul>
+      </div>
+      <div class="trans-divider">
+        <span class="d-arrow material-symbols-outlined">arrow_forward</span>
+        <span class="d-label">90 days</span>
+      </div>
+      <div class="trans-col trans-col-after">
+        <h3>After ScaleOS</h3>
+        <ul>
+          <li><span class="icon">✓</span>AI operating system</li>
+          <li><span class="icon">✓</span>Automated workflows</li>
+          <li><span class="icon">✓</span>One unified platform</li>
+          <li><span class="icon">✓</span>Digital workforce</li>
+          <li><span class="icon">✓</span>Scalable operations</li>
+          <li><span class="icon">✓</span>Real-time dashboards</li>
+          <li><span class="icon">✓</span>Predictable delivery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GUARANTEE ════════════════════════════════════════════ -->
+<section class="py-24 border-b border-white/[0.05]">
+  <div class="max-w-3xl mx-auto px-6 text-center reveal">
+    <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-6">ScaleSafe<sup>™</sup> Guarantee</p>
+    <blockquote class="text-xl md:text-2xl font-headline font-medium text-on-surface leading-[1.5] italic">
+      "If your leadership team completes the implementation milestones, provides timely feedback, and your team adopts the agreed workflows, we continue optimizing your AI Business Operating System at no additional service fee until all contracted automations are fully implemented and performing as specified."
+    </blockquote>
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════════════════ -->
+<section class="py-24">
+  <div class="max-w-3xl mx-auto px-6 text-center reveal">
+    <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface leading-tight mb-6">
+      Start Day 1 in your business.
+    </h2>
+    <p class="text-on-surface-dim mb-10 max-w-xl mx-auto">Book a 30-minute call. We'll walk through your business, flag the biggest bottleneck, and tell you what Phase 01 would look like for you.</p>
+    <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-surface font-bold hover:bg-primary-dim transition-colors">
+      Book a Call <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
+<footer class="bg-surface-low border-t border-white/5 pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-on-surface-muted">
+    <div>&copy; 2026 OnPoint Nexus &nbsp;·&nbsp; Pune, India</div>
+    <div class="flex gap-6">
+      <a href="/" class="hover:text-primary transition-colors">Home</a>
+      <a href="/work" class="hover:text-primary transition-colors">Work</a>
+      <a href="/method" class="hover:text-primary transition-colors">ScaleOS</a>
+      <a href="/ai-solutions" class="hover:text-primary transition-colors">AI Solutions</a>
+      <a href="/about" class="hover:text-primary transition-colors">About</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal, .slide-left, .slide-right').forEach(el => io.observe(el));
+
+  const segs = document.querySelectorAll('.timeline-seg');
+  const phases = ['p01','p02','p03','p04','p05','p06'].map(id => document.getElementById(id));
+  const phaseObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) segs.forEach(s => s.classList.toggle('active', s.dataset.phase === e.target.id));
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+  phases.forEach(p => p && phaseObs.observe(p));
+</script>
+
+</body>
+</html>

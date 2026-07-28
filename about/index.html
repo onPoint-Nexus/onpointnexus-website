@@ -122,13 +122,11 @@
       <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
     </a>
     <div class="hidden md:flex items-center gap-7 font-body text-sm">
-      <a href="/services"   class="text-on-surface-dim hover:text-primary transition-colors duration-200">Services</a>
       <a href="/work"       class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
+      <a href="/method"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">ScaleOS</a>
       <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors duration-200">AI Solutions</a>
       <a href="/products" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Products</a>
-      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Industries</a>
       <a href="/about"      class="text-primary transition-colors duration-200">About</a>
-      <a href="/#contact"   class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work With Us</a>
     </div>
     <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
       Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
@@ -139,13 +137,11 @@
   </div>
   <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl mx-6 mb-3" style="background:rgba(17,24,39,0.96);">
     <div class="flex flex-col gap-1 text-sm font-body">
-      <a href="/services"   class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Services</a>
       <a href="/work"       class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work</a>
+      <a href="/method"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">ScaleOS</a>
       <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">AI Solutions</a>
       <a href="/products" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Products</a>
-      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Industries</a>
       <a href="/about"      class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">About</a>
-      <a href="/#contact"   class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work With Us</a>
       <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
     </div>
   </div>
@@ -169,11 +165,75 @@
 <!-- ════════════════════════════════════════════════════════════
      HERO. staging-style with thematic image
 ════════════════════════════════════════════════════════════ -->
-<section class="relative pt-32 pb-20 overflow-hidden">
-  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=85" alt="" aria-hidden="true" width="1920" height="1024" class="absolute inset-0 w-full h-full object-cover opacity-40" loading="eager">
-  <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(12,19,36,0.72) 0%, rgba(12,19,36,0.90) 50%, #0c1324 100%);"></div>
-  <div class="absolute inset-0 grid-bg opacity-25"></div>
-  <div class="absolute -top-40 left-0 w-[640px] h-[640px] rounded-full pointer-events-none" style="background:rgba(26,186,220,0.18);filter:blur(140px);"></div>
+<section class="relative pt-32 pb-20 overflow-hidden" style="background:#0c1324;">
+  <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(26,186,220,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(26,186,220,0.055) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);-webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 50% at 50% 45%,rgba(26,186,220,0.14) 0%,transparent 70%);"></div>
+
+  <!-- Journey timeline: one dot travels 2021 → 2026 with year milestones -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:0.7;">
+    <defs>
+      <linearGradient id="jFade" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0%"   stop-color="#1ABADC" stop-opacity="0"/>
+        <stop offset="15%"  stop-color="#1ABADC" stop-opacity="0.45"/>
+        <stop offset="85%"  stop-color="#1ABADC" stop-opacity="0.45"/>
+        <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="jGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.55"/>
+        <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
+      </radialGradient>
+      <path id="jPath" d="M -20 860 L 1620 860"/>
+      <style>
+        .j-tick { animation: jTick 2.6s ease-in-out infinite; }
+        @keyframes jTick { 0%,100% { opacity:1 } 50% { opacity:.35 } }
+      </style>
+    </defs>
+    <!-- Journey line -->
+    <use href="#jPath" fill="none" stroke="url(#jFade)" stroke-width="2"/>
+    <!-- Year milestone ticks (2021 → 2026) -->
+    <g fill="#1ABADC" font-family="'Roboto Mono', monospace" font-size="16" letter-spacing="2">
+      <g class="j-tick" style="animation-delay:0s">
+        <line x1="180" y1="840" x2="180" y2="880" stroke="#1ABADC" stroke-width="1.5"/>
+        <circle cx="180" cy="860" r="6" fill="#1ABADC"/>
+        <text x="180" y="820" text-anchor="middle" fill="#8A9BB5">2021</text>
+      </g>
+      <g class="j-tick" style="animation-delay:.3s">
+        <line x1="420" y1="840" x2="420" y2="880" stroke="#1ABADC" stroke-width="1.5"/>
+        <circle cx="420" cy="860" r="6" fill="#1ABADC"/>
+        <text x="420" y="820" text-anchor="middle" fill="#8A9BB5">2022</text>
+      </g>
+      <g class="j-tick" style="animation-delay:.6s">
+        <line x1="660" y1="840" x2="660" y2="880" stroke="#1ABADC" stroke-width="1.5"/>
+        <circle cx="660" cy="860" r="6" fill="#1ABADC"/>
+        <text x="660" y="820" text-anchor="middle" fill="#8A9BB5">2023</text>
+      </g>
+      <g class="j-tick" style="animation-delay:.9s">
+        <line x1="900" y1="840" x2="900" y2="880" stroke="#1ABADC" stroke-width="1.5"/>
+        <circle cx="900" cy="860" r="6" fill="#1ABADC"/>
+        <text x="900" y="820" text-anchor="middle" fill="#8A9BB5">2024</text>
+      </g>
+      <g class="j-tick" style="animation-delay:1.2s">
+        <line x1="1140" y1="840" x2="1140" y2="880" stroke="#1ABADC" stroke-width="1.5"/>
+        <circle cx="1140" cy="860" r="6" fill="#1ABADC"/>
+        <text x="1140" y="820" text-anchor="middle" fill="#8A9BB5">2025</text>
+      </g>
+      <g class="j-tick" style="animation-delay:1.5s">
+        <line x1="1380" y1="840" x2="1380" y2="880" stroke="#1ABADC" stroke-width="1.5"/>
+        <circle cx="1380" cy="860" r="9" fill="#8de4f0"/>
+        <circle cx="1380" cy="860" r="20" fill="url(#jGlow)"/>
+        <text x="1380" y="820" text-anchor="middle" fill="#E8EDF5" font-size="18">2026</text>
+      </g>
+    </g>
+    <!-- Traveling journey dot -->
+    <circle r="7" fill="#8de4f0">
+      <animateMotion dur="8s" repeatCount="indefinite"><mpath href="#jPath"/></animateMotion>
+    </circle>
+    <circle r="18" fill="url(#jGlow)">
+      <animateMotion dur="8s" repeatCount="indefinite"><mpath href="#jPath"/></animateMotion>
+    </circle>
+  </svg>
+
+  <div class="absolute left-0 right-0 bottom-0 pointer-events-none" style="height:120px;background:linear-gradient(180deg,transparent 0%,#0c1324 100%);"></div>
 
   <div class="relative max-w-7xl mx-auto px-6 text-center">
     <div class="reveal inline-flex">
@@ -264,61 +324,6 @@
     <p class="text-xl text-on-surface-dim leading-relaxed">
       In 2021 we started with a simple conviction: the best engineers in the world aren't concentrated in one city. Today, our Pune and Kolhapur teams build systems that run in hospitals, government offices, and luxury car showrooms from New York to Dubai. We don't outsource your project and manage it over email. We own it.
     </p>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════
-     04. VALUES
-════════════════════════════════════════════════════════════ -->
-<section class="py-24 border-t border-white/[0.05]">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="mb-12 text-center reveal">
-      <span class="text-xs font-mono text-primary uppercase tracking-widest">What We Stand For</span>
-      <h2 class="font-headline text-4xl font-bold mt-3 text-on-surface">Four principles. No exceptions.</h2>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 reveal">
-
-      <div class="flex items-start gap-4 p-7 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
-        <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-          <span class="material-symbols-outlined text-primary" style="font-size:1.2rem">psychology</span>
-        </div>
-        <div>
-          <p class="font-bold text-on-surface mb-1">AI-First Excellence</p>
-          <p class="text-sm text-on-surface-muted leading-relaxed">Every solution starts with intelligence at its core.</p>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-4 p-7 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
-        <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-          <span class="material-symbols-outlined text-primary" style="font-size:1.2rem">rocket_launch</span>
-        </div>
-        <div>
-          <p class="font-bold text-on-surface mb-1">Beyond-Limits Delivery</p>
-          <p class="text-sm text-on-surface-muted leading-relaxed">Whatever it takes to ensure client success.</p>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-4 p-7 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
-        <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-          <span class="material-symbols-outlined text-primary" style="font-size:1.2rem">lightbulb</span>
-        </div>
-        <div>
-          <p class="font-bold text-on-surface mb-1">Challenge-Driven Innovation</p>
-          <p class="text-sm text-on-surface-muted leading-relaxed">Complex problems fuel our best breakthroughs.</p>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-4 p-7 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
-        <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-          <span class="material-symbols-outlined text-primary" style="font-size:1.2rem">handshake</span>
-        </div>
-        <div>
-          <p class="font-bold text-on-surface mb-1">Client Victory Partnership</p>
-          <p class="text-sm text-on-surface-muted leading-relaxed">Your wins define our mission.</p>
-        </div>
-      </div>
-
-    </div>
   </div>
 </section>
 
@@ -603,7 +608,6 @@
           <li><a href="/about"              class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">About Us</a></li>
           <li><a href="/work"               class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Case Studies</a></li>
           <li><a href="/about#testimonials" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Client Stories</a></li>
-          <li><a href="/industries"         class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Industries</a></li>
 
           <li><a href="mailto:hr@onpointsoft.com" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Careers</a></li>
         </ul>

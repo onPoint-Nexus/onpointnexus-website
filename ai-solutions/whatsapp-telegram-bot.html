@@ -43,7 +43,7 @@
 
   <!-- JSON-LD: FAQ -->
   <script type="application/ld+json">
-  { "@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do we need WhatsApp Business API access?","acceptedAnswer":{"@type":"Answer","text":"Yes for WhatsApp. We help you get approved (Meta Business Manager verification, business profile setup). Telegram is simpler — no approval needed, we just deploy the bot."}},{"@type":"Question","name":"Can it handle multiple languages?","acceptedAnswer":{"@type":"Answer","text":"Yes. The AI detects the customer's language and responds in the same. Common combinations: English/Hindi in India, English/Spanish in the US, English/Arabic in the UAE."}},{"@type":"Question","name":"Can it send images, buttons, and other rich media?","acceptedAnswer":{"@type":"Answer","text":"Yes. WhatsApp supports templates with buttons, list menus, quick replies, images, PDFs, and location. The AI decides when to send rich content vs plain text based on the conversation."}},{"@type":"Question","name":"How does human handoff work?","acceptedAnswer":{"@type":"Answer","text":"When triggered, the AI marks the conversation, notifies your team via Slack/email, and stops replying. Your agent takes over. When they close the conversation, the AI resumes."}},{"@type":"Question","name":"What does WhatsApp charge?","acceptedAnswer":{"@type":"Answer","text":"Meta charges per conversation (roughly $0.005-0.09 depending on country and category). We show these costs live in a billing dashboard. Telegram is free."}}] }
+  { "@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do we need WhatsApp Business API access?","acceptedAnswer":{"@type":"Answer","text":"Yes for WhatsApp. We help you get approved (Meta Business Manager verification, business profile setup). Telegram is simpler. no approval needed, we just deploy the bot."}},{"@type":"Question","name":"Can it handle multiple languages?","acceptedAnswer":{"@type":"Answer","text":"Yes. The AI detects the customer's language and responds in the same. Common combinations: English/Hindi in India, English/Spanish in the US, English/Arabic in the UAE."}},{"@type":"Question","name":"Can it send images, buttons, and other rich media?","acceptedAnswer":{"@type":"Answer","text":"Yes. WhatsApp supports templates with buttons, list menus, quick replies, images, PDFs, and location. The AI decides when to send rich content vs plain text based on the conversation."}},{"@type":"Question","name":"How does human handoff work?","acceptedAnswer":{"@type":"Answer","text":"When triggered, the AI marks the conversation, notifies your team via Slack/email, and stops replying. Your agent takes over. When they close the conversation, the AI resumes."}},{"@type":"Question","name":"What does WhatsApp charge?","acceptedAnswer":{"@type":"Answer","text":"Meta charges per conversation (roughly $0.005-0.09 depending on country and category). We show these costs live in a billing dashboard. Telegram is free."}}] }
   </script>
 
   <!-- JSON-LD: BreadcrumbList -->
@@ -101,10 +101,9 @@
       <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
     </a>
     <div class="hidden md:flex items-center gap-7 font-body text-sm">
-      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Services</a>
       <a href="/work" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
+      <a href="/method"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">ScaleOS</a>
       <a href="/ai-solutions" class="text-primary transition-colors duration-200">AI Solutions</a>
-      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Industries</a>
       <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
     </div>
     <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
@@ -116,10 +115,9 @@
   </div>
   <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl mx-6 mb-3" style="background:rgba(17,24,39,0.96);">
     <div class="flex flex-col gap-1 text-sm font-body">
-      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Services</a>
       <a href="/work" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work</a>
+      <a href="/method"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">ScaleOS</a>
       <a href="/ai-solutions" class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">AI Solutions</a>
-      <a href="/industries" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Industries</a>
       <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
       <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
     </div>
@@ -168,7 +166,7 @@
       <div class="icon"><span class="material-symbols-outlined">flag</span></div>
       <h3 class="text-xl font-bold text-on-surface mb-3">The Challenge</h3>
       <ul><li>Support team overwhelmed with repetitive queries on multiple channels.</li>
-        <li>Long response times damage customer satisfaction — customers expect instant.</li>
+        <li>Long response times damage customer satisfaction. customers expect instant.</li>
         <li>Your customers live in WhatsApp and Telegram, not your web chat widget.</li></ul>
     </div>
     <div class="point-card solution reveal" style="transition-delay:.06s;">
@@ -178,13 +176,13 @@
         <li>Answers queries, shares info, qualifies leads automatically.</li>
         <li>Connected to your knowledge base for grounded, accurate responses.</li>
         <li>Escalates to a human agent when the AI is uncertain or intent is high-value.</li>
-        <li>Broadcast + one-to-one — send campaigns and handle personal replies from one system.</li></ul>
+        <li>Broadcast + one-to-one. send campaigns and handle personal replies from one system.</li></ul>
     </div>
     <div class="point-card value reveal" style="transition-delay:.12s;">
       <div class="icon"><span class="material-symbols-outlined">trending_up</span></div>
       <h3 class="text-xl font-bold text-on-surface mb-3">Value Delivered</h3>
       <ul><li>Meaningful reduction in support-executive workload.</li>
-        <li>Instant responses — average reply time under three seconds.</li>
+        <li>Instant responses. average reply time under three seconds.</li>
         <li>Customers served on the app they already use daily.</li></ul>
     </div>
   </div>
@@ -222,7 +220,7 @@
   <div class="flex flex-col gap-3">
         <details class="faq reveal">
       <summary>Do we need WhatsApp Business API access?</summary>
-      <p>Yes for WhatsApp. We help you get approved (Meta Business Manager verification, business profile setup). Telegram is simpler — no approval needed, we just deploy the bot.</p>
+      <p>Yes for WhatsApp. We help you get approved (Meta Business Manager verification, business profile setup). Telegram is simpler. no approval needed, we just deploy the bot.</p>
     </details>
     <details class="faq reveal" style="transition-delay:.04s;">
       <summary>Can it handle multiple languages?</summary>
@@ -312,8 +310,6 @@
         <ul class="space-y-3">
           <li><a href="/about" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">About Us</a></li>
           <li><a href="/work" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Case Studies</a></li>
-          <li><a href="/services" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Services</a></li>
-          <li><a href="/industries" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Industries</a></li>
         </ul>
       </div>
       <div>
