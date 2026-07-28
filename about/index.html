@@ -104,6 +104,129 @@
       filter: blur(120px);
       pointer-events: none;
     }
+
+    /* ─── Testimonials — video + quote, alternating ─────── */
+    .story-list { display:flex; flex-direction:column; }
+    .story-item {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      padding: 56px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .story-item:last-child { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .story-item.alt { direction: rtl; }
+    .story-item.alt > * { direction: ltr; }
+
+    /* Media slot (video or placeholder) */
+    .story-media {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background: #0f1729;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+    }
+    .story-media img { width: 100%; height: 100%; object-fit: cover; }
+    .story-media .grid-mask {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(26,186,220,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,186,220,0.05) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 30%, transparent 90%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 30%, transparent 90%);
+    }
+    .story-media .spot {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(26,186,220,0.14) 0%, transparent 70%);
+    }
+    .story-media .brand-tag {
+      position: absolute; top: 20px; left: 20px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+      color: #1ABADC;
+      padding: 6px 12px;
+      background: rgba(26,186,220,0.08);
+      border: 1px solid rgba(26,186,220,0.28);
+      border-radius: 999px;
+    }
+    .story-media .status-tag {
+      position: absolute; bottom: 20px; left: 20px; right: 20px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+      color: #8A9BB5;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .story-media .status-tag .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #1ABADC;
+      animation: statusPulse 2s ease-in-out infinite;
+    }
+    @keyframes statusPulse { 0%,100% { opacity:1 } 50% { opacity:.35 } }
+    .story-media .play {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: #E8EDF5;
+    }
+    .story-media .play .btn {
+      width: 68px; height: 68px; border-radius: 50%;
+      background: rgba(15,23,41,0.7);
+      backdrop-filter: blur(8px);
+      border: 1.5px solid rgba(26,186,220,0.55);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .35s cubic-bezier(.16,1,.3,1), background .3s ease, border-color .3s ease;
+    }
+    .story-media.ready .play .btn {
+      background: rgba(26,186,220,0.9);
+      border-color: rgba(26,186,220,1);
+      color: #0c1324;
+    }
+    .story-media:hover .play .btn { transform: scale(1.08); }
+    .story-media .play .btn svg { width: 22px; height: 22px; margin-left: 3px; }
+
+    /* Quote text side */
+    .story-quote { position: relative; padding-left: 48px; }
+    .story-quote .qmark {
+      position: absolute; left: 0; top: -6px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 72px; line-height: 1;
+      color: rgba(26,186,220,0.35);
+      user-select: none;
+    }
+    .story-quote blockquote { margin: 0; }
+    .story-quote blockquote p {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.1rem, 1.65vw, 1.35rem);
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+      color: #E8EDF5;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .story-quote figcaption {
+      margin-top: 24px;
+      display: flex; flex-direction: column; gap: 4px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .story-quote .q-name  { color: #E8EDF5; font-weight: 600; font-size: 12px; }
+    .story-quote .q-role  { color: #8A9BB5; }
+    .story-quote .q-tag   { color: #1ABADC; margin-top: 4px; }
+
+    @media (max-width: 900px) {
+      .story-item, .story-item.alt {
+        grid-template-columns: 1fr; gap: 32px; direction: ltr;
+        padding: 40px 0;
+      }
+      .story-quote { padding-left: 40px; }
+      .story-quote .qmark { font-size: 56px; }
+    }
   </style>
   <script src="/js/site-cursor.js" defer></script>
 </head>
@@ -128,7 +251,7 @@
       <a href="/products" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Products</a>
       <a href="/about"      class="text-primary transition-colors duration-200">About</a>
     </div>
-    <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
+    <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
       Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
     </a>
     <button id="navToggle" class="md:hidden p-2 text-on-surface-dim hover:text-primary transition-colors" aria-label="Toggle navigation" aria-expanded="false">
@@ -142,7 +265,7 @@
       <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">AI Solutions</a>
       <a href="/products" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Products</a>
       <a href="/about"      class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">About</a>
-      <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
     </div>
   </div>
 </nav>
@@ -243,7 +366,7 @@
       Built by engineers.<br><span class="grad-text-3">Run for clients.</span>
     </h1>
     <p class="mt-7 max-w-2xl mx-auto text-lg text-on-surface-dim leading-relaxed reveal" style="transition-delay:.15s;">
-      Since 2021, our Pune and Kolhapur teams have shipped production systems for hospitals, governments, and enterprise teams, from Dallas to Dubai.
+      Since 2021, our engineering teams in India have shipped production systems for hospitals, governments, and enterprises across the US, Canada, and UAE.
     </p>
     <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center reveal" style="transition-delay:.25s;">
       <a href="#founder" class="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-surface px-7 py-3.5 font-semibold hover:bg-primary-dim hover:shadow-[0_0_32px_-4px_rgba(26,186,220,0.5)] transition-all">
@@ -254,21 +377,6 @@
       </a>
     </div>
 
-    <!-- 3-stat strip -->
-    <div class="mt-14 grid grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto reveal" style="transition-delay:.35s;">
-      <div class="glass-card hero-stat-card text-left">
-        <div class="hero-stat-val">2021</div>
-        <div class="hero-stat-lbl">Year Founded</div>
-      </div>
-      <div class="glass-card hero-stat-card text-left">
-        <div class="hero-stat-val">45<span class="text-on-surface-muted">+</span></div>
-        <div class="hero-stat-lbl">Team Members</div>
-      </div>
-      <div class="glass-card hero-stat-card text-left">
-        <div class="hero-stat-val">6</div>
-        <div class="hero-stat-lbl">Global Offices</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -322,249 +430,186 @@
       We own it.
     </h2>
     <p class="text-xl text-on-surface-dim leading-relaxed">
-      In 2021 we started with a simple conviction: the best engineers in the world aren't concentrated in one city. Today, our Pune and Kolhapur teams build systems that run in hospitals, government offices, and luxury car showrooms from New York to Dubai. We don't outsource your project and manage it over email. We own it.
+      We started in 2021 with a bet: the best engineers aren't all in one city. Our teams in India now build systems running in hospitals, government offices, and luxury car showrooms across the US and UAE. We don't outsource your project. We own it.
     </p>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════
-     05. STATS
+     04. STATS — 4 typographic figures on a hairline row
 ════════════════════════════════════════════════════════════ -->
-<section class="py-20 bg-surface-low border-t border-b border-white/[0.05]">
-  <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center reveal">
-    <div class="space-y-2">
-      <div class="text-5xl font-headline font-bold text-primary">2021</div>
-      <div class="text-[10px] uppercase tracking-widest text-on-surface-muted font-mono">Year Founded</div>
-    </div>
-    <div class="space-y-2">
-      <div class="text-5xl font-headline font-bold text-primary">45+</div>
-      <div class="text-[10px] uppercase tracking-widest text-on-surface-muted font-mono">Tech Specialists</div>
-    </div>
-    <div class="space-y-2">
-      <div class="text-5xl font-headline font-bold text-primary">6</div>
-      <div class="text-[10px] uppercase tracking-widest text-on-surface-muted font-mono">Global Regions</div>
+<section class="py-24 border-t border-b border-white/[0.05]">
+  <div class="max-w-6xl mx-auto px-6 reveal">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-0">
+      <div class="px-6 py-4 md:pr-8 md:pl-0">
+        <div class="text-4xl md:text-5xl font-headline font-medium text-primary tracking-tight leading-none tabular-nums" data-count-to="2021" data-suffix="">2021</div>
+        <div class="mt-3 text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Year Founded</div>
+      </div>
+      <div class="px-6 py-4 md:px-8 border-t md:border-t-0 md:border-l border-white/10">
+        <div class="text-4xl md:text-5xl font-headline font-medium text-primary tracking-tight leading-none tabular-nums" data-count-to="45" data-suffix="+">45+</div>
+        <div class="mt-3 text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Team Members</div>
+      </div>
+      <div class="px-6 py-4 md:px-8 border-l border-white/10">
+        <div class="text-4xl md:text-5xl font-headline font-medium text-primary tracking-tight leading-none tabular-nums" data-count-to="4" data-suffix="">4</div>
+        <div class="mt-3 text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Global Regions</div>
+      </div>
+      <div class="px-6 py-4 md:pl-8 md:pr-0 border-t md:border-t-0 border-l border-white/10">
+        <div class="text-4xl md:text-5xl font-headline font-medium text-primary tracking-tight leading-none tabular-nums" data-count-to="130" data-suffix="+">130+</div>
+        <div class="mt-3 text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Production Systems</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════
-     06. LOCATIONS
+     05. REACH — editorial city list (replaces heavy Locations)
 ════════════════════════════════════════════════════════════ -->
-<section class="py-24 border-t border-white/[0.05]">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="mb-12 text-center reveal">
-      <span class="text-xs font-mono text-primary uppercase tracking-widest">Where We Operate</span>
-      <h2 class="font-headline text-4xl font-bold mt-3 text-on-surface">Global reach. No middlemen.</h2>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 reveal">
-
-      <div class="p-7 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-primary" style="font-size:1rem">location_on</span>
-          </div>
-          <div>
-            <p class="font-bold text-on-surface text-sm">Pune &amp; Kolhapur, India</p>
-            <p class="text-[10px] font-mono text-primary uppercase tracking-wider">Engineering HQ</p>
-          </div>
-        </div>
-        <p class="text-xs text-on-surface-muted leading-relaxed">Our core engineering teams. 45+ senior engineers with 10–18 years of production experience across mobile, cloud, AI, and enterprise.</p>
-      </div>
-
-      <div class="p-7 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-primary" style="font-size:1rem">location_on</span>
-          </div>
-          <div>
-            <p class="font-bold text-on-surface text-sm">Dallas, TX, USA</p>
-            <p class="text-[10px] font-mono text-primary uppercase tracking-wider">North America HQ</p>
-          </div>
-        </div>
-        <p class="text-xs text-on-surface-muted leading-relaxed">1900 S. Polk #295, Dallas, TX. Client engagement, discovery, and account management for US clients.</p>
-      </div>
-
-      <div class="p-7 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-primary" style="font-size:1rem">location_on</span>
-          </div>
-          <div>
-            <p class="font-bold text-on-surface text-sm">Pointe-Claire, Quebec</p>
-            <p class="text-[10px] font-mono text-primary uppercase tracking-wider">Canada</p>
-          </div>
-        </div>
-        <p class="text-xs text-on-surface-muted leading-relaxed">755 St-Johns Blvd, Pointe-Claire. Serving clients across Canada and supporting North American delivery operations.</p>
-      </div>
-
-      <div class="p-7 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.15] transition-colors">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-primary" style="font-size:1rem">public</span>
-          </div>
-          <div>
-            <p class="font-bold text-on-surface text-sm">Mumbai · Frankfurt · Dubai</p>
-            <p class="text-[10px] font-mono text-primary uppercase tracking-wider">Client Offices</p>
-          </div>
-        </div>
-        <p class="text-xs text-on-surface-muted leading-relaxed">Regional presence across South Asia, Europe, and the Middle East. Active client delivery in all three markets.</p>
-      </div>
-
+<section class="py-28 border-t border-white/[0.05]">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-6 reveal">Reach</p>
+    <p class="text-2xl md:text-3xl font-headline font-medium text-on-surface leading-[1.35] tracking-[-0.01em] max-w-3xl reveal" style="transition-delay:.05s">
+      Founded in Kolhapur in 2021. Today we ship production systems from four regions.
+    </p>
+    <div class="mt-14 flex flex-wrap items-center gap-x-6 gap-y-4 reveal" style="transition-delay:.15s">
+      <span class="font-mono text-sm md:text-base tracking-[0.18em] uppercase text-on-surface">India</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>
+      <span class="font-mono text-sm md:text-base tracking-[0.18em] uppercase text-on-surface">USA</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>
+      <span class="font-mono text-sm md:text-base tracking-[0.18em] uppercase text-on-surface">Canada</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>
+      <span class="font-mono text-sm md:text-base tracking-[0.18em] uppercase text-on-surface">UAE</span>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════
-     07. TESTIMONIALS, all 4
+     06. CLIENT STORIES — editorial pull quotes on hairlines
 ════════════════════════════════════════════════════════════ -->
-<section class="py-24 bg-surface-low border-t border-white/[0.05]">
-  <div class="max-w-5xl mx-auto px-6">
-
-    <div class="mb-14 reveal">
-      <span class="text-xs font-mono text-primary uppercase tracking-widest">Client Stories</span>
-      <h2 class="font-headline text-4xl md:text-5xl font-bold mt-3 text-on-surface leading-tight">
-        What our clients say.
+<section class="py-28 border-t border-white/[0.05]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="mb-16 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Client Stories</p>
+      <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface leading-tight tracking-[-0.02em]">
+        In their own words.
       </h2>
     </div>
 
-    <!-- Jonathan M. / RPM One -->
-    <div class="reveal mb-5">
-      <div class="relative rounded-2xl overflow-hidden p-8 md:p-12 bg-surface-card border border-white/[0.05]">
-        <div class="absolute top-6 right-8 text-[8rem] font-serif leading-none text-primary/[0.07] select-none pointer-events-none">"</div>
-        <div class="relative z-10">
-          <div class="flex gap-1 mb-6">
-            <span class="material-symbols-outlined text-primary" style="font-size:1.1rem;font-variation-settings:'FILL' 1">star</span>
-            <span class="material-symbols-outlined text-primary" style="font-size:1.1rem;font-variation-settings:'FILL' 1">star</span>
-            <span class="material-symbols-outlined text-primary" style="font-size:1.1rem;font-variation-settings:'FILL' 1">star</span>
-            <span class="material-symbols-outlined text-primary" style="font-size:1.1rem;font-variation-settings:'FILL' 1">star</span>
-            <span class="material-symbols-outlined text-primary" style="font-size:1.1rem;font-variation-settings:'FILL' 1">star</span>
-          </div>
-          <blockquote class="text-xl md:text-2xl font-headline font-medium text-on-surface leading-[1.5] mb-8">
-            "OnPoint built our remote monitoring platform from zero to 10,000 active patients in under six months. The engineering quality and HIPAA compliance were non-negotiable, they delivered both without us having to ask twice."
+    <div class="story-list">
+      <!-- Jonathan M. / RPM One -->
+      <div class="story-item reveal" data-yt="">
+        <a class="story-media" data-brand="RPM ONE" href="#" aria-label="Video review from Jonathan M., RPM One">
+          <div class="grid-mask"></div>
+          <div class="spot"></div>
+          <span class="brand-tag">RPM ONE</span>
+          <div class="play"><span class="btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+          <span class="status-tag"><span class="dot"></span>Video review · Coming soon</span>
+        </a>
+        <figure class="story-quote">
+          <span class="qmark" aria-hidden="true">&ldquo;</span>
+          <blockquote>
+            <p>OnPoint built our remote monitoring platform from zero to 10,000 active patients in under six months. The engineering quality and HIPAA compliance were non-negotiable, and they delivered both without us having to ask twice.</p>
           </blockquote>
-          <div class="flex items-center gap-4">
-            <div class="w-11 h-11 rounded-full bg-primary/15 border border-primary/20 flex items-center justify-center shrink-0">
-              <span class="text-primary font-bold font-headline text-sm">JM</span>
-            </div>
-            <div>
-              <p class="font-semibold text-on-surface text-sm">Jonathan M.</p>
-              <p class="text-on-surface-muted text-xs font-mono">CEO · RPM One, USA</p>
-            </div>
-            <span class="ml-auto px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[9px] font-mono uppercase tracking-wider hidden sm:block">HealthTech · RPM</span>
-          </div>
-        </div>
+          <figcaption>
+            <span class="q-name">Jonathan M.</span>
+            <span class="q-role">CEO · RPM One · USA</span>
+            <span class="q-tag">HealthTech · Remote Patient Monitoring</span>
+          </figcaption>
+        </figure>
       </div>
-    </div>
 
-    <!-- Andrea C. / Pininfarina, with stat pull-out -->
-    <div class="reveal mb-5">
-      <div class="relative rounded-2xl overflow-hidden p-8 md:p-12 bg-surface-card border border-white/[0.05]">
-        <div class="absolute top-6 right-8 text-[8rem] font-serif leading-none text-primary/[0.07] select-none pointer-events-none">"</div>
-        <div class="relative z-10 flex flex-col md:flex-row gap-10 items-start">
-          <div class="flex-1">
-            <div class="flex gap-1 mb-6">
-              <span class="material-symbols-outlined text-primary" style="font-size:1.1rem;font-variation-settings:'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-primary" style="font-size:1.1rem;font-variation-settings:'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-primary" style="font-size:1.1rem;font-variation-settings:'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-primary" style="font-size:1.1rem;font-variation-settings:'FILL' 1">star</span>
-              <span class="material-symbols-outlined text-primary" style="font-size:1.1rem;font-variation-settings:'FILL' 1">star</span>
-            </div>
-            <blockquote class="text-xl md:text-2xl font-headline font-medium text-on-surface leading-[1.5] mb-8">
-              "The Battista AR experience became our most-discussed digital touchpoint at every auto show. OnPoint delivered something we genuinely didn't think was possible in the timeline they committed to."
-            </blockquote>
-            <div class="flex items-center gap-4">
-              <div class="w-11 h-11 rounded-full bg-primary/15 border border-primary/20 flex items-center justify-center shrink-0">
-                <span class="text-primary font-bold font-headline text-sm">AC</span>
-              </div>
-              <div>
-                <p class="font-semibold text-on-surface text-sm">Andrea C.</p>
-                <p class="text-on-surface-muted text-xs font-mono">Head of Digital · Pininfarina, Germany</p>
-              </div>
-              <span class="ml-auto px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[9px] font-mono uppercase tracking-wider hidden sm:block">Automotive · AR</span>
-            </div>
-          </div>
-          <!-- Stat pull-out -->
-          <div class="shrink-0 md:w-48 glass-panel rounded-2xl p-6 border border-primary/[0.1] text-center">
-            <div class="text-4xl font-headline font-black text-primary mb-1">#1</div>
-            <div class="text-[10px] text-on-surface-muted font-mono uppercase tracking-wider mb-4">AR Experience</div>
-            <div class="w-full h-px bg-white/5 mb-4"></div>
-            <div class="text-2xl font-headline font-black text-on-surface mb-1">1,900hp</div>
-            <div class="text-[10px] text-on-surface-muted font-mono uppercase tracking-wider">World's Most Powerful EV</div>
-          </div>
-        </div>
+      <!-- Andrea C. / Pininfarina -->
+      <div class="story-item alt reveal" data-yt="">
+        <a class="story-media" data-brand="PININFARINA" href="#" aria-label="Video review from Andrea C., Pininfarina">
+          <div class="grid-mask"></div>
+          <div class="spot"></div>
+          <span class="brand-tag">PININFARINA</span>
+          <div class="play"><span class="btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+          <span class="status-tag"><span class="dot"></span>Video review · Coming soon</span>
+        </a>
+        <figure class="story-quote">
+          <span class="qmark" aria-hidden="true">&ldquo;</span>
+          <blockquote>
+            <p>The Battista AR experience became our most-discussed digital touchpoint at every auto show. OnPoint delivered something we genuinely didn't think was possible in the timeline they committed to.</p>
+          </blockquote>
+          <figcaption>
+            <span class="q-name">Andrea C.</span>
+            <span class="q-role">Head of Digital · Pininfarina · Germany</span>
+            <span class="q-tag">Automotive · AR</span>
+          </figcaption>
+        </figure>
       </div>
-    </div>
-
-    <!-- Sarah K. + David M.. 2-col -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
       <!-- Sarah K. / Clinical Trac -->
-      <div class="reveal p-7 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.1] transition-colors duration-300 flex flex-col">
-        <div class="flex gap-1 mb-5">
-          <span class="material-symbols-outlined text-primary" style="font-size:1rem;font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined text-primary" style="font-size:1rem;font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined text-primary" style="font-size:1rem;font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined text-primary" style="font-size:1rem;font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined text-primary" style="font-size:1rem;font-variation-settings:'FILL' 1">star</span>
-        </div>
-        <blockquote class="text-on-surface-dim text-sm leading-relaxed flex-1 mb-6">
-          "Within six months of launch, 52 schools had onboarded their respiratory therapy programs. The platform OnPoint built is now central to how we deliver clinical education across the US."
-        </blockquote>
-        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
-          <div class="w-9 h-9 rounded-full bg-surface-high border border-white/[0.08] flex items-center justify-center shrink-0">
-            <span class="text-on-surface-dim font-bold text-xs">SK</span>
-          </div>
-          <div>
-            <p class="font-semibold text-on-surface text-sm">Sarah K.</p>
-            <p class="text-on-surface-muted text-xs font-mono">Co-Founder · Clinical Trac Inc., USA</p>
-          </div>
-        </div>
+      <div class="story-item reveal" data-yt="">
+        <a class="story-media" data-brand="CLINICAL TRAC" href="#" aria-label="Video review from Sarah K., Clinical Trac">
+          <div class="grid-mask"></div>
+          <div class="spot"></div>
+          <span class="brand-tag">CLINICAL TRAC</span>
+          <div class="play"><span class="btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+          <span class="status-tag"><span class="dot"></span>Video review · Coming soon</span>
+        </a>
+        <figure class="story-quote">
+          <span class="qmark" aria-hidden="true">&ldquo;</span>
+          <blockquote>
+            <p>Within six months of launch, 52 schools had onboarded their respiratory therapy programs. The platform OnPoint built is now central to how we deliver clinical education across the US.</p>
+          </blockquote>
+          <figcaption>
+            <span class="q-name">Sarah K.</span>
+            <span class="q-role">Co-Founder · Clinical Trac Inc. · USA</span>
+            <span class="q-tag">EdTech · HealthTech</span>
+          </figcaption>
+        </figure>
       </div>
 
       <!-- David M. / Semilynx -->
-      <div class="reveal p-7 rounded-2xl bg-surface-card border border-white/[0.05] hover:border-primary/[0.1] transition-colors duration-300 flex flex-col" style="transition-delay:.1s">
-        <div class="flex gap-1 mb-5">
-          <span class="material-symbols-outlined text-primary" style="font-size:1rem;font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined text-primary" style="font-size:1rem;font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined text-primary" style="font-size:1rem;font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined text-primary" style="font-size:1rem;font-variation-settings:'FILL' 1">star</span>
-          <span class="material-symbols-outlined text-primary" style="font-size:1rem;font-variation-settings:'FILL' 1">star</span>
-        </div>
-        <blockquote class="text-on-surface-dim text-sm leading-relaxed flex-1 mb-6">
-          "Our engineers were flying across the country for every factory breakdown. OnPoint's Google Glass solution eliminated that entirely, and cut downtime by 60%. Remarkable execution."
-        </blockquote>
-        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
-          <div class="w-9 h-9 rounded-full bg-surface-high border border-white/[0.08] flex items-center justify-center shrink-0">
-            <span class="text-on-surface-dim font-bold text-xs">DM</span>
-          </div>
-          <div>
-            <p class="font-semibold text-on-surface text-sm">David M.</p>
-            <p class="text-on-surface-muted text-xs font-mono">VP Operations · Semilynx, USA</p>
-          </div>
-        </div>
+      <div class="story-item alt reveal" data-yt="">
+        <a class="story-media" data-brand="SEMILYNX" href="#" aria-label="Video review from David M., Semilynx">
+          <div class="grid-mask"></div>
+          <div class="spot"></div>
+          <span class="brand-tag">SEMILYNX</span>
+          <div class="play"><span class="btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+          <span class="status-tag"><span class="dot"></span>Video review · Coming soon</span>
+        </a>
+        <figure class="story-quote">
+          <span class="qmark" aria-hidden="true">&ldquo;</span>
+          <blockquote>
+            <p>Our engineers were flying across the country for every factory breakdown. OnPoint's Google Glass solution eliminated that entirely, and cut downtime by 60%. Remarkable execution.</p>
+          </blockquote>
+          <figcaption>
+            <span class="q-name">David M.</span>
+            <span class="q-role">VP Operations · Semilynx · USA</span>
+            <span class="q-tag">Industrial AR · Fortune 500</span>
+          </figcaption>
+        </figure>
       </div>
-
     </div>
+
+    <!-- Small note about how to add videos later -->
+    <p class="mt-14 text-xs font-mono text-on-surface-muted text-center reveal" style="letter-spacing:.08em">
+      Client video reviews coming Q1 2026 &nbsp;·&nbsp; Have a story to share? <a href="mailto:hello@onpointnexus.com" class="text-primary hover:underline">hello@onpointnexus.com</a>
+    </p>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════
-     08. BOTTOM CTA
+     07. BOTTOM CTA
 ════════════════════════════════════════════════════════════ -->
-<section class="py-24 border-t border-white/[0.05] relative overflow-hidden">
-  <div class="absolute inset-0 neural-grid opacity-15 pointer-events-none"></div>
-  <div class="glow-blob w-[500px] h-[400px] bg-primary/6 top-0 left-1/2 -translate-x-1/2"></div>
-  <div class="max-w-2xl mx-auto px-6 text-center relative z-10 reveal">
-    <span class="text-xs font-mono text-primary uppercase tracking-widest">Let's Talk</span>
-    <h2 class="font-headline text-4xl md:text-5xl font-bold mt-4 mb-5 text-on-surface leading-tight">
-      Want to meet the team<br><span class="grad-text">before committing?</span>
+<section class="py-28 border-t border-white/[0.05]">
+  <div class="max-w-3xl mx-auto px-6 text-center reveal">
+    <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface leading-tight mb-6 tracking-[-0.02em]">
+      Want to meet the team before committing?
     </h2>
-    <p class="text-on-surface-dim leading-relaxed mb-8">
-      30 minutes. No pitch, no pressure. We'll walk you through how we work, answer every question, and give you an honest assessment of whether we're the right fit.
+    <p class="text-on-surface-dim leading-relaxed max-w-xl mx-auto mb-10">
+      30 minutes. No pitch. We'll walk you through how we work and give you an honest assessment of whether we're the right fit.
     </p>
-    <a href="https://calendar.app.google/C4xHVMebCZ6hgbgV9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-surface-mid font-bold hover:bg-primary-dim hover:shadow-lg hover:shadow-primary/25 transition-all duration-200">
-      Book a Discovery Call <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-    </a>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-surface font-bold hover:bg-primary-dim transition-colors">
+        Book a Call <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+      <a href="mailto:hr@onpointsoft.com" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/10 text-on-surface-dim hover:text-on-surface hover:border-white/25 transition-colors font-semibold">
+        hr@onpointsoft.com
+      </a>
+    </div>
   </div>
 </section>
 
@@ -679,6 +724,58 @@
       el.classList.add('in-view');
     });
   }
+
+  // ── Client story: upgrade placeholder → YouTube facade when data-yt set
+  (function(){
+    document.querySelectorAll('.story-item[data-yt]').forEach(item => {
+      const yt = item.getAttribute('data-yt');
+      if (!yt) return; // still placeholder
+      const media = item.querySelector('.story-media');
+      if (!media) return;
+      media.classList.add('ready');
+      media.setAttribute('href', 'https://www.youtube.com/watch?v=' + yt);
+      media.setAttribute('target', '_blank');
+      media.setAttribute('rel', 'noopener');
+      const grid = media.querySelector('.grid-mask'); if (grid) grid.remove();
+      const spot = media.querySelector('.spot'); if (spot) spot.remove();
+      const status = media.querySelector('.status-tag'); if (status) status.remove();
+      const img = document.createElement('img');
+      img.src = 'https://i.ytimg.com/vi/' + yt + '/maxresdefault.jpg';
+      img.alt = media.getAttribute('aria-label') || 'Client video review';
+      img.loading = 'lazy';
+      img.onerror = () => { img.src = 'https://i.ytimg.com/vi/' + yt + '/hqdefault.jpg'; };
+      media.insertBefore(img, media.firstChild);
+    });
+  })();
+
+  // ── Number ticker (stat row) ───────────────────────────────
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const els = document.querySelectorAll('[data-count-to]');
+    const tickTo = (el, target, suffix, dur=1400) => {
+      const start = performance.now();
+      function frame(now){
+        const t = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const val = Math.round(target * eased);
+        el.textContent = val + (suffix || '');
+        if (t < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    };
+    const io2 = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          const target = parseInt(el.dataset.countTo, 10);
+          const suffix = el.dataset.suffix || '';
+          tickTo(el, target, suffix);
+          io2.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    els.forEach(el => io2.observe(el));
+  })();
 
   // ── Smooth anchor scroll ───────────────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(a => {
