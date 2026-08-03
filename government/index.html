@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c1324">
+
+  <title>Government &amp; Public-Sector Portfolio | OnPoint Nexus</title>
+  <meta name="description" content="Six engagements across e-governance, public health, government infrastructure, and rural / co-operative development. Built for the whole hierarchy — State, District, Block, Gram Panchayat.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.onpointnexus.com/government">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="OnPoint Nexus">
+  <meta property="og:url"         content="https://www.onpointnexus.com/government">
+  <meta property="og:title"       content="Government &amp; Public-Sector Portfolio | OnPoint Nexus">
+  <meta property="og:description" content="Public systems that officers, citizens, and auditors can all trust. From Gram Panchayat ledgers to statewide health dashboards.">
+  <meta property="og:image"       content="https://www.onpointnexus.com/og-image.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = { darkMode:'class', theme:{ extend:{
+      colors:{
+        primary:'#1ABADC','primary-dim':'#0E8FA8',
+        surface:'#0c1324','surface-card':'#141c2e','surface-high':'#1a2440','surface-low':'#080e1c',
+        'on-surface':'#E8EDF5','on-surface-dim':'#8A9BB5','on-surface-muted':'#5A7494'
+      },
+      fontFamily:{ headline:['"Plus Jakarta Sans"','sans-serif'], body:['"Plus Jakarta Sans"','sans-serif'], mono:['"Roboto Mono"','monospace'] }
+    }}}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-N2WCZPCE46');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "serviceType":"Government &amp; Public-Sector Software Engineering",
+    "name":"OnPoint Nexus Government Portfolio",
+    "provider":{ "@type":"Organization","name":"OnPoint Nexus","url":"https://www.onpointnexus.com" },
+    "areaServed":"India",
+    "description":"e-Governance, public health, government infrastructure, and rural / co-operative digital systems. Six engagements across State, District, Block and Gram Panchayat tiers.",
+    "hasOfferCatalog":{
+      "@type":"OfferCatalog","name":"Government Engagements",
+      "itemListElement":[
+        {"@type":"Offer","name":"eGram — Panchayat Financial Intelligence"},
+        {"@type":"Offer","name":"SPMS — Smart Property Tax Management"},
+        {"@type":"Offer","name":"Maharashtra Family Health Platform"},
+        {"@type":"Offer","name":"MSPHC — Project &amp; Contractor Monitoring"},
+        {"@type":"Offer","name":"Gokul Vet — Animal Health Ecosystem"},
+        {"@type":"Offer","name":"WASH Connect — Integrated Water Resource Management"}
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    body { background:#0c1324; color:#E8EDF5; font-family:'Plus Jakarta Sans',sans-serif; overflow-x:hidden; }
+    .grad-text { background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent; }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .reveal.in-view { opacity:1; transform:none; }
+    .slide-left  { opacity:0; transform:translateX(-60px); transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); }
+    .slide-right { opacity:0; transform:translateX(60px);  transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); }
+    .slide-left.in-view, .slide-right.in-view { opacity:1; transform:none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
+    }
+
+    /* ─── Hero ─────────────────────────────────────────── */
+    .hero { position:relative; overflow:hidden; }
+    .hero h1 .h-line {
+      display:block; opacity:0; transform:translateY(40px); filter:blur(8px);
+      animation: heroLine .9s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    .hero h1 .h-line:nth-child(1) { animation-delay:.15s; }
+    .hero h1 .h-line:nth-child(2) { animation-delay:.35s; }
+    @keyframes heroLine { to { opacity:1; transform:none; filter:blur(0); } }
+
+    /* ─── Portfolio-at-a-glance card ────────────────────── */
+    .glance-card {
+      background:rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:14px;
+      padding:22px 22px 20px;
+      transition: background .35s ease, border-color .35s ease, transform .35s ease;
+      cursor:pointer; text-decoration:none; color:inherit;
+      display:flex; flex-direction:column; gap:8px;
+    }
+    .glance-card:hover { background:rgba(26,186,220,0.04); border-color:rgba(26,186,220,0.28); transform:translateY(-3px); }
+    .glance-card .g-chip {
+      display:inline-flex; align-items:center; gap:6px;
+      font-family:'Roboto Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase;
+      color:#5A7494; margin-bottom:6px;
+    }
+    .glance-card .g-chip .dot { width:6px; height:6px; border-radius:50%; }
+    .glance-card .g-chip .dot.live      { background:#4ade80; }
+    .glance-card .g-chip .dot.prototype { background:#facc15; }
+    .glance-card .g-chip .dot.lead      { background:#8de4f0; }
+    .glance-card .g-chip .dot.proposed  { background:#a78bfa; }
+    .glance-card .g-name { font-size:20px; font-weight:600; color:#E8EDF5; letter-spacing:-.015em; }
+    .glance-card .g-title { font-size:14px; color:#8A9BB5; line-height:1.4; }
+
+    /* ─── Project detail card ───────────────────────────── */
+    .proj-wrap { max-width:1200px; margin:0 auto; padding:80px 40px 0; }
+    .proj-card {
+      background:#0f1729;
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:24px;
+      overflow:hidden;
+    }
+    .proj-cover {
+      position:relative;
+      aspect-ratio: 21/9;
+      background:#0a1122; overflow:hidden;
+    }
+    .proj-cover svg { position:absolute; inset:0; width:100%; height:100%; }
+    .proj-cover-overlay {
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, transparent 40%, rgba(15,23,41,0.85) 90%);
+      pointer-events:none;
+    }
+    .proj-cover-meta {
+      position:absolute; left:32px; right:32px; bottom:28px;
+      display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    }
+    .proj-cover-meta .m-left { display:flex; flex-direction:column; }
+    .proj-cover-meta .m-chip {
+      display:inline-flex; align-items:center; gap:8px;
+      font-family:'Roboto Mono',monospace; font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+      color:#1ABADC;
+      padding:6px 12px; border-radius:999px;
+      background:rgba(26,186,220,0.08); border:1px solid rgba(26,186,220,0.28);
+      margin-bottom:14px; align-self:flex-start;
+    }
+    .proj-cover-meta h2 {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-weight:700;
+      font-size:clamp(1.85rem, 4vw, 2.75rem);
+      line-height:1;
+      letter-spacing:-.025em;
+      color:#E8EDF5;
+    }
+    .proj-cover-meta .m-tag {
+      font-size:15px; color:#8A9BB5; margin-top:8px;
+    }
+    .proj-cover-meta .m-status {
+      display:inline-flex; align-items:center; gap:8px;
+      font-family:'Roboto Mono',monospace; font-size:12px; letter-spacing:.15em; text-transform:uppercase;
+      padding:10px 16px;
+      background:rgba(0,0,0,0.4);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:10px;
+      color:#E8EDF5;
+    }
+    .proj-cover-meta .m-status.live      .dot { background:#4ade80; }
+    .proj-cover-meta .m-status.prototype .dot { background:#facc15; }
+    .proj-cover-meta .m-status.lead      .dot { background:#8de4f0; }
+    .proj-cover-meta .m-status.proposed  .dot { background:#a78bfa; }
+    .proj-cover-meta .m-status .dot {
+      width:8px; height:8px; border-radius:50%;
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+    @keyframes pulseDot { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    .proj-body {
+      display:grid;
+      grid-template-columns: 0.9fr 1.4fr 0.9fr;
+      gap:0;
+    }
+    .proj-body > div { padding:32px 28px; border-left:1px solid rgba(255,255,255,0.05); }
+    .proj-body > div:first-child { border-left:0; }
+    .proj-body .b-label {
+      font-family:'Roboto Mono',monospace; font-size:10px; letter-spacing:.25em; text-transform:uppercase;
+      color:#5A7494; margin-bottom:12px;
+    }
+    .proj-body dt {
+      font-family:'Roboto Mono',monospace; font-size:9px; letter-spacing:.2em; text-transform:uppercase;
+      color:#5A7494; margin-bottom:4px;
+    }
+    .proj-body dt:not(:first-of-type) { margin-top:14px; }
+    .proj-body dd { font-size:14px; color:#E8EDF5; line-height:1.45; margin:0; }
+    .proj-body dd a { color:#1ABADC; }
+    .proj-body dd a:hover { text-decoration:underline; }
+    .proj-body ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:9px; }
+    .proj-body ul li {
+      display:flex; align-items:flex-start; gap:10px;
+      font-size:13px; color:#8A9BB5; line-height:1.45;
+    }
+    .proj-body ul li::before {
+      content:""; width:5px; height:5px; border-radius:50%;
+      background:#1ABADC; margin-top:7px; flex-shrink:0;
+    }
+    .proj-body ul li strong { color:#E8EDF5; font-weight:500; }
+    @media (max-width:900px) {
+      .proj-wrap { padding:50px 20px 0; }
+      .proj-body { grid-template-columns:1fr; }
+      .proj-body > div { border-left:0; border-top:1px solid rgba(255,255,255,0.05); }
+      .proj-body > div:first-child { border-top:0; }
+      .proj-cover-meta { left:20px; right:20px; bottom:20px; }
+    }
+
+    /* AI capability grid (Health App) */
+    .ai-cap-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px;
+      margin-top:24px;
+    }
+    .ai-cap {
+      padding:16px 18px;
+      background:rgba(26,186,220,0.04);
+      border:1px solid rgba(26,186,220,0.16);
+      border-radius:12px;
+    }
+    .ai-cap .cap-name {
+      font-family:'Roboto Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase;
+      color:#1ABADC; margin-bottom:8px;
+    }
+    .ai-cap p { font-size:13px; color:#8A9BB5; line-height:1.45; margin:0; }
+
+    /* Client roster strip */
+    .roster {
+      display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
+      gap:16px 26px; row-gap:14px;
+      margin-top:32px;
+    }
+    .roster span {
+      font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; font-weight:500;
+      color:#8A9BB5; white-space:nowrap;
+    }
+    .roster .sep { width:4px; height:4px; border-radius:50%; background:#3A4560; }
+    .roster img {
+      height:40px; max-width:170px; width:auto;
+      object-fit:contain;
+      background:#FFFFFF;
+      padding:6px 12px;
+      border-radius:8px;
+      display:block;
+    }
+    .roster .logo-svg {
+      height:44px; max-width:200px; width:auto;
+      object-fit:contain;
+      background:#FFFFFF;
+      padding:8px 14px;
+      border-radius:8px;
+      display:block;
+    }
+
+    /* Client-logo mark on project card overlay */
+    .proj-cover-meta .client-mark {
+      position:absolute; top:24px; right:24px;
+      display:inline-flex; align-items:center; justify-content:center;
+      background:#FFFFFF;
+      padding:8px 12px;
+      border-radius:8px;
+      max-width:140px; max-height:52px;
+      box-shadow: 0 8px 24px -8px rgba(0,0,0,0.35);
+    }
+    .proj-cover-meta .client-mark img { max-height:36px; max-width:120px; width:auto; height:auto; display:block; }
+    @media (max-width: 640px) {
+      .proj-cover-meta .client-mark { top:16px; right:16px; padding:6px 10px; max-width:110px; }
+      .proj-cover-meta .client-mark img { max-height:28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ══════════════════════════════════════════════════ -->
+<nav class="sticky top-0 z-50 border-b border-white/[0.05]" style="background:rgba(12,19,36,0.92);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
+    </a>
+    <div class="hidden md:flex items-center gap-7 font-body text-sm">
+      <a href="/work"        class="text-on-surface-dim hover:text-primary transition-colors">Work</a>
+      <a href="/scaleos"     class="text-on-surface-dim hover:text-primary transition-colors">ScaleOS</a>
+      <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors">AI Solutions</a>
+      <a href="/products"    class="text-on-surface-dim hover:text-primary transition-colors">Products</a>
+      <a href="/about"       class="text-on-surface-dim hover:text-primary transition-colors">About</a>
+    </div>
+    <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors">
+      Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═════════════════════════════════════════════════ -->
+<section class="hero pt-32 pb-24 border-b border-white/[0.05]">
+  <!-- Grid + spot glow -->
+  <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(26,186,220,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(26,186,220,0.055) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);-webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 55% 45% at 65% 45%,rgba(26,186,220,0.14) 0%,transparent 70%);"></div>
+
+  <!-- 4-tier hierarchy visual -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:0.6;">
+    <defs>
+      <path id="tierA" d="M 800 120 L 400 300"/>
+      <path id="tierB" d="M 800 120 L 1200 300"/>
+      <path id="tierC" d="M 400 300 L 200 500"/>
+      <path id="tierD" d="M 400 300 L 600 500"/>
+      <path id="tierE" d="M 1200 300 L 1000 500"/>
+      <path id="tierF" d="M 1200 300 L 1400 500"/>
+      <path id="tierG" d="M 200 500 L 100 720"/>
+      <path id="tierH" d="M 200 500 L 300 720"/>
+      <path id="tierI" d="M 600 500 L 500 720"/>
+      <path id="tierJ" d="M 600 500 L 700 720"/>
+      <path id="tierK" d="M 1000 500 L 900 720"/>
+      <path id="tierL" d="M 1000 500 L 1100 720"/>
+      <path id="tierM" d="M 1400 500 L 1300 720"/>
+      <path id="tierN" d="M 1400 500 L 1500 720"/>
+      <radialGradient id="govGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.55"/>
+        <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <!-- Static connection tree -->
+    <g stroke="#1ABADC" stroke-width="1" stroke-opacity="0.22" fill="none">
+      <use href="#tierA"/><use href="#tierB"/>
+      <use href="#tierC"/><use href="#tierD"/><use href="#tierE"/><use href="#tierF"/>
+      <use href="#tierG"/><use href="#tierH"/><use href="#tierI"/><use href="#tierJ"/>
+      <use href="#tierK"/><use href="#tierL"/><use href="#tierM"/><use href="#tierN"/>
+    </g>
+    <!-- Tier nodes -->
+    <g>
+      <!-- State -->
+      <circle cx="800" cy="120" r="30" fill="url(#govGlow)"/>
+      <circle cx="800" cy="120" r="8" fill="#8de4f0"/>
+      <!-- District -->
+      <circle cx="400" cy="300" r="6" fill="#1ABADC"/>
+      <circle cx="1200" cy="300" r="6" fill="#1ABADC"/>
+      <!-- Block -->
+      <circle cx="200" cy="500" r="5" fill="#1ABADC"/>
+      <circle cx="600" cy="500" r="5" fill="#1ABADC"/>
+      <circle cx="1000" cy="500" r="5" fill="#1ABADC"/>
+      <circle cx="1400" cy="500" r="5" fill="#1ABADC"/>
+      <!-- GP -->
+      <circle cx="100"  cy="720" r="4" fill="#1ABADC" fill-opacity="0.75"/>
+      <circle cx="300"  cy="720" r="4" fill="#1ABADC" fill-opacity="0.75"/>
+      <circle cx="500"  cy="720" r="4" fill="#1ABADC" fill-opacity="0.75"/>
+      <circle cx="700"  cy="720" r="4" fill="#1ABADC" fill-opacity="0.75"/>
+      <circle cx="900"  cy="720" r="4" fill="#1ABADC" fill-opacity="0.75"/>
+      <circle cx="1100" cy="720" r="4" fill="#1ABADC" fill-opacity="0.75"/>
+      <circle cx="1300" cy="720" r="4" fill="#1ABADC" fill-opacity="0.75"/>
+      <circle cx="1500" cy="720" r="4" fill="#1ABADC" fill-opacity="0.75"/>
+    </g>
+    <!-- Traveling signals down the tree -->
+    <g fill="#8de4f0">
+      <circle r="4"><animateMotion dur="3.6s" repeatCount="indefinite"><mpath href="#tierA"/></animateMotion></circle>
+      <circle r="4"><animateMotion dur="3.6s" repeatCount="indefinite" begin="1s"><mpath href="#tierB"/></animateMotion></circle>
+      <circle r="3.5"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0.6s"><mpath href="#tierD"/></animateMotion></circle>
+      <circle r="3.5"><animateMotion dur="2.8s" repeatCount="indefinite" begin="1.8s"><mpath href="#tierE"/></animateMotion></circle>
+      <circle r="3" fill-opacity="0.85"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0.3s"><mpath href="#tierJ"/></animateMotion></circle>
+      <circle r="3" fill-opacity="0.85"><animateMotion dur="2.4s" repeatCount="indefinite" begin="1.4s"><mpath href="#tierK"/></animateMotion></circle>
+    </g>
+    <!-- Tier labels -->
+    <g font-family="'Roboto Mono', monospace" font-size="11" fill="#5A7494" letter-spacing="2">
+      <text x="1560" y="125" text-anchor="end" opacity="0.7">STATE</text>
+      <text x="1560" y="305" text-anchor="end" opacity="0.55">DISTRICT</text>
+      <text x="1560" y="505" text-anchor="end" opacity="0.45">BLOCK</text>
+      <text x="1560" y="725" text-anchor="end" opacity="0.4">GRAM PANCHAYAT</text>
+    </g>
+  </svg>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
+    <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-6" style="opacity:0;animation:heroLine .8s cubic-bezier(.16,1,.3,1) forwards">Government &amp; Public-Sector Portfolio</p>
+    <h1 class="font-headline font-bold tracking-[-0.03em] leading-[1.02] text-on-surface" style="font-size:clamp(2.5rem, 6vw, 4.5rem)">
+      <span class="h-line">Public systems, built</span>
+      <span class="h-line">for <span class="grad-text">the whole hierarchy.</span></span>
+    </h1>
+    <p class="mt-10 text-lg md:text-xl text-on-surface-dim max-w-2xl leading-relaxed" style="opacity:0;animation:heroLine .9s cubic-bezier(.16,1,.3,1) .7s forwards">
+      From a Gram Panchayat's ledger to a statewide health dashboard. Six engagements across e-Governance, public health, infrastructure and rural / co-operative digital systems.
+    </p>
+
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-0" style="opacity:0;animation:heroLine .9s cubic-bezier(.16,1,.3,1) .95s forwards">
+      <div class="px-6 py-4 md:pr-8 md:pl-0">
+        <div class="text-3xl md:text-4xl font-headline font-medium text-primary tracking-tight leading-none">6</div>
+        <div class="mt-3 text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Domain engagements</div>
+      </div>
+      <div class="px-6 py-4 md:px-8 border-t md:border-t-0 md:border-l border-white/10">
+        <div class="text-3xl md:text-4xl font-headline font-medium text-primary tracking-tight leading-none">2</div>
+        <div class="mt-3 text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Live in production</div>
+      </div>
+      <div class="px-6 py-4 md:px-8 border-l border-white/10">
+        <div class="text-3xl md:text-4xl font-headline font-medium text-primary tracking-tight leading-none">4</div>
+        <div class="mt-3 text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Tier hierarchy served</div>
+      </div>
+      <div class="px-6 py-4 md:pl-8 md:pr-0 border-t md:border-t-0 border-l border-white/10">
+        <div class="text-3xl md:text-4xl font-headline font-medium text-primary tracking-tight leading-none">4.4L+</div>
+        <div class="mt-3 text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Producers &amp; citizens reachable</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INTRO ════════════════════════════════════════════════ -->
+<section class="py-24 border-b border-white/[0.05]">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-4 reveal">The practice</p>
+    <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em] mb-8 reveal">
+      Government software should be judged by whether an officer, a citizen, and an auditor can all trust the same screen.
+    </h2>
+    <div class="space-y-6 text-lg text-on-surface-dim leading-relaxed reveal">
+      <p>Over the last few years OnPoint Nexus has quietly built a portfolio spanning the full width of public-sector digital delivery. From the financial reconciliation of a Gram Panchayat, to municipal property tax, to a statewide public-health platform, to the monitoring of police-housing construction across Maharashtra.</p>
+      <p>Every one of these systems was built as a working proof of concept, demonstrated to the concerned authority, and taken as far as the engagement allowed. Some are live and in daily use. Others are in active design and pilot conversations.</p>
+      <p>We build for the whole hierarchy &mdash; State, District, Block and Gram Panchayat &mdash; with role-based access, clean reporting, local-language interfaces, and an AI layer that turns raw administrative data into decisions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PORTFOLIO AT A GLANCE ════════════════════════════════ -->
+<section class="py-24 border-b border-white/[0.05]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-12 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Portfolio at a glance</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">Six engagements. Two live. Four in active pilot or lead.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+      <a href="#p-egram" class="glance-card">
+        <div class="g-chip"><span class="dot live"></span>e-Governance · Live</div>
+        <div class="g-name">eGram</div>
+        <p class="g-title">Panchayat Financial Intelligence — XV Finance Commission reporting across the full State–District–Block–GP hierarchy.</p>
+      </a>
+      <a href="#p-spms" class="glance-card">
+        <div class="g-chip"><span class="dot live"></span>Municipal · Live</div>
+        <div class="g-name">SPMS</div>
+        <p class="g-title">Smart Property Tax Management — registration, generation, collection and statutory Namuna 8/9/10 reporting.</p>
+      </a>
+      <a href="#p-health" class="glance-card">
+        <div class="g-chip"><span class="dot proposed"></span>Public Health · Proposed</div>
+        <div class="g-name">Maharashtra Family Health Platform</div>
+        <p class="g-title">Statewide digital health identity per family with State &amp; DHO command dashboard and an AI decision-support layer.</p>
+      </a>
+      <a href="#p-msphc" class="glance-card">
+        <div class="g-chip"><span class="dot prototype"></span>Govt. Infrastructure · Prototype</div>
+        <div class="g-name">MSPHC</div>
+        <p class="g-title">Project &amp; Contractor Monitoring — site progress, invoices, compliance and a full digital audit trail.</p>
+      </a>
+      <a href="#p-gokul" class="glance-card">
+        <div class="g-chip"><span class="dot lead"></span>Dairy Co-operative · Lead</div>
+        <div class="g-name">Gokul Vet</div>
+        <p class="g-title">Vet, Farmer and Admin apps for a union serving 1,800+ villages and 4.4L+ producers, wired to government livestock schemes.</p>
+      </a>
+      <a href="#p-wash" class="glance-card">
+        <div class="g-chip"><span class="dot lead"></span>Water &amp; Sanitation · Lead</div>
+        <div class="g-name">WASH Connect</div>
+        <p class="g-title">Six-stage IWRM field toolkit with KoboToolbox data collection, generating Water Resource Management Plans for local bodies.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECT 01 — eGram ═════════════════════════════════ -->
+<section id="p-egram" class="proj-wrap">
+  <div class="proj-card slide-left">
+    <div class="proj-cover">
+      <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="egGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
+          </pattern>
+          <path id="egT1" d="M 400 60 L 200 160"/>
+          <path id="egT2" d="M 400 60 L 600 160"/>
+          <path id="egT3" d="M 200 160 L 100 260"/>
+          <path id="egT4" d="M 200 160 L 300 260"/>
+          <path id="egT5" d="M 600 160 L 500 260"/>
+          <path id="egT6" d="M 600 160 L 700 260"/>
+        </defs>
+        <rect width="800" height="340" fill="#0a1122"/>
+        <rect width="800" height="340" fill="url(#egGrid)"/>
+        <g stroke="#1ABADC" stroke-width="1" stroke-opacity="0.28" fill="none">
+          <use href="#egT1"/><use href="#egT2"/><use href="#egT3"/><use href="#egT4"/><use href="#egT5"/><use href="#egT6"/>
+        </g>
+        <g fill="#1ABADC">
+          <circle cx="400" cy="60" r="9" fill="#8de4f0"/>
+          <circle cx="200" cy="160" r="6"/><circle cx="600" cy="160" r="6"/>
+          <circle cx="100" cy="260" r="5" fill-opacity="0.8"/><circle cx="300" cy="260" r="5" fill-opacity="0.8"/>
+          <circle cx="500" cy="260" r="5" fill-opacity="0.8"/><circle cx="700" cy="260" r="5" fill-opacity="0.8"/>
+        </g>
+        <g fill="#8de4f0">
+          <circle r="4"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#egT1"/></animateMotion></circle>
+          <circle r="4"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0.7s"><mpath href="#egT2"/></animateMotion></circle>
+          <circle r="3.5"><animateMotion dur="2s" repeatCount="indefinite" begin="0.4s"><mpath href="#egT4"/></animateMotion></circle>
+          <circle r="3.5"><animateMotion dur="2s" repeatCount="indefinite" begin="1.1s"><mpath href="#egT5"/></animateMotion></circle>
+        </g>
+      </svg>
+      <div class="proj-cover-overlay"></div>
+      <div class="proj-cover-meta">
+        <div class="m-left">
+          <span class="m-chip"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>e-Governance</span>
+          <h2>eGram</h2>
+          <p class="m-tag">Panchayat Financial Intelligence Platform</p>
+        </div>
+        <div class="m-status live"><span class="dot"></span>Live in production</div>
+        <div class="client-mark"><img src="/images/gov/eGrams.svg" alt="eGram" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="proj-body">
+      <div>
+        <p class="b-label">Client &amp; users</p>
+        <dl>
+          <dt>Client</dt>
+          <dd>Government of Maharashtra, State Rural Development Department &mdash; in partnership with ICICI Bank</dd>
+          <dt>Users</dt>
+          <dd>GP officials · Ministers · Citizens · ZP &amp; BDO officers</dd>
+          <dt>Live at</dt>
+          <dd><a href="https://egram.onpointsoft.com" target="_blank" rel="noopener">egram.onpointsoft.com</a></dd>
+        </dl>
+      </div>
+      <div>
+        <p class="b-label">Key features</p>
+        <ul>
+          <li><strong>XV Finance reports</strong> aligned to the XV Finance Commission framework.</li>
+          <li><strong>Panchayat administration</strong> — day-to-day governance and record-keeping in one place.</li>
+          <li><strong>Reports &amp; dashboards</strong> — role-aware views for every tier of the hierarchy.</li>
+          <li><strong>Role-based user management</strong> — clean separation of duties from State down to GP.</li>
+          <li><strong>Banking &amp; reconciliation</strong> — consolidated banking and expenditure data (Phase 2).</li>
+          <li><strong>Asset management &amp; GIS</strong> — asset registries with spatial mapping (Phase 2).</li>
+        </ul>
+      </div>
+      <div>
+        <p class="b-label">Technology</p>
+        <dl>
+          <dt>Frontend</dt><dd>React / Next.js</dd>
+          <dt>Backend</dt><dd>Node.js + Python services</dd>
+          <dt>Database</dt><dd>PostgreSQL</dd>
+          <dt>Auth</dt><dd>JWT, role-based</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECT 02 — SPMS ═════════════════════════════════ -->
+<section id="p-spms" class="proj-wrap">
+  <div class="proj-card slide-right">
+    <div class="proj-cover">
+      <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="spGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="800" height="340" fill="#0a1122"/>
+        <rect width="800" height="340" fill="url(#spGrid)"/>
+        <!-- City-block layout -->
+        <g fill="none" stroke="#1ABADC" stroke-width="1.5">
+          <rect x="120" y="180" width="80" height="120" stroke-opacity="0.5"/>
+          <rect x="220" y="130" width="80" height="170" stroke-opacity="0.6"/>
+          <rect x="320" y="90"  width="80" height="210" stroke-opacity="0.7"/>
+          <rect x="420" y="150" width="80" height="150" stroke-opacity="0.55"/>
+          <rect x="520" y="110" width="80" height="190" stroke-opacity="0.65"/>
+          <rect x="620" y="170" width="80" height="130" stroke-opacity="0.45"/>
+        </g>
+        <!-- Selected/highlighted property -->
+        <g>
+          <rect x="320" y="90" width="80" height="210" fill="rgba(26,186,220,0.12)" stroke="#8de4f0" stroke-width="2"/>
+          <circle cx="360" cy="195" r="4" fill="#8de4f0"/>
+        </g>
+        <!-- Roaming inspection dot -->
+        <g fill="#8de4f0">
+          <circle r="5">
+            <animate attributeName="cx" values="160;260;360;460;560;660;160" keyTimes="0;.17;.34;.5;.67;.83;1" dur="10s" repeatCount="indefinite"/>
+            <animate attributeName="cy" values="240;215;195;225;205;235;240" keyTimes="0;.17;.34;.5;.67;.83;1" dur="10s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+        <!-- Windows on selected property -->
+        <g fill="#1ABADC" fill-opacity="0.55">
+          <rect x="330" y="115" width="16" height="12" rx="1"/>
+          <rect x="358" y="115" width="16" height="12" rx="1"/>
+          <rect x="376" y="115" width="16" height="12" rx="1"/>
+          <rect x="330" y="145" width="16" height="12" rx="1"/>
+          <rect x="376" y="145" width="16" height="12" rx="1"/>
+        </g>
+      </svg>
+      <div class="proj-cover-overlay"></div>
+      <div class="proj-cover-meta">
+        <div class="m-left">
+          <span class="m-chip"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Municipal · Property Tax</span>
+          <h2>SPMS</h2>
+          <p class="m-tag">Smart Property Management System</p>
+        </div>
+        <div class="m-status live"><span class="dot"></span>Live · Actively billed</div>
+        <div class="client-mark"><img src="/images/gov/shirol.png" alt="Shirol Nagarparishad" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="proj-body">
+      <div>
+        <p class="b-label">Client &amp; users</p>
+        <dl>
+          <dt>Client</dt>
+          <dd>Nagarparishads across Maharashtra (Shirol, Satara and others) &mdash; billed via ICICI Bank / AIILSG</dd>
+          <dt>Users</dt>
+          <dd>Nagarparishad officials · Citizens &amp; property owners</dd>
+          <dt>Live at</dt>
+          <dd><a href="https://spms.onpointsoft.com" target="_blank" rel="noopener">spms.onpointsoft.com</a></dd>
+        </dl>
+      </div>
+      <div>
+        <p class="b-label">Key features</p>
+        <ul>
+          <li><strong>Property registration &amp; import</strong> — bulk CSV import with validation.</li>
+          <li><strong>Property records</strong> — view, edit and Fer-far transfers.</li>
+          <li><strong>Tax generation</strong> — dynamic, configurable tax types.</li>
+          <li><strong>Tax collection</strong> — book and receipt management.</li>
+          <li><strong>Statutory reporting</strong> — Namuna 8 / 9 / 10 reports and bill history.</li>
+          <li><strong>Public citizen portal</strong> — self-service for property owners.</li>
+          <li><strong>Administration</strong> — user &amp; role management, ward / zone dashboards.</li>
+        </ul>
+      </div>
+      <div>
+        <p class="b-label">Status</p>
+        <dl>
+          <dt>Deployment</dt><dd>Web application on centralised database</dd>
+          <dt>Ongoing</dt><dd>New modules added on cadence</dd>
+          <dt>Billing</dt><dd>Actively billed &amp; maintained</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECT 03 — Health App ═════════════════════════════ -->
+<section id="p-health" class="proj-wrap">
+  <div class="proj-card slide-left">
+    <div class="proj-cover">
+      <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hpGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
+          </pattern>
+          <path id="hpEcg" d="M 0 170 L 140 170 L 160 100 L 180 250 L 200 170 L 340 170 L 360 130 L 380 210 L 400 170 L 540 170 L 560 80 L 580 260 L 600 170 L 800 170"/>
+        </defs>
+        <rect width="800" height="340" fill="#0a1122"/>
+        <rect width="800" height="340" fill="url(#hpGrid)"/>
+        <use href="#hpEcg" fill="none" stroke="#1ABADC" stroke-width="10" stroke-opacity="0.14" stroke-linecap="round"/>
+        <use href="#hpEcg" fill="none" stroke="#1ABADC" stroke-width="2.5" stroke-linecap="round"/>
+        <circle r="5" fill="#8de4f0">
+          <animateMotion dur="4.5s" repeatCount="indefinite"><mpath href="#hpEcg"/></animateMotion>
+        </circle>
+        <circle r="3.5" fill="#1ABADC" fill-opacity="0.7">
+          <animateMotion dur="4.5s" repeatCount="indefinite" begin="0.5s"><mpath href="#hpEcg"/></animateMotion>
+        </circle>
+        <!-- Medical cross top-right -->
+        <g fill="#1ABADC" fill-opacity="0.32">
+          <rect x="700" y="50" width="60" height="16" rx="3"/>
+          <rect x="722" y="28" width="16" height="60" rx="3"/>
+        </g>
+      </svg>
+      <div class="proj-cover-overlay"></div>
+      <div class="proj-cover-meta">
+        <div class="m-left">
+          <span class="m-chip"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Public Health · AI-First</span>
+          <h2>Maharashtra Family Health Platform</h2>
+          <p class="m-tag">Statewide digital health identity per family</p>
+        </div>
+        <div class="m-status proposed"><span class="dot"></span>Proposed · Prototype</div>
+      </div>
+    </div>
+    <div class="proj-body">
+      <div>
+        <p class="b-label">Client &amp; scope</p>
+        <dl>
+          <dt>Client</dt><dd>Government of Maharashtra &mdash; Public Health Department</dd>
+          <dt>Languages</dt><dd>Marathi (primary) · English (secondary)</dd>
+          <dt>Prototype</dt><dd>Figma design &amp; interactive prototype</dd>
+        </dl>
+      </div>
+      <div>
+        <p class="b-label">Capability areas</p>
+        <ul>
+          <li><strong>Citizen mobile app</strong> — family identity, records, maternal &amp; child health, immunisation reminders, scheme-eligibility checker.</li>
+          <li><strong>Facility management</strong> — PHC / SDH / District Hospital monitoring, OPD/IPD, medicine &amp; vaccine inventory.</li>
+          <li><strong>State &amp; DHO dashboards</strong> — live KPIs, district-wise performance, disease surveillance, GIS heat-maps.</li>
+          <li><strong>Grievance management</strong> — multi-modal complaints (voice / image / video), SLA monitoring, escalation matrix.</li>
+          <li><strong>Analytics &amp; reports</strong> — interactive dashboards, district heat-maps, monthly / annual exports.</li>
+        </ul>
+      </div>
+      <div>
+        <p class="b-label">Architecture</p>
+        <dl>
+          <dt>Clients</dt><dd>Responsive web + Android + iOS</dd>
+          <dt>Backend</dt><dd>API-first, secure cloud</dd>
+          <dt>Data</dt><dd>Centralised citizen health repository</dd>
+          <dt>AI</dt><dd>Analytics &amp; decision-support engine</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- AI capability sub-grid -->
+    <div style="padding:0 32px 32px 32px;">
+      <p class="b-label" style="font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#5A7494;margin-bottom:0;">The AI layer &mdash; built in, not bolted on</p>
+      <div class="ai-cap-grid">
+        <div class="ai-cap"><div class="cap-name">AI Health Assistant · Marathi</div><p>Conversational assistant that answers citizen health questions and guides scheme discovery in the local language.</p></div>
+        <div class="ai-cap"><div class="cap-name">AI Grievance Management</div><p>Auto-categorises and routes complaints, monitors SLAs and drives the escalation matrix.</p></div>
+        <div class="ai-cap"><div class="cap-name">AI Scheme Recommendation</div><p>Matches each family to the government schemes they are actually eligible for, with application guidance.</p></div>
+        <div class="ai-cap"><div class="cap-name">AI Health Risk Prediction</div><p>Flags at-risk citizens and emerging trends so the department can act proactively.</p></div>
+        <div class="ai-cap"><div class="cap-name">AI Disease Trend Analysis</div><p>Turns facility data into surveillance signals and outbreak alerts across districts and talukas.</p></div>
+        <div class="ai-cap"><div class="cap-name">AI Decision Support</div><p>Generates dashboards and narrative reports for officials. The data, already interpreted.</p></div>
+      </div>
+      <p style="margin-top:24px;font-size:13px;color:#5A7494;line-height:1.5">
+        <strong style="color:#8A9BB5">Expected integrations:</strong> ABHA, Ayushman Bharat, National Health Mission, e-Sanjeevani, HMIS, Mother &amp; Child Tracking, immunisation systems, state welfare schemes, SMS / WhatsApp gateways, GIS &amp; maps, Aadhaar / eKYC (subject to government approval).
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECT 04 — MSPHC ═════════════════════════════════ -->
+<section id="p-msphc" class="proj-wrap">
+  <div class="proj-card slide-right">
+    <div class="proj-cover">
+      <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="msGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="800" height="340" fill="#0a1122"/>
+        <rect width="800" height="340" fill="url(#msGrid)"/>
+        <!-- Construction crane silhouette -->
+        <g fill="none" stroke="#1ABADC" stroke-width="2" stroke-opacity="0.55">
+          <line x1="500" y1="60" x2="500" y2="300"/>
+          <line x1="500" y1="60" x2="720" y2="60"/>
+          <line x1="500" y1="60" x2="380" y2="90"/>
+          <line x1="500" y1="80" x2="700" y2="80"/>
+          <line x1="500" y1="80" x2="720" y2="60"/>
+          <!-- Base -->
+          <line x1="460" y1="300" x2="540" y2="300"/>
+          <line x1="470" y1="290" x2="530" y2="290"/>
+        </g>
+        <!-- Building foundation -->
+        <g fill="none" stroke="#1ABADC" stroke-width="1.5" stroke-opacity="0.4">
+          <rect x="100" y="200" width="220" height="100" rx="2"/>
+          <line x1="100" y1="230" x2="320" y2="230"/>
+          <line x1="100" y1="260" x2="320" y2="260"/>
+          <line x1="155" y1="200" x2="155" y2="300"/>
+          <line x1="210" y1="200" x2="210" y2="300"/>
+          <line x1="265" y1="200" x2="265" y2="300"/>
+        </g>
+        <!-- Traveling monitoring dot along crane -->
+        <g fill="#8de4f0">
+          <circle r="5">
+            <animate attributeName="cx" values="500;720;500" dur="4s" repeatCount="indefinite"/>
+            <animate attributeName="cy" values="60;60;60" dur="4s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+        <!-- Hanging line + load -->
+        <line x1="640" y1="60" x2="640" y2="180" stroke="#1ABADC" stroke-opacity="0.35"/>
+        <rect x="620" y="180" width="40" height="24" fill="none" stroke="#8de4f0" stroke-width="1.5"/>
+        <!-- Status dots inside building -->
+        <g fill="#1ABADC" fill-opacity="0.6">
+          <circle cx="135" cy="245" r="3"/>
+          <circle cx="190" cy="245" r="3" fill="#8de4f0" fill-opacity="1"/>
+          <circle cx="245" cy="245" r="3"/>
+          <circle cx="300" cy="245" r="3"/>
+          <circle cx="135" cy="275" r="3"/>
+          <circle cx="190" cy="275" r="3"/>
+          <circle cx="245" cy="275" r="3" fill="#8de4f0" fill-opacity="1"/>
+          <circle cx="300" cy="275" r="3"/>
+        </g>
+      </svg>
+      <div class="proj-cover-overlay"></div>
+      <div class="proj-cover-meta">
+        <div class="m-left">
+          <span class="m-chip"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Govt. Infrastructure</span>
+          <h2>MSPHC</h2>
+          <p class="m-tag">Project &amp; Contractor Monitoring</p>
+        </div>
+        <div class="m-status prototype"><span class="dot"></span>Prototype · Figma</div>
+        <div class="client-mark"><img src="/images/gov/msphc.png" alt="MSPHC" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="proj-body">
+      <div>
+        <p class="b-label">Client &amp; users</p>
+        <dl>
+          <dt>Client</dt><dd>Maharashtra State Police Housing &amp; Welfare Corporation Ltd. (MSPHC)</dd>
+          <dt>Users</dt><dd>MSPHC officials · Contractors · Site engineers</dd>
+          <dt>Prototype</dt><dd>Figma design &amp; interactive prototype</dd>
+        </dl>
+      </div>
+      <div>
+        <p class="b-label">Key features</p>
+        <ul>
+          <li><strong>Dashboard &amp; executive overview</strong> with project &amp; task management.</li>
+          <li><strong>Live site monitoring</strong> with geolocation and site information.</li>
+          <li><strong>Invoice workflow</strong> — submission, review and approval.</li>
+          <li><strong>Communication &amp; issues</strong> plus document management.</li>
+          <li><strong>Compliance &amp; safety</strong>, budget forecasting, timeline tracking.</li>
+          <li><strong>Roles &amp; multilingual</strong> — Marathi / English UI.</li>
+        </ul>
+      </div>
+      <div>
+        <p class="b-label">Business benefits</p>
+        <ul>
+          <li>Real-time monitoring, faster invoice approvals, fewer project delays.</li>
+          <li>Improved transparency, accountability and compliance monitoring.</li>
+          <li>Centralised, paperless administration with a complete digital audit trail.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECT 05 — Gokul Vet ═════════════════════════════ -->
+<section id="p-gokul" class="proj-wrap">
+  <div class="proj-card slide-left">
+    <div class="proj-cover">
+      <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="gvGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
+          </pattern>
+          <path id="gvA" d="M 400 170 L 220 90"/>
+          <path id="gvB" d="M 400 170 L 580 90"/>
+          <path id="gvC" d="M 400 170 L 140 200"/>
+          <path id="gvD" d="M 400 170 L 660 200"/>
+          <path id="gvE" d="M 400 170 L 260 280"/>
+          <path id="gvF" d="M 400 170 L 540 280"/>
+        </defs>
+        <rect width="800" height="340" fill="#0a1122"/>
+        <rect width="800" height="340" fill="url(#gvGrid)"/>
+        <g stroke="#1ABADC" stroke-width="1" stroke-opacity="0.25" fill="none">
+          <use href="#gvA"/><use href="#gvB"/><use href="#gvC"/><use href="#gvD"/><use href="#gvE"/><use href="#gvF"/>
+        </g>
+        <!-- Vet hub (center) -->
+        <circle cx="400" cy="170" r="26" fill="rgba(26,186,220,0.14)"/>
+        <circle cx="400" cy="170" r="10" fill="#1ABADC"/>
+        <!-- Village satellites -->
+        <g fill="#8de4f0">
+          <circle cx="220" cy="90"  r="7"/>
+          <circle cx="580" cy="90"  r="7"/>
+          <circle cx="140" cy="200" r="7"/>
+          <circle cx="660" cy="200" r="7"/>
+          <circle cx="260" cy="280" r="7"/>
+          <circle cx="540" cy="280" r="7"/>
+        </g>
+        <!-- Signals from hub to villages -->
+        <g fill="#8de4f0">
+          <circle r="3.5"><animateMotion dur="2s" repeatCount="indefinite" begin="0s"><mpath href="#gvA"/></animateMotion></circle>
+          <circle r="3.5"><animateMotion dur="2s" repeatCount="indefinite" begin="0.3s"><mpath href="#gvB"/></animateMotion></circle>
+          <circle r="3.5"><animateMotion dur="2s" repeatCount="indefinite" begin="0.6s"><mpath href="#gvC"/></animateMotion></circle>
+          <circle r="3.5"><animateMotion dur="2s" repeatCount="indefinite" begin="0.9s"><mpath href="#gvD"/></animateMotion></circle>
+          <circle r="3.5"><animateMotion dur="2s" repeatCount="indefinite" begin="1.2s"><mpath href="#gvE"/></animateMotion></circle>
+          <circle r="3.5"><animateMotion dur="2s" repeatCount="indefinite" begin="1.5s"><mpath href="#gvF"/></animateMotion></circle>
+        </g>
+      </svg>
+      <div class="proj-cover-overlay"></div>
+      <div class="proj-cover-meta">
+        <div class="m-left">
+          <span class="m-chip"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Dairy Co-operative</span>
+          <h2>Gokul Vet</h2>
+          <p class="m-tag">Animal health ecosystem — vet, farmer, admin</p>
+        </div>
+        <div class="m-status lead"><span class="dot"></span>Lead · Design</div>
+        <div class="client-mark"><img src="/images/gov/gokul.png" alt="Gokul Sangh" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="proj-body">
+      <div>
+        <p class="b-label">Client &amp; scale</p>
+        <dl>
+          <dt>Client</dt><dd>Gokul Sangh (Kolhapur District Co-operative Milk Producers' Union Ltd.)</dd>
+          <dt>Villages</dt><dd>1,800+</dd>
+          <dt>Producers</dt><dd>4.4 lakh+</dd>
+          <dt>Users</dt><dd>Veterinarians · Farmers · Admins</dd>
+        </dl>
+      </div>
+      <div>
+        <p class="b-label">Three apps · one ecosystem</p>
+        <ul>
+          <li><strong>Vet app</strong> — video / chat consultations, digital prescription builder, field-visit routing, AI symptom checker, vaccination tracking, monthly performance reports.</li>
+          <li><strong>Farmer app</strong> — Pashu Aadhaar linking, consultation requests, animal medical history, scheme discovery, local-language prescriptions.</li>
+          <li><strong>Admin panel</strong> — vet registration approval, heat-map of vet visits, region-wise analytics, role-based access.</li>
+        </ul>
+      </div>
+      <div>
+        <p class="b-label">Status &amp; scope</p>
+        <dl>
+          <dt>Adjacent to</dt><dd>Government livestock &amp; dairy schemes</dd>
+          <dt>Prototype</dt><dd>Figma design &amp; interactive prototype</dd>
+          <dt>Platforms</dt><dd>Web + mobile (stack under evaluation)</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECT 06 — WASH Connect ═════════════════════════════ -->
+<section id="p-wash" class="proj-wrap" style="padding-bottom:80px;">
+  <div class="proj-card slide-right">
+    <div class="proj-cover">
+      <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="wcGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
+          </pattern>
+          <linearGradient id="wcFade" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%"   stop-color="#1ABADC" stop-opacity="0"/>
+            <stop offset="50%"  stop-color="#1ABADC" stop-opacity="0.65"/>
+            <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
+          </linearGradient>
+          <path id="wcFlow" d="M 0 200 Q 200 160 400 200 T 800 190"/>
+        </defs>
+        <rect width="800" height="340" fill="#0a1122"/>
+        <rect width="800" height="340" fill="url(#wcGrid)"/>
+        <!-- Six stage markers -->
+        <g fill="none" stroke="url(#wcFade)" stroke-width="2">
+          <path d="M 0 100 Q 200 130 400 100 T 800 110"/>
+          <path d="M 0 200 Q 200 160 400 200 T 800 190"/>
+          <path d="M 0 260 Q 200 240 400 270 T 800 250"/>
+        </g>
+        <!-- 6 stage labels + dots -->
+        <g fill="#1ABADC" font-family="'Roboto Mono',monospace" font-size="10" letter-spacing="1.5">
+          <g><circle cx="80"  cy="170" r="8" fill="rgba(26,186,220,0.14)"/><circle cx="80"  cy="170" r="4"/><text x="80"  y="145" text-anchor="middle" fill="#5A7494">STAGE 0</text></g>
+          <g><circle cx="220" cy="170" r="8" fill="rgba(26,186,220,0.14)"/><circle cx="220" cy="170" r="4"/><text x="220" y="145" text-anchor="middle" fill="#5A7494">STAGE 1</text></g>
+          <g><circle cx="360" cy="170" r="8" fill="rgba(26,186,220,0.14)"/><circle cx="360" cy="170" r="4"/><text x="360" y="145" text-anchor="middle" fill="#5A7494">STAGE 2</text></g>
+          <g><circle cx="500" cy="170" r="8" fill="rgba(26,186,220,0.14)"/><circle cx="500" cy="170" r="4"/><text x="500" y="145" text-anchor="middle" fill="#5A7494">STAGE 3</text></g>
+          <g><circle cx="640" cy="170" r="8" fill="rgba(26,186,220,0.14)"/><circle cx="640" cy="170" r="4" fill="#8de4f0"/><text x="640" y="145" text-anchor="middle" fill="#1ABADC">STAGE 4</text></g>
+          <g><circle cx="740" cy="170" r="8" fill="rgba(26,186,220,0.14)"/><circle cx="740" cy="170" r="4"/><text x="740" y="145" text-anchor="middle" fill="#5A7494">STAGE 6</text></g>
+        </g>
+        <!-- Baseline stage-progress line -->
+        <line x1="60" y1="170" x2="760" y2="170" stroke="#1ABADC" stroke-opacity="0.2" stroke-dasharray="4 4"/>
+        <!-- Traveling droplet along flow -->
+        <circle r="6" fill="#8de4f0">
+          <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#wcFlow"/></animateMotion>
+        </circle>
+        <circle r="16" fill="#1ABADC" fill-opacity="0.25">
+          <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#wcFlow"/></animateMotion>
+        </circle>
+      </svg>
+      <div class="proj-cover-overlay"></div>
+      <div class="proj-cover-meta">
+        <div class="m-left">
+          <span class="m-chip"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Water &amp; Sanitation</span>
+          <h2>WASH Connect</h2>
+          <p class="m-tag">Integrated Water Resource Management toolkit</p>
+        </div>
+        <div class="m-status lead"><span class="dot"></span>Lead · Active</div>
+      </div>
+    </div>
+    <div class="proj-body">
+      <div>
+        <p class="b-label">Client &amp; users</p>
+        <dl>
+          <dt>Client</dt><dd>Frank Water (UK) &amp; ACWADAM &mdash; a WASH initiative relevant to Maharashtra local bodies</dd>
+          <dt>Partners</dt><dd>Arup (technical) · Indian partner organisations</dd>
+          <dt>Users</dt><dd>Field teams · Local government agencies · WASH coordinators</dd>
+        </dl>
+      </div>
+      <div>
+        <p class="b-label">Key features</p>
+        <ul>
+          <li><strong>Six-stage IWRM toolkit</strong> — Stage 0 to 6 with sequential completion and resume.</li>
+          <li><strong>Field data collection</strong> — KoboToolbox-integrated forms.</li>
+          <li><strong>WRMP generation</strong> — Water Resource Management Plans for target communities.</li>
+          <li><strong>Local-body toolkit</strong> — mobile app purpose-built for local government agencies.</li>
+        </ul>
+      </div>
+      <div>
+        <p class="b-label">Technology</p>
+        <dl>
+          <dt>Client</dt><dd>Mobile (Android) + Web dashboard</dd>
+          <dt>Data collection</dt><dd>KoboToolbox-integrated</dd>
+          <dt>Alignment</dt><dd>Rural Development · Public Health adjacencies</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY ═════════════════════════════════════════════════ -->
+<section class="py-28 bg-surface-low border-t border-b border-white/[0.05]">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="mb-14 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Why OnPoint for Government</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">What sets our public-sector work apart.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-10 reveal">
+      <div>
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Whole-hierarchy thinking</p>
+        <p class="text-on-surface leading-relaxed">We design for State, District, Block and Gram Panchayat together, so the same data serves an officer, a citizen and an auditor.</p>
+      </div>
+      <div>
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Statutory &amp; scheme fluency</p>
+        <p class="text-on-surface leading-relaxed">XV Finance Commission reporting, Namuna 8/9/10, ABHA, NHM, Ayushman Bharat, Pashu Aadhaar. We build to the frameworks government already runs on.</p>
+      </div>
+      <div>
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Local language by default</p>
+        <p class="text-on-surface leading-relaxed">Marathi-first interfaces and AI assistants, because adoption in the field depends on it.</p>
+      </div>
+      <div>
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">AI as decision support</p>
+        <p class="text-on-surface leading-relaxed">Grievance routing, scheme matching, risk prediction and disease surveillance framed as tools that help officials act, not dashboards that sit idle.</p>
+      </div>
+      <div class="md:col-span-2">
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Proof before scale</p>
+        <p class="text-on-surface leading-relaxed">Each engagement in this portfolio was demonstrated as a working proof of concept before any talk of rollout.</p>
+      </div>
+    </div>
+
+    <blockquote class="mt-16 max-w-3xl mx-auto text-center reveal">
+      <p class="text-xl md:text-2xl font-headline font-medium text-on-surface leading-[1.5] italic">
+        &ldquo;Government software earns trust one screen at a time. We build systems an officer, a citizen and an auditor can all rely on &mdash; from a Gram Panchayat's ledger to a state health dashboard &mdash; and we prove them in the field before we scale them.&rdquo;
+      </p>
+      <footer class="mt-5 text-[11px] font-mono uppercase tracking-widest text-primary">OnPoint Nexus · Government &amp; Public-Sector Practice</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ═══ HOW WE ENGAGE ═══════════════════════════════════════ -->
+<section class="py-24 border-b border-white/[0.05]">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="mb-14 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">How we engage</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">Three stages. No surprises.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/[0.06] rounded-2xl overflow-hidden reveal">
+      <div class="p-8 border-b md:border-b-0 md:border-r border-white/[0.05]">
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">01 · Proof of Concept</p>
+        <h3 class="font-headline text-xl font-semibold text-on-surface mb-3">Working demonstration</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed">A working demo on real workflows, so the department sees the system before committing.</p>
+      </div>
+      <div class="p-8 border-b md:border-b-0 md:border-r border-white/[0.05]">
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">02 · Pilot</p>
+        <h3 class="font-headline text-xl font-semibold text-on-surface mb-3">Bounded rollout</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed">A rollout in one district, council or union to validate adoption and measurable impact.</p>
+      </div>
+      <div class="p-8">
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">03 · Scale</p>
+        <h3 class="font-headline text-xl font-semibold text-on-surface mb-3">Phased expansion</h3>
+        <p class="text-on-surface-dim text-sm leading-relaxed">Phased expansion across the hierarchy with role-based access, reporting and integrations added as the mandate grows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLIENT ROSTER ═══════════════════════════════════════ -->
+<section class="py-20 border-b border-white/[0.05]">
+  <div class="max-w-6xl mx-auto px-6 text-center reveal">
+    <p class="text-[10px] font-mono uppercase tracking-[0.25em] text-on-surface-muted mb-2">Delivered for &amp; engaged with</p>
+    <div class="roster">
+      <span>Government of Maharashtra</span>
+      <span class="sep"></span>
+      <img src="/images/gov/eGrams.svg" alt="eGram" class="logo-svg">
+      <span class="sep"></span>
+      <img src="/images/gov/shirol.png" alt="Shirol Nagarparishad">
+      <span class="sep"></span>
+      <img src="/images/gov/msphc.png" alt="MSPHC">
+      <span class="sep"></span>
+      <img src="/images/gov/gokul.png" alt="Gokul Sangh">
+      <span class="sep"></span>
+      <img src="/images/gov/icici.png" alt="ICICI Bank">
+      <span class="sep"></span>
+      <span>AIILSG</span>
+      <span class="sep"></span>
+      <span>Frank Water &amp; ACWADAM</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════════════════ -->
+<section class="py-24">
+  <div class="max-w-3xl mx-auto px-6 text-center reveal">
+    <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface leading-tight mb-6 tracking-[-0.02em]">
+      Let's build public systems that people actually trust.
+    </h2>
+    <p class="text-on-surface-dim mb-10 max-w-xl mx-auto">Book a 30-minute scoping call. We'll walk through your department's workflow, flag the biggest process risk, and tell you what a proof of concept would look like.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-surface font-bold hover:bg-primary-dim transition-colors">
+        Book a Call <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+      <a href="mailto:hello@onpointnexus.com" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/10 text-on-surface-dim hover:text-on-surface hover:border-white/25 transition-colors font-semibold">
+        hello@onpointnexus.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
+<footer class="bg-surface-low border-t border-white/5 pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-on-surface-muted">
+    <div>&copy; 2026 OnPoint Nexus &nbsp;·&nbsp; Pune, India</div>
+    <div class="flex gap-6">
+      <a href="/" class="hover:text-primary transition-colors">Home</a>
+      <a href="/work" class="hover:text-primary transition-colors">Work</a>
+      <a href="/scaleos" class="hover:text-primary transition-colors">ScaleOS</a>
+      <a href="/ai-solutions" class="hover:text-primary transition-colors">AI Solutions</a>
+      <a href="/about" class="hover:text-primary transition-colors">About</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .slide-left, .slide-right').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
