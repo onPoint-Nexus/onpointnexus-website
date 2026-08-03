@@ -3,558 +3,901 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="theme-color" content="#0c1324">
 
-  <!-- ═══ PRIMARY SEO ═══════════════════════════════════════════ -->
-  <title>AI Solutions | RAG Chatbots, Voice Agents, ML Models | OnPoint Nexus</title>
-  <meta name="description" content="Production AI capabilities from OnPoint Nexus: RAG chatbots, voice agents, content moderation, churn prediction, on-premise inference, WhatsApp/Telegram bots and more. 10 capabilities, 4 live demos.">
+  <title>AI Engineering — 12 Capabilities. 13 Solutions. Production-Grade. | OnPoint Nexus</title>
+  <meta name="description" content="AI that works for your business, not against it. Our AI engineering practice: 12 core capabilities, 13 ready-to-deploy solutions, built to plug into what you already have. Multi-agent systems, GraphRAG, NL2SQL, Voice AI, Document AI, MLOps.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.onpointnexus.com/ai-solutions">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="OnPoint Nexus">
   <meta property="og:url"         content="https://www.onpointnexus.com/ai-solutions">
-  <meta property="og:title"       content="AI Solutions | RAG, Voice, Vision, ML. Production-Grade | OnPoint Nexus">
-  <meta property="og:description" content="Ten production AI capabilities you can deploy. Four live demos. Custom-built for your data, your workflow, your business.">
+  <meta property="og:title"       content="AI Engineering | OnPoint Nexus">
+  <meta property="og:description" content="12 capabilities. 13 solutions. AI that plugs into what you already have.">
   <meta property="og:image"       content="https://www.onpointnexus.com/og-image.png">
 
   <link rel="icon" type="image/png" href="/favicon.png">
 
-  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            primary:         '#1ABADC',
-            'primary-dim':   '#148FAA',
-            surface:         '#0c1324',
-            'surface-card':  '#141c2e',
-            'surface-high':  '#1a2235',
-            'surface-low':   '#080e1c',
-            'on-surface':    '#E8EDF5',
-            'on-surface-dim':'#8A9BB5',
-            'on-surface-muted':'#4A5A72',
-          },
-          fontFamily: { body: ['Plus Jakarta Sans', 'sans-serif'], mono: ['Roboto Mono', 'monospace'] },
-        }
-      }
-    }
+    tailwind.config = { darkMode:'class', theme:{ extend:{
+      colors:{
+        primary:'#1ABADC','primary-dim':'#0E8FA8',
+        surface:'#0c1324','surface-card':'#141c2e','surface-high':'#1a2440','surface-low':'#080e1c',
+        'on-surface':'#E8EDF5','on-surface-dim':'#8A9BB5','on-surface-muted':'#5A7494'
+      },
+      fontFamily:{ headline:['"Plus Jakarta Sans"','sans-serif'], body:['"Plus Jakarta Sans"','sans-serif'], mono:['"Roboto Mono"','monospace'] }
+    }}}
   </script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-N2WCZPCE46');</script>
 
-  <!-- ═══ JSON-LD: ItemList of all 10 capabilities ════════════════ -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "OnPoint Nexus AI Capabilities",
-    "description": "Ten production AI capabilities delivered by OnPoint Nexus.",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "RAG-Powered AI Chatbot", "url": "https://www.onpointnexus.com/ai-solutions/rag-chatbot", "provider": { "@type": "Organization", "name": "OnPoint Nexus" } } },
-      { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "Realtime Voice Agent with Cloned Voice", "url": "https://www.onpointnexus.com/ai-solutions/voice-agent", "provider": { "@type": "Organization", "name": "OnPoint Nexus" } } },
-      { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "AI Content Moderation", "url": "https://www.onpointnexus.com/ai-solutions/content-moderation", "provider": { "@type": "Organization", "name": "OnPoint Nexus" } } },
-      { "@type": "ListItem", "position": 4, "item": { "@type": "Service", "name": "Smart Business Dashboards", "url": "https://www.onpointnexus.com/ai-solutions/business-dashboards", "provider": { "@type": "Organization", "name": "OnPoint Nexus" } } },
-      { "@type": "ListItem", "position": 5, "item": { "@type": "Service", "name": "Customer Churn Prediction", "url": "https://www.onpointnexus.com/ai-solutions/churn-prediction", "provider": { "@type": "Organization", "name": "OnPoint Nexus" } } },
-      { "@type": "ListItem", "position": 6, "item": { "@type": "Service", "name": "AI Appointment Call Reminders", "url": "https://www.onpointnexus.com/ai-solutions/appointment-reminders", "provider": { "@type": "Organization", "name": "OnPoint Nexus" } } },
-      { "@type": "ListItem", "position": 7, "item": { "@type": "Service", "name": "On-Premise AI Model Serving", "url": "https://www.onpointnexus.com/ai-solutions/on-premise-ai", "provider": { "@type": "Organization", "name": "OnPoint Nexus" } } },
-      { "@type": "ListItem", "position": 8, "item": { "@type": "Service", "name": "WhatsApp & Telegram AI Bots", "url": "https://www.onpointnexus.com/ai-solutions/whatsapp-telegram-bot", "provider": { "@type": "Organization", "name": "OnPoint Nexus" } } },
-      { "@type": "ListItem", "position": 9, "item": { "@type": "Service", "name": "Custom AI Business Automations", "url": "https://www.onpointnexus.com/ai-solutions/business-automation", "provider": { "@type": "Organization", "name": "OnPoint Nexus" } } },
-      { "@type": "ListItem", "position": 10, "item": { "@type": "Service", "name": "Vision AI & Multilingual AI", "url": "https://www.onpointnexus.com/ai-solutions/vision-ai", "provider": { "@type": "Organization", "name": "OnPoint Nexus" } } }
-    ]
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "serviceType":"AI Engineering &amp; Applied Machine Learning",
+    "name":"OnPoint Nexus AI Engineering Practice",
+    "provider":{ "@type":"Organization","name":"OnPoint Nexus","url":"https://www.onpointnexus.com" },
+    "areaServed":"Worldwide",
+    "description":"AI that works for your business, not against it. 12 core AI engineering capabilities and 13 ready-to-deploy solutions built to plug into existing systems.",
+    "hasOfferCatalog":{
+      "@type":"OfferCatalog","name":"AI Engineering Capabilities",
+      "itemListElement":[
+        {"@type":"Offer","name":"Multi-Agent Systems"},
+        {"@type":"Offer","name":"Agentic Integration"},
+        {"@type":"Offer","name":"GraphRAG"},
+        {"@type":"Offer","name":"Voice AI &amp; SIP"},
+        {"@type":"Offer","name":"NL2SQL"},
+        {"@type":"Offer","name":"Document AI"},
+        {"@type":"Offer","name":"Agentic MLOps"},
+        {"@type":"Offer","name":"AI Security Layer"},
+        {"@type":"Offer","name":"Core ML &amp; Predictive Analytics"},
+        {"@type":"Offer","name":"BI &amp; Dashboards"},
+        {"@type":"Offer","name":"Computer Vision &amp; Multimodal"},
+        {"@type":"Offer","name":"Audio &amp; Speech Intelligence"}
+      ]
+    }
   }
   </script>
 
   <style>
-    body { background-color: #0c1324; font-family: 'Plus Jakarta Sans', sans-serif; }
-    .grid-bg {
-      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%);
-      -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000 30%, transparent 80%);
+    body { background:#0c1324; color:#E8EDF5; font-family:'Plus Jakarta Sans',sans-serif; overflow-x:hidden; }
+    .grad-text { background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent; }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .reveal.in-view { opacity:1; transform:none; }
+    .slide-left  { opacity:0; transform:translateX(-60px); transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); }
+    .slide-right { opacity:0; transform:translateX(60px);  transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); }
+    .slide-left.in-view, .slide-right.in-view { opacity:1; transform:none; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
     }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
-    .reveal.in-view { opacity: 1; transform: none; }
 
-    .glass-card { background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1rem; transition: border-color .25s ease, background .25s ease; }
-    .grad-text { background: linear-gradient(135deg, #1ABADC 0%, #8de4f0 55%, #cef4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    /* Hero */
+    .hero { position:relative; overflow:hidden; }
+    .hero h1 .h-line { display:block; opacity:0; transform:translateY(40px); filter:blur(8px); animation: heroLine .9s cubic-bezier(.16,1,.3,1) forwards; }
+    .hero h1 .h-line:nth-child(1) { animation-delay:.15s; }
+    .hero h1 .h-line:nth-child(2) { animation-delay:.35s; }
+    @keyframes heroLine { to { opacity:1; transform:none; filter:blur(0); } }
 
-    .hero-stat-card { padding: 22px 26px; }
-    .hero-stat-val { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; letter-spacing: -.02em; line-height: 1; font-size: clamp(1.75rem, 3vw, 2.5rem); background: linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero-stat-lbl { font-family: 'Roboto Mono', monospace; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: #5C6F8A; font-weight: 600; margin-top: 8px; }
+    /* Capability matrix card */
+    .cap-card {
+      background:#0f1729;
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:16px;
+      padding:24px 22px;
+      display:flex; flex-direction:column; gap:14px;
+      transition: border-color .3s ease, background .3s ease, transform .3s ease;
+      height:100%;
+    }
+    .cap-card:hover { border-color:rgba(26,186,220,0.25); background:rgba(26,186,220,0.03); transform:translateY(-3px); }
+    .cap-card .c-num { font-family:'Roboto Mono',monospace; font-size:10px; letter-spacing:.22em; color:#5A7494; }
+    .cap-card h3 { font-size:17px; font-weight:600; color:#E8EDF5; letter-spacing:-.015em; line-height:1.25; }
+    .cap-card .c-desc { font-size:13px; color:#8A9BB5; line-height:1.5; }
+    .cap-card .c-solves {
+      font-size:11px; color:#1ABADC;
+      padding-top:12px; border-top:1px solid rgba(255,255,255,0.05);
+      font-family:'Roboto Mono',monospace; letter-spacing:.06em;
+      line-height:1.5;
+    }
+    .cap-card .c-stack {
+      display:flex; flex-wrap:wrap; gap:5px;
+    }
+    .cap-card .c-stack span {
+      font-family:'Roboto Mono',monospace; font-size:10px;
+      padding:3px 8px; border-radius:999px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.06);
+      color:#8A9BB5;
+    }
 
-    .sec-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px; border-radius: 999px; border: 1px solid rgba(26,186,220,0.28); background: rgba(26,186,220,0.08); color: #1ABADC; font-family: 'Roboto Mono', monospace; font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; }
-    .sec-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #1ABADC; }
+    /* Solution card */
+    .sol-card {
+      background:#0f1729;
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:18px;
+      padding:32px 30px;
+      display:flex; flex-direction:column; gap:16px;
+      transition: border-color .3s ease;
+      height:100%;
+    }
+    .sol-card:hover { border-color:rgba(26,186,220,0.28); }
+    .sol-card .s-tier {
+      display:inline-flex; align-items:center; gap:8px;
+      font-family:'Roboto Mono',monospace; font-size:10px; letter-spacing:.22em; text-transform:uppercase;
+      color:#1ABADC; align-self:flex-start;
+    }
+    .sol-card .s-tier .dot { width:6px; height:6px; border-radius:50%; background:#1ABADC; }
+    .sol-card.tier-flag .s-tier { color:#8de4f0; }
+    .sol-card.tier-flag .s-tier .dot { background:#8de4f0; }
+    .sol-card.tier-aug .s-tier { color:#facc15; }
+    .sol-card.tier-aug .s-tier .dot { background:#facc15; }
+    .sol-card.tier-core .s-tier { color:#a78bfa; }
+    .sol-card.tier-core .s-tier .dot { background:#a78bfa; }
+    .sol-card h3 { font-size:22px; font-weight:600; color:#E8EDF5; letter-spacing:-.02em; line-height:1.2; }
+    .sol-card .s-stack {
+      font-family:'Roboto Mono',monospace; font-size:11px; color:#5A7494;
+      padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.05);
+      letter-spacing:.04em;
+    }
+    .sol-card .s-block .b-label {
+      font-family:'Roboto Mono',monospace; font-size:10px; letter-spacing:.22em; text-transform:uppercase;
+      color:#5A7494; margin-bottom:6px;
+    }
+    .sol-card .s-block p { font-size:14px; color:#8A9BB5; line-height:1.55; margin:0; }
+    .sol-card .s-block.value p { color:#E8EDF5; padding-left:14px; border-left:2px solid #1ABADC; font-style:italic; }
+    .sol-card .s-cta {
+      display:inline-flex; align-items:center; gap:6px;
+      font-size:13px; font-weight:600; color:#1ABADC;
+      margin-top:auto; padding-top:14px; border-top:1px solid rgba(255,255,255,0.05);
+    }
+    .sol-card .s-cta:hover { gap:10px; }
 
-    /* Capability card */
-    .cap-card { position: relative; background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1.25rem; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px; transition: border-color .3s ease, transform .35s ease, box-shadow .35s ease; overflow: hidden; }
-    .cap-card:hover { border-color: rgba(26,186,220,0.4); transform: translateY(-4px); box-shadow: 0 20px 50px -20px rgba(0,0,0,0.5); }
-    .cap-card::before { content:''; position:absolute; top:0; right:0; width:240px; height:240px; background: radial-gradient(circle, rgba(26,186,220,0.10) 0%, transparent 65%); pointer-events: none; opacity: 0; transition: opacity .35s ease; }
-    .cap-card:hover::before { opacity: 1; }
-    .cap-icon { width: 48px; height: 48px; border-radius: 14px; background: rgba(26,186,220,0.10); border: 1px solid rgba(26,186,220,0.25); display: flex; align-items: center; justify-content: center; color: #1ABADC; flex-shrink: 0; }
-    .cap-icon .material-symbols-outlined { font-size: 22px; }
-    .cap-num { font-family: 'Roboto Mono', monospace; font-size: .62rem; color: #4A5A72; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
-    .cap-card h3 { font-size: 1.25rem; font-weight: 700; line-height: 1.2; letter-spacing: -.018em; color: #E8EDF5; }
-    .cap-card p { font-size: .92rem; color: #8A9BB5; line-height: 1.55; flex: 1; }
-    .cap-card .foot { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); font-family: 'Roboto Mono', monospace; font-size: .65rem; color: #8A9BB5; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; transition: color .25s, gap .25s; }
-    .cap-card:hover .foot { color: #1ABADC; }
-    .cap-card .live-dot { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; background: rgba(74,222,128,0.12); border: 1px solid rgba(74,222,128,0.3); color: #4ade80; font-family: 'Roboto Mono', monospace; font-size: .58rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
-    .cap-card .live-dot::before { content:''; width: 5px; height: 5px; border-radius: 50%; background: #4ade80; animation: livePulse 1.6s ease infinite; }
-    @keyframes livePulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+    /* Tech stack category */
+    .stack-cat {
+      display:grid; grid-template-columns: 40px 1fr;
+      gap:22px;
+      padding:26px 0;
+      border-top:1px solid rgba(255,255,255,0.06);
+    }
+    .stack-cat:last-child { border-bottom:1px solid rgba(255,255,255,0.06); }
+    .stack-cat .num { font-family:'Roboto Mono',monospace; font-size:12px; color:#5A7494; letter-spacing:.15em; padding-top:3px; }
+    .stack-cat h3 { font-size:20px; font-weight:600; color:#E8EDF5; letter-spacing:-.015em; margin-bottom:4px; }
+    .stack-cat p { font-size:15px; color:#8A9BB5; line-height:1.55; }
 
-    /* Demo card */
-    .demo-card { background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1.25rem; overflow: hidden; display: flex; flex-direction: column; transition: border-color .3s ease, transform .35s ease, box-shadow .35s ease; position: relative; }
-    .demo-card:hover { border-color: rgba(26,186,220,0.45); transform: translateY(-4px); box-shadow: 0 24px 60px -20px rgba(26,186,220,0.18); }
-    .demo-card .cover { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #1a2235; }
-    .demo-card .cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.16,1,.3,1); }
-    .demo-card:hover .cover img { transform: scale(1.06); }
-    .demo-card .cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,19,36,0.1) 0%, rgba(12,19,36,0.65) 100%); }
-    .demo-card .icon-badge { position: absolute; top: 14px; left: 14px; width: 42px; height: 42px; border-radius: 12px; background: rgba(12,19,36,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(26,186,220,0.4); color: #1ABADC; z-index: 2; display: flex; align-items: center; justify-content: center; }
-    .demo-card .live-badge { position: absolute; top: 14px; right: 14px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px; background: rgba(74,222,128,0.12); border: 1px solid rgba(74,222,128,0.4); color: #4ade80; font-family: 'Roboto Mono', monospace; font-size: .58rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; z-index: 2; }
-    .demo-card .live-badge::before { content:''; width: 6px; height: 6px; border-radius: 50%; background: #4ade80; animation: livePulse 1.6s ease infinite; }
-    .demo-card .body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-    .demo-card h4 { font-size: 1.15rem; font-weight: 700; color: #E8EDF5; line-height: 1.2; letter-spacing: -.015em; }
-    .demo-card .tagline { font-size: .88rem; color: #8A9BB5; line-height: 1.55; flex: 1; }
-    .demo-card .launch { margin-top: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); display: inline-flex; align-items: center; justify-content: space-between; font-family: 'Roboto Mono', monospace; font-size: .65rem; color: #8A9BB5; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
-    .demo-card .launch .arr { color: #1ABADC; transition: transform .25s; }
-    .demo-card:hover .launch .arr { transform: translate(3px,-3px); }
+    /* Principle chip card */
+    .princ-card {
+      padding:24px;
+      background:rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:14px;
+    }
+    .princ-card .p-num { font-family:'Roboto Mono',monospace; font-size:10px; color:#1ABADC; letter-spacing:.22em; margin-bottom:10px; }
+    .princ-card h3 { font-size:16px; font-weight:600; color:#E8EDF5; letter-spacing:-.01em; margin-bottom:8px; }
+    .princ-card p { font-size:13px; color:#8A9BB5; line-height:1.5; }
 
-    /* How we build steps */
-    .step-box { background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1.25rem; padding: 32px 28px; }
-    .step-num { font-family: 'Roboto Mono', monospace; font-size: 2rem; font-weight: 800; line-height: 1; background: linear-gradient(135deg,#1ABADC,#8de4f0); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -.04em; }
+    /* Roadmap card */
+    .road-card {
+      padding:28px 26px;
+      background:linear-gradient(180deg, rgba(26,186,220,0.06) 0%, rgba(15,23,41,0.4) 100%);
+      border:1px solid rgba(26,186,220,0.18);
+      border-radius:16px;
+    }
+    .road-card .r-tag { font-family:'Roboto Mono',monospace; font-size:10px; color:#1ABADC; letter-spacing:.22em; text-transform:uppercase; margin-bottom:12px; }
+    .road-card h3 { font-size:18px; font-weight:600; color:#E8EDF5; letter-spacing:-.015em; margin-bottom:8px; }
+    .road-card p { font-size:13px; color:#8A9BB5; line-height:1.5; }
   </style>
-  <script src="/js/site-cursor.js" defer></script>
 </head>
-<body class="bg-surface text-on-surface antialiased">
+<body>
 
-<!-- ════════════════════════════════════════════════════════════
-     STICKY NAV
-════════════════════════════════════════════════════════════ -->
+<!-- ═══ NAV ══════════════════════════════════════════════════ -->
 <nav class="sticky top-0 z-50 border-b border-white/[0.05]" style="background:rgba(12,19,36,0.92);backdrop-filter:blur(20px);">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2 shrink-0">
       <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
     </a>
     <div class="hidden md:flex items-center gap-7 font-body text-sm">
-      <a href="/work"         class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
-      <a href="/scaleos"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">ScaleOS</a>
-      <a href="/ai-solutions" class="text-primary transition-colors duration-200">AI Solutions</a>
-      <a href="/products" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Products</a>
-      <a href="/about"        class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
+      <a href="/work"        class="text-on-surface-dim hover:text-primary transition-colors">Work</a>
+      <a href="/scaleos"     class="text-on-surface-dim hover:text-primary transition-colors">ScaleOS</a>
+      <a href="/ai-solutions" class="text-primary transition-colors">AI Engineering</a>
+      <a href="/products"    class="text-on-surface-dim hover:text-primary transition-colors">Products</a>
+      <a href="/about"       class="text-on-surface-dim hover:text-primary transition-colors">About</a>
     </div>
-    <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
+    <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors">
       Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
     </a>
-    <button id="navToggle" class="md:hidden p-2 text-on-surface-dim hover:text-primary transition-colors" aria-label="Toggle navigation" aria-expanded="false">
-      <span class="material-symbols-outlined" id="menuIcon">menu</span>
-    </button>
-  </div>
-  <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl mx-6 mb-3" style="background:rgba(17,24,39,0.96);">
-    <div class="flex flex-col gap-1 text-sm font-body">
-      <a href="/work"         class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work</a>
-      <a href="/scaleos"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">ScaleOS</a>
-      <a href="/ai-solutions" class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">AI Solutions</a>
-      <a href="/products" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Products</a>
-      <a href="/about"        class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
-      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
-    </div>
   </div>
 </nav>
 
-<!-- ════════════════════════════════════════════════════════════
-     HERO
-════════════════════════════════════════════════════════════ -->
-<section class="relative pt-32 pb-20 overflow-hidden" style="background:#0c1324;">
+<!-- ═══ HERO ═════════════════════════════════════════════════ -->
+<section class="hero pt-32 pb-24 border-b border-white/[0.05]">
   <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(26,186,220,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(26,186,220,0.055) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);-webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);"></div>
-  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 50% at 50% 45%,rgba(26,186,220,0.15) 0%,transparent 70%);"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 55% 45% at 60% 45%,rgba(26,186,220,0.15) 0%,transparent 70%);"></div>
 
-  <!-- Neural mesh — dots connected by faint lines, one signal traveling -->
-  <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:0.75;">
+  <!-- Composable capability matrix: 4x3 grid of nodes with linking signals -->
+  <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:0.55;">
     <defs>
-      <radialGradient id="aiGlow" cx="50%" cy="50%" r="50%">
+      <radialGradient id="hGlow" cx="50%" cy="50%" r="50%">
         <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.55"/>
         <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
       </radialGradient>
-      <style>
-        .ai-pulse { animation: aiPulse 2.8s ease-in-out infinite; }
-        @keyframes aiPulse { 0%,100% { opacity:1 } 50% { opacity:.35 } }
-      </style>
-      <path id="aiSignalA" d="M 180 200 L 460 320 L 760 220 L 1080 380 L 1400 260"/>
-      <path id="aiSignalB" d="M 200 700 L 520 580 L 820 720 L 1150 560 L 1420 680"/>
+      <path id="hL1" d="M 300 200 L 700 200"/>
+      <path id="hL2" d="M 700 200 L 1100 200"/>
+      <path id="hL3" d="M 300 450 L 700 450"/>
+      <path id="hL4" d="M 700 450 L 1100 450"/>
+      <path id="hL5" d="M 300 700 L 700 700"/>
+      <path id="hL6" d="M 700 700 L 1100 700"/>
+      <path id="hV1" d="M 300 200 L 300 700"/>
+      <path id="hV2" d="M 700 200 L 700 700"/>
+      <path id="hV3" d="M 1100 200 L 1100 700"/>
     </defs>
-    <!-- Mesh connection lines -->
+    <!-- Connection grid -->
     <g stroke="#1ABADC" stroke-width="1" stroke-opacity="0.14" fill="none">
-      <line x1="180" y1="200" x2="460" y2="320"/>
-      <line x1="460" y1="320" x2="760" y2="220"/>
-      <line x1="760" y1="220" x2="1080" y2="380"/>
-      <line x1="1080" y1="380" x2="1400" y2="260"/>
-      <line x1="200" y1="700" x2="520" y2="580"/>
-      <line x1="520" y1="580" x2="820" y2="720"/>
-      <line x1="820" y1="720" x2="1150" y2="560"/>
-      <line x1="1150" y1="560" x2="1420" y2="680"/>
-      <line x1="460" y1="320" x2="520" y2="580"/>
-      <line x1="760" y1="220" x2="820" y2="720"/>
-      <line x1="1080" y1="380" x2="1150" y2="560"/>
-      <line x1="180" y1="200" x2="200" y2="700"/>
-      <line x1="1400" y1="260" x2="1420" y2="680"/>
+      <use href="#hL1"/><use href="#hL2"/><use href="#hL3"/><use href="#hL4"/><use href="#hL5"/><use href="#hL6"/>
+      <use href="#hV1"/><use href="#hV2"/><use href="#hV3"/>
+      <line x1="1100" y1="200" x2="1400" y2="200" stroke-opacity="0.14"/>
+      <line x1="1100" y1="450" x2="1400" y2="450" stroke-opacity="0.14"/>
+      <line x1="1100" y1="700" x2="1400" y2="700" stroke-opacity="0.14"/>
+      <line x1="1400" y1="200" x2="1400" y2="700" stroke-opacity="0.14"/>
     </g>
-    <!-- Mesh nodes (pulsing) -->
+    <!-- 12 capability nodes (4 cols × 3 rows) -->
     <g fill="#1ABADC">
-      <circle class="ai-pulse" cx="180"  cy="200" r="4" style="animation-delay:0s"/>
-      <circle class="ai-pulse" cx="460"  cy="320" r="4" style="animation-delay:.4s"/>
-      <circle class="ai-pulse" cx="760"  cy="220" r="4" style="animation-delay:.8s"/>
-      <circle class="ai-pulse" cx="1080" cy="380" r="4" style="animation-delay:1.2s"/>
-      <circle class="ai-pulse" cx="1400" cy="260" r="4" style="animation-delay:1.6s"/>
-      <circle class="ai-pulse" cx="200"  cy="700" r="4" style="animation-delay:.2s"/>
-      <circle class="ai-pulse" cx="520"  cy="580" r="4" style="animation-delay:.6s"/>
-      <circle class="ai-pulse" cx="820"  cy="720" r="4" style="animation-delay:1s"/>
-      <circle class="ai-pulse" cx="1150" cy="560" r="4" style="animation-delay:1.4s"/>
-      <circle class="ai-pulse" cx="1420" cy="680" r="4" style="animation-delay:1.8s"/>
+      <circle cx="300"  cy="200" r="6"/><circle cx="700"  cy="200" r="6"/><circle cx="1100" cy="200" r="6"/><circle cx="1400" cy="200" r="6"/>
+      <circle cx="300"  cy="450" r="6"/><circle cx="700"  cy="450" r="6"/><circle cx="1100" cy="450" r="6"/><circle cx="1400" cy="450" r="6"/>
+      <circle cx="300"  cy="700" r="6"/><circle cx="700"  cy="700" r="6"/><circle cx="1100" cy="700" r="6"/><circle cx="1400" cy="700" r="6"/>
     </g>
-    <!-- Signal glow halos on 4 nodes -->
-    <g fill="url(#aiGlow)">
-      <circle cx="460" cy="320" r="28"/>
-      <circle cx="1080" cy="380" r="28"/>
-      <circle cx="820" cy="720" r="28"/>
-      <circle cx="1150" cy="560" r="28"/>
+    <!-- Featured nodes with glow (highlight composability) -->
+    <g fill="url(#hGlow)">
+      <circle cx="700" cy="450" r="30"/>
+      <circle cx="1100" cy="200" r="26"/>
+      <circle cx="300" cy="700" r="26"/>
     </g>
-    <!-- Traveling signals along mesh -->
-    <circle r="5" fill="#8de4f0">
-      <animateMotion dur="6s" repeatCount="indefinite"><mpath href="#aiSignalA"/></animateMotion>
-    </circle>
-    <circle r="4" fill="#8de4f0">
-      <animateMotion dur="7s" repeatCount="indefinite" begin="1.5s"><mpath href="#aiSignalB"/></animateMotion>
-    </circle>
+    <g fill="#8de4f0">
+      <circle cx="700" cy="450" r="7"/>
+      <circle cx="1100" cy="200" r="6"/>
+      <circle cx="300" cy="700" r="6"/>
+    </g>
+    <!-- Traveling signals showing modules composing -->
+    <g fill="#8de4f0">
+      <circle r="4"><animateMotion dur="3.6s" repeatCount="indefinite"><mpath href="#hL1"/></animateMotion></circle>
+      <circle r="4"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0.8s"><mpath href="#hL4"/></animateMotion></circle>
+      <circle r="3.5"><animateMotion dur="4s" repeatCount="indefinite" begin="1.4s"><mpath href="#hV2"/></animateMotion></circle>
+      <circle r="3.5"><animateMotion dur="3.5s" repeatCount="indefinite" begin="0.4s"><mpath href="#hL6"/></animateMotion></circle>
+      <circle r="3.5"><animateMotion dur="4.2s" repeatCount="indefinite" begin="2s"><mpath href="#hV3"/></animateMotion></circle>
+    </g>
   </svg>
 
-  <div class="absolute left-0 right-0 bottom-0 pointer-events-none" style="height:120px;background:linear-gradient(180deg,transparent 0%,#0c1324 100%);"></div>
-
-  <div class="relative max-w-7xl mx-auto px-6 text-center">
-    <div class="reveal inline-flex">
-      <span class="sec-eyebrow"><span class="dot"></span>AI Solutions · Production-Ready</span>
-    </div>
-    <h1 class="mt-8 text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[0.95] max-w-5xl mx-auto reveal" style="transition-delay:.05s;">
-      AI that works for your<br><span class="grad-text">business, not against it.</span>
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
+    <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-6" style="opacity:0;animation:heroLine .8s cubic-bezier(.16,1,.3,1) forwards">AI Engineering Practice</p>
+    <h1 class="font-headline font-bold tracking-[-0.03em] leading-[1.02] text-on-surface" style="font-size:clamp(2.5rem, 6vw, 4.5rem)">
+      <span class="h-line">AI that works for your business,</span>
+      <span class="h-line"><span class="grad-text">not against it.</span></span>
     </h1>
-    <p class="mt-7 max-w-2xl mx-auto text-lg text-on-surface-dim leading-relaxed reveal" style="transition-delay:.15s;">
-      We don't sell generic AI tools. We build custom AI applications around your workflows, your data, your goals. Ten capabilities, four live demos you can try right now.
+    <p class="mt-10 text-lg md:text-xl text-on-surface-dim max-w-2xl leading-relaxed" style="opacity:0;animation:heroLine .9s cubic-bezier(.16,1,.3,1) .7s forwards">
+      We don't sell generic tools. We build a composable engineering stack &mdash; 12 capabilities, 13 ready-to-deploy solutions &mdash; and plug them into the systems you already run.
     </p>
-    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center reveal" style="transition-delay:.25s;">
-      <a href="#capabilities" class="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-surface px-7 py-3.5 font-semibold hover:bg-primary-dim hover:shadow-[0_0_32px_-4px_rgba(26,186,220,0.5)] transition-all">
-        Explore Capabilities <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-      </a>
-      <a href="#live-demos" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3.5 font-semibold hover:border-primary hover:text-primary transition-colors">
-        See Live Demos <span class="material-symbols-outlined text-[18px]">play_arrow</span>
-      </a>
-    </div>
 
-    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto reveal" style="transition-delay:.35s;">
-      <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">10</div><div class="hero-stat-lbl">AI Capabilities</div></div>
-      <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">4</div><div class="hero-stat-lbl">Live Demos</div></div>
-      <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">24/7</div><div class="hero-stat-lbl">Autonomous Operation</div></div>
-      <div class="glass-card hero-stat-card text-left"><div class="hero-stat-val">100<span class="text-on-surface-muted">%</span></div><div class="hero-stat-lbl">Custom-Built</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════
-     CAPABILITIES. 10 cards
-════════════════════════════════════════════════════════════ -->
-<section id="capabilities" class="py-24 px-6 max-w-7xl mx-auto">
-  <div class="flex items-end justify-between gap-8 mb-14 flex-wrap reveal">
-    <div>
-      <span class="sec-eyebrow mb-5"><span class="dot"></span>01 · AI Capabilities</span>
-      <h2 class="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-tight max-w-2xl">
-        Ten capabilities. <span class="grad-text">All shipped to production.</span>
-      </h2>
-      <p class="mt-4 text-on-surface-dim text-base md:text-lg max-w-2xl leading-relaxed">
-        Every capability below is a category of AI we've built and deployed for real clients. Not proofs-of-concept. Production systems running today.
-      </p>
-    </div>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-    <a href="/ai-solutions/rag-chatbot" class="cap-card reveal">
-      <div class="flex items-start justify-between gap-3">
-        <div class="cap-icon"><span class="material-symbols-outlined">smart_toy</span></div>
-        <span class="live-dot">Live demo</span>
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-0" style="opacity:0;animation:heroLine .9s cubic-bezier(.16,1,.3,1) .95s forwards">
+      <div class="px-6 py-4 md:pr-8 md:pl-0">
+        <div class="text-3xl md:text-4xl font-headline font-medium text-primary tracking-tight leading-none">12</div>
+        <div class="mt-3 text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Core capabilities</div>
       </div>
-      <span class="cap-num">01 · RAG &amp; Knowledge</span>
-      <h3>RAG-Powered AI Chatbot</h3>
-      <p>A ChatGPT-style interface trained on your knowledge base. Self-hosted vector DB. Admin panel for live content updates. Daily question recaps to your team.</p>
-      <div class="foot">Explore capability <span class="material-symbols-outlined text-[16px]">arrow_outward</span></div>
-    </a>
-
-    <a href="/ai-solutions/voice-agent" class="cap-card reveal" style="transition-delay:.04s;">
-      <div class="flex items-start justify-between gap-3">
-        <div class="cap-icon"><span class="material-symbols-outlined">graphic_eq</span></div>
-        <span class="live-dot">Live demo</span>
+      <div class="px-6 py-4 md:px-8 border-t md:border-t-0 md:border-l border-white/10">
+        <div class="text-3xl md:text-4xl font-headline font-medium text-primary tracking-tight leading-none">13</div>
+        <div class="mt-3 text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Ready solutions</div>
       </div>
-      <span class="cap-num">02 · Voice AI</span>
-      <h3>Realtime Voice Agent</h3>
-      <p>Voice-to-voice AI that sounds like your brand. Handles unlimited concurrent calls. Captures lead data straight into your CRM. Embeddable anywhere.</p>
-      <div class="foot">Explore capability <span class="material-symbols-outlined text-[16px]">arrow_outward</span></div>
-    </a>
-
-    <a href="/ai-solutions/business-automation" class="cap-card reveal" style="transition-delay:.08s;">
-      <div class="flex items-start justify-between gap-3">
-        <div class="cap-icon"><span class="material-symbols-outlined">settings_suggest</span></div>
+      <div class="px-6 py-4 md:px-8 border-l border-white/10">
+        <div class="text-3xl md:text-4xl font-headline font-medium text-primary tracking-tight leading-none">&lt;800ms</div>
+        <div class="mt-3 text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Voice latency target</div>
       </div>
-      <span class="cap-num">03 · Workflow AI</span>
-      <h3>Custom AI Business Automations</h3>
-      <p>End-to-end workflow automation tailored to your processes. AI layer added where decisions or extraction are needed. Integrates with your existing stack.</p>
-      <div class="foot">Explore capability <span class="material-symbols-outlined text-[16px]">arrow_outward</span></div>
-    </a>
-
-  </div>
-
-  <!-- More capabilities. compact list -->
-  <div class="mt-16 pt-10 border-t border-white/[0.06] reveal">
-    <p class="text-[11px] font-mono uppercase tracking-widest text-on-surface-muted mb-6">Also available</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 text-sm">
-      <a href="/ai-solutions/content-moderation" class="flex items-center justify-between py-2 border-b border-white/[0.04] text-on-surface-dim hover:text-primary transition-colors">
-        <span>AI Content Moderation</span>
-        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-      </a>
-      <a href="/ai-solutions/business-dashboards" class="flex items-center justify-between py-2 border-b border-white/[0.04] text-on-surface-dim hover:text-primary transition-colors">
-        <span>Smart Business Dashboards</span>
-        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-      </a>
-      <a href="/ai-solutions/churn-prediction" class="flex items-center justify-between py-2 border-b border-white/[0.04] text-on-surface-dim hover:text-primary transition-colors">
-        <span>Customer Churn Prediction</span>
-        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-      </a>
-      <a href="/ai-solutions/appointment-reminders" class="flex items-center justify-between py-2 border-b border-white/[0.04] text-on-surface-dim hover:text-primary transition-colors">
-        <span>AI Appointment Reminders</span>
-        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-      </a>
-      <a href="/ai-solutions/on-premise-ai" class="flex items-center justify-between py-2 border-b border-white/[0.04] text-on-surface-dim hover:text-primary transition-colors">
-        <span>On-Premise AI Serving</span>
-        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-      </a>
-      <a href="/ai-solutions/whatsapp-telegram-bot" class="flex items-center justify-between py-2 border-b border-white/[0.04] text-on-surface-dim hover:text-primary transition-colors">
-        <span>WhatsApp &amp; Telegram Bots</span>
-        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-      </a>
-      <a href="/ai-solutions/vision-ai" class="flex items-center justify-between py-2 border-b border-white/[0.04] text-on-surface-dim hover:text-primary transition-colors">
-        <span>Vision &amp; Multilingual AI</span>
-        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-      </a>
+      <div class="px-6 py-4 md:pl-8 md:pr-0 border-t md:border-t-0 border-l border-white/10">
+        <div class="text-3xl md:text-4xl font-headline font-medium text-primary tracking-tight leading-none">Composable</div>
+        <div class="mt-3 text-[10px] font-mono uppercase tracking-widest text-on-surface-muted">Plug into what you have</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════════
-     LIVE DEMOS. 4 cards
-════════════════════════════════════════════════════════════ -->
-<section id="live-demos" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/[0.06]">
-  <div class="flex items-end justify-between gap-8 mb-14 flex-wrap reveal">
-    <div>
-      <span class="sec-eyebrow mb-5"><span class="dot"></span>02 · Live Demos · Try Now</span>
-      <h2 class="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-tight max-w-2xl">
-        Four products. <span class="grad-text">Live and clickable.</span>
-      </h2>
-      <p class="mt-4 text-on-surface-dim text-base md:text-lg max-w-2xl leading-relaxed">
-        Each card links to a live deployed AI product. No sign-up, no demo gate. Open and explore.
-      </p>
-    </div>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-    <a href="https://ai.clinicaltrac.net/" target="_blank" rel="noopener" class="demo-card reveal">
-      <div class="cover">
-        <div class="icon-badge"><span class="material-symbols-outlined">stethoscope</span></div>
-        <div class="live-badge">Live</div>
-        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=85" alt="ClinicalTrac AI Assistant" loading="lazy" width="1200" height="675">
-      </div>
-      <div class="body">
-        <h4>ClinicalTrac AI Assistant</h4>
-        <p class="tagline">Healthcare knowledge assistant. RAG-grounded responses, automated email summaries, clinical context awareness.</p>
-        <div class="launch"><span>ai.clinicaltrac.net</span><span class="arr material-symbols-outlined text-[18px]">arrow_outward</span></div>
-      </div>
-    </a>
-
-    <a href="https://sugar-smart-farm-bot-xi.vercel.app/" target="_blank" rel="noopener" class="demo-card reveal" style="transition-delay:.05s;">
-      <div class="cover">
-        <div class="icon-badge"><span class="material-symbols-outlined">agriculture</span></div>
-        <div class="live-badge">Live</div>
-        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&q=85" alt="Sugar Smart Farm Bot" loading="lazy" width="1200" height="675">
-      </div>
-      <div class="body">
-        <h4>Sugar Smart Farm Bot</h4>
-        <p class="tagline">Multilingual farming AI for sugarcane growers. Crop disease detection, irrigation guidance, harvest optimization.</p>
-        <div class="launch"><span>sugar-smart-farm-bot</span><span class="arr material-symbols-outlined text-[18px]">arrow_outward</span></div>
-      </div>
-    </a>
-
-    <a href="https://onpointagent.vercel.app/" target="_blank" rel="noopener" class="demo-card reveal" style="transition-delay:.1s;">
-      <div class="cover">
-        <div class="icon-badge"><span class="material-symbols-outlined">graphic_eq</span></div>
-        <div class="live-badge">Live</div>
-        <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?w=1200&q=85" alt="OnPointAgent Voice Assistant" loading="lazy" width="1200" height="675">
-      </div>
-      <div class="body">
-        <h4>OnPointAgent Voice Assistant</h4>
-        <p class="tagline">Realtime voice-to-voice AI. Sub-second latency, natural conversational flow. Embed anywhere.</p>
-        <div class="launch"><span>onpointagent.vercel.app</span><span class="arr material-symbols-outlined text-[18px]">arrow_outward</span></div>
-      </div>
-    </a>
-
-    <a href="https://nutriai.onpointsoft.com/" target="_blank" rel="noopener" class="demo-card reveal" style="transition-delay:.15s;">
-      <div class="cover">
-        <div class="icon-badge"><span class="material-symbols-outlined">restaurant</span></div>
-        <div class="live-badge">Live</div>
-        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=85" alt="NutriAI Nutrition Analyzer" loading="lazy" width="1200" height="675">
-      </div>
-      <div class="body">
-        <h4>NutriAI. Smart Nutrition Analyzer</h4>
-        <p class="tagline">Vision AI that identifies meals from images. Calculates calories, proteins, nutritional values instantly.</p>
-        <div class="launch"><span>nutriai.onpointsoft.com</span><span class="arr material-symbols-outlined text-[18px]">arrow_outward</span></div>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════════
-     HOW WE BUILD
-════════════════════════════════════════════════════════════ -->
-<section class="py-24 px-6 max-w-7xl mx-auto border-t border-white/[0.06]">
-  <div class="text-center mb-14 reveal">
-    <span class="sec-eyebrow mb-5"><span class="dot"></span>03 · How We Build</span>
-    <h2 class="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-      Conversation to production in <span class="grad-text">three steps.</span>
+<!-- ═══ INTRO ═══════════════════════════════════════════════ -->
+<section class="py-24 border-b border-white/[0.05]">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-4 reveal">Context engineering</p>
+    <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em] mb-8 reveal">
+      Grounded in your organisational ground truth. Built as reusable modules, not one-off scripts.
     </h2>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-    <div class="step-box reveal">
-      <div class="step-num">01</div>
-      <h3 class="mt-5 text-xl font-bold text-on-surface">Listen to the workflow</h3>
-      <p class="mt-3 text-on-surface-dim text-sm leading-relaxed">A 30-minute discovery call. We map your current process, the bottleneck, the people involved, the data available, and the outcome you need.</p>
-    </div>
-    <div class="step-box reveal" style="transition-delay:.08s;">
-      <div class="step-num">02</div>
-      <h3 class="mt-5 text-xl font-bold text-on-surface">Custom-fit the AI layer</h3>
-      <p class="mt-3 text-on-surface-dim text-sm leading-relaxed">We pick the right combination of LLM, vector DB, vision model, or classic ML. Self-hosted or cloud. Integrated with the tools you already use.</p>
-    </div>
-    <div class="step-box reveal" style="transition-delay:.16s;">
-      <div class="step-num">03</div>
-      <h3 class="mt-5 text-xl font-bold text-on-surface">Ship to production</h3>
-      <p class="mt-3 text-on-surface-dim text-sm leading-relaxed">First usable version in 2 to 4 weeks. Production deploy with monitoring and an internal team handover. Same engineers stay on for iteration.</p>
+    <div class="space-y-6 text-lg text-on-surface-dim leading-relaxed reveal">
+      <p>Our practice prioritises the <em>Context Engineering</em> approach: AI systems are grounded in your data through a unified access layer, and every project builds on standardised integration tools, security layers, and reusable components.</p>
+      <p>The result is a modular composable enterprise architecture. Individual pieces are interchangeable and reused across business units, significantly reducing delivery time for every new initiative.</p>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════════
-     CTA
-════════════════════════════════════════════════════════════ -->
-<section class="pb-24 px-6 max-w-7xl mx-auto">
-  <div class="rounded-3xl p-12 md:p-16 border border-primary/20 reveal" style="background:linear-gradient(135deg,rgba(26,186,220,0.08) 0%,rgba(20,28,46,1) 100%);">
-    <div class="max-w-2xl">
-      <span class="sec-eyebrow mb-6"><span class="dot"></span>Start an AI Project</span>
-      <h3 class="mt-6 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] mb-6">
-        Got a workflow that should be <span class="grad-text">an AI?</span>
-      </h3>
-      <p class="text-on-surface-dim text-base md:text-lg leading-relaxed mb-10">
-        Tell us about the manual work, the missed leads, the support queue, or the data you can't make sense of. We'll tell you which of these ten capabilities solves it and what it takes to ship.
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-surface px-7 py-3.5 rounded-full font-bold text-sm hover:bg-primary-dim transition-colors shadow-lg shadow-primary/30">
-          Book a Free AI Discovery Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-        </a>
-        <a href="mailto:hr@onpointsoft.com" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-white/15 bg-white/[0.03] hover:border-primary hover:text-primary transition-colors">
-          hr@onpointsoft.com
-        </a>
+<!-- ═══ CAPABILITY MATRIX ══════════════════════════════════ -->
+<section class="py-24 bg-surface-low border-b border-white/[0.05]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-14 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Capability matrix</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">Twelve capabilities. One accountable engineering team.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+
+      <div class="cap-card">
+        <div class="c-num">01</div>
+        <h3>Multi-Agent Systems</h3>
+        <p class="c-desc">Autonomous units working together to complete complex tasks.</p>
+        <p class="c-solves">Solves &mdash; departmental handoffs · parallelised research</p>
+        <div class="c-stack"><span>CrewAI</span><span>LangGraph</span><span>AutoGen</span></div>
+      </div>
+
+      <div class="cap-card">
+        <div class="c-num">02</div>
+        <h3>Agentic Integration</h3>
+        <p class="c-desc">Standardised interface for agents to connect to tools and data.</p>
+        <p class="c-solves">Solves &mdash; API sprawl · vendor lock-in</p>
+        <div class="c-stack"><span>FastMCP</span><span>Python SDKs</span></div>
+      </div>
+
+      <div class="cap-card">
+        <div class="c-num">03</div>
+        <h3>GraphRAG</h3>
+        <p class="c-desc">Retrieval systems that understand relationships between data points.</p>
+        <p class="c-solves">Solves &mdash; hidden info in siloed data</p>
+        <div class="c-stack"><span>Neo4j</span><span>LlamaIndex</span></div>
+      </div>
+
+      <div class="cap-card">
+        <div class="c-num">04</div>
+        <h3>Voice AI &amp; SIP</h3>
+        <p class="c-desc">Real-time voice agents that sound natural and respond instantly.</p>
+        <p class="c-solves">Solves &mdash; lead qualification · 24/7 reception</p>
+        <div class="c-stack"><span>LiveKit</span><span>Deepgram</span><span>WebRTC</span></div>
+      </div>
+
+      <div class="cap-card">
+        <div class="c-num">05</div>
+        <h3>NL2SQL</h3>
+        <p class="c-desc">Converts natural-language questions into database queries.</p>
+        <p class="c-solves">Solves &mdash; bottlenecks in ad-hoc reporting</p>
+        <div class="c-stack"><span>AWS</span><span>Semantic Layers</span><span>SQL Proxies</span></div>
+      </div>
+
+      <div class="cap-card">
+        <div class="c-num">06</div>
+        <h3>Document AI</h3>
+        <p class="c-desc">Extracts structured data from messy documents.</p>
+        <p class="c-solves">Solves &mdash; invoice &amp; medical-record processing</p>
+        <div class="c-stack"><span>LlamaParse</span><span>AWS Textract</span></div>
+      </div>
+
+      <div class="cap-card">
+        <div class="c-num">07</div>
+        <h3>Agentic MLOps</h3>
+        <p class="c-desc">Automated lifecycle for monitoring and retraining models.</p>
+        <p class="c-solves">Solves &mdash; model degradation · manual maintenance</p>
+        <div class="c-stack"><span>MLflow</span><span>Airflow</span><span>Docker</span></div>
+      </div>
+
+      <div class="cap-card">
+        <div class="c-num">08</div>
+        <h3>AI Security Layer</h3>
+        <p class="c-desc">Real-time guardrails to prevent data leakage and enforce policy.</p>
+        <p class="c-solves">Solves &mdash; privacy compliance · data security</p>
+        <div class="c-stack"><span>LLM Gateways</span><span>Redaction Tools</span></div>
+      </div>
+
+      <div class="cap-card">
+        <div class="c-num">09</div>
+        <h3>Core ML &amp; Predictive Analytics</h3>
+        <p class="c-desc">Classical &amp; ensemble models for forecasting, classification, and anomaly detection on structured data.</p>
+        <p class="c-solves">Solves &mdash; demand forecasting · churn · fraud · equipment failure</p>
+        <div class="c-stack"><span>scikit-learn</span><span>XGBoost</span><span>Prophet</span></div>
+      </div>
+
+      <div class="cap-card">
+        <div class="c-num">10</div>
+        <h3>BI &amp; Dashboards</h3>
+        <p class="c-desc">Interactive dashboards blending operational data with AI-derived signals in real time.</p>
+        <p class="c-solves">Solves &mdash; delayed reporting · no visibility into AI outputs</p>
+        <div class="c-stack"><span>Power BI</span><span>Tableau</span><span>Metabase</span><span>Streamlit</span></div>
+      </div>
+
+      <div class="cap-card">
+        <div class="c-num">11</div>
+        <h3>Computer Vision &amp; Multimodal</h3>
+        <p class="c-desc">Models that understand and reason across images, video, and text together.</p>
+        <p class="c-solves">Solves &mdash; manual visual inspection · quality &amp; compliance checks</p>
+        <div class="c-stack"><span>GPT-4V</span><span>Claude Vision</span><span>Gemini</span><span>YOLO</span><span>OpenCV</span></div>
+      </div>
+
+      <div class="cap-card">
+        <div class="c-num">12</div>
+        <h3>Audio &amp; Speech Intelligence</h3>
+        <p class="c-desc">Transcription, diarisation, and sentiment/compliance analysis on audio.</p>
+        <p class="c-solves">Solves &mdash; unanalysed call recordings · missed coaching signals</p>
+        <div class="c-stack"><span>Whisper</span><span>Speaker Diarization</span><span>Sentiment Models</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOLUTIONS PORTFOLIO ═══════════════════════════════ -->
+<section class="py-28 border-b border-white/[0.05]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-14 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Solutions portfolio</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">Thirteen solutions. Each plugs into your existing stack.</h2>
+      <p class="mt-6 text-on-surface-dim leading-relaxed max-w-3xl">Every solution below is an <strong class="text-on-surface">augmentation layer</strong> &mdash; it reads from and writes back to your current systems of record, so you keep the tools you already run while gaining an AI-driven layer on top.</p>
+    </div>
+
+    <!-- Tier 1: Flagship -->
+    <div class="mb-8 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary/80">Tier 01 &nbsp;·&nbsp; Flagship deployed solutions</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16 reveal">
+
+      <a href="/ai-solutions/voice-agent" class="sol-card tier-flag">
+        <span class="s-tier"><span class="dot"></span>Voice AI &amp; SIP</span>
+        <h3>AI Voice Sales Agent</h3>
+        <p class="s-stack">LiveKit · Deepgram · WebRTC</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>Manual lead qualification is slow. SDR teams miss the critical window to connect, losing revenue.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>Autonomous voice agent makes immediate outbound calls, qualifies intent in natural language, and transfers promising leads to a human rep.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>Significant increase in lead closing rates by hitting the speed-to-lead window.</p>
+        </div>
+        <span class="s-cta">Explore voice agent <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+      <a href="/ai-solutions/rag-chatbot" class="sol-card tier-flag">
+        <span class="s-tier"><span class="dot"></span>GraphRAG</span>
+        <h3>Enterprise Knowledge Assistant</h3>
+        <p class="s-stack">Neo4j · LlamaIndex · Vector Stores</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>Employees waste hours searching wikis, PDFs, and policy docs &mdash; often without finding the answer.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>A platform that builds a relationship-aware knowledge map. It understands how departments, policies, and people are connected.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>Faster, more accurate information retrieval. Significant drop in internal support tickets.</p>
+        </div>
+        <span class="s-cta">Explore GraphRAG chatbot <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="sol-card tier-flag">
+        <span class="s-tier"><span class="dot"></span>NL2SQL</span>
+        <h3>NL2SQL &amp; Data Intelligence</h3>
+        <p class="s-stack">AWS · Semantic Layers · SQL Proxies</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>Business teams wait days for analysts to write SQL for even simple questions.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>Users ask questions in plain English and get an immediate answer from the database, with the query and audit trail preserved.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>Instant time-to-insight for leadership. Massive reduction in ad-hoc data requests.</p>
+        </div>
+        <span class="s-cta">Talk to us about NL2SQL <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+    </div>
+
+    <!-- Tier 2: Augmentation Layers -->
+    <div class="mb-8 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary/80">Tier 02 &nbsp;·&nbsp; Augmentation layers &mdash; wrap around what you already run</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16 reveal">
+
+      <div class="sol-card tier-aug">
+        <span class="s-tier"><span class="dot"></span>Multi-agent</span>
+        <h3>Research &amp; Task Orchestration</h3>
+        <p class="s-stack">CrewAI · LangGraph · AutoGen</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>Multi-step work like RFP responses and competitive analysis is bottlenecked because one person handles research, drafting, and review sequentially.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>A supervisor agent decomposes the task and delegates to specialised sub-agents that work in parallel, with a human checkpoint before final delivery.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>Sits on top of existing document and project tools. Multi-day research cycles collapse to hours.</p>
+        </div>
+      </div>
+
+      <a href="/ai-solutions/business-automation" class="sol-card tier-aug">
+        <span class="s-tier"><span class="dot"></span>Agentic integration</span>
+        <h3>Universal Integration Layer</h3>
+        <p class="s-stack">FastMCP · Python SDKs</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>Every new AI initiative re-builds bespoke connectors to internal APIs, causing sprawl, duplicated auth, and vendor lock-in.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>A standardised MCP-based integration layer exposes internal systems and SaaS APIs as reusable tools any agent can call, with centralised auth and access logging.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>Existing APIs stay untouched. Every future agent project reuses the same connectors instead of building new ones.</p>
+        </div>
+        <span class="s-cta">Explore automation stack <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+      <div class="sol-card tier-aug">
+        <span class="s-tier"><span class="dot"></span>Document AI</span>
+        <h3>Extraction Pipeline</h3>
+        <p class="s-stack">LlamaParse · AWS Textract</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>Teams manually re-key data from invoices, medical records, and scanned forms into downstream systems &mdash; slow and error-prone.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>An extraction pipeline parses unstructured documents into structured, validated fields, flags low-confidence cases for review, and pushes clean records into the target system.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>Feeds directly into your ERP or records system through its current import path. No downstream workflow changes.</p>
+        </div>
+      </div>
+
+      <div class="sol-card tier-aug">
+        <span class="s-tier"><span class="dot"></span>MLOps</span>
+        <h3>Agentic MLOps Pipeline</h3>
+        <p class="s-stack">MLflow · Airflow · Docker</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>Deployed models silently degrade as real-world data drifts. Teams only notice after accuracy has already dropped.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>An automated pipeline tracks experiments and model versions, orchestrates scheduled retraining, and monitors live predictions for drift &mdash; alerting before impact.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>Wraps around models already in production. Adds versioning, monitoring, and retraining without rewriting the serving app.</p>
+        </div>
+      </div>
+
+      <a href="/ai-solutions/on-premise-ai" class="sol-card tier-aug">
+        <span class="s-tier"><span class="dot"></span>AI security</span>
+        <h3>Guardrails Layer</h3>
+        <p class="s-stack">LLM Gateways · Redaction Tools</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>As more apps call LLMs directly, there's no consistent checkpoint to catch sensitive data leaving the organisation.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>A gateway between applications and model providers, redacting PII in requests and responses in real time and enforcing policy before any call completes.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>Applications keep calling the LLM the same way &mdash; compliance is added without changing application code.</p>
+        </div>
+        <span class="s-cta">Explore on-premise AI <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+    </div>
+
+    <!-- Tier 3: Core ML / BI / Multimodal -->
+    <div class="mb-8 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary/80">Tier 03 &nbsp;·&nbsp; Core ML, BI, and multimodal &mdash; beyond LLM agents</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+
+      <div class="sol-card tier-core">
+        <span class="s-tier"><span class="dot"></span>Predictive ML</span>
+        <h3>Demand Forecasting &amp; Anomaly Detection</h3>
+        <p class="s-stack">scikit-learn · XGBoost · Prophet · AWS</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>Inventory, staffing, and maintenance decisions are made on gut feel or simple moving averages &mdash; leading to overstock, understock, and undetected failures.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>Ensemble forecasting models predict demand at SKU/location level. Anomaly-detection models score transactions or sensor data in real time and flag outliers.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>Runs as a scoring layer beside your ERP or inventory system. Predictions and flags write back into fields planners already use.</p>
+        </div>
+      </div>
+
+      <a href="/ai-solutions/churn-prediction" class="sol-card tier-core">
+        <span class="s-tier"><span class="dot"></span>Classification</span>
+        <h3>Customer Churn &amp; Lead Scoring</h3>
+        <p class="s-stack">scikit-learn · XGBoost · Feature Store</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>Sales and retention teams treat every lead and customer the same way &mdash; no reliable signal for who is likely to convert or churn.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>A classification model trained on historical CRM and usage data scores every lead and customer, updating as new activity comes in.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>The score writes back as a field inside your existing CRM. Reps keep working where they already work, with a new column to prioritise by.</p>
+        </div>
+        <span class="s-cta">Explore churn prediction <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+      <a href="/ai-solutions/business-dashboards" class="sol-card tier-core">
+        <span class="s-tier"><span class="dot"></span>BI</span>
+        <h3>Executive &amp; Operational Dashboards</h3>
+        <p class="s-stack">Power BI · Tableau · Metabase · Plotly</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>Leadership waits days for static reports. AI-generated signals live in separate tools disconnected from tracked KPIs.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>AI-derived metrics are published as new data sources and visuals inside your existing BI tool, alongside a natural-language query panel for ad-hoc questions.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>Extends your existing Power BI or Tableau instance rather than standing up a parallel tool. One dashboard habit.</p>
+        </div>
+        <span class="s-cta">Explore BI dashboards <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+      <a href="/ai-solutions/vision-ai" class="sol-card tier-core">
+        <span class="s-tier"><span class="dot"></span>Multimodal</span>
+        <h3>Vision Quality &amp; Compliance</h3>
+        <p class="s-stack">GPT-4V · Claude Vision · YOLO · OpenCV</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>Manual visual inspection &mdash; product defects, site safety, scanned-document quality &mdash; is slow, inconsistent across inspectors, and doesn't scale.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>A vision pipeline detects and classifies defects from uploaded photos or video frames, escalating ambiguous cases to a multimodal LLM for reasoning-based judgment.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>Plugs into the photo/video upload point already built into your QA or ticketing app. Results post back to the same system inspectors already use.</p>
+        </div>
+        <span class="s-cta">Explore vision AI <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+      <a href="/ai-solutions/appointment-reminders" class="sol-card tier-core">
+        <span class="s-tier"><span class="dot"></span>Audio intelligence</span>
+        <h3>Call &amp; Audio Intelligence</h3>
+        <p class="s-stack">Whisper · Diarization · Sentiment Models</p>
+        <div class="s-block">
+          <p class="b-label">Problem</p>
+          <p>Call centres record thousands of hours but only spot-check a small fraction, missing sentiment trends, compliance risks, and coaching opportunities.</p>
+        </div>
+        <div class="s-block">
+          <p class="b-label">Solution</p>
+          <p>Every call is transcribed and diarised by speaker, then scored for sentiment, compliance keywords, and talk-time balance. Summaries generated automatically.</p>
+        </div>
+        <div class="s-block value">
+          <p class="b-label">Value added</p>
+          <p>Adds an analytics layer on top of your existing call platform. Summaries and flags feed into the CRM or QA tool supervisors already use.</p>
+        </div>
+        <span class="s-cta">Explore call intelligence <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TECHNOLOGY STACK ═══════════════════════════════════ -->
+<section class="py-28 bg-surface-low border-b border-white/[0.05]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="mb-14 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Technology stack</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">Modular by design. Swap components as the market evolves.</h2>
+    </div>
+    <div class="reveal">
+      <div class="stack-cat">
+        <div class="num">01</div>
+        <div>
+          <h3>Language &amp; Reasoning</h3>
+          <p>Advanced large language models for high-level reasoning, and efficient small models for classification and high-speed tasks.</p>
+        </div>
+      </div>
+      <div class="stack-cat">
+        <div class="num">02</div>
+        <div>
+          <h3>Orchestration &amp; Connectivity</h3>
+          <p>Frameworks for managing agent workflows, connecting to external APIs, and browser automation.</p>
+        </div>
+      </div>
+      <div class="stack-cat">
+        <div class="num">03</div>
+        <div>
+          <h3>Knowledge &amp; Memory Systems</h3>
+          <p>Infrastructure for storing searchable information (vector databases) and understanding relationships between data (knowledge graphs).</p>
+        </div>
+      </div>
+      <div class="stack-cat">
+        <div class="num">04</div>
+        <div>
+          <h3>Real-time Media &amp; Telephony</h3>
+          <p>Tools for voice streaming, speech-to-text, and real-time communication protocols.</p>
+        </div>
+      </div>
+      <div class="stack-cat">
+        <div class="num">05</div>
+        <div>
+          <h3>Automation &amp; Delivery</h3>
+          <p>Platforms for triggering workflows, containerising applications, and monitoring system health.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════════════════════ -->
-<footer class="border-t border-white/[0.05] py-16 px-6" style="background:#080e1c;">
-  <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
-      <div class="col-span-2 md:col-span-1">
-        <a href="/" class="inline-block mb-4">
-          <img src="/logo-icon.png" alt="OnPoint Nexus" class="h-14 w-auto" width="56" height="56" style="mix-blend-mode:screen;">
-        </a>
-        <p class="text-on-surface-muted text-sm leading-relaxed mb-4">AI engineering studio. First working system live in 45 days.</p>
-        <p class="text-on-surface-muted text-xs font-mono">Pune · Kolhapur · Dallas<br>Toronto · Frankfurt · Dubai</p>
-      </div>
-      <div>
-        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">AI Capabilities</h4>
-        <ul class="space-y-3">
-          <li><a href="/ai-solutions/rag-chatbot" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">RAG Chatbot</a></li>
-          <li><a href="/ai-solutions/voice-agent" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Voice Agent</a></li>
-          <li><a href="/ai-solutions/whatsapp-telegram-bot" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">WhatsApp &amp; Telegram</a></li>
-          <li><a href="/ai-solutions/churn-prediction" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Churn Prediction</a></li>
-          <li><a href="/ai-solutions/on-premise-ai" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">On-Premise AI</a></li>
-          <li><a href="/ai-solutions" class="text-primary text-sm font-semibold hover:text-white transition-colors">All capabilities →</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Company</h4>
-        <ul class="space-y-3">
-          <li><a href="/about" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">About Us</a></li>
-          <li><a href="/work" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Case Studies</a></li>
+<!-- ═══ ENGINEERING PRINCIPLES ══════════════════════════════ -->
+<section class="py-28 border-b border-white/[0.05]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-14 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Engineering principles</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">Six standards. Applied to every engagement.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
 
-        </ul>
+      <div class="princ-card">
+        <div class="p-num">01</div>
+        <h3>Sub-800ms Voice Latency</h3>
+        <p>Preemptive generation, streaming responses, and regional hosting to keep voice interactions natural.</p>
       </div>
-      <div>
-        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Connect</h4>
-        <ul class="space-y-3">
-          <li><a href="mailto:hello@onpointnexus.com" class="text-on-surface-muted text-sm hover:text-primary transition-colors">hello@onpointnexus.com</a></li>
-          <li><a href="mailto:hr@onpointsoft.com" class="text-on-surface-muted text-sm hover:text-primary transition-colors">hr@onpointsoft.com</a></li>
-          <li><a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">LinkedIn</a></li>
-          <li><a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Instagram</a></li>
-          <li><a href="/#contact" class="text-primary text-sm font-semibold hover:text-white transition-colors">Book a Discovery Call →</a></li>
-        </ul>
+      <div class="princ-card">
+        <div class="p-num">02</div>
+        <h3>Durable Workflows</h3>
+        <p>Automation designed to handle system failures without losing progress &mdash; not fragile triggers.</p>
+      </div>
+      <div class="princ-card">
+        <div class="p-num">03</div>
+        <h3>Digital Thread RAG</h3>
+        <p>Cloud storage, databases, and communication channels stitched together as one contextual whole for AI to reason over.</p>
+      </div>
+      <div class="princ-card">
+        <div class="p-num">04</div>
+        <h3>Agent Hierarchy</h3>
+        <p>Supervisor · Research · Execution. Clear role separation prevents drift and enables debugging.</p>
+      </div>
+      <div class="princ-card">
+        <div class="p-num">05</div>
+        <h3>Drift Monitoring</h3>
+        <p>Automated experiment tracking, feature stores, and drift detection so model accuracy issues surface before they cost you.</p>
+      </div>
+      <div class="princ-card">
+        <div class="p-num">06</div>
+        <h3>AI for DevOps</h3>
+        <p>Intelligent incident management &mdash; automated log analysis, optimisation suggestions, post-mortem summarisation.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OPPORTUNITY MAPPING ═══════════════════════════════ -->
+<section class="py-28 bg-surface-low border-b border-white/[0.05]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="mb-12 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Opportunity mapping</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">Four questions to see where AI pays back fastest.</h2>
+      <p class="mt-6 text-on-surface-dim leading-relaxed">Not every problem is an AI problem. Use this checklist to identify the ones that are, before spending a rupee.</p>
+    </div>
+    <div class="space-y-4 reveal">
+      <div class="p-6 rounded-xl bg-surface-card border border-white/[0.06]">
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-2">01 · Revenue leakage</p>
+        <p class="text-on-surface leading-relaxed">Are we responding to leads too slowly &mdash; missing the speed-to-lead window &mdash; or letting churn go unnoticed until customers cancel?</p>
+      </div>
+      <div class="p-6 rounded-xl bg-surface-card border border-white/[0.06]">
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-2">02 · Manual workflows</p>
+        <p class="text-on-surface leading-relaxed">Are staff spending hours per week on documentation, data entry, or copy-pasting between systems?</p>
+      </div>
+      <div class="p-6 rounded-xl bg-surface-card border border-white/[0.06]">
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-2">03 · Communication gaps</p>
+        <p class="text-on-surface leading-relaxed">Are teams struggling with information silos, missed incident signals, or an inability to search across their own knowledge?</p>
+      </div>
+      <div class="p-6 rounded-xl bg-surface-card border border-white/[0.06]">
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-2">04 · Readiness</p>
+        <p class="text-on-surface leading-relaxed">Do we have structured data to build on, a supported cloud stack to deploy into, and a plan for AI governance to protect what we deploy?</p>
       </div>
     </div>
-    <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-on-surface-muted font-mono">© 2026 OnPoint Nexus Pvt. Ltd. All rights reserved.</p>
-      <div class="flex flex-wrap gap-5 justify-center">
-        <a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">LinkedIn</a>
-        <a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Instagram</a>
-        <a href="/privacy-policy" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Privacy</a>
-        <a href="/terms" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Terms</a>
+  </div>
+</section>
+
+<!-- ═══ FUTURE ROADMAP ═════════════════════════════════════ -->
+<section class="py-28 border-b border-white/[0.05]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-14 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Future roadmap</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">Four horizons. Active R&amp;D.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
+
+      <div class="road-card">
+        <div class="r-tag">Horizon 01</div>
+        <h3>Sovereign AI</h3>
+        <p>Isolated deployments for clients with strict data residency and regulatory requirements.</p>
       </div>
+      <div class="road-card">
+        <div class="r-tag">Horizon 02</div>
+        <h3>Digital Humans</h3>
+        <p>Real-time avatars that are emotion-aware for high-touch customer service.</p>
+      </div>
+      <div class="road-card">
+        <div class="r-tag">Horizon 03</div>
+        <h3>Agentic Enterprises</h3>
+        <p>From AI-as-a-tool to a unified operating system that coordinates autonomous decisions across departments.</p>
+      </div>
+      <div class="road-card">
+        <div class="r-tag">Horizon 04</div>
+        <h3>Physical AI</h3>
+        <p>Merging digital intelligence with robotics, physical logistics, and smart-glass field applications.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════════════════ -->
+<section class="py-24">
+  <div class="max-w-3xl mx-auto px-6 text-center reveal">
+    <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface leading-tight mb-6 tracking-[-0.02em]">
+      Let's design your first AI-driven workflow.
+    </h2>
+    <p class="text-on-surface-dim mb-10 max-w-xl mx-auto">Book a 30-minute call. We'll walk through your systems, identify the workflow with the biggest payoff, and tell you which of our 13 solutions plugs in fastest.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-surface font-bold hover:bg-primary-dim transition-colors">
+        Book a Call <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+      <a href="mailto:hello@onpointnexus.com" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/10 text-on-surface-dim hover:text-on-surface hover:border-white/25 transition-colors font-semibold">
+        hello@onpointnexus.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
+<footer class="bg-surface-low border-t border-white/5 pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-on-surface-muted">
+    <div>&copy; 2026 OnPoint Nexus &nbsp;·&nbsp; Pune, India</div>
+    <div class="flex gap-6">
+      <a href="/" class="hover:text-primary transition-colors">Home</a>
+      <a href="/work" class="hover:text-primary transition-colors">Work</a>
+      <a href="/scaleos" class="hover:text-primary transition-colors">ScaleOS</a>
+      <a href="/ai-solutions" class="hover:text-primary transition-colors">AI Engineering</a>
+      <a href="/about" class="hover:text-primary transition-colors">About</a>
     </div>
   </div>
 </footer>
 
 <script>
-  const toggle = document.getElementById('navToggle');
-  const menu = document.getElementById('mobileMenu');
-  const icon = document.getElementById('menuIcon');
-  toggle.addEventListener('click', () => {
-    const open = menu.classList.toggle('hidden') === false;
-    icon.textContent = open ? 'close' : 'menu';
-    toggle.setAttribute('aria-expanded', open);
-  });
-
-  if (window.IntersectionObserver) {
-    const o = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); o.unobserve(e.target); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => o.observe(el));
-  } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
-  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .slide-left, .slide-right').forEach(el => io.observe(el));
 </script>
+
 </body>
 </html>
