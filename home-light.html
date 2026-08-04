@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow">
+  <title>OnPoint Nexus — We build AI systems that ship.</title>
+  <meta name="description" content="An engineering studio for teams that need production AI, not proof of concept.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FBFBFD;
+      --ink: #0A0A0B;
+      --ink-2: #3E3E42;
+      --ink-3: #83838A;
+      --ink-4: #C4C4C8;
+      --line: #E8E8EA;
+      --line-2: #F0F0F2;
+      --accent: #1ABADC;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      font-feature-settings: 'ss01', 'cv11';
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, video { display: block; max-width: 100%; }
+
+    /* ─── Preview chip ────────────────────────────────── */
+    .preview {
+      position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+      background: var(--ink); color: white;
+      padding: 7px 13px; border-radius: 999px;
+      font-size: 12px; font-weight: 500;
+      display: flex; align-items: center; gap: 10px;
+      box-shadow: 0 12px 32px -8px rgba(10,10,11,0.2);
+    }
+    .preview a { color: var(--accent); font-weight: 500; }
+
+    /* ─── Chapter rail (fixed left) ────────────────────── */
+    .rail {
+      position: fixed;
+      left: 32px; top: 50%; transform: translateY(-50%);
+      z-index: 50;
+      display: flex; flex-direction: column; gap: 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px; letter-spacing: 0.15em;
+      color: var(--ink-4);
+      font-variant-numeric: tabular-nums;
+    }
+    .rail a {
+      display: block;
+      transition: color 0.5s var(--ease), letter-spacing 0.5s var(--ease);
+    }
+    .rail a.active { color: var(--ink); letter-spacing: 0.25em; }
+    @media (max-width: 900px) { .rail { display: none; } }
+
+    /* ─── Top brand bar ────────────────────────────────── */
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 40;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 40px;
+      background: rgba(251,251,253,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s var(--ease);
+    }
+    .topbar.scrolled { border-bottom-color: var(--line); }
+    .brand { font-weight: 600; font-size: 15px; letter-spacing: -0.01em; }
+    .brand-dot { color: var(--accent); }
+    .top-links { display: flex; gap: 28px; font-size: 13px; color: var(--ink-2); }
+    .top-links a { transition: color 0.2s var(--ease); }
+    .top-links a:hover { color: var(--ink); }
+    @media (max-width: 640px) {
+      .topbar { padding: 18px 20px; }
+      .top-links { gap: 18px; font-size: 12px; }
+    }
+
+    /* ─── Section framing ──────────────────────────────── */
+    section { padding: 0 40px; position: relative; }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    .num {
+      font-size: 11px; letter-spacing: 0.2em; color: var(--ink-3);
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 40px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .num::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    @media (max-width: 640px) {
+      section { padding: 0 20px; }
+      .num { margin-bottom: 28px; }
+    }
+
+    /* ─── HERO (00) ────────────────────────────────────── */
+    .hero { padding-top: 180px; padding-bottom: 100px; }
+    .hero h1 {
+      font-size: clamp(44px, 6.5vw, 84px);
+      line-height: 1.02; letter-spacing: -0.035em;
+      font-weight: 500; max-width: 950px;
+    }
+    .hero h1 em {
+      font-style: normal; font-weight: 500;
+      color: var(--ink-3);
+    }
+    .hero .sub {
+      margin-top: 32px; max-width: 560px;
+      color: var(--ink-2); font-size: 18px; line-height: 1.5;
+    }
+
+    /* Video player */
+    .video-wrap {
+      margin-top: 72px;
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #0A0A0B;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 40px 100px -30px rgba(10,10,11,0.35);
+    }
+    .video-placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.55);
+      gap: 20px;
+      background:
+        radial-gradient(1200px 400px at 50% 50%, rgba(26,186,220,0.08), transparent 60%),
+        #0A0A0B;
+    }
+    .play-btn {
+      width: 76px; height: 76px; border-radius: 50%;
+      background: white; color: var(--ink);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.4s var(--ease);
+    }
+    .video-wrap:hover .play-btn { transform: scale(1.08); }
+    .play-btn svg { width: 24px; height: 24px; margin-left: 4px; }
+    .video-meta {
+      font-size: 12px; letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .video-caption {
+      margin-top: 20px; font-size: 13px;
+      color: var(--ink-3); text-align: center;
+    }
+    .video-caption span { color: var(--accent); }
+
+    /* ─── STATEMENT (01) ───────────────────────────────── */
+    .statement { padding: 120px 40px; border-top: 1px solid var(--line); }
+    .statement .big {
+      font-size: clamp(32px, 3.6vw, 44px);
+      line-height: 1.25; letter-spacing: -0.02em;
+      font-weight: 500; max-width: 900px;
+      color: var(--ink);
+    }
+    .statement .big em {
+      font-style: normal;
+      color: var(--ink-3);
+    }
+
+    /* ─── SELECTED WORK (02) ───────────────────────────── */
+    .work { padding: 120px 40px; border-top: 1px solid var(--line); }
+    .work-table {
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+    .work-row {
+      display: grid;
+      grid-template-columns: 60px 1fr 220px 100px 60px;
+      gap: 24px;
+      padding: 28px 8px;
+      border-top: 1px solid var(--line);
+      align-items: center;
+      position: relative;
+      transition: background 0.4s var(--ease);
+      cursor: pointer;
+    }
+    .work-row:last-child { border-bottom: 1px solid var(--line); }
+    .work-row:hover { background: var(--line-2); }
+    .work-row .r-num {
+      font-size: 12px; color: var(--ink-3);
+      font-variant-numeric: tabular-nums;
+    }
+    .work-row .r-client {
+      font-size: 20px; font-weight: 500;
+      letter-spacing: -0.015em;
+    }
+    .work-row .r-desc {
+      font-size: 14px; color: var(--ink-2);
+      line-height: 1.4;
+    }
+    .work-row .r-year {
+      font-size: 13px; color: var(--ink-3);
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+    .work-row .r-arrow {
+      text-align: right; color: var(--ink-3);
+      transition: transform 0.3s var(--ease), color 0.3s var(--ease);
+    }
+    .work-row:hover .r-arrow { color: var(--ink); transform: translateX(4px); }
+
+    /* Row-reveal image */
+    .reveal-img {
+      position: fixed;
+      pointer-events: none;
+      width: 320px; aspect-ratio: 16 / 10;
+      background: var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.96);
+      transition: opacity 0.35s var(--ease), transform 0.5s var(--ease);
+      z-index: 100;
+      box-shadow: 0 30px 60px -15px rgba(10,10,11,0.25);
+    }
+    .reveal-img.active {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .reveal-img .ph {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ink-3); font-size: 11px; letter-spacing: 0.2em;
+      background:
+        repeating-linear-gradient(45deg, transparent 0 12px, rgba(0,0,0,0.02) 12px 24px),
+        var(--line);
+    }
+
+    @media (max-width: 780px) {
+      .work-row { grid-template-columns: 40px 1fr 60px; gap: 16px; }
+      .work-row .r-desc, .work-row .r-year { display: none; }
+      .work-row .r-mobile {
+        grid-column: 2 / 3;
+        margin-top: 6px;
+        font-size: 13px; color: var(--ink-2);
+      }
+      .work-row .r-mobile-img {
+        grid-column: 1 / -1;
+        margin-top: 14px;
+        aspect-ratio: 16 / 10;
+        background: var(--line);
+        border-radius: 6px;
+        display: flex; align-items: center; justify-content: center;
+        color: var(--ink-3); font-size: 10px; letter-spacing: 0.2em;
+      }
+    }
+    @media (min-width: 781px) {
+      .work-row .r-mobile, .work-row .r-mobile-img { display: none; }
+    }
+
+    /* ─── IN MOTION (03) ───────────────────────────────── */
+    .motion {
+      padding: 140px 0 120px;
+      border-top: 1px solid var(--line);
+    }
+    .motion .wrap { padding: 0 40px; }
+    .motion .num { max-width: 1120px; margin: 0 auto 40px; padding: 0 40px; }
+    .motion-frame {
+      background: #0A0A0B;
+      padding: 60px;
+      border-radius: 0;
+      position: relative;
+    }
+    .motion-video {
+      max-width: 1000px; margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      background: #141416;
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.3);
+      font-size: 11px; letter-spacing: 0.25em;
+      position: relative;
+      overflow: hidden;
+    }
+    .motion-video::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(600px 200px at 30% 30%, rgba(26,186,220,0.05), transparent 60%),
+        radial-gradient(400px 200px at 70% 70%, rgba(26,186,220,0.03), transparent 60%);
+    }
+    .motion-caption {
+      max-width: 1000px; margin: 24px auto 0;
+      display: flex; justify-content: space-between;
+      color: rgba(255,255,255,0.5); font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+    .motion-caption strong { color: white; font-weight: 500; }
+    @media (max-width: 640px) {
+      .motion-frame { padding: 30px 20px; }
+    }
+
+    /* ─── METHOD (04) ──────────────────────────────────── */
+    .method { padding: 120px 40px; border-top: 1px solid var(--line); }
+    .method-intro {
+      font-size: clamp(20px, 2vw, 26px);
+      line-height: 1.4; letter-spacing: -0.015em;
+      color: var(--ink-2);
+      max-width: 760px;
+      margin-bottom: 72px;
+    }
+    .method-intro strong { color: var(--ink); font-weight: 500; }
+
+    .method-table { display: flex; flex-direction: column; margin-bottom: 100px; }
+    .method-row {
+      display: grid;
+      grid-template-columns: 60px 220px 1fr 130px 60px;
+      gap: 24px;
+      padding: 28px 8px;
+      border-top: 1px solid var(--line);
+      align-items: center;
+      transition: background 0.4s var(--ease);
+      cursor: pointer;
+    }
+    .method-row:last-child { border-bottom: 1px solid var(--line); }
+    .method-row:hover { background: var(--line-2); }
+    .method-row .m-num { font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+    .method-row .m-name { font-size: 20px; font-weight: 500; letter-spacing: -0.015em; }
+    .method-row .m-name sup {
+      font-size: 10px; color: var(--ink-3); font-weight: 400;
+      margin-left: 2px; vertical-align: super;
+      position: relative; top: -0.4em;
+    }
+    .method-row .m-goal { font-size: 14px; color: var(--ink-2); line-height: 1.4; }
+    .method-row .m-days { font-size: 13px; color: var(--ink-3); text-align: right; font-variant-numeric: tabular-nums; }
+    .method-row .m-arrow { text-align: right; color: var(--ink-3); transition: transform 0.3s var(--ease), color 0.3s var(--ease); }
+    .method-row:hover .m-arrow { color: var(--ink); transform: translateX(4px); }
+
+    .reveal-panel {
+      position: fixed;
+      pointer-events: none;
+      width: 300px;
+      background: white;
+      border: 1px solid var(--line);
+      padding: 22px;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.96);
+      transition: opacity 0.35s var(--ease), transform 0.5s var(--ease);
+      z-index: 100;
+      box-shadow: 0 30px 60px -15px rgba(10,10,11,0.18);
+      border-radius: 6px;
+    }
+    .reveal-panel.active { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    .reveal-panel .p-label { font-size: 10px; letter-spacing: 0.2em; color: var(--ink-3); text-transform: uppercase; margin-bottom: 10px; }
+    .reveal-panel .p-title { font-size: 16px; font-weight: 500; margin-bottom: 14px; letter-spacing: -0.01em; }
+    .reveal-panel ul { list-style: none; padding: 0; margin: 0; }
+    .reveal-panel ul li {
+      font-size: 13px; color: var(--ink-2);
+      padding: 7px 0;
+      border-top: 1px solid var(--line-2);
+    }
+    .reveal-panel ul li:first-child { border-top: 0; padding-top: 0; }
+
+    @media (max-width: 780px) {
+      .method-row { grid-template-columns: 40px 1fr 60px; gap: 16px; }
+      .method-row .m-goal, .method-row .m-days { display: none; }
+      .method-row .m-mobile { display: block; margin-top: 6px; font-size: 13px; color: var(--ink-2); font-weight: 400; }
+      .method-row .m-mobile-items { grid-column: 1 / -1; margin-top: 10px; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+    }
+    @media (min-width: 781px) {
+      .method-row .m-mobile, .method-row .m-mobile-items { display: none; }
+    }
+
+    /* Before / After */
+    .compare {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 56px 0;
+      margin-bottom: 0;
+    }
+    .compare-head {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      gap: 40px;
+      margin-bottom: 24px;
+      font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--ink-3);
+    }
+    .compare-head span:last-child { text-align: right; }
+    .compare-row {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      gap: 40px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line-2);
+      font-size: 17px;
+      align-items: center;
+    }
+    .compare-row .arrow { color: var(--ink-4); text-align: center; font-size: 14px; }
+    .compare-row .before { color: var(--ink-3); }
+    .compare-row .after { color: var(--ink); font-weight: 500; text-align: right; letter-spacing: -0.01em; }
+    @media (max-width: 640px) {
+      .compare-head, .compare-row { grid-template-columns: 1fr 30px 1fr; gap: 14px; font-size: 14px; }
+    }
+
+    /* Guarantee pull quote */
+    .guarantee {
+      padding: 80px 0 20px;
+      text-align: center;
+    }
+    .guarantee .g-label {
+      font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .guarantee blockquote {
+      max-width: 780px; margin: 0 auto;
+      font-size: clamp(20px, 2.2vw, 26px);
+      line-height: 1.5; letter-spacing: -0.015em;
+      font-weight: 400;
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    /* ─── STUDIO (05) ──────────────────────────────────── */
+    .studio { padding: 120px 40px; border-top: 1px solid var(--line); }
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .colophon dl {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 22px; column-gap: 40px;
+    }
+    .colophon dt {
+      font-size: 12px; letter-spacing: 0.12em;
+      color: var(--ink-3); text-transform: uppercase;
+      padding-top: 4px;
+    }
+    .colophon dd {
+      font-size: 17px; color: var(--ink);
+      font-weight: 400;
+    }
+    .studio-photo {
+      aspect-ratio: 4 / 5;
+      background: var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ink-3);
+      font-size: 11px; letter-spacing: 0.2em;
+      background-image:
+        repeating-linear-gradient(45deg, transparent 0 14px, rgba(0,0,0,0.02) 14px 28px);
+    }
+    @media (max-width: 780px) {
+      .studio-grid { grid-template-columns: 1fr; gap: 40px; }
+      .colophon dl { grid-template-columns: 120px 1fr; row-gap: 18px; }
+    }
+
+    /* ─── START (06) ───────────────────────────────────── */
+    .start { padding: 140px 40px 100px; border-top: 1px solid var(--line); }
+    .start h2 {
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.05; letter-spacing: -0.03em;
+      font-weight: 500;
+      max-width: 780px;
+    }
+    .start .contact {
+      margin-top: 56px;
+      display: flex; flex-wrap: wrap; gap: 24px; align-items: center;
+    }
+    .start a.mail {
+      font-size: 20px; color: var(--ink);
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 4px;
+      transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+    }
+    .start a.mail:hover { color: var(--accent); border-color: var(--accent); }
+    .start a.btn {
+      background: var(--ink); color: white;
+      padding: 14px 28px; border-radius: 999px;
+      font-size: 14px; font-weight: 500;
+      transition: background 0.3s var(--ease);
+    }
+    .start a.btn:hover { background: var(--accent); }
+
+    /* ─── FOOTER ───────────────────────────────────────── */
+    footer {
+      padding: 60px 40px 40px;
+      border-top: 1px solid var(--line);
+      color: var(--ink-3); font-size: 12px;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+    }
+    footer a:hover { color: var(--ink); }
+
+    /* ─── Motion primitives ───────────────────────────── */
+    /* Blur Fade (magicui port) — replaces plain fade */
+    .blur-fade {
+      opacity: 0;
+      filter: blur(10px);
+      transform: translateY(14px);
+      transition:
+        opacity 0.9s var(--ease),
+        filter 0.9s var(--ease),
+        transform 0.9s var(--ease);
+    }
+    .blur-fade.in { opacity: 1; filter: blur(0); transform: translateY(0); }
+
+    /* Legacy alias so nothing breaks */
+    .blur-fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    }
+    .blur-fade.in { opacity: 1; transform: translateY(0); }
+
+    /* Number Ticker (magicui port) */
+    .ticker-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-bottom: 72px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--line);
+    }
+    .ticker {
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .ticker-num {
+      font-size: clamp(40px, 4.5vw, 60px);
+      font-weight: 500; letter-spacing: -0.03em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+    .ticker-label {
+      font-size: 12px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--ink-3);
+    }
+    @media (max-width: 780px) {
+      .ticker-row { grid-template-columns: repeat(2, 1fr); gap: 32px 24px; }
+    }
+
+    /* SplitText (reactbits port) — per-word reveal */
+    .split .word {
+      display: inline-block;
+      opacity: 0;
+      filter: blur(8px);
+      transform: translateY(24px);
+      transition:
+        opacity 0.7s var(--ease),
+        filter 0.7s var(--ease),
+        transform 0.7s var(--ease);
+    }
+    .split .word.in {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+    .split .word.faded {
+      opacity: 0.35;
+      filter: blur(0);
+      transform: translateY(0);
+      color: var(--ink-3);
+    }
+    .split .space { display: inline-block; width: 0.28em; }
+
+    /* Marquee (magicui port) — infinite logo scroll */
+    .marquee-strip {
+      padding: 60px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--bg);
+      overflow: hidden;
+      position: relative;
+    }
+    .marquee-strip::before,
+    .marquee-strip::after {
+      content: ""; position: absolute; top: 0; bottom: 0; width: 120px;
+      z-index: 2; pointer-events: none;
+    }
+    .marquee-strip::before { left: 0;  background: linear-gradient(to right, var(--bg), transparent); }
+    .marquee-strip::after  { right: 0; background: linear-gradient(to left,  var(--bg), transparent); }
+
+    .marquee-label {
+      text-align: center;
+      font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 32px;
+    }
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      user-select: none;
+      gap: 0;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      flex-shrink: 0;
+      gap: 64px;
+      padding-right: 64px;
+      animation: marquee 42s linear infinite;
+      align-items: center;
+    }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-item {
+      font-size: 22px; font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--ink-3);
+      white-space: nowrap;
+      transition: color 0.3s var(--ease);
+      font-family: 'Inter', sans-serif;
+    }
+    .marquee-item:hover { color: var(--ink); }
+    .marquee-item .sep { color: var(--ink-4); margin-left: 64px; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @media (max-width: 640px) {
+      .marquee-item { font-size: 18px; }
+      .marquee-track { gap: 48px; padding-right: 48px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Chapter rail -->
+  <nav class="rail" aria-label="Chapters">
+    <a href="#c00" data-target="c00">00 · Hero</a>
+    <a href="#c01" data-target="c01">01 · Statement</a>
+    <a href="#c02" data-target="c02">02 · Work</a>
+    <a href="#c03" data-target="c03">03 · In motion</a>
+    <a href="#c04" data-target="c04">04 · Method</a>
+    <a href="#c05" data-target="c05">05 · Studio</a>
+    <a href="#c06" data-target="c06">06 · Start</a>
+  </nav>
+
+  <!-- Top brand bar -->
+  <header class="topbar" id="topbar">
+    <a href="/" class="brand">OnPoint Nexus<span class="brand-dot">.</span></a>
+    <nav class="top-links">
+      <a href="mailto:hello@onpointnexus.com">Email</a>
+      <a href="#c06">Book a call</a>
+    </nav>
+  </header>
+
+  <!-- 00 · Hero -->
+  <section class="hero" id="c00">
+    <div class="wrap">
+      <h1 class="split" id="hero-h1" data-text="We build AI systems that ship to production. |Not another proof of concept."></h1>
+      <p class="sub blur-fade" data-delay="900">
+        An engineering studio for teams who need software that works in production, on deadline, on the first cut.
+      </p>
+
+      <div class="video-wrap blur-fade" data-delay="1100" id="hero-video">
+        <div class="video-placeholder">
+          <div class="play-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="video-meta">Watch · 90 seconds</div>
+        </div>
+      </div>
+      <p class="video-caption">
+        <span>Video placeholder</span> — 60–90s founder VSL. Script forthcoming.
+      </p>
+    </div>
+  </section>
+
+  <!-- Marquee — trusted-by strip -->
+  <div class="marquee-strip" aria-label="Selected clients">
+    <div class="marquee-label">Selected clients</div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span class="marquee-item">Reliance Jio</span>
+        <span class="marquee-item">Pininfarina</span>
+        <span class="marquee-item">Mahindra</span>
+        <span class="marquee-item">QuickHeal</span>
+        <span class="marquee-item">Maharashtra Government</span>
+        <span class="marquee-item">Vidanta</span>
+        <span class="marquee-item">Semilynx</span>
+        <span class="marquee-item">Clinical-Trac</span>
+        <!-- duplicated for seamless loop -->
+        <span class="marquee-item" aria-hidden="true">Reliance Jio</span>
+        <span class="marquee-item" aria-hidden="true">Pininfarina</span>
+        <span class="marquee-item" aria-hidden="true">Mahindra</span>
+        <span class="marquee-item" aria-hidden="true">QuickHeal</span>
+        <span class="marquee-item" aria-hidden="true">Maharashtra Government</span>
+        <span class="marquee-item" aria-hidden="true">Vidanta</span>
+        <span class="marquee-item" aria-hidden="true">Semilynx</span>
+        <span class="marquee-item" aria-hidden="true">Clinical-Trac</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 01 · Statement -->
+  <section class="statement" id="c01">
+    <div class="wrap">
+      <div class="num">01 &nbsp; Statement</div>
+      <p class="big split scroll-split" data-text="Most AI work today ends at the demo. Slides, notebooks, weekend prototypes. We start where that stops. We ship the boring, load-bearing systems the ones users touch every day and no one thinks about because they never break."></p>
+    </div>
+  </section>
+
+  <!-- 02 · Selected work -->
+  <section class="work" id="c02">
+    <div class="wrap">
+      <div class="num">02 &nbsp; Selected work · 2023 – 2026</div>
+
+      <div class="work-table" id="work-table">
+        <a href="/work/vitalwatch-ai" class="work-row" data-img="vitalwatch">
+          <span class="r-num">01</span>
+          <span class="r-client">VitalWatch AI
+            <span class="r-mobile">Real-time hospital vitals monitoring · Healthcare</span>
+          </span>
+          <span class="r-desc">Real-time hospital vitals monitoring across 12 wards.</span>
+          <span class="r-year">2026</span>
+          <span class="r-arrow">↗</span>
+          <span class="r-mobile-img">PROJECT STILL</span>
+        </a>
+        <a href="/work/ifound-agent" class="work-row" data-img="ifound">
+          <span class="r-num">02</span>
+          <span class="r-client">iFound Agent
+            <span class="r-mobile">Voice AI reunifying lost objects with owners · Consumer</span>
+          </span>
+          <span class="r-desc">Voice AI that reunifies lost objects with their owners.</span>
+          <span class="r-year">2026</span>
+          <span class="r-arrow">↗</span>
+          <span class="r-mobile-img">PROJECT STILL</span>
+        </a>
+        <a href="/work/building-pulse" class="work-row" data-img="pulse">
+          <span class="r-num">03</span>
+          <span class="r-client">PulseWork OS
+            <span class="r-mobile">Ops replacing 5 tools · Product · SaaS</span>
+          </span>
+          <span class="r-desc">Operations platform replacing five separate tools for growing teams.</span>
+          <span class="r-year">2026</span>
+          <span class="r-arrow">↗</span>
+          <span class="r-mobile-img">PROJECT STILL</span>
+        </a>
+        <a href="/work/ontrack-agent" class="work-row" data-img="ontrack">
+          <span class="r-num">04</span>
+          <span class="r-client">OnTrack Agent
+            <span class="r-mobile">Field operations for a national logistics fleet · Logistics</span>
+          </span>
+          <span class="r-desc">Field operations agent for a national logistics fleet.</span>
+          <span class="r-year">2025</span>
+          <span class="r-arrow">↗</span>
+          <span class="r-mobile-img">PROJECT STILL</span>
+        </a>
+        <a href="/work/pininfarina" class="work-row" data-img="pininfarina">
+          <span class="r-num">05</span>
+          <span class="r-client">Pininfarina
+            <span class="r-mobile">Digital experience for the design house · Design</span>
+          </span>
+          <span class="r-desc">Digital experience platform for the Italian design house.</span>
+          <span class="r-year">2025</span>
+          <span class="r-arrow">↗</span>
+          <span class="r-mobile-img">PROJECT STILL</span>
+        </a>
+        <a href="/work/semilynx" class="work-row" data-img="semilynx">
+          <span class="r-num">06</span>
+          <span class="r-client">Semilynx
+            <span class="r-mobile">Semiconductor supply chain intelligence · Enterprise</span>
+          </span>
+          <span class="r-desc">Semiconductor supply chain intelligence platform.</span>
+          <span class="r-year">2024</span>
+          <span class="r-arrow">↗</span>
+          <span class="r-mobile-img">PROJECT STILL</span>
+        </a>
+        <a href="/work/quickheal" class="work-row" data-img="quickheal">
+          <span class="r-num">07</span>
+          <span class="r-client">QuickHeal
+            <span class="r-mobile">Consumer security portal at national scale · Security</span>
+          </span>
+          <span class="r-desc">Consumer security portal serving millions of users.</span>
+          <span class="r-year">2024</span>
+          <span class="r-arrow">↗</span>
+          <span class="r-mobile-img">PROJECT STILL</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Row-reveal image element -->
+    <div class="reveal-img" id="reveal-img">
+      <div class="ph" id="reveal-label">PROJECT STILL</div>
+    </div>
+  </section>
+
+  <!-- 03 · In motion -->
+  <section class="motion" id="c03">
+    <div class="num">03 &nbsp; In motion</div>
+    <div class="motion-frame">
+      <div class="motion-video">
+        [ 30S SILENT LOOP · PRODUCT SCREEN ]
+      </div>
+      <div class="motion-caption">
+        <span><strong>PulseWork OS</strong> &nbsp; Operations dashboard</span>
+        <span>Shipped Q2 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · Method -->
+  <section class="method" id="c04">
+    <div class="wrap">
+      <div class="num">04 &nbsp; Method</div>
+
+      <p class="method-intro blur-fade">
+        <strong>The 90-day operating system.</strong> Six phases. One goal &mdash; remove the founder as the bottleneck. First working system live in 45 days, full transformation in 90.
+      </p>
+
+      <div class="method-table" id="method-table">
+
+        <div class="method-row" data-phase="scan" data-title="ScaleScan™ · Business & AI audit" data-items="Executive strategy workshop|Process mapping|AI opportunity assessment|Software stack audit|ROI roadmap">
+          <span class="m-num">01</span>
+          <span class="m-name">ScaleScan<sup>™</sup>
+            <span class="m-mobile">Business & AI audit · Days 1–15</span>
+          </span>
+          <span class="m-goal">Business & AI audit. Find every bottleneck preventing scale.</span>
+          <span class="m-days">Days 1–15</span>
+          <span class="m-arrow">↗</span>
+          <span class="m-mobile-items">Exec workshop · Process mapping · Opportunity assessment · Stack audit · ROI roadmap</span>
+        </div>
+
+        <div class="method-row" data-phase="sync" data-title="ScaleSync™ · System integration" data-items="CRM integration|LMS integration|Finance integration|Communication platform|Data consolidation">
+          <span class="m-num">02</span>
+          <span class="m-name">ScaleSync<sup>™</sup>
+            <span class="m-mobile">System integration · Days 16–30</span>
+          </span>
+          <span class="m-goal">System integration. One connected business platform, not fifteen disconnected tools.</span>
+          <span class="m-days">Days 16–30</span>
+          <span class="m-arrow">↗</span>
+          <span class="m-mobile-items">CRM · LMS · Finance · Communications · Data consolidation</span>
+        </div>
+
+        <div class="method-row" data-phase="flow" data-title="ScaleFlow™ · AI automation" data-items="Client onboarding|Lead routing|Appointment scheduling|Internal notifications|Document generation|Reporting|Client support|Team workflows">
+          <span class="m-num">03</span>
+          <span class="m-name">ScaleFlow<sup>™</sup>
+            <span class="m-mobile">AI automation · Days 31–50</span>
+          </span>
+          <span class="m-goal">AI automation. Hundreds of repetitive manual tasks happen without a human.</span>
+          <span class="m-days">Days 31–50</span>
+          <span class="m-arrow">↗</span>
+          <span class="m-mobile-items">Onboarding · Lead routing · Scheduling · Docs · Reporting · Support · Team workflows</span>
+        </div>
+
+        <div class="method-row" data-phase="vision" data-title="ScaleVision™ · Executive intelligence" data-items="CEO dashboard|Team performance dashboard|Sales dashboard|Operations dashboard|AI insights|KPI tracking">
+          <span class="m-num">04</span>
+          <span class="m-name">ScaleVision<sup>™</sup>
+            <span class="m-mobile">Executive intelligence · Days 51–65</span>
+          </span>
+          <span class="m-goal">Executive intelligence. Leadership sees the business in real time, not in Monday's report.</span>
+          <span class="m-days">Days 51–65</span>
+          <span class="m-arrow">↗</span>
+          <span class="m-mobile-items">CEO · Team · Sales · Operations · Insights · KPIs</span>
+        </div>
+
+        <div class="method-row" data-phase="ai" data-title="ScaleAI™ · AI workforce" data-items="AI operations assistant|AI sales assistant|AI customer support assistant|AI knowledge assistant|AI reporting assistant">
+          <span class="m-num">05</span>
+          <span class="m-name">ScaleAI<sup>™</sup>
+            <span class="m-mobile">AI workforce · Days 66–80</span>
+          </span>
+          <span class="m-goal">AI workforce. Five digital employees that support the team instead of replacing it.</span>
+          <span class="m-days">Days 66–80</span>
+          <span class="m-arrow">↗</span>
+          <span class="m-mobile-items">Ops · Sales · Support · Knowledge · Reporting assistants</span>
+        </div>
+
+        <div class="method-row" data-phase="max" data-title="ScaleMax™ · Continuous optimization" data-items="Monthly optimization reviews|New AI opportunities|Workflow improvements|Performance monitoring|Quarterly strategy sessions">
+          <span class="m-num">06</span>
+          <span class="m-name">ScaleMax<sup>™</sup>
+            <span class="m-mobile">Continuous optimization · Ongoing</span>
+          </span>
+          <span class="m-goal">Continuous optimization. The system improves as the company grows.</span>
+          <span class="m-days">Ongoing</span>
+          <span class="m-arrow">↗</span>
+          <span class="m-mobile-items">Monthly reviews · New opportunities · Workflow tune · Monitoring · Quarterly strategy</span>
+        </div>
+
+      </div>
+
+      <!-- Before / After -->
+      <div class="compare">
+        <div class="compare-head">
+          <span>Today</span>
+          <span></span>
+          <span>After 90 days</span>
+        </div>
+        <div class="compare-row"><span class="before">Founder bottleneck</span><span class="arrow">→</span><span class="after">AI operating system</span></div>
+        <div class="compare-row"><span class="before">Manual onboarding</span><span class="arrow">→</span><span class="after">Automated workflows</span></div>
+        <div class="compare-row"><span class="before">Fifteen disconnected tools</span><span class="arrow">→</span><span class="after">One unified platform</span></div>
+        <div class="compare-row"><span class="before">Rising payroll</span><span class="arrow">→</span><span class="after">Digital workforce</span></div>
+        <div class="compare-row"><span class="before">Operational chaos</span><span class="arrow">→</span><span class="after">Scalable operations</span></div>
+        <div class="compare-row"><span class="before">Limited visibility</span><span class="arrow">→</span><span class="after">Real-time dashboards</span></div>
+        <div class="compare-row"><span class="before">Human errors</span><span class="arrow">→</span><span class="after">Predictable delivery</span></div>
+      </div>
+
+      <!-- Guarantee -->
+      <div class="guarantee">
+        <div class="g-label">ScaleSafe™ Guarantee</div>
+        <blockquote>
+          If your leadership team completes the implementation milestones, provides timely feedback, and your team adopts the agreed workflows &mdash; we continue optimizing your AI Business Operating System at no additional service fee until all contracted automations are fully implemented and performing as specified.
+        </blockquote>
+      </div>
+
+    </div>
+
+    <!-- Reveal panel for method rows -->
+    <div class="reveal-panel" id="reveal-panel">
+      <div class="p-label">Phase deliverables</div>
+      <div class="p-title" id="p-title">—</div>
+      <ul id="p-list"></ul>
+    </div>
+  </section>
+
+  <!-- 05 · Studio -->
+  <section class="studio" id="c05">
+    <div class="wrap">
+      <div class="num">05 &nbsp; Studio</div>
+
+      <div class="ticker-row">
+        <div class="ticker"><div class="ticker-num" data-ticker="8">0</div><div class="ticker-label">Years shipping</div></div>
+        <div class="ticker"><div class="ticker-num" data-ticker="50" data-suffix="+">0</div><div class="ticker-label">Production systems</div></div>
+        <div class="ticker"><div class="ticker-num" data-ticker="12">0</div><div class="ticker-label">Industries</div></div>
+        <div class="ticker"><div class="ticker-num" data-ticker="45">0</div><div class="ticker-label">Days to first ship</div></div>
+      </div>
+
+      <div class="studio-grid">
+        <div class="colophon">
+          <dl>
+            <dt>Founded</dt><dd>2018, Pune</dd>
+            <dt>Team</dt><dd>Senior engineers, in-house</dd>
+            <dt>Studios</dt><dd>Pune · Remote across India</dd>
+            <dt>Shipped</dt><dd>Production systems for healthcare, logistics, security, hospitality</dd>
+            <dt>Retention</dt><dd>Long-term partnerships with the majority of clients</dd>
+            <dt>Products</dt><dd>PulseWork OS · DinePoint</dd>
+          </dl>
+        </div>
+        <div class="studio-photo">
+          STUDIO PHOTOGRAPH · PENDING
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · Start -->
+  <section class="start" id="c06">
+    <div class="wrap">
+      <h2 class="blur-fade">
+        Tell us what you are trying to ship.
+      </h2>
+      <div class="contact blur-fade">
+        <a href="mailto:hello@onpointnexus.com" class="mail">hello@onpointnexus.com</a>
+        <a href="https://cal.com/onpointnexus" class="btn">Book a 30-min call</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 OnPoint Nexus</div>
+    <div>Pune, India · <a href="mailto:hello@onpointnexus.com">hello@onpointnexus.com</a></div>
+  </footer>
+
+  <!-- Preview chip -->
+  <div class="preview">
+    Preview · Light rebuild v5 &nbsp;·&nbsp; <a href="/">← Compare to live</a>
+  </div>
+
+  <script>
+    // Topbar shadow on scroll
+    const topbar = document.getElementById('topbar');
+    window.addEventListener('scroll', () => {
+      topbar.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // Blur-fade on scroll (with optional data-delay in ms)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const delay = parseInt(e.target.dataset.delay || 0, 10);
+          if (delay) e.target.style.transitionDelay = delay + 'ms';
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.blur-fade').forEach(el => io.observe(el));
+
+    // SplitText — build per-word spans; play on load, or on scroll if .scroll-split
+    function playSplit(el, perWord = 55, initial = 120) {
+      const words = el.querySelectorAll('.word');
+      words.forEach((w, i) => {
+        setTimeout(() => {
+          w.classList.add('in');
+          if (w.dataset.faded) setTimeout(() => w.classList.add('faded'), 500);
+        }, initial + i * perWord);
+      });
+    }
+
+    document.querySelectorAll('.split').forEach(el => {
+      const raw = el.dataset.text || el.textContent;
+      el.textContent = '';
+      const lines = raw.split('|');
+      lines.forEach((line, li) => {
+        const words = line.trim().split(/\s+/);
+        words.forEach((w, wi) => {
+          const span = document.createElement('span');
+          span.className = 'word';
+          span.textContent = w;
+          if (li === lines.length - 1 && lines.length > 1) span.dataset.faded = 'true';
+          el.appendChild(span);
+          if (wi < words.length - 1) {
+            const sp = document.createElement('span');
+            sp.className = 'space';
+            el.appendChild(sp);
+          }
+        });
+        if (li < lines.length - 1) el.appendChild(document.createElement('br'));
+      });
+    });
+
+    // Non-scroll splits play immediately
+    document.querySelectorAll('.split:not(.scroll-split)').forEach(el => playSplit(el));
+
+    // Scroll-triggered splits — faster per-word so long paragraphs finish
+    const splitObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          playSplit(e.target, 32, 0);
+          splitObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.scroll-split').forEach(el => splitObs.observe(el));
+
+    // Number Ticker
+    function tickTo(el, target, suffix, duration = 1400) {
+      const start = performance.now();
+      function frame(now) {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const val = Math.round(target * eased);
+        el.textContent = val + (suffix || '');
+        if (t < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+    const tickerObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const target = parseInt(e.target.dataset.ticker, 10);
+          const suffix = e.target.dataset.suffix || '';
+          tickTo(e.target, target, suffix);
+          tickerObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-ticker]').forEach(el => tickerObs.observe(el));
+
+    // Chapter rail active state
+    const rail = document.querySelectorAll('.rail a');
+    const sections = ['c00','c01','c02','c03','c04','c05','c06'].map(id => document.getElementById(id));
+    const railObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          rail.forEach(a => a.classList.toggle('active', a.dataset.target === e.target.id));
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(s => s && railObs.observe(s));
+
+    // Shared cursor-follower for row-hover reveals
+    function edgeFrom(e, rect) {
+      const dx = e.clientX - (rect.left + rect.width / 2);
+      const dy = e.clientY - (rect.top + rect.height / 2);
+      const ax = Math.abs(dx) / rect.width;
+      const ay = Math.abs(dy) / rect.height;
+      if (ax > ay) return dx > 0 ? 'right' : 'left';
+      return dy > 0 ? 'bottom' : 'top';
+    }
+
+    function makeCursorFollower(targetEl, rows, populate, offsetX = 200) {
+      let raf = null;
+      let tx = 0, ty = 0, cx = 0, cy = 0;
+      function loop() {
+        cx += (tx - cx) * 0.18;
+        cy += (ty - cy) * 0.18;
+        targetEl.style.left = cx + 'px';
+        targetEl.style.top = cy + 'px';
+        raf = requestAnimationFrame(loop);
+      }
+      rows.forEach(row => {
+        row.addEventListener('mouseenter', (e) => {
+          const rect = row.getBoundingClientRect();
+          const dir = edgeFrom(e, rect);
+          populate(row);
+          targetEl.classList.add('active');
+          const o = 80;
+          cx = e.clientX + offsetX + (dir === 'left' ? -o : dir === 'right' ? o : 0);
+          cy = e.clientY + (dir === 'top' ? -o : dir === 'bottom' ? o : 0);
+          tx = e.clientX + offsetX; ty = e.clientY;
+          if (!raf) loop();
+        });
+        row.addEventListener('mousemove', (e) => {
+          tx = e.clientX + offsetX; ty = e.clientY;
+        });
+        row.addEventListener('mouseleave', (e) => {
+          const rect = row.getBoundingClientRect();
+          const dir = edgeFrom(e, rect);
+          const o = 60;
+          tx = e.clientX + offsetX + (dir === 'left' ? -o : dir === 'right' ? o : 0);
+          ty = e.clientY + (dir === 'top' ? -o : dir === 'bottom' ? o : 0);
+          targetEl.classList.remove('active');
+          setTimeout(() => { if (raf) { cancelAnimationFrame(raf); raf = null; } }, 400);
+        });
+      });
+    }
+
+    if (window.matchMedia('(min-width: 781px)').matches) {
+      // Chapter 02 · Work rows
+      const revealImg = document.getElementById('reveal-img');
+      const revealLabel = document.getElementById('reveal-label');
+      makeCursorFollower(revealImg, document.querySelectorAll('.work-row'), (row) => {
+        revealLabel.textContent = (row.dataset.img || '').toUpperCase() + ' · PROJECT STILL';
+      });
+
+      // Chapter 04 · Method rows
+      const revealPanel = document.getElementById('reveal-panel');
+      const pTitle = document.getElementById('p-title');
+      const pList = document.getElementById('p-list');
+      makeCursorFollower(revealPanel, document.querySelectorAll('.method-row'), (row) => {
+        pTitle.textContent = row.dataset.title || '';
+        pList.innerHTML = '';
+        (row.dataset.items || '').split('|').filter(Boolean).forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          pList.appendChild(li);
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
