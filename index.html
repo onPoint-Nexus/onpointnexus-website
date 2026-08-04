@@ -808,8 +808,16 @@
     </a>
     <div class="hidden md:flex items-center gap-7 font-body text-sm">
       <a href="/work"       class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
-      <a href="/scaleos"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">ScaleOS</a>
-      <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors duration-200">AI Engineering</a>
+      <div class="nav-dd">
+        <button type="button" class="nav-dd-btn text-on-surface-dim hover:text-primary transition-colors duration-200">Solutions <span class="caret material-symbols-outlined text-[14px]">expand_more</span></button>
+        <span class="nav-dd-bridge" aria-hidden="true"></span>
+        <div class="nav-dd-menu">
+          <a href="/ai-solutions"><span class="dd-name">AI Engineering</span><span class="dd-desc">12 CAPABILITIES · 13 SOLUTIONS</span></a>
+          <a href="/scaleos"><span class="dd-name">ScaleOS<sup>™</sup></span><span class="dd-desc">90-DAY AI TRANSFORMATION</span></a>
+          <a href="/staff-augmentation"><span class="dd-name">Staff Augmentation</span><span class="dd-desc">AVALOQ · ENTERPRISE TALENT</span></a>
+          <a href="/government"><span class="dd-name">Government</span><span class="dd-desc">PUBLIC-SECTOR PORTFOLIO</span></a>
+        </div>
+      </div>
       <a href="/products" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Products</a>
       <a href="/about"      class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
     </div>
@@ -823,8 +831,10 @@
   <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl mx-6 mb-3" style="background:rgba(17,24,39,0.96);">
     <div class="flex flex-col gap-1 text-sm font-body">
       <a href="/work"       class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work</a>
-      <a href="/scaleos"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">ScaleOS</a>
       <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">AI Engineering</a>
+      <a href="/scaleos"      class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">ScaleOS</a>
+      <a href="/staff-augmentation" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Staff Augmentation</a>
+      <a href="/government"   class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Government</a>
       <a href="/products" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Products</a>
       <a href="/about"      class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
       <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
@@ -946,6 +956,95 @@
     </div>
   </div>
 </section>
+
+<!-- ════════════════════════════════════════════════════════════
+     01a. VERTICALS STRIP — five entry paths
+════════════════════════════════════════════════════════════ -->
+<section class="py-20 border-t border-white/[0.05]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-10 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">What we do</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">Five ways we work with you.</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 reveal">
+
+      <a href="/ai-solutions" class="v-tile group">
+        <div class="v-icon"><span class="material-symbols-outlined">smart_toy</span></div>
+        <div class="v-body">
+          <p class="v-name">AI Engineering</p>
+          <p class="v-desc">12 capabilities. 13 ready solutions.</p>
+        </div>
+        <span class="v-arrow material-symbols-outlined">arrow_forward</span>
+      </a>
+
+      <a href="/scaleos" class="v-tile group">
+        <div class="v-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+        <div class="v-body">
+          <p class="v-name">ScaleOS<sup class="text-[8px] text-on-surface-muted">™</sup></p>
+          <p class="v-desc">90-day AI transformation.</p>
+        </div>
+        <span class="v-arrow material-symbols-outlined">arrow_forward</span>
+      </a>
+
+      <a href="/staff-augmentation" class="v-tile group">
+        <div class="v-icon"><span class="material-symbols-outlined">groups</span></div>
+        <div class="v-body">
+          <p class="v-name">Staff Augmentation</p>
+          <p class="v-desc">Avaloq &amp; enterprise talent.</p>
+        </div>
+        <span class="v-arrow material-symbols-outlined">arrow_forward</span>
+      </a>
+
+      <a href="/government" class="v-tile group">
+        <div class="v-icon"><span class="material-symbols-outlined">account_balance</span></div>
+        <div class="v-body">
+          <p class="v-name">Government</p>
+          <p class="v-desc">e-Gov &amp; public-sector portfolio.</p>
+        </div>
+        <span class="v-arrow material-symbols-outlined">arrow_forward</span>
+      </a>
+
+      <a href="/products" class="v-tile group">
+        <div class="v-icon"><span class="material-symbols-outlined">apps</span></div>
+        <div class="v-body">
+          <p class="v-name">Products</p>
+          <p class="v-desc">DinePoint &middot; PulseWork OS.</p>
+        </div>
+        <span class="v-arrow material-symbols-outlined">arrow_forward</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .v-tile {
+    display:flex; flex-direction:column; gap:14px;
+    padding:22px 20px;
+    background:rgba(255,255,255,0.02);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:14px;
+    text-decoration:none; color:inherit;
+    transition: background .3s ease, border-color .3s ease, transform .3s ease;
+    position:relative; min-height:172px;
+  }
+  .v-tile:hover { background:rgba(26,186,220,0.04); border-color:rgba(26,186,220,0.28); transform:translateY(-3px); }
+  .v-tile .v-icon {
+    width:40px; height:40px; border-radius:10px;
+    background:rgba(26,186,220,0.1); border:1px solid rgba(26,186,220,0.22);
+    display:flex; align-items:center; justify-content:center;
+    color:#1ABADC;
+  }
+  .v-tile .v-icon .material-symbols-outlined { font-size:20px; }
+  .v-tile .v-name { font-size:15px; font-weight:600; color:#E8EDF5; letter-spacing:-.015em; }
+  .v-tile .v-desc { font-size:12px; color:#8A9BB5; line-height:1.4; margin-top:4px; }
+  .v-tile .v-arrow {
+    position:absolute; right:18px; bottom:18px;
+    font-size:18px; color:#5A7494;
+    transition: color .3s ease, transform .3s ease;
+  }
+  .v-tile:hover .v-arrow { color:#1ABADC; transform: translateX(3px); }
+</style>
 
 <!-- ════════════════════════════════════════════════════════════
      02. METHOD SUMMARY (links to /scaleos)

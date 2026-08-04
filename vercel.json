@@ -5,6 +5,10 @@
 
     { "source": "/method",             "destination": "https://www.onpointnexus.com/scaleos",            "permanent": true },
     { "source": "/method/:path*",      "destination": "https://www.onpointnexus.com/scaleos/:path*",     "permanent": true },
+    { "source": "/services",           "destination": "https://www.onpointnexus.com/ai-solutions",       "permanent": true },
+    { "source": "/services/:path*",    "destination": "https://www.onpointnexus.com/ai-solutions",       "permanent": true },
+    { "source": "/industries",         "destination": "https://www.onpointnexus.com/work",               "permanent": true },
+    { "source": "/industries/:path*",  "destination": "https://www.onpointnexus.com/work",               "permanent": true },
     { "source": "/about-us",           "destination": "https://www.onpointnexus.com/about",              "permanent": true },
     { "source": "/blogs",              "destination": "https://www.onpointnexus.com/work",                "permanent": true },
     { "source": "/blogs/:path*",       "destination": "https://www.onpointnexus.com/work",                "permanent": true },

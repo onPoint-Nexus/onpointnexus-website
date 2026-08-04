@@ -281,8 +281,16 @@
     </a>
     <div class="hidden md:flex items-center gap-7 font-body text-sm">
       <a href="/work"        class="text-on-surface-dim hover:text-primary transition-colors">Work</a>
-      <a href="/scaleos"     class="text-on-surface-dim hover:text-primary transition-colors">ScaleOS</a>
-      <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors">AI Engineering</a>
+      <div class="nav-dd">
+        <button type="button" class="nav-dd-btn text-on-surface-dim hover:text-primary transition-colors duration-200">Solutions <span class="caret material-symbols-outlined text-[14px]">expand_more</span></button>
+        <span class="nav-dd-bridge" aria-hidden="true"></span>
+        <div class="nav-dd-menu">
+          <a href="/ai-solutions"><span class="dd-name">AI Engineering</span><span class="dd-desc">12 CAPABILITIES · 13 SOLUTIONS</span></a>
+          <a href="/scaleos"><span class="dd-name">ScaleOS<sup>™</sup></span><span class="dd-desc">90-DAY AI TRANSFORMATION</span></a>
+          <a href="/staff-augmentation"><span class="dd-name">Staff Augmentation</span><span class="dd-desc">AVALOQ · ENTERPRISE TALENT</span></a>
+          <a href="/government"><span class="dd-name">Government</span><span class="dd-desc">PUBLIC-SECTOR PORTFOLIO</span></a>
+        </div>
+      </div>
       <a href="/products"    class="text-on-surface-dim hover:text-primary transition-colors">Products</a>
       <a href="/about"       class="text-on-surface-dim hover:text-primary transition-colors">About</a>
     </div>

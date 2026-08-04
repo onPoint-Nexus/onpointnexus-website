@@ -203,8 +203,16 @@
     </a>
     <div class="hidden md:flex items-center gap-7 font-body text-sm">
       <a href="/work"       class="text-primary transition-colors duration-200">Work</a>
-      <a href="/scaleos"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">ScaleOS</a>
-      <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors duration-200">AI Engineering</a>
+      <div class="nav-dd">
+        <button type="button" class="nav-dd-btn text-on-surface-dim hover:text-primary transition-colors duration-200">Solutions <span class="caret material-symbols-outlined text-[14px]">expand_more</span></button>
+        <span class="nav-dd-bridge" aria-hidden="true"></span>
+        <div class="nav-dd-menu">
+          <a href="/ai-solutions"><span class="dd-name">AI Engineering</span><span class="dd-desc">12 CAPABILITIES · 13 SOLUTIONS</span></a>
+          <a href="/scaleos"><span class="dd-name">ScaleOS<sup>™</sup></span><span class="dd-desc">90-DAY AI TRANSFORMATION</span></a>
+          <a href="/staff-augmentation"><span class="dd-name">Staff Augmentation</span><span class="dd-desc">AVALOQ · ENTERPRISE TALENT</span></a>
+          <a href="/government"><span class="dd-name">Government</span><span class="dd-desc">PUBLIC-SECTOR PORTFOLIO</span></a>
+        </div>
+      </div>
       <a href="/products" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Products</a>
       <a href="/about"      class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
     </div>
@@ -218,8 +226,10 @@
   <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl mx-6 mb-3" style="background:rgba(17,24,39,0.96);">
     <div class="flex flex-col gap-1 text-sm font-body">
       <a href="/work"       class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">Work</a>
-      <a href="/scaleos"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">ScaleOS</a>
       <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">AI Engineering</a>
+      <a href="/scaleos"      class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">ScaleOS</a>
+      <a href="/staff-augmentation" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Staff Augmentation</a>
+      <a href="/government"   class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Government</a>
       <a href="/products" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Products</a>
       <a href="/about"      class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
       <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
@@ -346,24 +356,43 @@
      SELECTED WORK. case studies grid
 ════════════════════════════════════════════════════════════ -->
 <section id="case-studies" class="py-24 px-6 max-w-7xl mx-auto">
-  <!-- Government portfolio callout -->
-  <a href="/government" class="block mb-14 reveal">
-    <div class="rounded-2xl border border-white/[0.06] bg-surface-card p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-6 hover:border-primary/[0.28] transition-colors group">
-      <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center">
-        <span class="material-symbols-outlined text-primary" style="font-size:22px">account_balance</span>
+  <!-- Two-column vertical callouts: Government + Staff Augmentation -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-14 reveal">
+    <a href="/government" class="block group">
+      <div class="rounded-2xl border border-white/[0.06] bg-surface-card p-6 md:p-7 flex items-start gap-5 h-full hover:border-primary/[0.28] transition-colors">
+        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary" style="font-size:22px">account_balance</span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-primary mb-2">Government &amp; Public-Sector</p>
+          <h3 class="text-lg md:text-xl font-bold text-on-surface leading-tight tracking-[-0.015em] mb-1">
+            Six engagements. Two live.
+          </h3>
+          <p class="text-on-surface-dim text-sm mb-3">From Gram Panchayat ledgers to statewide health dashboards.</p>
+          <span class="inline-flex items-center gap-2 text-primary text-sm font-semibold group-hover:gap-3 transition-all">
+            View portfolio <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
+        </div>
       </div>
-      <div class="flex-1 min-w-0">
-        <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-primary mb-1">New · Government &amp; Public-Sector Portfolio</p>
-        <h3 class="text-xl md:text-2xl font-bold text-on-surface leading-tight tracking-[-0.015em]">
-          Six engagements across e-Governance, public health, infrastructure &amp; co-operatives.
-        </h3>
-        <p class="text-on-surface-dim text-sm mt-1">From Gram Panchayat ledgers to statewide health dashboards. Two live in production.</p>
+    </a>
+    <a href="/staff-augmentation" class="block group">
+      <div class="rounded-2xl border border-white/[0.06] bg-surface-card p-6 md:p-7 flex items-start gap-5 h-full hover:border-primary/[0.28] transition-colors">
+        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary" style="font-size:22px">groups</span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-primary mb-2">Staff Augmentation</p>
+          <h3 class="text-lg md:text-xl font-bold text-on-surface leading-tight tracking-[-0.015em] mb-1">
+            100+ professionals deployed.
+          </h3>
+          <p class="text-on-surface-dim text-sm mb-3">Recognised Avaloq talent partner. Internal screening before every submission.</p>
+          <span class="inline-flex items-center gap-2 text-primary text-sm font-semibold group-hover:gap-3 transition-all">
+            View practice <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
+        </div>
       </div>
-      <span class="inline-flex items-center gap-2 text-primary text-sm font-semibold group-hover:gap-3 transition-all whitespace-nowrap">
-        View portfolio <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-      </span>
-    </div>
-  </a>
+    </a>
+  </div>
 
   <div class="flex items-end justify-between gap-8 mb-14 flex-wrap reveal">
     <div>

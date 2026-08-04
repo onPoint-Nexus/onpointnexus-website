@@ -360,8 +360,16 @@
     </a>
     <div class="hidden md:flex items-center gap-7 font-body text-sm">
       <a href="/work"        class="text-on-surface-dim hover:text-primary transition-colors">Work</a>
-      <a href="/scaleos"      class="text-primary transition-colors">ScaleOS</a>
-      <a href="/ai-solutions" class="text-on-surface-dim hover:text-primary transition-colors">AI Engineering</a>
+      <div class="nav-dd">
+        <button type="button" class="nav-dd-btn text-on-surface-dim hover:text-primary transition-colors duration-200">Solutions <span class="caret material-symbols-outlined text-[14px]">expand_more</span></button>
+        <span class="nav-dd-bridge" aria-hidden="true"></span>
+        <div class="nav-dd-menu">
+          <a href="/ai-solutions"><span class="dd-name">AI Engineering</span><span class="dd-desc">12 CAPABILITIES · 13 SOLUTIONS</span></a>
+          <a href="/scaleos"><span class="dd-name">ScaleOS<sup>™</sup></span><span class="dd-desc">90-DAY AI TRANSFORMATION</span></a>
+          <a href="/staff-augmentation"><span class="dd-name">Staff Augmentation</span><span class="dd-desc">AVALOQ · ENTERPRISE TALENT</span></a>
+          <a href="/government"><span class="dd-name">Government</span><span class="dd-desc">PUBLIC-SECTOR PORTFOLIO</span></a>
+        </div>
+      </div>
       <a href="/products"    class="text-on-surface-dim hover:text-primary transition-colors">Products</a>
       <a href="/about"       class="text-on-surface-dim hover:text-primary transition-colors">About</a>
     </div>
@@ -988,9 +996,14 @@
       Start Day 1 in your business.
     </h2>
     <p class="text-on-surface-dim mb-10 max-w-xl mx-auto">Book a 30-minute call. We'll walk through your business, flag the biggest bottleneck, and tell you what Phase 01 would look like for you.</p>
-    <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-surface font-bold hover:bg-primary-dim transition-colors">
-      Book a Call <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-    </a>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-surface font-bold hover:bg-primary-dim transition-colors">
+        Book a Call <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+      <a href="/work" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/10 text-on-surface-dim hover:text-on-surface hover:border-white/25 transition-colors font-semibold">
+        See production case studies <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+      </a>
+    </div>
   </div>
 </section>
 
