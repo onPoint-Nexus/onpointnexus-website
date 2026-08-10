@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c1324">
+
+  <title>Services | OnPoint Nexus — AI, Software, Mobile, Staff Augmentation</title>
+  <meta name="description" content="Custom software, AI engineering, mobile apps, staff augmentation, and ScaleOS — a 90-day AI transformation. What we build for you.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.onpointnexus.com/services">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="OnPoint Nexus">
+  <meta property="og:url"         content="https://www.onpointnexus.com/services">
+  <meta property="og:title"       content="Services | OnPoint Nexus">
+  <meta property="og:description" content="Five service lines. One accountable engineering team.">
+  <meta property="og:image"       content="https://www.onpointnexus.com/og-image.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = { darkMode:'class', theme:{ extend:{
+      colors:{
+        primary:'#1ABADC','primary-dim':'#0E8FA8',
+        surface:'#0c1324','surface-card':'#141c2e','surface-high':'#1a2440','surface-low':'#080e1c',
+        'on-surface':'#E8EDF5','on-surface-dim':'#8A9BB5','on-surface-muted':'#5A7494'
+      },
+      fontFamily:{ headline:['"Plus Jakarta Sans"','sans-serif'], body:['"Plus Jakarta Sans"','sans-serif'], mono:['"Roboto Mono"','monospace'] }
+    }}}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-N2WCZPCE46');</script>
+
+  <style>
+    body { background:#0c1324; color:#E8EDF5; font-family:'Plus Jakarta Sans',sans-serif; }
+    .grad-text { background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent; }
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+    .reveal.in-view { opacity:1; transform:none; }
+    .svc {
+      display:flex; flex-direction:column; gap:14px;
+      padding:32px 28px;
+      background:#0f1729;
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:18px;
+      text-decoration:none; color:inherit;
+      transition: background .3s ease, border-color .3s ease, transform .3s ease;
+      position:relative; min-height:200px;
+    }
+    .svc:hover { background:rgba(26,186,220,0.04); border-color:rgba(26,186,220,0.28); transform:translateY(-3px); }
+    .svc .svc-icon {
+      width:44px; height:44px; border-radius:12px;
+      background:rgba(26,186,220,0.1); border:1px solid rgba(26,186,220,0.22);
+      display:flex; align-items:center; justify-content:center;
+      color:#1ABADC;
+    }
+    .svc .svc-icon .material-symbols-outlined { font-size:22px; }
+    .svc h3 { font-size:20px; font-weight:600; color:#E8EDF5; letter-spacing:-.02em; }
+    .svc p { font-size:14px; color:#8A9BB5; line-height:1.55; }
+    .svc.featured { background:linear-gradient(135deg, rgba(26,186,220,0.08) 0%, #0f1729 60%); border-color:rgba(26,186,220,0.28); }
+    .svc-tag {
+      display:inline-flex; align-items:center; gap:6px;
+      font-family:'Roboto Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+      color:#1ABADC; align-self:flex-start;
+    }
+    .svc-arrow {
+      display:inline-flex; align-items:center; gap:6px;
+      font-size:13px; font-weight:600; color:#1ABADC;
+      margin-top:auto; padding-top:8px;
+    }
+    .svc:hover .svc-arrow { gap:10px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ══════════════════════════════════════════════════ -->
+<nav class="sticky top-0 z-50 border-b border-white/[0.05]" style="background:rgba(12,19,36,0.92);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
+    </a>
+    <div class="hidden md:flex items-center gap-7 font-body text-sm">
+      <a href="/services"     class="text-primary transition-colors duration-200">Services</a>
+      <a href="/scaleos"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">ScaleOS</a>
+      <a href="/work"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
+      <a href="/products"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">Products</a>
+      <a href="/about"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
+    </div>
+    <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors">
+      Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═════════════════════════════════════════════════ -->
+<section class="pt-28 pb-14 border-b border-white/[0.05]">
+  <div class="max-w-5xl mx-auto px-6">
+    <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-6 reveal">Services</p>
+    <h1 class="font-headline font-bold tracking-[-0.03em] leading-[1.05] text-on-surface reveal" style="font-size:clamp(2.5rem, 5.5vw, 4rem)">
+      What we build <span class="grad-text">for you.</span>
+    </h1>
+    <p class="mt-8 text-lg md:text-xl text-on-surface-dim max-w-2xl leading-relaxed reveal">
+      Five service lines. One accountable engineering team. Pick the one that fits or book a call and we'll help you decide.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ SERVICES GRID ═════════════════════════════════════════ -->
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+
+      <a href="/scaleos" class="svc featured">
+        <span class="svc-tag"><span style="width:6px;height:6px;background:#8de4f0;border-radius:50%;display:inline-block"></span>Flagship</span>
+        <div class="svc-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+        <h3>ScaleOS<sup class="text-[10px] text-on-surface-muted">™</sup></h3>
+        <p>Our 90-day AI transformation. Six phases from audit to optimisation. First working system live in 45 days.</p>
+        <span class="svc-arrow">See the method <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="svc">
+        <div class="svc-icon"><span class="material-symbols-outlined">smart_toy</span></div>
+        <h3>AI Engineering</h3>
+        <p>Production AI systems &mdash; RAG chatbots, voice agents, business automation, ML models. Built to plug into what you already run.</p>
+        <span class="svc-arrow">Talk to us <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="svc">
+        <div class="svc-icon"><span class="material-symbols-outlined">code</span></div>
+        <h3>Custom Software</h3>
+        <p>Web platforms, enterprise apps, SaaS products. From MVP to scale, with cloud infrastructure to match.</p>
+        <span class="svc-arrow">Talk to us <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="svc">
+        <div class="svc-icon"><span class="material-symbols-outlined">smartphone</span></div>
+        <h3>Mobile Apps</h3>
+        <p>Native iOS, native Android, or cross-platform with React Native and Flutter. Shipped to the stores, not just demoed.</p>
+        <span class="svc-arrow">Talk to us <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="svc">
+        <div class="svc-icon"><span class="material-symbols-outlined">groups</span></div>
+        <h3>Staff Augmentation</h3>
+        <p>Extend your team with senior engineers who integrate from day one. Recognised Avaloq talent practice.</p>
+        <span class="svc-arrow">Talk to us <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="svc">
+        <div class="svc-icon"><span class="material-symbols-outlined">account_balance</span></div>
+        <h3>Government &amp; Public Sector</h3>
+        <p>e-Governance, public health, and public-infrastructure systems. Ask for the portfolio in the call.</p>
+        <span class="svc-arrow">Talk to us <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST STRIP ═══════════════════════════════════════════ -->
+<section class="py-12 border-t border-b border-white/[0.05] bg-surface-low">
+  <div class="max-w-6xl mx-auto px-6 text-center reveal">
+    <p class="text-[10px] font-mono uppercase tracking-[0.25em] text-on-surface-muted mb-6">Trusted by</p>
+    <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-on-surface-dim">
+      <span class="text-base font-semibold">Reliance Jio</span>
+      <span class="text-on-surface-muted">·</span>
+      <span class="text-base font-semibold">Pininfarina</span>
+      <span class="text-on-surface-muted">·</span>
+      <span class="text-base font-semibold">Mahindra</span>
+      <span class="text-on-surface-muted">·</span>
+      <span class="text-base font-semibold">QuickHeal</span>
+      <span class="text-on-surface-muted">·</span>
+      <span class="text-base font-semibold">Maharashtra Gov.</span>
+      <span class="text-on-surface-muted">·</span>
+      <span class="text-base font-semibold">Vidanta</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════════════════ -->
+<section class="py-24">
+  <div class="max-w-3xl mx-auto px-6 text-center reveal">
+    <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface leading-tight mb-6 tracking-[-0.02em]">
+      Not sure which service fits?
+    </h2>
+    <p class="text-on-surface-dim mb-10 max-w-xl mx-auto">Book a 30-minute call. We'll listen to what you're building and tell you exactly what we'd do.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-surface font-bold hover:bg-primary-dim transition-colors">
+        Book a Call <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+      <a href="mailto:hello@onpointnexus.com" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/10 text-on-surface-dim hover:text-on-surface hover:border-white/25 transition-colors font-semibold">
+        hello@onpointnexus.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
+<footer class="bg-surface-low border-t border-white/5 pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-on-surface-muted">
+    <div>&copy; 2026 OnPoint Nexus &nbsp;·&nbsp; Pune, India</div>
+    <div class="flex gap-6">
+      <a href="/" class="hover:text-primary transition-colors">Home</a>
+      <a href="/services" class="hover:text-primary transition-colors">Services</a>
+      <a href="/scaleos" class="hover:text-primary transition-colors">ScaleOS</a>
+      <a href="/work" class="hover:text-primary transition-colors">Work</a>
+      <a href="/about" class="hover:text-primary transition-colors">About</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

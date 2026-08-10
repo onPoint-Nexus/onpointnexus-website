@@ -91,32 +91,7 @@
     .related-card .icon{width:36px;height:36px;border-radius:10px;background:rgba(26,186,220,0.10);border:1px solid rgba(26,186,220,0.22);color:#1ABADC;display:flex;align-items:center;justify-content:center}
   </style>
   <script src="/js/site-cursor.js" defer></script>
-<style>
-.nav-dd { position: relative; display: inline-block; }
-.nav-dd-btn { cursor: pointer; background: none; border: none; padding: 0; font: inherit; color: inherit; display: inline-flex; align-items: center; gap: 4px; }
-.nav-dd-btn .caret { transition: transform .2s ease; }
-.nav-dd:hover .nav-dd-btn .caret, .nav-dd.open .nav-dd-btn .caret { transform: rotate(180deg); }
-.nav-dd-bridge { position: absolute; top: 100%; left: -20px; right: -20px; height: 14px; display: none; }
-.nav-dd:hover .nav-dd-bridge, .nav-dd.open .nav-dd-bridge { display: block; }
-.nav-dd-menu {
-  position: absolute; top: calc(100% + 14px); left: 50%; transform: translate(-50%, -6px);
-  min-width: 320px;
-  background: rgba(17,24,39,0.97);
-  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px; padding: 8px;
-  box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5);
-  opacity: 0; pointer-events: none;
-  transition: opacity .2s ease, transform .2s ease;
-  z-index: 60;
-}
-.nav-dd:hover .nav-dd-menu, .nav-dd.open .nav-dd-menu { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
-.nav-dd-menu a { display: flex; flex-direction: column; gap: 3px; padding: 11px 14px; border-radius: 8px; color: inherit; text-decoration: none; transition: background .2s ease; }
-.nav-dd-menu a:hover { background: rgba(26,186,220,0.08); }
-.nav-dd-menu .dd-name { font-size: 14px; font-weight: 600; color: #E8EDF5; letter-spacing: -.005em; }
-.nav-dd-menu .dd-desc { font-family: 'Roboto Mono', monospace; font-size: 10px; color: #8A9BB5; letter-spacing: .04em; }
-/* Solutions dropdown nav */
-</style>
+
 </head>
 <body class="bg-surface text-on-surface antialiased">
 
@@ -127,18 +102,11 @@
       <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
     </a>
     <div class="hidden md:flex items-center gap-7 font-body text-sm">
-      <a href="/work" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
-      <div class="nav-dd">
-        <button type="button" class="nav-dd-btn text-on-surface-dim hover:text-primary transition-colors duration-200">Solutions <span class="caret material-symbols-outlined text-[14px]">expand_more</span></button>
-        <span class="nav-dd-bridge" aria-hidden="true"></span>
-        <div class="nav-dd-menu">
-          <a href="/ai-solutions"><span class="dd-name">AI Engineering</span><span class="dd-desc">12 CAPABILITIES · 13 SOLUTIONS</span></a>
-          <a href="/scaleos"><span class="dd-name">ScaleOS<sup>™</sup></span><span class="dd-desc">90-DAY AI TRANSFORMATION</span></a>
-          <a href="/staff-augmentation"><span class="dd-name">Staff Augmentation</span><span class="dd-desc">AVALOQ · ENTERPRISE TALENT</span></a>
-          <a href="/government"><span class="dd-name">Government</span><span class="dd-desc">PUBLIC-SECTOR PORTFOLIO</span></a>
-        </div>
-      </div>
-      <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
+      <a href="/services"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">Services</a>
+      <a href="/scaleos"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">ScaleOS</a>
+      <a href="/work"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
+      <a href="/products"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">Products</a>
+      <a href="/about"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
     </div>
     <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors duration-200 shrink-0">
       Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
@@ -149,10 +117,11 @@
   </div>
   <div id="mobileMenu" class="hidden mt-2 rounded-2xl backdrop-blur-xl border border-white/[0.06] p-5 shadow-xl mx-6 mb-3" style="background:rgba(17,24,39,0.96);">
     <div class="flex flex-col gap-1 text-sm font-body">
-      <a href="/work" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work</a>
+      <a href="/services"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Services</a>
       <a href="/scaleos"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">ScaleOS</a>
-      <a href="/ai-solutions" class="text-primary py-3 px-3 rounded-xl bg-surface-high border-b border-white/5">AI Engineering</a>
-      <a href="/about" class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
+      <a href="/work"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Work</a>
+      <a href="/products"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">Products</a>
+      <a href="/about"     class="text-on-surface-dim hover:text-primary transition-colors py-3 px-3 rounded-xl hover:bg-surface-high border-b border-white/5">About</a>
       <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="mt-3 bg-primary text-surface px-5 py-3 rounded-full font-bold text-center hover:bg-primary-dim transition-colors">Book a Free Discovery Call</a>
     </div>
   </div>
@@ -398,17 +367,6 @@
   toggle.addEventListener('click',()=>{const open=menu.classList.toggle('hidden')===false;icon.textContent=open?'close':'menu';toggle.setAttribute('aria-expanded',open)});
   if(window.IntersectionObserver){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in-view');o.unobserve(x.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>o.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'))}
 </script>
-<script>
-// nav-dd click handler
-document.querySelectorAll('.nav-dd-btn').forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    btn.closest('.nav-dd').classList.toggle('open');
-  });
-});
-document.addEventListener('click', function() {
-  document.querySelectorAll('.nav-dd.open').forEach(function(d) { d.classList.remove('open'); });
-});
-</script>
+
 </body>
 </html>
