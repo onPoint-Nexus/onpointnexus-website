@@ -65,6 +65,49 @@
     .svc h3 { font-size:20px; font-weight:600; color:#E8EDF5; letter-spacing:-.02em; }
     .svc p { font-size:14px; color:#8A9BB5; line-height:1.55; }
     .svc.featured { background:linear-gradient(135deg, rgba(26,186,220,0.08) 0%, #0f1729 60%); border-color:rgba(26,186,220,0.28); }
+
+    /* ScaleOS featured pipeline (mirrors homepage) */
+    .grad-text-strong { background:linear-gradient(135deg,#8de4f0 0%,#1ABADC 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent; }
+    .pipeline { display:grid; grid-template-columns:1fr 32px 1fr 32px 1fr 32px 1fr 32px 1fr 32px 1fr; align-items:stretch; gap:0; }
+    .p-module {
+      position:relative; background:rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.06); border-radius:14px;
+      padding:22px 10px 18px; text-align:center;
+      cursor:pointer; text-decoration:none; color:inherit;
+      transition:background .4s cubic-bezier(.16,1,.3,1), border-color .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1);
+    }
+    .p-module:hover { border-color:rgba(26,186,220,0.25); background:rgba(26,186,220,0.04); }
+    .p-module.active {
+      background:linear-gradient(180deg, rgba(26,186,220,0.14) 0%, rgba(26,186,220,0.04) 100%);
+      border-color:rgba(26,186,220,0.5); transform:translateY(-4px);
+      box-shadow: 0 12px 32px -12px rgba(26,186,220,0.35);
+    }
+    .p-module .p-num { font-family:'Roboto Mono',monospace; font-size:10px; letter-spacing:.2em; color:#5A7494; margin-bottom:8px; transition:color .4s ease; }
+    .p-module.active .p-num { color:#1ABADC; }
+    .p-module .p-icon { font-size:26px; color:#5A7494; margin-bottom:8px; transition:color .4s ease, transform .4s ease; }
+    .p-module.active .p-icon { color:#1ABADC; transform:scale(1.08); }
+    .p-module .p-name { font-size:13px; font-weight:600; color:#E8EDF5; letter-spacing:-.005em; white-space:nowrap; }
+    .p-module .p-name sup { font-size:8px; color:#5A7494; font-weight:400; margin-left:1px; vertical-align:super; }
+    .p-flow { display:flex; align-items:center; justify-content:center; position:relative; height:100%; }
+    .p-flow-line { width:100%; height:1.5px; background:linear-gradient(to right, transparent 0%, rgba(26,186,220,0.25) 50%, transparent 100%); position:relative; border-radius:2px; }
+    .p-flow-dot { position:absolute; top:50%; width:6px; height:6px; border-radius:50%; background:#1ABADC; box-shadow:0 0 12px #1ABADC; transform:translate(-50%,-50%); opacity:0; }
+    .p-flow.pulse .p-flow-dot { animation: flowDot 1.4s cubic-bezier(.4,0,.6,1) infinite; }
+    @keyframes flowDot { 0%{left:-10%;opacity:0} 20%{opacity:1} 80%{opacity:1} 100%{left:110%;opacity:0} }
+    .p-detail {
+      margin-top:36px; padding:28px 32px;
+      background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.05);
+      border-radius:16px; min-height:150px; transition:opacity .5s ease;
+    }
+    .p-detail-header { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:14px; }
+    .p-detail-title { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:24px; color:#E8EDF5; letter-spacing:-.02em; }
+    .p-detail-title sup { font-size:11px; color:#5A7494; font-weight:400; vertical-align:super; }
+    .p-detail-meta { font-family:'Roboto Mono',monospace; font-size:12px; color:#1ABADC; letter-spacing:.15em; text-transform:uppercase; }
+    .p-detail-tag { font-size:14px; color:#8A9BB5; margin-bottom:14px; }
+    .p-detail-outcome { font-size:15px; color:#E8EDF5; line-height:1.5; font-style:italic; padding-left:14px; border-left:2px solid #1ABADC; }
+    .p-progress { margin-top:20px; height:2px; background:rgba(255,255,255,0.05); border-radius:999px; overflow:hidden; }
+    .p-progress-fill { height:100%; width:0%; background:linear-gradient(to right,#1ABADC,#8de4f0); border-radius:999px; }
+    @media (max-width:900px) { .pipeline { grid-template-columns:1fr 1fr 1fr; gap:8px; } .p-flow { display:none; } .p-detail { padding:20px; } }
+    @media (max-width:640px) { .pipeline { grid-template-columns:1fr 1fr; } }
     .svc-tag {
       display:inline-flex; align-items:center; gap:6px;
       font-family:'Roboto Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase;
@@ -113,18 +156,142 @@
   </div>
 </section>
 
-<!-- ═══ SERVICES GRID ═════════════════════════════════════════ -->
+<!-- ═══ FLAGSHIP: SCALEOS FEATURED CARD ═════════════════════ -->
+<section class="py-16 border-b border-white/[0.05]">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="rounded-3xl border border-white/[0.06] bg-surface-card p-8 md:p-14 reveal" id="methodCard">
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-12">
+        <div>
+          <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-4">Flagship service &nbsp; · &nbsp; ScaleOS<sup class="text-[8px]">™</sup></p>
+          <h2 class="font-headline text-3xl md:text-5xl font-bold text-on-surface leading-tight tracking-[-0.02em] max-w-xl">
+            The 90-day <span class="grad-text-strong">operating system.</span>
+          </h2>
+        </div>
+        <p class="text-on-surface-dim leading-relaxed max-w-sm">
+          Six phases. One goal, remove the founder as the bottleneck. First working system live in 45 days.
+        </p>
+      </div>
+
+      <div class="pipeline" id="pipeline">
+        <a href="/scaleos#p01" class="p-module" data-phase="0">
+          <div class="p-num">01</div>
+          <span class="p-icon material-symbols-outlined">travel_explore</span>
+          <div class="p-name">ScaleScan<sup>™</sup></div>
+        </a>
+        <div class="p-flow"><div class="p-flow-line"><div class="p-flow-dot"></div></div></div>
+        <a href="/scaleos#p02" class="p-module" data-phase="1">
+          <div class="p-num">02</div>
+          <span class="p-icon material-symbols-outlined">hub</span>
+          <div class="p-name">ScaleSync<sup>™</sup></div>
+        </a>
+        <div class="p-flow"><div class="p-flow-line"><div class="p-flow-dot"></div></div></div>
+        <a href="/scaleos#p03" class="p-module" data-phase="2">
+          <div class="p-num">03</div>
+          <span class="p-icon material-symbols-outlined">bolt</span>
+          <div class="p-name">ScaleFlow<sup>™</sup></div>
+        </a>
+        <div class="p-flow"><div class="p-flow-line"><div class="p-flow-dot"></div></div></div>
+        <a href="/scaleos#p04" class="p-module" data-phase="3">
+          <div class="p-num">04</div>
+          <span class="p-icon material-symbols-outlined">dashboard</span>
+          <div class="p-name">ScaleVision<sup>™</sup></div>
+        </a>
+        <div class="p-flow"><div class="p-flow-line"><div class="p-flow-dot"></div></div></div>
+        <a href="/scaleos#p05" class="p-module" data-phase="4">
+          <div class="p-num">05</div>
+          <span class="p-icon material-symbols-outlined">smart_toy</span>
+          <div class="p-name">ScaleAI<sup>™</sup></div>
+        </a>
+        <div class="p-flow"><div class="p-flow-line"><div class="p-flow-dot"></div></div></div>
+        <a href="/scaleos#p06" class="p-module" data-phase="5">
+          <div class="p-num">06</div>
+          <span class="p-icon material-symbols-outlined">trending_up</span>
+          <div class="p-name">ScaleMax<sup>™</sup></div>
+        </a>
+      </div>
+
+      <div class="p-detail" id="pDetail">
+        <div class="p-detail-header">
+          <div>
+            <span class="p-detail-title" id="pTitle">ScaleScan<sup>™</sup></span>
+          </div>
+          <span class="p-detail-meta" id="pMeta">Days 1–15 · 2 weeks</span>
+        </div>
+        <p class="p-detail-tag" id="pTag">Business &amp; AI audit</p>
+        <p class="p-detail-outcome" id="pOutcome">Leadership knows exactly what's slowing growth and where automation creates the biggest impact.</p>
+        <div class="p-progress"><div class="p-progress-fill" id="pProgress"></div></div>
+      </div>
+
+      <a href="/scaleos" class="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
+        Explore the full method <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const phases = [
+    { title:'ScaleScan<sup>™</sup>',   meta:'Days 1–15 · 2 weeks',  tag:'Business & AI audit',    outcome:"Leadership knows exactly what's slowing growth and where automation creates the biggest impact." },
+    { title:'ScaleSync<sup>™</sup>',   meta:'Days 16–30 · 2 weeks', tag:'System integration',     outcome:'The business operates from one unified data ecosystem. Every team sees the same numbers.' },
+    { title:'ScaleFlow<sup>™</sup>',   meta:'Days 31–50 · 3 weeks', tag:'AI automation',          outcome:'Hundreds of manual tasks happen automatically. Your people focus on the work only humans can do.' },
+    { title:'ScaleVision<sup>™</sup>', meta:'Days 51–65 · 2 weeks', tag:'Executive intelligence', outcome:'Leadership sees the business in real time. No one asks "can someone send me that report?" again.' },
+    { title:'ScaleAI<sup>™</sup>',     meta:'Days 66–80 · 2 weeks', tag:'AI workforce',           outcome:'A digital workforce that supports your employees instead of replacing them. Every team gets a force multiplier.' },
+    { title:'ScaleMax<sup>™</sup>',    meta:'Ongoing · Monthly',    tag:'Continuous optimization',outcome:'The system improves as the company grows instead of becoming outdated. It compounds with you.' }
+  ];
+  const CYCLE_MS = 4000;
+  const modules = document.querySelectorAll('.p-module');
+  const flows = document.querySelectorAll('.p-flow');
+  const detail = document.getElementById('pDetail');
+  const pTitle = document.getElementById('pTitle');
+  const pMeta = document.getElementById('pMeta');
+  const pTag = document.getElementById('pTag');
+  const pOutcome = document.getElementById('pOutcome');
+  const pProgress = document.getElementById('pProgress');
+  const card = document.getElementById('methodCard');
+  let current = 0, timer = null, paused = false, started = false;
+  function setPhase(idx) {
+    current = idx;
+    modules.forEach((m,i) => m.classList.toggle('active', i === idx));
+    flows.forEach((f,i) => f.classList.toggle('pulse', i === idx));
+    const p = phases[idx];
+    detail.style.opacity = '0';
+    setTimeout(() => {
+      pTitle.innerHTML = p.title;
+      pMeta.textContent = p.meta;
+      pTag.textContent = p.tag;
+      pOutcome.textContent = p.outcome;
+      detail.style.opacity = '1';
+    }, 180);
+    pProgress.style.transition = 'none';
+    pProgress.style.width = '0%';
+    requestAnimationFrame(() => {
+      pProgress.style.transition = 'width ' + CYCLE_MS + 'ms linear';
+      pProgress.style.width = '100%';
+    });
+  }
+  function next() { setPhase((current + 1) % phases.length); }
+  function play() { if (paused) return; stop(); timer = setInterval(next, CYCLE_MS); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  const startObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting && !started) { started = true; setPhase(0); play(); startObs.unobserve(e.target); } });
+  }, { threshold: 0.35 });
+  if (card) startObs.observe(card);
+  card && card.addEventListener('mouseenter', () => { paused = true; stop(); });
+  card && card.addEventListener('mouseleave', () => { paused = false; play(); });
+  modules.forEach((m, i) => m.addEventListener('mouseenter', () => setPhase(i)));
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { stop(); setPhase(0); }
+})();
+</script>
+
+<!-- ═══ OTHER SERVICES GRID ═══════════════════════════════════ -->
 <section class="py-16">
   <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-10 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">And 5 more service lines</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">Whatever else you're building.</h2>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
-
-      <a href="/scaleos" class="svc featured">
-        <span class="svc-tag"><span style="width:6px;height:6px;background:#8de4f0;border-radius:50%;display:inline-block"></span>Flagship</span>
-        <div class="svc-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
-        <h3>ScaleOS<sup class="text-[10px] text-on-surface-muted">™</sup></h3>
-        <p>Our 90-day AI transformation. Six phases from audit to optimisation. First working system live in 45 days.</p>
-        <span class="svc-arrow">See the method <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
-      </a>
 
       <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="svc">
         <div class="svc-icon"><span class="material-symbols-outlined">smart_toy</span></div>
