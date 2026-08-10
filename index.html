@@ -789,6 +789,222 @@
       .marquee-item { font-size:17px; }
       .marquee-track { gap:44px; padding-right:44px; }
     }
+  /* ────────── HERO: split-screen editorial ────────── */
+  .hero-split {
+    position: relative; overflow: hidden;
+    background: #0c1324;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 4rem);
+  }
+  @media (max-width: 900px) {
+    .hero-split { grid-template-columns: 1fr; min-height: auto; }
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6vh 6vw 6vh 8vw;
+    position: relative; z-index: 2;
+  }
+  @media (max-width: 900px) { .hero-left { padding: 80px 24px 40px; } }
+  .hero-eye {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #1ABADC; margin-bottom: 28px;
+    opacity: 0; animation: heroLine .8s cubic-bezier(.16,1,.3,1) forwards;
+  }
+  .hero-h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700; letter-spacing: -0.035em;
+    line-height: 1.02;
+    font-size: clamp(2.5rem, 4.5vw, 4.2rem);
+    color: #E8EDF5; margin-bottom: 28px;
+  }
+  .hero-h1 .h-line {
+    display: block; opacity: 0; transform: translateY(30px);
+    filter: blur(8px);
+    animation: heroLine .95s cubic-bezier(.16,1,.3,1) forwards;
+  }
+  .hero-h1 .h-line:nth-child(1) { animation-delay: .15s; }
+  .hero-h1 .h-line:nth-child(2) { animation-delay: .35s; }
+  @keyframes heroLine { to { opacity: 1; transform: none; filter: blur(0); } }
+  .grad-text-strong {
+    background: linear-gradient(135deg, #1ABADC 0%, #8de4f0 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero-sub {
+    font-size: 18px; color: #8A9BB5; line-height: 1.55;
+    max-width: 480px; margin-bottom: 40px;
+    opacity: 0; animation: heroLine .9s cubic-bezier(.16,1,.3,1) .55s forwards;
+  }
+  .hero-cta-row {
+    display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+    opacity: 0; animation: heroLine .9s cubic-bezier(.16,1,.3,1) .75s forwards;
+  }
+  .hero-cta-p {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #1ABADC; color: #0c1324;
+    padding: 14px 26px; border-radius: 999px;
+    font-weight: 700; font-size: 14px; text-decoration: none;
+    transition: background .3s ease, transform .3s ease;
+    box-shadow: 0 12px 28px -12px rgba(26,186,220,0.55);
+  }
+  .hero-cta-p:hover { background: #0E8FA8; transform: translateY(-1px); }
+  .hero-cta-s {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 22px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #8A9BB5; font-weight: 600; font-size: 14px; text-decoration: none;
+    transition: color .3s ease, border-color .3s ease;
+  }
+  .hero-cta-s:hover { color: #E8EDF5; border-color: rgba(255,255,255,0.3); }
+
+  .hero-right {
+    position: relative; z-index: 2;
+    padding: 6vh 8vw 6vh 4vw;
+    display: flex; align-items: center; justify-content: center;
+  }
+  @media (max-width: 900px) { .hero-right { padding: 20px 24px 60px; } }
+  .showcase {
+    position: relative;
+    width: 100%; max-width: 520px;
+    aspect-ratio: 4 / 5;
+    border-radius: 20px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 40px 80px -30px rgba(0,0,0,0.6);
+  }
+  .showcase .slide {
+    position: absolute; inset: 0;
+    display: block; text-decoration: none; color: inherit;
+    opacity: 0; transform: scale(1.04);
+    transition: opacity .8s cubic-bezier(.16,1,.3,1), transform 6s ease-out;
+    pointer-events: none;
+  }
+  .showcase .slide.active { opacity: 1; transform: scale(1); pointer-events: auto; }
+  .showcase .slide img { width: 100%; height: 100%; object-fit: cover; }
+  .slide-scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(12,19,36,0.15) 0%, rgba(12,19,36,0.4) 50%, rgba(12,19,36,0.92) 100%);
+  }
+  .slide-meta {
+    position: absolute; left: 28px; right: 28px; bottom: 28px;
+  }
+  .slide-chip {
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #1ABADC;
+    padding: 5px 10px; border-radius: 999px;
+    background: rgba(26,186,220,0.12); border: 1px solid rgba(26,186,220,0.3);
+    margin-bottom: 14px;
+  }
+  .slide-meta h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 26px; font-weight: 700; letter-spacing: -0.02em;
+    color: #E8EDF5; margin-bottom: 18px;
+  }
+  .slide-stat { display: flex; flex-direction: column; margin-bottom: 18px; }
+  .slide-v {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 42px; font-weight: 800; letter-spacing: -0.03em;
+    color: #8de4f0; line-height: 1;
+  }
+  .slide-l {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #8A9BB5; margin-top: 8px;
+  }
+  .slide-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; color: #1ABADC;
+  }
+  .showcase-dots {
+    position: absolute; bottom: 20px; right: 24px; z-index: 3;
+    display: flex; gap: 8px;
+  }
+  .showcase-dots button {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(255,255,255,0.25); border: none; cursor: pointer;
+    padding: 0; transition: background .3s ease, transform .3s ease;
+  }
+  .showcase-dots button:hover { background: rgba(255,255,255,0.5); }
+  .showcase-dots button.active { background: #1ABADC; transform: scale(1.3); }
+
+  /* ────────── WORK: full-bleed chapters ────────── */
+  .chapters { display: flex; flex-direction: column; }
+  .chapter {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center;
+    overflow: hidden;
+  }
+  .chapter-bg {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    opacity: 0.6;
+  }
+  .chapter-scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(12,19,36,0.94) 0%, rgba(12,19,36,0.65) 55%, rgba(12,19,36,0.3) 100%);
+  }
+  .chapter-inner {
+    position: relative; z-index: 2;
+    max-width: 720px; padding: 80px 6vw;
+    color: #E8EDF5;
+  }
+  .ch-eye {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #1ABADC; margin-bottom: 22px;
+  }
+  .chapter h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    font-weight: 700; letter-spacing: -0.03em; line-height: 1.05;
+    margin-bottom: 36px;
+  }
+  .ch-stat { display: flex; flex-direction: column; margin-bottom: 28px; }
+  .ch-stat-v {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 800; letter-spacing: -0.04em;
+    color: #8de4f0; line-height: 0.95;
+  }
+  .ch-stat-l {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #8A9BB5; margin-top: 12px; max-width: 40ch;
+  }
+  .ch-desc {
+    font-size: 18px; color: #E8EDF5; line-height: 1.6;
+    max-width: 55ch; margin-bottom: 32px;
+  }
+  .ch-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 600; color: #1ABADC;
+    padding: 12px 22px; border-radius: 999px;
+    border: 1px solid rgba(26,186,220,0.5);
+    text-decoration: none;
+    transition: background .3s ease, gap .3s ease, border-color .3s ease;
+  }
+  .ch-cta:hover { background: rgba(26,186,220,0.1); gap: 14px; border-color: #1ABADC; }
+  .chapters-exit {
+    padding: 60px 6vw;
+    display: flex; justify-content: center;
+    background: #0c1324;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .ch-exit {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #8A9BB5; text-decoration: none;
+    transition: color .3s ease, gap .3s ease;
+  }
+  .ch-exit:hover { color: #1ABADC; gap: 14px; }
+  @media (max-width: 640px) {
+    .chapter { min-height: 85vh; }
+    .chapter-scrim { background: linear-gradient(180deg, rgba(12,19,36,0.5) 0%, rgba(12,19,36,0.92) 100%); }
+    .chapter-inner { padding: 60px 24px; }
+  }
   </style>
   <script src="/js/site-cursor.js" defer></script>
 
@@ -834,441 +1050,133 @@
 </nav>
 
 <!-- ════════════════════════════════════════════════════════════
-     01. HERO
+     01. HERO — split-screen editorial
 ════════════════════════════════════════════════════════════ -->
-<section id="hero" class="relative flex items-center justify-center overflow-hidden pt-24 pb-24 md:pt-32 md:pb-32" style="min-height:calc(100vh - 4rem);background:#0c1324;">
-
-  <!-- Grid pattern, softly masked -->
+<section id="hero" class="hero-split">
   <div class="hero-grid" aria-hidden="true"></div>
-
-  <!-- Single ambient spot glow behind H1 -->
   <div class="hero-spot" aria-hidden="true"></div>
 
-  <!-- Data Highway — flow lines + traveling cyan dots + nodes -->
-  <svg class="hero-highway" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <linearGradient id="lineFade" x1="0" x2="1" y1="0" y2="0">
-        <stop offset="0%"  stop-color="#1ABADC" stop-opacity="0"/>
-        <stop offset="20%" stop-color="#1ABADC" stop-opacity="0.42"/>
-        <stop offset="80%" stop-color="#1ABADC" stop-opacity="0.42"/>
-        <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
-      </linearGradient>
-      <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.5"/>
-        <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-
-    <!-- Flow lines (8, different Y positions and depth) -->
-    <g id="hero-lines" stroke="url(#lineFade)" stroke-width="1.5" fill="none">
-      <line x1="0" y1="120" x2="1600" y2="120" opacity="0.55"/>
-      <line x1="0" y1="240" x2="1600" y2="240" opacity="0.75"/>
-      <line x1="0" y1="340" x2="1600" y2="340" opacity="0.4" stroke-dasharray="4 6"/>
-      <line x1="0" y1="450" x2="1600" y2="450" opacity="0.8"/>
-      <line x1="0" y1="560" x2="1600" y2="560" opacity="0.35" stroke-dasharray="4 6"/>
-      <line x1="0" y1="670" x2="1600" y2="670" opacity="0.6"/>
-      <line x1="0" y1="780" x2="1600" y2="780" opacity="0.45"/>
-    </g>
-
-    <!-- Node glows (halo behind node dots) -->
-    <g fill="url(#nodeGlow)">
-      <circle class="hero-node-glow" cx="260"  cy="240" r="30"/>
-      <circle class="hero-node-glow" cx="780"  cy="450" r="34"/>
-      <circle class="hero-node-glow" cx="1180" cy="120" r="28"/>
-      <circle class="hero-node-glow" cx="1360" cy="670" r="30"/>
-      <circle class="hero-node-glow" cx="440"  cy="560" r="26"/>
-    </g>
-
-    <!-- Node dots (visible junctions) -->
-    <g fill="#1ABADC">
-      <circle cx="260"  cy="240" r="4" class="hero-node hero-node-a"/>
-      <circle cx="780"  cy="450" r="5" class="hero-node hero-node-b"/>
-      <circle cx="1180" cy="120" r="4" class="hero-node hero-node-c"/>
-      <circle cx="1360" cy="670" r="4" class="hero-node hero-node-a"/>
-      <circle cx="440"  cy="560" r="4" class="hero-node hero-node-b"/>
-      <circle cx="620"  cy="780" r="3.5" class="hero-node hero-node-c" fill-opacity="0.6"/>
-    </g>
-
-    <!-- Traveling dots (one per line, different durations) -->
-    <g fill="#8de4f0">
-      <circle r="4" cy="120">
-        <animateMotion path="M -20 0 L 1620 0" dur="6.5s" repeatCount="indefinite" rotate="0"/>
-      </circle>
-      <circle r="4" cy="240">
-        <animateMotion path="M -20 0 L 1620 0" dur="4.2s" repeatCount="indefinite" begin="0.4s"/>
-      </circle>
-      <circle r="3" cy="340" fill-opacity="0.7">
-        <animateMotion path="M -20 0 L 1620 0" dur="8s" repeatCount="indefinite" begin="1s"/>
-      </circle>
-      <circle r="4.5" cy="450">
-        <animateMotion path="M -20 0 L 1620 0" dur="3.6s" repeatCount="indefinite" begin="0.2s"/>
-      </circle>
-      <circle r="3" cy="560" fill-opacity="0.7">
-        <animateMotion path="M -20 0 L 1620 0" dur="7.5s" repeatCount="indefinite" begin="1.6s"/>
-      </circle>
-      <circle r="4" cy="670">
-        <animateMotion path="M -20 0 L 1620 0" dur="5s" repeatCount="indefinite" begin="0.9s"/>
-      </circle>
-      <circle r="3.5" cy="780" fill-opacity="0.85">
-        <animateMotion path="M -20 0 L 1620 0" dur="6s" repeatCount="indefinite" begin="0.3s"/>
-      </circle>
-    </g>
-  </svg>
-
-  <!-- Bottom fade so the hero blends into the next section -->
-  <div class="hero-bottom-fade" aria-hidden="true"></div>
-
-  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
-
-    <!-- Numbered eyebrow (staging-style) -->
-    <div class="sec-eyebrow-num justify-center mb-10" style="opacity:0;animation:scrollFadeIn .9s cubic-bezier(.18,1,.32,1) .05s forwards;">
-      <span class="num">01</span>
-      <span class="bar"></span>
-      <span>AI Engineering Studio · Pune · Dallas · Est. 2021</span>
-    </div>
-
-    <!-- Headline (line-by-line rise) -->
-    <h1 class="font-headline font-bold tracking-[-0.035em] mb-8 text-on-surface mx-auto" style="font-size:clamp(2.4rem,6.5vw,5.5rem);line-height:0.98;max-width:18ch;">
-      <span class="h1-line"><span>We build AI systems</span></span>
-      <span class="h1-line"><span>that ship in</span></span>
-      <span class="h1-line"><span class="grad-text-strong">45&nbsp;days.</span></span>
+  <div class="hero-left">
+    <p class="hero-eye">01 &nbsp;&mdash;&nbsp; AI Engineering Studio &nbsp;&middot;&nbsp; Est. 2021</p>
+    <h1 class="hero-h1">
+      <span class="h-line">We build AI systems</span>
+      <span class="h-line">that ship in <span class="grad-text-strong">45&nbsp;days.</span></span>
     </h1>
-
-    <!-- Sub -->
-    <p class="text-base md:text-xl text-on-surface-dim max-w-2xl mx-auto mb-10 leading-relaxed reveal-soft" style="letter-spacing:-0.008em;">
-      An engineering studio for teams that need production AI, on deadline.
-    </p>
-
-    <!-- Single CTA -->
-    <div class="flex justify-center reveal-soft" style="transition-delay:.15s;">
-      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="px-8 py-4 rounded-full bg-primary text-surface-mid font-bold shadow-lg shadow-primary/25 hover:bg-primary-dim hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-200 inline-flex items-center justify-center gap-2 text-sm">
+    <p class="hero-sub">An engineering studio for teams that need production AI, on deadline.</p>
+    <div class="hero-cta-row">
+      <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="hero-cta-p">
         Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
       </a>
+      <a href="/services" class="hero-cta-s">See services</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="showcase" id="showcase">
+      <a class="slide active" data-slide="0" href="/work/vitalwatch-ai">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=85" alt="VitalWatch AI" loading="eager"/>
+        <div class="slide-scrim"></div>
+        <div class="slide-meta">
+          <span class="slide-chip">DIGITAL HEALTH &middot; USA</span>
+          <h3>VitalWatch AI</h3>
+          <div class="slide-stat">
+            <span class="slide-v">48hr</span>
+            <span class="slide-l">Predictive window</span>
+          </div>
+          <span class="slide-cta">Read case study &rarr;</span>
+        </div>
+      </a>
+      <a class="slide" data-slide="1" href="/work/pininfarina">
+        <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=1200&q=85" alt="Battista by Pininfarina" loading="lazy"/>
+        <div class="slide-scrim"></div>
+        <div class="slide-meta">
+          <span class="slide-chip">AUTOMOTIVE AR &middot; GERMANY</span>
+          <h3>Battista by Pininfarina</h3>
+          <div class="slide-stat">
+            <span class="slide-v">#1</span>
+            <span class="slide-l">Luxury AR experience</span>
+          </div>
+          <span class="slide-cta">Read case study &rarr;</span>
+        </div>
+      </a>
+      <a class="slide" data-slide="2" href="/work/semilynx">
+        <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1200&q=85" alt="Semilynx" loading="lazy"/>
+        <div class="slide-scrim"></div>
+        <div class="slide-meta">
+          <span class="slide-chip">INDUSTRIAL AR &middot; FORTUNE 500</span>
+          <h3>Semilynx</h3>
+          <div class="slide-stat">
+            <span class="slide-v">60%</span>
+            <span class="slide-l">Downtime cut</span>
+          </div>
+          <span class="slide-cta">Read case study &rarr;</span>
+        </div>
+      </a>
+      <div class="showcase-dots">
+        <button data-goto="0" class="active" aria-label="VitalWatch"></button>
+        <button data-goto="1" aria-label="Pininfarina"></button>
+        <button data-goto="2" aria-label="Semilynx"></button>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════
-     06. WORK. Featured Case Studies
+     02. WORK CHAPTERS — full-bleed cinema
 ════════════════════════════════════════════════════════════ -->
-<section id="work" class="py-32">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="mb-14 reveal">
-      <span class="text-xs font-mono text-primary uppercase tracking-widest">Production Proof</span>
-      <h2 class="font-headline text-4xl md:text-5xl font-bold mt-3 mb-3 text-on-surface leading-tight">Work that runs in the real world.</h2>
-      <p class="text-on-surface-dim max-w-xl leading-relaxed">Every project is live, monitored, and actively used. not a concept or a demo.</p>
+<section id="work" class="chapters">
+
+  <!-- Chapter 01 -->
+  <div class="chapter" data-ch="1">
+    <img class="chapter-bg" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=2400&q=85" alt="VitalWatch AI"/>
+    <div class="chapter-scrim"></div>
+    <div class="chapter-inner">
+      <p class="ch-eye">CASE 01 &nbsp;&middot;&nbsp; 2026 &nbsp;&middot;&nbsp; DIGITAL HEALTH</p>
+      <h2>VitalWatch AI</h2>
+      <div class="ch-stat">
+        <span class="ch-stat-v">48hr</span>
+        <span class="ch-stat-l">Predictive window before clinical events</span>
+      </div>
+      <p class="ch-desc">Real-time hospital vitals monitoring across 12 wards. Health Gorilla FHIR, smartwatch biometrics, Python AI risk engine.</p>
+      <a href="/work/vitalwatch-ai" class="ch-cta">Read the full story <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
     </div>
+  </div>
 
-    <div class="flex flex-col gap-8">
-
-      <!-- VitalWatch AI -->
-      <a href="/work/vitalwatch-ai" class="work-card slide-left block">
-        <div class="work-cover">
-          <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="w1g" cx="30%" cy="50%" r="70%">
-                <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.2"/>
-                <stop offset="100%" stop-color="#0a1122" stop-opacity="0"/>
-              </radialGradient>
-              <pattern id="w1grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
-              </pattern>
-              <path id="ecgPath" d="M 0 170 L 120 170 L 145 170 L 160 90 L 175 250 L 195 170 L 260 170 L 280 170 L 295 130 L 310 210 L 325 170 L 440 170 L 460 170 L 480 60 L 500 280 L 520 170 L 620 170 L 640 170 L 660 130 L 680 220 L 700 170 L 800 170"/>
-            </defs>
-            <rect width="800" height="340" fill="#0a1122"/>
-            <rect width="800" height="340" fill="url(#w1grid)"/>
-            <rect width="800" height="340" fill="url(#w1g)"/>
-            <!-- Heartbeat glow -->
-            <use href="#ecgPath" fill="none" stroke="#1ABADC" stroke-width="10" stroke-linecap="round" stroke-opacity="0.15" stroke-linejoin="round"/>
-            <!-- Heartbeat main line -->
-            <use href="#ecgPath" fill="none" stroke="#1ABADC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <!-- Traveling pulse dot (bright) -->
-            <circle r="5" fill="#8de4f0">
-              <animateMotion dur="4.5s" repeatCount="indefinite" rotate="auto">
-                <mpath href="#ecgPath"/>
-              </animateMotion>
-            </circle>
-            <!-- Trailing dot (dim) -->
-            <circle r="3.5" fill="#1ABADC" fill-opacity="0.7">
-              <animateMotion dur="4.5s" repeatCount="indefinite" begin="0.4s">
-                <mpath href="#ecgPath"/>
-              </animateMotion>
-            </circle>
-          </svg>
-          <div class="work-cover-overlay"></div>
-          <div class="work-cover-meta">
-            <div class="m-left">
-              <span class="m-chip"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Digital Health · AI · USA</span>
-              <h3>VitalWatch AI</h3>
-              <p class="m-tag">Predictive remote patient monitoring</p>
-            </div>
-            <div class="m-metric">
-              <span class="val">48hr</span>
-              <span class="lbl">Predictive window</span>
-            </div>
-          </div>
-        </div>
-        <div class="work-body">
-          <div>
-            <p class="b-label">The challenge</p>
-            <p class="b-challenge">Hospitals were reacting to patient deterioration hours after it began. RPM One needed a system that could predict, not just monitor.</p>
-          </div>
-          <div>
-            <p class="b-label">What we built</p>
-            <ul>
-              <li>Health Gorilla FHIR integration</li>
-              <li>Smartwatch biometrics pipeline</li>
-              <li>Python AI risk engine</li>
-              <li>ARIA conversational nurse</li>
-              <li>Automated ICU pre-booking</li>
-            </ul>
-          </div>
-          <div>
-            <p class="b-label">The outcome</p>
-            <p class="b-outcome">Clinical events predicted 24–48 hours ahead. HIPAA-compliant, scaling to 10,000+ patients in under six months.</p>
-          </div>
-        </div>
-        <div class="work-link">
-          <span>Read the full story</span>
-          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-        </div>
-      </a>
-
-      <!-- Battista by Pininfarina -->
-      <a href="/work/pininfarina" class="work-card slide-right block">
-        <div class="work-cover">
-          <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="w2g" cx="70%" cy="50%" r="70%">
-                <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.18"/>
-                <stop offset="100%" stop-color="#0a1122" stop-opacity="0"/>
-              </radialGradient>
-              <pattern id="w2grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
-              </pattern>
-              <linearGradient id="w2speed" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0%"  stop-color="#1ABADC" stop-opacity="0"/>
-                <stop offset="60%" stop-color="#1ABADC" stop-opacity="0.65"/>
-                <stop offset="100%" stop-color="#8de4f0" stop-opacity="0.9"/>
-              </linearGradient>
-            </defs>
-            <rect width="800" height="340" fill="#0a1122"/>
-            <rect width="800" height="340" fill="url(#w2grid)"/>
-            <rect width="800" height="340" fill="url(#w2g)"/>
-
-            <!-- Static base speed lines (visual tracks) -->
-            <g stroke="#1ABADC" stroke-opacity="0.15" stroke-width="1" fill="none">
-              <line x1="60" y1="140" x2="320" y2="140"/>
-              <line x1="60" y1="170" x2="340" y2="170"/>
-              <line x1="60" y1="200" x2="300" y2="200"/>
-            </g>
-            <!-- Traveling speed streaks (short gradient bars sweeping right) -->
-            <g>
-              <rect x="-60" y="139" width="60" height="2" fill="url(#w2speed)" rx="1">
-                <animate attributeName="x" from="-60" to="340" dur="1.6s" repeatCount="indefinite"/>
-              </rect>
-              <rect x="-60" y="169" width="80" height="2" fill="url(#w2speed)" rx="1">
-                <animate attributeName="x" from="-60" to="360" dur="1.2s" repeatCount="indefinite" begin="0.3s"/>
-              </rect>
-              <rect x="-60" y="199" width="50" height="2" fill="url(#w2speed)" rx="1">
-                <animate attributeName="x" from="-60" to="320" dur="2s" repeatCount="indefinite" begin="0.7s"/>
-              </rect>
-            </g>
-            <!-- Traveling head dots on speed lines -->
-            <g fill="#8de4f0">
-              <circle r="3.5" cy="140">
-                <animate attributeName="cx" from="60" to="320" dur="1.6s" repeatCount="indefinite"/>
-              </circle>
-              <circle r="3" cy="170">
-                <animate attributeName="cx" from="60" to="340" dur="1.2s" repeatCount="indefinite" begin="0.3s"/>
-              </circle>
-              <circle r="3" cy="200">
-                <animate attributeName="cx" from="60" to="300" dur="2s" repeatCount="indefinite" begin="0.7s"/>
-              </circle>
-            </g>
-
-            <!-- Sleek stylized car profile (static, foreground) -->
-            <path d="M 340 220 L 380 180 Q 420 155 500 155 Q 570 155 620 180 L 660 210 L 700 220 L 700 240 L 340 240 Z"
-                  fill="#0a1122" stroke="#1ABADC" stroke-width="2.5" stroke-linejoin="round"/>
-            <circle cx="420" cy="240" r="24" fill="#0a1122" stroke="#1ABADC" stroke-width="2.5"/>
-            <circle cx="420" cy="240" r="10" fill="#1ABADC"/>
-            <circle cx="620" cy="240" r="24" fill="#0a1122" stroke="#1ABADC" stroke-width="2.5"/>
-            <circle cx="620" cy="240" r="10" fill="#1ABADC"/>
-
-            <!-- Rotating wheel spokes -->
-            <g stroke="#8de4f0" stroke-width="1.5" stroke-linecap="round" opacity="0.7">
-              <g transform-origin="420 240">
-                <line x1="420" y1="222" x2="420" y2="258"/>
-                <line x1="402" y1="240" x2="438" y2="240"/>
-                <animateTransform attributeName="transform" type="rotate"
-                  from="0 420 240" to="360 420 240" dur="1s" repeatCount="indefinite"/>
-              </g>
-              <g transform-origin="620 240">
-                <line x1="620" y1="222" x2="620" y2="258"/>
-                <line x1="602" y1="240" x2="638" y2="240"/>
-                <animateTransform attributeName="transform" type="rotate"
-                  from="0 620 240" to="360 620 240" dur="1s" repeatCount="indefinite"/>
-              </g>
-            </g>
-          </svg>
-          <div class="work-cover-overlay"></div>
-          <div class="work-cover-meta">
-            <div class="m-left">
-              <span class="m-chip"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Automotive AR · Germany</span>
-              <h3>Battista by Pininfarina</h3>
-              <p class="m-tag">AR companion for the world's most powerful electric car</p>
-            </div>
-            <div class="m-metric">
-              <span class="val">#1</span>
-              <span class="lbl">Luxury AR experience</span>
-            </div>
-          </div>
-        </div>
-        <div class="work-body">
-          <div>
-            <p class="b-label">The challenge</p>
-            <p class="b-challenge">A 1,900hp hypercar deserved more than a spec sheet. Pininfarina needed a digital experience worthy of the car itself.</p>
-          </div>
-          <div>
-            <p class="b-label">What we built</p>
-            <ul>
-              <li>Native iOS ARKit application</li>
-              <li>Photorealistic 3D asset pipeline</li>
-              <li>Interactive spec configurator</li>
-              <li>Auto-show demo mode</li>
-              <li>Multilingual localization</li>
-            </ul>
-          </div>
-          <div>
-            <p class="b-label">The outcome</p>
-            <p class="b-outcome">Featured at every major auto show. The reference AR experience in the luxury automotive category.</p>
-          </div>
-        </div>
-        <div class="work-link">
-          <span>Read the full story</span>
-          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-        </div>
-      </a>
-
-      <!-- Semilynx -->
-      <a href="/work/semilynx" class="work-card slide-left block">
-        <div class="work-cover">
-          <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="w3g" cx="50%" cy="50%" r="60%">
-                <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.18"/>
-                <stop offset="100%" stop-color="#0a1122" stop-opacity="0"/>
-              </radialGradient>
-              <pattern id="w3grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1ABADC" stroke-opacity="0.05" stroke-width="1"/>
-              </pattern>
-            </defs>
-            <rect width="800" height="340" fill="#0a1122"/>
-            <rect width="800" height="340" fill="url(#w3grid)"/>
-            <rect width="800" height="340" fill="url(#w3g)"/>
-
-            <!-- AR viewport corner brackets (outer frame) -->
-            <g stroke="#8de4f0" stroke-width="2.5" fill="none" stroke-linecap="round">
-              <path d="M 60 60 L 40 60 L 40 80"/>
-              <path d="M 740 60 L 760 60 L 760 80"/>
-              <path d="M 60 280 L 40 280 L 40 260"/>
-              <path d="M 740 280 L 760 280 L 760 260"/>
-            </g>
-
-            <!-- HUD divisions (technical faint grid) -->
-            <g stroke="#1ABADC" stroke-opacity="0.1" stroke-width="1">
-              <line x1="200" y1="60" x2="200" y2="280"/>
-              <line x1="400" y1="60" x2="400" y2="280"/>
-              <line x1="600" y1="60" x2="600" y2="280"/>
-              <line x1="40" y1="120" x2="760" y2="120"/>
-              <line x1="40" y1="180" x2="760" y2="180"/>
-              <line x1="40" y1="240" x2="760" y2="240"/>
-            </g>
-
-            <!-- Objects being tracked (with ID labels) -->
-            <g font-family="'Roboto Mono', monospace" font-size="10" letter-spacing="1" fill="#8A9BB5">
-              <g><circle cx="180" cy="130" r="4" fill="#1ABADC"/><text x="196" y="126">PT-42</text></g>
-              <g><circle cx="340" cy="180" r="4" fill="#1ABADC"/><text x="356" y="176">EQ-15</text></g>
-              <g><circle cx="660" cy="140" r="4" fill="#1ABADC"/><text x="602" y="126" text-anchor="end">VF-03</text></g>
-              <g><circle cx="520" cy="230" r="4" fill="#1ABADC"/><text x="536" y="226">SN-08</text></g>
-              <g><circle cx="140" cy="240" r="4" fill="#1ABADC"/><text x="156" y="236">MT-19</text></g>
-            </g>
-
-            <!-- Scanning reticle — moves between objects -->
-            <g>
-              <animateTransform attributeName="transform" type="translate"
-                values="180,130; 180,130; 340,180; 340,180; 660,140; 660,140; 520,230; 520,230; 140,240; 140,240; 180,130"
-                keyTimes="0; 0.09; 0.11; 0.29; 0.31; 0.49; 0.51; 0.69; 0.71; 0.89; 1"
-                dur="12s" repeatCount="indefinite"/>
-              <circle r="26" fill="none" stroke="#8de4f0" stroke-width="1.5" stroke-opacity="0.4"/>
-              <circle r="20" fill="none" stroke="#8de4f0" stroke-width="2"/>
-              <circle r="3" fill="#8de4f0"/>
-              <line x1="-30" y1="0" x2="-14" y2="0" stroke="#8de4f0" stroke-width="1.5"/>
-              <line x1="14"  y1="0" x2="30"  y2="0" stroke="#8de4f0" stroke-width="1.5"/>
-              <line x1="0" y1="-30" x2="0" y2="-14" stroke="#8de4f0" stroke-width="1.5"/>
-              <line x1="0" y1="14"  x2="0" y2="30"  stroke="#8de4f0" stroke-width="1.5"/>
-              <!-- Outer scan ring pulse -->
-              <circle r="20" fill="none" stroke="#1ABADC" stroke-width="1">
-                <animate attributeName="r" values="20;40;20" dur="1.8s" repeatCount="indefinite"/>
-                <animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="1.8s" repeatCount="indefinite"/>
-              </circle>
-            </g>
-
-            <!-- Status readout -->
-            <g font-family="'Roboto Mono', monospace" font-size="9" letter-spacing="2" fill="#5A7494">
-              <circle cx="52" cy="304" r="3" fill="#1ABADC">
-                <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
-              </circle>
-              <text x="62" y="308">SCANNING · 5 OBJECTS TRACKED</text>
-            </g>
-          </svg>
-          <div class="work-cover-overlay"></div>
-          <div class="work-cover-meta">
-            <div class="m-left">
-              <span class="m-chip"><span style="width:6px;height:6px;background:#1ABADC;border-radius:50%;display:inline-block"></span>Industrial AR · Fortune 500</span>
-              <h3>Semilynx</h3>
-              <p class="m-tag">AR-powered remote assistance for the factory floor</p>
-            </div>
-            <div class="m-metric">
-              <span class="val">60%</span>
-              <span class="lbl">Downtime reduction</span>
-            </div>
-          </div>
-        </div>
-        <div class="work-body">
-          <div>
-            <p class="b-label">The challenge</p>
-            <p class="b-challenge">Fortune 500 factories were bleeding money on downtime, flying senior engineers across countries for issues that took hours to diagnose.</p>
-          </div>
-          <div>
-            <p class="b-label">What we built</p>
-            <ul>
-              <li>Google Glass field client</li>
-              <li>Real-time video collaboration</li>
-              <li>AR annotation overlays</li>
-              <li>Ticket system integration</li>
-              <li>Session recording &amp; audit trail</li>
-            </ul>
-          </div>
-          <div>
-            <p class="b-label">The outcome</p>
-            <p class="b-outcome">Cross-country engineer travel eliminated. Factory downtime cut by 60% within the first year of rollout.</p>
-          </div>
-        </div>
-        <div class="work-link">
-          <span>Read the full story</span>
-          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-        </div>
-      </a>
-
+  <!-- Chapter 02 -->
+  <div class="chapter" data-ch="2">
+    <img class="chapter-bg" src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=2400&q=85" alt="Battista by Pininfarina"/>
+    <div class="chapter-scrim"></div>
+    <div class="chapter-inner">
+      <p class="ch-eye">CASE 02 &nbsp;&middot;&nbsp; 2025 &nbsp;&middot;&nbsp; AUTOMOTIVE AR</p>
+      <h2>Battista by Pininfarina</h2>
+      <div class="ch-stat">
+        <span class="ch-stat-v">#1</span>
+        <span class="ch-stat-l">AR experience in the luxury EV category</span>
+      </div>
+      <p class="ch-desc">The digital companion for the world's most powerful road-legal electric vehicle. Featured at every major auto show.</p>
+      <a href="/work/pininfarina" class="ch-cta">Read the full story <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
     </div>
+  </div>
 
-    <!-- See all -->
-    <div class="mt-12 text-center reveal">
-      <a href="/work" class="text-sm font-semibold text-on-surface-dim hover:text-primary transition-colors duration-200 inline-flex items-center gap-2">
-        See all case studies <span class="material-symbols-outlined text-sm">arrow_forward</span>
-      </a>
+  <!-- Chapter 03 -->
+  <div class="chapter" data-ch="3">
+    <img class="chapter-bg" src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=2400&q=85" alt="Semilynx"/>
+    <div class="chapter-scrim"></div>
+    <div class="chapter-inner">
+      <p class="ch-eye">CASE 03 &nbsp;&middot;&nbsp; 2024 &nbsp;&middot;&nbsp; INDUSTRIAL AR</p>
+      <h2>Semilynx</h2>
+      <div class="ch-stat">
+        <span class="ch-stat-v">60%</span>
+        <span class="ch-stat-l">Factory downtime eliminated</span>
+      </div>
+      <p class="ch-desc">Fortune 500 factories, Google Glass in the hands of field engineers, cross-country service travel gone.</p>
+      <a href="/work/semilynx" class="ch-cta">Read the full story <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
     </div>
+  </div>
+
+  <!-- All-work exit -->
+  <div class="chapters-exit">
+    <a href="/work" class="ch-exit">See all case studies <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
   </div>
 </section>
 
@@ -1620,5 +1528,28 @@
 </script>
 
 
+<script>
+// Hero showcase auto-cycle
+(function(){
+  const slides = document.querySelectorAll('#showcase .slide');
+  const dots = document.querySelectorAll('#showcase .showcase-dots button');
+  if (!slides.length) return;
+  let idx = 0, timer = null, paused = false;
+  const CYCLE = 4500;
+  function goTo(i) {
+    idx = i;
+    slides.forEach((s, n) => s.classList.toggle('active', n === i));
+    dots.forEach((d, n) => d.classList.toggle('active', n === i));
+  }
+  function next() { goTo((idx + 1) % slides.length); }
+  function play() { if (paused) return; stop(); timer = setInterval(next, CYCLE); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); stop(); paused = true; }));
+  const showcase = document.getElementById('showcase');
+  showcase.addEventListener('mouseenter', () => { paused = true; stop(); });
+  showcase.addEventListener('mouseleave', () => { paused = false; play(); });
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) play();
+})();
+</script>
 </body>
 </html>
