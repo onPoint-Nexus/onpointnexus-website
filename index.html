@@ -1005,6 +1005,144 @@
     .chapter-scrim { background: linear-gradient(180deg, rgba(12,19,36,0.5) 0%, rgba(12,19,36,0.92) 100%); }
     .chapter-inner { padding: 60px 24px; }
   }
+  /* ────────── HOME: client stories (pull quotes) ────────── */
+  .home-quotes { display: flex; flex-direction: column; }
+  .hq {
+    position: relative;
+    padding: 40px 0 40px 64px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin: 0;
+  }
+  .hq:last-child { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .hq .hq-mark {
+    position: absolute; left: 0; top: 24px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 80px; line-height: 1;
+    color: rgba(26,186,220,0.35); user-select: none;
+  }
+  .hq blockquote { margin: 0; }
+  .hq blockquote p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.05rem, 1.75vw, 1.35rem);
+    line-height: 1.5; letter-spacing: -0.01em;
+    color: #E8EDF5; font-style: italic; font-weight: 400;
+    max-width: 62ch;
+  }
+  .hq figcaption {
+    margin-top: 20px;
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .hq .hq-name { color: #E8EDF5; font-weight: 600; }
+  .hq .hq-role { color: #8A9BB5; }
+  .hq .hq-tag  { color: #1ABADC; margin-left: auto; }
+  @media (max-width: 640px) {
+    .hq { padding: 28px 0 28px 44px; }
+    .hq .hq-mark { font-size: 56px; top: 18px; }
+    .hq .hq-tag { margin-left: 0; }
+  }
+
+  /* ────────── HOME: ScaleOS orbital ────────── */
+  .orbit-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+  }
+  @media (max-width: 900px) {
+    .orbit-wrap { grid-template-columns: 1fr; gap: 30px; }
+  }
+  .orbit-copy sup { position: relative; top: -0.4em; }
+  .orbit-safe {
+    padding: 20px 22px;
+    background: rgba(26,186,220,0.06);
+    border: 1px solid rgba(26,186,220,0.22);
+    border-radius: 12px;
+    margin-bottom: 32px;
+    max-width: 460px;
+  }
+  .orbit-safe-tag {
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #1ABADC; margin-bottom: 8px;
+  }
+  .orbit-safe p {
+    font-size: 13px; color: #8A9BB5; line-height: 1.55; margin: 0;
+  }
+  .orbit-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 24px;
+    background: #1ABADC; color: #0c1324;
+    border-radius: 999px;
+    font-weight: 700; font-size: 14px; text-decoration: none;
+    transition: background .3s ease, gap .3s ease;
+  }
+  .orbit-cta:hover { background: #0E8FA8; gap: 12px; }
+
+  .orbit-stage {
+    position: relative;
+    max-width: 500px; width: 100%;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+  }
+  .orbit-stage svg { width: 100%; height: 100%; display: block; }
+  .orbit-ring-1 { transform-origin: 250px 250px; animation: orbitSpin 30s linear infinite; }
+  @keyframes orbitSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .orbit-dot-wrap { transform-origin: 250px 250px; animation: orbitSpin 18s linear infinite; }
+  .orbit-phase { animation: phasePulse 3s ease-in-out infinite; transform-origin: center; }
+  .orbit-phase[data-phase="0"] { animation-delay: 0s; }
+  .orbit-phase[data-phase="1"] { animation-delay: 0.5s; }
+  .orbit-phase[data-phase="2"] { animation-delay: 1s; }
+  .orbit-phase[data-phase="3"] { animation-delay: 1.5s; }
+  .orbit-phase[data-phase="4"] { animation-delay: 2s; }
+  .orbit-phase[data-phase="5"] { animation-delay: 2.5s; }
+  @keyframes phasePulse {
+    0%, 100% { opacity: 0.6; }
+    50%      { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .orbit-ring-1, .orbit-dot-wrap, .orbit-phase { animation: none; }
+  }
+
+  /* ────────── HOME: product tiles ────────── */
+  .prod-tile {
+    display: flex; align-items: center; gap: 20px;
+    padding: 24px 26px;
+    background: #0f1729;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 18px;
+    text-decoration: none; color: inherit;
+    transition: background .3s ease, border-color .3s ease, transform .3s ease;
+    position: relative;
+  }
+  .prod-tile:hover { background: rgba(26,186,220,0.04); border-color: rgba(26,186,220,0.28); transform: translateY(-3px); }
+  .prod-emoji {
+    width: 68px; height: 68px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; flex-shrink: 0;
+  }
+  .prod-dp .prod-emoji { background: linear-gradient(135deg, #7c2d12 0%, #dc2626 60%, #ea580c 100%); }
+  .prod-pw .prod-emoji { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 60%, #3b82f6 100%); }
+  .prod-meta { flex: 1; min-width: 0; }
+  .prod-chip {
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #8A9BB5; margin-bottom: 6px;
+  }
+  .prod-meta h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 20px; font-weight: 600; letter-spacing: -0.015em;
+    color: #E8EDF5; margin-bottom: 4px;
+  }
+  .prod-meta p { font-size: 14px; color: #8A9BB5; line-height: 1.4; }
+  .prod-arrow {
+    color: #5A7494; font-size: 20px;
+    transition: color .3s ease, transform .3s ease;
+  }
+  .prod-tile:hover .prod-arrow { color: #1ABADC; transform: translateX(4px); }
   </style>
   <script src="/js/site-cursor.js" defer></script>
 
@@ -1121,64 +1259,6 @@
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════════
-     02. WORK CHAPTERS — full-bleed cinema
-════════════════════════════════════════════════════════════ -->
-<section id="work" class="chapters">
-
-  <!-- Chapter 01 -->
-  <div class="chapter" data-ch="1">
-    <img class="chapter-bg" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=2400&q=85" alt="VitalWatch AI"/>
-    <div class="chapter-scrim"></div>
-    <div class="chapter-inner">
-      <p class="ch-eye">CASE 01 &nbsp;&middot;&nbsp; 2026 &nbsp;&middot;&nbsp; DIGITAL HEALTH</p>
-      <h2>VitalWatch AI</h2>
-      <div class="ch-stat">
-        <span class="ch-stat-v">48hr</span>
-        <span class="ch-stat-l">Predictive window before clinical events</span>
-      </div>
-      <p class="ch-desc">Real-time hospital vitals monitoring across 12 wards. Health Gorilla FHIR, smartwatch biometrics, Python AI risk engine.</p>
-      <a href="/work/vitalwatch-ai" class="ch-cta">Read the full story <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
-    </div>
-  </div>
-
-  <!-- Chapter 02 -->
-  <div class="chapter" data-ch="2">
-    <img class="chapter-bg" src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=2400&q=85" alt="Battista by Pininfarina"/>
-    <div class="chapter-scrim"></div>
-    <div class="chapter-inner">
-      <p class="ch-eye">CASE 02 &nbsp;&middot;&nbsp; 2025 &nbsp;&middot;&nbsp; AUTOMOTIVE AR</p>
-      <h2>Battista by Pininfarina</h2>
-      <div class="ch-stat">
-        <span class="ch-stat-v">#1</span>
-        <span class="ch-stat-l">AR experience in the luxury EV category</span>
-      </div>
-      <p class="ch-desc">The digital companion for the world's most powerful road-legal electric vehicle. Featured at every major auto show.</p>
-      <a href="/work/pininfarina" class="ch-cta">Read the full story <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
-    </div>
-  </div>
-
-  <!-- Chapter 03 -->
-  <div class="chapter" data-ch="3">
-    <img class="chapter-bg" src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=2400&q=85" alt="Semilynx"/>
-    <div class="chapter-scrim"></div>
-    <div class="chapter-inner">
-      <p class="ch-eye">CASE 03 &nbsp;&middot;&nbsp; 2024 &nbsp;&middot;&nbsp; INDUSTRIAL AR</p>
-      <h2>Semilynx</h2>
-      <div class="ch-stat">
-        <span class="ch-stat-v">60%</span>
-        <span class="ch-stat-l">Factory downtime eliminated</span>
-      </div>
-      <p class="ch-desc">Fortune 500 factories, Google Glass in the hands of field engineers, cross-country service travel gone.</p>
-      <a href="/work/semilynx" class="ch-cta">Read the full story <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
-    </div>
-  </div>
-
-  <!-- All-work exit -->
-  <div class="chapters-exit">
-    <a href="/work" class="ch-exit">See all case studies <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
-  </div>
-</section>
 
 <!-- ── CLIENT LOGO MARQUEE (compact proof between Work and Contact) ── -->
 <div class="py-16 bg-surface-low border-t border-b border-white/[0.05]">
@@ -1210,6 +1290,202 @@
     <p class="mt-10 text-xs text-on-surface-muted font-mono text-center">Video testimonials coming soon.</p>
   </div>
 </div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     04. CLIENT STORIES — 3 testimonials
+════════════════════════════════════════════════════════════ -->
+<section class="py-28 border-t border-white/[0.05]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="mb-16 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Client stories</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">In their own words.</h2>
+    </div>
+
+    <div class="home-quotes">
+      <figure class="hq reveal">
+        <span class="hq-mark">&ldquo;</span>
+        <blockquote>
+          <p>OnPoint built our remote monitoring platform from zero to 10,000 active patients in under six months. The engineering quality and HIPAA compliance were non-negotiable, and they delivered both without us having to ask twice.</p>
+        </blockquote>
+        <figcaption>
+          <span class="hq-name">Jonathan M.</span>
+          <span class="hq-role">CEO &middot; RPM One &middot; USA</span>
+          <span class="hq-tag">HealthTech</span>
+        </figcaption>
+      </figure>
+
+      <figure class="hq reveal">
+        <span class="hq-mark">&ldquo;</span>
+        <blockquote>
+          <p>The Battista AR experience became our most-discussed digital touchpoint at every auto show. OnPoint delivered something we genuinely didn't think was possible in the timeline they committed to.</p>
+        </blockquote>
+        <figcaption>
+          <span class="hq-name">Andrea C.</span>
+          <span class="hq-role">Head of Digital &middot; Pininfarina &middot; Germany</span>
+          <span class="hq-tag">Automotive &middot; AR</span>
+        </figcaption>
+      </figure>
+
+      <figure class="hq reveal">
+        <span class="hq-mark">&ldquo;</span>
+        <blockquote>
+          <p>Within six months of launch, 52 schools had onboarded their respiratory therapy programs. The platform OnPoint built is now central to how we deliver clinical education across the US.</p>
+        </blockquote>
+        <figcaption>
+          <span class="hq-name">Sarah K.</span>
+          <span class="hq-role">Co-Founder &middot; Clinical Trac &middot; USA</span>
+          <span class="hq-tag">EdTech &middot; HealthTech</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     05. SCALEOS — orbital flagship teaser
+════════════════════════════════════════════════════════════ -->
+<section class="py-28 border-t border-white/[0.05] bg-surface-low">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="orbit-wrap reveal">
+      <div class="orbit-copy">
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Flagship service</p>
+        <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface leading-tight tracking-[-0.02em] mb-6">
+          ScaleOS<sup class="text-[12px] text-on-surface-muted align-super">&trade;</sup>
+        </h2>
+        <p class="text-lg text-on-surface leading-relaxed mb-3 max-w-md">
+          Six phases. Ninety days. One outcome.
+        </p>
+        <p class="text-base text-on-surface-dim leading-relaxed mb-8 max-w-md">
+          A 90-day AI transformation for teams ready to move from fragmented tools to a unified, AI-native operating system.
+        </p>
+        <div class="orbit-safe">
+          <span class="orbit-safe-tag">ScaleSafe&trade; Guarantee</span>
+          <p>If milestones are met, we optimise at no extra fee until every automation performs as specified.</p>
+        </div>
+        <a href="/scaleos" class="orbit-cta">
+          Explore the method <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="orbit-stage" aria-hidden="true">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="orbHub" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"  stop-color="#1ABADC" stop-opacity="0.75"/>
+              <stop offset="60%" stop-color="#1ABADC" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="orbPhaseGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Outer rotating ring -->
+          <g class="orbit-ring-1">
+            <circle cx="250" cy="250" r="200" fill="none" stroke="#1ABADC" stroke-opacity="0.18" stroke-dasharray="3 8"/>
+          </g>
+          <!-- Middle ring -->
+          <circle cx="250" cy="250" r="160" fill="none" stroke="#1ABADC" stroke-opacity="0.14"/>
+          <!-- Inner ring -->
+          <circle cx="250" cy="250" r="120" fill="none" stroke="#1ABADC" stroke-opacity="0.28" stroke-dasharray="2 6"/>
+
+          <!-- Central hub -->
+          <circle cx="250" cy="250" r="70" fill="url(#orbHub)"/>
+          <circle cx="250" cy="250" r="46" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+          <text x="250" y="245" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="18" font-weight="700" fill="#E8EDF5" letter-spacing="-0.5">ScaleOS</text>
+          <text x="250" y="264" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9" fill="#1ABADC" letter-spacing="2">90 DAYS</text>
+
+          <!-- 6 phase nodes on outer ring (angles: 270, 330, 30, 90, 150, 210 = every 60deg starting top) -->
+          <g class="orbit-phase" data-phase="0">
+            <circle cx="250" cy="50" r="24" fill="url(#orbPhaseGlow)"/>
+            <circle cx="250" cy="50" r="16" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="250" y="49" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1.5">01</text>
+            <text x="250" y="60" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="#E8EDF5">Scan</text>
+          </g>
+          <g class="orbit-phase" data-phase="1">
+            <circle cx="423" cy="150" r="24" fill="url(#orbPhaseGlow)"/>
+            <circle cx="423" cy="150" r="16" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="423" y="149" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1.5">02</text>
+            <text x="423" y="160" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="#E8EDF5">Sync</text>
+          </g>
+          <g class="orbit-phase" data-phase="2">
+            <circle cx="423" cy="350" r="24" fill="url(#orbPhaseGlow)"/>
+            <circle cx="423" cy="350" r="16" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="423" y="349" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1.5">03</text>
+            <text x="423" y="360" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="#E8EDF5">Flow</text>
+          </g>
+          <g class="orbit-phase" data-phase="3">
+            <circle cx="250" cy="450" r="24" fill="url(#orbPhaseGlow)"/>
+            <circle cx="250" cy="450" r="16" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="250" y="449" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1.5">04</text>
+            <text x="250" y="460" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="#E8EDF5">Vision</text>
+          </g>
+          <g class="orbit-phase" data-phase="4">
+            <circle cx="77" cy="350" r="24" fill="url(#orbPhaseGlow)"/>
+            <circle cx="77" cy="350" r="16" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="77" y="349" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1.5">05</text>
+            <text x="77" y="360" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="#E8EDF5">AI</text>
+          </g>
+          <g class="orbit-phase" data-phase="5">
+            <circle cx="77" cy="150" r="24" fill="url(#orbPhaseGlow)"/>
+            <circle cx="77" cy="150" r="16" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="77" y="149" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1.5">06</text>
+            <text x="77" y="160" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="#E8EDF5">Max</text>
+          </g>
+
+          <!-- Orbiting traveling dot -->
+          <g class="orbit-dot-wrap">
+            <circle cx="250" cy="50" r="5" fill="#8de4f0" filter="url(#orbShadow)"/>
+          </g>
+
+          <!-- Connection lines from hub to each phase (subtle) -->
+          <g stroke="#1ABADC" stroke-opacity="0.15" stroke-width="1">
+            <line x1="250" y1="250" x2="250" y2="50"/>
+            <line x1="250" y1="250" x2="423" y2="150"/>
+            <line x1="250" y1="250" x2="423" y2="350"/>
+            <line x1="250" y1="250" x2="250" y2="450"/>
+            <line x1="250" y1="250" x2="77" y2="350"/>
+            <line x1="250" y1="250" x2="77" y2="150"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     06. PRODUCTS — compact teaser
+════════════════════════════════════════════════════════════ -->
+<section class="py-24 border-t border-white/[0.05]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-10 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Products we own</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">Two live products. One accountable team.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 reveal">
+      <a href="/products/dinepoint" class="prod-tile prod-dp">
+        <div class="prod-emoji">🍽️</div>
+        <div class="prod-meta">
+          <span class="prod-chip">HospitalityTech &middot; India</span>
+          <h3>DinePoint</h3>
+          <p>India&rsquo;s AI menu platform for restaurants.</p>
+        </div>
+        <span class="prod-arrow material-symbols-outlined">arrow_forward</span>
+      </a>
+      <a href="/products/pulsework-os" class="prod-tile prod-pw">
+        <div class="prod-emoji">⚡</div>
+        <div class="prod-meta">
+          <span class="prod-chip">Work OS &middot; Global</span>
+          <h3>PulseWork OS</h3>
+          <p>The AI Work OS for mid-size teams.</p>
+        </div>
+        <span class="prod-arrow material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- ════════════════════════════════════════════════════════════
      10a. PRICING
