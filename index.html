@@ -1005,43 +1005,63 @@
     .chapter-scrim { background: linear-gradient(180deg, rgba(12,19,36,0.5) 0%, rgba(12,19,36,0.92) 100%); }
     .chapter-inner { padding: 60px 24px; }
   }
-  /* ────────── HOME: client stories (pull quotes) ────────── */
-  .home-quotes { display: flex; flex-direction: column; }
-  .hq {
+  /* ────────── HOME: proof cards (metric-anchored testimonials) ────────── */
+  .proof-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) { .proof-cards { grid-template-columns: 1fr; } }
+  .pc {
     position: relative;
-    padding: 40px 0 40px 64px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    margin: 0;
+    display: flex; flex-direction: column;
+    padding: 32px 28px 24px;
+    background: #0f1729;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    transition: border-color .3s ease, transform .3s ease;
   }
-  .hq:last-child { border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .hq .hq-mark {
-    position: absolute; left: 0; top: 24px;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 80px; line-height: 1;
-    color: rgba(26,186,220,0.35); user-select: none;
-  }
-  .hq blockquote { margin: 0; }
-  .hq blockquote p {
+  .pc:hover { border-color: rgba(26,186,220,0.35); transform: translateY(-2px); }
+  .pc-metric {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(1.05rem, 1.75vw, 1.35rem);
-    line-height: 1.5; letter-spacing: -0.01em;
-    color: #E8EDF5; font-style: italic; font-weight: 400;
-    max-width: 62ch;
+    font-size: clamp(2.4rem, 3.4vw, 3rem);
+    font-weight: 700; line-height: 1;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #8de4f0 0%, #1ABADC 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
   }
-  .hq figcaption {
-    margin-top: 20px;
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px;
+  .pc-metric-label {
     font-family: 'Roboto Mono', monospace;
-    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #8A9BB5;
+    margin-bottom: 22px;
   }
-  .hq .hq-name { color: #E8EDF5; font-weight: 600; }
-  .hq .hq-role { color: #8A9BB5; }
-  .hq .hq-tag  { color: #1ABADC; margin-left: auto; }
-  @media (max-width: 640px) {
-    .hq { padding: 28px 0 28px 44px; }
-    .hq .hq-mark { font-size: 56px; top: 18px; }
-    .hq .hq-tag { margin-left: 0; }
+  .pc-quote {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px; line-height: 1.55; letter-spacing: -0.005em;
+    color: #E8EDF5; margin: 0 0 22px;
+    flex-grow: 1;
   }
+  .pc-attrib {
+    display: flex; flex-direction: column; gap: 2px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .pc-name { color: #E8EDF5; font-weight: 600; }
+  .pc-role { color: #8A9BB5; }
+  .pc-link {
+    margin-top: 16px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #1ABADC;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: gap .3s ease;
+  }
+  .pc-link:hover { gap: 10px; }
 
   /* ────────── HOME: ScaleOS orbital ────────── */
   .orbit-wrap {
@@ -1211,21 +1231,21 @@
 
   <div class="hero-right">
     <div class="showcase" id="showcase">
-      <a class="slide active" data-slide="0" href="/work/vitalwatch-ai">
-        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=85" alt="VitalWatch AI" loading="eager"/>
+      <a class="slide active" data-slide="0" href="/work/quickheal">
+        <img src="/images/hero/qh.png" alt="QuickHeal" loading="eager"/>
         <div class="slide-scrim"></div>
         <div class="slide-meta">
-          <span class="slide-chip">DIGITAL HEALTH &middot; USA</span>
-          <h3>VitalWatch AI</h3>
+          <span class="slide-chip">CYBERSECURITY &middot; INDIA</span>
+          <h3>QuickHeal</h3>
           <div class="slide-stat">
-            <span class="slide-v">48hr</span>
-            <span class="slide-l">Predictive window</span>
+            <span class="slide-v">#1</span>
+            <span class="slide-l">India's antivirus brand, redesigned</span>
           </div>
           <span class="slide-cta">Read case study &rarr;</span>
         </div>
       </a>
       <a class="slide" data-slide="1" href="/work/pininfarina">
-        <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=1200&q=85" alt="Battista by Pininfarina" loading="lazy"/>
+        <img src="/images/hero/pininfarina.png" alt="Battista by Pininfarina" loading="lazy"/>
         <div class="slide-scrim"></div>
         <div class="slide-meta">
           <span class="slide-chip">AUTOMOTIVE AR &middot; GERMANY</span>
@@ -1237,23 +1257,23 @@
           <span class="slide-cta">Read case study &rarr;</span>
         </div>
       </a>
-      <a class="slide" data-slide="2" href="/work/semilynx">
-        <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1200&q=85" alt="Semilynx" loading="lazy"/>
+      <a class="slide" data-slide="2" href="/work/ifound-agent">
+        <img src="/images/hero/ifound.jpg" alt="iFoundAgent" loading="lazy"/>
         <div class="slide-scrim"></div>
         <div class="slide-meta">
-          <span class="slide-chip">INDUSTRIAL AR &middot; FORTUNE 500</span>
-          <h3>Semilynx</h3>
+          <span class="slide-chip">REAL ESTATE AI &middot; USA</span>
+          <h3>iFoundAgent</h3>
           <div class="slide-stat">
-            <span class="slide-v">60%</span>
-            <span class="slide-l">Downtime cut</span>
+            <span class="slide-v">400+</span>
+            <span class="slide-l">Sites unified into one platform</span>
           </div>
           <span class="slide-cta">Read case study &rarr;</span>
         </div>
       </a>
       <div class="showcase-dots">
-        <button data-goto="0" class="active" aria-label="VitalWatch"></button>
+        <button data-goto="0" class="active" aria-label="QuickHeal"></button>
         <button data-goto="1" aria-label="Pininfarina"></button>
-        <button data-goto="2" aria-label="Semilynx"></button>
+        <button data-goto="2" aria-label="iFoundAgent"></button>
       </div>
     </div>
   </div>
@@ -1296,47 +1316,44 @@
      04. CLIENT STORIES — 3 testimonials
 ════════════════════════════════════════════════════════════ -->
 <section class="py-28 border-t border-white/[0.05]">
-  <div class="max-w-4xl mx-auto px-6">
-    <div class="mb-16 reveal">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-14 reveal">
       <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Client stories</p>
-      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">In their own words.</h2>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">Numbers, in their own words.</h2>
     </div>
 
-    <div class="home-quotes">
-      <figure class="hq reveal">
-        <span class="hq-mark">&ldquo;</span>
-        <blockquote>
-          <p>OnPoint built our remote monitoring platform from zero to 10,000 active patients in under six months. The engineering quality and HIPAA compliance were non-negotiable, and they delivered both without us having to ask twice.</p>
-        </blockquote>
-        <figcaption>
-          <span class="hq-name">Jonathan M.</span>
-          <span class="hq-role">CEO &middot; RPM One &middot; USA</span>
-          <span class="hq-tag">HealthTech</span>
+    <div class="proof-cards">
+      <figure class="pc reveal">
+        <div class="pc-metric">52</div>
+        <div class="pc-metric-label">Schools onboarded in 6 months</div>
+        <blockquote class="pc-quote">"The platform OnPoint built is now central to how we deliver clinical education across the US. 52 schools onboarded their respiratory therapy programs in the first six months."</blockquote>
+        <figcaption class="pc-attrib">
+          <span class="pc-name">Sarah K.</span>
+          <span class="pc-role">Co-Founder &middot; Clinical Trac &middot; USA</span>
         </figcaption>
+        <a href="/work/clinical-trac" class="pc-link">Read the case <span aria-hidden="true">&rarr;</span></a>
       </figure>
 
-      <figure class="hq reveal">
-        <span class="hq-mark">&ldquo;</span>
-        <blockquote>
-          <p>The Battista AR experience became our most-discussed digital touchpoint at every auto show. OnPoint delivered something we genuinely didn't think was possible in the timeline they committed to.</p>
-        </blockquote>
-        <figcaption>
-          <span class="hq-name">Andrea C.</span>
-          <span class="hq-role">Head of Digital &middot; Pininfarina &middot; Germany</span>
-          <span class="hq-tag">Automotive &middot; AR</span>
+      <figure class="pc reveal">
+        <div class="pc-metric">1M+</div>
+        <div class="pc-metric-label">Members on one platform</div>
+        <blockquote class="pc-quote">"OnPoint replaced a decade of fragmented legacy systems with a single member platform &mdash; delivered in the 60 days they committed to. Every touchpoint now runs through it."</blockquote>
+        <figcaption class="pc-attrib">
+          <span class="pc-name">Head of Digital Experience</span>
+          <span class="pc-role">Vidanta &middot; Mexico</span>
         </figcaption>
+        <a href="/work/vidanta" class="pc-link">Read the case <span aria-hidden="true">&rarr;</span></a>
       </figure>
 
-      <figure class="hq reveal">
-        <span class="hq-mark">&ldquo;</span>
-        <blockquote>
-          <p>Within six months of launch, 52 schools had onboarded their respiratory therapy programs. The platform OnPoint built is now central to how we deliver clinical education across the US.</p>
-        </blockquote>
-        <figcaption>
-          <span class="hq-name">Sarah K.</span>
-          <span class="hq-role">Co-Founder &middot; Clinical Trac &middot; USA</span>
-          <span class="hq-tag">EdTech &middot; HealthTech</span>
+      <figure class="pc reveal">
+        <div class="pc-metric">60%</div>
+        <div class="pc-metric-label">Downtime cut on the shop floor</div>
+        <blockquote class="pc-quote">"OnPoint layered AR guidance over our existing maintenance workflows. Downtime dropped 60% in the first quarter &mdash; and technicians ramped up in days, not months."</blockquote>
+        <figcaption class="pc-attrib">
+          <span class="pc-name">Plant Operations Lead</span>
+          <span class="pc-role">Semilynx &middot; Fortune 500</span>
         </figcaption>
+        <a href="/work/semilynx" class="pc-link">Read the case <span aria-hidden="true">&rarr;</span></a>
       </figure>
     </div>
   </div>
