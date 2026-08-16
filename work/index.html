@@ -188,6 +188,83 @@
     .ai-card .launch { margin-top: 10px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); display: inline-flex; align-items: center; justify-content: space-between; font-family: 'Roboto Mono', monospace; font-size: .68rem; color: #8A9BB5; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
     .ai-card .launch .arr { transition: transform .25s; color: #1ABADC; }
     .ai-card:hover .launch .arr { transform: translate(3px, -3px); }
+
+    /* ─── Option B preview: wordmark cards (no image) ─── */
+    .work-card--mark { display: flex; flex-direction: column; overflow: hidden; }
+    .work-card--mark .mark {
+      position: relative;
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, #0f1729 0%, #141c2e 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 40px 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+    .work-card--mark .mark::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(26,186,220,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,186,220,0.05) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 30%, transparent 80%);
+    }
+    .work-card--mark .mark::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 40% 50% at 50% 50%, rgba(26,186,220,0.10), transparent 70%);
+    }
+    .work-card--mark .wordmark {
+      position: relative; z-index: 1;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; letter-spacing: -0.04em;
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      line-height: 1;
+      background: linear-gradient(135deg, #E8EDF5 0%, #8de4f0 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+    .work-card--mark .sub {
+      position: relative; z-index: 1;
+      margin-top: 14px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.16em;
+      color: #5C6F8A;
+    }
+    .work-card--mark .body {
+      padding: 22px 26px 24px;
+      display: flex; flex-direction: column; gap: 14px; flex: 1;
+    }
+    .work-card--mark h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em;
+      color: #E8EDF5; margin: 0;
+    }
+    .work-card--mark .foot {
+      margin-top: auto; padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .work-card--mark .metric {
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .work-card--mark .metric .v {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 1.5rem; line-height: 1; letter-spacing: -0.02em;
+      background: linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .work-card--mark .metric .l {
+      font-family: 'Roboto Mono', monospace; font-size: 0.58rem;
+      text-transform: uppercase; letter-spacing: 0.12em; color: #5C6F8A;
+    }
+    .work-card--mark .read {
+      font-family: 'Roboto Mono', monospace; font-size: 0.65rem;
+      text-transform: uppercase; letter-spacing: 0.14em; color: #1ABADC; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .work-card--mark:hover .read { gap: 10px; }
   </style>
   <script src="/js/site-cursor.js" defer></script>
 
@@ -408,23 +485,17 @@
       </div>
     </a>
 
-    <!-- Pininfarina -->
-    <a href="/work/pininfarina" class="work-card reveal" style="transition-delay:.2s;">
-      <div class="cover">
-        <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=1200&q=85" alt="Pininfarina Battista. AR companion experience" loading="lazy" width="800" height="500">
+    <!-- Pininfarina — Option B preview -->
+    <a href="/work/pininfarina" class="work-card work-card--mark reveal" style="transition-delay:.2s;">
+      <div class="mark">
+        <div class="wordmark">Pininfarina</div>
+        <div class="sub">Automotive AR &middot; Germany</div>
       </div>
       <div class="body">
-        <div class="chips">
-          <span class="chip">Automotive AR</span>
-          <span class="chip">iOS · ARKit</span>
-          <span class="chip">Luxury</span>
-        </div>
-        <p class="industry">Automotive · Germany</p>
-        <h3>A digital companion for the world's most powerful electric car.</h3>
-        <p class="summary">1,900 horsepower of Pininfarina Battista, served by an AR companion experience featured at every major auto show.</p>
+        <h3>An AR companion for the world's most powerful electric car.</h3>
         <div class="foot">
           <div class="metric"><span class="v">#1</span><span class="l">AR auto experience</span></div>
-          <span class="read">Read case study <span>→</span></span>
+          <span class="read">Read case <span>&rarr;</span></span>
         </div>
       </div>
     </a>
@@ -471,23 +542,17 @@
       </div>
     </a>
 
-    <!-- QuickHeal -->
-    <a href="/work/quickheal" class="work-card reveal" style="transition-delay:.4s;">
-      <div class="cover">
-        <img src="/images/hero/qh.png" alt="QuickHeal. India's #1 antivirus brand, redesigned" loading="lazy" width="800" height="500">
+    <!-- QuickHeal — Option B preview -->
+    <a href="/work/quickheal" class="work-card work-card--mark reveal" style="transition-delay:.4s;">
+      <div class="mark">
+        <div class="wordmark">QuickHeal</div>
+        <div class="sub">Cybersecurity &middot; India</div>
       </div>
       <div class="body">
-        <div class="chips">
-          <span class="chip">Design System</span>
-          <span class="chip">React</span>
-          <span class="chip">Web Redesign</span>
-        </div>
-        <p class="industry">Cybersecurity &middot; India</p>
         <h3>India's #1 antivirus brand, with a presence that matches.</h3>
-        <p class="summary">A complete design language &mdash; from tokens to a React component library &mdash; and a full web redesign for the country's leading cybersecurity brand.</p>
         <div class="foot">
           <div class="metric"><span class="v">#1</span><span class="l">Antivirus brand in India</span></div>
-          <span class="read">Read case study <span>&rarr;</span></span>
+          <span class="read">Read case <span>&rarr;</span></span>
         </div>
       </div>
     </a>
