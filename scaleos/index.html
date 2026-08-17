@@ -348,6 +348,44 @@
       .trans-divider .d-label { writing-mode:unset; transform:none; }
       .trans-divider .d-arrow { margin-bottom:0; transform:rotate(90deg); }
     }
+
+    /* ────────── Hero stat cards (aligned with /products, /work pattern) ────────── */
+    .glass-card { background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1rem; transition: border-color .25s ease, background .25s ease; }
+    .glass-card:hover { border-color: rgba(26,186,220,0.32); background: rgba(26,186,220,0.04); }
+    .hero-stat-card { padding: 20px 22px; }
+    .hero-stat-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; letter-spacing: -.02em; line-height: 1;
+      font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+      background: linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-stat-lbl { font-family: 'Roboto Mono', monospace; font-size: .62rem; text-transform: uppercase; letter-spacing: .08em; color: #5C6F8A; font-weight: 600; margin-top: 8px; }
+
+    /* ────────── Hero orbital (mirrors homepage) ────────── */
+    .hero-split { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 60px; }
+    @media (max-width: 900px) { .hero-split { grid-template-columns: 1fr; gap: 40px; } }
+    .orbit-stage {
+      position: relative;
+      max-width: 500px; width: 100%;
+      aspect-ratio: 1 / 1;
+      margin: 0 auto;
+    }
+    .orbit-stage svg { width: 100%; height: 100%; display: block; }
+    .orbit-ring-1 { transform-origin: 250px 250px; animation: orbitSpin 30s linear infinite; }
+    @keyframes orbitSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .orbit-dot-wrap { transform-origin: 250px 250px; animation: orbitSpin 18s linear infinite; }
+    .orbit-phase { animation: phasePulse 3s ease-in-out infinite; transform-origin: center; }
+    .orbit-phase[data-phase="0"] { animation-delay: 0s; }
+    .orbit-phase[data-phase="1"] { animation-delay: 0.5s; }
+    .orbit-phase[data-phase="2"] { animation-delay: 1s; }
+    .orbit-phase[data-phase="3"] { animation-delay: 1.5s; }
+    .orbit-phase[data-phase="4"] { animation-delay: 2s; }
+    .orbit-phase[data-phase="5"] { animation-delay: 2.5s; }
+    @keyframes phasePulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .orbit-ring-1, .orbit-dot-wrap, .orbit-phase { animation: none; }
+    }
   </style>
 
 </head>
@@ -373,33 +411,108 @@
 </nav>
 
 <!-- ═══ HERO ═════════════════════════════════════════════════ -->
-<section class="hero pt-32 pb-24">
-  <div class="hero-bg">
-    <div class="hero-blob hero-blob-a"></div>
-    <div class="hero-blob hero-blob-b"></div>
-  </div>
-  <div class="max-w-5xl mx-auto px-6">
-    <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-6" style="opacity:0;animation:heroLine .8s cubic-bezier(.16,1,.3,1) forwards">The ScaleOS<sup class="text-[8px]">™</sup> Method</p>
-    <h1 class="font-headline font-bold tracking-[-0.035em] leading-[0.98] text-on-surface" style="font-size:clamp(2.75rem, 7vw, 5rem)">
-      <span class="h-line">90 Days.</span>
-      <span class="h-line">6 Phases.</span>
-      <span class="h-line grad-text">1 Outcome.</span>
-    </h1>
-    <p class="mt-10 text-lg md:text-xl text-on-surface-dim max-w-2xl leading-relaxed" style="opacity:0;animation:heroLine .9s cubic-bezier(.16,1,.3,1) .75s forwards">
-      A plan you can hold in your head. Each phase has a fixed duration, a defined deliverable, and a measurable outcome. You always know what you're paying for, what week we're in, and what changes next.
-    </p>
-    <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-0 max-w-2xl" style="opacity:0;animation:heroLine .9s cubic-bezier(.16,1,.3,1) .95s forwards">
-      <div class="px-6 sm:px-0 sm:pr-6">
-        <p class="text-[10px] font-mono uppercase tracking-widest text-on-surface-muted mb-2">First working system</p>
-        <p class="text-3xl font-headline font-bold text-primary">45 Days</p>
+<section class="hero relative pt-24 pb-20 overflow-hidden" style="background:#0c1324;">
+  <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(26,186,220,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(26,186,220,0.055) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);-webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 55% 45% at 30% 40%,rgba(26,186,220,0.13) 0%,transparent 70%);"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="hero-split">
+      <!-- LEFT: copy -->
+      <div>
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-6 reveal">The ScaleOS<sup class="text-[8px]">&trade;</sup> Method</p>
+        <h1 class="text-5xl md:text-6xl lg:text-[5.5rem] font-bold tracking-tight leading-[1] reveal" style="transition-delay:.05s;">
+          90 Days.<br>6 Phases.<br><span class="grad-text">1 Outcome.</span>
+        </h1>
+        <p class="mt-7 text-on-surface-dim text-lg md:text-xl leading-relaxed max-w-xl reveal" style="transition-delay:.15s;">
+          A plan you can hold in your head. Each phase has a fixed duration, a defined deliverable, and a measurable outcome.
+        </p>
+        <div class="mt-10 grid grid-cols-3 gap-3 md:gap-4 max-w-xl reveal" style="transition-delay:.25s;">
+          <div class="glass-card hero-stat-card text-left">
+            <div class="hero-stat-val">45<span class="text-on-surface-muted">-day</span></div>
+            <div class="hero-stat-lbl">First working system</div>
+          </div>
+          <div class="glass-card hero-stat-card text-left">
+            <div class="hero-stat-val">90<span class="text-on-surface-muted">-day</span></div>
+            <div class="hero-stat-lbl">Full transformation</div>
+          </div>
+          <div class="glass-card hero-stat-card text-left">
+            <div class="hero-stat-val">Then</div>
+            <div class="hero-stat-lbl">Ongoing optimisation</div>
+          </div>
+        </div>
       </div>
-      <div class="px-6 sm:pl-6 sm:pr-6 border-t sm:border-t-0 sm:border-l border-white/10 pt-6 sm:pt-0">
-        <p class="text-[10px] font-mono uppercase tracking-widest text-on-surface-muted mb-2">Full transformation</p>
-        <p class="text-3xl font-headline font-bold text-primary">90 Days</p>
-      </div>
-      <div class="px-6 sm:pl-6 border-t sm:border-t-0 sm:border-l border-white/10 pt-6 sm:pt-0">
-        <p class="text-[10px] font-mono uppercase tracking-widest text-on-surface-muted mb-2">Then</p>
-        <p class="text-3xl font-headline font-bold text-on-surface">Ongoing</p>
+
+      <!-- RIGHT: orbital -->
+      <div class="orbit-stage reveal" aria-hidden="true" style="transition-delay:.35s;">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="orbHub" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"  stop-color="#1ABADC" stop-opacity="0.75"/>
+              <stop offset="60%" stop-color="#1ABADC" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="orbPhaseGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <g class="orbit-ring-1">
+            <circle cx="250" cy="250" r="200" fill="none" stroke="#1ABADC" stroke-opacity="0.18" stroke-dasharray="3 8"/>
+          </g>
+          <circle cx="250" cy="250" r="160" fill="none" stroke="#1ABADC" stroke-opacity="0.14"/>
+          <circle cx="250" cy="250" r="120" fill="none" stroke="#1ABADC" stroke-opacity="0.28" stroke-dasharray="2 6"/>
+          <circle cx="250" cy="250" r="70" fill="url(#orbHub)"/>
+          <circle cx="250" cy="250" r="46" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+          <text x="250" y="245" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="18" font-weight="700" fill="#E8EDF5" letter-spacing="-0.5">ScaleOS</text>
+          <text x="250" y="264" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="9" fill="#1ABADC" letter-spacing="2">90 DAYS</text>
+          <g class="orbit-phase" data-phase="0">
+            <circle cx="250" cy="50" r="24" fill="url(#orbPhaseGlow)"/>
+            <circle cx="250" cy="50" r="16" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="250" y="49" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1.5">01</text>
+            <text x="250" y="60" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="#E8EDF5">Scan</text>
+          </g>
+          <g class="orbit-phase" data-phase="1">
+            <circle cx="423" cy="150" r="24" fill="url(#orbPhaseGlow)"/>
+            <circle cx="423" cy="150" r="16" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="423" y="149" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1.5">02</text>
+            <text x="423" y="160" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="#E8EDF5">Sync</text>
+          </g>
+          <g class="orbit-phase" data-phase="2">
+            <circle cx="423" cy="350" r="24" fill="url(#orbPhaseGlow)"/>
+            <circle cx="423" cy="350" r="16" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="423" y="349" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1.5">03</text>
+            <text x="423" y="360" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="#E8EDF5">Flow</text>
+          </g>
+          <g class="orbit-phase" data-phase="3">
+            <circle cx="250" cy="450" r="24" fill="url(#orbPhaseGlow)"/>
+            <circle cx="250" cy="450" r="16" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="250" y="449" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1.5">04</text>
+            <text x="250" y="460" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="#E8EDF5">Vision</text>
+          </g>
+          <g class="orbit-phase" data-phase="4">
+            <circle cx="77" cy="350" r="24" fill="url(#orbPhaseGlow)"/>
+            <circle cx="77" cy="350" r="16" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="77" y="349" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1.5">05</text>
+            <text x="77" y="360" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="#E8EDF5">AI</text>
+          </g>
+          <g class="orbit-phase" data-phase="5">
+            <circle cx="77" cy="150" r="24" fill="url(#orbPhaseGlow)"/>
+            <circle cx="77" cy="150" r="16" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="77" y="149" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1.5">06</text>
+            <text x="77" y="160" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="#E8EDF5">Max</text>
+          </g>
+          <g class="orbit-dot-wrap">
+            <circle cx="250" cy="50" r="5" fill="#8de4f0"/>
+          </g>
+          <g stroke="#1ABADC" stroke-opacity="0.15" stroke-width="1">
+            <line x1="250" y1="250" x2="250" y2="50"/>
+            <line x1="250" y1="250" x2="423" y2="150"/>
+            <line x1="250" y1="250" x2="423" y2="350"/>
+            <line x1="250" y1="250" x2="250" y2="450"/>
+            <line x1="250" y1="250" x2="77" y2="350"/>
+            <line x1="250" y1="250" x2="77" y2="150"/>
+          </g>
+        </svg>
       </div>
     </div>
   </div>
