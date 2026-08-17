@@ -279,6 +279,33 @@
   .glass-card { background: rgba(20,28,46,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 1rem; transition: border-color .25s ease, background .25s ease; }
   .glass-card:hover { border-color: rgba(26,186,220,0.32); background: rgba(26,186,220,0.04); }
   .grad-text-3 { background: linear-gradient(135deg,#1ABADC 0%,#8de4f0 55%,#cef4fc 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+  /* ────────── About hero: split + journey arc ────────── */
+  .hero-split { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 60px; }
+  @media (max-width: 900px) { .hero-split { grid-template-columns: 1fr; gap: 40px; } }
+  .arc-stage { position: relative; width: 100%; max-width: 560px; aspect-ratio: 5 / 4; margin: 0 auto; }
+  .arc-stage svg { width: 100%; height: 100%; display: block; overflow: visible; }
+  .arc-year { animation: arcYearPulse 6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+  .arc-year[data-i="0"] { animation-delay: 0.2s; }
+  .arc-year[data-i="1"] { animation-delay: 1.2s; }
+  .arc-year[data-i="2"] { animation-delay: 2.2s; }
+  .arc-year[data-i="3"] { animation-delay: 3.2s; }
+  .arc-year[data-i="4"] { animation-delay: 4.2s; }
+  .arc-year[data-i="5"] { animation-delay: 5.2s; }
+  @keyframes arcYearPulse {
+    0%, 100% { opacity: 0.55; }
+    5%       { opacity: 1; }
+    18%      { opacity: 1; }
+    28%      { opacity: 0.55; }
+  }
+  .arc-now { animation: arcNowGlow 3s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+  @keyframes arcNowGlow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50%      { opacity: 1;   transform: scale(1.15); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .arc-year, .arc-now { animation: none; }
+  }
   .hero-stat-card { padding: 22px 26px; }
   .hero-stat-val { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; letter-spacing: -.02em; line-height: 1; font-size: clamp(1.75rem, 3vw, 2.5rem); background: linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
   .hero-stat-lbl { font-family: 'Roboto Mono', monospace; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: #5C6F8A; font-weight: 600; margin-top: 8px; }
@@ -289,96 +316,107 @@
 <!-- ════════════════════════════════════════════════════════════
      HERO. staging-style with thematic image
 ════════════════════════════════════════════════════════════ -->
-<section class="relative pt-32 pb-20 overflow-hidden" style="background:#0c1324;">
+<section class="relative pt-24 pb-16 overflow-hidden" style="background:#0c1324;">
   <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(26,186,220,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(26,186,220,0.055) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);-webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);"></div>
-  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 50% at 50% 45%,rgba(26,186,220,0.14) 0%,transparent 70%);"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 55% 45% at 30% 40%,rgba(26,186,220,0.13) 0%,transparent 70%);"></div>
 
-  <!-- Journey timeline: one dot travels 2021 → 2026 with year milestones -->
-  <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:0.7;">
-    <defs>
-      <linearGradient id="jFade" x1="0" x2="1" y1="0" y2="0">
-        <stop offset="0%"   stop-color="#1ABADC" stop-opacity="0"/>
-        <stop offset="15%"  stop-color="#1ABADC" stop-opacity="0.45"/>
-        <stop offset="85%"  stop-color="#1ABADC" stop-opacity="0.45"/>
-        <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
-      </linearGradient>
-      <radialGradient id="jGlow" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#1ABADC" stop-opacity="0.55"/>
-        <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
-      </radialGradient>
-      <path id="jPath" d="M -20 860 L 1620 860"/>
-      <style>
-        .j-tick { animation: jTick 2.6s ease-in-out infinite; }
-        @keyframes jTick { 0%,100% { opacity:1 } 50% { opacity:.35 } }
-      </style>
-    </defs>
-    <!-- Journey line -->
-    <use href="#jPath" fill="none" stroke="url(#jFade)" stroke-width="2"/>
-    <!-- Year milestone ticks (2021 → 2026) -->
-    <g fill="#1ABADC" font-family="'Roboto Mono', monospace" font-size="16" letter-spacing="2">
-      <g class="j-tick" style="animation-delay:0s">
-        <line x1="180" y1="840" x2="180" y2="880" stroke="#1ABADC" stroke-width="1.5"/>
-        <circle cx="180" cy="860" r="6" fill="#1ABADC"/>
-        <text x="180" y="820" text-anchor="middle" fill="#8A9BB5">2021</text>
-      </g>
-      <g class="j-tick" style="animation-delay:.3s">
-        <line x1="420" y1="840" x2="420" y2="880" stroke="#1ABADC" stroke-width="1.5"/>
-        <circle cx="420" cy="860" r="6" fill="#1ABADC"/>
-        <text x="420" y="820" text-anchor="middle" fill="#8A9BB5">2022</text>
-      </g>
-      <g class="j-tick" style="animation-delay:.6s">
-        <line x1="660" y1="840" x2="660" y2="880" stroke="#1ABADC" stroke-width="1.5"/>
-        <circle cx="660" cy="860" r="6" fill="#1ABADC"/>
-        <text x="660" y="820" text-anchor="middle" fill="#8A9BB5">2023</text>
-      </g>
-      <g class="j-tick" style="animation-delay:.9s">
-        <line x1="900" y1="840" x2="900" y2="880" stroke="#1ABADC" stroke-width="1.5"/>
-        <circle cx="900" cy="860" r="6" fill="#1ABADC"/>
-        <text x="900" y="820" text-anchor="middle" fill="#8A9BB5">2024</text>
-      </g>
-      <g class="j-tick" style="animation-delay:1.2s">
-        <line x1="1140" y1="840" x2="1140" y2="880" stroke="#1ABADC" stroke-width="1.5"/>
-        <circle cx="1140" cy="860" r="6" fill="#1ABADC"/>
-        <text x="1140" y="820" text-anchor="middle" fill="#8A9BB5">2025</text>
-      </g>
-      <g class="j-tick" style="animation-delay:1.5s">
-        <line x1="1380" y1="840" x2="1380" y2="880" stroke="#1ABADC" stroke-width="1.5"/>
-        <circle cx="1380" cy="860" r="9" fill="#8de4f0"/>
-        <circle cx="1380" cy="860" r="20" fill="url(#jGlow)"/>
-        <text x="1380" y="820" text-anchor="middle" fill="#E8EDF5" font-size="18">2026</text>
-      </g>
-    </g>
-    <!-- Traveling journey dot -->
-    <circle r="7" fill="#8de4f0">
-      <animateMotion dur="8s" repeatCount="indefinite"><mpath href="#jPath"/></animateMotion>
-    </circle>
-    <circle r="18" fill="url(#jGlow)">
-      <animateMotion dur="8s" repeatCount="indefinite"><mpath href="#jPath"/></animateMotion>
-    </circle>
-  </svg>
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="hero-split">
+      <!-- LEFT: copy -->
+      <div>
+        <div class="reveal inline-flex mb-6">
+          <span class="sec-eyebrow"><span class="dot"></span>About OnPoint Nexus &middot; Est. 2021</span>
+        </div>
+        <h1 class="font-bold reveal" style="font-size:clamp(2.5rem,4.5vw,4.2rem);letter-spacing:-.035em;line-height:1.02;transition-delay:.05s;">
+          Built by engineers.<br><span class="grad-text-3">Run for clients.</span>
+        </h1>
+        <p class="mt-7 text-on-surface-dim text-lg md:text-xl leading-relaxed max-w-xl reveal" style="transition-delay:.15s;">
+          Five years, 130+ platforms shipped for hospitals, governments, and enterprises across four continents.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-3 reveal" style="transition-delay:.25s;">
+          <a href="#founder" class="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-surface px-7 py-3.5 font-semibold hover:bg-primary-dim hover:shadow-[0_0_32px_-4px_rgba(26,186,220,0.5)] transition-all">
+            Meet the Founder <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+          <a href="/work" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3.5 font-semibold hover:border-primary hover:text-primary transition-colors">
+            See our work <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+          </a>
+        </div>
+      </div>
 
-  <div class="absolute left-0 right-0 bottom-0 pointer-events-none" style="height:120px;background:linear-gradient(180deg,transparent 0%,#0c1324 100%);"></div>
+      <!-- RIGHT: 6-year journey arc -->
+      <div class="arc-stage reveal" aria-hidden="true" style="transition-delay:.35s;">
+        <svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="arcGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"  stop-color="#1ABADC" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#1ABADC" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="arcLine" x1="0" x2="1" y1="1" y2="0">
+              <stop offset="0%"   stop-color="#1ABADC" stop-opacity="0.15"/>
+              <stop offset="50%"  stop-color="#1ABADC" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#8de4f0" stop-opacity="0.9"/>
+            </linearGradient>
+            <path id="arcPath" d="M 50 400 Q 300 400 300 240 Q 300 80 550 80" fill="none"/>
+          </defs>
 
-  <div class="relative max-w-7xl mx-auto px-6 text-center">
-    <div class="reveal inline-flex">
-      <span class="sec-eyebrow"><span class="dot"></span>About OnPoint Nexus · Est. 2021</span>
+          <!-- Backing arc -->
+          <use href="#arcPath" stroke="url(#arcLine)" stroke-width="2" stroke-dasharray="5 8" fill="none"/>
+
+          <!-- Section eyebrow -->
+          <text x="300" y="40" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#5A7494" letter-spacing="3">SIX YEARS &middot; 130+ PLATFORMS</text>
+
+          <!-- Year milestones along the arc -->
+          <!-- 2021 (bottom left) -->
+          <g class="arc-year" data-i="0">
+            <circle cx="50" cy="400" r="22" fill="url(#arcGlow)"/>
+            <circle cx="50" cy="400" r="10" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="50" y="430" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="11" fill="#8A9BB5" letter-spacing="1.5">2021</text>
+            <text x="50" y="448" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="8" fill="#5A7494" letter-spacing="1">FOUNDED</text>
+          </g>
+          <!-- 2022 -->
+          <g class="arc-year" data-i="1">
+            <circle cx="170" cy="380" r="20" fill="url(#arcGlow)"/>
+            <circle cx="170" cy="380" r="8" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="170" y="360" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#8A9BB5" letter-spacing="1">2022</text>
+          </g>
+          <!-- 2023 -->
+          <g class="arc-year" data-i="2">
+            <circle cx="270" cy="320" r="20" fill="url(#arcGlow)"/>
+            <circle cx="270" cy="320" r="8" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="270" y="300" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#8A9BB5" letter-spacing="1">2023</text>
+          </g>
+          <!-- 2024 -->
+          <g class="arc-year" data-i="3">
+            <circle cx="330" cy="220" r="20" fill="url(#arcGlow)"/>
+            <circle cx="330" cy="220" r="8" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="330" y="200" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#8A9BB5" letter-spacing="1">2024</text>
+          </g>
+          <!-- 2025 -->
+          <g class="arc-year" data-i="4">
+            <circle cx="430" cy="140" r="20" fill="url(#arcGlow)"/>
+            <circle cx="430" cy="140" r="8" fill="#0f1729" stroke="#1ABADC" stroke-width="1.5"/>
+            <text x="430" y="120" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="10" fill="#8A9BB5" letter-spacing="1">2025</text>
+          </g>
+          <!-- 2026 (bigger, brighter, current) -->
+          <g class="arc-year" data-i="5">
+            <circle class="arc-now" cx="550" cy="80" r="30" fill="url(#arcGlow)"/>
+            <circle cx="550" cy="80" r="14" fill="#0f1729" stroke="#8de4f0" stroke-width="2"/>
+            <text x="550" y="84" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="700" fill="#E8EDF5">NOW</text>
+            <text x="550" y="130" text-anchor="middle" font-family="'Roboto Mono',monospace" font-size="12" font-weight="600" fill="#E8EDF5" letter-spacing="1.5">2026</text>
+          </g>
+
+          <!-- Traveling cyan pulse along the arc (SVG animateMotion) -->
+          <circle r="6" fill="#8de4f0">
+            <animateMotion dur="7s" repeatCount="indefinite"><mpath href="#arcPath"/></animateMotion>
+          </circle>
+          <circle r="14" fill="url(#arcGlow)">
+            <animateMotion dur="7s" repeatCount="indefinite"><mpath href="#arcPath"/></animateMotion>
+          </circle>
+        </svg>
+      </div>
     </div>
-    <h1 class="mt-8 font-bold max-w-5xl mx-auto reveal" style="font-size:clamp(2.5rem,4.5vw,4.2rem);letter-spacing:-.035em;line-height:1.02;transition-delay:.05s;">
-      Built by engineers.<br><span class="grad-text-3">Run for clients.</span>
-    </h1>
-    <p class="mt-7 max-w-2xl mx-auto text-lg text-on-surface-dim leading-relaxed reveal" style="transition-delay:.15s;">
-      Since 2021, our engineering teams in India have shipped production systems for hospitals, governments, and enterprises across the US, Canada, and UAE.
-    </p>
-    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center reveal" style="transition-delay:.25s;">
-      <a href="#founder" class="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-surface px-7 py-3.5 font-semibold hover:bg-primary-dim hover:shadow-[0_0_32px_-4px_rgba(26,186,220,0.5)] transition-all">
-        Meet the Founder <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-      </a>
-      <a href="/work" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3.5 font-semibold hover:border-primary hover:text-primary transition-colors">
-        See Our Work <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
-      </a>
-    </div>
-
   </div>
+</section>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════
