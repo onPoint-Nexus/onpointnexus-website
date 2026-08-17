@@ -14,6 +14,12 @@
     { "source": "/staff-augmentation", "destination": "https://www.onpointnexus.com/services",           "permanent": true },
     { "source": "/staff-augmentation/:path*","destination": "https://www.onpointnexus.com/services",     "permanent": true },
     { "source": "/about-us",           "destination": "https://www.onpointnexus.com/about",              "permanent": true },
+    {
+      "source": "/",
+      "has": [{ "type": "query", "key": "s" }],
+      "destination": "https://www.onpointnexus.com/",
+      "permanent": true
+    },
     { "source": "/blogs",              "destination": "https://www.onpointnexus.com/work",                "permanent": true },
     { "source": "/blogs/:path*",       "destination": "https://www.onpointnexus.com/work",                "permanent": true },
 
