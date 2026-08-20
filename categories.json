@@ -1,0 +1,65 @@
+{
+  "categories": {
+    "ai": {
+      "label": "AI",
+      "eyebrow": "This sounds like an AI opportunity",
+      "headline": "You're not the first to ask this — and here's what we usually find.",
+      "sub": "Most teams that come to us saying \"we need AI\" already have the right instinct — they just don't know where the first 45 days of work actually should go. Whether it's prompt engineering, RAG, an agent, or a full ML pipeline, the wins come from picking the right *first* problem.",
+      "bullets": [
+        "Start with the workflow that costs the most human hours, not the shiniest one",
+        "Ship something that actually replaces a step — not a demo that sits in a slide",
+        "Instrument every prediction so you can improve it in week 2, not month 6"
+      ]
+    },
+    "custom-software": {
+      "label": "Custom software",
+      "eyebrow": "Sounds like a custom-software project",
+      "headline": "Custom software is our home turf — 130+ platforms shipped.",
+      "sub": "The teams we work with usually come to us after a template solution stopped fitting, or after an offshore build didn't ship. What we do differently: fixed 45-day cadence, one accountable engineering lead, and every phase ends in something you can actually use.",
+      "bullets": [
+        "Web, mobile, and enterprise platforms — one team, one accountable lead",
+        "Fixed 45-day cadence per phase, so you know what week you're in",
+        "We ship to production, not to a staging demo"
+      ]
+    },
+    "product-interest": {
+      "label": "Product interest",
+      "eyebrow": "You're curious about our products",
+      "headline": "Two live products — pick the one that fits.",
+      "sub": "OnPoint Nexus ships two SaaS products of our own: DinePoint (an AI menu platform used across India's hospitality sector) and PulseWork OS (an AI Work OS for mid-size teams). We also have AdPoint on the way. Happy to walk you through whichever one sparked the question.",
+      "bullets": [
+        "DinePoint — AI-first menu, ordering, and analytics for restaurants",
+        "PulseWork OS — a unified Work OS with AI copilots baked into every module",
+        "AdPoint — coming soon (AI-first growth marketing)"
+      ]
+    },
+    "general-inquiry": {
+      "label": "General inquiry",
+      "eyebrow": "Thanks for reaching out",
+      "headline": "Let's find out if we're a fit.",
+      "sub": "OnPoint Nexus is an AI engineering studio — we build production AI, cloud, and custom software for teams that need to ship on a deadline. Fastest way to figure out if we're right for you is a short call — no pitch, just a scoping conversation.",
+      "bullets": [
+        "130+ platforms shipped across 12 industries since 2021",
+        "Fixed 45-day delivery cadence, one accountable engineering team",
+        "45 minutes on a call and you'll know if it's a fit"
+      ]
+    }
+  },
+  "keywords": {
+    "ai": [
+      "ai", "a.i", "artificial intelligence", "machine learning", "ml", "llm", "gpt", "chatgpt", "openai", "anthropic", "claude", "gemini",
+      "prompt", "rag", "agent", "agents", "automate", "automation", "automating", "predict", "prediction", "recommendation",
+      "nlp", "computer vision", "chatbot", "copilot", "reduce admin", "reduce paperwork", "manual work", "save time"
+    ],
+    "custom-software": [
+      "app", "website", "web app", "mobile app", "webapp", "platform", "portal", "dashboard", "crm", "erp", "software", "development",
+      "custom software", "custom build", "custom app", "engineering", "backend", "frontend", "database", "api", "integration",
+      "wordpress", "react", "node", "python", "php", "flutter", "ios app", "android app", "saas build", "internal tool"
+    ],
+    "product-interest": [
+      "dinepoint", "dine point", "pulsework", "pulse work", "adpoint", "ad point", "restaurant", "menu",
+      "work os", "your product", "your saas", "your platform", "demo", "trial", "free trial", "early access", "beta",
+      "pricing", "how much"
+    ]
+  }
+}

@@ -69,6 +69,20 @@
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=86400, must-revalidate" }
       ]
+    },
+    {
+      "source": "/hello",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/_/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
     }
   ]
 }

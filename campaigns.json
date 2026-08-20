@@ -1,0 +1,35 @@
+{
+  "chatgpt-prompt": {
+    "label": "ChatGPT prompt post",
+    "heroTag": "ChatGPT prompt post",
+    "offer": {
+      "eyebrow": "Free 15-min prompt review",
+      "headline": "Let's tighten up your prompts.",
+      "sub": "Send us the prompt you're wrestling with. We'll rewrite it live on a 15-minute call and hand you a version that works.",
+      "ctaText": "Book prompt review",
+      "ctaHref": "https://go.onpointnexus.com/schedule"
+    }
+  },
+  "ai-scaling": {
+    "label": "AI scaling post",
+    "heroTag": "AI scaling post",
+    "offer": {
+      "eyebrow": "30-min AI scaling call",
+      "headline": "From one AI feature to a scaled system.",
+      "sub": "If AI works for you at prototype scale but breaks at production scale, we've done this 130+ times. 30-minute call, no pitch.",
+      "ctaText": "Book scaling call",
+      "ctaHref": "https://go.onpointnexus.com/schedule"
+    }
+  },
+  "scaleos": {
+    "label": "ScaleOS launch post",
+    "heroTag": "ScaleOS post",
+    "offer": {
+      "eyebrow": "45-min ScaleOS scoping call",
+      "headline": "See how ScaleOS would work for your team.",
+      "sub": "A 45-minute scoping call: we walk you through the 6 phases, flag your biggest bottleneck, and tell you what Phase 01 (ScaleScan) would look like for your operation.",
+      "ctaText": "Book ScaleOS call",
+      "ctaHref": "https://go.onpointnexus.com/schedule"
+    }
+  }
+}

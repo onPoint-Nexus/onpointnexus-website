@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c1324">
+
+  <title>Hey there — OnPoint Nexus</title>
+  <meta name="description" content="A personalised welcome from OnPoint Nexus.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://www.onpointnexus.com/hello">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = { darkMode:'class', theme:{ extend:{
+      colors:{
+        primary:'#1ABADC','primary-dim':'#0E8FA8',
+        surface:'#0c1324','surface-card':'#141c2e','surface-high':'#1a2440','surface-low':'#080e1c',
+        'on-surface':'#E8EDF5','on-surface-dim':'#8A9BB5','on-surface-muted':'#5A7494'
+      },
+      fontFamily:{ headline:['"Plus Jakarta Sans"','sans-serif'], body:['"Plus Jakarta Sans"','sans-serif'], mono:['"Roboto Mono"','monospace'] }
+    }}}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-N2WCZPCE46');</script>
+
+  <style>
+    body { background:#0c1324; color:#E8EDF5; font-family:'Plus Jakarta Sans',sans-serif; }
+    .grad-text { background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+    .reveal.in-view { opacity:1; transform:none; }
+
+    .sec-eyebrow {
+      display:inline-flex; align-items:center; gap:10px;
+      padding:7px 16px; border-radius:999px;
+      border:1px solid rgba(26,186,220,0.28); background:rgba(26,186,220,0.08);
+      color:#1ABADC; font-family:'Roboto Mono',monospace;
+      font-size:.68rem; font-weight:600; text-transform:uppercase; letter-spacing:.14em;
+    }
+    .sec-eyebrow .dot { width:6px; height:6px; border-radius:50%; background:#1ABADC; }
+
+    /* Quoted comment card */
+    .quote-card {
+      position: relative;
+      padding: 32px 36px 30px 60px;
+      background: linear-gradient(135deg, rgba(26,186,220,0.06) 0%, #0f1729 100%);
+      border: 1px solid rgba(26,186,220,0.2);
+      border-radius: 18px;
+    }
+    .quote-card::before {
+      content: '\201C';
+      position: absolute; left: 22px; top: 8px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 90px; line-height: 1;
+      color: rgba(26,186,220,0.45); user-select: none;
+    }
+    .quote-card p {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.1rem; line-height: 1.5;
+      color: #E8EDF5; font-style: italic; margin: 0;
+      max-width: 62ch;
+    }
+
+    /* Response bullets */
+    .resp-bullets { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:14px; }
+    .resp-bullets li {
+      display:flex; align-items:flex-start; gap:14px;
+      font-size:16px; color:#E8EDF5; line-height:1.55;
+    }
+    .resp-bullets li::before {
+      content:''; width:7px; height:7px; border-radius:50%;
+      background:#1ABADC; margin-top:10px; flex-shrink:0;
+      box-shadow: 0 0 12px rgba(26,186,220,0.6);
+    }
+
+    /* Offer card */
+    .offer-card {
+      padding: 40px 44px;
+      background: linear-gradient(135deg, rgba(26,186,220,0.08) 0%, #0f1729 60%);
+      border: 1px solid rgba(26,186,220,0.28);
+      border-radius: 22px;
+    }
+    @media (max-width: 700px) { .offer-card { padding: 28px 24px; } }
+
+    /* Form */
+    .field-label {
+      display:block;
+      font-family:'Roboto Mono',monospace;
+      font-size:11px; text-transform:uppercase; letter-spacing:.12em;
+      color:#8A9BB5; margin-bottom:10px; font-weight:600;
+    }
+    .field-input {
+      width:100%; padding:14px 18px;
+      background:#0f1729; color:#E8EDF5;
+      border:1px solid rgba(255,255,255,0.08); border-radius:12px;
+      font-size:15px; font-family:inherit;
+      transition:border-color .2s ease;
+    }
+    .field-input:focus {
+      outline:none; border-color:#1ABADC;
+      box-shadow: 0 0 0 3px rgba(26,186,220,0.15);
+    }
+    .radio-row { display:flex; gap:12px; }
+    .radio-opt {
+      flex:1;
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      padding:14px 20px;
+      background:#0f1729; border:1px solid rgba(255,255,255,0.08); border-radius:12px;
+      cursor:pointer; user-select:none;
+      transition: background .2s ease, border-color .2s ease;
+    }
+    .radio-opt:hover { border-color:rgba(26,186,220,0.35); }
+    .radio-opt input { position:absolute; opacity:0; pointer-events:none; }
+    .radio-opt .dot {
+      width:16px; height:16px; border-radius:50%;
+      border:2px solid rgba(255,255,255,0.25);
+      display:inline-flex; align-items:center; justify-content:center;
+      transition: border-color .2s ease;
+    }
+    .radio-opt .dot::after {
+      content:''; width:8px; height:8px; border-radius:50%;
+      background:#1ABADC; opacity:0; transition:opacity .2s ease;
+    }
+    .radio-opt.checked { background:rgba(26,186,220,0.08); border-color:#1ABADC; color:#E8EDF5; }
+    .radio-opt.checked .dot { border-color:#1ABADC; }
+    .radio-opt.checked .dot::after { opacity:1; }
+    .submit-btn {
+      width:100%;
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:16px 28px;
+      background:#1ABADC; color:#0c1324; border:none; border-radius:999px;
+      font-family:inherit; font-weight:700; font-size:15px;
+      cursor:pointer;
+      transition: background .2s ease, transform .15s ease;
+      box-shadow: 0 12px 28px -12px rgba(26,186,220,0.55);
+    }
+    .submit-btn:hover:not(:disabled) { background:#0E8FA8; transform: translateY(-1px); }
+    .submit-btn:disabled { opacity:.5; cursor:not-allowed; }
+
+    .thank-you {
+      padding: 44px;
+      background: linear-gradient(135deg, rgba(26,186,220,0.08) 0%, #0f1729 60%);
+      border: 1px solid rgba(26,186,220,0.28);
+      border-radius: 22px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+
+<!-- Minimal nav: logo + Book a Call only. Landing pages don't need site nav. -->
+<nav class="sticky top-0 z-50 border-b border-white/[0.05]" style="background:rgba(12,19,36,0.92);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
+    </a>
+    <a href="https://go.onpointnexus.com/schedule" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors">
+      Book a Call <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO: Personal welcome -->
+<section class="relative pt-24 pb-16 overflow-hidden" style="background:#0c1324;">
+  <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(26,186,220,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(26,186,220,0.055) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);-webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 55% 45% at 30% 40%,rgba(26,186,220,0.13) 0%,transparent 70%);"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="max-w-4xl">
+      <div class="reveal inline-flex mb-6" id="sourceEyebrow">
+        <span class="sec-eyebrow"><span class="dot"></span><span id="sourceLabel">Personalised for you</span></span>
+      </div>
+      <h1 class="font-bold reveal" style="font-size:clamp(2.5rem,4.5vw,4.2rem);letter-spacing:-.035em;line-height:1.02;transition-delay:.05s;">
+        <span id="heroGreet">Hey there</span> <span aria-hidden="true">👋</span><br>
+        <span class="grad-text" id="heroTagline">Thanks for reaching out.</span>
+      </h1>
+      <p class="mt-7 text-on-surface-dim text-lg md:text-xl leading-relaxed max-w-2xl reveal" style="transition-delay:.15s;" id="heroSub">
+        We saw your comment. Loading a quick, personal response.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: Their message reflected + category response -->
+<section class="py-20 border-t border-white/[0.05]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-4xl reveal" id="quoteBlock" style="display:none;">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-4">You wrote</p>
+      <figure class="quote-card mb-14">
+        <p id="quoteText"></p>
+      </figure>
+
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-4" id="respEyebrow">Our response</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold leading-tight tracking-[-0.02em] mb-6" id="respHeadline"></h2>
+      <p class="text-on-surface-dim text-lg leading-relaxed mb-8 max-w-2xl" id="respSub"></p>
+      <ul class="resp-bullets" id="respBullets"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: Post-specific offer + CTA -->
+<section class="py-20 border-t border-white/[0.05] bg-surface-low">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-4xl mx-auto text-center reveal" id="offerBlock">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-4" id="offerEyebrow">Ready when you are</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold leading-tight tracking-[-0.02em] mb-4" id="offerHeadline">Let's talk.</h2>
+      <p class="text-on-surface-dim text-lg leading-relaxed mb-10 max-w-2xl mx-auto" id="offerSub">Book a short call and we'll take it from there.</p>
+      <a href="https://go.onpointnexus.com/schedule" id="offerCta" class="inline-flex items-center gap-2 rounded-full bg-primary text-surface px-8 py-4 font-bold hover:bg-primary-dim transition-colors">
+        <span id="offerCtaText">Book a call</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: Mini form -->
+<section class="py-24 border-t border-white/[0.05]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-2xl mx-auto reveal">
+      <div id="formWrap">
+        <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-4 text-center">Two quick questions</p>
+        <h2 class="font-headline text-2xl md:text-3xl font-bold leading-tight tracking-[-0.02em] mb-10 text-center">
+          Should we set up a call?
+        </h2>
+
+        <form id="leadForm" class="flex flex-col gap-7" novalidate>
+          <div>
+            <label class="field-label">Would you like a 30-minute discovery call?</label>
+            <div class="radio-row" id="wantsCallGroup">
+              <label class="radio-opt" data-value="yes"><span class="dot"></span> Yes <input type="radio" name="wants_call" value="yes"></label>
+              <label class="radio-opt" data-value="no"><span class="dot"></span> No thanks <input type="radio" name="wants_call" value="no"></label>
+            </div>
+          </div>
+
+          <div>
+            <label class="field-label" for="phone">Phone number (with country code)</label>
+            <input class="field-input" type="tel" id="phone" name="phone" placeholder="+1 555 123 4567" required autocomplete="tel">
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            Send <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </button>
+          <p class="text-xs text-on-surface-muted text-center" id="formError" style="display:none; color:#f87171;"></p>
+        </form>
+      </div>
+
+      <div id="thankYou" class="thank-you" style="display:none;">
+        <div class="mb-4"><span class="material-symbols-outlined text-primary" style="font-size:48px;">check_circle</span></div>
+        <h2 class="font-headline text-2xl font-bold mb-3">Got it. Talk soon.</h2>
+        <p class="text-on-surface-dim" id="thankYouSub">We'll reach out within one business day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lean footer -->
+<footer class="bg-surface-low border-t border-white/5 pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-muted font-mono">
+    <p>© 2026 OnPoint Nexus Pvt. Ltd. &middot; Pune &amp; Kolhapur, India &middot; Dallas, TX</p>
+    <div class="flex gap-5">
+      <a href="/" class="hover:text-primary transition-colors">Home</a>
+      <a href="/privacy-policy" class="hover:text-primary transition-colors">Privacy</a>
+      <a href="/terms" class="hover:text-primary transition-colors">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  // ─── URL param helpers ─────────────────────────────────────────
+  const params = new URLSearchParams(window.location.search);
+  const rawName = (params.get('n') || '').slice(0, 60);
+  const rawMsg  = (params.get('m') || '').slice(0, 1000);
+  const postId  = (params.get('p') || '').slice(0, 40);
+  const src     = (params.get('src') || '').slice(0, 10).toLowerCase();
+
+  // Basic HTML-escape (safe render of user-supplied strings)
+  function esc(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  const SRC_LABELS = { ig:'Instagram', fb:'Facebook', li:'LinkedIn' };
+
+  // ─── Message classifier (keyword-based, phase 1) ───────────────
+  function classify(msg, keywordSets){
+    if (!msg) return 'general-inquiry';
+    const lower = ' ' + msg.toLowerCase() + ' ';
+    const scores = { 'ai':0, 'custom-software':0, 'product-interest':0 };
+    for (const [cat, words] of Object.entries(keywordSets)) {
+      for (const w of words) {
+        if (lower.includes(' ' + w + ' ') || lower.includes(' ' + w + ',') || lower.includes(' ' + w + '.') || lower.includes(' ' + w + '?')) {
+          scores[cat] += (w.length > 3 ? 2 : 1); // longer matches count more
+        }
+      }
+    }
+    const best = Object.entries(scores).sort((a,b) => b[1] - a[1])[0];
+    return (best && best[1] > 0) ? best[0] : 'general-inquiry';
+  }
+
+  // ─── Render pipeline ───────────────────────────────────────────
+  // Cache-bust hourly so config edits go live quickly without a rebuild.
+  const cacheKey = Math.floor(Date.now() / 3600000);
+  Promise.all([
+    fetch('/campaigns.json?v=' + cacheKey).then(r => r.json()),
+    fetch('/categories.json?v=' + cacheKey).then(r => r.json())
+  ]).then(([campaigns, cats]) => {
+    // 1. Hero personalization
+    const nameSafe = rawName ? esc(rawName.split(/\s+/)[0]) : 'there';
+    document.getElementById('heroGreet').textContent = 'Hey ' + (rawName ? rawName.split(/\s+/)[0] : 'there');
+
+    const camp = campaigns[postId] || null;
+    const srcLabel = SRC_LABELS[src] || null;
+
+    // Source eyebrow chip
+    const eyebrowParts = [];
+    if (srcLabel) eyebrowParts.push('From ' + srcLabel);
+    if (camp)     eyebrowParts.push(camp.heroTag);
+    if (eyebrowParts.length === 0) eyebrowParts.push('Personalised for you');
+    document.getElementById('sourceLabel').textContent = eyebrowParts.join(' · ');
+
+    document.getElementById('heroTagline').textContent = srcLabel
+      ? 'Thanks for reaching out from ' + srcLabel + '.'
+      : 'Thanks for reaching out.';
+
+    document.getElementById('heroSub').textContent = rawMsg
+      ? 'We read your message. Here’s what we usually see for teams asking the same thing.'
+      : 'Great to hear from you. Scroll on for a bit about how we usually work with teams like yours.';
+
+    // 2. Quote reflection + category response
+    if (rawMsg) {
+      const block = document.getElementById('quoteBlock');
+      block.style.display = '';
+      document.getElementById('quoteText').textContent = rawMsg;
+
+      const catKey = classify(rawMsg, cats.keywords);
+      const cat = cats.categories[catKey] || cats.categories['general-inquiry'];
+
+      document.getElementById('respEyebrow').textContent = cat.eyebrow;
+      document.getElementById('respHeadline').textContent = cat.headline;
+      document.getElementById('respSub').textContent = cat.sub;
+      const ul = document.getElementById('respBullets');
+      ul.innerHTML = '';
+      cat.bullets.forEach(b => {
+        const li = document.createElement('li');
+        li.textContent = b;
+        ul.appendChild(li);
+      });
+      window.__opnCategory = catKey;
+    }
+
+    // 3. Post-specific offer + CTA
+    if (camp && camp.offer) {
+      document.getElementById('offerEyebrow').textContent  = camp.offer.eyebrow;
+      document.getElementById('offerHeadline').textContent = camp.offer.headline;
+      document.getElementById('offerSub').textContent      = camp.offer.sub;
+      document.getElementById('offerCtaText').textContent  = camp.offer.ctaText;
+      document.getElementById('offerCta').setAttribute('href', camp.offer.ctaHref);
+    }
+
+    // Track landing view in GA
+    if (window.gtag) {
+      gtag('event', 'personalized_landing_view', {
+        post_id: postId || '(none)',
+        source: src || '(none)',
+        category: window.__opnCategory || '(unclassified)',
+        has_name: !!rawName,
+        has_message: !!rawMsg
+      });
+    }
+  }).catch(err => {
+    console.warn('Config load failed', err);
+  });
+
+  // ─── Reveal on scroll ──────────────────────────────────────────
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ─── Yes/No radio behaviour ────────────────────────────────────
+  document.querySelectorAll('#wantsCallGroup .radio-opt').forEach(opt => {
+    opt.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('#wantsCallGroup .radio-opt').forEach(o => o.classList.remove('checked'));
+      opt.classList.add('checked');
+      opt.querySelector('input').checked = true;
+    });
+  });
+
+  // ─── Form submit ───────────────────────────────────────────────
+  const form = document.getElementById('leadForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const errEl = document.getElementById('formError');
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    errEl.style.display = 'none';
+    const wants = document.querySelector('input[name="wants_call"]:checked');
+    const phone = document.getElementById('phone').value.trim();
+    if (!wants) { errEl.textContent = 'Please pick Yes or No.'; errEl.style.display = ''; return; }
+    if (phone.length < 6) { errEl.textContent = 'Please enter a valid phone number.'; errEl.style.display = ''; return; }
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending&hellip;';
+
+    const payload = {
+      name: rawName || null,
+      message: rawMsg || null,
+      post_id: postId || null,
+      src: src || null,
+      category: window.__opnCategory || null,
+      wants_call: wants.value,
+      phone
+    };
+
+    try {
+      const resp = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!resp.ok) throw new Error('Server error (' + resp.status + ')');
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('thankYou').style.display = '';
+      document.getElementById('thankYouSub').textContent = wants.value === 'yes'
+        ? 'We’ll reach out within one business day to set up the call.'
+        : 'Thanks — we’ve saved your details and will only reach out if you tell us to.';
+      if (window.gtag) {
+        gtag('event', 'lead_form_submit', {
+          post_id: postId || '(none)',
+          source: src || '(none)',
+          category: window.__opnCategory || '(unclassified)',
+          wants_call: wants.value
+        });
+      }
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Send <span class="material-symbols-outlined text-[18px]">arrow_forward</span>';
+      errEl.textContent = 'Something went wrong. Please try again, or email hello@onpointnexus.com.';
+      errEl.style.display = '';
+      console.warn('Lead submit failed', err);
+    }
+  });
+
+})();
+</script>
+
+</body>
+</html>
