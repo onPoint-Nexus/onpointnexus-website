@@ -79,20 +79,22 @@
       </div>
     </div>
 
-    <div class="flex gap-3">
-      <button type="submit" class="btn">Generate link</button>
+    <div class="flex gap-3 flex-wrap">
+      <button type="submit" class="btn">Generate short link ✨</button>
+      <button type="button" class="btn-sec" id="longBtn">Full URL (fallback)</button>
       <button type="button" class="btn-sec" id="clearBtn">Clear</button>
     </div>
   </form>
 
   <div id="output" class="mt-10" style="display:none;">
-    <label class="fld">Shareable link</label>
+    <label class="fld" id="outLabel">Shareable link</label>
     <div class="out mb-3" id="urlOut"></div>
-    <div class="flex gap-3 items-center">
+    <div class="flex gap-3 items-center flex-wrap">
       <button class="btn" id="copyBtn">Copy to clipboard</button>
       <a class="btn-sec" id="previewBtn" target="_blank" rel="noopener">Preview in new tab</a>
       <span class="text-xs text-on-surface-muted" id="copyMsg" style="display:none;">Copied ✓</span>
     </div>
+    <p class="text-xs text-on-surface-muted mt-4" id="outMeta"></p>
   </div>
 </main>
 
@@ -128,17 +130,71 @@
 
   // Build link
   const BASE = 'https://www.onpointnexus.com/hello';
-  document.getElementById('lbForm').addEventListener('submit', e => {
-    e.preventDefault();
+  const SHORT_BASE = 'https://www.onpointnexus.com/l/';
+
+  function readFields() {
     const n = document.getElementById('lbName').value.trim();
     const m = document.getElementById('lbMsg').value.trim();
     const post = document.querySelector('input[name="post"]:checked').value;
     const src = document.querySelector('input[name="src"]:checked').value;
-    if (!n || !m) return;
-    const url = BASE + '?n=' + encodeURIComponent(n) + '&m=' + encodeURIComponent(m) + '&p=' + encodeURIComponent(post) + '&src=' + encodeURIComponent(src);
+    if (!n || !m) return null;
+    return { n, m, p: post, src };
+  }
+
+  function longUrl(f) {
+    return BASE + '?n=' + encodeURIComponent(f.n) + '&m=' + encodeURIComponent(f.m) + '&p=' + encodeURIComponent(f.p) + '&src=' + encodeURIComponent(f.src);
+  }
+
+  function showResult(url, isShort, meta) {
     document.getElementById('urlOut').textContent = url;
     document.getElementById('output').style.display = '';
     document.getElementById('previewBtn').setAttribute('href', url);
+    document.getElementById('outLabel').textContent = isShort ? 'Short link (paste this in the DM)' : 'Full URL (long fallback)';
+    document.getElementById('outMeta').textContent = meta || '';
+  }
+
+  // Primary: short link via API
+  document.getElementById('lbForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    const f = readFields();
+    if (!f) return;
+    const submitBtn = e.target.querySelector('button[type=submit]');
+    submitBtn.disabled = true;
+    const originalText = submitBtn.innerHTML;
+    submitBtn.textContent = 'Generating…';
+
+    try {
+      const resp = await fetch('/api/shortlink', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...f, password: CORRECT_PW })
+      });
+      const data = await resp.json().catch(() => ({}));
+      if (!resp.ok) {
+        if (data.error === 'kv-not-configured') {
+          alert('Vercel KV isn’t set up yet. Falling back to the long URL.\n\nTo enable short links: go to your Vercel project → Storage → Create KV database → Connect to project.');
+        } else {
+          alert('Short-link generation failed: ' + (data.error || resp.status) + '. Falling back to long URL.');
+        }
+        showResult(longUrl(f), false);
+      } else {
+        const meta = data.expiresInDays ? ('Auto-expires in ' + data.expiresInDays + ' days.') : '';
+        showResult(data.url, true, meta);
+      }
+    } catch (err) {
+      alert('Network error. Falling back to long URL.');
+      showResult(longUrl(f), false);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+    }
+  });
+
+  // Fallback: long URL (no server call)
+  document.getElementById('longBtn').addEventListener('click', () => {
+    const f = readFields();
+    if (!f) return;
+    showResult(longUrl(f), false);
   });
 
   document.getElementById('clearBtn').addEventListener('click', () => {

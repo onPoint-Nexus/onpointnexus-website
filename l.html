@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c1324">
+  <title>Redirecting… — OnPoint Nexus</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: #0c1324; color: #E8EDF5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px;
+    }
+    .card { max-width: 380px; width: 100%; text-align: center; }
+    .spin {
+      width: 40px; height: 40px; margin: 0 auto 20px;
+      border: 3px solid rgba(26,186,220,0.15);
+      border-top-color: #1ABADC;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    h1 { font-size: 16px; font-weight: 600; margin: 0 0 6px; color: #E8EDF5; }
+    p  { font-size: 13px; color: #8A9BB5; margin: 0; line-height: 1.55; }
+    .err { color: #f87171; }
+    a  { color: #1ABADC; text-decoration: none; font-family: 'Roboto Mono', monospace; font-size: 12px; letter-spacing: 0.05em; }
+    a:hover { text-decoration: underline; }
+    .fallback { margin-top: 16px; display: none; }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="spin" id="spin"></div>
+    <h1 id="title">Taking you to your welcome page…</h1>
+    <p id="msg">One moment.</p>
+    <div class="fallback" id="fallback">
+      <p><a href="/">← Back to onpointnexus.com</a></p>
+    </div>
+  </div>
+
+<script>
+(function(){
+  'use strict';
+  const params = new URLSearchParams(location.search);
+  const code = (params.get('c') || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 10);
+
+  function fail(reason){
+    document.getElementById('spin').style.display = 'none';
+    document.getElementById('title').textContent = 'This link isn’t available.';
+    document.getElementById('title').classList.add('err');
+    document.getElementById('msg').textContent = reason || 'The link may have expired or is invalid.';
+    document.getElementById('fallback').style.display = '';
+  }
+
+  if (!code) { fail('No link code found in the URL.'); return; }
+
+  fetch('/api/shortlink?c=' + encodeURIComponent(code))
+    .then(r => r.ok ? r.json() : r.json().catch(() => ({})).then(j => { throw new Error(j.error || 'HTTP ' + r.status); }))
+    .then(data => {
+      if (!data || !data.landing) throw new Error('bad-response');
+      // Replace so the /l/xxxxx URL doesn't sit in browser history above /hello
+      location.replace(data.landing);
+    })
+    .catch(err => {
+      const msg = String(err && err.message || err);
+      if (msg.includes('not-found')) fail('This link may have expired or been removed.');
+      else fail('Something went wrong opening this link.');
+    });
+})();
+</script>
+</body>
+</html>
