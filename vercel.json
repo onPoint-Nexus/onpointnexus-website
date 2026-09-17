@@ -2,7 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/l/:code", "destination": "/l.html?c=:code" }
+    { "source": "/l/:code",       "destination": "/l.html?c=:code" },
+    { "source": "/careers/:slug", "destination": "/api/careers-detail?slug=:slug" }
   ],
   "redirects": [
 

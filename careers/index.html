@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c1324">
+
+  <title>Careers | OnPoint Nexus — Ship AI in 45 days. Come build with us.</title>
+  <meta name="description" content="We ship production AI, cloud, and enterprise software on a 45-day cadence. Open roles in marketing, business development, and more at our Kolhapur HQ.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.onpointnexus.com/careers">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OnPoint Nexus">
+  <meta property="og:url" content="https://www.onpointnexus.com/careers">
+  <meta property="og:title" content="Careers | OnPoint Nexus">
+  <meta property="og:description" content="Build production AI systems on a 45-day cadence. Kolhapur HQ, global clients, AI-first team.">
+  <meta property="og:image" content="https://www.onpointnexus.com/og-image.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = { darkMode:'class', theme:{ extend:{
+      colors:{
+        primary:'#1ABADC','primary-dim':'#0E8FA8',
+        surface:'#0c1324','surface-card':'#141c2e','surface-high':'#1a2440','surface-low':'#080e1c',
+        'on-surface':'#E8EDF5','on-surface-dim':'#8A9BB5','on-surface-muted':'#5A7494'
+      },
+      fontFamily:{ headline:['"Plus Jakarta Sans"','sans-serif'], body:['"Plus Jakarta Sans"','sans-serif'], mono:['"Roboto Mono"','monospace'] }
+    }}}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCZPCE46"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-N2WCZPCE46');</script>
+
+  <style>
+    body { background:#0c1324; color:#E8EDF5; font-family:'Plus Jakarta Sans',sans-serif; }
+    .grad-text { background:linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+    .reveal.in-view { opacity:1; transform:none; }
+
+    .sec-eyebrow {
+      display:inline-flex; align-items:center; gap:10px;
+      padding:7px 16px; border-radius:999px;
+      border:1px solid rgba(26,186,220,0.28); background:rgba(26,186,220,0.08);
+      color:#1ABADC; font-family:'Roboto Mono',monospace;
+      font-size:.68rem; font-weight:600; text-transform:uppercase; letter-spacing:.14em;
+    }
+    .sec-eyebrow .dot { width:6px; height:6px; border-radius:50%; background:#1ABADC; }
+
+    /* Value cards */
+    .value-card {
+      padding: 28px 26px;
+      background: #0f1729;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      transition: border-color .3s ease, transform .3s ease;
+    }
+    .value-card:hover { border-color: rgba(26,186,220,0.32); transform: translateY(-3px); }
+    .value-card .icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(26,186,220,0.1); border: 1px solid rgba(26,186,220,0.22);
+      color: #1ABADC; margin-bottom: 18px;
+    }
+    .value-card h3 { font-size: 17px; font-weight: 700; color: #E8EDF5; margin-bottom: 10px; letter-spacing: -.01em; }
+    .value-card p  { font-size: 14px; color: #8A9BB5; line-height: 1.55; }
+
+    /* Role card */
+    .role-card {
+      display: block;
+      padding: 28px 30px;
+      background: #0f1729;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      text-decoration: none; color: inherit;
+      transition: border-color .3s ease, background .3s ease, transform .3s ease;
+    }
+    .role-card:hover {
+      border-color: rgba(26,186,220,0.35);
+      background: rgba(26,186,220,0.03);
+      transform: translateY(-2px);
+    }
+    .role-card .dept-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 999px;
+      background: rgba(26,186,220,0.08); border: 1px solid rgba(26,186,220,0.22);
+      color: #1ABADC; font-family: 'Roboto Mono', monospace;
+      font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em;
+    }
+    .role-card h3 {
+      font-size: 22px; font-weight: 700; color: #E8EDF5;
+      margin: 14px 0 8px; letter-spacing: -.02em; line-height: 1.25;
+    }
+    .role-card .summary {
+      font-size: 15px; color: #8A9BB5; line-height: 1.55; margin: 0 0 18px;
+    }
+    .role-card .meta {
+      display: flex; flex-wrap: wrap; gap: 14px 22px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 11px; letter-spacing: .08em; color: #5A7494;
+      text-transform: uppercase; font-weight: 600;
+    }
+    .role-card .meta .icon { font-size: 14px; color: #1ABADC; }
+    .role-card .apply {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 20px; padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: #1ABADC;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 11px; text-transform: uppercase; letter-spacing: .14em; font-weight: 700;
+    }
+    .role-card:hover .apply { gap: 10px; }
+
+    /* Culture image cards */
+    .culture-img {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      aspect-ratio: 3/2;
+    }
+    .culture-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .culture-img .cap {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 24px 26px 22px;
+      background: linear-gradient(180deg, transparent 0%, rgba(12,19,36,0.85) 100%);
+      color: #E8EDF5;
+    }
+    .culture-img .cap h4 { font-size: 16px; font-weight: 700; letter-spacing: -.01em; margin: 0 0 4px; }
+    .culture-img .cap p  { font-size: 12px; color: #8A9BB5; margin: 0; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+
+<!-- NAV -->
+<nav class="sticky top-0 z-50 border-b border-white/[0.05]" style="background:rgba(12,19,36,0.92);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
+    </a>
+    <div class="hidden md:flex items-center gap-7 font-body text-sm">
+      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Services</a>
+      <a href="/scaleos"  class="text-on-surface-dim hover:text-primary transition-colors duration-200">ScaleOS</a>
+      <a href="/work"     class="text-on-surface-dim hover:text-primary transition-colors duration-200">Work</a>
+      <a href="/products" class="text-on-surface-dim hover:text-primary transition-colors duration-200">Products</a>
+      <a href="/about"    class="text-on-surface-dim hover:text-primary transition-colors duration-200">About</a>
+      <a href="/careers"  class="text-primary transition-colors duration-200">Careers</a>
+    </div>
+    <a href="#openings" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors">
+      See open roles <span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+    </a>
+    <button id="navToggle" class="md:hidden p-2 text-on-surface-dim hover:text-primary transition-colors" aria-label="Toggle navigation">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="relative pt-24 pb-16 overflow-hidden" style="background:#0c1324;">
+  <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(26,186,220,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(26,186,220,0.055) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);-webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000 30%,transparent 85%);"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 55% 45% at 30% 40%,rgba(26,186,220,0.13) 0%,transparent 70%);"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <!-- LEFT: copy -->
+      <div>
+        <div class="reveal inline-flex mb-6">
+          <span class="sec-eyebrow"><span class="dot"></span>Careers &middot; OnPoint Nexus</span>
+        </div>
+        <h1 class="font-bold reveal" style="font-size:clamp(2.5rem,4.5vw,4.2rem);letter-spacing:-.035em;line-height:1.02;transition-delay:.05s;">
+          Ship AI in 45 days.<br><span class="grad-text">Come build with us.</span>
+        </h1>
+        <p class="mt-7 text-on-surface-dim text-lg md:text-xl leading-relaxed max-w-xl reveal" style="transition-delay:.15s;">
+          We're an AI-first engineering studio based in Kolhapur, shipping platforms for hospitals, governments, and enterprises across four continents. We hire people who want to own real work from day one.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-6 text-sm text-on-surface-dim reveal" style="transition-delay:.25s;">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> 130+ platforms shipped</div>
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Est. 2021</div>
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Kolhapur HQ</div>
+        </div>
+        <div class="mt-10 flex flex-col sm:flex-row gap-3 reveal" style="transition-delay:.35s;">
+          <a href="#openings" class="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-surface px-7 py-3.5 font-semibold hover:bg-primary-dim hover:shadow-[0_0_32px_-4px_rgba(26,186,220,0.5)] transition-all">
+            See open roles <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+          </a>
+          <a href="mailto:hr@onpointsoft.com?subject=General%20application" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3.5 font-semibold hover:border-primary hover:text-primary transition-colors">
+            Don't see your role? <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: hero photo -->
+      <div class="reveal" style="transition-delay:.35s;">
+        <div class="culture-img" style="aspect-ratio:4/3;">
+          <img src="/images/careers/team-laptop.jpg" alt="OnPoint team collaborating on a laptop" loading="eager"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ONPOINT -->
+<section class="py-24 border-t border-white/[0.05]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-2xl mb-14 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Why OnPoint</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">
+        Real work, real ownership, from day one.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="value-card reveal">
+        <div class="icon"><span class="material-symbols-outlined">speed</span></div>
+        <h3>Fixed 45-day cadence</h3>
+        <p>Every phase ends in something you can point to. No stalled projects, no slide decks, no "next quarter". Ship, learn, repeat.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:.05s;">
+        <div class="icon"><span class="material-symbols-outlined">psychology</span></div>
+        <h3>AI-first workflow</h3>
+        <p>The whole team uses modern AI tools daily — for research, prospecting, content, code, and analysis. You'll learn the stack fast.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:.1s;">
+        <div class="icon"><span class="material-symbols-outlined">public</span></div>
+        <h3>Global clients</h3>
+        <p>Pininfarina, Vidanta, QuickHeal, Semilynx, Reliance Jio, Mahindra — you'll work on brands people recognise.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:.15s;">
+        <div class="icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+        <h3>Fast growth path</h3>
+        <p>Small team, real responsibility from week one. Take initiative and you'll move faster here than in a 500-person org.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:.2s;">
+        <div class="icon"><span class="material-symbols-outlined">groups</span></div>
+        <h3>Engineering-led team</h3>
+        <p>Founded and led by engineers. Decisions get made on merit, not politics. Zero corporate theatre.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:.25s;">
+        <div class="icon"><span class="material-symbols-outlined">school</span></div>
+        <h3>Learning-forward</h3>
+        <p>Everyone here got better in the last 12 months. If that's your goal too, you'll fit in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN POSITIONS -->
+<section id="openings" class="py-24 border-t border-white/[0.05] bg-surface-low scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-2xl mb-14 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Open positions</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">
+        What we're hiring for right now.
+      </h2>
+      <p class="mt-4 text-on-surface-dim">All roles are based at our Kolhapur HQ, full-time. Compensation is competitive and grows fast with your ownership.</p>
+    </div>
+
+    <div id="roleList" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <!-- Roles inject here -->
+      <div class="text-on-surface-muted col-span-full text-center py-16" id="roleListEmpty">
+        Loading open roles&hellip;
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFE AT ONPOINT -->
+<section class="py-24 border-t border-white/[0.05]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-2xl mb-14 reveal">
+      <p class="text-[11px] font-mono uppercase tracking-widest text-primary mb-3">Life at OnPoint</p>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-tight tracking-[-0.02em]">
+        Building a global tech company from a small town.
+      </h2>
+      <p class="mt-4 text-on-surface-dim max-w-xl">Kolhapur roots, global reach. The team here ships for clients across the US, Europe, and MENA — from a floor that runs on chai, whiteboard sketches, and cake for every launch.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+      <div class="culture-img">
+        <img src="/images/careers/team-anniversary.jpg" alt="OnPoint team celebrating a milestone"/>
+        <div class="cap">
+          <h4>The OnPoint approach</h4>
+          <p>Building a global tech company from a small town.</p>
+        </div>
+      </div>
+      <div class="culture-img">
+        <img src="/images/careers/team-laptop.jpg" alt="OnPoint team collaborating on a laptop"/>
+        <div class="cap">
+          <h4>Ship, together</h4>
+          <p>Small team, real ownership, one screen at a time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 border-t border-white/[0.05] bg-surface-low">
+  <div class="max-w-7xl mx-auto px-6 text-center reveal">
+    <h2 class="font-headline text-3xl md:text-4xl font-bold leading-tight tracking-[-0.02em] mb-4">
+      Don't see your role?
+    </h2>
+    <p class="text-on-surface-dim text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+      We're always open to hearing from people who ship. Send us a note with what you build best and how you'd want to work with us.
+    </p>
+    <a href="mailto:hr@onpointsoft.com?subject=General%20application" class="inline-flex items-center gap-2 rounded-full bg-primary text-surface px-8 py-4 font-bold hover:bg-primary-dim transition-colors">
+      Send a general application <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-surface-low border-t border-white/5 pt-16 pb-10">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14">
+      <div class="space-y-5">
+        <img src="/logo-icon.png" alt="OnPoint Nexus" class="h-14 w-auto" width="56" height="56" style="mix-blend-mode:screen;">
+        <p class="text-on-surface-dim text-sm leading-relaxed">We ship. You grow.<br>130+ projects in production worldwide.</p>
+        <address class="text-sm text-on-surface-muted not-italic leading-relaxed">
+          OnPoint Nexus Pvt. Ltd.<br>
+          Pune &amp; Kolhapur, India &middot; Dallas, TX
+        </address>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Sitemap</h4>
+        <ul class="space-y-3">
+          <li><a href="/services" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Services</a></li>
+          <li><a href="/scaleos"  class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">ScaleOS</a></li>
+          <li><a href="/work"     class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Work</a></li>
+          <li><a href="/products" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Products</a></li>
+          <li><a href="/about"    class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">About</a></li>
+          <li><a href="/careers"  class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-mono uppercase tracking-widest text-primary mb-5">Connect</h4>
+        <ul class="space-y-3">
+          <li><a href="mailto:hello@onpointnexus.com" class="text-on-surface-muted text-sm hover:text-primary transition-colors">hello@onpointnexus.com</a></li>
+          <li><a href="https://www.linkedin.com/company/onpointsoft-services/" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">LinkedIn</a></li>
+          <li><a href="https://instagram.com/onpointsoft" target="_blank" rel="noopener" class="text-on-surface-muted text-sm hover:text-on-surface transition-colors">Instagram</a></li>
+          <li><a href="https://go.onpointnexus.com/schedule" class="text-primary text-sm font-semibold hover:text-white transition-colors">Book a Call &rarr;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-on-surface-muted font-mono">© 2026 OnPoint Nexus Pvt. Ltd. All rights reserved.</p>
+      <div class="flex flex-wrap gap-5 justify-center">
+        <a href="/privacy-policy" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Privacy Policy</a>
+        <a href="/terms" class="text-xs text-on-surface-muted hover:text-primary transition-colors font-mono">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  const listEl = document.getElementById('roleList');
+  const emptyEl = document.getElementById('roleListEmpty');
+
+  const cacheKey = Math.floor(Date.now() / 3600000);
+  fetch('/jobs.json?v=' + cacheKey)
+    .then(r => r.json())
+    .then(data => {
+      const openRoles = (data.roles || []).filter(r => r.status === 'open');
+      if (openRoles.length === 0) {
+        emptyEl.textContent = 'No open roles at the moment. Send a general application — we still want to hear from you.';
+        return;
+      }
+      emptyEl.remove();
+      openRoles.forEach((role, i) => {
+        const a = document.createElement('a');
+        a.href = '/careers/' + role.slug;
+        a.className = 'role-card reveal';
+        a.style.transitionDelay = (i * 0.05) + 's';
+        const pos = role.positions > 1 ? role.positions + ' positions' : '1 position';
+        a.innerHTML = `
+          <span class="dept-chip"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:#1ABADC;"></span>${escapeHtml(role.department)}</span>
+          <h3>${escapeHtml(role.title)}</h3>
+          <p class="summary">${escapeHtml(role.summary)}</p>
+          <div class="meta">
+            <span><span class="material-symbols-outlined icon">location_on</span> ${escapeHtml(role.location)}</span>
+            <span><span class="material-symbols-outlined icon">work</span> ${escapeHtml(role.type)}</span>
+            <span><span class="material-symbols-outlined icon">badge</span> ${escapeHtml(role.experience)}</span>
+            <span><span class="material-symbols-outlined icon">group</span> ${pos}</span>
+          </div>
+          <span class="apply">View role &amp; apply <span aria-hidden="true">&rarr;</span></span>
+        `;
+        listEl.appendChild(a);
+      });
+      // Re-observe injected reveals
+      document.querySelectorAll('.reveal:not(.in-view)').forEach(el => io.observe(el));
+    })
+    .catch(err => {
+      console.warn('jobs.json load failed', err);
+      emptyEl.textContent = 'Could not load roles. Please refresh, or email hr@onpointsoft.com.';
+    });
+
+  function escapeHtml(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Mobile nav toggle
+  const t = document.getElementById('navToggle');
+  if (t) t.addEventListener('click', () => {
+    // Simple scroll to openings on mobile since no mobile menu is built yet
+    document.getElementById('openings').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+</script>
+
+</body>
+</html>

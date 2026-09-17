@@ -1,0 +1,92 @@
+{
+  "roles": [
+    {
+      "slug": "marketing-business-development-executive",
+      "title": "Marketing & Business Development Executive",
+      "department": "Marketing",
+      "location": "Kolhapur, India",
+      "type": "Full-time",
+      "experience": "0–1 year",
+      "positions": 2,
+      "salary": "Competitive",
+      "posted": "2026-09-17",
+      "closes": null,
+      "status": "open",
+      "summary": "Find business opportunities, generate leads, communicate with prospective clients, and support client acquisition.",
+      "responsibilities": [
+        "Research target companies, prospects, and new business opportunities.",
+        "Generate and qualify leads through LinkedIn, email, networking, and other channels.",
+        "Connect with prospects and maintain regular follow-ups.",
+        "Understand client requirements and coordinate with the internal team.",
+        "Maintain lead records and track ongoing opportunities.",
+        "Support proposals, presentations, and other business development activities.",
+        "Use AI tools effectively for research, prospecting, analysis, communication, and day-to-day work."
+      ],
+      "requirements": [
+        "BBA or MBA (preferred).",
+        "0–1 year of experience; freshers can apply.",
+        "Good verbal and written communication.",
+        "Smart, presentable, and comfortable taking initiative.",
+        "Strong willingness to learn and improve.",
+        "Ability to think independently rather than simply follow instructions.",
+        "Comfortable using or learning AI tools to make work more efficient and effective."
+      ],
+      "niceToHave": [
+        "Prior internship in sales, marketing, or business development.",
+        "Familiarity with LinkedIn Sales Navigator, Apollo, or similar prospecting tools.",
+        "Basic understanding of B2B / IT services."
+      ],
+      "benefits": [
+        "Direct exposure to global clients and enterprise projects.",
+        "Fast growth path — take real ownership from day one.",
+        "AI-first workflow — the whole team uses modern AI tools daily.",
+        "Kolhapur HQ, tight-knit engineering-led team."
+      ],
+      "tags": ["Sales", "Business Development", "Lead Generation", "LinkedIn", "AI Tools"]
+    },
+    {
+      "slug": "digital-marketing-social-media-executive",
+      "title": "Digital Marketing & Social Media Executive",
+      "department": "Marketing",
+      "location": "Kolhapur, India",
+      "type": "Full-time",
+      "experience": "0–1 year",
+      "positions": 2,
+      "salary": "Competitive",
+      "posted": "2026-09-17",
+      "closes": null,
+      "status": "open",
+      "summary": "Build the company's digital presence, plan relevant content, manage social platforms, and improve brand visibility.",
+      "responsibilities": [
+        "Manage the company's presence across LinkedIn, Instagram, Facebook, YouTube, and other relevant platforms.",
+        "Plan content calendars based on business goals, audience interests, and platform requirements.",
+        "Research industry topics, trends, competitors, and content opportunities.",
+        "Develop and coordinate posts, carousels, videos, reels, articles, and other formats.",
+        "Monitor reach, engagement, audience growth, and content performance.",
+        "Maintain consistency in the company's communication and brand presence.",
+        "Use AI tools for research, content ideas, analysis, optimisation, and improving work efficiency."
+      ],
+      "requirements": [
+        "BBA or MBA (preferred).",
+        "0–1 year of experience; freshers can apply.",
+        "Good verbal and written communication.",
+        "Smart, presentable, and comfortable taking initiative.",
+        "Strong willingness to learn and improve.",
+        "Ability to think independently rather than simply follow instructions.",
+        "Comfortable using or learning AI tools to make work more efficient and effective."
+      ],
+      "niceToHave": [
+        "Personal or portfolio work on Instagram, LinkedIn, or YouTube.",
+        "Basic experience with Canva, Figma, CapCut, or similar creative tools.",
+        "Prior internship in a digital marketing agency or in-house content team."
+      ],
+      "benefits": [
+        "Own the brand's voice across every platform from day one.",
+        "Direct visibility of your work — 130+ platforms shipped, real case studies to promote.",
+        "AI-first workflow — the whole team uses modern AI tools daily.",
+        "Kolhapur HQ, tight-knit engineering-led team."
+      ],
+      "tags": ["Digital Marketing", "Social Media", "Content", "LinkedIn", "Instagram", "AI Tools"]
+    }
+  ]
+}
