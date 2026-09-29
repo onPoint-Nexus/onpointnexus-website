@@ -2,8 +2,10 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/l/:code",       "destination": "/l.html?c=:code" },
-    { "source": "/careers/:slug", "destination": "/api/careers-detail?slug=:slug" }
+    { "source": "/l/:code",           "destination": "/l.html?c=:code" },
+    { "source": "/careers/:slug",     "destination": "/api/careers-detail?slug=:slug" },
+    { "source": "/p/hs-deck-9x4m",    "destination": "/api/hs-deck-9x4m" },
+    { "source": "/p/hs-deck-9x4m/",   "destination": "/api/hs-deck-9x4m" }
   ],
   "redirects": [
 
@@ -93,6 +95,20 @@
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
         { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/p/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag",  "value": "noindex, nofollow, noarchive" },
+        { "key": "Cache-Control", "value": "private, no-store, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/api/hs-deck-9x4m",
+      "headers": [
+        { "key": "X-Robots-Tag",  "value": "noindex, nofollow, noarchive" },
+        { "key": "Cache-Control", "value": "private, no-store, max-age=0" }
       ]
     }
   ]
