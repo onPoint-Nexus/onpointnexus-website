@@ -1,13 +1,18 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
-    { "source": "/l/:code",           "destination": "/l.html?c=:code" },
-    { "source": "/careers/:slug",     "destination": "/api/careers-detail?slug=:slug" },
-    { "source": "/p/hs-deck-9x4m",    "destination": "/api/hs-deck-9x4m" },
-    { "source": "/p/hs-deck-9x4m/",   "destination": "/api/hs-deck-9x4m" }
+    { "source": "/l/:code",             "destination": "/l.html?c=:code" },
+    { "source": "/careers/:slug",       "destination": "/api/careers-detail?slug=:slug" },
+    { "source": "/p/hs-deck-9x4m",      "destination": "/api/hs-deck-9x4m" },
+    { "source": "/p/hs-deck-9x4m/",     "destination": "/api/hs-deck-9x4m" },
+    { "source": "/p/hs-deck-9x4m/:path*","destination": "/api/hs-deck-9x4m" }
   ],
   "redirects": [
+    { "source": "/p/hs-7k2q",            "destination": "/p/hs-7k2q/",                                     "permanent": true },
+    { "source": "/p/hs-apply-7k2q",       "destination": "/p/hs-7k2q/",                                     "permanent": true },
+    { "source": "/p/hs-apply-7k2q/",      "destination": "/p/hs-7k2q/",                                     "permanent": true },
+    { "source": "/p/hs-apply-7k2q/:path*","destination": "/p/hs-7k2q/",                                     "permanent": true },
+
 
     { "source": "/method",             "destination": "https://www.onpointnexus.com/scaleos",            "permanent": true },
     { "source": "/method/:path*",      "destination": "https://www.onpointnexus.com/scaleos/:path*",     "permanent": true },
@@ -98,10 +103,24 @@
       ]
     },
     {
-      "source": "/p/(.*)",
+      "source": "/p/hs-7k2q/:path*",
       "headers": [
         { "key": "X-Robots-Tag",  "value": "noindex, nofollow, noarchive" },
         { "key": "Cache-Control", "value": "private, no-store, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/p/hs-deck-9x4m/:path*",
+      "headers": [
+        { "key": "X-Robots-Tag",  "value": "noindex, nofollow, noarchive" },
+        { "key": "Cache-Control", "value": "private, no-store, max-age=0" }
+      ]
+    },
+    {
+      "source": "/p/hs-deck-9x4m",
+      "headers": [
+        { "key": "X-Robots-Tag",  "value": "noindex, nofollow, noarchive" },
+        { "key": "Cache-Control", "value": "private, no-store, max-age=0" }
       ]
     },
     {
