@@ -110,6 +110,13 @@
       ]
     },
     {
+      "source": "/p/hs-7k2q/",
+      "headers": [
+        { "key": "X-Robots-Tag",  "value": "noindex, nofollow, noarchive" },
+        { "key": "Cache-Control", "value": "private, no-store, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/p/hs-deck-9x4m/:path*",
       "headers": [
         { "key": "X-Robots-Tag",  "value": "noindex, nofollow, noarchive" },
