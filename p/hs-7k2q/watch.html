@@ -152,10 +152,10 @@ footer .logo img{height:28px} footer .logo img+img{height:15px}
       <h1>Watch the training, then <span class="two">apply below.</span></h1>
       <!-- VIDEO: replace this whole <div class="video">...</div> block with your YouTube/Vimeo/Wistia embed once the VSL is recorded.
            Example: <div class="video"><iframe src="https://player.vimeo.com/video/XXXX" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen" allowfullscreen></iframe></div> -->
-      <div class="video" role="img" aria-label="Video placeholder">
+      <div class="video" id="vslVideo" role="img" aria-label="Training video">
         <div class="stamp"><img data-logo="icon" alt=""> Healthcare ScaleOS · Vikas Sawant</div>
         <div class="play"></div>
-        <div class="cap">Your VSL video goes here</div>
+        <div class="cap" id="vslCap">Loading the training…</div>
       </div>
       <a class="btn" data-go="apply" href="apply.html">Apply for your free Healthcare Scale Strategy Session <span class="arrow">→</span></a>
       <p class="micro">45 minutes, one to one with Vikas Sawant.</p>
@@ -312,6 +312,51 @@ document.addEventListener('change', e => { const f = e.target.closest('.field,.q
 function formData(form){ const d = {}; new FormData(form).forEach((v, k) => { v = String(v).trim(); if (!v) return; d[k] = d[k] ? d[k] + ', ' + v : v; }); return d; }
 
 const L = getLead(); if (L.name) document.getElementById('hi').textContent = ', ' + L.name.split(' ')[0];
+
+// --- VSL loader: pulls YouTube URL from Vercel env var HS_VSL_URL via /api/hs-vsl-config ---
+(function(){
+  const box = document.getElementById('vslVideo');
+  const cap = document.getElementById('vslCap');
+  if (!box) return;
+
+  function extractId(url){
+    if (!url) return '';
+    // youtu.be/ID
+    let m = url.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
+    if (m) return m[1];
+    // youtube.com/watch?v=ID
+    m = url.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
+    if (m) return m[1];
+    // youtube.com/embed/ID or /shorts/ID or /live/ID
+    m = url.match(/youtube\.com\/(?:embed|shorts|live)\/([A-Za-z0-9_-]{6,})/);
+    if (m) return m[1];
+    // Fallback: bare ID
+    if (/^[A-Za-z0-9_-]{6,}$/.test(url.trim())) return url.trim();
+    return '';
+  }
+
+  fetch('/api/hs-vsl-config', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : { url: '' })
+    .catch(() => ({ url: '' }))
+    .then(cfg => {
+      const id = extractId(cfg && cfg.url);
+      if (!id) {
+        cap.textContent = 'The training will appear here shortly.';
+        return;
+      }
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&modestbranding=1&playsinline=1';
+      iframe.title = 'Healthcare ScaleOS training';
+      iframe.loading = 'eager';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit;';
+      box.innerHTML = '';
+      box.appendChild(iframe);
+      box.setAttribute('aria-label', 'Training video');
+      box.removeAttribute('role');
+    });
+})();
 </script>
 
 </body>
