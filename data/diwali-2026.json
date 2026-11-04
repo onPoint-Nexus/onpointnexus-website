@@ -18,7 +18,9 @@
       "firstName": "Ganesh",
       "fullName": "Ganesh Joshi",
       "note": "",
-      "video": { "src": "" },
+      "video": {
+        "src": ""
+      },
       "active": true
     },
     {
@@ -26,7 +28,9 @@
       "firstName": "Rohan",
       "fullName": "Rohan Diwan",
       "note": "",
-      "video": { "src": "" },
+      "video": {
+        "src": ""
+      },
       "active": true
     },
     {
@@ -35,7 +39,9 @@
       "fullName": "Dr. Bhagyesh Kulkarni",
       "salutation": "Hi Dr. Bhagyesh,",
       "note": "",
-      "video": { "src": "" },
+      "video": {
+        "src": ""
+      },
       "active": true
     },
     {
@@ -43,7 +49,9 @@
       "firstName": "Gayatri",
       "fullName": "Gayatri Kulkarni",
       "note": "",
-      "video": { "src": "" },
+      "video": {
+        "src": ""
+      },
       "active": true
     },
     {
@@ -51,7 +59,9 @@
       "firstName": "Pradeep",
       "fullName": "Pradeep Huddedar",
       "note": "",
-      "video": { "src": "" },
+      "video": {
+        "src": ""
+      },
       "active": true
     },
     {
@@ -59,7 +69,9 @@
       "firstName": "Ashish",
       "fullName": "Ashish Meher",
       "note": "",
-      "video": { "src": "" },
+      "video": {
+        "src": ""
+      },
       "active": true
     },
     {
@@ -67,7 +79,9 @@
       "firstName": "Kamlesh",
       "fullName": "Kamlesh Borkar",
       "note": "",
-      "video": { "src": "" },
+      "video": {
+        "src": ""
+      },
       "active": true
     },
     {
@@ -76,7 +90,19 @@
       "fullName": "Dr. Chandrashree Kulkarni",
       "salutation": "Hi Dr. Chandrashree,",
       "note": "",
-      "video": { "src": "" },
+      "video": {
+        "src": ""
+      },
+      "active": true
+    },
+    {
+      "slug": "sunil-3qt5s",
+      "firstName": "Sunil",
+      "fullName": "Sunil Mangani",
+      "note": "",
+      "video": {
+        "src": "https://www.loom.com/share/70a26b15783a4f7ab01542cf7516f243"
+      },
       "active": true
     }
   ]
