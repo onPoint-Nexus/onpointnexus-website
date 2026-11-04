@@ -6,6 +6,7 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /private/
+Disallow: /d/
 
 # ── AI / LLM crawlers — allow full access including llms.txt ─
 User-agent: GPTBot

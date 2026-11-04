@@ -143,6 +143,21 @@
         { "key": "X-Robots-Tag",  "value": "noindex, nofollow, noarchive" },
         { "key": "Cache-Control", "value": "private, no-store, max-age=0" }
       ]
+    },
+    {
+      "source": "/d/:path*",
+      "headers": [
+        { "key": "X-Robots-Tag",   "value": "noindex, nofollow, noarchive" },
+        { "key": "Referrer-Policy","value": "no-referrer" },
+        { "key": "Cache-Control",  "value": "private, no-store, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/d/_preview.html",
+      "headers": [
+        { "key": "X-Robots-Tag",   "value": "noindex, nofollow, noarchive" },
+        { "key": "Cache-Control",  "value": "private, no-store, max-age=0" }
+      ]
     }
   ]
 }

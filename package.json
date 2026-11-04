@@ -1,0 +1,20 @@
+{
+  "name": "onpointnexus-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "OnPoint Nexus marketing site",
+  "type": "module",
+  "scripts": {
+    "diwali:build": "node scripts/diwali/build.mjs",
+    "diwali:preview": "node scripts/diwali/build.mjs --preview",
+    "diwali:cards": "node scripts/diwali/cards.mjs",
+    "diwali:add": "node scripts/diwali/add.mjs",
+    "diwali:video": "node scripts/diwali/video.mjs"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "campaign": "diwali-2026",
+  "baseUrl": "https://onpointnexus.com/d/",
+  "defaults": {
+    "fromFirstName": "Vikas",
+    "fromTitle": "Founder & CEO, OnPoint Nexus",
+    "greeting": "Shubh Deepavali",
+    "signoff": "Warmly,",
+    "closingLine": "Wishing you and your family a Diwali full of light, laughter and good food.",
+    "whatsapp": "+91XXXXXXXXXX",
+    "whatsappText": "Hi Vikas, thank you for the Diwali wishes 🪔",
+    "email": "vikas@onpointnexus.com",
+    "durationLabel": "Under 2 minutes"
+  },
+  "recipients": [
+    {
+      "slug": "ganesh-k9m4r",
+      "firstName": "Ganesh",
+      "fullName": "Ganesh Joshi",
+      "note": "",
+      "video": { "src": "" },
+      "active": true
+    },
+    {
+      "slug": "rohan-m2x8p",
+      "firstName": "Rohan",
+      "fullName": "Rohan Diwan",
+      "note": "",
+      "video": { "src": "" },
+      "active": true
+    },
+    {
+      "slug": "bhagyesh-t7n3q",
+      "firstName": "Bhagyesh",
+      "fullName": "Dr. Bhagyesh Kulkarni",
+      "salutation": "Hi Dr. Bhagyesh,",
+      "note": "",
+      "video": { "src": "" },
+      "active": true
+    },
+    {
+      "slug": "gayatri-p4h8w",
+      "firstName": "Gayatri",
+      "fullName": "Gayatri Kulkarni",
+      "note": "",
+      "video": { "src": "" },
+      "active": true
+    },
+    {
+      "slug": "pradeep-r6y2j",
+      "firstName": "Pradeep",
+      "fullName": "Pradeep Huddedar",
+      "note": "",
+      "video": { "src": "" },
+      "active": true
+    },
+    {
+      "slug": "ashish-d8v5k",
+      "firstName": "Ashish",
+      "fullName": "Ashish Meher",
+      "note": "",
+      "video": { "src": "" },
+      "active": true
+    },
+    {
+      "slug": "kamlesh-s3z9f",
+      "firstName": "Kamlesh",
+      "fullName": "Kamlesh Borkar",
+      "note": "",
+      "video": { "src": "" },
+      "active": true
+    },
+    {
+      "slug": "chandrashree-h5b2n",
+      "firstName": "Chandrashree",
+      "fullName": "Dr. Chandrashree Kulkarni",
+      "salutation": "Hi Dr. Chandrashree,",
+      "note": "",
+      "video": { "src": "" },
+      "active": true
+    }
+  ]
+}
