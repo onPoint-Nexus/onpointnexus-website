@@ -55,11 +55,26 @@ async function renderQr(url, outPath){
   });
 }
 
-function cardHtml({ firstName, qrDataUri, logoDataUri }){
+// Derive how the person is addressed on the card. If a salutation
+// override exists on the recipient (e.g. "Hi Dr. Bhagyesh,"), we
+// strip the leading "Hi " and trailing comma so the card reads
+// "Dr. Bhagyesh, this card has something to say." Otherwise the
+// first name is used — same behaviour as the message screen.
+function cardAddressedAs(r){
+  if (r.salutation) {
+    return String(r.salutation)
+      .replace(/^Hi\s+/i, '')
+      .replace(/[,，]\s*$/, '')
+      .trim();
+  }
+  return r.firstName;
+}
+
+function cardHtml({ addressedAs, qrDataUri, logoDataUri, signatureName, signatureOrg }){
   // Mirrors design-reference/Main.dc.html, scaled to A6+bleed.
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
-<title>Diwali card — ${escapeHtml(firstName)}</title>
+<title>Diwali card — ${escapeHtml(addressedAs)}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
@@ -119,8 +134,14 @@ body{
 }
 .spacer{flex:1}
 .sign{
+  display:flex; flex-direction:column; align-items:center; gap:1mm;
+}
+.sign .name{
   font-family:'Fraunces',Georgia,serif; font-style:italic;
-  font-size:12pt; color:#09384A;
+  font-size:14pt; color:#09384A; line-height:1;
+}
+.sign .org{
+  font-size:9pt; color:#5C7680; letter-spacing:.02em;
 }
 </style></head>
 <body><div class="card">
@@ -134,7 +155,7 @@ body{
   </svg>
 
   <div class="deepavali">Shubh Deepavali</div>
-  <div class="headline">${escapeHtml(firstName)}, this card has something to say.</div>
+  <div class="headline">${escapeHtml(addressedAs)}, this card has something to say.</div>
   <p class="sub">It's not written inside. Scan the code to hear it.</p>
 
   <div class="qr-row">
@@ -151,7 +172,10 @@ body{
   <div class="scan-sub">Under 2 minutes · sound on</div>
 
   <div class="spacer"></div>
-  <div class="sign">— Vikas</div>
+  <div class="sign">
+    <div class="name">— ${escapeHtml(signatureName)}</div>
+    <div class="org">${escapeHtml(signatureOrg)}</div>
+  </div>
 </div></body></html>`;
 }
 
@@ -222,6 +246,10 @@ async function main(){
 
   const cardHtmlPaths = [];
 
+  const defaults = data.defaults || {};
+  const signatureName = `${defaults.fromFirstName || 'Vikas'} Sawant`;
+  const signatureOrg  = 'OnPoint Nexus';
+
   for (const r of actives) {
     const qrPath   = path.join(OUT_DIR, `${r.slug}-qr.png`);
     const htmlPath = path.join(OUT_DIR, `${r.slug}.html`);
@@ -234,11 +262,17 @@ async function main(){
     const qrBytes = await fs.readFile(qrPath);
     const qrDataUri = 'data:image/png;base64,' + qrBytes.toString('base64');
 
-    const html = cardHtml({ firstName: r.firstName, qrDataUri, logoDataUri });
+    const html = cardHtml({
+      addressedAs: cardAddressedAs(r),
+      qrDataUri,
+      logoDataUri,
+      signatureName,
+      signatureOrg,
+    });
     await fs.writeFile(htmlPath, html);
 
     cardHtmlPaths.push({ slug: r.slug, htmlPath, pdfPath });
-    console.log(`  ✓ ${r.slug}-qr.png + ${r.slug}.html  →  ${url}`);
+    console.log(`  ✓ ${r.slug}-qr.png + ${r.slug}.html  →  ${url}  (${cardAddressedAs(r)})`);
   }
 
   await renderPdfs(cardHtmlPaths, OUT_DIR);
