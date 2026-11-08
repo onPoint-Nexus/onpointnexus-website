@@ -110,6 +110,17 @@
         "src": "https://www.loom.com/share/70a26b15783a4f7ab01542cf7516f243"
       },
       "active": true
+    },
+    {
+      "slug": "team-h7k3m",
+      "firstName": "Team",
+      "fullName": "Team OnPoint Nexus",
+      "salutation": "Hi Team OnPoint,",
+      "note": "This one is just for you.\n\nEvery ship date we hit, every all-nighter, every demo that landed — none of it happens without the people who show up every day and make it real. Thank you for building OnPoint with me.\n\nMay this Diwali bring light, rest, and good food to your homes. Here's to another year of shipping together.",
+      "video": {
+        "src": "https://youtube.com/shorts/gPuSYmpMPlo"
+      },
+      "active": true
     }
   ]
 }
