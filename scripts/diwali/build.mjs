@@ -38,8 +38,9 @@ function detectPlayerKind(src){
     return 'mp4';
   }
   if (u.includes('loom.com/share/') || u.includes('loom.com/embed/')) return 'loom';
+  // YouTube Shorts frequently block embedding (Error 153). Open on YouTube instead.
+  if (u.includes('youtube.com/shorts/')) return 'youtube-link';
   if (u.includes('youtu.be/') || u.includes('youtube.com/')) return 'youtube';
-  // Default: treat as mp4 if ends with video extension, otherwise unknown
   if (/\.(mov|webm|m4v)(\?|$)/.test(u)) return 'mp4';
   return null;
 }
@@ -112,8 +113,9 @@ function renderActive(template, merged){
   const posterImg = poster
     ? `<img class="video-poster" src="${escapeHtml(poster)}" alt="" aria-hidden="true">`
     : '';
-  // Duration chip only when we actually have a video to time
-  const durationChip = hasVideo && merged.durationLabel
+  // Duration chip only when we actually have a video to time — skip for
+  // youtube-link, since the YouTube page shows its own duration.
+  const durationChip = hasVideo && merged.durationLabel && kind !== 'youtube-link'
     ? `<div class="video-duration">${escapeHtml(merged.durationLabel)}</div>`
     : '';
 
@@ -129,7 +131,9 @@ function renderActive(template, merged){
     '{{VIDEO_POSTER}}':      escapeHtml(poster),
     '{{VIDEO_POSTER_IMG}}':  posterImg,
     '{{VIDEO_DURATION_CHIP}}': durationChip,
-    '{{VIDEO_CAPTION}}':      hasVideo ? 'Just for you — hit play' : 'Your video is being prepared',
+    '{{VIDEO_CAPTION}}':      hasVideo
+      ? (kind === 'youtube-link' ? 'Opens in a new tab · just for you' : 'Just for you — hit play')
+      : 'Your video is being prepared',
     '{{NOTE_PARAGRAPHS}}':   renderNoteParagraphs(merged.note),
     '{{CLOSING_LINE}}':      escapeHtml(merged.closingLine || ''),
     '{{SIGNOFF}}':           escapeHtml(merged.signoff || 'Warmly,'),

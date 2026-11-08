@@ -225,6 +225,23 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .video-box[data-player="none"] .video-play--real{ display:none }
 .video-box[data-player="none"] .video-pending{ display:flex }
 
+/* YouTube-link cover (for Shorts that block embedding) — full-bleed image, opens the URL */
+.video-box[data-player="youtube-link"]{ background:#0B2E3C; cursor:pointer }
+.video-box[data-player="youtube-link"] .video-play{ display:none }
+.video-cover{
+  display:none;
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  text-decoration:none;
+  transition:transform .35s ease;
+}
+.video-box[data-player="youtube-link"] .video-cover{ display:block }
+.video-cover img{
+  position:absolute; inset:0;
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.video-box[data-player="youtube-link"]:hover .video-cover{ transform:scale(1.015) }
+
 .note{
   margin-top:32px;
   font-size:17px; line-height:1.65; color:#1F3F4B;
@@ -393,8 +410,8 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 
       <!-- Video area: filled by the player initializer below -->
       <div class="video-box" id="videoBox"
-           data-player="none"
-           data-src=""
+           data-player="youtube-link"
+           data-src="https://youtube.com/shorts/BnWBWz_ryPQ"
            data-poster=""
            data-autoplay="0">
         <!-- Poster + play button; swapped with real player on interaction.
@@ -412,9 +429,14 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
           <div class="video-pending-title">A video from Vikas is on its way</div>
           <div class="video-pending-sub">Do check back in a day or two 🪔</div>
         </div>
+        <a class="video-cover" id="videoCover"
+           href="https://youtube.com/shorts/BnWBWz_ryPQ" target="_blank" rel="noopener noreferrer"
+           aria-label="Watch Vikas's Diwali video message on YouTube">
+          <img src="/diwali/vikas-diwali-cover.webp" alt="A Special Diwali Message from Vikas Sawant · OnPoint Nexus. Watch on YouTube." loading="lazy">
+        </a>
         
       </div>
-      <div class="video-caption">Your video is being prepared</div>
+      <div class="video-caption">Opens in a new tab · just for you</div>
 
       <div class="note">
         <p></p>
@@ -581,8 +603,8 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
     // Keep URL the same (no new route — refresh returns to landing)
     try { history.replaceState({ screen:'message' }, '', location.pathname); } catch(e){}
     track('message_open');
-    // Kick off the player (or leave the pending-state visible)
-    if (kind && kind !== 'none') mountPlayer(true);
+    // Kick off the player (or leave the pending-state / YouTube cover visible)
+    if (kind && kind !== 'none' && kind !== 'youtube-link') mountPlayer(true);
   });
 
   // If user later clicks the poster's play button again (e.g. after returning)
@@ -596,6 +618,9 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
   // Track reply clicks
   document.querySelectorAll('.reply-wa').forEach(a => a.addEventListener('click', () => track('reply_whatsapp')));
   document.querySelectorAll('.reply-email').forEach(a => a.addEventListener('click', () => track('reply_email')));
+  // Track YouTube link-out
+  const cover = document.getElementById('videoCover');
+  if (cover) cover.addEventListener('click', () => track('video_open_youtube'));
 })();
 </script>
 
