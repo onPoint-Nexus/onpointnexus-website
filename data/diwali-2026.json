@@ -6,7 +6,7 @@
     "fromTitle": "Founder & CEO, OnPoint Nexus",
     "greeting": "Shubh Deepavali",
     "signoff": "Warmly,",
-    "closingLine": "Wishing you and your family a Diwali full of light, laughter and good food.",
+    "closingLine": "A very happy Diwali to you and your family.",
     "whatsapp": "+91 8788256022",
     "whatsappText": "Hi Vikas, thank you for the Diwali wishes 🪔",
     "email": "vikas@onpointnexus.com",
@@ -116,9 +116,21 @@
       "firstName": "Team",
       "fullName": "Team OnPoint Nexus",
       "salutation": "Hi Team OnPoint,",
-      "note": "This one is just for you.\n\nEvery ship date we hit, every all-nighter, every demo that landed — none of it happens without the people who show up every day and make it real. Thank you for building OnPoint with me.\n\nMay this Diwali bring light, rest, and good food to your homes. Here's to another year of shipping together.",
+      "closingLine": "",
+      "note": "Team, this one is for you.\n\nNothing we build is a one-person job. You all know that better than anyone. Thank you for the work you put in every day.\n\nHave a lovely Diwali with your families.",
       "video": {
         "src": "https://youtube.com/shorts/gPuSYmpMPlo"
+      },
+      "active": true
+    },
+    {
+      "slug": "sagar-w5q3n",
+      "firstName": "Sagar",
+      "fullName": "Sagar Niyogi",
+      "salutation": "Hi Sagar,",
+      "note": "I wanted to say a proper thank you.\n\nYou trusted us early, and the leads you sent our way turned into real business for us. We are grateful for that, and for the belief behind it.",
+      "video": {
+        "src": "https://youtube.com/shorts/9xX8eDwt3lA"
       },
       "active": true
     }

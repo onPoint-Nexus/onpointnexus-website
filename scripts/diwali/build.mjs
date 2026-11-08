@@ -132,8 +132,8 @@ function renderActive(template, merged){
     '{{VIDEO_POSTER_IMG}}':  posterImg,
     '{{VIDEO_DURATION_CHIP}}': durationChip,
     '{{VIDEO_CAPTION}}':      hasVideo
-      ? (kind === 'youtube-link' ? 'Opens in a new tab · just for you' : 'Just for you — hit play')
-      : 'Your video is being prepared',
+      ? (kind === 'youtube-link' ? 'Opens on YouTube' : 'Press play')
+      : 'Coming in a day or two',
     '{{NOTE_PARAGRAPHS}}':   renderNoteParagraphs(merged.note),
     '{{CLOSING_LINE}}':      escapeHtml(merged.closingLine || ''),
     '{{SIGNOFF}}':           escapeHtml(merged.signoff || 'Warmly,'),
