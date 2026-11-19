@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -55,17 +55,168 @@
 
   <style>
     .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle}
-    .neural-grid{background-image:radial-gradient(rgba(26,186,220,.09) 1px,transparent 1px);background-size:36px 36px}
-    .glow-blob{position:absolute;border-radius:9999px;filter:blur(90px);pointer-events:none}
-    .cal-wrap{background:#fff;border-radius:18px;padding:0;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4),0 0 0 1px rgba(26,186,220,.18)}
-    .cal-wrap iframe{display:block;width:100%;border:0;background:#fff;min-height:720px}
+
+    /* ── Hero background system (same language as the homepage) ── */
+    .hero-wrap{
+      position:relative;
+      background:
+        radial-gradient(ellipse 80% 55% at 50% 0%, rgba(26,186,220,0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 10% 80%, rgba(99,102,241,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 90% 90%, rgba(26,186,220,0.09) 0%, transparent 70%),
+        linear-gradient(180deg, #0c1324 0%, #0a1020 50%, #0c1324 100%);
+      overflow:hidden;
+    }
+    .hero-grid{
+      position:absolute; inset:0; z-index:0; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(26,186,220,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,186,220,0.07) 1px, transparent 1px);
+      background-size:60px 60px;
+      mask-image: radial-gradient(ellipse 85% 70% at 50% 45%, #000 30%, transparent 85%);
+      -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 45%, #000 30%, transparent 85%);
+      animation: gridPulse 10s ease-in-out infinite;
+    }
+    .hero-spot{
+      position:absolute; inset:0; z-index:0; pointer-events:none;
+      background:
+        radial-gradient(ellipse 55% 45% at 50% 38%, rgba(26,186,220,0.22) 0%, transparent 70%),
+        radial-gradient(ellipse 35% 25% at 50% 60%, rgba(141,228,240,0.08) 0%, transparent 70%);
+      animation: heroSpotPulse 10s ease-in-out infinite;
+    }
+    .glow-blob{
+      position:absolute; border-radius:9999px; filter:blur(90px);
+      pointer-events:none; z-index:0;
+    }
+    .blob-a{
+      width:560px; height:560px; top:-10%; left:-8%;
+      background:radial-gradient(circle, rgba(26,186,220,0.22) 0%, transparent 70%);
+      animation: heroBlob1 14s ease-in-out infinite;
+    }
+    .blob-b{
+      width:460px; height:460px; top:30%; right:-6%;
+      background:radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%);
+      animation: heroBlob2 18s ease-in-out infinite;
+    }
+    .blob-c{
+      width:380px; height:380px; bottom:-10%; left:30%;
+      background:radial-gradient(circle, rgba(141,228,240,0.15) 0%, transparent 70%);
+      animation: heroBlob3 16s ease-in-out infinite;
+    }
+    @keyframes gridPulse{
+      0%,100%{opacity:.75}
+      50%    {opacity:1}
+    }
+    @keyframes heroSpotPulse{
+      0%,100%{opacity:.85}
+      50%    {opacity:1}
+    }
+    @keyframes heroBlob1{
+      0%,100%{transform:translate(0,0) scale(1)}
+      33%    {transform:translate(30px,40px) scale(1.08)}
+      66%    {transform:translate(-20px,20px) scale(.94)}
+    }
+    @keyframes heroBlob2{
+      0%,100%{transform:translate(0,0) scale(1)}
+      50%    {transform:translate(-40px,60px) scale(1.12)}
+    }
+    @keyframes heroBlob3{
+      0%,100%{transform:translate(0,0) scale(1)}
+      50%    {transform:translate(40px,-40px) scale(1.1)}
+    }
+
+    /* ── Headline: gradient accent + blur-rise animation ── */
+    .grad-text-strong{
+      background: linear-gradient(135deg, #1ABADC 0%, #8de4f0 55%, #cef4fc 100%);
+      -webkit-background-clip:text; background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .h1-line{display:block; overflow:visible}
+    .h1-line > span{
+      display:inline-block;
+      transform:translateY(40px); opacity:0; filter:blur(10px);
+      animation: h1Rise .95s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    .h1-line:nth-child(1) > span{animation-delay:.15s}
+    .h1-line:nth-child(2) > span{animation-delay:.35s}
+    @keyframes h1Rise{ to{transform:translateY(0); opacity:1; filter:blur(0)} }
+    .fade-in{opacity:0; animation: fadeIn .9s cubic-bezier(.16,1,.3,1) forwards}
+    .fade-in-1{animation-delay:.55s}
+    .fade-in-2{animation-delay:.75s}
+    .fade-in-3{animation-delay:.95s}
+    @keyframes fadeIn{ to{opacity:1} }
+
+    /* ── Hero chip (same as homepage) ── */
+    .hero-chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 14px; border-radius:999px;
+      background:rgba(20,28,46,0.65);
+      border:1px solid rgba(26,186,220,0.28);
+      color:#C8D4E8;
+      font-family:'Roboto Mono',monospace; font-size:.68rem;
+      font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+      backdrop-filter: blur(6px);
+    }
+    .hero-chip .dot{
+      width:6px; height:6px; border-radius:50%;
+      background:#1ABADC;
+      box-shadow:0 0 10px rgba(26,186,220,0.9);
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+    @keyframes dotPulse{
+      0%,100%{opacity:1; transform:scale(1)}
+      50%    {opacity:.5; transform:scale(.85)}
+    }
+
+    /* ── Proof stat ── */
+    .stat-val{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-weight:800; letter-spacing:-.025em;
+      background: linear-gradient(135deg,#1ABADC 0%,#8de4f0 100%);
+      -webkit-background-clip:text; background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    /* ── Scheduler card — glowing edge against the dark hero ── */
+    .cal-wrap{
+      position:relative;
+      background:#fff;
+      border-radius:22px;
+      padding:0; overflow:hidden;
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.45),
+        0 0 0 1px rgba(26,186,220,0.22),
+        0 0 80px rgba(26,186,220,0.12);
+    }
+    .cal-wrap::before{
+      content:""; position:absolute; inset:-1px;
+      border-radius:22px; padding:1px;
+      background:linear-gradient(135deg,rgba(26,186,220,0.6) 0%,rgba(141,228,240,0.15) 40%,rgba(99,102,241,0.4) 100%);
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      pointer-events:none;
+    }
+    .cal-wrap iframe{display:block; width:100%; border:0; background:#fff; min-height:720px}
     @media (max-width:640px){ .cal-wrap iframe{min-height:640px} }
+
+    /* ── Fade the hero into the body ── */
+    .hero-bottom-fade{
+      position:absolute; left:0; right:0; bottom:0; height:140px;
+      z-index:1; pointer-events:none;
+      background: linear-gradient(180deg, transparent 0%, #0c1324 100%);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .hero-grid,.hero-spot,.blob-a,.blob-b,.blob-c,.hero-chip .dot,
+      .h1-line > span,.fade-in { animation:none !important }
+      .h1-line > span{transform:none; opacity:1; filter:none}
+      .fade-in{opacity:1}
+    }
   </style>
 </head>
 
 <body class="bg-surface text-on-surface font-body selection:bg-primary/20 overflow-x-hidden">
 
-<!-- STICKY NAV (same shell as the rest of the site) -->
+<!-- STICKY NAV -->
 <nav class="sticky top-0 z-50 border-b border-white/[0.05]" style="background:rgba(12,19,36,0.92);backdrop-filter:blur(20px);">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2 shrink-0">
@@ -85,49 +236,55 @@
 </nav>
 
 <!-- HERO + SCHEDULER -->
-<section class="relative overflow-hidden pt-16 pb-24 md:pt-20 md:pb-28">
-  <div class="absolute inset-0 neural-grid opacity-20 pointer-events-none"></div>
-  <div class="absolute inset-0 bg-gradient-to-br from-primary/8 via-surface to-surface-mid/40 pointer-events-none"></div>
-  <div class="glow-blob w-[520px] h-[520px] bg-primary/10 top-0 left-1/4"></div>
-  <div class="glow-blob w-[360px] h-[360px] bg-primary/5 bottom-0 right-1/4"></div>
+<section class="hero-wrap relative pt-20 pb-28 md:pt-24 md:pb-32">
+  <div class="hero-spot"></div>
+  <div class="hero-grid"></div>
+  <div class="glow-blob blob-a"></div>
+  <div class="glow-blob blob-b"></div>
+  <div class="glow-blob blob-c"></div>
 
   <div class="max-w-5xl mx-auto px-6 relative z-10">
 
     <div class="text-center mb-10 md:mb-14">
-      <span class="text-xs font-mono text-primary uppercase tracking-widest">Start</span>
-      <h1 class="font-headline text-4xl md:text-5xl font-bold mt-4 mb-5 leading-[1.08]">
-        Pick a time for a 30-minute call.
+      <div class="fade-in mb-6 flex justify-center">
+        <span class="hero-chip"><span class="dot"></span> Available this week</span>
+      </div>
+
+      <h1 class="font-headline font-bold leading-[1.05] tracking-[-0.02em] text-[clamp(2.1rem,6vw,4rem)] mb-6">
+        <span class="h1-line"><span>Pick a time for a</span></span>
+        <span class="h1-line"><span class="grad-text-strong">30-minute call.</span></span>
       </h1>
-      <p class="text-base md:text-lg text-on-surface-dim max-w-xl mx-auto leading-relaxed">
-        We will walk through your business, flag the biggest bottleneck, and tell you what Phase 01 would look like for you.
+
+      <p class="fade-in fade-in-2 text-base md:text-lg text-on-surface-dim max-w-xl mx-auto leading-relaxed">
+        We will walk through your business, flag the biggest bottleneck,
+        and tell you what Phase 01 would look like for you.
       </p>
     </div>
 
     <!-- Proof row -->
-    <div class="grid grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto mb-10 md:mb-14">
+    <div class="fade-in fade-in-3 grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto mb-12 md:mb-16">
       <div class="text-center">
-        <div class="font-headline text-2xl md:text-3xl font-bold text-primary">130+</div>
-        <div class="text-xs md:text-sm text-on-surface-dim mt-1">Production systems shipped</div>
+        <div class="stat-val text-3xl md:text-4xl">130+</div>
+        <div class="text-[11px] md:text-xs font-mono uppercase tracking-widest text-on-surface-muted mt-2">Production systems</div>
       </div>
       <div class="text-center">
-        <div class="font-headline text-2xl md:text-3xl font-bold text-primary">98%</div>
-        <div class="text-xs md:text-sm text-on-surface-dim mt-1">Client retention</div>
+        <div class="stat-val text-3xl md:text-4xl">98%</div>
+        <div class="text-[11px] md:text-xs font-mono uppercase tracking-widest text-on-surface-muted mt-2">Client retention</div>
       </div>
       <div class="text-center">
-        <div class="font-headline text-2xl md:text-3xl font-bold text-primary">45 days</div>
-        <div class="text-xs md:text-sm text-on-surface-dim mt-1">From brief to live</div>
+        <div class="stat-val text-3xl md:text-4xl">45 <span class="text-xl md:text-2xl">days</span></div>
+        <div class="text-[11px] md:text-xs font-mono uppercase tracking-widest text-on-surface-muted mt-2">Brief to live</div>
       </div>
     </div>
 
     <!-- Scheduler -->
-    <div id="schedule" class="cal-wrap">
+    <div id="schedule" class="cal-wrap fade-in fade-in-3">
       <!-- Google Calendar Appointment Scheduling begin -->
       <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3fkKQTviRf09A_6vZHRRFWDAAaJHftfBcwU_RxvxXy9cULflDBauhi642QUMhjLhORm0DTEhZQ?gv=true"
               width="100%" height="720" frameborder="0" title="Book a call with Vikas Sawant"></iframe>
       <!-- end Google Calendar Appointment Scheduling -->
     </div>
 
-    <!-- Fallback if the embed doesn't load -->
     <p class="text-center text-sm text-on-surface-muted mt-6">
       Having trouble with the booking form?
       <a href="https://calendar.app.google/shqED6J6FEe1rb9Z9" target="_blank" rel="noopener" class="text-primary hover:underline">Open it in a new tab</a>
@@ -135,10 +292,12 @@
       <a href="mailto:hello@onpointnexus.com" class="text-primary hover:underline">hello@onpointnexus.com</a>.
     </p>
   </div>
+
+  <div class="hero-bottom-fade"></div>
 </section>
 
 <!-- MINIMAL FOOTER -->
-<footer class="border-t border-white/5 py-8">
+<footer class="border-t border-white/5 py-8 bg-surface">
   <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-on-surface-muted">
     <div>© 2026 OnPoint Nexus Pvt. Ltd.</div>
     <div class="flex items-center gap-5">
@@ -149,7 +308,6 @@
   </div>
 </footer>
 
-<!-- Vercel Analytics -->
 <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
