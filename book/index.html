@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <title>Book a Discovery Call | OnPoint Nexus</title>
+  <meta name="description" content="Pick a 30-minute slot with Vikas Sawant. We will walk through your business, flag the biggest bottleneck, and tell you what Phase 01 looks like for you.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://www.onpointnexus.com/book/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="OnPoint Nexus">
+  <meta property="og:url"         content="https://www.onpointnexus.com/book/">
+  <meta property="og:title"       content="Book a Discovery Call | OnPoint Nexus">
+  <meta property="og:description" content="Pick a 30-minute slot with Vikas Sawant.">
+  <meta property="og:image"       content="https://www.onpointnexus.com/og-image.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary:           '#1ABADC',
+            'primary-dim':     '#0E8FA8',
+            surface:           '#0c1324',
+            'surface-low':     '#080e1c',
+            'surface-mid':     '#111827',
+            'surface-high':    '#1a2235',
+            'surface-card':    '#141c2e',
+            'on-surface':      '#E8EDF5',
+            'on-surface-dim':  '#8A9BB5',
+            'on-surface-muted':'#4A5A72',
+            outline:           '#2A3550',
+          },
+          fontFamily: {
+            headline: ["'Plus Jakarta Sans'", 'sans-serif'],
+            body:     ["'Plus Jakarta Sans'", 'sans-serif'],
+            mono:     ["'Roboto Mono'", 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle}
+    .neural-grid{background-image:radial-gradient(rgba(26,186,220,.09) 1px,transparent 1px);background-size:36px 36px}
+    .glow-blob{position:absolute;border-radius:9999px;filter:blur(90px);pointer-events:none}
+    .cal-wrap{background:#fff;border-radius:18px;padding:0;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4),0 0 0 1px rgba(26,186,220,.18)}
+    .cal-wrap iframe{display:block;width:100%;border:0;background:#fff;min-height:720px}
+    @media (max-width:640px){ .cal-wrap iframe{min-height:640px} }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary/20 overflow-x-hidden">
+
+<!-- STICKY NAV (same shell as the rest of the site) -->
+<nav class="sticky top-0 z-50 border-b border-white/[0.05]" style="background:rgba(12,19,36,0.92);backdrop-filter:blur(20px);">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/logo-wordmark.png" alt="OnPoint Nexus" class="h-5 w-auto" width="160" height="20">
+    </a>
+    <div class="hidden md:flex items-center gap-7 font-body text-sm">
+      <a href="/services" class="text-on-surface-dim hover:text-primary transition-colors">Services</a>
+      <a href="/scaleos"  class="text-on-surface-dim hover:text-primary transition-colors">ScaleOS</a>
+      <a href="/work"     class="text-on-surface-dim hover:text-primary transition-colors">Work</a>
+      <a href="/products" class="text-on-surface-dim hover:text-primary transition-colors">Products</a>
+      <a href="/about"    class="text-on-surface-dim hover:text-primary transition-colors">About</a>
+    </div>
+    <a href="#schedule" class="hidden md:inline-flex items-center gap-1.5 bg-primary text-surface px-5 py-2 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors shrink-0">
+      Pick a time <span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO + SCHEDULER -->
+<section class="relative overflow-hidden pt-16 pb-24 md:pt-20 md:pb-28">
+  <div class="absolute inset-0 neural-grid opacity-20 pointer-events-none"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/8 via-surface to-surface-mid/40 pointer-events-none"></div>
+  <div class="glow-blob w-[520px] h-[520px] bg-primary/10 top-0 left-1/4"></div>
+  <div class="glow-blob w-[360px] h-[360px] bg-primary/5 bottom-0 right-1/4"></div>
+
+  <div class="max-w-5xl mx-auto px-6 relative z-10">
+
+    <div class="text-center mb-10 md:mb-14">
+      <span class="text-xs font-mono text-primary uppercase tracking-widest">Start</span>
+      <h1 class="font-headline text-4xl md:text-5xl font-bold mt-4 mb-5 leading-[1.08]">
+        Pick a time for a 30-minute call.
+      </h1>
+      <p class="text-base md:text-lg text-on-surface-dim max-w-xl mx-auto leading-relaxed">
+        We will walk through your business, flag the biggest bottleneck, and tell you what Phase 01 would look like for you.
+      </p>
+    </div>
+
+    <!-- Proof row -->
+    <div class="grid grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto mb-10 md:mb-14">
+      <div class="text-center">
+        <div class="font-headline text-2xl md:text-3xl font-bold text-primary">130+</div>
+        <div class="text-xs md:text-sm text-on-surface-dim mt-1">Production systems shipped</div>
+      </div>
+      <div class="text-center">
+        <div class="font-headline text-2xl md:text-3xl font-bold text-primary">98%</div>
+        <div class="text-xs md:text-sm text-on-surface-dim mt-1">Client retention</div>
+      </div>
+      <div class="text-center">
+        <div class="font-headline text-2xl md:text-3xl font-bold text-primary">45 days</div>
+        <div class="text-xs md:text-sm text-on-surface-dim mt-1">From brief to live</div>
+      </div>
+    </div>
+
+    <!-- Scheduler -->
+    <div id="schedule" class="cal-wrap">
+      <!-- Google Calendar Appointment Scheduling begin -->
+      <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3fkKQTviRf09A_6vZHRRFWDAAaJHftfBcwU_RxvxXy9cULflDBauhi642QUMhjLhORm0DTEhZQ?gv=true"
+              width="100%" height="720" frameborder="0" title="Book a call with Vikas Sawant"></iframe>
+      <!-- end Google Calendar Appointment Scheduling -->
+    </div>
+
+    <!-- Fallback if the embed doesn't load -->
+    <p class="text-center text-sm text-on-surface-muted mt-6">
+      Having trouble with the booking form?
+      <a href="https://calendar.app.google/shqED6J6FEe1rb9Z9" target="_blank" rel="noopener" class="text-primary hover:underline">Open it in a new tab</a>
+      or email
+      <a href="mailto:hello@onpointnexus.com" class="text-primary hover:underline">hello@onpointnexus.com</a>.
+    </p>
+  </div>
+</section>
+
+<!-- MINIMAL FOOTER -->
+<footer class="border-t border-white/5 py-8">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-on-surface-muted">
+    <div>© 2026 OnPoint Nexus Pvt. Ltd.</div>
+    <div class="flex items-center gap-5">
+      <a href="/privacy-policy" class="hover:text-on-surface-dim">Privacy</a>
+      <a href="/terms" class="hover:text-on-surface-dim">Terms</a>
+      <a href="mailto:hello@onpointnexus.com" class="hover:text-on-surface-dim">hello@onpointnexus.com</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Vercel Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
